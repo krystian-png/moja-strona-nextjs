@@ -20,7 +20,12 @@ export function isPathAllowed(path: string): path is AllowedPath {
 }
 
 export async function getAllBlogSlugs(): Promise<string[]> {
-  return [];
+  try {
+    const { getAllSlugs } = await import("@/lib/blog");
+    return await getAllSlugs();
+  } catch {
+    return [];
+  }
 }
 
 export async function getAllAllowedPaths(): Promise<string[]> {
