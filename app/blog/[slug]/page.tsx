@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: { slug: string };
+  searchParams?: ReadonlyURLSearchParams;
+};
+
+export default function Page({ params }: PageProps) {
   const { slug } = params;
   if (!slug) notFound();
 
