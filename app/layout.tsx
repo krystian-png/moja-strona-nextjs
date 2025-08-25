@@ -1,17 +1,20 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Providers from "./providers";
+import './globals.css';
+import type { Metadata } from 'next';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: "Zmiana KRS — migracja do Next.js",
-  description: "Szkielet aplikacji Next.js (App Router).",
+  title: 'Zmiana KRS — strona testowa',
+  description: 'Szkielet strony w Next.js (preview).',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      <body>
-        <Providers>{children}</Providers>
+      <body className="min-h-dvh antialiased bg-white text-gray-900">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
       </body>
     </html>
   );
