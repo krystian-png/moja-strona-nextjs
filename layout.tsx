@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import SiteHeader from '../components/SiteHeader';
-import SiteFooter from '../components/SiteFooter';
+import SiteHeader from './components/SiteHeader';
+import SiteFooter from './components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Zmiana KRS — strona testowa',
