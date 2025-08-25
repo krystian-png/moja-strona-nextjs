@@ -8,7 +8,7 @@ const nav = [
   { href: '/uslugi', label: 'Usługi' },
   { href: '/cennik', label: 'Cennik' },
   { href: '/blog', label: 'Blog' },
-  { href: '/ksiegowi', label: 'Dla Księgowych' },
+  { href: '/ksiegowi', label: 'Dla księgowych' },
   { href: '/contact', label: 'Kontakt' },
 ];
 
