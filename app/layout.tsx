@@ -4,14 +4,14 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Zmiana KRS — strona testowa',
-  description: 'Szkielet strony w Next.js (preview).',
+  title: 'Zmiana KRS',
+  description: 'Profesjonalna obsługa zmian w KRS – szybko, bez stresu i bez błędów.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      <body className="min-h-dvh antialiased bg-white text-gray-900">
+      <body>
         <SiteHeader />
         {children}
         <SiteFooter />
