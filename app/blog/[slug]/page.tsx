@@ -30,9 +30,11 @@ export default async function Page({ params }: any) {
   const post = await getPostBySlug(params?.slug);
   if (!post) notFound();
   return (
-    <main className="prose max-w-3xl mx-auto p-6">
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+    <main className="max-w-3xl mx-auto p-6">
+      <article className="prose">
+        <h1>{post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      </article>
     </main>
   );
 }
