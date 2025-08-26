@@ -1,23 +1,16 @@
-import { withContentlayer } from 'next-contentlayer'
+import { withContentlayer } from "next-contentlayer"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: { typedRoutes: false },
+  experimental: { mdxRs: true },
   async redirects() {
     return [
-      {
-        source: '/kontakt',
-        destination: '/contact',
-        statusCode: 301,
-      },
-      {
-        source: '/dla-ksiegowych',
-        destination: '/ksiegowi',
-        statusCode: 301,
-      },
+      { source: "/kontakt", destination: "/contact", permanent: true },
+      { source: "/dla-ksiegowych", destination: "/ksiegowi", permanent: true },
     ]
   },
 }
 
 export default withContentlayer(nextConfig)
+
