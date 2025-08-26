@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
-// UWAGA: nazwa pliku jest z myślnikami i małymi literami
 import SEOExpandableSection from "@/components/seo-expandable-section";
 import HeadMeta from "@/components/HeadMeta";
 export default function HomePage() {
