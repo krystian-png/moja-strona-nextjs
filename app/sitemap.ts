@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     throw new Error("NEXT_PUBLIC_SITE_URL env variable is not set");
   }
 
+  const baseUrl = BASE_URL.replace(/\/$/, "");
+
   const routes = [
     "",
     "/blog",
@@ -20,12 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cennik",
     "/uslugi",
   ].map((path) => ({
-    url: `${BASE_URL}${path}`,
+    url: `${baseUrl}${path}`,
     lastModified: new Date(),
   }));
 
   const posts = allPosts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
   }));
 
