@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import Hero from "@/components/Hero"
 import Features from "@/components/Features"
 import Process from "@/components/Process"
 import CTA from "@/components/CTA"
+import SEOExpandableSection from "@/components/seo-expandable-section"
 
 export const metadata: Metadata = {
   title: "ZmianaKRS - Strona główna",
@@ -35,6 +35,11 @@ export default function HomePage() {
       <Features />
       <Process />
       <CTA />
+      <SEOExpandableSection
+        pageId="home"
+        title="Dowiedz się więcej o zmianach w KRS"
+        content={`Zmiana danych w KRS wymaga staranności i znajomości przepisów.\nNasi specjaliści zapewniają pełne wsparcie na każdym etapie.`}
+      />
     </main>
   )
 }
