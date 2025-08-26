@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
-import SEOExpandableSection from "@/components/seo-expandable-section";
+import SEOExpandableSection from "@/components/SEOExpandableSection";
 import HeadMeta from "@/components/HeadMeta";
 export default function HomePage() {
   const homeJsonLd = {
