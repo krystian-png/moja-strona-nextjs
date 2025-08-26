@@ -1,3 +1,4 @@
+import { withContentlayer } from "next-contentlayer";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -19,4 +20,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);
