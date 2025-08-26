@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { allPosts } from "contentlayer/generated"
-import { useMDXComponent } from "next-contentlayer/hooks"
-import MDXComponents from "@/components/MDX"
+import Mdx from "@/components/mdx"
 
 export const revalidate = 3600
 
@@ -29,12 +28,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const post = allPosts.find((p) => p.slug === params.slug)
   if (!post) notFound()
 
-  const Component = useMDXComponent(post.body.code)
-
   return (
     <main className="max-w-3xl mx-auto p-6 prose">
       <h1 className="mb-4 text-2xl font-semibold">{post.title}</h1>
-      <Component components={MDXComponents} />
+      <Mdx code={post.body.code} />
     </main>
   )
 }
