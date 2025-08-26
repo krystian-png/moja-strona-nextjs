@@ -1,3 +1,11 @@
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import SEOExpandableSection from "@/components/seo-expandable-section"; // UWAGA: nazwa pliku jest z myślnikami i małymi literami
+import HeadMeta from "@/components/HeadMeta";
 export default function HomePage() {
   const homeJsonLd = {
     "@context": "https://schema.org",
