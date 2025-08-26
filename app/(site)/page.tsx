@@ -4,7 +4,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
-import SEOExpandableSection from "@/components/seo-expandable-section"; // UWAGA: nazwa pliku jest z myślnikami i małymi literami
+// UWAGA: nazwa pliku jest z myślnikami i małymi literami
+import SEOExpandableSection from "@/components/seo-expandable-section";
 import HeadMeta from "@/components/HeadMeta";
 export default function HomePage() {
   const homeJsonLd = {
