@@ -241,8 +241,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SEOExpandableSection
-        content={`Profesjonalna obsługa zmian wpisu w KRS dla spółek i biur rachunkowych\n\nOferujemy kompleksową pomoc w zmianie wpisu w Krajowym Rejestrze Sądowym (KRS)...`}
+            <SEOExpandableSection
+        content={`Profesjonalna obsługa zmian wpisu w KRS dla spółek i biur rachunkowych
+
+Oferujemy kompleksową pomoc w zmianie wpisu w Krajowym Rejestrze Sądowym (KRS)...`}
         pageId="home"
       />
 
@@ -250,4 +252,3 @@ export default function HomePage() {
     </div>
   );
 }
-
