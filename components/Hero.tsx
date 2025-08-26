@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -27,9 +28,12 @@ export default function Hero() {
           </div>
         </div>
         <div>
-          <img
+          <Image
             src="/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp"
-            alt=""
+            alt="Profesjonalna poczekalnia prawnicza z eleganckimi krzesłami"
+            width={2400}
+            height={1800}
+            priority
             className="rounded-lg shadow-md"
           />
         </div>

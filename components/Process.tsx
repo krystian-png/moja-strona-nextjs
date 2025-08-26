@@ -1,14 +1,16 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Process() {
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <img
+          <Image
             src="/images/prawniczka-analizuje-dokumenty-aktualizacja-krs.webp"
             alt="Prawniczka analizująca dokumenty"
-            loading="lazy"
+            width={1536}
+            height={1024}
             className="rounded-lg shadow-md"
           />
         </div>
