@@ -24,6 +24,7 @@ export default function HomePage() {
       ],
     },
   };
+  return (
     <div className="min-h-screen relative">
       <HeadMeta
         title="Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS"
