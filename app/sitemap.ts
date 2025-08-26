@@ -1,8 +1,22 @@
 import type { MetadataRoute } from "next";
-import { getAllAllowedPaths, BASE_URL } from "@/lib/whitelist";
+import { allPosts } from "contentlayer/generated";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const paths = await getAllAllowedPaths();
+const BASE_URL = "https://www.zmianakrs.pl";
+const STATIC_PATHS = [
+  "/",
+  "/o-nas",
+  "/uslugi",
+  "/cennik",
+  "/contact",
+  "/ksiegowi",
+  "/polityka-prywatnosci",
+  "/regulamin",
+  "/rodo",
+  "/blog",
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const paths = [...STATIC_PATHS, ...allPosts.map((p) => `/blog/${p.slug}`)];
   return paths.map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: new Date(),
