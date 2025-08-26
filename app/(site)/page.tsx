@@ -48,7 +48,7 @@ export default function HomePage() {
       <div className="fixed inset-0 -z-10">
         <Image
           src="/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp"
-          alt="Nowoczesne biuro - profesjonalne usługi KRS - obsługa wniosków o zmianę wpisu w KRS"
+          alt=""
           fill
           priority
           className="object-cover object-center"
