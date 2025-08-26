@@ -9,7 +9,7 @@ export default function CTA() {
         Skontaktuj się z nami i dowiedz się, jak możemy pomóc Twojej spółce.
       </p>
       <Link
-        href="/contact"
+        href="/kontakt"
         className="inline-block px-8 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
       >
         Skontaktuj się
