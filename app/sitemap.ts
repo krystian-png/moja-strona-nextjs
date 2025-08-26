@@ -2,8 +2,11 @@ import type { MetadataRoute } from "next";
 import { allPosts } from "contentlayer/generated";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.zmianakrs.pl";
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+
+  if (!BASE_URL) {
+    throw new Error("NEXT_PUBLIC_SITE_URL env variable is not set");
+  }
 
   const routes = [
     "",
