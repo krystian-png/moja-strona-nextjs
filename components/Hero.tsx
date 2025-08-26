@@ -13,7 +13,7 @@ export default function Hero() {
           </p>
           <div className="mt-6 flex gap-4">
             <Link
-              href="/contact"
+              href="/kontakt"
               className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700"
             >
               Skontaktuj się
