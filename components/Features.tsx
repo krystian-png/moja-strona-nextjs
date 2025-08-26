@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Features() {
   return (
@@ -9,10 +10,11 @@ export default function Features() {
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center">
-            <img
+            <Image
               src="/images/konsultacja-w-zakresie-zmiany-wpisu-do-krs.webp"
               alt="Konsultacja w zakresie zmian KRS"
-              loading="lazy"
+              width={1536}
+              height={1024}
               className="mx-auto mb-4 rounded-lg"
             />
             <h3 className="font-semibold mb-2">Eksperckie doradztwo</h3>
@@ -22,10 +24,11 @@ export default function Features() {
             </p>
           </div>
           <div className="text-center">
-            <img
+            <Image
               src="/images/archiwum-dokumenty-spolek-zmiana-wpisu-krs.webp"
               alt="Archiwum dokumentów spółek"
-              loading="lazy"
+              width={1024}
+              height={1536}
               className="mx-auto mb-4 rounded-lg"
             />
             <h3 className="font-semibold mb-2">Kompleksowa obsługa</h3>
@@ -35,10 +38,11 @@ export default function Features() {
             </p>
           </div>
           <div className="text-center">
-            <img
+            <Image
               src="/images/outsourcing-zmian-krs-kompleksowa-obsluga-dla-przedsiebiorcow-i-ksiegowych.webp"
               alt="Outsourcing zmian KRS"
-              loading="lazy"
+              width={1536}
+              height={1024}
               className="mx-auto mb-4 rounded-lg"
             />
             <h3 className="font-semibold mb-2">Oszczędność czasu</h3>
