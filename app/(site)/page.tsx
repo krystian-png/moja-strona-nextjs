@@ -57,6 +57,11 @@ export default function HomePage() {
       <main className="p-8">
         <h1 className="text-2xl font-semibold">Strona główna (placeholder)</h1>
         <p className="mt-2 text-sm text-gray-600">App Router działa.</p>
+        <img
+          src="/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp"
+          alt="Profesjonalna poczekalnia prawnicza z eleganckimi krzesłami"
+          className="mt-4"
+        />
       </main>
       <footer className="border-t mt-12 py-8 text-sm text-gray-600">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between gap-2">
