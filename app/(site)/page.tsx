@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Hero from "@/components/Hero"
 import Features from "@/components/Features"
 import Process from "@/components/Process"
