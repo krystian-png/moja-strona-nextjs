@@ -8,9 +8,10 @@ export default function Hero() {
       <Image
         src="/images/drewniana-konstrukcja-dokumenty-prawne-szeregu-organizacja-porzadek-artykuly-prawnicze-krs.webp"
         alt=""
-        fill
+        width={3024}
+        height={4032}
         priority
-        className="object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-slate-900/70" />
 

@@ -49,9 +49,10 @@ export default function HomePage() {
         <Image
           src="/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp"
           alt=""
-          fill
+          width={2400}
+          height={1800}
           priority
-          className="object-cover object-center"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-slate-900/60" />
       </div>
@@ -207,8 +208,8 @@ export default function HomePage() {
             src="/images/budynek-krs-tablica-przy-wejsciu.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
+            width={1024}
+            height={1024}
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
@@ -261,8 +262,8 @@ export default function HomePage() {
             src="/images/dokonywanie-wpisu-zmian-w-krs-portal-rejestrow-sadowych.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
+            width={1536}
+            height={1024}
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
@@ -291,8 +292,8 @@ export default function HomePage() {
             src="/images/dokumenty-ksiegowe-zwyczajne-walne-zgromadzenie-krs.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
+            width={1536}
+            height={1024}
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
@@ -321,8 +322,8 @@ export default function HomePage() {
             src="/images/zlozenie-elektronicznego-wniosku-do-krs.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
+            width={1536}
+            height={1024}
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
@@ -347,11 +348,11 @@ export default function HomePage() {
           </p>
 
           <Image
-            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarzad.webp"
+            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarząd.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
+            width={1536}
+            height={1024}
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
