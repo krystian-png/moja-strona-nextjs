@@ -19,15 +19,15 @@ export default function Hero() {
           Zmiana wpisu w KRS bez stresu i błędów – zrobimy to za Ciebie
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-gray-200">
-          Masz dość wypełniania wniosków w systemie KRS, które wracają z
-          błędami? Gubisz się w kolejnych poprawkach, a niejasne komunikaty
-          tylko marnują Twój czas i nerwy? Nie jesteś sam – codziennie
-          przedsiębiorcy mierzą się z tymi samymi problemami, próbując
-          samodzielnie złożyć poprawny wniosek.
+          Wiemy, jak uciążliwe, czasochłonne i stresujące potrafi być
+          samodzielne przygotowanie wniosku do KRS. Formalności, poprawki i
+          urzędowy język zniechęcają już na starcie. Dlatego zrobimy to za
+          Ciebie – przygotujemy i złożymy wniosek, a Ty dowiesz się od nas,
+          jakie dokumenty będą potrzebne.
         </p>
         <p className="mt-4 text-lg sm:text-xl text-gray-200">
-          Przygotujemy i złożymy wniosek, a Ty dowiesz się od nas jakie
-          dokumenty będą potrzebne.
+          Nie ma znaczenia, gdzie mieszkasz — działamy zdalnie w całej Polsce i
+          prowadzimy Cię przez każdy etap procesu.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
