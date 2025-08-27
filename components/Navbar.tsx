@@ -20,33 +20,32 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <div className="bg-slate-900 text-gray-100 text-sm">
+      <div className="bg-gray-900 text-gray-100 text-sm">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
           <div className="flex gap-4">
             <a href="tel:572234779" className="hover:text-amber-400">
               {"572\u202f234\u202f779"}
             </a>
             <a
-              href="mailto:biuro@imailnews.pl"
+              href="mailto:kontakt@zmianakrs.pl"
               className="hover:text-amber-400"
             >
-              biuro@imailnews.pl
+              kontakt@zmianakrs.pl
             </a>
           </div>
           <nav className="hidden sm:block">
             <ul className="flex gap-6">
               {navItems.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>
-                    <span
-                      className={`hover:text-amber-400 ${
-                        isActive(item.href)
-                          ? "text-amber-400 font-bold"
-                          : ""
-                      }`}
-                    >
-                      {item.label}
-                    </span>
+                  <Link
+                    href={item.href}
+                    className={`inline-block px-3 py-2 hover:text-amber-400 ${
+                      isActive(item.href)
+                        ? "text-amber-400 font-semibold border-b-2 border-amber-400"
+                        : "text-gray-300"
+                    }`}
+                  >
+                    {item.label}
                   </Link>
                 </li>
               ))}
