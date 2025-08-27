@@ -66,7 +66,7 @@ export default function HomePage() {
         {/* Sekcja: Profesjonalna obsługa wniosków o zmianę wpisu w KRS */}
         <section className="relative py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 sm:p-12">
+            <div className="rounded-lg p-8 sm:p-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
                 Profesjonalna obsługa wniosków o zmianę wpisu w KRS
               </h2>
