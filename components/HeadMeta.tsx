@@ -10,6 +10,10 @@ interface HeadMetaProps {
   ogDescription?: string
   ogImage?: string
   structuredData?: Record<string, any>
+  locale?: string
+  siteName?: string
+  robots?: string
+  twitterCard?: string
 }
 
 export default function HeadMeta({
@@ -21,6 +25,10 @@ export default function HeadMeta({
   ogDescription,
   ogImage,
   structuredData,
+  locale,
+  siteName,
+  robots,
+  twitterCard,
 }: HeadMetaProps) {
   return (
     <Head>
@@ -31,6 +39,10 @@ export default function HeadMeta({
       {ogTitle && <meta property="og:title" content={ogTitle} />}
       {ogDescription && <meta property="og:description" content={ogDescription} />}
       {ogImage && <meta property="og:image" content={ogImage} />}
+      {locale && <meta property="og:locale" content={locale} />}
+      {siteName && <meta property="og:site_name" content={siteName} />}
+      {robots && <meta name="robots" content={robots} />}
+      {twitterCard && <meta name="twitter:card" content={twitterCard} />}
       {structuredData && (
         <script
           type="application/ld+json"
