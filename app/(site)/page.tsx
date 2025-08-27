@@ -245,8 +245,119 @@ export default function HomePage() {
             gwarantuje zgodność z wszystkimi wymogami prawnymi.
           </p>
 
-          {/* Remaining informational sections... (omitted for brevity) */}
-          {/* Ensure each <Image> below follows the same pattern: alt="" and loading="lazy" */}
+          <h3 className="text-lg sm:text-xl font-semibold text-amber-400 mt-6 mb-4">
+            Jakie informacje znajdują się w KRS?
+          </h3>
+
+          <p className="text-base sm:text-lg leading-relaxed mb-6 text-white">
+            Rejestr zawiera <strong>dane identyfikacyjne spółki</strong>, skład
+            organów oraz informacje o sposobie reprezentacji i kapitale. Każdy
+            wpis opiera się na dokumentach złożonych w sądzie, dzięki czemu
+            przedsiębiorcy i kontrahenci mogą w prosty sposób zweryfikować
+            status podmiotu.
+          </p>
+
+          <Image
+            src="/images/dokonywanie-wpisu-zmian-w-krs-portal-rejestrow-sadowych.webp"
+            alt=""
+            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
+            width={400}
+            height={300}
+            loading="lazy"
+          />
+          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
+            Ekran komputera z portalem rejestrów sądowych przedstawiający
+            formularz wpisu w KRS.
+          </p>
+
+          <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
+            <li>firma i siedziba spółki</li>
+            <li>skład wspólników lub akcjonariuszy</li>
+            <li>informacje o organach i prokurentach</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold text-amber-400 mt-6 mb-4">
+            Dlaczego aktualność wpisu jest tak ważna?
+          </h3>
+
+          <p className="text-base sm:text-lg leading-relaxed mb-6 text-white">
+            Nieaktualne dane w rejestrze mogą prowadzić do{" "}
+            <strong>odpowiedzialności członków zarządu</strong> oraz utrudniać
+            zawieranie umów. Terminowe zgłaszanie zmian chroni spółkę przed
+            sankcjami i zapewnia przejrzystość wobec kontrahentów.
+          </p>
+
+          <Image
+            src="/images/dokumenty-ksiegowe-zwyczajne-walne-zgromadzenie-krs.webp"
+            alt=""
+            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
+            width={400}
+            height={300}
+            loading="lazy"
+          />
+          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
+            Dokumenty księgowe przygotowane na potrzeby zgłoszenia zmian w KRS.
+          </p>
+
+          <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
+            <li>bezpieczeństwo obrotu gospodarczego</li>
+            <li>pewność co do składu władz spółki</li>
+            <li>uniknięcie kar finansowych</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold text-amber-400 mt-6 mb-4">
+            Jak zgłosić zmianę do KRS?
+          </h3>
+
+          <p className="text-base sm:text-lg leading-relaxed mb-6 text-white">
+            Wniosek można złożyć elektronicznie poprzez{" "}
+            <strong>Portal Rejestrów Sądowych (PRS)</strong> albo system{" "}
+            <strong>S24</strong>. Po przygotowaniu wymaganych dokumentów
+            formularz podpisuje się podpisem kwalifikowanym lub profilem
+            zaufanym i przesyła do sądu rejestrowego.
+          </p>
+
+          <Image
+            src="/images/zlozenie-elektronicznego-wniosku-do-krs.webp"
+            alt=""
+            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
+            width={400}
+            height={300}
+            loading="lazy"
+          />
+          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
+            Osoba składająca elektroniczny wniosek o zmianę w KRS.
+          </p>
+
+          <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
+            <li>przygotowanie uchwał i załączników</li>
+            <li>wypełnienie odpowiednich formularzy</li>
+            <li>opłacenie wniosku i wysłanie przez PRS lub S24</li>
+          </ul>
+
+          <h3 className="text-lg sm:text-xl font-semibold text-amber-400 mt-6 mb-4">
+            Konsekwencje braku zgłoszenia zmian
+          </h3>
+
+          <p className="text-base sm:text-lg leading-relaxed mb-6 text-white">
+            Zaniedbanie obowiązku aktualizacji może skutkować nałożeniem{" "}
+            <strong>grzywny przez sąd rejestrowy</strong>, a także
+            odpowiedzialnością odszkodowawczą wobec osób trzecich. Regularna
+            aktualizacja wpisów chroni przed tymi ryzykami.
+          </p>
+
+          <Image
+            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarzad.webp"
+            alt=""
+            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
+            width={400}
+            height={300}
+            loading="lazy"
+          />
+          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
+            Prawnik konsultujący konsekwencje braku aktualizacji danych w
+            rejestrze.
+          </p>
         </div>
       </section>
 
