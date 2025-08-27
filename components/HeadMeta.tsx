@@ -9,6 +9,10 @@ interface HeadMetaProps {
   ogTitle?: string
   ogDescription?: string
   ogImage?: string
+  locale?: string
+  siteName?: string
+  robots?: string
+  twitterCard?: string
   structuredData?: Record<string, any>
   locale?: string
   siteName?: string
@@ -24,6 +28,10 @@ export default function HeadMeta({
   ogTitle,
   ogDescription,
   ogImage,
+  locale,
+  siteName,
+  robots,
+  twitterCard,
   structuredData,
   locale,
   siteName,
