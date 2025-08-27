@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="relative flex items-center justify-center text-center py-32 px-4 sm:py-40 overflow-hidden">
       <Image
-        src="/images/nowoczesne-biuro-z-praca-nad-dokumentem.webp"
+        src="/images/drewniana-konstrukcja-dokumenty-prawne-szeregu-organizacja-porzadek-artykuly-prawnicze-krs.webp"
         alt=""
         fill
         priority
@@ -16,31 +16,38 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-white">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-          Zmiana wpisu w KRS bez stresu i zbędnych formalności
+          Zmiana wpisu w KRS bez stresu i błędów – zrobimy to za Ciebie
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-gray-200">
-          Kompleksowa obsługa wniosków o zmianę danych spółki – szybko,
-          bezpiecznie i online.
+          Masz dość wypełniania wniosków w systemie KRS, które wracają z
+          błędami? Gubisz się w kolejnych poprawkach, a niejasne komunikaty
+          tylko marnują Twój czas i nerwy? Nie jesteś sam – codziennie
+          przedsiębiorcy mierzą się z tymi samymi problemami, próbując
+          samodzielnie złożyć poprawny wniosek.
+        </p>
+        <p className="mt-4 text-lg sm:text-xl text-gray-200">
+          Przygotujemy i złożymy wniosek, a Ty dowiesz się od nas jakie
+          dokumenty będą potrzebne.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/cennik"
+            href="/uslugi"
             className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium"
           >
-            Sprawdź cennik
+            Co robimy?
           </Link>
           <Link
-            href="/uslugi"
+            href="#jak-dzialamy"
             className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-md text-white font-medium"
           >
-            Nasze usługi
+            Jak działamy?
           </Link>
           <Link
-            href="/kontakt"
+            href="/cennik"
             className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100 rounded-md font-medium"
           >
-            Skontaktuj się
+            Ile to kosztuje?
           </Link>
         </div>
       </div>
