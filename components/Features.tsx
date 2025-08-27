@@ -11,43 +11,41 @@ export default function Features() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center">
             <Image
-              src="/images/konsultacja-w-zakresie-zmiany-wpisu-do-krs.webp"
-              alt="Konsultacja w zakresie zmian KRS"
-              width={1536}
-              height={1024}
-              className="mx-auto mb-4 rounded-lg"
+              src="/icons/dostepnosc.svg"
+              alt="Ikona dostępności"
+              width={64}
+              height={64}
+              className="mx-auto mb-4"
             />
-            <h3 className="font-semibold mb-2">Eksperckie doradztwo</h3>
+            <h3 className="font-semibold mb-2">Dostępność</h3>
             <p className="text-sm text-gray-600">
-              Doświadczony zespół specjalistów przeprowadzi Cię przez cały
-              proces zmian.
+              Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.
             </p>
           </div>
           <div className="text-center">
             <Image
-              src="/images/archiwum-dokumenty-spolek-zmiana-wpisu-krs.webp"
-              alt="Archiwum dokumentów spółek"
-              width={1024}
-              height={1536}
-              className="mx-auto mb-4 rounded-lg"
+              src="/icons/profesjonalizm.svg"
+              alt="Ikona profesjonalizmu"
+              width={64}
+              height={64}
+              className="mx-auto mb-4"
             />
-            <h3 className="font-semibold mb-2">Kompleksowa obsługa</h3>
+            <h3 className="font-semibold mb-2">Profesjonalizm</h3>
             <p className="text-sm text-gray-600">
-              Zadbamy o przygotowanie dokumentów i ich prawidłowe złożenie w
-              sądzie.
+              Zapewniamy rzetelną obsługę opartą na doświadczeniu.
             </p>
           </div>
           <div className="text-center">
             <Image
-              src="/images/outsourcing-zmian-krs-kompleksowa-obsluga-dla-przedsiebiorcow-i-ksiegowych.webp"
-              alt="Outsourcing zmian KRS"
-              width={1536}
-              height={1024}
-              className="mx-auto mb-4 rounded-lg"
+              src="/icons/prosty-cennik.svg"
+              alt="Ikona prostego cennika"
+              width={64}
+              height={64}
+              className="mx-auto mb-4"
             />
-            <h3 className="font-semibold mb-2">Oszczędność czasu</h3>
+            <h3 className="font-semibold mb-2">Prosty cennik</h3>
             <p className="text-sm text-gray-600">
-              Skup się na prowadzeniu biznesu, a formalności zostaw nam.
+              Przejrzyste stawki bez ukrytych kosztów.
             </p>
           </div>
         </div>
