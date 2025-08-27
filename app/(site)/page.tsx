@@ -6,7 +6,43 @@ import HeadMeta from "@/components/HeadMeta";
 export default function HomePage() {
   return (
     <>
-      <HeadMeta title="Home" />
+      <HeadMeta
+        title="Zmiana wpisu w KRS bez stresu i błędów – zrobimy to za Ciebie | ZmianaKRS"
+        description="Profesjonalna i kompleksowa obsługa zmian w KRS – zdalnie, bez błędów i zwrotów. Zmiana zarządu, adresu, PKD, kapitału, umowy spółki. PRS/S24. Cennik i kontakt."
+        canonicalUrl="https://zmianakrs.pl/"
+        ogTitle="Zmiana wpisu w KRS bez stresu i błędów – zrobimy to za Ciebie | ZmianaKRS"
+        ogDescription="Profesjonalna i kompleksowa obsługa zmian w KRS – zdalnie, bez błędów i zwrotów. Zmiana zarządu, adresu, PKD, kapitału, umowy spółki. PRS/S24. Cennik i kontakt."
+        ogImage="https://zmianakrs.pl/images/krs-services.png"
+        locale="pl_PL"
+        siteName="ZmianaKRS"
+        robots="index,follow"
+        twitterCard="summary_large_image"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "ZmianaKRS",
+          "url": "https://zmianakrs.pl/",
+          "serviceType": "Usługi prawne KRS",
+          "areaServed": "Polska",
+          "description":
+            "Profesjonalna i kompleksowa obsługa zmian w KRS – zdalnie, bez błędów i zwrotów. Zmiana zarządu, adresu, PKD, kapitału, umowy spółki. PRS/S24.",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Usługi KRS",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Zmiana wpisu w KRS",
+                  "description":
+                    "Kompleksowa obsługa wniosków o zmianę wpisu w KRS (PRS/S24) – przygotowanie dokumentów, złożenie wniosku, wsparcie do postanowienia sądu.",
+                },
+              },
+            ],
+          },
+        }}
+      />
       <Navbar />
       <main>
         <div className="relative isolate px-6 pt-14 lg:px-8">
