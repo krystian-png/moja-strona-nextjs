@@ -39,7 +39,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#jak-dzialamy"
-            className="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-md text-white font-medium"
+            className="px-8 py-3 border border-white/20 rounded-md text-white font-medium hover:bg-white/10"
           >
             Jak działamy?
           </Link>
