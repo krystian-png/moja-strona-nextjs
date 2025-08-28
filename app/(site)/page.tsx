@@ -363,7 +363,7 @@ export default function HomePage() {
           </p>
 
           <Image
-            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarzad.webp"
+            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarząd.webp"
             alt=""
             className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
             width={400}
