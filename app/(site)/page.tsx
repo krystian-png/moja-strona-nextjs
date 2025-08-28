@@ -53,7 +53,7 @@ export default function HomePage() {
     },
   };
   return (
-    <div className="min-h-screen relative bg-[url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')] bg-center bg-cover bg-no-repeat">
+    <div className="min-h-screen bg-[url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')] bg-center bg-cover bg-no-repeat">
       <Script
         id="home-jsonld"
         type="application/ld+json"
