@@ -1,20 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-center text-center py-32 px-4 sm:py-40 overflow-hidden">
-      <Image
-        src="/images/nowoczesne-biuro-z-praca-nad-dokumentem.webp"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-slate-900/70" />
-
-      <div className="relative z-10 max-w-4xl mx-auto text-white">
+    <section className="flex items-center justify-center text-center py-32 px-4 sm:py-40">
+      <div className="max-w-4xl mx-auto text-white">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
           Zmiana wpisu w KRS bez stresu i zbędnych formalności
         </h1>
