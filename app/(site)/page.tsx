@@ -1,11 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import SEOExpandableSection from "@/components/SEOExpandableSection";
-import HeadMeta from "@/components/HeadMeta";
+
+export const metadata: Metadata = {
+  title:
+    "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
+  description:
+    "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
+  openGraph: {
+    title:
+      "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
+    description:
+      "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
+    url: "https://zmianakrs.pl/",
+    images: [
+      {
+        url: "https://zmianakrs.pl/images/krs-services.png",
+      },
+    ],
+  },
+};
 export default function HomePage() {
   const homeJsonLd = {
     "@context": "https://schema.org",
@@ -34,14 +54,10 @@ export default function HomePage() {
   };
   return (
     <div className="min-h-screen relative">
-      <HeadMeta
-        title="Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS"
-        description="Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie."
-        canonicalUrl="https://zmianakrs.pl/"
-        ogTitle="Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS"
-        ogDescription="Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie."
-        ogImage="https://zmianakrs.pl/images/krs-services.png"
-        structuredData={homeJsonLd}
+      <Script
+        id="home-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
       {/* Background */}
