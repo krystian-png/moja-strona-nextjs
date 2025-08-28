@@ -57,7 +57,7 @@ export default function HomePage() {
       className="min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
-          "url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
+          "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
       }}
     >
       <Script
