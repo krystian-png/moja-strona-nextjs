@@ -53,24 +53,12 @@ export default function HomePage() {
     },
   };
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-[url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')] bg-center bg-cover bg-no-repeat">
       <Script
         id="home-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
-
-      {/* Background */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-slate-900/60" />
-      </div>
 
       <Navbar />
 
