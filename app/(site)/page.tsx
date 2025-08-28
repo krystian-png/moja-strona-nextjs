@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
@@ -53,13 +52,7 @@ export default function HomePage() {
     },
   };
   return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
-      }}
-    >
+    <div className="min-h-screen bg-[url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')] bg-center bg-cover bg-no-repeat">
       <Script
         id="home-jsonld"
         type="application/ld+json"
@@ -211,18 +204,6 @@ export default function HomePage() {
             Czym jest Krajowy Rejestr Sądowy (KRS)?
           </h1>
 
-          <Image
-            src="/images/budynek-krs-tablica-przy-wejsciu.webp"
-            alt=""
-            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
-            loading="lazy"
-          />
-          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Wejście do budynku z tablicą „Krajowy Rejestr Sądowy" – symbol
-            jawności i legalności rejestrów.
-          </p>
 
           <p className="text-base sm:text-lg leading-relaxed mb-6 text-white">
             <strong>Krajowy Rejestr Sądowy (KRS)</strong> to centralny, jawny
@@ -265,18 +246,6 @@ export default function HomePage() {
             status podmiotu.
           </p>
 
-          <Image
-            src="/images/dokonywanie-wpisu-zmian-w-krs-portal-rejestrow-sadowych.webp"
-            alt=""
-            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
-            loading="lazy"
-          />
-          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Ekran komputera z portalem rejestrów sądowych przedstawiający
-            formularz wpisu w KRS.
-          </p>
 
           <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
             <li>firma i siedziba spółki</li>
@@ -295,17 +264,6 @@ export default function HomePage() {
             sankcjami i zapewnia przejrzystość wobec kontrahentów.
           </p>
 
-          <Image
-            src="/images/dokumenty-ksiegowe-zwyczajne-walne-zgromadzenie-krs.webp"
-            alt=""
-            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
-            loading="lazy"
-          />
-          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Dokumenty księgowe przygotowane na potrzeby zgłoszenia zmian w KRS.
-          </p>
 
           <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
             <li>bezpieczeństwo obrotu gospodarczego</li>
@@ -325,17 +283,6 @@ export default function HomePage() {
             zaufanym i przesyła do sądu rejestrowego.
           </p>
 
-          <Image
-            src="/images/zlozenie-elektronicznego-wniosku-do-krs.webp"
-            alt=""
-            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
-            loading="lazy"
-          />
-          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Osoba składająca elektroniczny wniosek o zmianę w KRS.
-          </p>
 
           <ul className="list-disc list-inside my-6 space-y-2 text-white text-base sm:text-lg">
             <li>przygotowanie uchwał i załączników</li>
@@ -354,18 +301,6 @@ export default function HomePage() {
             aktualizacja wpisów chroni przed tymi ryzykami.
           </p>
 
-          <Image
-            src="/images/prawnik-konsultacja-procedura-rezygnacja-zarząd.webp"
-            alt=""
-            className="rounded-2xl shadow-md mb-6 mx-auto max-w-full h-auto"
-            width={400}
-            height={300}
-            loading="lazy"
-          />
-          <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Prawnik konsultujący konsekwencje braku aktualizacji danych w
-            rejestrze.
-          </p>
         </div>
       </section>
 
