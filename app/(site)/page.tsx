@@ -58,6 +58,7 @@ export default function HomePage() {
       style={{
         backgroundImage:
           "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
+        backgroundSize: "cover",
       }}
     >
       <div
@@ -209,9 +210,7 @@ export default function HomePage() {
               </div>
           </div>
         </section>
-      </main>
-
-      {/* Sekcja o KRS */}
+        {/* Sekcja o KRS */}
       <section className="w-full px-4 md:px-8 lg:px-16 py-12 space-y-10">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl lg:text-4xl font-bold mb-6 text-center text-white">
@@ -384,7 +383,9 @@ Oferujemy kompleksową pomoc w zmianie wpisu w Krajowym Rejestrze Sądowym (KRS)
         pageId="home"
       />
 
-        <Footer />
-      </div>
+      </main>
+
+      <Footer />
+    </div>
     );
   }
