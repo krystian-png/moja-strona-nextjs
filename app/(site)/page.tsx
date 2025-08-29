@@ -54,11 +54,10 @@ export default function HomePage() {
   };
   return (
     <div
-      className="bg-center bg-no-repeat"
+      className="bg-no-repeat bg-center ![background-size:cover] ![background-position:center] ![background-repeat:no-repeat]"
       style={{
         backgroundImage:
           "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
-        backgroundSize: "cover",
       }}
     >
       <Script
