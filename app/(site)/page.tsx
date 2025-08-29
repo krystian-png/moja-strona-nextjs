@@ -54,12 +54,19 @@ export default function HomePage() {
   };
   return (
     <div
-      className="bg-no-repeat bg-center ![background-size:cover] ![background-position:center] ![background-repeat:no-repeat]"
+      className="relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden"
       style={{
         backgroundImage:
           "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
       }}
     >
+      <div
+        className="absolute inset-0 bg-no-repeat ![background-size:cover] ![background-position:center_30%] ![background-repeat:no-repeat]"
+        style={{
+          backgroundImage:
+            "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
+        }}
+      />
       <Script
         id="home-jsonld"
         type="application/ld+json"
