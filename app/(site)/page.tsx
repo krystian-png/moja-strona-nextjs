@@ -53,13 +53,7 @@ export default function HomePage() {
     },
   };
   return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
-      }}
-    >
+    <div className="page-wrapper">
       <div className="relative z-10">
         <Script
           id="home-jsonld"
