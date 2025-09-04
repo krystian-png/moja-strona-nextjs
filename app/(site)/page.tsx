@@ -53,8 +53,13 @@ export default function HomePage() {
     },
   };
   return (
-    <div className="relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden">
-      <div className="absolute inset-0 bg-slate-900/60 pointer-events-none" />
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
+      }}
+    >
       <div className="relative z-10">
         <Script
           id="home-jsonld"
