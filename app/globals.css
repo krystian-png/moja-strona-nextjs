@@ -9,4 +9,10 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #0f172a;
+  background: url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp') center center / cover no-repeat fixed;
+}
+
+.page-wrapper {
+  background: none !important;
+  min-height: 100vh;
 }
