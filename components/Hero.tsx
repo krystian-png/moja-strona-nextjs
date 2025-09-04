@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -12,7 +13,6 @@ export default function Hero() {
           Kompleksowa obsługa wniosków o zmianę danych spółki – szybko,
           bezpiecznie i online.
         </p>
-
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/cennik"
