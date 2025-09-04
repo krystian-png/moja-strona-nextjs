@@ -53,7 +53,7 @@ export default function HomePage() {
     },
   };
   return (
-    <div className="page-wrapper relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden">
+    <div className="relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden">
       <div className="absolute inset-0 bg-slate-900/60 pointer-events-none" />
       <div className="relative z-10">
         <Script
