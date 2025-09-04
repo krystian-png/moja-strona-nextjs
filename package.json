@@ -5,21 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "contentlayer build && next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"No tests defined\" && exit 0"
   },
   "dependencies": {
+    "@contentlayer/source-files": "^0.3.4",
     "@fontsource/roboto": "^5.2.6",
     "@neondatabase/serverless": "^0.10.4",
     "@tanstack/react-query": "^5.60.5",
+    "contentlayer": "^0.3.4",
     "drizzle-orm": "^0.39.1",
     "next": "latest",
+    "next-contentlayer": "^0.3.4",
     "nodemailer": "^7.0.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "zod": "^3.24.2",
-    "contentlayer": "^0.3.4",
-    "next-contentlayer": "^0.3.4",
-    "@contentlayer/source-files": "^0.3.4"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
@@ -27,6 +29,8 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^13.5.11",
     "postcss": "^8.4.47",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",

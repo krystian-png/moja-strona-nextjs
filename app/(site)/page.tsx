@@ -219,7 +219,7 @@ export default function HomePage() {
             loading="lazy"
           />
           <p className="text-center text-sm text-gray-300 mb-8 sr-only">
-            Wejście do budynku z tablicą „Krajowy Rejestr Sądowy" – symbol
+            Wejście do budynku z tablicą „Krajowy Rejestr Sądowy&quot; – symbol
             jawności i legalności rejestrów.
           </p>
 
