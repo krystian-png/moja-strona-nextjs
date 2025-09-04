@@ -4,3 +4,15 @@
 
 /* --- Poniżej: CSS przeniesiony z poprzedniego projektu (index.css) --- */
 /* (Brak index.css — dodamy w następnym kroku) */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp') center center / cover no-repeat fixed;
+  background-color: #0f172a;
+}
+.page-wrapper {
+  background: none !important;
+  min-height: 100vh;
+  position: relative;
+}
