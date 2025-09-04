@@ -1,9 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section className="relative flex items-center justify-center text-center py-32 px-4 sm:py-40">
+      <Image
+        src="/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS-main-page.webp"
+        alt="Nowoczesne biuro obsługi KRS"
+        fill
+        className="object-cover"
+        priority
+      />
       <div className="absolute inset-0 bg-slate-900/60" />
       <div className="relative z-10">
         <div className="max-w-4xl mx-auto text-white">
