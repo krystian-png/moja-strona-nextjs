@@ -7,16 +7,9 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-.page-wrapper {
   min-height: 100vh;
-  background-image: url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #0f172a;
   background: url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp') center center / cover no-repeat fixed;
+  background-color: #0f172a;
 }
 
 .page-wrapper {
