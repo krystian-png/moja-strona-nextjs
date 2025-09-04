@@ -8,10 +8,9 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Use a page wrapper to apply global background styles
   return (
     <html lang="pl">
-      <body className="page-wrapper">
+      <body className="min-h-screen">
         {children}
       </body>
     </html>
