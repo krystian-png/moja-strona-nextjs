@@ -53,32 +53,20 @@ export default function HomePage() {
     },
   };
   return (
-    <div
-      className="relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden"
-      style={{
-        backgroundImage:
-          "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
-        backgroundSize: "cover",
-      }}
-    >
-      <div
-        className="absolute inset-0 bg-no-repeat ![background-size:cover] ![background-position:center_30%] ![background-repeat:no-repeat]"
-        style={{
-          backgroundImage:
-            "url('/images/usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp')",
-        }}
-      />
-      <Script
-        id="home-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
-      />
+    <div className="page-wrapper relative w-full aspect-[21/9] sm:aspect-[24/9] lg:aspect-[32/9] min-h-[60vh] overflow-hidden">
+      <div className="absolute inset-0 bg-slate-900/60 pointer-events-none" />
+      <div className="relative z-10">
+        <Script
+          id="home-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+        />
 
-      <Navbar />
+        <Navbar />
 
-      <main>
-        <Hero />
-        <Features />
+        <main>
+          <Hero />
+          <Features />
 
         {/* Sekcja: Profesjonalna obsługa wniosków o zmianę wpisu w KRS */}
         <section className="relative py-16 px-4 sm:px-6 lg:px-8">
@@ -386,6 +374,7 @@ Oferujemy kompleksową pomoc w zmianie wpisu w Krajowym Rejestrze Sądowym (KRS)
       </main>
 
       <Footer />
+      </div>
     </div>
-    );
-  }
+  );
+}
