@@ -3,14 +3,19 @@ import { withContentlayer } from "next-contentlayer"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: { unoptimized: true },
-  experimental: { mdxRs: true, optimizeCss: false },
+  experimental: { mdxRs: true },
   async redirects() {
     return [
       { source: "/kontakt", destination: "/contact", permanent: true },
       { source: "/dla-ksiegowych", destination: "/ksiegowi", permanent: true },
     ]
   },
+}
+
+nextConfig.images = { unoptimized: true }
+nextConfig.experimental = {
+  ...nextConfig.experimental,
+  optimizeCss: false,
 }
 
 export default withContentlayer(nextConfig)
