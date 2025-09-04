@@ -7,7 +7,9 @@ const config: Config = {
     "./content/**/*.mdx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: { xs: "475px" },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };
