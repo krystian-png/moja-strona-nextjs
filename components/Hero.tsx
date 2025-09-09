@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center text-center py-32 px-4 sm:py-40">
+    <section className="flex items-center justify-center text-center py-32 px-4 sm:py-40 bg-transparent">
       <div className="max-w-4xl mx-auto text-white">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
           Zmiana wpisu w <span className="text-amber-400">KRS</span> bez stresu i błędów – zrobimy to za Ciebie
