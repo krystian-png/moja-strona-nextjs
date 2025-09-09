@@ -16,7 +16,11 @@ export default function Navbar() {
   ];
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+    href === "/"
+      ? pathname === "/"
+      : href === "/blog"
+      ? pathname === "/blog" || pathname.startsWith("/blog/")
+      : pathname.startsWith(href);
 
   return (
     <header className="w-full">
