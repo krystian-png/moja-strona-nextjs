@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="relative">
-      <div className="fixed inset-0 bg-slate-900/60 -z-10" />
+      <div className="absolute inset-0 bg-slate-900/60 -z-10" />
       <Navbar />
       <main>
         <Hero />
