@@ -1,58 +1,165 @@
-"use client";
+'use client';
 
-import React from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Phone, Mail } from "lucide-react";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
-    { href: "/", label: "Strona główna" },
-    { href: "/uslugi", label: "Usługi" },
-    { href: "/cennik", label: "Cennik" },
-    { href: "/blog", label: "Blog" },
-    { href: "/kontakt", label: "Kontakt" },
-  ];
-
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const NavLinks = ({ mobile = false }) => (
+    <div className={mobile ? "flex flex-col space-y-4" : "flex items-center space-x-6"}>
+      <Link href="/">
+        <span
+          className={`${
+            pathname === '/'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Strona główna
+        </span>
+      </Link>
+      <Link href="/o-nas">
+        <span
+          className={`${
+            pathname === '/o-nas'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          O nas
+        </span>
+      </Link>
+      <Link href="/uslugi">
+        <span
+          className={`${
+            pathname === '/uslugi'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Usługi
+        </span>
+      </Link>
+      <Link href="/cennik">
+        <span
+          className={`${
+            pathname === '/cennik'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Cennik
+        </span>
+      </Link>
+      <Link href="/blog">
+        <span
+          className={`${
+            pathname === '/blog' || pathname.startsWith('/blog/')
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Blog
+        </span>
+      </Link>
+      <Link href="/ksiegowi">
+        <span
+          className={`${
+            pathname === '/ksiegowi'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Dla Księgowych
+        </span>
+      </Link>
+      <Link href="/kontakt">
+        <span
+          className={`${
+            pathname === '/kontakt'
+              ? 'bg-amber-800 text-white px-3 py-1 rounded'
+              : 'text-muted-foreground hover:text-amber-800'
+          } transition-colors font-medium cursor-pointer`}
+        >
+          Kontakt
+        </span>
+      </Link>
+    </div>
+  );
 
   return (
-    <header className="w-full">
-      <div className="bg-gray-900 text-gray-100 text-sm">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
-          <div className="flex gap-4">
-            <a href="tel:572234779" className="hover:text-amber-400">
-              {"572\u202f234\u202f779"}
+    <header className="bg-background shadow-sm border-b border-border sticky top-0 z-50">
+      <nav
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        role="navigation"
+        aria-label="Nawigacja główna"
+      >
+        <div className="flex justify-between items-center h-16">
+          {/* Contact info - left side desktop */}
+          <div className="hidden lg:flex items-center space-x-6 text-base font-bold text-amber-800">
+            <div className="flex items-center space-x-2">
+              <Phone className="h-5 w-5" />
+              <a
+                href="tel:+48572234779"
+                className="hover:text-amber-600 transition-colors"
+              >
+                572 234 779
+              </a>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Mail className="h-5 w-5" />
+              <a
+                href="mailto:biuro@zmianakrs.pl"
+                className="hover:text-amber-600 transition-colors"
+              >
+                biuro@zmianakrs.pl
+              </a>
+            </div>
+          </div>
+
+          {/* Contact info - mobile */}
+          <div className="flex md:hidden items-center space-x-4 text-amber-800">
+            <a
+              href="tel:+48572234779"
+              className="hover:text-amber-600 transition-colors"
+            >
+              <Phone className="h-5 w-5" />
             </a>
             <a
-              href="mailto:kontakt@zmianakrs.pl"
-              className="hover:text-amber-400"
+              href="mailto:biuro@zmianakrs.pl"
+              className="hover:text-amber-600 transition-colors"
             >
-              kontakt@zmianakrs.pl
+              <Mail className="h-5 w-5" />
             </a>
           </div>
-          <nav className="hidden sm:block">
-            <ul className="flex gap-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`inline-block px-3 py-2 hover:text-amber-400 ${
-                      isActive(item.href)
-                        ? "text-amber-400 font-semibold border-b-2 border-amber-400"
-                        : "text-gray-300"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4">
+            <NavLinks />
+          </div>
+
+          {/* Mobile Navigation */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[250px]">
+              <div className="mt-8">
+                <NavLinks mobile />
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
+
