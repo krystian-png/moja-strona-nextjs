@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -14,8 +15,7 @@ export default function Hero() {
         <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-300 leading-relaxed text-justify">
           Nie ma znaczenia, gdzie mieszkasz — działamy zdalnie, profesjonalnie i kompleksowo. Od przygotowania dokumentów po złożenie kompletnego wniosku elektronicznego i uzyskanie prawomocnego wpisu.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/uslugi"
             className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150"
