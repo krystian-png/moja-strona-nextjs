@@ -25,14 +25,13 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="page-wrapper">
-      <div className="fixed inset-0 bg-slate-900/60 -z-10"></div>
+    <>
       <Navbar />
       <main>
         <Hero />
         <Features />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
