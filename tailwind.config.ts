@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        muted: 'hsl(var(--muted-foreground))',
+        muted: 'hsl(var(--muted))',
         border: 'hsl(var(--border))',
       },
     },
