@@ -24,9 +24,8 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <div className="bg-gray-800 text-gray-100 text-sm">
-        <div className="w-4/5 mx-auto flex justify-between items-center px-4 py-4">
-          <div className="flex gap-4">
+<div className="bg-gray-700 text-gray-100 text-sm">
+  <div className="w-4/5 max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
             <a
               href="tel:572234779"
               className="text-gray-100 transition-colors hover:text-amber-400"
@@ -46,7 +45,7 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`inline-block px-3 py-2 text-gray-100 transition-colors ${
+                    className={`inline-block px-3 py-4 text-gray-100 transition-colors ${
                       isActive(item.href)
                         ? "text-gray-900 font-semibold bg-amber-400 rounded"
                         : "hover:bg-amber-400 hover:text-gray-900 rounded"
