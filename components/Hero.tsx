@@ -20,19 +20,19 @@ export default function Hero() {
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/uslugi"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150"
+            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
           >
             Co robimy?
           </Link>
           <Link
             href="/o-nas"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150"
+            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
           >
             Jak działamy?
           </Link>
           <Link
             href="/cennik"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150"
+            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
           >
             Ile to kosztuje?
           </Link>
