@@ -24,15 +24,18 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <div className="bg-gray-900 text-gray-100 text-sm">
+      <div className="bg-gray-800 text-gray-100 text-sm">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
           <div className="flex gap-4">
-            <a href="tel:572234779" className="hover:text-amber-400">
+            <a
+              href="tel:572234779"
+              className="text-gray-100 transition-colors hover:text-amber-400"
+            >
               {"572\u202f234\u202f779"}
             </a>
             <a
               href="mailto:kontakt@zmianakrs.pl"
-              className="hover:text-amber-400"
+              className="text-gray-100 transition-colors hover:text-amber-400"
             >
               kontakt@zmianakrs.pl
             </a>
@@ -43,10 +46,10 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`inline-block px-3 py-2 hover:text-amber-400 ${
+                    className={`inline-block px-3 py-2 text-gray-100 transition-colors ${
                       isActive(item.href)
                         ? "text-gray-900 font-semibold bg-amber-400 rounded"
-                        : "text-gray-300"
+                        : "hover:bg-amber-400 hover:text-gray-900 rounded"
                     }`}
                   >
                     {item.label}
