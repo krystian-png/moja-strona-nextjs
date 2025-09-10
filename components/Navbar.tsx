@@ -46,7 +46,7 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`inline-block px-3 py-2 text-gray-100 transition-colors ${
+                    className={`inline-block px-3 py-4 text-gray-100 transition-colors ${
                       isActive(item.href)
                         ? "text-gray-900 font-semibold bg-amber-400 rounded"
                         : "hover:bg-amber-400 hover:text-gray-900 rounded"
