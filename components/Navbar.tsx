@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <div className="bg-gray-800 text-gray-100 text-sm">
+      <div className="bg-gray-700 text-gray-100 text-sm">
         <div className="w-4/5 max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
           <div className="flex gap-4">
             <a
