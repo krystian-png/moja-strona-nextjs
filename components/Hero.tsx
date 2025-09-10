@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center text-center py-32 px-4 sm:py-40 bg-transparent">
-      <div className="max-w-4xl mx-auto text-white">
+    <section className="flex flex-col items-center justify-center text-center py-32 px-4 sm:py-40 bg-transparent">
+      <div className="w-4/5 mx-auto text-white">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
           Zmiana wpisu w <span className="text-amber-400">KRS</span>{' '}
           <br className="hidden md:block" />
@@ -17,26 +17,26 @@ export default function Hero() {
         <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-300 leading-relaxed text-justify">
           Nie ma znaczenia, gdzie mieszkasz — działamy zdalnie, profesjonalnie i kompleksowo. Od przygotowania dokumentów po złożenie kompletnego wniosku elektronicznego i uzyskanie prawomocnego wpisu.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/uslugi"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
-          >
-            Co robimy?
-          </Link>
-          <Link
-            href="/o-nas"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
-          >
-            Jak działamy?
-          </Link>
-          <Link
-            href="/cennik"
-            className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
-          >
-            Ile to kosztuje?
-          </Link>
-        </div>
+      </div>
+      <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <Link
+          href="/uslugi"
+          className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
+        >
+          Co robimy?
+        </Link>
+        <Link
+          href="/o-nas"
+          className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
+        >
+          Jak działamy?
+        </Link>
+        <Link
+          href="/cennik"
+          className="w-full sm:w-auto bg-amber-800 hover:bg-amber-900 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-colors duration-150 text-center"
+        >
+          Ile to kosztuje?
+        </Link>
       </div>
     </section>
   )
