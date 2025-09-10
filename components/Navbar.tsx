@@ -45,7 +45,7 @@ export default function Navbar() {
                     href={item.href}
                     className={`inline-block px-3 py-2 hover:text-amber-400 ${
                       isActive(item.href)
-                        ? "text-amber-400 font-semibold border-b-2 border-amber-400"
+                        ? "text-gray-900 font-semibold bg-amber-400 rounded"
                         : "text-gray-300"
                     }`}
                   >
