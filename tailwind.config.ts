@@ -9,6 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       screens: { xs: "475px" },
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        muted: 'hsl(var(--muted-foreground))',
+        border: 'hsl(var(--border))',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
