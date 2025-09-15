@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
+        <Trust />
       </main>
       <Footer />
     </div>
