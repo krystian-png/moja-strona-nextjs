@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const features = [
+const benefits = [
   {
     src: '/icons/dostepnosc.svg',
     alt: 'Ikona dostępności',
@@ -38,7 +38,7 @@ export default function Features() {
           przedsiębiorców.
         </p>
         <div className="grid md:grid-cols-3 gap-8">
-          {features.map(({ src, alt, title, description, href }) => (
+          {benefits.map(({ src, alt, title, description, href }) => (
             <div key={title} className="text-center">
               <Image
                 src={src}

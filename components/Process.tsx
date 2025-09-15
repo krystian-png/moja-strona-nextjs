@@ -1,6 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 
+const steps = [
+  'Analiza potrzeb i dokumentów',
+  'Przygotowanie odpowiednich formularzy',
+  'Weryfikacja i wysyłka do sądu',
+  'Monitorowanie postępu sprawy',
+]
+
 export default function Process() {
   return (
     <section className="bg-gray-50 py-20">
@@ -21,10 +28,9 @@ export default function Process() {
             Tobą.
           </p>
           <ul className="space-y-2 text-sm text-gray-600 list-disc pl-5">
-            <li>Analiza potrzeb i dokumentów</li>
-            <li>Przygotowanie odpowiednich formularzy</li>
-            <li>Weryfikacja i wysyłka do sądu</li>
-            <li>Monitorowanie postępu sprawy</li>
+            {steps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
           </ul>
         </div>
       </div>
