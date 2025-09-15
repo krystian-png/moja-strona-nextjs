@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
+import professionalWaitingRoomImage from "@/public/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp";
 
 export const metadata: Metadata = {
   title:
@@ -27,7 +28,14 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 bg-slate-900/60 -z-10" />
+      <div
+        className="fixed inset-0 -z-10 bg-slate-900/75"
+        style={{
+          backgroundImage: `url(${professionalWaitingRoomImage.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <Navbar />
       <main>
         <Hero />
