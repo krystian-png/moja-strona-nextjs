@@ -8,21 +8,21 @@ const features = [
     alt: 'Ikona dostępności',
     title: 'Dostępność',
     description: 'Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.',
-    href: '#',
+    href: '/contact',
   },
   {
     src: '/icons/profesjonalizm.svg',
     alt: 'Ikona profesjonalizmu',
     title: 'Profesjonalizm',
     description: 'Zapewniamy rzetelną obsługę opartą na doświadczeniu.',
-    href: '#',
+    href: '/o-nas',
   },
   {
     src: '/icons/prosty-cennik.svg',
     alt: 'Ikona prostego cennika',
     title: 'Prosty cennik',
     description: 'Przejrzyste stawki bez ukrytych kosztów.',
-    href: '#',
+    href: '/cennik',
   },
 ]
 
