@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://moja-strona-nextjs.vercel.app";
 
-  if (!BASE_URL) {
-    throw new Error("NEXT_PUBLIC_SITE_URL env variable is not set");
-  }
+  const BASE_URL = base.replace(/\/$/, "");
 
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: `${BASE_URL.replace(/\/$/, "")}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }
