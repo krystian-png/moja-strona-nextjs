@@ -1,3 +1,6 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function Page() {
   return (
     <div className="about-background relative min-h-screen">
@@ -5,6 +8,7 @@ export default function Page() {
       <main className="p-8">
         <h1 className="text-2xl font-semibold">O nas (placeholder)</h1>
       </main>
+      <Footer />
     </div>
   );
 }
