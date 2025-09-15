@@ -1,3 +1,6 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function Page() {
   return (
     <div
@@ -8,9 +11,11 @@ export default function Page() {
         backgroundSize: "auto 100%",
       }}
     >
+      <Navbar />
       <main className="p-8">
         <h1 className="text-2xl font-semibold">O nas (placeholder)</h1>
       </main>
+      <Footer />
     </div>
   );
 }
