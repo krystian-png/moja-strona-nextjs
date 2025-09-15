@@ -5,13 +5,10 @@ import fs from "fs";
 import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://moja-strona-nextjs.vercel.app";
 
-  if (!BASE_URL) {
-    throw new Error("NEXT_PUBLIC_SITE_URL env variable is not set");
-  }
-
-  const baseUrl = BASE_URL.replace(/\/$/, "");
+  const baseUrl = base.replace(/\/$/, "");
 
   const routeFileMap: Record<string, string> = {
     "": "app/(site)/page.tsx",
@@ -57,5 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.date),
   }));
 
+  return [...routes, ...posts];
+}
   return [...routes, ...posts];
 }
