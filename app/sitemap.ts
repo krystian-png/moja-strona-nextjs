@@ -35,15 +35,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       if (gitDate) {
         return new Date(gitDate);
       }
-    } catch (error) {
-      // ignore
+    } catch {
+      // ignorujemy błąd
     }
 
     try {
       const stats = fs.statSync(filePath);
       return stats.mtime;
-    } catch (error) {
-      // ignore
+    } catch {
+      // ignorujemy błąd
     }
 
     return new Date("2024-01-01");
@@ -54,7 +54,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.date),
   }));
 
-  return [...routes, ...posts];
-}
   return [...routes, ...posts];
 }
