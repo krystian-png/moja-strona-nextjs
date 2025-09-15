@@ -33,7 +33,7 @@ export default function Features() {
         <h2 className="text-2xl font-semibold text-center mb-4">
           Dlaczego warto z nami współpracować?
         </h2>
-        <p className="text-sm text-gray-600 text-center mb-12">
+        <p className="text-sm text-gray-600 text-justify mb-12">
           Ponad 10 lat doświadczenia w obsłudze firm. Zaufały nam już setki
           przedsiębiorców.
         </p>
@@ -48,7 +48,9 @@ export default function Features() {
                 className="mx-auto mb-4"
               />
               <h3 className="font-semibold mb-2">{title}</h3>
-              <p className="text-sm text-gray-600">{description}</p>
+              <p className="text-sm text-gray-600 text-justify">
+                {description}
+              </p>
               <Link
                 href={href}
                 className="mt-2 text-sm text-blue-600 hover:underline"
