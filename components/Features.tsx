@@ -2,6 +2,30 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const features = [
+  {
+    src: '/icons/dostepnosc.svg',
+    alt: 'Ikona dostępności',
+    title: 'Dostępność',
+    description: 'Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.',
+    href: '#',
+  },
+  {
+    src: '/icons/profesjonalizm.svg',
+    alt: 'Ikona profesjonalizmu',
+    title: 'Profesjonalizm',
+    description: 'Zapewniamy rzetelną obsługę opartą na doświadczeniu.',
+    href: '#',
+  },
+  {
+    src: '/icons/prosty-cennik.svg',
+    alt: 'Ikona prostego cennika',
+    title: 'Prosty cennik',
+    description: 'Przejrzyste stawki bez ukrytych kosztów.',
+    href: '#',
+  },
+]
+
 export default function Features() {
   return (
     <section className="py-20">
@@ -14,63 +38,25 @@ export default function Features() {
           przedsiębiorców.
         </p>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <Image
-              src="/icons/dostepnosc.svg"
-              alt="Ikona dostępności"
-              width={64}
-              height={64}
-              className="mx-auto mb-4"
-            />
-            <h3 className="font-semibold mb-2">Dostępność</h3>
-            <p className="text-sm text-gray-600">
-              Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.
-            </p>
-            <Link
-              href="#"
-              className="mt-2 text-sm text-blue-600 hover:underline"
-            >
-              Dowiedz się więcej
-            </Link>
-          </div>
-          <div className="text-center">
-            <Image
-              src="/icons/profesjonalizm.svg"
-              alt="Ikona profesjonalizmu"
-              width={64}
-              height={64}
-              className="mx-auto mb-4"
-            />
-            <h3 className="font-semibold mb-2">Profesjonalizm</h3>
-            <p className="text-sm text-gray-600">
-              Zapewniamy rzetelną obsługę opartą na doświadczeniu.
-            </p>
-            <Link
-              href="#"
-              className="mt-2 text-sm text-blue-600 hover:underline"
-            >
-              Dowiedz się więcej
-            </Link>
-          </div>
-          <div className="text-center">
-            <Image
-              src="/icons/prosty-cennik.svg"
-              alt="Ikona prostego cennika"
-              width={64}
-              height={64}
-              className="mx-auto mb-4"
-            />
-            <h3 className="font-semibold mb-2">Prosty cennik</h3>
-            <p className="text-sm text-gray-600">
-              Przejrzyste stawki bez ukrytych kosztów.
-            </p>
-            <Link
-              href="#"
-              className="mt-2 text-sm text-blue-600 hover:underline"
-            >
-              Dowiedz się więcej
-            </Link>
-          </div>
+          {features.map(({ src, alt, title, description, href }) => (
+            <div key={title} className="text-center">
+              <Image
+                src={src}
+                alt={alt}
+                width={64}
+                height={64}
+                className="mx-auto mb-4"
+              />
+              <h3 className="font-semibold mb-2">{title}</h3>
+              <p className="text-sm text-gray-600">{description}</p>
+              <Link
+                href={href}
+                className="mt-2 text-sm text-blue-600 hover:underline"
+              >
+                Dowiedz się więcej
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>
