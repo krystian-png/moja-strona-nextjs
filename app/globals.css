@@ -24,3 +24,7 @@ body {
   min-height: 100vh;
   background: url('/images/nowoczesne-biuro-profesjonalne-usługi-KRS-obsługa-wniosków-o-zmianę-wpisu-w-KRS.webp') center/cover no-repeat fixed;
 }
+
+.about-background {
+  background: url('/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp') center/cover no-repeat fixed;
+}
