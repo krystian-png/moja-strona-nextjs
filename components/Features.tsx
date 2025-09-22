@@ -8,7 +8,7 @@ const benefits = [
     alt: 'Ikona dostępności',
     title: 'Dostępność',
     description: 'Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.',
-    href: '/contact',
+    href: '/uslugi',
   },
   {
     src: '/icons/profesjonalizm.svg',
