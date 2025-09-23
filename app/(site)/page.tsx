@@ -4,6 +4,11 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Trust from "@/components/Trust";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Pricing from "@/components/Pricing";
+import Accountants from "@/components/Accountants";
+import ContactSection from "@/components/ContactSection";
 import professionalWaitingRoomImage from "@/public/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp";
 
 export const metadata: Metadata = {
@@ -40,7 +45,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
+        <About />
+        <Services />
+        <Pricing />
         <Trust />
+        <Accountants />
+        <ContactSection />
       </main>
       <Footer />
     </div>

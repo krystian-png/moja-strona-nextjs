@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Pricing from "@/components/Pricing";
+import ContactSection from "@/components/ContactSection";
 
 export default function Page() {
   return (
-    <div>
+    <div className="bg-slate-900/80">
       <Navbar />
-      <main className="p-8">
-        <h1 className="text-2xl font-semibold">Cennik (placeholder)</h1>
+      <main>
+        <Pricing />
+        <ContactSection />
       </main>
       <Footer />
     </div>

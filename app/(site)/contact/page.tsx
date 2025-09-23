@@ -1,7 +1,15 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
+
 export default function Page() {
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-semibold">Kontakt (placeholder)</h1>
-    </main>
+    <div className="bg-slate-900/80">
+      <Navbar />
+      <main>
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
   );
 }

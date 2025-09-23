@@ -1,38 +1,19 @@
-"use client";
-
-import { useQuery } from "@tanstack/react-query";
-
-interface Service {
-  id: number;
-  name: string;
-  description: string;
-}
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Services from "@/components/Services";
+import Process from "@/components/Process";
+import ContactSection from "@/components/ContactSection";
 
 export default function Page() {
-  const { data: services, isLoading } = useQuery<Service[]>({
-    queryKey: ["/api/services"],
-    queryFn: () => fetch("/api/services").then((res) => res.json()),
-  });
-
-  if (isLoading) {
-    return (
-      <main className="p-8">
-        <h1 className="text-2xl font-semibold">Ładowanie...</h1>
-      </main>
-    );
-  }
-
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-semibold mb-4">Usługi</h1>
-      <ul className="space-y-4">
-        {services?.map((service) => (
-          <li key={service.id}>
-            <h2 className="text-xl font-medium">{service.name}</h2>
-            <p className="text-sm text-gray-600">{service.description}</p>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <div className="bg-slate-900/80">
+      <Navbar />
+      <main>
+        <Services />
+        <Process />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
   );
 }
