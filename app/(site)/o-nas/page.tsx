@@ -4,7 +4,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
-import aboutBackground from "@/public/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp"
+import aboutBackground from "@/public/images/Solidne-fundamenty-prawne-eksperci-KRS-z-wieloletnim-doświadczeniem-w-obsłudze-wniosków-o-zmianę-wpi.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pageUrl = `${siteUrl}/o-nas`
