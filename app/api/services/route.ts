@@ -9,13 +9,27 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    name: "Rejestracja spółki",
-    description: "Pomoc w rejestracji spółki w KRS.",
+    name: "Zmiana danych zarządu",
+    description:
+      "Przygotowanie uchwał, aktualizacja danych w KRS oraz koordynacja podpisów elektronicznych dla nowych członków zarządu.",
   },
   {
     id: 2,
-    name: "Zmiany w KRS",
-    description: "Obsługa wniosków o zmianę w KRS.",
+    name: "Aktualizacja umowy spółki",
+    description:
+      "Kompleksowa obsługa zmian w umowie spółki, w tym rozszerzenie PKD, zmiana siedziby oraz dostosowanie zapisów do aktualnych przepisów.",
+  },
+  {
+    id: 3,
+    name: "Przekształcenia i reorganizacje",
+    description:
+      "Wsparcie przy przekształceniach formy prawnej, aportach i zmianach struktury kapitałowej wraz z dokumentacją dla sądu rejestrowego.",
+  },
+  {
+    id: 4,
+    name: "Rejestracja prokury i pełnomocnictw",
+    description:
+      "Opracowanie pełnomocnictw, zgłoszenie prokury w KRS oraz zapewnienie kompletnej dokumentacji dla banków i kontrahentów.",
   },
 ];
 
