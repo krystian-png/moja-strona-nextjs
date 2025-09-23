@@ -50,9 +50,9 @@ export default function Footer() {
                 <p className="font-medium text-white">Telefon</p>
                 <a
                   className="mt-1 block text-slate-300 transition hover:text-white"
-                  href="tel:+48500100200"
+                  href="tel:+48572234779"
                 >
-                  +48 500 100 200
+                  +48 572 234 779
                 </a>
               </div>
               <div>
