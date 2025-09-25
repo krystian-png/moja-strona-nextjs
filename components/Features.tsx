@@ -60,7 +60,7 @@ export default function Features() {
                 href={href}
                 className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-amber-700"
               >
-                Dowiedz się więcej
+                Poznaj szczegóły
               </Link>
             </div>
           ))}
