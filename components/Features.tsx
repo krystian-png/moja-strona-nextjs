@@ -41,7 +41,7 @@ export default function Features() {
           {features.map(({ icon, title, description, href }) => (
             <div
               key={title}
-              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-5 text-left backdrop-blur-sm transition-colors duration-150 hover:bg-white/15 sm:p-6"
+              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors duration-150 hover:bg-white/15 sm:p-8"
             >
               <div>
                 {icon ? (
@@ -60,7 +60,7 @@ export default function Features() {
                 href={href}
                 className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-amber-700"
               >
-                Dowiedz się więcej
+                Poznaj szczegóły
               </Link>
             </div>
           ))}
