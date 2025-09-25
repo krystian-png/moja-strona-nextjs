@@ -37,15 +37,15 @@ export default function Features() {
             przedsiębiorców.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {features.map(({ icon, title, description, href }) => (
             <div
               key={title}
-              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-8 text-left backdrop-blur"
+              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors duration-150 hover:bg-white/15 sm:p-8"
             >
               <div>
                 {icon ? (
-                  <span className="text-4xl" aria-hidden="true">
+                  <span className="inline-flex h-12 w-12 items-center justify-center text-3xl" aria-hidden="true">
                     {icon}
                   </span>
                 ) : null}
@@ -58,7 +58,7 @@ export default function Features() {
               </div>
               <Link
                 href={href}
-                className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-white/20 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/30"
+                className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-amber-700"
               >
                 Poznaj szczegóły
               </Link>
