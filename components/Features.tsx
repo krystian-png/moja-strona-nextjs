@@ -1,61 +1,66 @@
-import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
-const benefits = [
+const features = [
   {
-    src: '/icons/dostepnosc.svg',
-    alt: 'Ikona dostępności',
+    icon: '🕒',
     title: 'Dostępność',
-    description: 'Jesteśmy do Twojej dyspozycji, gdy tylko nas potrzebujesz.',
+    description:
+      'Jesteśmy tuż obok, gdy tylko Twoja firma potrzebuje wsparcia – zarówno w sprawach pilnych, jak i przy codziennych formalnościach.',
     href: '/uslugi',
   },
   {
-    src: '/icons/profesjonalizm.svg',
-    alt: 'Ikona profesjonalizmu',
+    icon: '🤝',
     title: 'Profesjonalizm',
-    description: 'Zapewniamy rzetelną obsługę opartą na doświadczeniu.',
+    description:
+      'Każde zlecenie prowadzą eksperci z wieloletnim doświadczeniem, dbając o terminowość i najwyższą jakość obsługi.',
     href: '/o-nas',
   },
   {
-    src: '/icons/prosty-cennik.svg',
-    alt: 'Ikona prostego cennika',
+    icon: '📄',
     title: 'Prosty cennik',
-    description: 'Przejrzyste stawki bez ukrytych kosztów.',
+    description:
+      'Przejrzyste warunki współpracy i brak ukrytych kosztów – od początku wiesz, za co płacisz.',
     href: '/cennik',
   },
 ]
 
 export default function Features() {
   return (
-    <section className="py-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold text-center mb-4">
-          Dlaczego warto z nami współpracować?
-        </h2>
-        <p className="text-sm text-gray-600 text-justify mb-12">
-          Ponad 10 lat doświadczenia w obsłudze firm. Zaufały nam już setki
-          przedsiębiorców.
-        </p>
-        <div className="grid md:grid-cols-3 gap-8">
-          {benefits.map(({ src, alt, title, description, href }) => (
-            <div key={title} className="text-center">
-              <Image
-                src={src}
-                alt={alt}
-                width={64}
-                height={64}
-                className="mx-auto mb-4"
-              />
-              <h3 className="font-semibold mb-2">{title}</h3>
-              <p className="text-sm text-gray-600 text-justify">
-                {description}
-              </p>
+    <section className="py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+            Dlaczego Wybierają Nas Klienci
+          </h2>
+          <p className="mt-4 text-lg text-gray-200">
+            Ponad 10 lat doświadczenia w obsłudze firm. Zaufały nam już setki
+            przedsiębiorców.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {features.map(({ icon, title, description, href }) => (
+            <div
+              key={title}
+              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-8 text-left backdrop-blur"
+            >
+              <div>
+                {icon ? (
+                  <span className="text-4xl" aria-hidden="true">
+                    {icon}
+                  </span>
+                ) : null}
+                <h3 className="mt-6 text-2xl font-semibold text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-200">
+                  {description}
+                </p>
+              </div>
               <Link
                 href={href}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="mt-8 inline-flex w-full items-center justify-center rounded-lg bg-white/20 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/30"
               >
-                Dowiedz się więcej
+                Poznaj szczegóły
               </Link>
             </div>
           ))}
