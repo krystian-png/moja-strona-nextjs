@@ -1,6 +1,4 @@
-import type { Metadata } from "next"
 import Script from "next/script"
-
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
