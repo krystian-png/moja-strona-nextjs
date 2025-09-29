@@ -1,6 +1,13 @@
 import Link from 'next/link'
 
-const features = [
+type Feature = {
+  icon: string
+  title: string
+  description: string
+  href: string
+}
+
+const features: Feature[] = [
   {
     icon: '🕒',
     title: 'Dostępność',
