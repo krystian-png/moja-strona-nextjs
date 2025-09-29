@@ -5,21 +5,21 @@ const features = [
     icon: '🕒',
     title: 'Dostępność',
     description:
-      'Jesteśmy tuż obok, gdy tylko Twoja firma potrzebuje wsparcia – zarówno w sprawach pilnych, jak i przy codziennych formalnościach.',
+      'Obsługujemy klientów z całej Polski, działamy zdalnie.',
     href: '/uslugi',
   },
   {
     icon: '🤝',
     title: 'Profesjonalizm',
     description:
-      'Każde zlecenie prowadzą eksperci z wieloletnim doświadczeniem, dbając o terminowość i najwyższą jakość obsługi.',
+      'Nasz zespół to osoby z wieloletnim doświadczeniem które z sukcesem przerejestrowały setki podmiotów w KRS.',
     href: '/o-nas',
   },
   {
     icon: '📄',
     title: 'Prosty cennik',
     description:
-      'Przejrzyste warunki współpracy i brak ukrytych kosztów – od początku wiesz, za co płacisz.',
+      'Stosujemy jasny system wynagradzania, wiesz ile i za co zapłacisz przed zleceniem usługi.',
     href: '/cennik',
   },
 ]
