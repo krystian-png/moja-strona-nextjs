@@ -48,7 +48,7 @@ export default function Features() {
           {features.map(({ icon, title, description, href }) => (
             <div
               key={title}
-              className="flex h-full flex-col justify-between rounded-2xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm transition-colors duration-150 hover:bg-white/15 sm:p-8"
+              className="flex h-full flex-col items-center justify-between rounded-2xl border border-white/20 bg-white/10 p-6 text-center backdrop-blur-sm transition-colors duration-150 hover:bg-white/15 sm:p-8"
             >
               <div>
                 {icon ? (
@@ -56,10 +56,10 @@ export default function Features() {
                     {icon}
                   </span>
                 ) : null}
-                <h3 className="mt-6 text-2xl font-semibold text-white">
+                <h3 className="mt-6 text-center text-2xl font-semibold text-white">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-gray-200">
+                <p className="mt-3 text-center text-sm leading-relaxed text-gray-200">
                   {description}
                 </p>
               </div>
