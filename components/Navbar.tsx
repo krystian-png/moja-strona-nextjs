@@ -8,6 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  // Zamykaj mobilne menu przy zmianie ścieżki
   React.useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
@@ -22,16 +23,16 @@ export default function Navbar() {
     { href: "/kontakt", label: "Kontakt" },
   ];
 
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : href === "/blog"
-      ? pathname === "/blog" || pathname.startsWith("/blog/")
-      : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/");
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="w-full bg-[#4a2816] text-amber-50 shadow-md">
       <div className="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 text-sm">
+        {/* Kontakt */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <a
             href="tel:572234779"
@@ -46,6 +47,8 @@ export default function Navbar() {
             kontakt@zmianakrs.pl
           </a>
         </div>
+
+        {/* Przycisk mobilny */}
         <button
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-full border border-amber-200 text-amber-50 transition-colors hover:border-amber-300 hover:text-amber-200 md:hidden"
@@ -80,6 +83,8 @@ export default function Navbar() {
             )}
           </svg>
         </button>
+
+        {/* Menu desktop */}
         <nav className="hidden md:block">
           <ul className="flex items-center gap-1 lg:gap-2">
             {navItems.map((item) => {
@@ -103,8 +108,13 @@ export default function Navbar() {
           </ul>
         </nav>
       </div>
+
+      {/* Menu mobilne */}
       {isMenuOpen ? (
-        <div className="border-t border-amber-300/40 bg-[#3b1e10] md:hidden" id="mobile-navigation">
+        <div
+          className="border-t border-amber-300/40 bg-[#3b1e10] md:hidden"
+          id="mobile-navigation"
+        >
           <nav className="mx-auto w-11/12 max-w-7xl px-4 py-4">
             <ul className="flex flex-col gap-2 text-sm">
               {navItems.map((item) => {
