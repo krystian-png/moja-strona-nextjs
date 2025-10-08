@@ -64,7 +64,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
   return (
     <div className="relative">
       <div
-        className="fixed inset-0 -z-10 bg-slate-900/60"
+        className="fixed inset-0 -z-10 bg-slate-950/75"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
