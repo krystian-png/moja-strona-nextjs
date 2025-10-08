@@ -6,6 +6,7 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
+import ServicesList from "./ServicesList"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import type { LucideIcon } from "lucide-react"
 import {
