@@ -90,13 +90,15 @@ export default function AboutPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-20"
         style={{
           backgroundImage: `url(${aboutBackground.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
 
       <Navbar />
 

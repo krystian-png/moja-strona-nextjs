@@ -33,18 +33,18 @@ const features: Feature[] = [
 
 export default function Features() {
   return (
-    <section className="py-24">
+    <section className="py-16">
       <div className="mx-auto w-full px-6 sm:px-8">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">
             Dlaczego Wybierają Nas Klienci
           </h2>
-          <p className="mt-4 text-lg text-gray-200">
+          <p className="mt-3 text-lg text-gray-200">
             Ponad 10 lat doświadczenia w obsłudze firm. Zaufały nam już setki
             przedsiębiorców.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {features.map(({ icon, title, description, href }) => (
             <div
               key={title}
