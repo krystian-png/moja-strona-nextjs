@@ -4,7 +4,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
-import professionalWaitingRoomImage from "@/public/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp"
+import professionalWaitingRoomImage from "@/public/images/profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania-podczas-ustalania-cen.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pricingTiers = [
@@ -137,7 +137,7 @@ export default function PricingPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-10 bg-slate-900/75"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
