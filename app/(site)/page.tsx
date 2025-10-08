@@ -18,11 +18,7 @@ export const metadata: Metadata = {
     description:
       "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
     url: "https://zmianakrs.pl/",
-    images: [
-      {
-        url: "https://zmianakrs.pl/images/krs-services.png",
-      },
-    ],
+    images: [{ url: "https://zmianakrs.pl/images/krs-services.png" }],
   },
 };
 
@@ -41,48 +37,4 @@ zmianę zarządu w KRS
 
 zmianę danych rejestracyjnych w KRS
 
-zgłoszenie zmian do KRS drogą elektroniczną lub tradycyjną
-
-elektroniczne zgłoszenie zmian do KRS przez system S24
-
-wpis zmian do KRS w rejestrze sądowym
-
-przygotowanie uchwał i dokumentów do KRS
-
-pełną obsługę wniosków KRS dla spółek i biur rachunkowych
-
-Obsługa zmian w KRS przez system S24
-
-Oferujemy również pełną obsługę elektronicznego zgłoszenia zmian do KRS poprzez system S24. Przygotowujemy dokumenty i pomagamy w składaniu wniosków online, co znacząco skraca czas rejestracji zmian i obniża koszty opłat sądowych. Elektroniczne wnioski KRS to wygodne i nowoczesne rozwiązanie dla przedsiębiorców, którzy cenią szybkość i efektywność.
-
-Współpraca z biurami rachunkowymi
-
-Zapraszamy do współpracy biura rachunkowe. Oferujemy partnerstwo w zakresie obsługi zmian KRS dla biur rachunkowych, zapewniając kompleksowe wsparcie ich klientów w procesie aktualizacji danych spółki w KRS. Proponujemy atrakcyjne warunki B2B, indywidualną wycenę i gwarancję profesjonalnej obsługi wniosków KRS.
-
-Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla spółek i biur rachunkowych. Z nami zmiana danych w KRS, zgłoszenie zmian sądowi rejestrowemu i przygotowanie dokumentów rejestrowych spółki stają się proste, szybkie i bezpieczne.`;
-
-  return (
-    <div className="relative">
-      <div
-        className="fixed inset-0 -z-10 bg-slate-950/75"
-        style={{
-          backgroundImage: `url(${professionalWaitingRoomImage.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Trust />
-        <SEOExpandableSection
-          title="Więcej o naszych usługach KRS"
-          content={seoSectionContent}
-          pageId="home"
-        />
-      </main>
-      <Footer />
-    </div>
-  );
-}
+zgłoszenie zmian do KRS drog
