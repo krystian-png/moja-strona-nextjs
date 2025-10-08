@@ -137,7 +137,7 @@ export default function PricingPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-900/75"
+        className="fixed inset-0 -z-10 bg-slate-950/80"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
