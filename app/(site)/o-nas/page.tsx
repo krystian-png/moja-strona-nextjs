@@ -8,6 +8,7 @@ import aboutBackground from "@/public/images/Solidne-fundamenty-prawne-eksperci-
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import { Card } from "@/components/ui/card"
 import { Award, DollarSign, Globe } from "lucide-react"
+import SEOExpandableSection from "@/components/SEOExpandableSection"
 
 const pageUrl = `${siteUrl}/o-nas`
 
@@ -52,6 +53,42 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const seoSectionContent = `Kim jesteśmy – profesjonalna obsługa zmian w KRS dla spółek i biur rachunkowych
+
+Jesteśmy zespołem specjalistów z wieloletnim doświadczeniem w obsłudze zmian w Krajowym Rejestrze Sądowym (KRS). Pomagamy spółkom prawa handlowego, fundacjom i stowarzyszeniom w szybkim, bezpiecznym i zgodnym z przepisami wprowadzaniu zmian do rejestru sądowego. Naszym celem jest uproszczenie całego procesu – od przygotowania wniosku o zmianę w KRS, przez sporządzenie uchwał i dokumentów, aż po skuteczne złożenie wniosku i uzyskanie wpisu zmian do KRS.
+
+Specjalizujemy się w kompleksowej obsłudze wniosków KRS, w tym w elektronicznym zgłoszeniu zmian do KRS przez system S24. Doradzamy, jak zmienić dane w KRS, pomagamy przy zmianie zarządu w KRS, zmianie adresu siedziby spółki, PKD, kapitału zakładowego czy składu wspólników. Nasze usługi KRS dla spółek obejmują pełne wsparcie prawno-formalne i indywidualne podejście do każdej sprawy.
+
+Nasze wartości:
+
+Profesjonalizm i rzetelność
+
+Terminowość i dbałość o każdy szczegół
+
+Przejrzyste zasady współpracy
+
+Pełna zgodność z obowiązującymi przepisami prawa
+
+Indywidualne podejście do każdego klienta
+
+Współpraca z biurami rachunkowymi
+
+Wspieramy biura rachunkowe, które obsługują spółki wymagające zmian danych rejestrowych w KRS. Proponujemy partnerskie podejście, indywidualną wycenę i kompleksową obsługę wniosków KRS dla klientów biura rachunkowego. Współpraca z nami to pewność terminowego i prawidłowego zgłoszenia zmian do KRS.
+
+Dlaczego warto nam zaufać?
+
+Wieloletnie doświadczenie w obsłudze zmian w KRS
+
+Specjalizacja w elektronicznym zgłaszaniu zmian do KRS przez system S24
+
+Pełna obsługa dokumentów rejestrowych spółki
+
+Atrakcyjne warunki współpracy dla biur rachunkowych
+
+Dedykowane doradztwo na każdym etapie procesu
+
+Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla spółek i biur rachunkowych. Zapewniamy profesjonalne, bezpieczne i wygodne rozwiązania dopasowane do Twoich potrzeb.`
+
   return (
     <div className="relative min-h-screen text-white">
       <Script id="onas-structured-data" type="application/ld+json">
@@ -193,6 +230,12 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <SEOExpandableSection
+          title="Więcej o naszych usługach KRS"
+          content={seoSectionContent}
+          pageId="about"
+        />
       </main>
 
       <Footer />
