@@ -136,14 +136,18 @@ export default function PricingPage() {
         {JSON.stringify(structuredData)}
       </Script>
 
+      {/* WARSTWA 1: obraz tła */}
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-20"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      {/* WARSTWA 2: tint (ciemne przyciemnienie ponad obrazem) */}
+      <div className="fixed inset-0 -z-10 bg-slate-950/90" aria-hidden />
 
       <Navbar />
 
@@ -178,7 +182,7 @@ export default function PricingPage() {
               <ul className="space-y-3 text-sm text-slate-200">
                 {tier.includes.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
+                    <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -207,20 +211,20 @@ export default function PricingPage() {
           <div>
             <ul className="space-y-3 text-sm text-slate-200">
               <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
+                <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
                 <span>
                   Wsparcie w uzyskaniu podpisów elektronicznych, w tym organizacja podpisów zdalnych dla wspólników przebywających
                   poza Polską.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
+                <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
                 <span>
                   Pełna archiwizacja i przekazanie kompletnej dokumentacji w wersji elektronicznej oraz – na życzenie – papierowej.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
+                <span aria-hidden className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
                 <span>
                   Proaktywna komunikacja z sądem rejestrowym i informowanie Cię o każdym statusie sprawy.
                 </span>
