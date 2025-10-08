@@ -72,7 +72,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
         }}
         aria-hidden
       />
-      <div className="fixed inset-0 -z-10 bg-slate-950/90" aria-hidden />
+      <div className="fixed inset-0 -z-10 bg-slate-950/80" aria-hidden />
       <Navbar />
       <main>
         <Hero />
