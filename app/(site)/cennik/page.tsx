@@ -1,69 +1,44 @@
+import type { HTMLAttributes } from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
+import { AlertTriangle, CheckCircle, FileText, Mail, Phone } from "lucide-react"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
+import { Card } from "@/components/ui/card"
 import professionalWaitingRoomImage from "@/public/images/profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania-podczas-ustalania-cen.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
-const pricingTiers = [
-  {
-    name: "Start",
-    price: "od 590 zł netto",
-    badge: "Najczęściej wybierany",
-    description:
-      "Dla spółek przygotowujących pierwszy wniosek o zmianę wpisu lub prostą aktualizację danych w rejestrze.",
-    includes: [
-      "Analiza dokumentów i wskazanie wymaganych uchwał",
-      "Przygotowanie kompletnego wniosku S24 lub Portalu Rejestrów Sądowych",
-      "Weryfikacja podpisów elektronicznych i wysyłka do KRS",
-    ],
-  },
-  {
-    name: "Rozwój",
-    price: "od 890 zł netto",
-    description:
-      "Pakiet dla spółek przeprowadzających złożone zmiany – zmiana umowy, rozszerzenie PKD, powołanie nowych organów.",
-    includes: [
-      "Opracowanie projektów uchwał i załączników",
-      "Koordynacja podpisów wspólników oraz reprezentacji przed notariuszem",
-      "Monitorowanie statusu sprawy i wsparcie przy uzupełnieniach",
-    ],
-  },
-  {
-    name: "Premium",
-    price: "wycena indywidualna",
-    description:
-      "Kompleksowa obsługa zmian strukturalnych, reorganizacji grup kapitałowych i projektów wymagających reprezentacji przed sądem.",
-    includes: [
-      "Strategia zmian i harmonogram prac z dedykowanym opiekunem",
-      "Przygotowanie dokumentów do zgłoszeń w urzędach powiązanych (US, GUS, ZUS)",
-      "Stały dostęp do konsultacji prawno-księgowych oraz raportowanie postępów",
-    ],
-  },
+function CardContent({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  const combinedClassName = className ? `p-8 ${className}` : "p-8"
+  return <div className={combinedClassName} {...props} />
+}
+
+const steps = [
+  "Kontaktujesz się z nami i opisujesz zakres zmiany w KRS.",
+  "Otrzymujesz od nas ofertę cenową i wykaz wymaganych dokumentów.",
+  "Wybierasz zakres usługi – czy chcesz tylko złożenia wniosku, czy także przygotowania dokumentów.",
+  "Otrzymujesz fakturę i po jej opłaceniu rozpoczynamy pracę.",
+  "Finalnie otrzymujesz urzędowe potwierdzenie złożenia wniosku i – po wpisie – zaktualizowany wydruk z KRS.",
 ]
 
-const faqs = [
-  {
-    title: "Co wpływa na ostateczną wycenę usługi?",
-    content:
-      "Na cenę wpływa liczba koniecznych uchwał, złożoność zmian w umowie spółki, konieczność udziału notariusza oraz to, czy przygotowujemy dokumenty do dodatkowych zgłoszeń w urzędach. Przed rozpoczęciem współpracy otrzymujesz kosztorys i harmonogram prac, abyś dokładnie wiedział, ile zapłacisz i na jakim etapie znajdują się działania.",
-    pageId: "cennik-faq-1",
-  },
-  {
-    title: "Czy opłata sądowa jest wliczona w cenę?",
-    content:
-      "Opłaty sądowe oraz za ogłoszenie w Monitorze Sądowym i Gospodarczym są niezależne od naszego wynagrodzenia. Na życzenie możemy opłacić je w Twoim imieniu, aby przyspieszyć procedurę — koszt przelewamy dokładnie w wysokości wynikającej z przepisów.",
-    pageId: "cennik-faq-2",
-  },
-  {
-    title: "Czy oferujecie abonament dla stałych klientów?",
-    content:
-      "Tak. Dla biur rachunkowych, kancelarii i spółek, które regularnie zgłaszają zmiany w KRS, przygotowaliśmy abonament z ryczałtowym rozliczeniem miesięcznym oraz priorytetową obsługą zgłoszeń w trybie ekspresowym.",
-    pageId: "cennik-faq-3",
-  },
+const benefits = [
+  "Przejrzyste zasady i ceny – bez ukrytych kosztów",
+  "Ty decydujesz, z czego korzystasz",
+  "Obsługa zdalna – obsługujemy klientów z całej Polski, możesz przesłać nam niezbędne dokumenty pocztą lub kurierem",
+  "Dokumenty gotowe do podpisu i bezpieczne złożenie wniosku",
 ]
+
+const seoContent = `Cennik usług – zmiana danych w KRS dla spółek i biur rachunkowych
+Oferujemy konkurencyjne ceny za kompleksową obsługę zmian wpisu w Krajowym Rejestrze Sądowym (KRS). Każdą usługę wyceniamy indywidualnie, biorąc pod uwagę zakres zmian w KRS, tryb zgłoszenia (papierowy lub elektroniczny przez system S24) oraz potrzeby klienta. Dzięki temu masz pewność, że płacisz tylko za to, czego faktycznie potrzebujesz.
+Zapewniamy pełną obsługę wniosków KRS – od analizy potrzeb, przez przygotowanie uchwał do KRS i wszystkich dokumentów rejestrowych spółki, po złożenie wniosku o zmianę w KRS w sądzie rejestrowym. Obsługujemy zarówno zmiany zarządu w KRS, zmianę danych rejestracyjnych spółki (adresu, PKD, wspólników, kapitału), jak i zmianę umowy spółki KRS.
+Obsługa elektronicznego zgłoszenia zmian do KRS – system S24
+Proponujemy również kompleksowe wsparcie w elektronicznym zgłoszeniu zmian do KRS za pośrednictwem systemu S24. To szybki i wygodny sposób na rejestrację zmian, pozwalający ograniczyć formalności i skrócić czas oczekiwania na wpis zmian do KRS. Przygotowujemy komplet dokumentów i pomagamy w ich prawidłowym złożeniu online.
+Indywidualna wycena i elastyczne warunki współpracy
+Każda zmiana w KRS ma swoją specyfikę. Dlatego zawsze przygotowujemy indywidualną wycenę dostosowaną do potrzeb Twojej firmy. Proponujemy elastyczne warunki dla spółek oraz dla biur rachunkowych obsługujących wielu klientów i chcących korzystać z naszej obsługi wniosków KRS.
+Skontaktuj się z nami, aby poznać szczegóły oferty
+Zachęcamy do kontaktu w celu uzyskania indywidualnej wyceny i omówienia szczegółów współpracy. Oferujemy konkurencyjne ceny, profesjonalne doradztwo i pełne bezpieczeństwo formalno-prawne w procesie zmiany wpisu w KRS.`
 
 const pageUrl = `${siteUrl}/cennik`
 
@@ -74,29 +49,60 @@ const structuredData = {
   url: pageUrl,
   provider: organizationSchema,
   areaServed: { "@type": "Country", name: "Polska" },
-  offers: pricingTiers.map((tier) => {
-    const numericPrice = tier.price.match(/\d+/g)?.join("")
-    return {
+  serviceType: "Obsługa zmian w KRS",
+  offers: [
+    {
       "@type": "Offer",
-      name: tier.name,
-      ...(numericPrice
-        ? { priceSpecification: { "@type": "PriceSpecification", price: numericPrice, priceCurrency: "PLN" } }
-        : {}),
-      description: tier.description,
+      name: "Złożenie wniosku o zmianę wpisu w KRS",
+      priceSpecification: { "@type": "PriceSpecification", price: "799", priceCurrency: "PLN" },
+      description:
+        "Podstawowa usługa obejmująca przygotowanie i złożenie elektronicznego wniosku o zmianę wpisu w KRS wraz z monitoringiem sprawy.",
       availability: "https://schema.org/InStock",
-    }
-  }),
+    },
+    {
+      "@type": "Offer",
+      name: "Przygotowanie dokumentów do wniosku KRS",
+      priceSpecification: { "@type": "PriceSpecification", price: "50", priceCurrency: "PLN" },
+      description:
+        "Przygotowanie pojedynczych dokumentów, uchwał i list wymaganych do skutecznego zgłoszenia zmian w KRS.",
+      availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "Offer",
+      name: "Dokumenty Zwyczajnego Zgromadzenia Wspólników",
+      priceSpecification: { "@type": "PriceSpecification", price: "499", priceCurrency: "PLN" },
+      description:
+        "Wsparcie w przygotowaniu dokumentów do zatwierdzenia rocznego sprawozdania finansowego i złożenia ich w KRS.",
+      availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "Offer",
+      name: "Rejestracja spółki z o.o. w systemie S24",
+      priceSpecification: { "@type": "PriceSpecification", price: "699", priceCurrency: "PLN" },
+      description:
+        "Przygotowanie i złożenie kompletnego wniosku o rejestrację spółki z o.o. w systemie S24 wraz z koordynacją podpisów.",
+      availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "Offer",
+      name: "Rejestracja spółki z o.o. z indywidualną umową",
+      priceSpecification: { "@type": "PriceSpecification", price: "1199", priceCurrency: "PLN" },
+      description:
+        "Przygotowanie niestandardowej umowy spółki, obsługa wizyty w kancelarii notarialnej oraz złożenie wniosku do KRS.",
+      availability: "https://schema.org/InStock",
+    },
+  ],
 }
 
 export const metadata: Metadata = {
   title: "Cennik obsługi zmian w KRS | ZmianaKRS",
   description:
-    "Poznaj przejrzysty cennik obsługi zmian w KRS. Pakiety Start, Rozwój i Premium dopasowane do etapu rozwoju Twojej spółki.",
+    "Sprawdź ile kosztuje złożenie wniosku o zmianę w KRS, przygotowanie dokumentów oraz wsparcie przy założeniu spółki z o.o.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Cennik obsługi zmian w KRS | ZmianaKRS",
     description:
-      "Porównaj pakiety obsługi wniosków do KRS i wybierz zakres wsparcia dopasowany do Twojej spółki.",
+      "Przejrzyste ceny obsługi zmian w KRS, przygotowania dokumentów i rejestracji spółek z o.o.",
     url: pageUrl,
     siteName: brandName,
     images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Cennik usług KRS" }],
@@ -105,7 +111,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cennik obsługi zmian w KRS",
     description:
-      "Przejrzyste pakiety obsługi zmian w Krajowym Rejestrze Sądowym dla firm i biur rachunkowych.",
+      "Poznaj ceny złożenia wniosku do KRS, przygotowania dokumentów i rejestracji spółek.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -126,108 +132,315 @@ export default function PricingPage() {
         }}
         aria-hidden
       />
-      <div className="fixed inset-0 -z-10 bg-slate-950/75" aria-hidden />
+      <div className="fixed inset-0 -z-10 bg-slate-950/80" aria-hidden />
 
       <Navbar />
 
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 py-20 lg:py-24">
-        <section className="mx-auto max-w-3xl text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Oferta</p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-            Przejrzysty cennik obsługi zmian w KRS
-          </h1>
-          <p className="mt-6 text-lg text-slate-200 md:text-xl">
-            Wybierz pakiet, który najlepiej odpowiada zakresowi planowanych zmian. Każde zlecenie rozpoczynamy od
-            konsultacji oraz przygotowania harmonogramu działań, aby cały proces był przewidywalny.
-          </p>
-        </section>
-
-        <section className="grid gap-8 md:grid-cols-3">
-          {pricingTiers.map((tier) => (
-            <article key={tier.name} className="flex flex-col gap-6 rounded-2xl bg-slate-900/70 p-8 backdrop-blur">
-              <div className="space-y-3">
-                <h2 className="text-2xl font-semibold text-white">{tier.name}</h2>
-                {tier.badge ? (
-                  <span className="inline-block rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-200">
-                    {tier.badge}
-                  </span>
-                ) : null}
-                <p className="text-sm uppercase tracking-widest text-amber-300">{tier.price}</p>
-                <p className="text-sm text-slate-300">{tier.description}</p>
+      <main className="relative z-10 flex-1">
+        <section className="relative flex-1 pt-20 pb-20 text-white overflow-hidden">
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
+            <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 space-y-16">
+              <div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+                  Cennik usług zmian wpisu w <span className="text-amber-400">KRS</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mx-auto max-w-4xl">
+                  Oferujemy jasne, przejrzyste ceny i elastyczny model rozliczeń – dopasowany do Twoich potrzeb. Z góry wiesz, ile
+                  zapłacisz i za co. Każdy klient sam decyduje o zakresie usługi – możesz zlecić nam tylko złożenie wniosku o zmianę
+                  wpisu w KRS, albo także przygotowanie potrzebnych dokumentów. Ty wybierasz – my działamy.
+                </p>
               </div>
-              <ul className="space-y-3 text-sm text-slate-200">
-                {tier.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto">
-                <a
-                  href="/kontakt"
-                  className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-amber-500"
-                >
-                  Zapytaj o termin
-                </a>
+
+              <div className="space-y-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-4xl font-bold text-white mb-6">
+                    Przejrzyste ceny wniosków o zmianę wpisu w KRS
+                  </h2>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                    <CardContent>
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="flex items-center justify-center w-12 h-12 bg-green-600 rounded-lg">
+                          <CheckCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1 text-left">
+                          <h3 className="text-2xl font-bold text-white mb-2">
+                            Podstawowa usługa: Złożenie wniosku o zmianę wpisu w KRS
+                          </h3>
+                          <p className="text-3xl font-bold text-amber-400">799 zł netto*</p>
+                        </div>
+                      </div>
+                      <div className="space-y-6 text-left">
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-3">Co obejmuje:</h4>
+                          <ul className="space-y-2 text-gray-300">
+                            <li>• złożenie elektronicznego wniosku o zmianę wpisu w KRS za pośrednictwem Portalu Rejestrów Sądowych (PRS), w oparciu o dostarczone przez klienta oryginały dokumentów</li>
+                            <li>• działanie na podstawie udzielonego pełnomocnictwa</li>
+                            <li>• monitoring wniosku i obsługa ewentualnych wezwań formalnych</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-3">Dla kogo:</h4>
+                          <p className="text-gray-300">
+                            Dla klientów, którzy posiadają już komplet wymaganych dokumentów (np. uchwały, zgody, listy), gotowe do złożenia oraz przekażą nam podpisane pełnomocnictwo.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="mt-6 p-4 bg-amber-600/20 border border-amber-600/30 rounded-lg text-left">
+                        <p className="text-amber-200 text-sm">* Podana cena nie uwzględnia opłat sądowych i skarbowych</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                    <CardContent>
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-lg">
+                          <FileText className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1 text-left">
+                          <h3 className="text-2xl font-bold text-white mb-2">Przygotowanie dokumentów wymaganych do wniosku</h3>
+                          <p className="text-3xl font-bold text-amber-400">50 zł netto / dokument</p>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 mb-4 text-left">
+                        Jeśli nie posiadasz gotowych dokumentów – możemy je dla Ciebie przygotować. Dotyczy to w szczególności:
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4 text-left">
+                        <ul className="space-y-2 text-gray-300">
+                          <li>• uchwały o zmianie zarządu</li>
+                          <li>• uchwały o zmianie siedziby/adresu spółki</li>
+                          <li>• zgody wspólników na zbycie udziałów</li>
+                          <li>• listy wspólników</li>
+                        </ul>
+                        <ul className="space-y-2 text-gray-300">
+                          <li>• listy osób uprawnionych do powołania zarządu</li>
+                          <li>• listy aktualnych członków zarządu</li>
+                          <li>• innych dokumentów koniecznych do złożenia wniosku o zmianę w KRS</li>
+                        </ul>
+                      </div>
+                      <div className="mt-4 text-sm text-gray-300 space-y-2 text-left">
+                        <p>Umowy zbycia udziałów wyceniane są osobno (od 100 zł netto) w zależności od stopnia złożoności i sytuacji właścicielskiej spółki.</p>
+                        <p>Dokumenty przygotowywane są na podstawie informacji dostarczonych przez klienta i zawsze zgodnie z aktualnym stanem prawnym.</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="flex justify-center">
+                  <div className="w-full max-w-4xl">
+                    <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                      <CardContent>
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="flex items-center justify-center w-12 h-12 bg-orange-600 rounded-lg">
+                            <AlertTriangle className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1 text-left">
+                            <h3 className="text-3xl font-bold text-amber-400 mb-2">Zmiana umowy spółki</h3>
+                            <p className="text-2xl font-bold text-white">Wycena indywidualna</p>
+                          </div>
+                        </div>
+                        <p className="text-gray-300 text-left">
+                          Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="/kontakt" className="text-amber-400 hover:text-amber-300 underline">Skontaktuj się</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
+
+                <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300 relative overflow-hidden">
+                  <CardContent>
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-4 text-left">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-amber-600 rounded-lg">
+                          <FileText className="h-6 w-6 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-lg font-semibold text-amber-300 mb-1">Roczne sprawozdanie finansowe</div>
+                          <h3 className="text-2xl text-white font-bold">
+                            Pomoc w przygotowaniu dokumentów Zwyczajnego Zgromadzenia Wspólników
+                          </h3>
+                          <div className="text-2xl font-bold text-amber-400 mt-1">499 zł netto</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-300 text-base leading-relaxed mt-4 text-justify">
+                      Kompleksowe wsparcie w przygotowaniu dokumentów wymaganych do zatwierdzenia rocznego sprawozdania finansowego i spełnienia obowiązku złożenia ich do KRS.
+                    </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Oferujemy pomoc w zakresie:</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">Sporządzenie protokołu Zwyczajnego Zgromadzenia Wspólników z wszystkimi wymaganymi uchwałami</span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">Przygotowanie wzoru sprawozdania Zarządu z działalności</span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">Załączenie rocznego sprawozdania finansowego klienta do protokołu</span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm">Pomoc w złożeniu kompletu dokumentów do Repozytorium Dokumentów Finansowych KRS</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Zamów i złóż dokumenty do KRS na czas – bez stresu</h4>
+                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                          Usługa przeznaczona dla spółek z o.o. chcących w terminie i bez błędów wypełnić obowiązki rejestrowe i uniknąć kar za opóźnienie lub brak złożenia dokumentów
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                          <a
+                            href="tel:+48572234779"
+                            className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+                          >
+                            <Phone className="h-4 w-4" />
+                            <span className="text-sm font-medium">Zadzwoń</span>
+                          </a>
+                          <a
+                            href="mailto:biuro@zmianakrs.pl"
+                            className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                          >
+                            <Mail className="h-4 w-4" />
+                            <span className="text-sm font-medium">Email</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="text-center mb-8 mt-12">
+                  <h2 className="text-4xl font-bold text-white mb-6">Zakładanie spółki z o.o.</h2>
+                </div>
+                <div className="text-center mb-8">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    Chcesz założyć spółkę z o.o. bez błędów, sprawnie i z pełną zgodnością z przepisami? Dobrze trafiłeś. Pomogliśmy już w utworzeniu kilkuset spółek w całej Polsce – zarówno przez system S24, jak i w formie aktu notarialnego. Działamy zdalnie, szybko i bezpiecznie.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 text-left">
+                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                    <CardContent>
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="flex items-center justify-center w-12 h-12 bg-green-600 rounded-lg">
+                          <span className="text-white font-bold text-xs">S24</span>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold text-white mb-2">Spółka z o.o. przez system S24</h3>
+                          <p className="text-lg text-gray-300 mb-2">szybka rejestracja online</p>
+                          <p className="text-3xl font-bold text-amber-400">od 699 zł netto*</p>
+                          <p className="text-sm text-gray-300">
+                            (ostateczna cena zależy od liczby wspólników i stopnia skomplikowania umowy)
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 mb-4">
+                        Spółkę możesz założyć przez internetowy system S24, jeśli odpowiada Ci standardowa, szablonowa umowa spółki. To wygodne i szybkie rozwiązanie, szczególnie gdy zależy Ci na czasie.
+                      </p>
+                      <div className="mb-6">
+                        <h4 className="text-lg font-semibold text-white mb-3">Co oferujemy:</h4>
+                        <ul className="space-y-2 text-gray-300">
+                          <li>• przygotowanie kompletu dokumentów i wniosku niezbędnych do rejestracji spółki w S24</li>
+                          <li>• przesłanie ich do podpisu przez wszystkich wspólników i członków zarządu</li>
+                          <li>• wsparcie w zakresie podpisu i opłaty wniosku</li>
+                        </ul>
+                      </div>
+                      <div className="bg-amber-50/10 backdrop-blur-sm border border-amber-200/30 rounded-lg p-4">
+                        <h5 className="text-white font-semibold mb-2">Uwaga - System S24 wymaga:</h5>
+                        <ul className="text-sm text-gray-300 space-y-1">
+                          <li>• posiadania konta na portalu s24 przez wszystkich wspólników i członków zarządu</li>
+                          <li>• posiadania kwalifikowanego podpisu elektronicznego, profilu zaufanego lub e-dowodu</li>
+                          <li>• korzystania z szablonowej umowy spółki, bez możliwości jej modyfikacji poza dostępnymi polami</li>
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                    <CardContent>
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="flex items-center justify-center w-12 h-12 bg-purple-600 rounded-lg">
+                          <span className="text-white font-bold text-xs">PRS</span>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold text-white mb-2">Spółka z o.o. z niestandardową umową</h3>
+                          <p className="text-lg text-gray-300 mb-2">zakładanie przez notariusza i Portal Rejestrów Sądowych</p>
+                          <p className="text-3xl font-bold text-amber-400">od 1199 zł netto**</p>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 mb-4">
+                        Jeśli zależy Ci na szczególnych zapisach w umowie spółki (np. różnych rodzajach udziałów, szczególnych uprawnieniach wspólników, odrębnym roku obrotowym itd.), najlepszym rozwiązaniem będzie założenie spółki w formie aktu notarialnego.
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-3">W ramach usługi:</h4>
+                          <ul className="space-y-2 text-gray-300">
+                            <li>• przygotujemy indywidualną umowę spółki i komplet pozostałych dokumentów</li>
+                            <li>• skontaktujemy się z kancelarią notarialną wybraną przez Ciebie</li>
+                            <li>• po podpisaniu aktu – złożymy kompletny wniosek o wpis do KRS</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-3">Korzyści:</h4>
+                          <ul className="space-y-2 text-gray-300">
+                            <li>• pełna elastyczność umowy spółki</li>
+                            <li>• dopasowanie struktury do Twoich celów biznesowych</li>
+                            <li>• kompleksowa obsługa rejestracji</li>
+                            <li>• od przygotowania dokumentów po skuteczny wpis w KRS</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-amber-600/20 border border-amber-600/30 rounded-lg text-left">
+                  <p className="text-amber-200 text-sm">
+                    * i ** - podane ceny nie obejmują kosztów notarialnych, sądowych, w tym za ogłoszenie w MSiG i opłat skarbowych
+                  </p>
+                </div>
+
+                <div className="mt-16">
+                  <h2 className="text-3xl font-bold text-white text-center mb-8">Jak przebiega współpraca?</h2>
+                  <div className="grid md:grid-cols-5 gap-6">
+                    {steps.map((step, index) => (
+                      <div key={step} className="text-center">
+                        <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-white font-bold">{index + 1}</span>
+                        </div>
+                        <p className="text-gray-300 text-sm">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-16 text-center">
+                  <h2 className="text-3xl font-bold text-white mb-8">Dlaczego warto?</h2>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {benefits.map((benefit) => (
+                      <div key={benefit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                        <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <CheckCircle className="w-5 h-5 text-white" />
+                        </div>
+                        <p className="text-gray-300">{benefit}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </article>
-          ))}
-        </section>
-
-        <section className="grid gap-10 rounded-3xl bg-slate-900/60 px-8 py-12 backdrop-blur md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Co zawiera przygotowanie wniosku?</h2>
-            <p className="text-slate-200">
-              Pracujemy w modelu projektowym. Wyznaczamy dedykowanego opiekuna, który prowadzi Cię przez każdy etap zmiany –
-              od analizy dokumentów, przez przygotowanie uchwał, aż po monitorowanie decyzji sądu. Dokumenty przygotowujemy w
-              oparciu o aktualne wzory ministerialne oraz orzecznictwo KRS.
-            </p>
-          </div>
-          <div>
-            <ul className="space-y-3 text-sm text-slate-200">
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>
-                  Wsparcie w uzyskaniu podpisów elektronicznych, w tym organizacja podpisów zdalnych dla wspólników przebywających
-                  poza Polską.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>
-                  Pełna archiwizacja i przekazanie kompletnej dokumentacji w wersji elektronicznej oraz – na życzenie – papierowej.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>
-                  Proaktywna komunikacja z sądem rejestrowym i informowanie Cię o każdym statusie sprawy.
-                </span>
-              </li>
-            </ul>
+            </div>
           </div>
         </section>
 
-        <section className="space-y-6">
-          {faqs.map((faq) => (
-            <SEOExpandableSection key={faq.pageId} title={faq.title} content={faq.content} pageId={faq.pageId} />
-          ))}
-        </section>
-
-        <section className="rounded-3xl bg-amber-500/10 px-10 py-12 text-center text-slate-900 backdrop-blur">
-          <h2 className="text-3xl font-semibold text-white">Porozmawiajmy o Twoim projekcie</h2>
-          <p className="mt-4 text-base text-slate-100 md:text-lg">
-            Opowiedz nam o planowanych zmianach w spółce. W ciągu jednego dnia roboczego przygotujemy harmonogram, listę
-            wymaganych dokumentów i kosztorys.
-          </p>
-          <a
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-500 px-8 py-3 text-base font-semibold text-slate-900 transition hover:bg-amber-400"
-            href="/kontakt"
-          >
-            Umów konsultację
-          </a>
-        </section>
+        <SEOExpandableSection content={seoContent} pageId="pricing" />
       </main>
 
       <Footer />
