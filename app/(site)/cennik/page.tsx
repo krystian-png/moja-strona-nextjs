@@ -135,9 +135,8 @@ export default function PricingPage() {
         {JSON.stringify(structuredData)}
       </Script>
 
-      {/* PRZYCIEMNIENIE: 65% */}
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/65"
+        className="fixed inset-0 -z-10 bg-slate-950/70"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
