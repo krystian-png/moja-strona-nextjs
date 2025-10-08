@@ -73,23 +73,14 @@ const structuredData = {
   name: "Cennik usług zmiany wpisu w KRS",
   url: pageUrl,
   provider: organizationSchema,
-  areaServed: {
-    "@type": "Country",
-    name: "Polska",
-  },
+  areaServed: { "@type": "Country", name: "Polska" },
   offers: pricingTiers.map((tier) => {
     const numericPrice = tier.price.match(/\d+/g)?.join("")
     return {
       "@type": "Offer",
       name: tier.name,
       ...(numericPrice
-        ? {
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              price: numericPrice,
-              priceCurrency: "PLN",
-            },
-          }
+        ? { priceSpecification: { "@type": "PriceSpecification", price: numericPrice, priceCurrency: "PLN" } }
         : {}),
       description: tier.description,
       availability: "https://schema.org/InStock",
@@ -101,23 +92,14 @@ export const metadata: Metadata = {
   title: "Cennik obsługi zmian w KRS | ZmianaKRS",
   description:
     "Poznaj przejrzysty cennik obsługi zmian w KRS. Pakiety Start, Rozwój i Premium dopasowane do etapu rozwoju Twojej spółki.",
-  alternates: {
-    canonical: pageUrl,
-  },
+  alternates: { canonical: pageUrl },
   openGraph: {
     title: "Cennik obsługi zmian w KRS | ZmianaKRS",
     description:
       "Porównaj pakiety obsługi wniosków do KRS i wybierz zakres wsparcia dopasowany do Twojej spółki.",
     url: pageUrl,
     siteName: brandName,
-    images: [
-      {
-        url: `${siteUrl}/images/krs-services.png`,
-        width: 1200,
-        height: 630,
-        alt: "Cennik usług KRS",
-      },
-    ],
+    images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Cennik usług KRS" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -136,13 +118,15 @@ export default function PricingPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/70"
+        className="fixed inset-0 -z-20"
         style={{
           backgroundImage: `url(${professionalWaitingRoomImage.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      <div className="fixed inset-0 -z-10 bg-slate-950/75" aria-hidden />
 
       <Navbar />
 
@@ -160,10 +144,7 @@ export default function PricingPage() {
 
         <section className="grid gap-8 md:grid-cols-3">
           {pricingTiers.map((tier) => (
-            <article
-              key={tier.name}
-              className="flex flex-col gap-6 rounded-2xl bg-slate-900/70 p-8 backdrop-blur"
-            >
+            <article key={tier.name} className="flex flex-col gap-6 rounded-2xl bg-slate-900/70 p-8 backdrop-blur">
               <div className="space-y-3">
                 <h2 className="text-2xl font-semibold text-white">{tier.name}</h2>
                 {tier.badge ? (
