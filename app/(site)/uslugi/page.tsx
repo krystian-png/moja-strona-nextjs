@@ -4,7 +4,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
-import servicesBackground from "@/public/images/outsourcing-zmian-krs-kompleksowa-obsluga-dla-przedsiebiorcow-i-ksiegowych.webp"
+import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 import ServicesList from "./ServicesList"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
@@ -101,13 +101,15 @@ export default function ServicesPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-20"
         style={{
           backgroundImage: `url(${servicesBackground.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
 
       <Navbar />
 
