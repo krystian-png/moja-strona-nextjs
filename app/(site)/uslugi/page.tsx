@@ -188,9 +188,13 @@ export const metadata: Metadata = {
 }
 
 const seoSectionContent = `Nasze usługi – kompleksowa obsługa zmian w KRS dla spółek i biur rachunkowych
+
 Świadczymy pełen zakres usług związanych ze zmianami danych w KRS dla spółek prawa handlowego, fundacji i stowarzyszeń. Pomagamy w przygotowaniu dokumentów, sporządzaniu uchwał i składaniu wniosków do sądu rejestrowego. Zapewniamy kompleksową obsługę wniosków KRS – od analizy potrzeb klienta, przez przygotowanie dokumentów, aż po złożenie wniosku i monitorowanie wpisu zmian do KRS.
+
 Specjalizujemy się w profesjonalnej pomocy przy zmianie wpisu w KRS – niezależnie od zakresu zmian. Doradzamy, jak zmienić dane w KRS, przygotowujemy uchwały do KRS i pomagamy w prawidłowym sporządzeniu wniosku o zmianę w KRS. Naszym celem jest zapewnienie szybkiego, bezpiecznego i zgodnego z przepisami przeprowadzenia całego procesu.
+
 Zakres naszych usług obejmuje między innymi:
+
 przygotowanie i składanie wniosku o zmianę w KRS
 zmianę zarządu w KRS
 zmianę danych rejestracyjnych spółki w KRS
@@ -200,10 +204,15 @@ elektroniczne zgłoszenie zmian do KRS przez system S24
 wpis zmian do KRS w rejestrze sądowym
 przygotowanie uchwał i dokumentów do KRS
 obsługę wniosków KRS dla spółek i biur rachunkowych
+
 Elektroniczne zgłoszenie zmian do KRS – system S24
+
 Ułatwiamy również elektroniczne zgłoszenie zmian do KRS poprzez system S24. Przygotowujemy wszystkie wymagane dokumenty i pomagamy w ich poprawnym złożeniu online. System S24 to szybki i wygodny sposób na rejestrację zmian w KRS, oszczędzający czas i ograniczający formalności.
+
 Współpraca z biurami rachunkowymi
+
 Oferujemy dedykowaną obsługę zmian w KRS dla biur rachunkowych. Wspieramy ich klientów w procesie aktualizacji danych spółki w KRS, przygotowując kompletne dokumenty i wnioski. Proponujemy atrakcyjne warunki współpracy, indywidualne podejście i profesjonalne wsparcie na każdym etapie obsługi wniosków KRS.
+
 Skontaktuj się z nami i poznaj szczegóły naszej oferty. Dzięki nam zmiana danych w KRS, zgłoszenie zmian sądowi rejestrowemu i przygotowanie dokumentów rejestrowych spółki przebiegają sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function ServicesPage() {

@@ -112,56 +112,71 @@ const trustReasons = [
 
 const cooperationProcess = [
   {
-    step: "01",
-    title: "Polecasz nas swoim klientom",
-    description:
-      "Klient trafia do nas z Twoją rekomendacją. Omawiamy zakres zmian w KRS i ustalamy sposób przekazania dokumentów.",
+    step: "1",
+    title: "Polecacie nas swoim klientom",
+    description: "Którzy potrzebują pomocy w zmianach wpisu KRS",
   },
   {
-    step: "02",
+    step: "2",
     title: "My zajmujemy się całą procedurą",
     description:
-      "Przygotowujemy komplet uchwał, formularzy i wniosek do KRS. W razie potrzeby konsultujemy treść dokumentów z Tobą.",
+      "Analizujemy dokumenty, przygotowujemy wniosek, składamy go do sądu i monitorujemy postępowanie",
   },
   {
-    step: "03",
+    step: "3",
     title: "Informujemy o postępach",
-    description:
-      "Regularnie raportujemy status sprawy, przekazujemy potwierdzenia z sądu i podpowiadamy kolejne działania.",
+    description: "Przekazujemy gotowe dokumenty do archiwizacji lub dalszego wykorzystania",
   },
   {
-    step: "04",
+    step: "4",
     title: "Wy skupiacie się na swojej pracy",
     description:
-      "Twoje biuro kontynuuje obsługę księgową klientów, a my prowadzimy proces do momentu uzyskania wpisu w rejestrze.",
+      "Możecie skupić się na swoich obowiązkach, a Wasi klienci otrzymują profesjonalną obsługę",
   },
 ]
 
 const seoContent = `Obsługa zmian w KRS dla biur rachunkowych – profesjonalne wsparcie Twoich klientów
+
 Oferujemy kompleksowe usługi w zakresie obsługi zmian wpisu w Krajowym Rejestrze Sądowym (KRS) dla spółek obsługiwanych przez biura rachunkowe. Współpracujemy z biurami rachunkowymi, które chcą zapewnić swoim klientom profesjonalne i bezpieczne wprowadzenie zmian do rejestru sądowego – bez konieczności angażowania dodatkowych zasobów czy tracenia czasu na skomplikowane formalności.
+
 Specjalizujemy się w przygotowaniu wniosków o zmianę w KRS, sporządzaniu uchwał do KRS i kompletnej obsłudze dokumentów rejestrowych spółki. Doradzamy, jak skutecznie zgłosić zmianę danych rejestracyjnych w KRS – w tym zmianę zarządu, adresu siedziby spółki, PKD, wspólników czy kapitału zakładowego.
 
 Zakres naszej obsługi dla biur rachunkowych:
+
 przygotowanie i składanie wniosków o zmianę w KRS
+
 sporządzanie uchwał i dokumentów rejestrowych spółki
+
 zmiana zarządu w KRS
+
 zmiana danych spółki w KRS (adres, PKD, wspólnicy, kapitał)
+
 elektroniczne zgłoszenie zmian do KRS przez system S24
+
 monitorowanie wpisu zmian do KRS
+
 kompleksowe doradztwo na każdym etapie procesu
 
 Elektroniczne zgłoszenie zmian do KRS – system S24
+
 Zapewniamy pełne wsparcie w zakresie elektronicznego zgłoszenia zmian do KRS przez system S24. Przygotowujemy dokumenty i pomagamy w ich prawidłowym złożeniu online, co pozwala Twoim klientom na szybkie i wygodne dokonanie zmian rejestrowych.
 
 Dlaczego warto z nami współpracować?
+
 Wieloletnie doświadczenie w obsłudze zmian w KRS
+
 Specjalizacja w elektronicznym zgłaszaniu zmian przez system S24
+
 Elastyczne warunki współpracy dostosowane do potrzeb biura rachunkowego
+
 Konkurencyjne ceny i indywidualne wyceny
+
 Terminowość, rzetelność i pełne bezpieczeństwo formalno-prawne
 
 Współpraca B2B z biurami rachunkowymi
+
 Naszym celem jest wsparcie biur rachunkowych w kompleksowej obsłudze ich klientów. Dzięki naszej pomocy możesz rozszerzyć ofertę swojego biura o profesjonalne usługi związane z rejestracją zmian w KRS i zaoferować klientom pełne wsparcie w tym zakresie – bez konieczności inwestowania we własne zasoby czy szkolenia pracowników.
+
 Skontaktuj się z nami, aby omówić szczegóły współpracy. Razem zadbamy o to, aby Twoi klienci mogli wprowadzać zmiany w KRS sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function AccountantsPage() {
@@ -313,7 +328,7 @@ export default function AccountantsPage() {
 
         <SEOExpandableSection
           title="Obsługa zmian w KRS dla biur rachunkowych"
-          buttonLabel="Rozwiń sekcję SEO"
+          buttonLabel="Więcej o naszych usługach KRS"
           content={seoContent}
           pageId="accountants-seo"
         />
