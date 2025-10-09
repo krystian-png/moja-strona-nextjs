@@ -101,7 +101,7 @@ export default function ContactPage() {
       <div
         className="fixed inset-0 -z-10"
         style={{
-          backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.88), rgba(2, 6, 23, 0.88)), url(${contactBackground.src})`,
+          backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url(${contactBackground.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
