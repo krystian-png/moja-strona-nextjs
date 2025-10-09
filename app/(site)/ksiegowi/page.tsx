@@ -94,19 +94,19 @@ const trustReasons = [
     icon: Clock,
     title: "Szybka i skuteczna obsługa",
     description:
-      "Zapewniamy sprawne przeprowadzenie procedury – od przygotowania dokumentów po złożenie wniosku i uzyskanie wpisu.",
+      "Zapewniamy szybkie i skuteczne przeprowadzenie całej procedury – od przygotowania dokumentów po złożenie wniosku i uzyskanie wpisu.",
   },
   {
     icon: TrendingUp,
     title: "Transparentność i elastyczność",
     description:
-      "Działamy jasno i elastycznie – proponujemy dogodne zasady współpracy dopasowane do specyfiki Twojego biura.",
+      "Działamy transparentnie i elastycznie – proponujemy korzystne warunki współpracy dostosowane do potrzeb biur księgowych.",
   },
   {
     icon: Users,
     title: "Pełna komunikacja",
     description:
-      "Na bieżąco informujemy o statusie sprawy i pozostajemy w stałym kontakcie z Tobą oraz Twoimi klientami.",
+      "Dbamy o pełną komunikację – na bieżąco informujemy o statusie sprawy i jesteśmy dostępni dla Was i Waszych klientów.",
   },
 ]
 
