@@ -34,20 +34,17 @@ export function Select({
   const elements = React.Children.toArray(children)
 
   elements.forEach((child) => {
-    if (!React.isValidElement(child)) return
-    if (child.type === SelectTrigger) {
+    if (React.isValidElement<SelectTriggerProps>(child) && child.type === SelectTrigger) {
       contextRef.current.triggerProps = child.props
       React.Children.forEach(child.props.children, (triggerChild) => {
-        if (!React.isValidElement(triggerChild)) return
-        if (triggerChild.type === SelectValue) {
+        if (React.isValidElement<SelectValueProps>(triggerChild) && triggerChild.type === SelectValue) {
           contextRef.current.placeholder = triggerChild.props.placeholder
         }
       })
     }
-    if (child.type === SelectContent) {
+    if (React.isValidElement<SelectContentProps>(child) && child.type === SelectContent) {
       React.Children.forEach(child.props.children, (contentChild) => {
-        if (!React.isValidElement(contentChild)) return
-        if (contentChild.type === SelectItem) {
+        if (React.isValidElement<SelectItemProps>(contentChild) && contentChild.type === SelectItem) {
           contextRef.current.items.push({
             value: contentChild.props.value,
             label: contentChild.props.children,
