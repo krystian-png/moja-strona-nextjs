@@ -112,28 +112,26 @@ const trustReasons = [
 
 const cooperationProcess = [
   {
-    step: "01",
-    title: "Polecasz nas swoim klientom",
-    description:
-      "Klient trafia do nas z Twoją rekomendacją. Omawiamy zakres zmian w KRS i ustalamy sposób przekazania dokumentów.",
+    step: "1",
+    title: "Polecacie nas swoim klientom",
+    description: "Którzy potrzebują pomocy w zmianach wpisu KRS",
   },
   {
-    step: "02",
+    step: "2",
     title: "My zajmujemy się całą procedurą",
     description:
-      "Przygotowujemy komplet uchwał, formularzy i wniosek do KRS. W razie potrzeby konsultujemy treść dokumentów z Tobą.",
+      "Analizujemy dokumenty, przygotowujemy wniosek, składamy go do sądu i monitorujemy postępowanie",
   },
   {
-    step: "03",
+    step: "3",
     title: "Informujemy o postępach",
-    description:
-      "Regularnie raportujemy status sprawy, przekazujemy potwierdzenia z sądu i podpowiadamy kolejne działania.",
+    description: "Przekazujemy gotowe dokumenty do archiwizacji lub dalszego wykorzystania",
   },
   {
-    step: "04",
+    step: "4",
     title: "Wy skupiacie się na swojej pracy",
     description:
-      "Twoje biuro kontynuuje obsługę księgową klientów, a my prowadzimy proces do momentu uzyskania wpisu w rejestrze.",
+      "Możecie skupić się na swoich obowiązkach, a Wasi klienci otrzymują profesjonalną obsługę",
   },
 ]
 
@@ -313,7 +311,7 @@ export default function AccountantsPage() {
 
         <SEOExpandableSection
           title="Obsługa zmian w KRS dla biur rachunkowych"
-          buttonLabel="Rozwiń sekcję SEO"
+          buttonLabel="Więcej o naszych usługach KRS"
           content={seoContent}
           pageId="accountants-seo"
         />
