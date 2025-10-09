@@ -200,7 +200,7 @@ export default function AccountantsPage() {
 
       <Navbar />
 
-      <main className="relative flex flex-col gap-12 mt-14 pb-20">
+      <main className="relative flex flex-col gap-12 mt-14 pb-0">
         <section className="relative pt-16 pb-6 text-white overflow-hidden">
           <div className={`relative z-10 text-center ${containerPadding}`}>
             <div className="mx-auto max-w-4xl">
@@ -334,7 +334,7 @@ export default function AccountantsPage() {
         />
       </main>
 
-      <Footer />
+      <Footer className="mt-0" />
     </div>
   )
 }
