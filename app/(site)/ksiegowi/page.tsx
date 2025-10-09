@@ -4,7 +4,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
-import accountantsBackground from "@/public/images/profesjonalna-obsluga-zmian-krs-dla-biur-rachunkowych.webp"
+import accountantsBackground from "@/public/images/miejsce-pracy-ksiegowego-kawa-dokumenty-atmosfera-zaufania-profesjonalna-wspolpraca-obsluga-krs.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pageUrl = `${siteUrl}/ksiegowi`
