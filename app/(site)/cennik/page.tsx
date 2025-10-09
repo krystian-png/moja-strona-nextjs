@@ -31,13 +31,21 @@ const benefits = [
 ]
 
 const seoContent = `Cennik usług – zmiana danych w KRS dla spółek i biur rachunkowych
+
 Oferujemy konkurencyjne ceny za kompleksową obsługę zmian wpisu w Krajowym Rejestrze Sądowym (KRS). Każdą usługę wyceniamy indywidualnie, biorąc pod uwagę zakres zmian w KRS, tryb zgłoszenia (papierowy lub elektroniczny przez system S24) oraz potrzeby klienta. Dzięki temu masz pewność, że płacisz tylko za to, czego faktycznie potrzebujesz.
+
 Zapewniamy pełną obsługę wniosków KRS – od analizy potrzeb, przez przygotowanie uchwał do KRS i wszystkich dokumentów rejestrowych spółki, po złożenie wniosku o zmianę w KRS w sądzie rejestrowym. Obsługujemy zarówno zmiany zarządu w KRS, zmianę danych rejestracyjnych spółki (adresu, PKD, wspólników, kapitału), jak i zmianę umowy spółki KRS.
+
 Obsługa elektronicznego zgłoszenia zmian do KRS – system S24
+
 Proponujemy również kompleksowe wsparcie w elektronicznym zgłoszeniu zmian do KRS za pośrednictwem systemu S24. To szybki i wygodny sposób na rejestrację zmian, pozwalający ograniczyć formalności i skrócić czas oczekiwania na wpis zmian do KRS. Przygotowujemy komplet dokumentów i pomagamy w ich prawidłowym złożeniu online.
+
 Indywidualna wycena i elastyczne warunki współpracy
+
 Każda zmiana w KRS ma swoją specyfikę. Dlatego zawsze przygotowujemy indywidualną wycenę dostosowaną do potrzeb Twojej firmy. Proponujemy elastyczne warunki dla spółek oraz dla biur rachunkowych obsługujących wielu klientów i chcących korzystać z naszej obsługi wniosków KRS.
+
 Skontaktuj się z nami, aby poznać szczegóły oferty
+
 Zachęcamy do kontaktu w celu uzyskania indywidualnej wyceny i omówienia szczegółów współpracy. Oferujemy konkurencyjne ceny, profesjonalne doradztwo i pełne bezpieczeństwo formalno-prawne w procesie zmiany wpisu w KRS.`
 
 const pageUrl = `${siteUrl}/cennik`
