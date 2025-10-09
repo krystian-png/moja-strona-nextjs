@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 import accountantsBackground from "@/public/images/miejsce-pracy-ksiegowego-kawa-dokumenty-atmosfera-zaufania-profesjonalna-wspolpraca-obsluga-krs.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
+import { Calculator, Clock, FileText, TrendingUp, Users } from "lucide-react"
 
 const pageUrl = `${siteUrl}/ksiegowi`
 
@@ -23,16 +24,16 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Obsługa zmian KRS dla księgowych | ZmianaKRS",
+  title: "Współpraca z biurami księgowymi | ZmianaKRS",
   description:
-    "Zyskaj partnera do obsługi wniosków KRS. White-label dla biur rachunkowych, raportowanie postępów i wsparcie ekspertów.",
+    "Profesjonalne wsparcie w obsłudze zmian wpisów do KRS dla biur rachunkowych. Zadbaj o klientów, a my przejmiemy formalności.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Obsługa zmian KRS dla księgowych | ZmianaKRS",
+    title: "Współpraca z biurami księgowymi | ZmianaKRS",
     description:
-      "Przekaż przygotowanie dokumentów i składanie wniosków KRS zespołowi ZmianaKRS. Transparentne zasady współpracy B2B.",
+      "Pozwól zespołowi ZmianaKRS przygotować dokumenty i złożyć wnioski do KRS, a Twoje biuro skoncentruje się na księgowości.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -46,45 +47,134 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wsparcie KRS dla księgowych",
+    title: "Wsparcie KRS dla biur księgowych",
     description:
-      "Deleguj przygotowanie i złożenie wniosków KRS ekspertom. White-label dla biur rachunkowych i kancelarii.",
+      "Deleguj przygotowanie i złożenie wniosków KRS ekspertom. Zapewnij klientom pełną obsługę bez obciążania zespołu.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
 
-const benefits = [
+const containerPadding = "w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32"
+
+const accountantBenefits = [
   {
-    title: "White-label",
+    icon: Users,
+    title: "Skup się na księgowości i doradztwie podatkowym",
     description:
-      "Pracujemy w tle – komunikację z klientem możesz prowadzić pod własną marką, a my przygotujemy komplet dokumentów do podpisu.",
+      "Przekazujesz nam formalności KRS, a Twój zespół może skoncentrować się na bieżącej obsłudze klientów i rozwijaniu usług.",
   },
   {
-    title: "Priorytetowe terminy",
+    icon: Calculator,
+    title: "Zachowaj dobre relacje z klientami",
     description:
-      "Rezerwujemy czas w kalendarzu zespołu na zgłoszenia Twoich klientów. W pilnych sprawach rozpoczynamy działania w 24h.",
+      "Dostarczamy komplet dokumentów i jasne instrukcje, dzięki czemu klienci otrzymują od Ciebie gotowe rozwiązania i wiedzą, co zrobić dalej.",
   },
   {
-    title: "Statusy w czasie rzeczywistym",
+    icon: Clock,
+    title: "Zapewnij klientom profesjonalną obsługę prawną",
     description:
-      "Otrzymujesz dostęp do panelu z listą spraw oraz historią komunikacji z sądem. Możesz udostępnić statusy swoim klientom.",
+      "Przygotowujemy uchwały, formularze i pilnujemy formalnych wymogów, aby każdy wniosek został złożony bezbłędnie i terminowo.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Transparentność i partnerstwo",
+    description:
+      "Otrzymujesz czytelne raporty z etapów spraw, rekomendacje kolejnych działań i wsparcie ekspertów w nietypowych sytuacjach.",
+  },
+  {
+    icon: Clock,
+    title: "Szybka i skuteczna obsługa",
+    description:
+      "Rozpoczynamy działania od razu po przekazaniu danych. Dbamy o terminy sądowe i urzędowe, by Twoi klienci nie czekali na wpis.",
+  },
+  {
+    icon: Users,
+    title: "Pełna komunikacja w Twoim imieniu",
+    description:
+      "Informujemy o postępach, przekazujemy aktualizacje i zachowujemy ustalone z Tobą standardy komunikacji white-label.",
   },
 ]
 
-const faqs = [
+const trustReasons = [
   {
-    title: "Jak wygląda wdrożenie współpracy?",
-    content:
-      "Podpisujemy umowę B2B oraz NDA, ustalamy proces przekazywania danych klientów i tworzymy szablony dokumentów dostosowane do Twoich standardów. Pierwsze zlecenie realizujemy wspólnie, aby uspójnić komunikację.",
-    pageId: "ksiegowi-faq-1",
+    icon: FileText,
+    title: "Wieloletnie doświadczenie",
+    description:
+      "Posiadamy wieloletnie doświadczenie w obsłudze wpisów do KRS i na bieżąco śledzimy zmiany w przepisach prawa spółek.",
   },
   {
-    title: "Czy mogę rozliczać się ryczałtowo?",
-    content:
-      "Tak. Oferujemy rozliczenie abonamentowe z określonym limitem spraw miesięcznie lub elastyczny pakiet godzinowy, który możesz wykorzystać na konsultacje i przygotowanie dokumentów.",
-    pageId: "ksiegowi-faq-2",
+    icon: Clock,
+    title: "Szybka i skuteczna obsługa",
+    description:
+      "Zapewniamy sprawne przeprowadzenie procedury – od przygotowania dokumentów po złożenie wniosku i uzyskanie wpisu.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Transparentność i elastyczność",
+    description:
+      "Działamy jasno i elastycznie – proponujemy dogodne zasady współpracy dopasowane do specyfiki Twojego biura.",
+  },
+  {
+    icon: Users,
+    title: "Pełna komunikacja",
+    description:
+      "Na bieżąco informujemy o statusie sprawy i pozostajemy w stałym kontakcie z Tobą oraz Twoimi klientami.",
   },
 ]
+
+const cooperationProcess = [
+  {
+    step: "01",
+    title: "Polecasz nas swoim klientom",
+    description:
+      "Klient trafia do nas z Twoją rekomendacją. Omawiamy zakres zmian w KRS i ustalamy sposób przekazania dokumentów.",
+  },
+  {
+    step: "02",
+    title: "My zajmujemy się całą procedurą",
+    description:
+      "Przygotowujemy komplet uchwał, formularzy i wniosek do KRS. W razie potrzeby konsultujemy treść dokumentów z Tobą.",
+  },
+  {
+    step: "03",
+    title: "Informujemy o postępach",
+    description:
+      "Regularnie raportujemy status sprawy, przekazujemy potwierdzenia z sądu i podpowiadamy kolejne działania.",
+  },
+  {
+    step: "04",
+    title: "Wy skupiacie się na swojej pracy",
+    description:
+      "Twoje biuro kontynuuje obsługę księgową klientów, a my prowadzimy proces do momentu uzyskania wpisu w rejestrze.",
+  },
+]
+
+const seoContent = `Obsługa zmian w KRS dla biur rachunkowych – profesjonalne wsparcie Twoich klientów
+Oferujemy kompleksowe usługi w zakresie obsługi zmian wpisu w Krajowym Rejestrze Sądowym (KRS) dla spółek obsługiwanych przez biura rachunkowe. Współpracujemy z biurami rachunkowymi, które chcą zapewnić swoim klientom profesjonalne i bezpieczne wprowadzenie zmian do rejestru sądowego – bez konieczności angażowania dodatkowych zasobów czy tracenia czasu na skomplikowane formalności.
+Specjalizujemy się w przygotowaniu wniosków o zmianę w KRS, sporządzaniu uchwał do KRS i kompletnej obsłudze dokumentów rejestrowych spółki. Doradzamy, jak skutecznie zgłosić zmianę danych rejestracyjnych w KRS – w tym zmianę zarządu, adresu siedziby spółki, PKD, wspólników czy kapitału zakładowego.
+
+Zakres naszej obsługi dla biur rachunkowych:
+przygotowanie i składanie wniosków o zmianę w KRS
+sporządzanie uchwał i dokumentów rejestrowych spółki
+zmiana zarządu w KRS
+zmiana danych spółki w KRS (adres, PKD, wspólnicy, kapitał)
+elektroniczne zgłoszenie zmian do KRS przez system S24
+monitorowanie wpisu zmian do KRS
+kompleksowe doradztwo na każdym etapie procesu
+
+Elektroniczne zgłoszenie zmian do KRS – system S24
+Zapewniamy pełne wsparcie w zakresie elektronicznego zgłoszenia zmian do KRS przez system S24. Przygotowujemy dokumenty i pomagamy w ich prawidłowym złożeniu online, co pozwala Twoim klientom na szybkie i wygodne dokonanie zmian rejestrowych.
+
+Dlaczego warto z nami współpracować?
+Wieloletnie doświadczenie w obsłudze zmian w KRS
+Specjalizacja w elektronicznym zgłaszaniu zmian przez system S24
+Elastyczne warunki współpracy dostosowane do potrzeb biura rachunkowego
+Konkurencyjne ceny i indywidualne wyceny
+Terminowość, rzetelność i pełne bezpieczeństwo formalno-prawne
+
+Współpraca B2B z biurami rachunkowymi
+Naszym celem jest wsparcie biur rachunkowych w kompleksowej obsłudze ich klientów. Dzięki naszej pomocy możesz rozszerzyć ofertę swojego biura o profesjonalne usługi związane z rejestracją zmian w KRS i zaoferować klientom pełne wsparcie w tym zakresie – bez konieczności inwestowania we własne zasoby czy szkolenia pracowników.
+Skontaktuj się z nami, aby omówić szczegóły współpracy. Razem zadbamy o to, aby Twoi klienci mogli wprowadzać zmiany w KRS sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function AccountantsPage() {
   return (
@@ -102,76 +192,143 @@ export default function AccountantsPage() {
         }}
         aria-hidden
       />
+      
       <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
 
       <Navbar />
 
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 py-20 lg:py-24">
-        <section className="mx-auto max-w-3xl text-center">
-          <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Partner dla biur rachunkowych</p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-            Kompleksowa obsługa zmian KRS dla Twoich klientów
-          </h1>
-          <p className="mt-6 text-lg text-slate-200 md:text-xl">
-            Odciąż swój zespół i zyskaj pewność, że każdy wniosek jest przygotowany zgodnie z aktualnymi wymogami. Dostarczamy
-            dokumenty gotowe do podpisu oraz dbamy o komunikację z sądem rejestrowym.
-          </p>
-        </section>
-
-        <section className="grid gap-8 md:grid-cols-3">
-          {benefits.map((benefit) => (
-            <article key={benefit.title} className="rounded-2xl bg-slate-900/70 p-8 backdrop-blur">
-              <h2 className="text-xl font-semibold text-white">{benefit.title}</h2>
-              <p className="mt-4 text-sm text-slate-300">{benefit.description}</p>
-            </article>
-          ))}
-        </section>
-
-        <section className="grid gap-10 rounded-3xl bg-slate-900/60 px-8 py-12 backdrop-blur md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Standard obsługi white-label</h2>
-            <p className="text-slate-200">
-              Działamy w Twoich procesach – przygotowujemy checklisty dokumentów dla klientów, ustalamy sposób podpisywania i
-              raportujemy każdy etap. Możesz zaangażować nas zarówno w pojedyncze zgłoszenie, jak i stałą obsługę.
-            </p>
-          </div>
-          <div>
-            <ul className="space-y-3 text-sm text-slate-200">
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Szablony dokumentów dostosowane do identyfikacji Twojej marki.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Stały opiekun wdrożony w specyfikę klientów i branżę.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Raportowanie SLA oraz rekomendacje zmian w procedurach.</span>
-              </li>
-            </ul>
+      <main className="relative flex flex-col gap-16 mt-16 pb-24">
+        <section className="relative pt-20 pb-6 text-white overflow-hidden">
+          <div className={`relative z-10 text-center ${containerPadding}`}>
+            <div className="mx-auto max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
+                Współpraca z <span className="text-amber-400">Biurami Księgowymi</span>
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Profesjonalne wsparcie w zakresie wpisów do KRS. Pozwól nam zająć się formalnościami, podczas gdy Ty skupiasz się
+                na księgowości.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="space-y-6">
-          {faqs.map((faq) => (
-            <SEOExpandableSection key={faq.pageId} title={faq.title} content={faq.content} pageId={faq.pageId} />
-          ))}
+        <section className="relative py-8 text-white overflow-hidden">
+          <div className={containerPadding}>
+            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 sm:p-8 border border-white/20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-white mb-6">Problem, który dobrze znacie</h2>
+                <div className="text-left space-y-4">
+                  <p className="text-lg text-gray-200 leading-relaxed">
+                    Wielu klientów uważa, że formalności związane ze zmianami wpisów w Krajowym Rejestrze Sądowym (KRS) – zmiana
+                    adresu, aktualizacja kodów PKD, zmiana zarządu czy inne modyfikacje – powinny być wliczone w usługi księgowe i
+                    niechętnie płaci za nie dodatkowo.
+                  </p>
+                  <p className="text-lg text-gray-200 leading-relaxed">
+                    Z kolei dla Was, jako biura, wykonywanie tych czynności „po kosztach” lub bez odpowiedniego wynagrodzenia to nie
+                    tylko strata czasu, ale i ryzyko błędów oraz odpowiedzialności prawnej, zwłaszcza jeśli nie macie specjalistycznej
+                    wiedzy w zakresie prawa spółek i procedur rejestrowych.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section className="rounded-3xl bg-amber-500/10 px-10 py-12 text-center text-slate-900 backdrop-blur">
-          <h2 className="text-3xl font-semibold text-white">Zostań naszym partnerem</h2>
-          <p className="mt-4 text-base text-slate-100 md:text-lg">
-            Porozmawiajmy o modelu współpracy, który najlepiej uzupełni usługi Twojego biura rachunkowego. Przygotujemy ofertę
-            oraz materiały startowe dla Twojego zespołu.
-          </p>
-          <a
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-500 px-8 py-3 text-base font-semibold text-slate-900 transition hover:bg-amber-400"
-            href="/kontakt"
-          >
-            Umów spotkanie partnerskie
-          </a>
+        <section className="relative py-20 text-white overflow-hidden">
+          <div className={containerPadding}>
+            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold text-white mb-4">Nasze rozwiązanie – profesjonalne wsparcie</h2>
+                <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+                  Oferujemy Państwu <strong>kompleksową obsługę wpisów i zmian w KRS</strong>, która pozwoli Wam:
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {accountantBenefits.map((benefit) => {
+                  const Icon = benefit.icon
+                  return (
+                    <div
+                      key={benefit.title}
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all"
+                    >
+                      <div className="flex items-start space-x-4">
+                        <div className="text-amber-300 mt-1">
+                          <Icon className="h-8 w-8" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold mb-3 text-white">{benefit.title}</h3>
+                          <p className="text-gray-200">{benefit.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
         </section>
+
+        <section className="relative py-20 text-white overflow-hidden">
+          <div className={containerPadding}>
+            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+              <div className="text-center mb-16">
+                <h3 className="text-3xl font-bold text-white mb-6">Dlaczego warto nam zaufać?</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {trustReasons.map((reason) => {
+                  const Icon = reason.icon
+                  return (
+                    <div
+                      key={reason.title}
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all"
+                    >
+                      <div className="flex items-start space-x-4">
+                        <div className="text-amber-300 mt-1">
+                          <Icon className="h-8 w-8" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold mb-3 text-white">{reason.title}</h3>
+                          <p className="text-gray-200">{reason.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative py-20 text-white overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold text-white mb-6">Jak wygląda współpraca?</h2>
+                <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+                  Proces współpracy jest prosty i przejrzysty. Oto jak to działa:
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                {cooperationProcess.map((step) => (
+                  <div key={step.step} className="text-center">
+                    <div className="w-16 h-16 bg-amber-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                      {step.step}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
+                    <p className="text-gray-200">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <SEOExpandableSection
+          title="Obsługa zmian w KRS dla biur rachunkowych"
+          buttonLabel="Rozwiń sekcję SEO"
+          content={seoContent}
+          pageId="accountants-seo"
+        />
       </main>
 
       <Footer />
