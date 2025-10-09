@@ -49,11 +49,11 @@ export default function SEOExpandableSection({
           type="button"
           id={toggleId}
           onClick={() => setIsOpen((prev) => !prev)}
-          className="w-full flex items-center justify-between gap-4 text-amber-400 hover:text-amber-300 text-lg font-medium transition-colors"
+          className="w-full flex items-center justify-center gap-3 text-amber-400 hover:text-amber-300 text-lg font-medium transition-colors"
           aria-expanded={isOpen}
           aria-controls={contentId}
         >
-          <span className="text-left">{label}</span>
+          <span className="text-center">{label}</span>
           {isOpen ? (
             <ChevronUp className="h-6 w-6" aria-hidden="true" />
           ) : (
