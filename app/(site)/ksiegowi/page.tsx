@@ -112,56 +112,71 @@ const trustReasons = [
 
 const cooperationProcess = [
   {
-    step: "01",
-    title: "Polecasz nas swoim klientom",
-    description:
-      "Klient trafia do nas z Twoją rekomendacją. Omawiamy zakres zmian w KRS i ustalamy sposób przekazania dokumentów.",
+    step: "1",
+    title: "Polecacie nas swoim klientom",
+    description: "Którzy potrzebują pomocy w zmianach wpisu KRS",
   },
   {
-    step: "02",
+    step: "2",
     title: "My zajmujemy się całą procedurą",
     description:
-      "Przygotowujemy komplet uchwał, formularzy i wniosek do KRS. W razie potrzeby konsultujemy treść dokumentów z Tobą.",
+      "Analizujemy dokumenty, przygotowujemy wniosek, składamy go do sądu i monitorujemy postępowanie",
   },
   {
-    step: "03",
+    step: "3",
     title: "Informujemy o postępach",
-    description:
-      "Regularnie raportujemy status sprawy, przekazujemy potwierdzenia z sądu i podpowiadamy kolejne działania.",
+    description: "Przekazujemy gotowe dokumenty do archiwizacji lub dalszego wykorzystania",
   },
   {
-    step: "04",
+    step: "4",
     title: "Wy skupiacie się na swojej pracy",
     description:
-      "Twoje biuro kontynuuje obsługę księgową klientów, a my prowadzimy proces do momentu uzyskania wpisu w rejestrze.",
+      "Możecie skupić się na swoich obowiązkach, a Wasi klienci otrzymują profesjonalną obsługę",
   },
 ]
 
 const seoContent = `Obsługa zmian w KRS dla biur rachunkowych – profesjonalne wsparcie Twoich klientów
+
 Oferujemy kompleksowe usługi w zakresie obsługi zmian wpisu w Krajowym Rejestrze Sądowym (KRS) dla spółek obsługiwanych przez biura rachunkowe. Współpracujemy z biurami rachunkowymi, które chcą zapewnić swoim klientom profesjonalne i bezpieczne wprowadzenie zmian do rejestru sądowego – bez konieczności angażowania dodatkowych zasobów czy tracenia czasu na skomplikowane formalności.
+
 Specjalizujemy się w przygotowaniu wniosków o zmianę w KRS, sporządzaniu uchwał do KRS i kompletnej obsłudze dokumentów rejestrowych spółki. Doradzamy, jak skutecznie zgłosić zmianę danych rejestracyjnych w KRS – w tym zmianę zarządu, adresu siedziby spółki, PKD, wspólników czy kapitału zakładowego.
 
 Zakres naszej obsługi dla biur rachunkowych:
+
 przygotowanie i składanie wniosków o zmianę w KRS
+
 sporządzanie uchwał i dokumentów rejestrowych spółki
+
 zmiana zarządu w KRS
+
 zmiana danych spółki w KRS (adres, PKD, wspólnicy, kapitał)
+
 elektroniczne zgłoszenie zmian do KRS przez system S24
+
 monitorowanie wpisu zmian do KRS
+
 kompleksowe doradztwo na każdym etapie procesu
 
 Elektroniczne zgłoszenie zmian do KRS – system S24
+
 Zapewniamy pełne wsparcie w zakresie elektronicznego zgłoszenia zmian do KRS przez system S24. Przygotowujemy dokumenty i pomagamy w ich prawidłowym złożeniu online, co pozwala Twoim klientom na szybkie i wygodne dokonanie zmian rejestrowych.
 
 Dlaczego warto z nami współpracować?
+
 Wieloletnie doświadczenie w obsłudze zmian w KRS
+
 Specjalizacja w elektronicznym zgłaszaniu zmian przez system S24
+
 Elastyczne warunki współpracy dostosowane do potrzeb biura rachunkowego
+
 Konkurencyjne ceny i indywidualne wyceny
+
 Terminowość, rzetelność i pełne bezpieczeństwo formalno-prawne
 
 Współpraca B2B z biurami rachunkowymi
+
 Naszym celem jest wsparcie biur rachunkowych w kompleksowej obsłudze ich klientów. Dzięki naszej pomocy możesz rozszerzyć ofertę swojego biura o profesjonalne usługi związane z rejestracją zmian w KRS i zaoferować klientom pełne wsparcie w tym zakresie – bez konieczności inwestowania we własne zasoby czy szkolenia pracowników.
+
 Skontaktuj się z nami, aby omówić szczegóły współpracy. Razem zadbamy o to, aby Twoi klienci mogli wprowadzać zmiany w KRS sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function AccountantsPage() {
@@ -185,8 +200,8 @@ export default function AccountantsPage() {
 
       <Navbar />
 
-      <main className="relative flex flex-col gap-16 mt-16 pb-24">
-        <section className="relative pt-20 pb-6 text-white overflow-hidden">
+      <main className="relative flex flex-col gap-12 mt-14 pb-0">
+        <section className="relative pt-16 pb-6 text-white overflow-hidden">
           <div className={`relative z-10 text-center ${containerPadding}`}>
             <div className="mx-auto max-w-4xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
@@ -200,12 +215,12 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-8 text-white overflow-hidden">
+        <section className="relative py-6 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 sm:p-8 border border-white/20">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-white mb-6">Problem, który dobrze znacie</h2>
-                <div className="text-left space-y-4">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-white mb-5">Problem, który dobrze znacie</h2>
+                <div className="text-left space-y-3.5">
                   <p className="text-lg text-gray-200 leading-relaxed">
                     Wielu klientów uważa, że formalności związane ze zmianami wpisów w Krajowym Rejestrze Sądowym (KRS) – zmiana
                     adresu, aktualizacja kodów PKD, zmiana zarządu czy inne modyfikacje – powinny być wliczone w usługi księgowe i
@@ -222,16 +237,16 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-white mb-4">Nasze rozwiązanie – profesjonalne wsparcie</h2>
                 <p className="text-lg text-gray-200 max-w-3xl mx-auto">
                   Oferujemy Państwu <strong>kompleksową obsługę wpisów i zmian w KRS</strong>, która pozwoli Wam:
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {accountantBenefits.map((benefit) => {
                   const Icon = benefit.icon
                   return (
@@ -256,13 +271,13 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
-                <h3 className="text-3xl font-bold text-white mb-6">Dlaczego warto nam zaufać?</h3>
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-white mb-5">Dlaczego warto nam zaufać?</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {trustReasons.map((reason) => {
                   const Icon = reason.icon
                   return (
@@ -287,16 +302,16 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-white mb-6">Jak wygląda współpraca?</h2>
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-white mb-5">Jak wygląda współpraca?</h2>
                 <p className="text-lg text-gray-200 max-w-3xl mx-auto">
                   Proces współpracy jest prosty i przejrzysty. Oto jak to działa:
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {cooperationProcess.map((step) => (
                   <div key={step.step} className="text-center">
                     <div className="w-16 h-16 bg-amber-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
@@ -313,13 +328,13 @@ export default function AccountantsPage() {
 
         <SEOExpandableSection
           title="Obsługa zmian w KRS dla biur rachunkowych"
-          buttonLabel="Rozwiń sekcję SEO"
+          buttonLabel="Więcej o naszych usługach KRS"
           content={seoContent}
           pageId="accountants-seo"
         />
       </main>
 
-      <Footer />
+      <Footer className="mt-0" />
     </div>
   )
 }

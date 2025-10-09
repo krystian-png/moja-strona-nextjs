@@ -1,6 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 
+type FooterProps = {
+  className?: string
+}
+
 const columns = [
   {
     title: 'Usługi',
@@ -28,11 +32,18 @@ const columns = [
   },
 ]
 
-export default function Footer() {
+export default function Footer({ className }: FooterProps = {}) {
   const year = new Date().getFullYear()
 
+  const footerClassName = [
+    'bg-slate-900 text-slate-300',
+    className ?? 'mt-12',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   return (
-    <footer className="mt-12 bg-slate-900 text-slate-300">
+    <footer className={footerClassName}>
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 md:grid-cols-4 lg:grid-cols-5">
           <div className="md:col-span-2 space-y-6">
