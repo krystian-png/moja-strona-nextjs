@@ -99,11 +99,12 @@ export default function ContactPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-10"
         style={{
-          backgroundImage: `url(${contactBackground.src})`,
+          backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url(${contactBackground.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       />
 
