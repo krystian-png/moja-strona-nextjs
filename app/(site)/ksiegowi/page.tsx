@@ -58,40 +58,28 @@ const containerPadding = "w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32"
 
 const accountantBenefits = [
   {
-    icon: Users,
-    title: "Skup się na księgowości i doradztwie podatkowym",
-    description:
-      "Przekazujesz nam formalności KRS, a Twój zespół może skoncentrować się na bieżącej obsłudze klientów i rozwijaniu usług.",
-  },
-  {
     icon: Calculator,
-    title: "Zachowaj dobre relacje z klientami",
+    title: "Skupić się na księgowości i doradztwie podatkowym",
     description:
-      "Dostarczamy komplet dokumentów i jasne instrukcje, dzięki czemu klienci otrzymują od Ciebie gotowe rozwiązania i wiedzą, co zrobić dalej.",
+      "Powierzając nam trudne i czasochłonne formalności rejestrowe, możecie się skupić na tym, co robicie najlepiej.",
   },
   {
-    icon: Clock,
-    title: "Zapewnij klientom profesjonalną obsługę prawną",
+    icon: FileText,
+    title: "Zapewnić klientom profesjonalną obsługę prawną",
     description:
-      "Przygotowujemy uchwały, formularze i pilnujemy formalnych wymogów, aby każdy wniosek został złożony bezbłędnie i terminowo.",
+      "Dzięki naszemu wsparciu Wasi klienci unikną błędów i opóźnień w procedurach KRS.",
+  },
+  {
+    icon: Users,
+    title: "Zachować dobre relacje z klientami",
+    description:
+      "Klienci otrzymają kompleksową pomoc, a jednocześnie nie będą obarczać Was dodatkowymi obowiązkami.",
   },
   {
     icon: TrendingUp,
-    title: "Transparentność i partnerstwo",
+    title: "Zyskać wiarygodnego partnera",
     description:
-      "Otrzymujesz czytelne raporty z etapów spraw, rekomendacje kolejnych działań i wsparcie ekspertów w nietypowych sytuacjach.",
-  },
-  {
-    icon: Clock,
-    title: "Szybka i skuteczna obsługa",
-    description:
-      "Rozpoczynamy działania od razu po przekazaniu danych. Dbamy o terminy sądowe i urzędowe, by Twoi klienci nie czekali na wpis.",
-  },
-  {
-    icon: Users,
-    title: "Pełna komunikacja w Twoim imieniu",
-    description:
-      "Informujemy o postępach, przekazujemy aktualizacje i zachowujemy ustalone z Tobą standardy komunikacji white-label.",
+      "Możecie liczyć na łatwą i szybką komunikację w każdej sprawie dotyczącej wpisów do KRS.",
   },
 ]
 
