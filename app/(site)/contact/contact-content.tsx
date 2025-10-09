@@ -358,10 +358,13 @@ export default function ContactPageContent() {
                               id="privacyConsent"
                               checked={field.value}
                               onCheckedChange={(checked) => field.onChange(checked === true)}
-                              className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 checked:border-amber-600 checked:bg-amber-600"
-                              required
-                            />
-                            <label htmlFor="privacyConsent" className="cursor-pointer text-white text-xs leading-relaxed">
+<Checkbox
+  id="privacyConsent"
+  checked={field.value}
+  onCheckedChange={(checked) => field.onChange(checked === true)}
+  required
+  className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
+/>
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
                               podanych w powyższym formularzu przez:
