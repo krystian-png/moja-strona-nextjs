@@ -4,7 +4,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
-import accountantsBackground from "@/public/images/profesjonalna-obsluga-zmian-krs-dla-biur-rachunkowych.webp"
+import accountantsBackground from "@/public/images/miejsce-pracy-ksiegowego-kawa-dokumenty-atmosfera-zaufania-profesjonalna-wspolpraca-obsluga-krs.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pageUrl = `${siteUrl}/ksiegowi`
@@ -94,13 +94,15 @@ export default function AccountantsPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-20"
         style={{
           backgroundImage: `url(${accountantsBackground.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
 
       <Navbar />
 
