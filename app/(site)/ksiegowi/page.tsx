@@ -200,8 +200,8 @@ export default function AccountantsPage() {
 
       <Navbar />
 
-      <main className="relative flex flex-col gap-16 mt-16 pb-24">
-        <section className="relative pt-20 pb-6 text-white overflow-hidden">
+      <main className="relative flex flex-col gap-12 mt-14 pb-20">
+        <section className="relative pt-16 pb-6 text-white overflow-hidden">
           <div className={`relative z-10 text-center ${containerPadding}`}>
             <div className="mx-auto max-w-4xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
@@ -215,12 +215,12 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-8 text-white overflow-hidden">
+        <section className="relative py-6 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 sm:p-8 border border-white/20">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-white mb-6">Problem, który dobrze znacie</h2>
-                <div className="text-left space-y-4">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-white mb-5">Problem, który dobrze znacie</h2>
+                <div className="text-left space-y-3.5">
                   <p className="text-lg text-gray-200 leading-relaxed">
                     Wielu klientów uważa, że formalności związane ze zmianami wpisów w Krajowym Rejestrze Sądowym (KRS) – zmiana
                     adresu, aktualizacja kodów PKD, zmiana zarządu czy inne modyfikacje – powinny być wliczone w usługi księgowe i
@@ -237,16 +237,16 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
+              <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-white mb-4">Nasze rozwiązanie – profesjonalne wsparcie</h2>
                 <p className="text-lg text-gray-200 max-w-3xl mx-auto">
                   Oferujemy Państwu <strong>kompleksową obsługę wpisów i zmian w KRS</strong>, która pozwoli Wam:
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {accountantBenefits.map((benefit) => {
                   const Icon = benefit.icon
                   return (
@@ -271,13 +271,13 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className={containerPadding}>
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
-                <h3 className="text-3xl font-bold text-white mb-6">Dlaczego warto nam zaufać?</h3>
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-white mb-5">Dlaczego warto nam zaufać?</h3>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {trustReasons.map((reason) => {
                   const Icon = reason.icon
                   return (
@@ -302,16 +302,16 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <section className="relative py-20 text-white overflow-hidden">
+        <section className="relative py-14 text-white overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-white mb-6">Jak wygląda współpraca?</h2>
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-white mb-5">Jak wygląda współpraca?</h2>
                 <p className="text-lg text-gray-200 max-w-3xl mx-auto">
                   Proces współpracy jest prosty i przejrzysty. Oto jak to działa:
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {cooperationProcess.map((step) => (
                   <div key={step.step} className="text-center">
                     <div className="w-16 h-16 bg-amber-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
