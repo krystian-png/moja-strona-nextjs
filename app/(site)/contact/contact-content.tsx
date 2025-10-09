@@ -16,17 +16,21 @@ import { useToast } from "@/hooks/use-toast"
 import { apiRequest } from "@/lib/queryClient"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
-const phoneValidation = z.string().refine((val) => {
-  if (!val || val.trim() === "") return true
-  const cleanPhone = val.replace(/[\s-]/g, "")
-  return /^(\+48\d{9}|\d{9})$/.test(cleanPhone)
-}, "Nieprawidłowy format numeru telefonu. Prawidłowy format: +48123456789 lub 123456789")
+const phoneValidation = z
+  .string({
+    required_error: "Numer telefonu jest wymagany",
+  })
+  .min(1, "Numer telefonu jest wymagany")
+  .refine((val) => {
+    const cleanPhone = val.replace(/[\s-]/g, "")
+    return /^(\+48\d{9}|\d{9})$/.test(cleanPhone)
+  }, "Nieprawidłowy format numeru telefonu. Prawidłowy format: +48123456789 lub 123456789")
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, "Imię musi mieć co najmniej 2 znaki"),
   lastName: z.string().min(2, "Nazwisko musi mieć co najmniej 2 znaki"),
   email: z.string().email("Nieprawidłowy adres email"),
-  phone: phoneValidation.optional(),
+  phone: phoneValidation,
   service: z.string().optional(),
   message: z.string().min(10, "Wiadomość musi mieć co najmniej 10 znaków"),
   privacyConsent: z.boolean().refine((val) => val === true, {
@@ -265,9 +269,11 @@ export default function ContactPageContent() {
                             <FormLabel className="text-white">Telefon</FormLabel>
                             <FormControl>
                               <Input
+                                id="phone"
                                 type="tel"
                                 placeholder="+48123456789 lub 123456789"
                                 {...field}
+                                required
                                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                               />
                             </FormControl>
@@ -349,14 +355,15 @@ export default function ContactPageContent() {
                         <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                           <FormControl>
                             <Checkbox
+                              id="privacyConsent"
                               checked={field.value}
-                              onCheckedChange={field.onChange}
+                              onCheckedChange={(checked) => field.onChange(checked === true)}
                               className="border-white/20 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600 mt-1"
                               required
                             />
                           </FormControl>
                           <div className="space-y-1 leading-none">
-                            <FormLabel className="text-white text-xs leading-relaxed">
+                            <FormLabel htmlFor="privacyConsent" className="text-white text-xs leading-relaxed">
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
                               podanych w powyższym formularzu przez:
