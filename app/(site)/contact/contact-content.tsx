@@ -322,7 +322,7 @@ export default function ContactPageContent() {
                             <Checkbox
                               checked={field.value}
                               onCheckedChange={field.onChange}
-                              className="border-white/20 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600 mt-1"
+                              className="h-5 w-5 shrink-0 border-2 border-white/70 bg-white/5 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600 mt-1"
                               required
                             />
                           </FormControl>
