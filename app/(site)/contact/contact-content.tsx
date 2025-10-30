@@ -1,30 +1,28 @@
-"use client"
+"use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from "@/hooks/use-toast"
-import { apiRequest } from "@/lib/queryClient"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const phoneValidation = z
-  .string({
-    required_error: "Numer telefonu jest wymagany",
-  })
+  .string({ required_error: "Numer telefonu jest wymagany" })
   .min(1, "Numer telefonu jest wymagany")
   .refine((val) => {
-    const cleanPhone = val.replace(/[\s-]/g, "")
-    return /^(\+48\d{9}|\d{9})$/.test(cleanPhone)
-  }, "Nieprawidłowy format numeru telefonu. Prawidłowy format: +48123456789 lub 123456789")
+    const cleanPhone = val.replace(/[\s-]/g, "");
+    return /^(\+48\d{9}|\d{9})$/.test(cleanPhone);
+  }, "Nieprawidłowy format numeru telefonu. Prawidłowy format: +48123456789 lub 123456789");
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, "Imię musi mieć co najmniej 2 znaki"),
@@ -37,16 +35,16 @@ const contactFormSchema = z.object({
     message: "Musisz wyrazić zgodę na przetwarzanie danych osobowych",
   }),
   captcha: z.string().optional(),
-})
+});
 
-export type ContactFormData = z.infer<typeof contactFormSchema>
-type ContactFormPayload = ContactFormData & { name: string }
+export type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormPayload = ContactFormData & { name: string };
 
 const serviceOptions = [
   { value: "zmiana-wpisu-w-krs", label: "Zmiana wpisu w KRS" },
   { value: "obsluga-dokumentow-krs", label: "Obsługa dokumentów rejestrowych" },
   { value: "inne-zapytanie", label: "Inne zapytanie dotyczące KRS" },
-]
+];
 
 const defaultValues: ContactFormData = {
   firstName: "",
@@ -57,89 +55,75 @@ const defaultValues: ContactFormData = {
   message: "",
   privacyConsent: false,
   captcha: "",
-}
+};
 
 export default function ContactPageContent() {
-  const { toast } = useToast()
-  const queryClient = useQueryClient()
-  const [captchaQuestion, setCaptchaQuestion] = useState({ question: "", answer: "" })
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+  const [captchaQuestion, setCaptchaQuestion] = useState({ question: "", answer: "" });
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues,
-  })
+  });
 
   const generateCaptcha = useCallback(() => {
-    const num1 = Math.floor(Math.random() * 10) + 1
-    const num2 = Math.floor(Math.random() * 10) + 1
-    const question = `${num1} + ${num2} = ?`
-    const answer = String(num1 + num2)
-    setCaptchaQuestion({ question, answer })
-    return answer
-  }, [])
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    const question = `${num1} + ${num2} = ?`;
+    const answer = String(num1 + num2);
+    setCaptchaQuestion({ question, answer });
+    return answer;
+  }, []);
 
   useEffect(() => {
-    generateCaptcha()
-  }, [generateCaptcha])
+    generateCaptcha();
+  }, [generateCaptcha]);
 
   const submitContactMutation = useMutation({
     mutationFn: (data: ContactFormPayload) =>
-      apiRequest<{ success: boolean }>("/api/contact", {
-        method: "POST",
-        data,
-      }),
+      apiRequest<{ success: boolean }>("/api/contact", { method: "POST", data }),
     onSuccess: () => {
       toast({
         title: "Dziękujemy za wiadomość",
         description: "Skontaktujemy się z Tobą najszybciej jak to możliwe.",
-      })
-      queryClient.invalidateQueries({ queryKey: ["contact-submissions"] }).catch(() => undefined)
-      form.reset(defaultValues)
-      generateCaptcha()
+      });
+      queryClient.invalidateQueries({ queryKey: ["contact-submissions"] }).catch(() => undefined);
+      form.reset(defaultValues);
+      generateCaptcha();
     },
     onError: (error: unknown) => {
       toast({
         title: "Nie udało się wysłać formularza",
         description: error instanceof Error ? error.message : "Spróbuj ponownie później.",
         variant: "destructive",
-      })
-      generateCaptcha()
+      });
+      generateCaptcha();
     },
-  })
+  });
 
   const onSubmit = useCallback(
     (data: ContactFormData) => {
-      form.clearErrors("captcha")
+      form.clearErrors("captcha");
 
       if (!data.captcha || data.captcha.trim() === "") {
-        form.setError("captcha", {
-          type: "manual",
-          message: "Potwierdź, że nie jesteś robotem",
-        })
-        return
+        form.setError("captcha", { type: "manual", message: "Potwierdź, że nie jesteś robotem" });
+        return;
       }
-
       if (data.captcha !== captchaQuestion.answer) {
-        form.setError("captcha", {
-          type: "manual",
-          message: "Nieprawidłowa odpowiedź na pytanie kontrolne",
-        })
-        generateCaptcha()
-        form.setValue("captcha", "")
-        return
+        form.setError("captcha", { type: "manual", message: "Nieprawidłowa odpowiedź na pytanie kontrolne" });
+        generateCaptcha();
+        form.setValue("captcha", "");
+        return;
       }
 
-      const submitData: ContactFormPayload = {
-        ...data,
-        name: `${data.firstName} ${data.lastName}`.trim(),
-      }
-
-      submitContactMutation.mutate(submitData)
+      const submitData: ContactFormPayload = { ...data, name: `${data.firstName} ${data.lastName}`.trim() };
+      submitContactMutation.mutate(submitData);
     },
     [captchaQuestion.answer, form, generateCaptcha, submitContactMutation]
-  )
+  );
 
-  const isSubmitting = submitContactMutation.isPending
+  const isSubmitting = submitContactMutation.isPending;
 
   const contactDetails = useMemo(
     () => [
@@ -155,10 +139,11 @@ export default function ContactPageContent() {
       },
     ],
     []
-  )
+  );
 
   return (
     <main className="relative flex flex-col">
+      {/* HERO */}
       <section className="relative pt-20 pb-6 text-white overflow-hidden">
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
@@ -168,7 +153,6 @@ export default function ContactPageContent() {
             <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-6 text-center">
               Skontaktuj się w sprawie wniosku o zmianę wpisu w KRS
             </h2>
-
             <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Potrzebujesz pomocy z KRS? Skontaktuj się z naszymi ekspertami. Odpowiemy bezzwłocznie.
             </p>
@@ -176,6 +160,7 @@ export default function ContactPageContent() {
         </div>
       </section>
 
+      {/* FORM */}
       <section id="contact" className="relative py-20 text-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
           <div className="text-center mb-12 sm:mb-16">
@@ -184,12 +169,15 @@ export default function ContactPageContent() {
               Masz pytania? Potrzebujesz wyceny? Skontaktuj się z nami już dziś.
             </p>
           </div>
+
           <div className="space-y-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
               <h3 className="text-xl font-bold text-white mb-6">Formularz Kontaktowy</h3>
+
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* lewa kolumna */}
                     <div className="space-y-6">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField
@@ -199,11 +187,7 @@ export default function ContactPageContent() {
                             <FormItem>
                               <FormLabel className="text-white">Imię</FormLabel>
                               <FormControl>
-                                <Input
-                                  {...field}
-                                  required
-                                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                />
+                                <Input {...field} required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -216,17 +200,14 @@ export default function ContactPageContent() {
                             <FormItem>
                               <FormLabel className="text-white">Nazwisko</FormLabel>
                               <FormControl>
-                                <Input
-                                  {...field}
-                                  required
-                                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                />
+                                <Input {...field} required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
                       </div>
+
                       <FormField
                         control={form.control}
                         name="email"
@@ -234,17 +215,13 @@ export default function ContactPageContent() {
                           <FormItem>
                             <FormLabel className="text-white">Email</FormLabel>
                             <FormControl>
-                              <Input
-                                type="email"
-                                {...field}
-                                required
-                                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                              />
+                              <Input type="email" {...field} required className="bg-white/10 border-white/20 text-white placeholder:text-gray-400" />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
+
                       <FormField
                         control={form.control}
                         name="phone"
@@ -265,6 +242,7 @@ export default function ContactPageContent() {
                           </FormItem>
                         )}
                       />
+
                       <FormField
                         control={form.control}
                         name="service"
@@ -290,6 +268,8 @@ export default function ContactPageContent() {
                         )}
                       />
                     </div>
+
+                    {/* prawa kolumna */}
                     <div className="space-y-6">
                       <FormField
                         control={form.control}
@@ -309,14 +289,13 @@ export default function ContactPageContent() {
                           </FormItem>
                         )}
                       />
+
                       <FormField
                         control={form.control}
                         name="captcha"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-white">
-                              Pytanie kontrolne: {captchaQuestion.question}
-                            </FormLabel>
+                            <FormLabel className="text-white">Pytanie kontrolne: {captchaQuestion.question}</FormLabel>
                             <FormControl>
                               <Input
                                 {...field}
@@ -332,40 +311,32 @@ export default function ContactPageContent() {
                     </div>
                   </div>
 
+                  {/* zgoda + submit */}
                   <div className="space-y-6">
                     <FormField
                       control={form.control}
                       name="privacyConsent"
                       render={({ field }) => (
-                        <FormItem className="space-y-2">
+                        <FormItem>
                           <div className="flex items-start gap-3">
-                            <Checkbox
-                              id="privacyConsent"
-                              checked={field.value}
-                              onCheckedChange={(checked) => field.onChange(checked === true)}
-                              required
-                              className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
-                            />
-                            <label htmlFor="privacyConsent" className="text-sm leading-relaxed text-gray-300">
+                            <FormControl>
+                              <Checkbox
+                                id="privacyConsent"
+                                checked={field.value}
+                                onCheckedChange={(checked) => field.onChange(checked === true)}
+                                required
+                                className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
+                              />
+                            </FormControl>
+                            <FormLabel htmlFor="privacyConsent" className="text-white leading-relaxed">
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
-                              podanych w powyższym formularzu przez:
-                              <br />
-                              <br />
+                              podanych w powyższym formularzu przez
+                              {" "}
                               <strong>Krystian Karpiuk Kancelaria Radcy Prawnego</strong>, ul. Wschodnia 24/3, 62-030 Luboń, NIP:
-                              669-217-69-58 w celu:
-                              <br />
-                              a) udzielenia odpowiedzi na moje zapytanie przesłane za pośrednictwem formularza kontaktowego,
-                              <br />
-                              b) przedstawienia oferty dotyczącej świadczonych usług,
-                              <br />
-                              c) komunikacji ze mną w sprawach związanych z moim zapytaniem.
-                              <br />
-                              <br />
-                              Rozumiem, że w każdej chwili mogę wycofać tę zgodę, kontaktując się z Administratorem danych
-                              osobowych pod adresem kontakt@zmianakrs.pl, a wycofanie zgody nie wpłynie na zgodność z prawem
-                              przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.
-                            </label>
+                              669-217-69-58 w celu: (a) odpowiedzi na zapytanie, (b) przedstawienia oferty, (c) komunikacji w sprawie zapytania.
+                              Rozumiem, że zgodę mogę wycofać w każdej chwili pod adresem kontakt@zmianakrs.pl.
+                            </FormLabel>
                           </div>
                           <FormMessage />
                         </FormItem>
@@ -373,11 +344,7 @@ export default function ContactPageContent() {
                     />
 
                     <div className="flex justify-center">
-                      <Button
-                        type="submit"
-                        className="w-1/2 bg-amber-600 hover:bg-amber-700 text-white"
-                        disabled={isSubmitting}
-                      >
+                      <Button type="submit" className="w-1/2 bg-amber-600 hover:bg-amber-700 text-white" disabled={isSubmitting}>
                         {isSubmitting ? "Wysyłanie..." : "Wyślij Zapytanie"}
                       </Button>
                     </div>
@@ -413,11 +380,11 @@ export default function ContactPageContent() {
         </div>
       </section>
 
+      {/* SEO-teksty */}
       <section className="relative py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 shadow-none">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Skontaktuj się z nami</h2>
-
             <div className="space-y-6 text-white">
               <div>
                 <h3 className="text-xl font-semibold text-amber-400 mb-3">
@@ -441,9 +408,7 @@ export default function ContactPageContent() {
               </p>
 
               <div>
-                <h4 className="text-lg font-semibold text-amber-400 mb-3">
-                  Dlaczego warto do nas napisać lub zadzwonić?
-                </h4>
+                <h4 className="text-lg font-semibold text-amber-400 mb-3">Dlaczego warto do nas napisać lub zadzwonić?</h4>
                 <ul className="space-y-2 text-gray-300 list-disc list-inside">
                   <li>Indywidualna wycena i elastyczne warunki współpracy</li>
                   <li>Profesjonalne doradztwo na każdym etapie procesu</li>
@@ -461,5 +426,5 @@ export default function ContactPageContent() {
         </div>
       </section>
     </main>
-  )
+  );
 }
