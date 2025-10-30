@@ -40,7 +40,6 @@ const contactFormSchema = z.object({
 })
 
 export type ContactFormData = z.infer<typeof contactFormSchema>
-
 type ContactFormPayload = ContactFormData & { name: string }
 
 const serviceOptions = [
@@ -144,24 +143,9 @@ export default function ContactPageContent() {
 
   const contactDetails = useMemo(
     () => [
-      {
-        icon: Phone,
-        title: "Telefon",
-        href: "tel:+48572234779",
-        value: "+48 572 234 779",
-      },
-      {
-        icon: Mail,
-        title: "Email",
-        href: "mailto:biuro@zmianakrs.pl",
-        value: "biuro@zmianakrs.pl",
-      },
-      {
-        icon: Clock,
-        title: "Godziny Pracy",
-        href: undefined,
-        value: "Pon-Pt: 8:00-18:00",
-      },
+      { icon: Phone, title: "Telefon", href: "tel:+48572234779", value: "+48 572 234 779" },
+      { icon: Mail, title: "Email", href: "mailto:biuro@zmianakrs.pl", value: "biuro@zmianakrs.pl" },
+      { icon: Clock, title: "Godziny Pracy", href: undefined, value: "Pon-Pt: 8:00-18:00" },
       {
         icon: MapPin,
         title: "Adres",
@@ -347,6 +331,7 @@ export default function ContactPageContent() {
                       />
                     </div>
                   </div>
+
                   <div className="space-y-6">
                     <FormField
                       control={form.control}
@@ -358,13 +343,10 @@ export default function ContactPageContent() {
                               id="privacyConsent"
                               checked={field.value}
                               onCheckedChange={(checked) => field.onChange(checked === true)}
-<Checkbox
-  id="privacyConsent"
-  checked={field.value}
-  onCheckedChange={(checked) => field.onChange(checked === true)}
-  required
-  className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
-/>
+                              required
+                              className="mt-1 h-5 w-5 shrink-0 cursor-pointer border border-white/70 bg-white/5 text-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
+                            />
+                            <label htmlFor="privacyConsent" className="text-sm leading-relaxed text-gray-300">
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
                               podanych w powyższym formularzu przez:
@@ -389,6 +371,7 @@ export default function ContactPageContent() {
                         </FormItem>
                       )}
                     />
+
                     <div className="flex justify-center">
                       <Button
                         type="submit"
@@ -402,6 +385,7 @@ export default function ContactPageContent() {
                 </form>
               </Form>
             </div>
+
             <Card className="bg-black/30 backdrop-blur-sm border border-white/20 p-6">
               <CardHeader className="mb-6">
                 <CardTitle className="text-white text-lg">Dane Kontaktowe</CardTitle>
@@ -413,18 +397,13 @@ export default function ContactPageContent() {
                     <div>
                       <div className="font-medium text-white text-sm">{title}</div>
                       {href ? (
-                        <a
-                          href={href}
-                          className="text-gray-300 text-sm hover:text-amber-400 transition-colors"
-                        >
+                        <a href={href} className="text-gray-300 text-sm hover:text-amber-400 transition-colors">
                           {value}
                         </a>
                       ) : (
                         <div className="text-gray-300 text-sm">{value}</div>
                       )}
-                      {helper ? (
-                        <div className="text-gray-400 text-xs mt-1">{helper}</div>
-                      ) : null}
+                      {helper ? <div className="text-gray-400 text-xs mt-1">{helper}</div> : null}
                     </div>
                   </div>
                 ))}
