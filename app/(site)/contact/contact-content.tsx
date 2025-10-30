@@ -142,7 +142,7 @@ export default function ContactPageContent() {
   );
 
   return (
-    <main className="relative flex flex-col">
+    <>
       {/* HERO */}
       <section className="relative pt-20 pb-6 text-white overflow-hidden">
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
@@ -394,8 +394,8 @@ export default function ContactPageContent() {
                   Potrzebujesz wsparcia przy zmianie wpisu w KRS? Chcesz złożyć wniosek o zmianę w KRS lub przygotować wymagane
                   dokumenty rejestrowe spółki? Zapraszamy do kontaktu – odpowiemy na wszystkie pytania, doradzimy najlepsze
                   rozwiązanie i przygotujemy indywidualną ofertę dostosowaną do Twoich potrzeb. Zobacz nasze
-                  <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline"> usługi zmian wpisu w KRS</a>
-                  i<a href="/cennik" className="text-amber-400 hover:text-amber-300 underline"> cennik obsługi KRS</a>.
+                  {" "}<a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi zmian wpisu w KRS</a>
+                  {" "}i{" "}<a href="/cennik" className="text-amber-400 hover:text-amber-300 underline">cennik obsługi KRS</a>.
                 </p>
               </div>
 
@@ -403,8 +403,8 @@ export default function ContactPageContent() {
                 Specjalizujemy się w kompleksowej obsłudze wniosków KRS dla spółek i biur rachunkowych. Pomagamy w przygotowaniu
                 uchwał do KRS, elektronicznym zgłoszeniu zmian do KRS przez system S24, a także w pełnym procesie aktualizacji danych
                 rejestracyjnych spółki. Poznaj naszą
-                <a href="/o-nas" className="text-amber-400 hover:text-amber-300 underline"> historię i doświadczenie</a>
-                oraz przeczytaj<a href="/blog" className="text-amber-400 hover:text-amber-300 underline"> artykuły o zmianach w KRS</a>.
+                {" "}<a href="/o-nas" className="text-amber-400 hover:text-amber-300 underline">historię i doświadczenie</a>
+                {" "}oraz przeczytaj{" "}<a href="/blog" className="text-amber-400 hover:text-amber-300 underline">artykuły o zmianach w KRS</a>.
               </p>
 
               <div>
@@ -425,6 +425,6 @@ export default function ContactPageContent() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
