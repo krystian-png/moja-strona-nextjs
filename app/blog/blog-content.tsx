@@ -127,7 +127,11 @@ export default function BlogContent({ articles, isLoading = false }: BlogContent
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {hasArticles ? (
               articles.map((article) => (
-                <Link key={article.id} href={`/blog/${article.slug}`} className="group block h-full">
+                <Link
+                  key={article.id}
+                  href={`/artykul/${article.slug}`}
+                  className="group block h-full"
+                >
                   <Card className="h-full overflow-hidden border-white/20 bg-white/10 shadow-none transition-all duration-300 hover:bg-white/15 backdrop-blur-sm">
                     <CardContent className="h-full justify-between p-6">
                       <div className="space-y-4">
