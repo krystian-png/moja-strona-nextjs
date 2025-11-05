@@ -62,7 +62,7 @@ Zapraszamy do współpracy biura rachunkowe. Oferujemy partnerstwo w zakresie ob
 Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla spółek i biur rachunkowych. Z nami zmiana danych w KRS, zgłoszenie zmian sądowi rejestrowemu i przygotowanie dokumentów rejestrowych spółki stają się proste, szybkie i bezpieczne.`;
 
   return (
-    <div className="relative">
+    <div className="relative pb-20">
       {/* Obraz tła pod spodem */}
       <div
         className="fixed inset-0 -z-20"
@@ -77,7 +77,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
       <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
 
       <Navbar />
-      <main>
+      <main className="py-32">
         <Hero />
         <Features />
         <Trust />
