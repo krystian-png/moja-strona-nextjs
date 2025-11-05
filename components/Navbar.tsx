@@ -25,7 +25,12 @@ export default function Navbar() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    if (href === "/blog") return pathname === "/blog" || pathname.startsWith("/blog/");
+    if (href === "/blog")
+      return (
+        pathname === "/blog" ||
+        pathname.startsWith("/blog/") ||
+        pathname.startsWith("/artykul")
+      );
     return pathname.startsWith(href);
   };
 
