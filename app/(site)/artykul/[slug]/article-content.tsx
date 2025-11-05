@@ -28,48 +28,68 @@ export default function ArticleContent({ article }: ArticleContentProps) {
   const content = getArticleContent(article.slug);
 
   return (
-    <div
-      className="relative min-h-screen pb-20"
+    <div 
+      className="min-h-screen pb-20"
       style={{
-        backgroundImage:
-          "url(/images/drewniana-konstrukcja-dokumenty-prawne-szeregu-organizacja-porzadek-artykuly-prawnicze-krs.webp)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundImage: 'url(/images/drewniana-konstrukcja-dokumenty-prawne-szeregu-organizacja-porzadek-artykuly-prawnicze-krs.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-slate-900/65" aria-hidden />
-      <main
-        className="relative z-10 mx-auto max-w-4xl px-4 py-32 sm:px-6 lg:px-8"
-        role="main"
-      >
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-gray-400">
-          <Link href="/" className="transition-colors hover:text-amber-400">
-            Strona główna
-          </Link>
-          <span className="text-gray-500">/</span>
-          <Link href="/blog" className="transition-colors hover:text-amber-400">
-            Blog
-          </Link>
-          <span className="text-gray-500">/</span>
-          <span className="text-white">{article.title}</span>
-        </nav>
-        <article className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur-lg sm:p-12">
-          <header className="mb-6">
-            <Badge className="bg-amber-600 text-white mb-4 hover:bg-amber-700">
+      {/* Dark overlay */}
+      <div className="min-h-screen bg-slate-900/60">
+        <div className="relative h-96 overflow-hidden">
+          <Image
+            src={article.imageUrl}
+            alt={article.imageAlt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/40" />
+        </div>
+
+        <article className="relative z-10 -mt-32 mx-auto max-w-4xl rounded-3xl border border-white/15 bg-white/10 backdrop-blur-md px-4 py-12 shadow-2xl sm:px-8 lg:px-12">
+          <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm text-gray-400">
+            <Link href="/" className="transition-colors hover:text-amber-400">
+              Strona główna
+            </Link>
+            <span className="text-gray-500">/</span>
+            <Link href="/blog" className="transition-colors hover:text-amber-400">
+              Blog
+            </Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-white">{article.title}</span>
+          </nav>
+
+          <header className="mb-10">
+            <Badge className="mb-4 bg-amber-600 text-white hover:bg-amber-700">
               {article.category}
             </Badge>
-            <h1 className="mb-4 text-4xl font-bold text-white">
+
+            <h1 className="mb-4 text-4xl font-bold leading-tight text-white sm:text-5xl">
               {article.title}
             </h1>
-            <time className="mb-8 block text-gray-300" dateTime={article.publishedAt}>
-              Opublikowano {formatDate(article.publishedAt)}
-            </time>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+            </div>
           </header>
+
           <div
-            className="prose prose-lg prose-invert max-w-none text-lg leading-relaxed text-gray-100 prose-headings:text-white prose-strong:text-white prose-em:text-gray-300 prose-img:mb-8 prose-img:h-auto prose-img:min-h-[400px] prose-img:w-full prose-img:rounded-xl prose-img:object-cover"
+            className="prose prose-invert prose-lg max-w-none 
+              prose-headings:text-white prose-headings:font-bold 
+              prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-amber-400 
+              prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-amber-300
+              prose-p:text-gray-300 prose-p:leading-relaxed
+              prose-a:text-amber-400 prose-a:no-underline hover:prose-a:text-amber-300
+              prose-ul:text-gray-300 prose-li:text-gray-300
+              prose-img:my-8 prose-img:rounded-lg 
+              prose-strong:text-white prose-strong:font-semibold"
             dangerouslySetInnerHTML={{ __html: content }}
           />
+
           <div className="mt-16 pt-8 border-t border-white/10">
             <Link
               href="/blog"
@@ -79,7 +99,7 @@ export default function ArticleContent({ article }: ArticleContentProps) {
             </Link>
           </div>
         </article>
-      </main>
+      </div>
     </div>
   );
 }
