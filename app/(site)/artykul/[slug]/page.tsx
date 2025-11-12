@@ -61,10 +61,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="bg-slate-900 text-white">
+    <>
       <Navbar />
       <ArticleContent article={article} />
       <Footer />
-    </div>
+    </>
   );
 }
