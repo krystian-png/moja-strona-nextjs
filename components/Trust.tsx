@@ -7,7 +7,7 @@ export default function Trust() {
     <>
       <section className="relative py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-10">
+          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 sm:p-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-5 text-center">
               Profesjonalna obsługa wniosków o zmianę wpisu w KRS
             </h2>
@@ -16,7 +16,7 @@ export default function Trust() {
               Aktualizacja danych w KRS – obowiązek, którego nie warto odkładać
             </h3>
 
-            <div className="space-y-5 text-gray-300 leading-relaxed">
+            <div className="space-y-6 text-gray-300 leading-relaxed">
               <p className="text-base sm:text-lg">
                 Zmiana danych w KRS to nie tylko formalność – to prawny obowiązek każdej spółki wpisanej do rejestru. Niedopełnienie go może skutkować poważnymi konsekwencjami: grzywną, odpowiedzialnością członków zarządu, a nawet odmową wykonania czynności przez kontrahenta czy notariusza.
               </p>
