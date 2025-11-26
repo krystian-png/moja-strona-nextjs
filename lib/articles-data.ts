@@ -16,6 +16,233 @@ interface ArticleEntry {
 const articleEntries: ArticleEntry[] = [
   {
     metadata: {
+      slug: "wpisywanie-zmian-krs-przewodnik",
+      title: "Wpisywanie zmian w KRS – krótki przewodnik",
+      excerpt:
+        "Profesjonalne usługi zmiany wpisu KRS – kompleksowa pomoc w aktualizacji danych spółki, zmianie kodów PKD, adresu i organów. Szybko, bezpiecznie, zgodnie z prawem.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/biuro-open-space-zespol-prawnikow-dokumenty-krs.webp",
+      imageAlt: "Nowoczesne biuro open space z zespołem prawników",
+      publishedAt: "2025-06-15T00:00:00.000Z",
+    },
+    content: `
+<img src="/images/biuro-open-space-zespol-prawnikow-dokumenty-krs.webp" alt="Nowoczesne biuro open space z zespołem prawników" loading="lazy" width="800" height="600" decoding="async" />
+<h2>Wprowadzenie</h2>
+<p>Krajowy Rejestr Sądowy (KRS) to kluczowy rejestr publiczny, w którym ewidencjonowane są najważniejsze dane dotyczące przedsiębiorców, spółek i innych podmiotów prawnych działających na terenie Polski. <strong>Zmiana wpisu KRS</strong> to proces, który przedsiębiorcy muszą przeprowadzać w przypadku każdej istotnej modyfikacji danych rejestrowych – od zmiany adresu siedziby, przez aktualizację kodów PKD, aż po zmianę składu organów spółki.</p>
+<p>Poniżej wyjaśniamy, jakie zmiany można zgłaszać do KRS, jak przebiega procedura ich wpisywania, jakie przepisy regulują ten proces oraz jak uniknąć najczęstszych błędów. Tekst jest zoptymalizowany pod kątem fraz takich jak <strong>„zmiana wpisu KRS"</strong>, <strong>„zmiana KRS"</strong>, <strong>„aktualizacja KRS"</strong> i inne, aby ułatwić odnalezienie informacji przez przedsiębiorców poszukujących profesjonalnej pomocy w tym zakresie.</p>
+<img src="/images/sala-na-walne-zgromadzenie-wspolnikow-spolki-zoo-krs.webp" alt="Sala na walne zgromadzenie wspólników spółki z o.o. – zmiana wpisu w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>1. Czym jest Krajowy Rejestr Sądowy i jaka jest jego rola?</h2>
+<p>KRS to rejestr prowadzony przez sądy rejestrowe, który gromadzi i udostępnia informacje o m.in.:</p>
+<ul>
+<li>spółkach kapitałowych (np. spółkach z o.o., akcyjnych),</li>
+<li>spółkach osobowych (np. komandytowych, jawnych),</li>
+<li>fundacjach, stowarzyszeniach i innych podmiotach prawnych.</li>
+</ul>
+<p>Rejestr ten pełni funkcję publicznego źródła informacji o podmiotach gospodarczych, zapewniając transparentność i bezpieczeństwo obrotu gospodarczego.</p>
+<img src="/images/biuro_open_space_z_postaciami_przy_dokumentach.webp" alt="Wnętrze biura z osobami w tle, zajętymi pracą" loading="lazy" width="800" height="600" decoding="async" />
+<h2>2. Jakie zmiany można zgłaszać do KRS?</h2>
+<p>Podmioty wpisane do KRS mają obowiązek zgłaszania wszelkich istotnych zmian danych ujawnionych w rejestrze. Najczęściej zgłaszane zmiany to:</p>
+<ul>
+<li><strong>Zmiana danych identyfikacyjnych i adresowych:</strong>
+<ul>
+<li>zmiana siedziby lub adresu spółki,</li>
+<li>zmiana nazwy firmy,</li>
+<li>zmiana numerów kontaktowych, adresu e-mail itp.</li>
+</ul>
+</li>
+<li><strong>Zmiana danych dotyczących organów spółki:</strong>
+<ul>
+<li>zmiana składu zarządu, rady nadzorczej, komisji rewizyjnej,</li>
+<li>zmiana osób uprawnionych do reprezentacji spółki.</li>
+</ul>
+</li>
+<li><strong>Zmiana umowy spółki:</strong>
+<ul>
+<li>zmiana przedmiotu działalności (w tym aktualizacja kodów PKD),</li>
+<li>zmiana kapitału zakładowego,</li>
+<li>zmiana formy prawnej spółki,</li>
+<li>zmiana zasad reprezentacji.</li>
+</ul>
+</li>
+<li><strong>Zmiana wspólników:</strong>
+<ul>
+<li>zmiana udziałów,</li>
+<li>zmiana struktury właścicielskiej.</li>
+</ul>
+</li>
+<li><strong>Inne zmiany:</strong>
+<ul>
+<li>likwidacja spółki,</li>
+<li>przekształcenie spółki,</li>
+<li>zawieszenie działalności.</li>
+</ul>
+</li>
+</ul>
+<img src="/images/otwarte_biuro_z_praca_nad_dokumentami.webp" alt="Otwarte biuro z trzema osobami pracującymi nad dokumentami przy nowoczesnych biurkach" loading="lazy" width="800" height="600" decoding="async" />
+<h2>3. Podstawy prawne zmiany wpisu KRS</h2>
+<p>Procedura zmiany wpisu KRS jest uregulowana przede wszystkim w:</p>
+<ul>
+<li><strong>Kodeksie spółek handlowych (KSH),</strong></li>
+<li><strong>Ustawie z dnia 20 sierpnia 1997 r. o Krajowym Rejestrze Sądowym,</strong></li>
+<li><strong>Rozporządzeniach Ministra Sprawiedliwości dotyczących wzorów formularzy KRS,</strong></li>
+<li><strong>Ustawie o zasadach klasyfikacji i identyfikacji działalności gospodarczej (w zakresie kodów PKD).</strong></li>
+</ul>
+<p>Przepisy te wyznaczają obowiązek zgłaszania zmian, terminy oraz wymagane dokumenty.</p>
+<h2>4. Procedura zmiany wpisu KRS – krok po kroku</h2>
+<h3>Krok 1: Podjęcie uchwały lub decyzji o zmianie</h3>
+<p>Każda zmiana danych w KRS wymaga najpierw formalnej decyzji odpowiedniego organu spółki (zarządu, wspólników, walnego zgromadzenia), podjętej zgodnie z umową spółki i przepisami prawa.</p>
+<h3>Krok 2: Przygotowanie wymaganych dokumentów</h3>
+<p>Dokumenty niezbędne do zmiany wpisu KRS mogą obejmować:</p>
+<ul>
+<li>protokoły z zebrań organów spółki,</li>
+<li>uchwały o zmianie danych,</li>
+<li>nowy tekst jednolity umowy spółki (w przypadku zmiany umowy),</li>
+<li>zgody osób obejmujących funkcje w organach spółki,</li>
+<li>formularze KRS odpowiednie do rodzaju zmiany (np. KRS-Z3, KRS-ZK).</li>
+</ul>
+<img src="/images/podpisywanie-dokumentow-krs-zmiana-zarzadu-spolki.webp" alt="Doświadczony prawnik podpisuje dokumenty KRS dotyczące zmiany zarządu spółki" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Krok 3: Złożenie wniosku do sądu rejestrowego</h3>
+<p>Wniosek o zmianę wpisu KRS można złożyć:</p>
+<ul>
+<li>elektronicznie przez system S24, w przypadku w którym podmiot został założony w trybie s24 i nie dokonano zmian umowy spółki w zwykłej formie u notariusza,</li>
+<li>poprzez platformę PRS (Portal Rejestrów Sądowych), w przypadku podmiotów utworzonych tradycyjnie – w przypadku sp. z o.o., poprzez zawarcie umowy spółki w formie aktu notarialnego u notariusza.</li>
+</ul>
+<h3>Krok 4: Opłaty i potwierdzenie</h3>
+<p>Za złożenie wniosku o zmianę wpisu KRS obowiązuje opłata sądowa (zwykle 250 zł) oraz opłata za ogłoszenie w Monitorze Sądowym i Gospodarczym (100 zł). Po rozpatrzeniu wniosku sąd wydaje postanowienie o wpisie zmiany do rejestru.</p>
+<h3>Krok 5: Aktualizacja danych w KRS</h3>
+<p>Po dokonaniu wpisu zmiany przedsiębiorca otrzymuje potwierdzenie aktualizacji danych, które stają się oficjalne i obowiązujące wobec osób trzecich.</p>
+<img src="/images/zmiana-zarzadu-zmiana-wspolnika-krs.webp" alt="Zmiana zarządu i zmiana wspólnika w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>5. Znaczenie prawidłowej i terminowej zmiany wpisu KRS</h2>
+<p>Dokładność i aktualność danych w KRS ma kluczowe znaczenie dla:</p>
+<ul>
+<li><strong>Bezpieczeństwa prawnego przedsiębiorcy,</strong></li>
+<li><strong>Wzrostu wiarygodności w oczach kontrahentów i instytucji finansowych,</strong></li>
+<li><strong>Spełnienia wymogów prawnych i uniknięcia sankcji,</strong></li>
+<li><strong>Prawidłowego funkcjonowania w obrocie gospodarczym,</strong></li>
+<li><strong>Ułatwienia dostępu do dotacji, kredytów i innych form wsparcia.</strong></li>
+</ul>
+<p>Brak aktualizacji wpisu KRS może skutkować konsekwencjami prawnymi, w tym odmową wpisu zmian, karami finansowymi, a nawet problemami podczas kontroli urzędowych.</p>
+<h2>6. Najczęstsze błędy i problemy przy zmianie wpisu KRS</h2>
+<ul>
+<li>Nieprawidłowe lub niekompletne wnioski,</li>
+<li>Brak wymaganych dokumentów lub uchwał,</li>
+<li>Niedotrzymanie ustawowych terminów na zgłoszenie zmian,</li>
+<li>Niezgodność zmian z umową spółki lub Kodeksem spółek handlowych,</li>
+<li>Problemy z podpisem elektronicznym lub brak podpisów uprawnionych osób,</li>
+<li>Niezrozumienie różnic między zmianą wpisu KRS a aktualizacją danych w CEIDG.</li>
+</ul>
+<h2>7. Przykłady praktyczne zmian wpisu KRS</h2>
+<p><strong>Przykład 1:</strong> Spółka z o.o. zmienia adres siedziby. Zarząd przygotowuje uchwałę, składa wniosek KRS wraz z uchwałą i aktualizuje wpis KRS. Po wpisie zmiany nowy adres staje się oficjalnym adresem spółki.</p>
+<p><strong>Przykład 2:</strong> Spółka akcyjna zmienia skład zarządu. Wniosek o zmianę wpisu KRS musi zawierać protokół z walnego zgromadzenia i podpisy nowych członków zarządu.</p>
+<h2>8. Dlaczego warto korzystać z profesjonalnych usług przy zmianie wpisu KRS?</h2>
+<p>Frazy takie jak <strong>„zmiana wpisu KRS"</strong>, <strong>„zmiana KRS"</strong> czy <strong>„aktualizacja KRS"</strong> są często wyszukiwane przez przedsiębiorców poszukujących pomocy w zakresie formalności rejestrowych. Profesjonalne wsparcie:</p>
+<ul>
+<li>Zapewnia poprawność formalną i merytoryczną wniosków,</li>
+<li>Skraca czas oczekiwania na wpis zmian,</li>
+<li>Minimalizuje ryzyko odrzucenia wniosku,</li>
+<li>Umożliwia kompleksową obsługę zmian,</li>
+<li>Zwiększa komfort i bezpieczeństwo przedsiębiorcy.</li>
+</ul>
+<p><strong><a href="/uslugi" style="color: #f59e0b; font-weight: bold;">Więcej o naszej ofercie</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
+  {
+    metadata: {
+      slug: "zmiana-kodow-pkd-2025",
+      title: "Zmiana kodów PKD 2025",
+      excerpt:
+        "Kompletny przewodnik krok po kroku dotyczący zmiany kodów PKD w 2025 roku. Wszystkie obowiązki, terminy i przepisy.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/zakladanie-spolki-podpisanie-umowy-KRS.webp",
+      imageAlt: "Zakładanie spółki – podpisanie umowy KRS",
+      publishedAt: "2025-06-10T00:00:00.000Z",
+    },
+    content: `
+<img src="/images/zakladanie-spolki-podpisanie-umowy-KRS.webp" alt="Zakładanie spółki – podpisanie umowy KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>Zmiana kodów PKD 2025 – obowiązek i sposoby aktualizacji wpisu w KRS</h2>
+<img src="/images/archiwum-dokumenty-spolek-zmiana-wpisu-w-krs.webp" alt="Archiwum dokumenty spółek – zmiana wpisu w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Podstawa prawna i przepisy krajowe dotyczące zmiany wpisu KRS</h3>
+<p>Podstawą prawną dotyczącą zmiany kodów Polskiej Klasyfikacji Działalności (PKD) oraz obowiązku ich aktualizacji w Krajowym Rejestrze Sądowym (KRS) jest przede wszystkim:</p>
+<ul>
+<li><strong>Ustawa z dnia 6 marca 2018 r. o zasadach klasyfikacji i identyfikacji działalności gospodarczej</strong>, w szczególności przepisy regulujące obowiązek zgłaszania zmian w zakresie działalności gospodarczej,</li>
+<li>Regulacje dotyczące wpisów i zmian w KRS oraz Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG),</li>
+<li>Rozporządzenia wprowadzające klasyfikację PKD 2025, które obowiązuje od 1 stycznia 2025 roku.</li>
+</ul>
+<p>Zmiana KRS w zakresie kodów PKD jest obowiązkowa dla wszystkich podmiotów gospodarczych, które chcą zachować zgodność danych rejestrowych z aktualnym stanem faktycznym działalności. Przepisy wprowadzają okres przejściowy na aktualizację kodów do końca 2026 r.</p>
+<img src="/images/omawianie-zmian-pkd-umowa-spolki-krs.webp" alt="Omawianie zmian PKD – umowa spółki KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Cel i funkcja regulacji dotyczących aktualizacji KRS</h3>
+<p>Aktualizacja KRS poprzez zmianę wpisu dotyczącego kodów PKD ma na celu:</p>
+<ul>
+<li><strong>Dostosowanie danych rejestrowych do rzeczywistego profilu działalności przedsiębiorcy</strong>, co jest niezbędne dla prawidłowego funkcjonowania w obrocie gospodarczym,</li>
+<li><strong>Zharmonizowanie polskiej klasyfikacji działalności z unijnym systemem NACE</strong>, ułatwiając raportowanie i analizę statystyczną,</li>
+<li><strong>Zapewnienie przejrzystości i wiarygodności danych w rejestrze KRS</strong>, co ma znaczenie zarówno dla organów państwowych, jak i kontrahentów przedsiębiorcy,</li>
+<li><strong>Ułatwienie przedsiębiorcom dostępu do finansowania, ulg podatkowych oraz programów wsparcia</strong>, które często wymagają precyzyjnego określenia zakresu działalności.</li>
+</ul>
+<h3>Obowiązek zmiany wpisu KRS – kto i kiedy musi dokonać aktualizacji?</h3>
+<ul>
+<li>Nowo rejestrowane podmioty od 1 stycznia 2025 roku muszą wskazywać kody PKD zgodne z nową klasyfikacją PKD 2025 już na etapie rejestracji w KRS,</li>
+<li>Podmioty wpisane do KRS przed 2025 rokiem mają obowiązek dokonania zmiany KRS w zakresie kodów PKD najpóźniej do 31 grudnia 2026 roku,</li>
+<li>W przypadku składania wniosku o inną zmianę wpisu KRS (np. zmiana adresu siedziby, zarządu) po 1 stycznia 2025 roku, przedsiębiorca powinien jednocześnie dokonać aktualizacji kodów PKD,</li>
+<li>Brak aktualizacji wpisu KRS w terminie może skutkować niezgodnością danych rejestrowych, co może powodować problemy podczas kontroli urzędowych i komplikacje w kontaktach z kontrahentami.</li>
+</ul>
+<p>Zgodnie z § 2 ust. 3 Rozporządzenia Rady Ministrów z dnia 18 grudnia 2024 r. w sprawie Polskiej Klasyfikacji Działalności (PKD), podmioty wpisane do Krajowego Rejestru Sądowego lub krajowego rejestru urzędowego podmiotów gospodarki narodowej, które po dniu wejścia w życie niniejszego rozporządzenia, a przed upływem terminu, złożyły wniosek o zmianę wpisu w zakresie dotyczącym zmiany przedmiotu działalności według Polskiej Klasyfikacji Działalności, są obowiązane do dokonania aktualizacji zgodnie z nowymi przepisami.</p>
+<img src="/images/zawarcie-umowy-zmiana-danych-w-krs.webp" alt="Zawarcie umowy – zmiana danych w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Sposoby dokonania zmiany wpisu KRS w zakresie kodów PKD</h3>
+<h4>Zmiana KRS dla spółek kapitałowych</h4>
+<ul>
+<li>Zmiana wpisu KRS dotycząca kodów PKD odbywa się poprzez złożenie wniosku o zmianę wpisu (formularz KRS-Z20 lub inny odpowiedni),</li>
+<li>Do wniosku należy dołączyć dokumenty potwierdzające zmianę (np. uchwałę wspólników o zmianie umowy spółki, jeśli zmiana kodów PKD wymaga jej modyfikacji),</li>
+<li>W przypadku spółek z o.o. i spółek akcyjnych zmiana umowy spółki wymaga formy aktu notarialnego,</li>
+<li>Wniosek można złożyć elektronicznie przez Portal Rejestrów Sądowych (PRS) lub system S24 (dla spółek zarejestrowanych w tym trybie).</li>
+</ul>
+<h4>Zmiana KRS dla spółek osobowych</h4>
+<ul>
+<li>W przypadku spółek jawnych, partnerskich, komandytowych i komandytowo-akcyjnych procedura jest podobna,</li>
+<li>Zmiana kodów PKD może wymagać zmiany umowy spółki, co w zależności od formy spółki może wymagać formy pisemnej lub aktu notarialnego,</li>
+<li>Wniosek o zmianę wpisu KRS składa się na odpowiednim formularzu wraz z wymaganymi załącznikami.</li>
+</ul>
+<img src="/images/podpisanie-dokumentu-zmiana-danych-KRS.webp" alt="Podpisanie dokumentu – zmiana danych KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Praktyczne znaczenie zmiany wpisu KRS i aktualizacji kodów PKD dla przedsiębiorców</h3>
+<h4>Dla przedsiębiorców</h4>
+<ul>
+<li>Aktualizacja KRS jest niezbędna do prawidłowego prowadzenia działalności gospodarczej, rozliczeń podatkowych oraz ubiegania się o dotacje i inne formy wsparcia,</li>
+<li>Niezaktualizowane dane w KRS mogą skutkować odmową przyznania ulg, problemami podczas kontroli skarbowych oraz utrudnieniami w kontaktach biznesowych,</li>
+<li>Okres przejściowy do końca 2026 roku pozwala na spokojne dostosowanie wpisu KRS do nowej klasyfikacji PKD 2025,</li>
+<li>Zmiana KRS może być dokonana jednocześnie z innymi zmianami wpisu, co pozwala na optymalizację kosztów i formalności.</li>
+</ul>
+<h4>Dla pracodawców</h4>
+<ul>
+<li>Aktualizacja kodów PKD w KRS wpływa na obowiązki sprawozdawcze oraz klasyfikację działalności w kontekście prawa pracy i ubezpieczeń społecznych,</li>
+<li>Precyzyjne określenie zakresu działalności ułatwia zarządzanie ryzykiem i planowanie strategiczne.</li>
+</ul>
+<h4>Dla konsumentów</h4>
+<ul>
+<li>Przejrzystość danych w KRS zwiększa zaufanie do przedsiębiorców i umożliwia lepszą ocenę wiarygodności firm na rynku.</li>
+</ul>
+<img src="/images/podpisywanie-wniosku-do-krs-zmiana-danych-spolki.webp" alt="Podpisywanie wniosku do KRS – zmiana danych spółki" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Możliwe kontrowersje i problemy interpretacyjne przy zmianie wpisu KRS</h3>
+<ul>
+<li><strong>Zakres zmian wymagających aktualizacji umowy spółki</strong> – spory dotyczące tego, kiedy zmiana kodów PKD wymaga zmiany umowy, a kiedy można dokonać tylko zmiany wpisu KRS,</li>
+<li><strong>Brak sankcji za brak aktualizacji wpisu KRS w okresie przejściowym</strong>, co może prowadzić do zaniedbań ze strony przedsiębiorców,</li>
+<li><strong>Niejasności dotyczące automatycznego dostosowania kodów PKD w KRS po 2026 roku</strong>, które budzą niepewność wśród przedsiębiorców,</li>
+<li><strong>Problemy z interpretacją nowych kodów PKD 2025</strong>, zwłaszcza w przypadku działalności wielobranżowej,</li>
+<li><strong>Ryzyko błędów formalnych przy składaniu wniosków o zmianę wpisu KRS</strong>, które mogą opóźnić proces aktualizacji.</li>
+</ul>
+<h3>Podsumowanie</h3>
+<p>Zmiana wpisu KRS w zakresie kodów PKD w 2025 roku to kluczowy obowiązek każdego przedsiębiorcy, który pragnie zachować zgodność danych rejestrowych z aktualnym profilem działalności. Aktualizacja KRS pozwala na prawidłowe funkcjonowanie w obrocie gospodarczym, ułatwia dostęp do wsparcia oraz zwiększa wiarygodność firmy.</p>
+<p>Znajomość przepisów, świadome podejście do zmiany KRS oraz terminowe dokonanie aktualizacji wpisu to podstawy skutecznego prowadzenia działalności gospodarczej w Polsce. Usługi profesjonalnego wsparcia przy zmianie wpisu KRS i aktualizacji kodów PKD mogą znacznie usprawnić ten proces i zminimalizować ryzyko błędów formalnych.</p>
+<p><strong>Jeśli potrzebujesz pomocy w zakresie zmiany wpisu KRS lub aktualizacji kodów PKD, zapraszamy do kontaktu. Oferujemy kompleksowe usługi prawne i doradcze, które pomogą Ci sprawnie przeprowadzić wszystkie formalności związane ze zmianami w KRS.</strong></p>
+<p><strong><a href="/cennik" style="color: #f59e0b; text-decoration: underline;">Sprawdź nasz cennik</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
+  {
+    metadata: {
       slug: "outsourcing-zmian-krs-kompleksowa-obsluga-korzysci-dla-firm",
       title: "Outsourcing zmian KRS – kompleksowa obsługa i korzyści dla firm",
       excerpt:

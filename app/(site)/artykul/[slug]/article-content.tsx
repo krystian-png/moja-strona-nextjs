@@ -4,8 +4,8 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 
-import type { ArticleMetadata } from "./articles-data";
-import { getArticleContent } from "./articles-data";
+import type { ArticleMetadata } from "@/lib/articles-data";
+import { getArticleContent } from "@/lib/articles-data";
 
 interface ArticleContentProps {
   article: ArticleMetadata;

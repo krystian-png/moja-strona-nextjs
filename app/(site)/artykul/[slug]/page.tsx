@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import { siteUrl } from "@/lib/seo";
 
 import ArticleContent from "./article-content";
-import { articlesMetadata, getArticle } from "./articles-data";
+import { articlesMetadata, getArticle } from "@/lib/articles-data";
 
 interface ArticlePageProps {
   params: { slug: string };

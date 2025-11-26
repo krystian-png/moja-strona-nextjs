@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogContent, { type Article } from "./blog-content";
 import { allPosts } from "contentlayer/generated";
-import { articlesMetadata } from "@/app/(site)/artykul/[slug]/articles-data";
+import { articlesMetadata } from "@/lib/articles-data";
 
 const pageUrl = "https://zmianakrs.pl/blog";
 
