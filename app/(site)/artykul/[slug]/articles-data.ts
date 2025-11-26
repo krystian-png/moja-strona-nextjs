@@ -634,6 +634,98 @@ Nasze usługi KRS zaczynają się od 799 zł i obejmują przygotowanie dokument�
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "zmiana-kodow-pkd-2025",
+      title: "Zmiana kodów PKD 2025",
+      excerpt:
+        "Kompletny przewodnik krok po kroku dotyczący zmiany kodów PKD w 2025 roku. Wszystkie obowiązki, terminy i przepisy.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/zakladanie-spolki-podpisanie-umowy-KRS.webp",
+      imageAlt: "Zakładanie spółki – podpisanie umowy KRS",
+      publishedAt: "2025-06-10T00:00:00.000Z",
+    },
+    content: `
+<img src="/images/zakladanie-spolki-podpisanie-umowy-KRS.webp" alt="Zakładanie spółki – podpisanie umowy KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>Zmiana kodów PKD 2025 – obowiązek i sposoby aktualizacji wpisu w KRS</h2>
+<img src="/images/archiwum-dokumenty-spolek-zmiana-wpisu-w-krs.webp" alt="Archiwum dokumenty spółek – zmiana wpisu w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Podstawa prawna i przepisy krajowe dotyczące zmiany wpisu KRS</h3>
+<p>Podstawą prawną dotyczącą zmiany kodów Polskiej Klasyfikacji Działalności (PKD) oraz obowiązku ich aktualizacji w Krajowym Rejestrze Sądowym (KRS) jest przede wszystkim:</p>
+<ul>
+<li><strong>Ustawa z dnia 6 marca 2018 r. o zasadach klasyfikacji i identyfikacji działalności gospodarczej</strong>, w szczególności przepisy regulujące obowiązek zgłaszania zmian w zakresie działalności gospodarczej,</li>
+<li>Regulacje dotyczące wpisów i zmian w KRS oraz Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG),</li>
+<li>Rozporządzenia wprowadzające klasyfikację PKD 2025, które obowiązuje od 1 stycznia 2025 roku.</li>
+</ul>
+<p>Zmiana KRS w zakresie kodów PKD jest obowiązkowa dla wszystkich podmiotów gospodarczych, które chcą zachować zgodność danych rejestrowych z aktualnym stanem faktycznym działalności. Przepisy wprowadzają okres przejściowy na aktualizację kodów do końca 2026 r.</p>
+<img src="/images/omawianie-zmian-pkd-umowa-spolki-krs.webp" alt="Omawianie zmian PKD – umowa spółki KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Cel i funkcja regulacji dotyczących aktualizacji KRS</h3>
+<p>Aktualizacja KRS poprzez zmianę wpisu dotyczącego kodów PKD ma na celu:</p>
+<ul>
+<li><strong>Dostosowanie danych rejestrowych do rzeczywistego profilu działalności przedsiębiorcy</strong>, co jest niezbędne dla prawidłowego funkcjonowania w obrocie gospodarczym,</li>
+<li><strong>Zharmonizowanie polskiej klasyfikacji działalności z unijnym systemem NACE</strong>, ułatwiając raportowanie i analizę statystyczną,</li>
+<li><strong>Zapewnienie przejrzystości i wiarygodności danych w rejestrze KRS</strong>, co ma znaczenie zarówno dla organów państwowych, jak i kontrahentów przedsiębiorcy,</li>
+<li><strong>Ułatwienie przedsiębiorcom dostępu do finansowania, ulg podatkowych oraz programów wsparcia</strong>, które często wymagają precyzyjnego określenia zakresu działalności.</li>
+</ul>
+<h3>Obowiązek zmiany wpisu KRS – kto i kiedy musi dokonać aktualizacji?</h3>
+<ul>
+<li>Nowo rejestrowane podmioty od 1 stycznia 2025 roku muszą wskazywać kody PKD zgodne z nową klasyfikacją PKD 2025 już na etapie rejestracji w KRS,</li>
+<li>Podmioty wpisane do KRS przed 2025 rokiem mają obowiązek dokonania zmiany KRS w zakresie kodów PKD najpóźniej do 31 grudnia 2026 roku,</li>
+<li>W przypadku składania wniosku o inną zmianę wpisu KRS (np. zmiana adresu siedziby, zarządu) po 1 stycznia 2025 roku, przedsiębiorca powinien jednocześnie dokonać aktualizacji kodów PKD,</li>
+<li>Brak aktualizacji wpisu KRS w terminie może skutkować niezgodnością danych rejestrowych, co może powodować problemy podczas kontroli urzędowych i komplikacje w kontaktach z kontrahentami.</li>
+</ul>
+<p>Zgodnie z § 2 ust. 3 Rozporządzenia Rady Ministrów z dnia 18 grudnia 2024 r. w sprawie Polskiej Klasyfikacji Działalności (PKD), podmioty wpisane do Krajowego Rejestru Sądowego lub krajowego rejestru urzędowego podmiotów gospodarki narodowej, które po dniu wejścia w życie niniejszego rozporządzenia, a przed upływem terminu, złożyły wniosek o zmianę wpisu w zakresie dotyczącym zmiany przedmiotu działalności według Polskiej Klasyfikacji Działalności, są obowiązane do dokonania aktualizacji zgodnie z nowymi przepisami.</p>
+<img src="/images/zawarcie-umowy-zmiana-danych-w-krs.webp" alt="Zawarcie umowy – zmiana danych w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Sposoby dokonania zmiany wpisu KRS w zakresie kodów PKD</h3>
+<h4>Zmiana KRS dla spółek kapitałowych</h4>
+<ul>
+<li>Zmiana wpisu KRS dotycząca kodów PKD odbywa się poprzez złożenie wniosku o zmianę wpisu (formularz KRS-Z20 lub inny odpowiedni),</li>
+<li>Do wniosku należy dołączyć dokumenty potwierdzające zmianę (np. uchwałę wspólników o zmianie umowy spółki, jeśli zmiana kodów PKD wymaga jej modyfikacji),</li>
+<li>W przypadku spółek z o.o. i spółek akcyjnych zmiana umowy spółki wymaga formy aktu notarialnego,</li>
+<li>Wniosek można złożyć elektronicznie przez Portal Rejestrów Sądowych (PRS) lub system S24 (dla spółek zarejestrowanych w tym trybie).</li>
+</ul>
+<h4>Zmiana KRS dla spółek osobowych</h4>
+<ul>
+<li>W przypadku spółek jawnych, partnerskich, komandytowych i komandytowo-akcyjnych procedura jest podobna,</li>
+<li>Zmiana kodów PKD może wymagać zmiany umowy spółki, co w zależności od formy spółki może wymagać formy pisemnej lub aktu notarialnego,</li>
+<li>Wniosek o zmianę wpisu KRS składa się na odpowiednim formularzu wraz z wymaganymi załącznikami.</li>
+</ul>
+<img src="/images/podpisanie-dokumentu-zmiana-danych-KRS.webp" alt="Podpisanie dokumentu – zmiana danych KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Praktyczne znaczenie zmiany wpisu KRS i aktualizacji kodów PKD dla przedsiębiorców</h3>
+<h4>Dla przedsiębiorców</h4>
+<ul>
+<li>Aktualizacja KRS jest niezbędna do prawidłowego prowadzenia działalności gospodarczej, rozliczeń podatkowych oraz ubiegania się o dotacje i inne formy wsparcia,</li>
+<li>Niezaktualizowane dane w KRS mogą skutkować odmową przyznania ulg, problemami podczas kontroli skarbowych oraz utrudnieniami w kontaktach biznesowych,</li>
+<li>Okres przejściowy do końca 2026 roku pozwala na spokojne dostosowanie wpisu KRS do nowej klasyfikacji PKD 2025,</li>
+<li>Zmiana KRS może być dokonana jednocześnie z innymi zmianami wpisu, co pozwala na optymalizację kosztów i formalności.</li>
+</ul>
+<h4>Dla pracodawców</h4>
+<ul>
+<li>Aktualizacja kodów PKD w KRS wpływa na obowiązki sprawozdawcze oraz klasyfikację działalności w kontekście prawa pracy i ubezpieczeń społecznych,</li>
+<li>Precyzyjne określenie zakresu działalności ułatwia zarządzanie ryzykiem i planowanie strategiczne.</li>
+</ul>
+<h4>Dla konsumentów</h4>
+<ul>
+<li>Przejrzystość danych w KRS zwiększa zaufanie do przedsiębiorców i umożliwia lepszą ocenę wiarygodności firm na rynku.</li>
+</ul>
+<img src="/images/podpisywanie-wniosku-do-krs-zmiana-danych-spolki.webp" alt="Podpisywanie wniosku do KRS – zmiana danych spółki" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Możliwe kontrowersje i problemy interpretacyjne przy zmianie wpisu KRS</h3>
+<ul>
+<li><strong>Zakres zmian wymagających aktualizacji umowy spółki</strong> – spory dotyczące tego, kiedy zmiana kodów PKD wymaga zmiany umowy, a kiedy można dokonać tylko zmiany wpisu KRS,</li>
+<li><strong>Brak sankcji za brak aktualizacji wpisu KRS w okresie przejściowym</strong>, co może prowadzić do zaniedbań ze strony przedsiębiorców,</li>
+<li><strong>Niejasności dotyczące automatycznego dostosowania kodów PKD w KRS po 2026 roku</strong>, które budzą niepewność wśród przedsiębiorców,</li>
+<li><strong>Problemy z interpretacją nowych kodów PKD 2025</strong>, zwłaszcza w przypadku działalności wielobranżowej,</li>
+<li><strong>Ryzyko błędów formalnych przy składaniu wniosków o zmianę wpisu KRS</strong>, które mogą opóźnić proces aktualizacji.</li>
+</ul>
+<h3>Podsumowanie</h3>
+<p>Zmiana wpisu KRS w zakresie kodów PKD w 2025 roku to kluczowy obowiązek każdego przedsiębiorcy, który pragnie zachować zgodność danych rejestrowych z aktualnym profilem działalności. Aktualizacja KRS pozwala na prawidłowe funkcjonowanie w obrocie gospodarczym, ułatwia dostęp do wsparcia oraz zwiększa wiarygodność firmy.</p>
+<p>Znajomość przepisów, świadome podejście do zmiany KRS oraz terminowe dokonanie aktualizacji wpisu to podstawy skutecznego prowadzenia działalności gospodarczej w Polsce. Usługi profesjonalnego wsparcia przy zmianie wpisu KRS i aktualizacji kodów PKD mogą znacznie usprawnić ten proces i zminimalizować ryzyko błędów formalnych.</p>
+<p><strong>Jeśli potrzebujesz pomocy w zakresie zmiany wpisu KRS lub aktualizacji kodów PKD, zapraszamy do kontaktu. Oferujemy kompleksowe usługi prawne i doradcze, które pomogą Ci sprawnie przeprowadzić wszystkie formalności związane ze zmianami w KRS.</strong></p>
+<p><strong><a href="/cennik" style="color: #f59e0b; text-decoration: underline;">Sprawdź nasz cennik</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
