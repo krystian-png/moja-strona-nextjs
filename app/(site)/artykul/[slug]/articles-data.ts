@@ -726,6 +726,73 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs",
+      title: "Rezygnacja członka zarządu spółki z o.o. a wpis do KRS",
+      excerpt:
+        "Procedura rezygnacji członka zarządu spółki z o.o. i obowiązki związane z wpisem do KRS. Podstawa prawna i skutki prawne.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/zmiana-zarzadu-zmiana-wspolnika-krs-nowy.webp",
+      imageAlt: "Zmiana zarządu, zmiana wspólnika KRS – profesjonalna obsługa",
+      publishedAt: "2025-06-05T00:00:00.000Z",
+    },
+    content: `
+<h2>Rezygnacja członka zarządu spółki z o.o. a wpis do KRS: obowiązki, ryzyka i skutki prawne</h2>
+<p>Dowiedz się, jak prawidłowo przeprowadzić zmianę wpisu w KRS po rezygnacji członka zarządu spółki z o.o. Poznaj procedurę, niezbędny wniosek o zmianę w KRS, możliwości profesjonalnej obsługi wniosków KRS oraz kiedy warto skorzystać z usług KRS i pomocy przy wpisie do KRS.</p>
+<img src="/images/zmiana-danych-krs-podpis-dokumentu.webp" alt="Zmiana danych KRS – podpis dokumentu" loading="lazy" width="800" height="600" decoding="async" />
+<p>Niniejszy artykuł kierowany jest przede wszystkim do wspólników oraz członków zarządów spółek z ograniczoną odpowiedzialnością. Wiedza zawarta w artykule będzie również przydatna dla osób rozważających rezygnację z pełnienia funkcji w zarządzie lub mierzących się z problemem braku możliwości skutecznego doręczenia takiego oświadczenia. Artykuł stanowi także praktyczny przewodnik dla przedsiębiorców, którzy chcą mieć pewność, że zmiana wpisu w KRS przebiegnie prawidłowo i bez ryzyka dla spółki.</p>
+<h3>Wprowadzenie: kiedy należy złożyć wniosek o zmianę wpisu w KRS</h3>
+<p>Zgodnie z art. 22 ust. 1 ustawy o Krajowym Rejestrze Sądowym (t.j. Dz.U. z 2023 r. poz. 685), podmioty wpisane do rejestru mają obowiązek zgłaszać zmiany danych ujawnionych w rejestrze w terminie 7 dni od dnia ich zaistnienia. W przypadku rezygnacji członka zarządu, taka zmiana wpisu w KRS dotyczy składu organu uprawnionego do reprezentacji spółki.</p>
+<p>Niezłożenie wniosku o zmianę w KRS może skutkować nie tylko nałożeniem grzywny (art. 24 ust. 1 ustawy o KRS), lecz także odpowiedzialnością cywilnoprawną za działania lub zaniechania spółki wynikające z nieaktualnych danych, w tym problemami z doręczeniami, skutecznym reprezentowaniem spółki lub nawet odpowiedzialnością karno-skarbową.</p>
+<p>Właściwie przygotowany wniosek o zmianę w KRS oraz profesjonalna obsługa wniosków KRS to klucz do uniknięcia ryzyka i zapewnienia bezpieczeństwa prawnego spółki.</p>
+<img src="/images/prawnik-porada-zmiana-KRS.webp" alt="Prawnik porada – zmiana KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Rezygnacja z funkcji członka zarządu: podstawy prawne i wpływ na wpis do KRS</h3>
+<p>Rezygnacja z funkcji członka zarządu jest jednostronnym oświadczeniem woli osoby pełniącej funkcję, mającym na celu zakończenie stosunku organizacyjnego łączącego ją ze spółką. Podstawą prawną tej czynności jest art. 202 § 5 Kodeksu spółek handlowych (k.s.h.), który stanowi, że mandat członka zarządu wygasa m.in. w razie rezygnacji.</p>
+<p>Z kolei zgodnie z art. 61 § 1 Kodeksu cywilnego (k.c.), oświadczenie woli, które ma być złożone innej osobie, jest skuteczne z chwilą, gdy doszło do niej w taki sposób, że mogła zapoznać się z jego treścią. W praktyce oznacza to, że skuteczność rezygnacji uzależniona jest od jej doręczenia do właściwego organu spółki, czyli zgromadzenia wspólników lub ustanowionego przez nie pełnomocnika.</p>
+<p>W każdym przypadku po skutecznym złożeniu rezygnacji niezbędna jest zmiana wpisu w KRS – tylko wtedy dane rejestrowe będą zgodne ze stanem faktycznym, a były członek zarządu zostanie formalnie wykreślony z rejestru. Jakkolwiek odwołanie jest skuteczne z momentem podjęcia w tym zakresie uchwały, chyba że uchwała wskazuje inny moment.</p>
+<img src="/images/zawarcie-umowy-zmiana-danych-w-krs.webp" alt="Zawarcie umowy – zmiana danych w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Problem jednoosobowego zarządu i brak odbiorcy rezygnacji – znaczenie dla zmiany wpisu w KRS</h3>
+<p>Szczególne trudności powstają w sytuacji, gdy zarząd spółki jest jednoosobowy i jedyna osoba w nim zasiadająca pragnie zrezygnować. Pojawia się pytanie: komu należy złożyć oświadczenie, skoro nie ma innego członka zarządu, a zgromadzenie wspólników nie działa w sposób stały?</p>
+<p>W uchwale z dnia 31 marca 2016 r. (sygn. III CZP 89/15) Sąd Najwyższy przesądził, że w przypadku jednoosobowego zarządu, członek zarządu nie może skutecznie złożyć rezygnacji samemu sobie, działając w imieniu spółki jako jej przedstawiciel. Oświadczenie powinno być skierowane do zgromadzenia wspólników lub ustanowionego przez nie pełnomocnika.</p>
+<h3>Rezygnacja złożona pełnomocnikowi spółki i aktualizacja danych w KRS</h3>
+<p>Jak wynika z orzecznictwa Sądu Najwyższego, skuteczne doręczenie oświadczenia o rezygnacji może nastąpić wobec pełnomocnika spółki, o ile został on ustanowiony przez zgromadzenie wspólników. W wyroku z dnia 7 maja 2010 r. (sygn. II CSK 641/09), Sąd Najwyższy wskazał, że dopuszczalne jest ustanowienie pełnomocnika wyłącznie w celu przyjęcia rezygnacji członka zarządu, a skuteczność oświadczenia zależy od momentu, w którym pełnomocnik mógł się z nim zapoznać.</p>
+<p>W praktyce oznacza to, że jeśli zgromadzenie wspólników ustanowi np. jednego ze wspólników lub osobę trzecią do przyjęcia rezygnacji, to rezygnacja stanie się skuteczna z chwilą, gdy taki pełnomocnik zapozna się z treścią oświadczenia lub mógł to uczynić.</p>
+<p>Po skutecznym złożeniu rezygnacji, kluczowe jest szybkie przygotowanie wniosku o zmianę w KRS. W tym zakresie możesz skorzystać z naszych usług zmiany wpisu w KRS.</p>
+<img src="/images/zmiana-zarzadu-w-krs-przez-portal-rejestrow-sadowych.webp" alt="Zmiana zarządu w KRS przez Portal Rejestrów Sądowych" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Inne istotne orzeczenia dotyczące rezygnacji i zmiany wpisu w KRS</h3>
+<p>W wyroku z dnia 13 czerwca 2013 r. (sygn. I CSK 451/12), Sąd Najwyższy podkreślił, że skuteczne złożenie oświadczenia o rezygnacji powinno być dokonane wobec organu właściwego do powoływania członków zarządu, a nie wobec samej spółki czy podmiotu trzeciego.</p>
+<p>Z kolei w wyroku z dnia 17 maja 2018 r. (sygn. I CSK 472/17), SN wskazał, że brak formalnego doręczenia rezygnacji nie oznacza automatycznie jej bezskuteczności, jeśli spółka i tak miała możliwość zapoznania się z jej treścią.</p>
+<h3>Skutki praktyczne i zalecenia – jak dokonać skutecznej zmiany wpisu w KRS</h3>
+<ol>
+<li>W przypadku jednoosobowego zarządu, warto zawczasu przewidzieć w umowie spółki mechanizm odbioru rezygnacji (np. przez ustanowienie pełnomocnika przez wspólników). Takie rozwiązanie ułatwia późniejszą zmianę wpisu w KRS i skraca czas oczekiwania na aktualizację danych.</li>
+<li>Zgromadzenie wspólników może być zwołane w celu przyjęcia rezygnacji, a najlepiej, jeśli rezygnacja zostanie złożona bezpośrednio na zgromadzeniu – wówczas dokumentacja do wniosku o zmianę w KRS jest jasna i nie budzi wątpliwości sądu rejestrowego.</li>
+<li>Unikać należy sytuacji, w której członek zarządu wysyła rezygnację na adres spółki z założeniem, że sam ją odbierze – może to zostać uznane za nieskuteczne, co utrudni późniejszą obsługę wniosków KRS.</li>
+</ol>
+<p><strong>Ważne:</strong> Należy pamiętać aby zabezpieczyć kopie dokumentów potwierdzających złożenie oświadczenia o rezygnacji i jej przyjęcie, aby uniknąć problemów w przyszłości. Zdarza się bowiem, że nowy zarząd nie zgłasza tych danych i wtedy zarówno sąd rejestrowy jak i urzędy, traktują byłego członka zarządu jako osobę nadal pełniącą tę funkcję. W sytuacji w której tych dokumentów nie zabezpieczymy a brak jest kontaktu z nowym zarządem lub taki nie został powołany, może dojść do patowej sytuacji, w której był już członek zarządu, nie będzie w stanie wykazać faktu rezygnacji z pełnionej funkcji.</p>
+<img src="/images/biurko_z_laptopem_i_przyborami_biurowymi.webp" alt="Biurko z laptopem i przyborami biurowymi" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Wniosek o zmianę wpisu w KRS – procedura i dokumenty</h3>
+<p>Po skutecznym złożeniu rezygnacji, konieczne jest złożenie wniosku o zmianę w KRS, załączając dokument potwierdzający rezygnację (z podpisem członka zarządu oraz potwierdzeniem doręczenia). W przypadku braku innych członków zarządu, wniosek o zmianę w KRS powinien złożyć nowy zarząd spółki.</p>
+<h3>Usługi KRS i profesjonalna pomoc przy wpisie do KRS – kiedy warto skorzystać?</h3>
+<p>Każdy członek zarządu ustępujący ze swej funkcji powinien zadbać o to aby wniosek z aktualizacją danych do KRS został złożony. Zmiana danych w KRS po rezygnacji członka zarządu może wydawać się formalnością, jednak w praktyce często pojawiają się trudności interpretacyjne, wymogi proceduralne oraz ryzyko odrzucenia wniosku przez sąd.</p>
+<p>Pomoc przy wpisie do KRS obejmuje m.in.:</p>
+<ul>
+<li>analizę sytuacji prawnej spółki,</li>
+<li>przygotowanie wymaganych dokumentów,</li>
+<li>sporządzenie i złożenie wniosku o zmianę w KRS,</li>
+<li>reprezentację przed sądem rejestrowym,</li>
+<li>bieżącą obsługę wniosków KRS i monitorowanie przebiegu postępowania.</li>
+</ul>
+<p>Dzięki temu przedsiębiorca ma pewność, że zmiana wpisu w KRS zostanie przeprowadzona sprawnie, a ryzyko błędów formalnych zostanie zminimalizowane.</p>
+<h3>Podsumowanie – zmiana wpisu w KRS po rezygnacji członka zarządu</h3>
+<p>Rezygnacja z funkcji w zarządzie spółki z o.o. wiąże się nie tylko z obowiązkami korporacyjnymi, ale także z precyzyjnym przestrzeganiem procedur doręczeniowych i rejestrowych. Zaniedbanie w tym zakresie może prowadzić do poważnych komplikacji prawnych.</p>
+<p>Właściwie przygotowany wniosek o zmianę w KRS zapewnia bezpieczeństwo prawne zarówno dla byłego członka zarządu, jak i dla spółki. Warto zatem skorzystać z naszej pomocy przy wpisie do KRS, aby mieć pewność, że wszystkie formalności zostaną dopełnione zgodnie z przepisami i najlepszą praktyką rynkową.</p>
+<p><strong><a href="/o-nas" style="color: #f59e0b; text-decoration: underline;">Dowiedz się więcej o tym co robimy</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
