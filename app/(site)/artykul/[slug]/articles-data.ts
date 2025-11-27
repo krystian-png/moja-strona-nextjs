@@ -1092,7 +1092,7 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
   },
   {
     metadata: {
-      slug: "konflikt-spolka-zoo-dwaj-wspólnicy-50-procent",
+      slug: "konflikt-spolka-zoo-dwaj-wspolnicy-50-procent",
       title:
         "Konflikt w spółce z o.o. z dwoma wspólnikami po 50% udziałów",
       excerpt:
