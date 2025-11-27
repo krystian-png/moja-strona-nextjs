@@ -1090,6 +1090,107 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "konflikt-spolka-zoo-dwaj-wspolnicy-50-procent",
+      title:
+        "Konflikt w spółce z o.o. z dwoma wspólnikami po 50% udziałów",
+      excerpt:
+        "Analiza problemów w spółkach z równymi udziałami wspólników i samodzielnym zarządem. Skutki prawne, rozwiązania konfliktów i mechanizmy zapobiegania.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/zgromadzenie-wspolnikow-zmiana-umowy-wniosek-KRS.webp",
+      imageAlt: "Zgromadzenie wspólników - zmiana umowy wniosek KRS",
+      publishedAt: "2025-05-28T00:00:00.000Z",
+    },
+    content: `
+<h2>Konflikt w spółce z o.o. z dwoma wspólnikami po 50% udziałów i jednoosobową reprezentacją – możliwe problemy i rozwiązania</h2>
+<h3>Wstęp</h3>
+<p>Spółka z ograniczoną odpowiedzialnością (sp. z o.o.) jest formą prawną cieszącą się dużą popularnością wśród polskich przedsiębiorców, zarówno ze względu na ograniczoną odpowiedzialność wspólników, jak i stosunkowo nieskomplikowane zasady funkcjonowania. W praktyce jednak wiele spółek funkcjonuje w strukturze, która – mimo że formalnie zgodna z przepisami Kodeksu spółek handlowych (dalej: k.s.h.) – niesie ze sobą znaczne ryzyka organizacyjne i prawne.</p>
+<p>Choć taka konfiguracja może działać sprawnie w warunkach pełnej współpracy i zbieżności interesów wspólników, w praktyce nierzadko prowadzi do konfliktu. Równość udziałów oraz brak mechanizmów rozstrzygania sporów skutkują często paraliżem decyzyjnym i poważnymi konsekwencjami dla spółki oraz jej interesariuszy. Konflikt taki może prowadzić do niemożności podejmowania uchwał wspólników, wzajemnego blokowania się członków zarządu, utraty zdolności do działania.</p>
+<p>W takich sytuacjach kluczowe znaczenie mają nie tylko mechanizmy korporacyjne, ale także sprawna obsługa wniosków do KRS i terminowa aktualizacja danych w KRS, które pozwalają na formalne zabezpieczenie interesów spółki i wspólników w razie sporu.</p>
+<p>Celem niniejszego artykułu jest omówienie problematyki związanej z konfliktem w spółce z o.o. w strukturze 50/50, przedstawienie możliwych skutków prawnych i praktycznych, analiza dostępnych rozwiązań oraz wskazanie rekomendacji zapobiegających ewentualnym konfliktom w tym układzie własnościowym.</p>
+<img src="/images/poczekalnia-przed-zmiana-umowy-spolki-krs.webp" alt="Poczekalnia przed zmianą umowy spółki - KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>1. Konstrukcja prawna spółki z o.o. z dwoma wspólnikami 50/50</h2>
+<h3>1.1. Zasady funkcjonowania spółki z o.o. w świetle k.s.h.</h3>
+<p>Spółka z ograniczoną odpowiedzialnością działa na podstawie przepisów art. 151–300 Kodeksu spółek handlowych. Jej podstawowe organy to zgromadzenie wspólników, zarząd, a fakultatywnie rada nadzorcza lub komisja rewizyjna. Wspólnicy podejmują uchwały w najważniejszych sprawach, natomiast zarząd prowadzi sprawy spółki i ją reprezentuje. Zgodnie z art. 205 § 1 k.s.h., jeżeli zarząd jest wieloosobowy, sposób reprezentacji określa umowa spółki.</p>
+<p>W praktyce jednak wiele dwuosobowych spółek z o.o. wprowadza zapis przyznający każdemu członkowi zarządu prawo do samodzielnej reprezentacji. Rozwiązanie takie jest wygodne w czasie współpracy, lecz w przypadku konfliktu staje się poważnym zagrożeniem dla stabilności funkcjonowania spółki, a także może komplikować obsługę wniosków do KRS i aktualizację danych w KRS w razie rozbieżnych działań członków zarządu.</p>
+<h3>1.2. Konfiguracja 50/50 – równowaga czy pułapka?</h3>
+<p>Struktura spółki, w której udziałowcy posiadają po 50% udziałów i jednocześnie pełnią funkcje członków zarządu z prawem do samodzielnej reprezentacji, może wydawać się równoważna, lecz niesie duże ryzyko. Podejmowanie uchwał wspólników wymaga bowiem większości głosów, co w konfiguracji 50/50 oznacza konieczność jednomyślności. W razie sporu żadne decyzje nie mogą zostać skutecznie podjęte.</p>
+<p>Jeszcze większe niebezpieczeństwo wiąże się z możliwością samodzielnego działania każdego z członków zarządu. W sytuacji sporu, wspólnicy mogą składać sprzeczne oświadczenia, zawierać przeciwstawne umowy lub blokować decyzje operacyjne. Skutkuje to paraliżem działalności i narażeniem spółki na odpowiedzialność wobec kontrahentów i organów administracji, a także utrudnia skuteczną obsługę wniosków do KRS, np. przy próbach zmiany danych rejestrowych.</p>
+<img src="/images/biurko-z-laptopem-i-dokumentami.webp" alt="Biurko z laptopem i dokumentami - praca nad konfliktami spółki" loading="lazy" width="800" height="600" decoding="async" />
+<h2>2. Potencjalne źródła konfliktów i ich skutki</h2>
+<h3>2.1. Rozbieżność wizji prowadzenia działalności</h3>
+<p>Jednym z częstszych powodów narastania napięć pomiędzy wspólnikami spółki 50/50 jest różnica zdań co do strategii rozwoju przedsiębiorstwa. Może to obejmować kwestie związane z kierunkiem inwestycji, zatrudnieniem pracowników, wejściem na nowe rynki czy korzystaniem z finansowania zewnętrznego. Brak kompromisu w tych sprawach powoduje paraliż decyzyjny.</p>
+<h3>2.2. Konflikty interpersonalne i brak zaufania</h3>
+<p>W praktyce wielu wspólników nie przewiduje ryzyka osobistych nieporozumień. Z czasem pojawiają się jednak zarzuty dotyczące zaangażowania, podziału zysków, lojalności wobec spółki czy postawy negocjacyjnej w relacjach z kontrahentami. Konflikty te często mają charakter emocjonalny, lecz ich skutki są czysto biznesowe – prowadzą do wzajemnej obstrukcji i niezdolności do współpracy.</p>
+<h3>2.3. Brak możliwości podjęcia uchwał zgromadzenia wspólników</h3>
+<p>Wymóg większości głosów do przyjęcia uchwały, w konfiguracji 50/50 oznacza konieczność jednomyślności. W razie konfliktu nie można m.in. zatwierdzić sprawozdania finansowego, podzielić zysków, zmienić umowy spółki czy dokonać zmian w składzie zarządu. Brak uchwał skutkuje niedopełnieniem obowiązków ustawowych i może prowadzić do konsekwencji cywilnoprawnych i administracyjnych, w tym utrudnień przy aktualizacji danych w KRS.</p>
+<h3>2.4. Blokowanie działań operacyjnych</h3>
+<p>Jeśli obaj wspólnicy są członkami zarządu z prawem do samodzielnej reprezentacji, mogą wydawać sprzeczne polecenia księgowości, składać odmienne oświadczenia wobec organów administracji lub sądu, unieważniać decyzje poprzednika. Tego rodzaju chaos prowadzi do utraty wiarygodności spółki i paraliżuje jej funkcjonowanie, a także może komplikować obsługę wniosków do KRS, np. przy zmianie adresu czy reprezentacji.</p>
+<h3>2.5. Wpływ na relacje zewnętrzne i odpowiedzialność wobec osób trzecich</h3>
+<p>Konflikt między wspólnikami jest szybko dostrzegalny przez kontrahentów, pracowników i banki. Prowadzi do osłabienia pozycji negocjacyjnej, wypowiadania umów, utraty zaufania kredytodawców. Co więcej, w sytuacji podejmowania przez jednego wspólnika działań sprzecznych z interesem spółki – drugi, w braku odpowiednio szybkiej reakcji, narażony może być na daleko idące konsekwencje, zarówno prawne jak i finansowe.</p>
+<img src="/images/omawianie-zmiana-umowy-spolki-wpis-KRS.webp" alt="Omawianie zmiany umowy spółki - wpis KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>3. Odpowiedzialność cywilna, karna i skarbowa</h2>
+<h3>3.1. Odpowiedzialność cywilna członków zarządu (art. 293 k.s.h.)</h3>
+<p>Zgodnie z art. 293 § 1 k.s.h., członek zarządu odpowiada wobec spółki za szkodę wyrządzoną działaniem sprzecznym z prawem lub postanowieniami umowy spółki, chyba że nie ponosi winy. W spółce 50/50 z samodzielną reprezentacją, możliwość wyrządzenia szkody przez jednego członka zarządu jest wysoka.</p>
+<h3>3.2. Odpowiedzialność za zobowiązania spółki (art. 299 k.s.h.)</h3>
+<p>W przypadku bezskutecznej egzekucji wobec spółki, członkowie zarządu mogą ponosić odpowiedzialność osobistą za jej zobowiązania. Kluczowe jest tu niedopełnienie obowiązku złożenia wniosku o upadłość w odpowiednim czasie. W układzie 50/50 spory często uniemożliwiają podjęcie decyzji o upadłości, co zwiększa ryzyko odpowiedzialności z art. 299 k.s.h.</p>
+<h3>3.3. Odpowiedzialność karna (art. 296 k.k. i 586 k.s.h.)</h3>
+<p>Działania członka zarządu polegające na nadużyciu uprawnień lub niedopełnieniu obowiązków mogą zostać zakwalifikowane jako przestępstwo z art. 296 k.k., jeśli wyrządzają spółce szkodę majątkową. Również art. 586 k.s.h. penalizuje działanie na szkodę spółki.</p>
+<h3>3.4. Odpowiedzialność skarbowa (art. 116 Ordynacji podatkowej)</h3>
+<p>Członkowie zarządu ponoszą odpowiedzialność subsydiarną za zobowiązania podatkowe spółki. W sytuacji konfliktu brak komunikacji lub celowe blokowanie działań operacyjnych prowadzi często do zaległości podatkowych i decyzji o odpowiedzialności osobistej.</p>
+<img src="/images/walne-zgromadzenie-wspolnikow-zmiana-umowy.webp" alt="Walne zgromadzenie wspólników - zmiana umowy spółki" loading="lazy" width="800" height="600" decoding="async" />
+<h2>4. Przykłady i orzeczenia – konflikt a obsługa wniosków do KRS</h2>
+<h3>4.1. Kazus 1: Spór o podpisanie umowy najmu</h3>
+<p>Dwóch wspólników, każdy posiadający po 50% udziałów i będący członkiem zarządu z prawem samodzielnej reprezentacji, nie może porozumieć się co do zmiany lokalizacji biura spółki. Pierwszy wspólnik samodzielnie podpisuje nową umowę najmu, nie informując drugiego. Drugi wspólnik składa pismo do właściciela nieruchomości o nieważności umowy, wskazując na brak uchwały wspólników.</p>
+<p>W wyroku SA w Warszawie z 10 marca 2017 r. (VI ACa 2106/15) sąd uznał, że samodzielna reprezentacja jednego członka zarządu, jeśli nie została wyłączona w umowie spółki, jest skuteczna wobec osób trzecich działających w dobrej wierze. Tym samym umowa została uznana za wiążącą.</p>
+<h3>4.2. Kazus 2: Wypłata zysków bez uchwały</h3>
+<p>Jeden ze wspólników poleca księgowej dokonanie wypłaty dywidendy na jego prywatny rachunek bankowy bez uchwały zgromadzenia wspólników. Drugi wspólnik wnosi sprzeciw, wskazując na brak podstawy prawnej. Organy podatkowe po kontroli uznają wypłatę za przychód z tytułu nielegalnej dywidendy i obciążają wspólnika podatkiem dochodowym oraz spółkę podatkiem od czynności cywilnoprawnych.</p>
+<p>Wyrok NSA z 21 marca 2018 r. (II FSK 460/16) potwierdził, że dywidenda może być wypłacona wyłącznie na podstawie uchwały zgromadzenia wspólników i jej brak skutkuje powstaniem nielegalnego świadczenia majątkowego.</p>
+<h3>4.3. Kazus 3: Blokowanie działalności spółki</h3>
+<p>Wspólnicy spierają się o kierunek rozwoju działalności – jeden z nich chce wprowadzenia nowego produktu, drugi sprzeciwia się zwiększeniu ryzyka finansowego. Obaj blokują decyzje zarządcze, odwołują sobie nawzajem pełnomocników, wstrzymują przelewy z kont bankowych. Spółka traci płynność, księgowość nie może zamknąć okresów rozliczeniowych.</p>
+<p>W takiej sytuacji Sąd Rejestrowy może – na wniosek jednego ze wspólników – rozważyć wszczęcie postępowania z art. 271 pkt 1 k.s.h., prowadzącego do sądowego rozwiązania spółki z powodu trwałej niemożności osiągnięcia jej celu gospodarczego. Warto pamiętać, że w przypadku sporów dotyczących zarządu czy siedziby, profesjonalna obsługa wniosków do KRS i wsparcie przy aktualizacji danych w KRS mogą ułatwić formalne rozwiązanie problemu.</p>
+<h3>4.4. Kazus 4: Sprzeczne działania wobec urzędów</h3>
+<p>Jeden z członków zarządu składa wniosek do KRS o zmianę siedziby spółki. Drugi wspólnik składa pismo o sprzeciwie i próbuje złożyć osobny wniosek z inną lokalizacją. Sąd rejestrowy odrzuca oba wnioski, wskazując na konieczność zgodnego działania zarządu. Sytuacja prowadzi do zawieszenia postępowania i konieczności rozstrzygnięcia sporu w trybie cywilnym.</p>
+<p>W komentarzu do art. 205 k.s.h. pod red. Kidyby wskazuje się, że choć formalnie samodzielna reprezentacja jest skuteczna wobec osób trzecich, nie może być stosowana do działań faktycznie sprzecznych z interesem spółki i wymagających wspólnej decyzji zarządu. Takie przypadki pokazują, jak istotna jest profesjonalna obsługa wniosków do KRS oraz konsultacja z ekspertami przy aktualizacji danych w KRS.</p>
+<img src="/images/praca-biuro-wniosek-do-KRS.webp" alt="Praca w biurze - wniosek do KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>5. Sposoby rozwiązania impasu – mechanizmy prewencyjne i zaradcze</h2>
+<h3>5.1. Zmiana umowy spółki – ograniczenie samodzielnej reprezentacji</h3>
+<p>Jednym z podstawowych środków zapobiegających konfliktom w spółkach z dwuosobowym zarządem i równymi udziałami jest modyfikacja postanowień umowy spółki w zakresie reprezentacji. Zgodnie z art. 205 § 1 k.s.h., sposób reprezentacji określa umowa spółki. Wprowadzenie zasady łącznej reprezentacji przez dwóch członków zarządu lub przez członka zarządu i prokurenta ogranicza możliwość podejmowania samodzielnych i niekontrolowanych decyzji.</p>
+<p>W praktyce wielu notariuszy doradza taką formułę przy zakładaniu spółek w konfiguracji 50/50. Choć utrudnia ona szybkie działanie, wymusza porozumienie i chroni przed jednostronnymi decyzjami w sytuacji konfliktu.</p>
+<h3>5.2. Klauzule deadlock i mechanizmy rozstrzygania sporów</h3>
+<p>W krajach common law od lat stosowane są tzw. klauzule deadlock – czyli umowne mechanizmy na wypadek impasu decyzyjnego. W polskiej praktyce takie postanowienia mogą być zawarte w umowie spółki lub odrębnym porozumieniu wspólników. Przykładowe klauzule obejmują:</p>
+<ul>
+<li>"casting vote" – głos rozstrzygający przyznany jednemu ze wspólników w określonych sytuacjach,</li>
+<li>rotacyjną prezydencję – naprzemienne przewodniczenie zgromadzeniom i możliwość przełamywania impasu,</li>
+<li>mediację lub arbitraż – obowiązek skierowania sporu do mediatora przed wniesieniem sprawy do sądu,</li>
+<li>procedurę "Russian roulette" lub "Texas shoot-out" – mechanizm przymusowego wykupu udziałów w sytuacji konfliktu.</li>
+</ul>
+<p>Choć takie konstrukcje nie są wyraźnie uregulowane w k.s.h., ich dopuszczalność wynika z zasady swobody umów (art. 3531 k.c.). Wprowadzenie takich zapisów może zapobiegać paraliżowi decyzyjnemu.</p>
+<h3>5.3. Ustanowienie rady nadzorczej lub zarządu trzyosobowego</h3>
+<p>Wprowadzenie do struktury organów spółki rady nadzorczej lub powołanie trzeciego członka zarządu może pomóc przełamywać impas. W przypadku zarządu trzyosobowego możliwe jest podejmowanie uchwał większością głosów (art. 208 § 4 k.s.h.), co nie jest możliwe w zarządzie dwuosobowym bez jednomyślności.</p>
+<p>Rada nadzorcza może również pełnić funkcję mediacyjną oraz nadzorczą – zwłaszcza jeżeli jej członkowie są niezależni od obu stron konfliktu.</p>
+<h3>5.4. Zmiany w strukturze udziałowej</h3>
+<p>Czasami rozwiązaniem jest naruszenie symetrii udziałów – np. przez sprzedaż niewielkiej części udziałów osobie trzeciej (tzw. wspólnik neutralny) lub przyznanie jednemu wspólnikowi udziału uprzywilejowanego co do głosu. Choć wymaga to zgody obu stron, może być skutecznym narzędziem długofalowej stabilizacji.</p>
+<p>Udziały uprzywilejowane, zgodnie z art. 174 k.s.h., mogą przewidywać większą liczbę głosów na zgromadzeniu wspólników, co pozwala na przełamywanie impasu bez naruszania istotnych interesów wspólników.</p>
+<h3>5.5. Sądowe rozwiązanie spółki</h3>
+<p>Ostatecznym środkiem jest skorzystanie z art. 271 pkt 1 k.s.h., który przewiduje możliwość żądania przez wspólnika rozwiązania spółki przez sąd, jeżeli osiągnięcie celu spółki stało się niemożliwe. Przesłanka ta jest interpretowana przez sądy ściśle – musi występować trwały i obiektywny paraliż decyzyjny, nieusuwalny w ramach wewnętrznych procedur spółki.</p>
+<p>W orzecznictwie podkreśla się, że sama różnica zdań nie jest wystarczająca – konieczne jest wykazanie, że spółka faktycznie nie może realizować swojej działalności gospodarczej. Wyrok SR w Poznaniu z 4 listopada 2021 r. (XII GC 814/20) wskazuje, że uporczywe blokowanie decyzji operacyjnych i brak uchwał rocznych stanowią podstawę do rozwiązania spółki.</p>
+<h2>6. Uwagi doktryny</h2>
+<h3>6.1. Poglądy przedstawicieli doktryny</h3>
+<p>Problem konfliktu w spółkach z o.o. o strukturze 50/50 był wielokrotnie przedmiotem analiz doktrynalnych. Andrzej Kidyba, w komentarzu do Kodeksu spółek handlowych, podkreśla, że przy konstrukcji spółek z równym podziałem udziałów wspólników konieczne jest przewidzenie w umowie spółki rozwiązań zapobiegających impasowi decyzyjnemu, takich jak klauzule o głosie przeważającym lub mediacji obligatoryjnej.</p>
+<p>Prof. Monika Tarska w artykule „Głos decydujący w spółce z o.o." (PPH 2020) analizuje dopuszczalność umownego przyznania jednemu ze wspólników głosu rozstrzygającego. Choć Kodeks spółek handlowych nie przewiduje expressis verbis takiego rozwiązania, autorka wskazuje, że nie jest ono sprzeczne z zasadami prawa spółek i może być uznane za dopuszczalne, jeżeli nie narusza zasady równego traktowania wspólników.</p>
+<p>Z kolei dr Rafał Pabis wskazuje, że w spółkach 50/50 praktyka korporacyjna powinna opierać się na silnej personalizacji zarządu i precyzyjnym określeniu jego kompetencji, a w razie konfliktów – na odwoływaniu się do instytucji pozasądowych, takich jak mediacja lub arbitraż. Według autora sądowe rozwiązanie spółki powinno być środkiem ostatecznym, zastrzeżonym wyłącznie na wypadek wyczerpania wszystkich innych możliwości.</p>
+<h3>6.2. Rozwiązania praktyki zagranicznej</h3>
+<p>W porządkach prawnych państw o rozwiniętym rynku kapitałowym problem impasu w spółkach 50/50 został rozwiązany na poziomie legislacyjnym lub ukształtowanej praktyki kontraktowej. W Niemczech częstym jest stosowanie klauzul przyznających jednemu ze wspólników głos przeważający w określonych sytuacjach.</p>
+<h2>Podsumowanie – konflikt w spółce 50/50 a obsługa wniosków do KRS</h2>
+<p>Konflikt w spółce z o.o. o równym podziale udziałów i samodzielnym zarządzie to poważne wyzwanie organizacyjne i prawne. Skuteczne przeciwdziałanie impasowi wymaga nie tylko przemyślanych rozwiązań korporacyjnych, ale także sprawnej obsługi wniosków do KRS i terminowej aktualizacji danych w KRS. Wprowadzenie odpowiednich zapisów w umowie spółki, korzystanie z profesjonalnego wsparcia przy formalnościach rejestrowych oraz bieżąca aktualizacja danych to klucz do bezpieczeństwa i stabilności działalności.</p>
+<p><strong><a href="/kontakt" style="color: #f59e0b; text-decoration: underline;">Masz problem z wpisem do KRS, skontaktuj się z nami</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
