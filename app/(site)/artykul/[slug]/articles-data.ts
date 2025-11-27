@@ -936,6 +936,107 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "zmiana-umowy-spolki-portal-s24-instrukcja",
+      title: "Jak krok po kroku złożyć wniosek o zmianę umowy spółki przez portal S24",
+      excerpt:
+        "Praktyczny przewodnik po zmianie umowy spółki z o.o. przez system S24. Podstawa prawna, instrukcja krok po kroku i przykłady praktyczne dla przedsiębiorców.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/praca-nad-zmiana-wpisu-krs-s24.webp",
+      imageAlt: "Profesjonalna praca nad zmianą wpisu w KRS przez system S24",
+      publishedAt: "2025-05-31T00:00:00.000Z",
+    },
+    content: `
+<h2>Jak krok po kroku złożyć wniosek o zmianę umowy spółki przez portal S24</h2>
+<h3>Podstawa prawna i przepisy krajowe</h3>
+<p>Podstawą prawną zmiany umowy spółki z ograniczoną odpowiedzialnością jest przede wszystkim:</p>
+<ul>
+<li><strong>Kodeks spółek handlowych (KSH)</strong>, ustawa z dnia 15 września 2000 r., w szczególności art. 232–233 (zmiana umowy spółki), art. 255 (wpis zmian do KRS),</li>
+<li><strong>Ustawa o Krajowym Rejestrze Sądowym</strong> z dnia 20 sierpnia 1997 r.,</li>
+<li>Regulacje dotyczące systemu S24 – elektronicznego systemu rejestracji spółek i dokonywania zmian, udostępnionego przez Ministerstwo Sprawiedliwości.</li>
+</ul>
+<p>Zmiana umowy spółki przez S24 jest możliwa wyłącznie dla tych spółek, które zostały zarejestrowane w tym systemie (założone przez platformę S24). Spółki założone u notariusza w tradycyjny sposób, nie mogą korzystać z tej formy zmiany umowy.</p>
+<h3>Cel i funkcja systemu S24</h3>
+<p>Wprowadzenie możliwości zmiany umowy spółki przez portal S24 miało przede wszystkim na celu:</p>
+<ul>
+<li><strong>Uproszczenie i przyspieszenie procedury</strong> zmiany umowy spółki,</li>
+<li><strong>Obniżenie kosztów</strong> związanych z dokonaniem zmian (brak konieczności udziału notariusza),</li>
+<li><strong>Cyfryzację i automatyzację procesu rejestracji</strong> i aktualizacji danych w KRS,</li>
+<li><strong>Zwiększenie dostępności i wygody</strong> dla przedsiębiorców, którzy mogą dokonać zmian zdalnie, bez konieczności fizycznej obecności.</li>
+</ul>
+<p>Warto podkreślić, że choć zmiana umowy przez S24 jest wygodna, to ogranicza zakres modyfikacji do wzorców przewidzianych przez system. W przypadku bardziej złożonych zmian (np. nietypowych sposobów reprezentacji, udziałów objętych w zamian za wkłady niepieniężne, postanowień na wypadek śmierci wspólnika czy sposobów rozwiązywania sporów pomiędzy wspólnikami) konieczne jest sporządzenie aktu notarialnego, co powoduje utratę statusu spółki „S24".</p>
+<h3>Najważniejsze orzecznictwo</h3>
+<ul>
+<li><strong>Wyrok Sądu Najwyższego z dnia 3 marca 2006 r., sygn. akt II CSK 147/05</strong> – potwierdza, że zmiana umowy spółki z o.o. może nastąpić przez uchylenie dotychczasowego tekstu i przyjęcie nowego, a dla skuteczności zmiany wystarczy wskazanie, że nastąpiła zmiana przez uchwalenie nowego tekstu umowy, bez konieczności szczegółowego wymieniania wszystkich zmian.</li>
+</ul>
+<p>Orzeczenie to pozwala zrozumieć, że zmiana umowy może mieć również charakter kompleksowy i nie wymaga każdorazowo szczegółowego opisu każdej modyfikacji.</p>
+<h3>Praktyczne znaczenie dla przedsiębiorców</h3>
+<p>Zmiana umowy spółki przez S24 jest szczególnie korzystna dla przedsiębiorców, którzy:</p>
+<ul>
+<li>chcą szybko i tanio dokonać zmian w umowie (np. zmiana adresu siedziby, przedmiotu działalności),</li>
+<li>prowadzą spółki założone elektronicznie i chcą zachować możliwość dalszej obsługi przez S24,</li>
+<li>cenią sobie wygodę i dostępność narzędzi online bez konieczności wizyty u notariusza.</li>
+</ul>
+<p>Dla pracodawców i konsumentów zmiany w umowie spółki mogą oznaczać m.in. rozszerzenie zakresu działalności, co wpływa na ofertę i wiarygodność przedsiębiorcy.</p>
+<h3>Możliwe kontrowersje i problemy</h3>
+<ul>
+<li><strong>Ograniczenia systemu S24</strong> – zmiany możliwe są tylko w ramach wzorców udostępnionych przez system; bardziej skomplikowane zmiany wymagają aktu notarialnego,</li>
+<li><strong>Utrata statusu spółki S24</strong> – dokonanie zmiany umowy poza systemem S24 powoduje, że spółka traci możliwość dalszej obsługi elektronicznej,</li>
+<li><strong>Problemy z podpisaniem uchwały elektronicznej</strong> – wszyscy wspólnicy muszą podpisać uchwałę elektronicznie, co może być utrudnione w praktyce,</li>
+<li><strong>Ryzyko błędów formalnych</strong> – pomimo automatyzacji, błędy w wypełnieniu wniosku lub uchwały mogą skutkować zwrotem lub wezwaniem do uzupełnienia przez sąd.</li>
+</ul>
+<h2>Instrukcja jak krok po kroku złożyć wniosek o zmianę umowy spółki przez portal S24</h2>
+<img src="/images/zakladanie-spolki-podpisanie-umowy-KRS.webp" alt="Zakładanie spółki - podpisanie umowy KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Krok 1: Sprawdzenie możliwości zmiany przez system S24</h3>
+<p>Zmiana umowy przez S24 jest możliwa tylko dla spółek założonych w tym systemie. Spółki założone u notariusza muszą dokonać zmian w formie aktu notarialnego.</p>
+<h3>Krok 2: Zalogowanie się do systemu S24</h3>
+<p>Jeżeli spółka została założona w systemie S24, wszyscy wspólnicy powinni posiadać konto w systemie. Należy wejść na stronę S24 i zalogować się za pomocą profilu zaufanego lub podpisu kwalifikowanego.</p>
+<h3>Krok 3: Wybór opcji zmiany umowy spółki</h3>
+<p>W menu systemu należy wybrać pole „Zmiana umowy spółki" i wskazać spółkę, której zmiana ma dotyczyć.</p>
+<img src="/images/notatki-przed-zmiana-wpisu-w-krs.webp" alt="Notatki przed zmianą wpisu w KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Krok 4: Podjęcie uchwały przez wspólników</h3>
+<p>System generuje wzorzec uchwały zmieniającej umowę spółki. Należy wybrać i wprowadzić zamierzone zmiany, np.:</p>
+<ul>
+<li>zmianę siedziby,</li>
+<li>zmianę przedmiotu działalności.</li>
+</ul>
+<p>Należy pamiętać, że zatwierdzenie uchwały wymaga podpisu elektronicznego wszystkich wspólników lub osób uprawnionych do reprezentacji.</p>
+<h3>Krok 5: Przygotowanie tekstu jednolitego umowy spółki</h3>
+<p>Zgodnie z obowiązującymi przepisami, każda zmiana umowy spółki wymaga przygotowania tekstu jednolitego umowy spółki. Do wniosku należy dołączyć tekst jednolity umowy spółki, czyli aktualny tekst umowy uwzględniający wszystkie wprowadzone przez wspólników zmiany.</p>
+<img src="/images/biurko-z-laptopem-i-przyborami-biurowymi.webp" alt="Biurko z laptopem i przyborami biurowymi" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Krok 6: Wypełnienie wniosku do KRS</h3>
+<p>System S24 automatycznie prowadzi nas przez kolejne pola wniosku, gdzie należy wpisać dane spółki i zmiany. Należy pamiętać o załączeniu uchwały oraz tekstu jednolitego umowy spółki.</p>
+<p><strong>Uwaga:</strong> zgodnie z aktualnymi przepisami każdy podmiot powinien posiadać adres doręczeń elektronicznych. Przy składaniu wniosku o zmianę wpisu po wejściu w życie tych przepisów, można albo podać dane adresu wygenerowanego poza systemem, lub też złożyć wniosek o jego założenie przez system S24, przy okazji składania wniosku o zmianę wpisu w KRS.</p>
+<h3>Krok 7: Opłacenie wniosku</h3>
+<p>Następnym krokiem jest opłacenie wniosku, system automatycznie przenosi nas na stronę płatności online po wybraniu tej opcji (koszt około 250 zł, obejmuje opłatę sądową i ogłoszenie w Monitorze Sądowym i Gospodarczym).</p>
+<img src="/images/zmiana-danych-krs-podpis-dokumentu.webp" alt="Zmiana danych KRS - podpis dokumentu" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Krok 8: Podpisanie wniosku</h3>
+<p>Po wypełnieniu wniosku należy go podpisać. System umożliwia m.in. podpis przy użyciu kwalifikowanego podpisu elektronicznego od dostawcy zewnętrznego jak i podpis przy użyciu platformy e-puap.</p>
+<p><strong>Uwaga:</strong> Przed podpisaniem wniosku warto skorzystać z automatycznego sprawdzenia poprawności jego wypełnienia korzystając z funkcji udostępnionej przez system.</p>
+<h3>Krok 9: Wysłanie wniosku i oczekiwanie na rozpatrzenie</h3>
+<p>Po wysłaniu wniosku otrzymujemy potwierdzenie jego wysłania a następnie informację o sygnaturze sprawy nadanej wnioskowi przez Sąd rejestrowy. Sąd rejestrowy dokonuje weryfikacji formalnej (zwykle 3–7 dni roboczych). W przypadku braków sąd wezwie do ich uzupełnienia lub zwróci wniosek.</p>
+<h3>Krok 10: Potwierdzenie wpisu zmiany</h3>
+<p>Po pozytywnym rozpatrzeniu otrzymasz potwierdzenie wpisu zmiany do KRS. Od tego momentu zmieniona umowa spółki zaczyna obowiązywać, gdyż wpis zmiany umowy spółki ma charakter konstytutywny.</p>
+<img src="/images/zalozenie-spolki-zawarcie-umowy-krs.webp" alt="Założenie spółki - zawarcie umowy KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>Przykłady praktyczne</h2>
+<h3>Przykład 1: Zmiana siedziby spółki</h3>
+<p>Spółka z o.o. założona przez S24 chce zmienić siedzibę (inaczej miejscowość podaną w umowie spółki w której działają organy spółki) z Warszawy na Kraków. Wspólnicy logują się do S24, wybierają opcję zmiany umowy, wprowadzają nowy adres w uchwale, podpisują ją elektronicznie i składają wniosek. Po opłaceniu i zatwierdzeniu przez sąd zmiana zostaje wpisana do KRS.</p>
+<h3>Przykład 2: Rozszerzenie przedmiotu działalności</h3>
+<p>Spółka chce dodać nowy kod PKD do zakresu działalności. W systemie S24 wybierają wzorzec uchwały zmieniającej umowę, dodają nowy przedmiot działalności, podpisują uchwałę i składają wniosek. Po zatwierdzeniu zmiana staje się skuteczna.</p>
+<p><strong>Uwaga:</strong> w związku z aktualizacją kodów PKD od 2025 r., spowodowanej wprowadzeniem nowych regulacji, w przypadku w którym dokonujemy zmian przedmiotu działalności po wejściu w życie nowelizacji, powinniśmy sprawdzić czy kody PKD w umowie spółki założonej przed nowelizacją, odpowiadają nowym numerom klasyfikacji. Jeśli nie, powinniśmy je zmienić, poprzez dopasowanie do nowego brzmienia lub klasyfikacji (numerów kodów).</p>
+<h3>Przykład 3: Zmiana umowy wymagająca aktu notarialnego</h3>
+<p>Spółka chce zmienić postanowienia umowy wykraczające poza wzorce S24, np. zmienić sposób reprezentacji spółki, lub wprowadzić udziały objęte w zamian za wkład niepieniężny (aport). W takim przypadku konieczne jest sporządzenie aktu notarialnego i zgłoszenie zmiany tradycyjną drogą. Spółka traci status „S24" i dalsze zmiany musi dokonywać poprzez PRS (Portal Rejestrów Sądowych).</p>
+<h2>Podsumowanie</h2>
+<p>Zmiana umowy spółki przez portal S24 to rozwiązanie nowoczesne i przyspieszające proces aktualizacji danych spółki z o.o. założonej elektronicznie w Krajowym Rejestrze Sądowym. Choć system S24 stwarza wiele korzyści, w tym oszczędność czasu i kosztów, ma też ograniczenia dotyczące zakresu zmian i wymaga pełnej elektronicznej współpracy wspólników.</p>
+<p>Przy okazji dokonywania zmiany wpisu w KRS w systemie S24 warto pamiętać o zmianach i wymogach wynikających ze zmian przepisów, takich jak konieczność wskazania adresu do doręczeń elektronicznych czy aktualizacji kodów PKD które weszły w życie z dniem 1 stycznia 2025 r.</p>
+<p><strong>Jeśli opisany proces wydaje się zbyt skomplikowany lub po prostu nie masz czasu, skontaktuj się z nami w sprawie zmian w KRS, chętnie pomożemy.</strong></p>
+<p><strong><a href="/ksiegowi" style="color: #f59e0b; text-decoration: underline;">Dowiedz się więcej o współpracy z biurami rachunkowymi</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
