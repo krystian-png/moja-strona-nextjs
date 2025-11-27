@@ -1037,6 +1037,59 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "zmiana-przedmiotu-dzialalnosci-spolka-zoo",
+      title: "Zmiana przedmiotu działalności w spółce z ograniczoną odpowiedzialnością",
+      excerpt:
+        "Podstawa prawna i procedura zmiany przedmiotu działalności w sp. z o.o. Wymogi formalne, orzecznictwo i praktyczne znaczenie dla przedsiębiorców.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl:
+        "/images/nowoczesne-biuro-praca-nad-dokumentem-zmiana-dzialalnosci.webp",
+      imageAlt:
+        "Nowoczesne biuro - praca nad dokumentami zmiany przedmiotu działalności spółki z o.o.",
+      publishedAt: "2025-05-30T00:00:00.000Z",
+    },
+    content: `
+<h2>Zmiana przedmiotu działalności w spółce z ograniczoną odpowiedzialnością</h2>
+<h3>Podstawa prawna</h3>
+<p>Zmiana przedmiotu działalności spółki z ograniczoną odpowiedzialnością (sp. z o.o.) jest uregulowana przede wszystkim w Kodeksie spółek handlowych (KSH), w szczególności w art. 232 i art. 255 KSH. Zgodnie z art. 232 § 1 KSH, umowa spółki określa m.in. przedmiot działalności spółki. Zmiana tego przedmiotu wymaga zmiany umowy spółki i wpisania do KRS gdyż wpis ten ma charakter konstytutywny.</p>
+<img src="/images/poczekalnia-u-notariusza-zmiana-umowy-spolki-krs.webp" alt="Poczekalnia u notariusza - zmiana umowy spółki KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Cel i funkcja regulacji</h3>
+<p>Regulacje dotyczące zmiany przedmiotu działalności spółki pełnią kilka funkcji:</p>
+<ul>
+<li><strong>Ochrona interesów wspólników</strong> – wymóg większości kwalifikowanej przy zmianie umowy spółki zabezpiecza wszystkich wspólników.</li>
+<li><strong>Przejrzystość obrotu gospodarczego</strong> – obowiązek wpisu do KRS zapewnia jawność danych dotyczących działalności spółki, co jest istotne dla kontrahentów, wierzycieli i organów państwowych.</li>
+</ul>
+<img src="/images/zmiana-umowy-spolki-zgloszenie-KRS.webp" alt="Zmiana umowy spółki - zgłoszenie KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Praktyka</h3>
+<p>Należy podkreślić, że zmiana przedmiotu działalności spółki z o.o. to zmiana istotna, wymagająca zachowania wszystkich obowiązujących procedur w tym zakresie (w tym zachowania kwalifikowanej większości głosów, odpowiedniej formy – z wyjątkiem zmiany przez system S24 i zgłoszenia do KRS). Zmiana przedmiotu działalności niesie daleko idące konsekwencje zarówno dla spółki jak i jej wspólników, stąd regulacja stawia szereg opisanych powyżej wymagań, które służą ochronie interesu wspólników i transparentności obrotu gospodarczego.</p>
+<img src="/images/przygotowanie-zmiany-wspolnikow-spolki-zoo-krs.webp" alt="Przygotowanie zmiany wspólników spółki z o.o. - KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Najważniejsze orzecznictwo</h3>
+<ul>
+<li>Wyrok Sądu Apelacyjnego w Warszawie z 10 marca 2016 r., sygn. akt VI ACa 1427/15 – podkreśla konieczność wpisu zmiany do KRS dla skuteczności zmiany przedmiotu działalności.</li>
+<li>Wyrok Sądu Najwyższego z 12 grudnia 2017 r., sygn. akt III CZP 50/17 – wskazuje na konieczność zachowania odpowiedniej większości głosów przy istotnej zmianie przedmiotu działalności.</li>
+</ul>
+<img src="/images/podpisywanie-umowy-zmiana-danych-spolki-krs.webp" alt="Podpisywanie umowy - zmiana danych spółki KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h3>Praktyczne znaczenie dla przedsiębiorców</h3>
+<p>Dla przedsiębiorców zmiana przedmiotu działalności spółki ma kluczowe znaczenie:</p>
+<ul>
+<li><strong>Dostosowanie profilu działalności spółki do wymogów zmieniającego się rynku</strong> – umożliwia rozwój i elastyczność działania, np. wprowadzenie nowych usług lub produktów.</li>
+<li><strong>Ryzyko błędów proceduralnych</strong> – nieprawidłowości w procedurze mogą skutkować odrzuceniem wniosku o wpis do KRS, w związku z czym zalecana jest ostrożność i zachowania wszelkich wymagań stawianych przez obowiązujące przepisy.</li>
+<li><strong>Znaczenie dla kontrahentów i konsumentów</strong> – jawność zmian w KRS pozwala na ocenę wiarygodności i zakresu działalności spółki.</li>
+</ul>
+<p>Należy pamiętać, o zmianie regulacji w zakresie kodów PKD odnoszących się co oczywiste do przedmiotu działalności i podlegających ujawnieniu w KRS. Zgodnie z § 2 ust. 3 Rozporządzenia Rady Ministrów z dnia 18 grudnia 2024 r. w sprawie Polskiej Klasyfikacji Działalności (PKD), podmioty wpisane do Krajowego Rejestru Sądowego lub krajowego rejestru urzędowego podmiotów gospodarki narodowej, które po dniu wejścia w życie niniejszego rozporządzenia, a przed upływem terminu określonego w ust. 2, składają wnioski o wpis zmian do rejestru w zakresie przedmiotu działalności, są obowiązane do zastosowania nowych kodów PKD.</p>
+<p>Zmieniając przedmiot działalności po nowelizacji w zakresie kodów PKD, należy zaktualizować i dostosować ich brzmienie.</p>
+<img src="/images/biuro-przygotowanie-wniosku-KRS.webp" alt="Biuro - przygotowanie wniosku KRS" loading="lazy" width="800" height="600" decoding="async" />
+<h2>Podsumowanie</h2>
+<p>Zmiana przedmiotu działalności w spółce z ograniczoną odpowiedzialnością to proces ściśle uregulowany prawnie, którego podstawą jest Kodeks spółek handlowych. Wymaga ona podjęcia uchwały wspólników większością kwalifikowaną, zachowania formy aktu notarialnego (nie dotyczy systemu S24) oraz wpisu do Krajowego Rejestru Sądowego, co zapewnia transparentność i bezpieczeństwo obrotu gospodarczego. Regulacje te służą ochronie interesów wspólników oraz kontrahentów, a ich przestrzeganie jest kluczowe dla prawidłowego funkcjonowania spółki.</p>
+<p>Jeśli potrzebujesz pomocy w tym zakresie zapraszamy do kontaktu.</p>
+<p><strong><a href="/o-nas" style="color: #f59e0b; text-decoration: underline;">Dowiedz się więcej o tym kim jesteśmy</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
+`,
+  },
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
