@@ -5,15 +5,45 @@
 :root {
   --background: 40 20% 95%;
   --foreground: 20 60% 15%;
+  --card: 40 20% 95%;
+  --card-foreground: 20 60% 15%;
+  --popover: 40 20% 95%;
+  --popover-foreground: 20 60% 15%;
   --muted: 25 45% 30%;
+  --muted-foreground: 25 20% 65%;
   --border: 35 25% 75%;
+  --input: 35 25% 75%;
+  --primary: 38 92% 50%;
+  --primary-foreground: 45 100% 98%;
+  --secondary: 35 30% 90%;
+  --secondary-foreground: 20 60% 20%;
+  --accent: 43 96% 62%;
+  --accent-foreground: 24 60% 12%;
+  --destructive: 5 74% 55%;
+  --destructive-foreground: 60 9% 98%;
+  --ring: 38 92% 50%;
 }
 
 .dark {
   --background: 20 60% 15%;
   --foreground: 40 20% 95%;
+  --card: 20 60% 15%;
+  --card-foreground: 40 20% 95%;
+  --popover: 20 60% 15%;
+  --popover-foreground: 40 20% 95%;
   --muted: 25 45% 65%;
+  --muted-foreground: 35 20% 20%;
   --border: 35 25% 35%;
+  --input: 35 25% 35%;
+  --primary: 43 96% 62%;
+  --primary-foreground: 24 60% 12%;
+  --secondary: 25 45% 25%;
+  --secondary-foreground: 40 20% 95%;
+  --accent: 38 92% 50%;
+  --accent-foreground: 45 100% 98%;
+  --destructive: 3 68% 58%;
+  --destructive-foreground: 60 9% 98%;
+  --ring: 43 96% 62%;
 }
 
 /* --- Poniżej: CSS przeniesiony z poprzedniego projektu (index.css) --- */
