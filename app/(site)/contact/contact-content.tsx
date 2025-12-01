@@ -358,11 +358,12 @@ export default function ContactPageContent() {
                               id="privacyConsent"
                               checked={field.value}
                               onCheckedChange={(checked) => field.onChange(checked === true)}
+                              aria-required
                               className="border-white/20 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600 mt-1"
                               required
                             />
                           </FormControl>
-                          <div className="space-y-1 leading-none">
+                          <div className="space-y-2 leading-none">
                             <FormLabel htmlFor="privacyConsent" className="text-white text-xs leading-relaxed">
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
@@ -383,7 +384,7 @@ export default function ContactPageContent() {
                               osobowych pod adresem kontakt@zmianakrs.pl, a wycofanie zgody nie wpłynie na zgodność z prawem
                               przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.
                             </FormLabel>
-                            <FormMessage />
+                            <FormMessage className="text-xs" />
                           </div>
                         </FormItem>
                       )}
