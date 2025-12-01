@@ -22,6 +22,7 @@
   --destructive: 5 74% 55%;
   --destructive-foreground: 60 9% 98%;
   --ring: 38 92% 50%;
+  --radius: 0.5rem;
 }
 
 .dark {
@@ -44,6 +45,12 @@
   --destructive: 3 68% 58%;
   --destructive-foreground: 60 9% 98%;
   --ring: 43 96% 62%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
 }
 
 /* --- Poniżej: CSS przeniesiony z poprzedniego projektu (index.css) --- */
