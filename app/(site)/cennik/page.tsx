@@ -48,7 +48,8 @@ Skontaktuj się z nami, aby poznać szczegóły oferty
 
 Zachęcamy do kontaktu w celu uzyskania indywidualnej wyceny i omówienia szczegółów współpracy. Oferujemy konkurencyjne ceny, profesjonalne doradztwo i pełne bezpieczeństwo formalno-prawne w procesie zmiany wpisu w KRS.`
 
-const pageUrl = `${siteUrl}/cennik`
+const pagePath = "/cennik"
+const pageUrl = `${siteUrl}${pagePath}`
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -103,10 +104,10 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Cennik obsługi zmian w KRS | ZmianaKRS",
+  title: "Cennik obsługi zmian w KRS",
   description:
     "Sprawdź ile kosztuje złożenie wniosku o zmianę w KRS, przygotowanie dokumentów oraz wsparcie przy założeniu spółki z o.o.",
-  alternates: { canonical: pageUrl },
+  alternates: { canonical: pagePath },
   openGraph: {
     title: "Cennik obsługi zmian w KRS | ZmianaKRS",
     description:
@@ -325,7 +326,7 @@ export default function PricingPage() {
                   </CardContent>
                 </Card>
 
-                <div className="text-center mb-8 mt-12">
+                <div className="textcenter mb-8 mt-12">
                   <h2 className="text-4xl font-bold text-white mb-6">Zakładanie spółki z o.o.</h2>
                 </div>
                 <div className="text-center mb-8">
