@@ -64,3 +64,9 @@ body {
 .about-background {
   background: url('/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp') center/cover no-repeat fixed;
 }
+
+/* Usunięcie ciemnej nakładki z poprzedniej wersji */
+.page-wrapper::before {
+  content: none !important;
+  opacity: 0 !important;
+}
