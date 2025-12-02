@@ -73,15 +73,20 @@ export default function ContactPageContent() {
   const generateCaptcha = useCallback(() => {
     const num1 = Math.floor(Math.random() * 10) + 1
     const num2 = Math.floor(Math.random() * 10) + 1
-    const question = `${num1} + ${num2} = ?`
-    const answer = String(num1 + num2)
-    setCaptchaQuestion({ question, answer })
-    return answer
+    setCaptchaQuestion({
+      question: `${num1} + ${num2} = ?`,
+      answer: (num1 + num2).toString(),
+    })
   }, [])
 
   useEffect(() => {
-    generateCaptcha()
-  }, [generateCaptcha])
+    const num1 = Math.floor(Math.random() * 10) + 1
+    const num2 = Math.floor(Math.random() * 10) + 1
+    setCaptchaQuestion({
+      question: `${num1} + ${num2} = ?`,
+      answer: (num1 + num2).toString(),
+    })
+  }, [])
 
   const submitContactMutation = useMutation({
     mutationFn: (data: ContactFormPayload) =>
@@ -108,37 +113,44 @@ export default function ContactPageContent() {
     },
   })
 
-  const onSubmit = useCallback(
-    (data: ContactFormData) => {
-      form.clearErrors("captcha")
+  const onSubmit = (data: ContactFormData) => {
+    // Clear any previous manual errors
+    form.clearErrors("captcha")
 
-      if (!data.captcha || data.captcha.trim() === "") {
-        form.setError("captcha", {
-          type: "manual",
-          message: "Potwierdź, że nie jesteś robotem",
-        })
-        return
-      }
+    // Sprawdź czy captcha została wypełniona
+    if (!data.captcha || data.captcha.trim() === "") {
+      form.setError("captcha", {
+        type: "manual",
+        message: "Potwierdź, że nie jesteś robotem",
+      })
+      return
+    }
 
-      if (data.captcha !== captchaQuestion.answer) {
-        form.setError("captcha", {
-          type: "manual",
-          message: "Nieprawidłowa odpowiedź na pytanie kontrolne",
-        })
-        generateCaptcha()
-        form.setValue("captcha", "")
-        return
-      }
+    // Sprawdź odpowiedź na captcha
+    if (data.captcha !== captchaQuestion.answer) {
+      form.setError("captcha", {
+        type: "manual",
+        message: "Nieprawidłowa odpowiedź na pytanie kontrolne",
+      })
+      // Wygeneruj nowe pytanie
+      const num1 = Math.floor(Math.random() * 10) + 1
+      const num2 = Math.floor(Math.random() * 10) + 1
+      const question = `${num1} + ${num2} = ?`
+      const answer = (num1 + num2).toString()
+      setCaptchaQuestion({ question, answer })
 
-      const submitData: ContactFormPayload = {
-        ...data,
-        name: `${data.firstName} ${data.lastName}`.trim(),
-      }
+      form.setValue("captcha", "")
+      return
+    }
 
-      submitContactMutation.mutate(submitData)
-    },
-    [captchaQuestion.answer, form, generateCaptcha, submitContactMutation]
-  )
+    // Połącz firstName i lastName w jedno pole name
+    const submitData = {
+      ...data,
+      name: `${data.firstName} ${data.lastName}`.trim(),
+    }
+
+    submitContactMutation.mutate(submitData)
+  }
 
   const isSubmitting = submitContactMutation.isPending
 
@@ -341,7 +353,7 @@ export default function ContactPageContent() {
                                 required
                               />
                             </FormControl>
-                            <FormMessage />
+                            <FormMessage /> {/* ← TO MUSI BYĆ! */}
                           </FormItem>
                         )}
                       />
