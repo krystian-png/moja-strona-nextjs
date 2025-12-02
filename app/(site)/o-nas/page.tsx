@@ -10,7 +10,8 @@ import { Card } from "@/components/ui/card"
 import { Award, DollarSign, Globe } from "lucide-react"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 
-const pageUrl = `${siteUrl}/o-nas`
+const pagePath = "/o-nas"
+const pageUrl = `${siteUrl}${pagePath}`
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -23,11 +24,11 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "O nas | ZmianaKRS",
+  title: "O nas",
   description:
     "Jesteśmy zespołem prawników, analityków i konsultantów ds. KRS. Od 2015 roku pomagamy spółkom sprawnie przechodzić przez zmiany w rejestrze.",
   alternates: {
-    canonical: pageUrl,
+    canonical: pagePath,
   },
   openGraph: {
     title: "O nas | ZmianaKRS",
