@@ -352,19 +352,19 @@ export default function ContactPageContent() {
                       control={form.control}
                       name="privacyConsent"
                       render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                        <FormItem
+                          style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "12px" }}
+                        >
                           <FormControl>
                             <Checkbox
-                              id="privacyConsent"
                               checked={field.value}
-                              onCheckedChange={(checked) => field.onChange(checked === true)}
-                              aria-required
-                              className="mt-1 border-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
-                              required
+                              onCheckedChange={field.onChange}
+                              style={{ marginTop: "4px", minWidth: "16px", minHeight: "16px" }}
+                              className="border-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
                             />
                           </FormControl>
-                          <div className="space-y-2 leading-none">
-                            <FormLabel htmlFor="privacyConsent" className="text-white text-xs leading-relaxed">
+                          <div style={{ flex: 1 }}>
+                            <FormLabel className="text-white text-xs leading-relaxed">
                               Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
                               www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
                               podanych w powyższym formularzu przez:
@@ -384,7 +384,7 @@ export default function ContactPageContent() {
                               osobowych pod adresem kontakt@zmianakrs.pl, a wycofanie zgody nie wpłynie na zgodność z prawem
                               przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.
                             </FormLabel>
-                            <FormMessage className="text-xs" />
+                            <FormMessage />
                           </div>
                         </FormItem>
                       )}
