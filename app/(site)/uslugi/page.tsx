@@ -22,7 +22,8 @@ import {
   Users,
 } from "lucide-react"
 
-const pageUrl = `${siteUrl}/uslugi`
+const pagePath = "/uslugi"
+const pageUrl = `${siteUrl}${pagePath}`
 
 type MainService = {
   title: string
@@ -157,11 +158,11 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Usługi zmian w KRS | ZmianaKRS",
+  title: "Usługi zmian w KRS",
   description:
     "Profesjonalna obsługa zmian wpisu w KRS, zakładania spółek oraz przygotowania dokumentów zgromadzeń wspólników.",
   alternates: {
-    canonical: pageUrl,
+    canonical: pagePath,
   },
   openGraph: {
     title: "Usługi zmian w KRS | ZmianaKRS",
@@ -343,66 +344,66 @@ export default function ServicesPage() {
                           </div>
                           <div>
                             <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
-                          <div className="mt-1 text-2xl font-bold text-amber-400">{service.price}</div>
+                            <div className="mt-1 text-2xl font-bold text-amber-400">{service.price}</div>
+                          </div>
                         </div>
+                        <p className="text-justify text-base leading-relaxed text-gray-300">{service.description}</p>
                       </div>
-                      <p className="text-justify text-base leading-relaxed text-gray-300">{service.description}</p>
-                    </div>
 
-                    <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-                      <div>
-                        <h4 className="mb-3 text-lg font-semibold text-white">Oferujemy pomoc w zakresie:</h4>
-                        <ul className="space-y-2">
-                          {service.features.map((feature) => (
-                            <li key={feature} className="flex items-start gap-3 text-gray-200">
-                              <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                              <span className="text-sm">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      {service.included && (
+                      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
                         <div>
-                          <h4 className="mb-3 text-lg font-semibold text-white">W cenie usługi:</h4>
+                          <h4 className="mb-3 text-lg font-semibold text-white">Oferujemy pomoc w zakresie:</h4>
                           <ul className="space-y-2">
-                            {service.included.map((item) => (
-                              <li key={item} className="flex items-start gap-3 text-gray-200">
-                                <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                                <span className="text-sm">{item}</span>
+                            {service.features.map((feature) => (
+                              <li key={feature} className="flex items-start gap-3 text-gray-200">
+                                <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                                <span className="text-sm">{feature}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
-                      )}
-                    </div>
+                        {service.included && (
+                          <div>
+                            <h4 className="mb-3 text-lg font-semibold text-white">W cenie usługi:</h4>
+                            <ul className="space-y-2">
+                              {service.included.map((item) => (
+                                <li key={item} className="flex items-start gap-3 text-gray-200">
+                                  <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
+                                  <span className="text-sm">{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
 
-                    {service.note && (
-                      <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-600/20 p-3">
-                        <p className="text-sm text-amber-200">
-                          <strong>Uwaga:</strong> {service.note}
+                      {service.note && (
+                        <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-600/20 p-3">
+                          <p className="text-sm text-amber-200">
+                            <strong>Uwaga:</strong> {service.note}
+                          </p>
+                        </div>
+                      )}
+
+                      <div className="mt-6 space-y-4">
+                        <Link
+                          href="/contact"
+                          className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
+                        >
+                          Skontaktuj się w tej sprawie
+                        </Link>
+                        <p className="text-sm text-gray-300">
+                          Sprawdź również{" "}
+                          <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
+                            cennik usług KRS
+                          </Link>{" "}
+                          lub przeczytaj{" "}
+                          <Link href="/blog" className="text-amber-400 underline transition hover:text-amber-300">
+                            artykuły o zmianach w KRS
+                          </Link>{" "}
+                          na naszym blogu.
                         </p>
                       </div>
-                    )}
-
-                    <div className="mt-6 space-y-4">
-                      <Link
-                        href="/contact"
-                        className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
-                      >
-                        Skontaktuj się w tej sprawie
-                      </Link>
-                      <p className="text-sm text-gray-300">
-                        Sprawdź również {" "}
-                        <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                          cennik usług KRS
-                        </Link>{" "}
-                        lub przeczytaj {" "}
-                        <Link href="/blog" className="text-amber-400 underline transition hover:text-amber-300">
-                          artykuły o zmianach w KRS
-                        </Link>{" "}
-                        na naszym blogu.
-                      </p>
-                    </div>
                     </div>
                   )
                 })}
