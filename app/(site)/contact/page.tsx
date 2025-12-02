@@ -8,7 +8,8 @@ import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 import ContactPageContent from "./contact-content"
 
-const pageUrl = `${siteUrl}/contact`
+const pagePath = "/contact"
+const pageUrl = `${siteUrl}${pagePath}`
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -27,11 +28,11 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Kontakt | ZmianaKRS",
+  title: "Kontakt",
   description:
     "Skontaktuj się z zespołem ZmianaKRS. Konsultacja telefoniczna, spotkanie online lub wsparcie mailowe w zakresie zmian w KRS.",
   alternates: {
-    canonical: pageUrl,
+    canonical: pagePath,
   },
   openGraph: {
     title: "Kontakt | ZmianaKRS",
@@ -51,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kontakt ZmianaKRS",
-    description: "Zarezerwuj konsultację i dowiedz się, jak możemy wesprzeć Twoją spółkę przy zmianach w KRS.",
+    description:
+      "Zarezerwuj konsultację i dowiedz się, jak możemy wesprzeć Twoją spółkę przy zmianach w KRS.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
