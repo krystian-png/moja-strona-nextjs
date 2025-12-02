@@ -359,7 +359,7 @@ export default function ContactPageContent() {
                               checked={field.value}
                               onCheckedChange={(checked) => field.onChange(checked === true)}
                               aria-required
-                              className="mt-1 border-white/20 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
+                              className="mt-1 border-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
                               required
                             />
                           </FormControl>
