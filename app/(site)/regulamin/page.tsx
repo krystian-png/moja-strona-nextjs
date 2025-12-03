@@ -83,7 +83,7 @@ export default function TermsPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-10 bg-slate-900/70"
         style={{
           backgroundImage: `url(${termsBackground.src})`,
           backgroundSize: "cover",

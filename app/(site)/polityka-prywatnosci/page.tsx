@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-950/80"
+        className="fixed inset-0 -z-10 bg-slate-900/70"
         style={{
           backgroundImage: `url(${privacyBackground.src})`,
           backgroundSize: "cover",
