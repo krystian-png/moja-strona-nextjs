@@ -141,7 +141,7 @@ export default function PricingPage() {
         }}
         aria-hidden
       />
-      <div className="fixed inset-0 -z-10 bg-slate-900/60" aria-hidden />
+      <div className="fixed inset-0 -z-10 bg-slate-900/70" aria-hidden />
 
       <Navbar />
 
