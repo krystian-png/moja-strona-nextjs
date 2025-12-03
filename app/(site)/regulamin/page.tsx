@@ -3,151 +3,224 @@ import Script from "next/script"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import SEOExpandableSection from "@/components/SEOExpandableSection"
-import termsBackground from "@/public/images/archiwum-dokumenty-spolek-zmiana-wpisu-krs.webp"
+import backgroundImage from "@/public/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
-const pageUrl = `${siteUrl}/regulamin`
+const pagePath = "/regulamin"
+const pageUrl = `${siteUrl}${pagePath}`
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "TermsOfService",
-  name: "Regulamin świadczenia usług ZmianaKRS",
+  "@type": "WebPage",
+  name: "Regulamin świadczenia usług - warunki obsługi wniosków KRS",
+  description:
+    "Zapoznaj się z regulaminem świadczenia usług obsługi wniosków KRS. Warunki współpracy, prawa i obowiązki stron w procesie zmiany wpisu.",
   url: pageUrl,
-  publisher: organizationSchema,
-  inLanguage: "pl-PL",
+  mainEntity: organizationSchema,
 }
 
 export const metadata: Metadata = {
-  title: "Regulamin | ZmianaKRS",
+  title: "Regulamin świadczenia usług - warunki obsługi wniosków KRS",
   description:
-    "Zapoznaj się z warunkami świadczenia usług przez ZmianaKRS – zasady współpracy, płatności oraz odpowiedzialności.",
-  alternates: {
-    canonical: pageUrl,
-  },
+    "Zapoznaj się z regulaminem świadczenia usług obsługi wniosków KRS. Warunki współpracy, prawa i obowiązki stron w procesie zmiany wpisu.",
+  alternates: { canonical: pagePath },
   openGraph: {
-    title: "Regulamin | ZmianaKRS",
-    description:
-      "Warunki współpracy z ZmianaKRS przy obsłudze zmian w Krajowym Rejestrze Sądowym.",
+    title: "Regulamin świadczenia usług | ZmianaKRS",
+    description: "Zapoznaj się z regulaminem świadczenia usług obsługi wniosków KRS.",
     url: pageUrl,
     siteName: brandName,
-    images: [
-      {
-        url: `${siteUrl}/images/krs-services.png`,
-        width: 1200,
-        height: 630,
-        alt: "Regulamin ZmianaKRS",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Regulamin ZmianaKRS",
-    description: "Sprawdź zasady współpracy, rozliczeń i odpowiedzialności przy obsłudze zmian w KRS.",
-    images: [`${siteUrl}/images/krs-services.png`],
   },
 }
 
-const sections = [
-  {
-    title: "Zakres usług",
-    content:
-      "Świadczymy usługi polegające na analizie dokumentów, przygotowaniu wniosków do KRS, koordynacji podpisów elektronicznych, a także monitoringu postępowań rejestrowych. Zakres każdej współpracy opisujemy w umowie lub zleceniu.",
-    pageId: "terms-1",
-  },
-  {
-    title: "Zasady rozliczeń",
-    content:
-      "Wynagrodzenie ustalane jest w formie ryczałtu lub stawki godzinowej. Płatność następuje na podstawie faktury VAT z terminem 7 lub 14 dni. Opłaty sądowe i notarialne ponosi klient, chyba że strony uzgodnią inaczej.",
-    pageId: "terms-2",
-  },
-  {
-    title: "Odpowiedzialność",
-    content:
-      "Odpowiadamy za prawidłowość przygotowanych dokumentów i terminowość działań. Nie ponosimy odpowiedzialności za opóźnienia wynikające z działania sądu lub braku wymaganych podpisów ze strony klienta.",
-    pageId: "terms-3",
-  },
-  {
-    title: "Reklamacje",
-    content:
-      "Reklamacje możesz zgłosić mailowo na adres kontakt@zmianakrs.pl. Rozpatrujemy je w ciągu 14 dni roboczych. Jeśli reklamacja jest zasadna, proponujemy stosowne rozwiązanie – poprawę dokumentów, ponowne złożenie wniosku lub rekompensatę kosztów.",
-    pageId: "terms-4",
-  },
-]
-
-export default function TermsPage() {
+export default function RegulaminPage() {
   return (
     <div className="relative min-h-screen text-white">
-      <Script id="terms-structured-data" type="application/ld+json">
+      <Script id="regulamin-structured-data" type="application/ld+json">
         {JSON.stringify(structuredData)}
       </Script>
 
       <div
-        className="fixed inset-0 -z-10 bg-slate-900/70"
+        className="fixed inset-0 -z-20"
         style={{
-          backgroundImage: `url(${termsBackground.src})`,
+          backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        aria-hidden
       />
+      <div className="fixed inset-0 -z-10 bg-slate-950/70" aria-hidden />
 
       <Navbar />
 
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-4 py-20 lg:py-24">
-        <section>
-          <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Warunki współpracy</p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-            Regulamin świadczenia usług ZmianaKRS
-          </h1>
-          <p className="mt-6 text-lg text-slate-200 md:text-xl">
-            Regulamin określa zasady współpracy, odpowiedzialności i rozliczeń. Stanowi integralną część umowy podpisywanej z
-            klientem.
-          </p>
-        </section>
+      <main className="relative z-10 flex-1">
+        <section className="relative pt-20 pb-20 overflow-hidden">
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+                <h1 className="text-3xl font-bold text-white mb-8">Regulamin serwisu internetowego</h1>
 
-        <section className="grid gap-10 rounded-3xl bg-slate-900/60 px-8 py-12 backdrop-blur md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Najważniejsze postanowienia</h2>
-            <p className="text-slate-200">
-              Przed rozpoczęciem projektu określamy harmonogram, osoby odpowiedzialne i kamienie milowe. Każda zmiana zakresu
-              wymaga potwierdzenia mailowego, aby zapewnić przejrzystość współpracy.
-            </p>
+                <div className="prose prose-invert max-w-none">
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 1. Postanowienia ogólne</h2>
+                  <p className="text-gray-300 mb-4">
+                    Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem www.zmianakrs.pl
+ (dalej: &quot;Serwis&quot;) oraz zasady świadczenia usług przez Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń, NIP: 669-217-69-58 (dalej: &quot;Usługodawca&quot;).
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Serwis prezentuje ofertę usług obsługi wniosków do KRS oraz zawiera publikacje o charakterze wyłącznie informacyjnym i edukacyjnym.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Korzystanie z Serwisu oznacza akceptację niniejszego Regulaminu w całości.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Regulamin jest dostępny nieodpłatnie na stronie Serwisu w formie umożliwiającej jego pobranie, utrwalenie i wydrukowanie.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługodawca prowadzi Serwis na zasadach określonych w niniejszym Regulaminie oraz zgodnie z przepisami obowiązującego prawa.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 2. Definicje</h2>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Usługodawca</strong> – podmiot świadczący usługi opisane w §1 ust. 2.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Usługobiorca</strong> – wyłącznie przedsiębiorca w rozumieniu art. 43 Kodeksu cywilnego, korzystający z usług Serwisu.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Serwis</strong> – strona internetowa pod adresem www.zmianakrs.pl.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Usługi</strong> – usługi polegające na przygotowywaniu dokumentów do wpisów i zmian w Krajowym Rejestrze Sądowym, zakładaniu spółek oraz kompleksowej obsłudze formalnej związanej ze zgłaszaniem zmian wpisów do KRS, w tym obsługi Walnych Zgromadzeń Wspólników i przygotowywania dokumentów na takie zgromadzenia oraz innych czynnościach formalnych świadczonych przez Usługodawcę.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Regulamin</strong> – niniejszy dokument.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Formularz kontaktowy</strong> – narzędzie dostępne w Serwisie, umożliwiające złożenie zapytania lub zamówienia usługi.</p>
+                  <p className="text-gray-300 mb-4"><strong className="text-white">Informacje organizacyjne</strong> – szczegóły dotyczące danej Usługi dostępne na stronie Serwisu lub przekazywane indywidualnie, w tym: zakres usługi, sposób realizacji, płatności, osoba kontaktowa.</p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 3. Wyłączenie obsługi konsumentów</h2>
+                  <p className="text-gray-300 mb-4">
+                    Serwis i Usługi dostępne są wyłącznie dla przedsiębiorców, tj. podmiotów prowadzących działalność gospodarczą lub zawodową.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługodawca nie świadczy usług na rzecz konsumentów w rozumieniu art. 22¹ Kodeksu cywilnego.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Osoby korzystające z Serwisu oświadczają, że działają jako przedsiębiorcy i zawierają umowy w ramach prowadzonej działalności gospodarczej.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    W przypadku stwierdzenia, że Usługobiorca jest konsumentem, Usługodawca zastrzega sobie prawo odmowy świadczenia usług lub rozwiązania umowy.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 4. Rodzaj i zakres usług</h2>
+                  <p className="text-gray-300 mb-4">Usługodawca świadczy usługi polegające na:</p>
+                  <ul className="list-disc pl-6 text-gray-300 mb-4">
+                    <li>przygotowywaniu dokumentów niezbędnych do wpisów i zmian w KRS,</li>
+                    <li>zakładaniu spółek z o.o. oraz innych podmiotów w systemie S24 lub tradycyjnym,</li>
+                    <li>doradztwie formalnym i prawnym w zakresie rejestracji i zmian w KRS,</li>
+                    <li>składaniu wniosków do KRS na zlecenie Usługobiorcy,</li>
+                    <li>udostępnianiu przygotowanych dokumentów do podpisu i dalszej obsługi przez Usługobiorcę.</li>
+                  </ul>
+                  <p className="text-gray-300 mb-4">
+                    Usługi są realizowane na podstawie indywidualnych ustaleń, po dostarczeniu przez Usługobiorcę wszystkich wymaganych dokumentów, w tym podpisanych pełnomocnictw, jeśli są niezbędne.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Informacje i materiały zamieszczone w Serwisie mają charakter wyłącznie ogólny i informacyjny, nie stanowią doradztwa prawnego ani oferty w rozumieniu Kodeksu cywilnego.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 5. Warunki korzystania z usług</h2>
+                  <p className="text-gray-300 mb-4">
+                    Do korzystania z usług niezbędne jest posiadanie urządzenia z dostępem do Internetu oraz aktywnego adresu e-mail.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca zobowiązuje się do podania danych zgodnych z prawdą i dostarczenia wymaganych dokumentów.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Zabronione jest dostarczanie treści bezprawnych lub naruszających prawa osób trzecich.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługodawca zastrzega sobie prawo do odmowy realizacji usługi w przypadku naruszenia postanowień Regulaminu lub w przypadku konfliktu interesów, naruszenia zasad etyki zawodowej lub innych okoliczności uzasadniających odmowę świadczenia usług.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca zobowiązuje się do korzystania z Serwisu i usług wyłącznie na własny użytek, z poszanowaniem praw własności intelektualnej Usługodawcy oraz osób trzecich.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 6. Warunki techniczne korzystania z Serwisu oraz bezpieczeństwo</h2>
+                  <p className="text-gray-300 mb-4">
+                    Do prawidłowego korzystania z Serwisu niezbędne jest posiadanie przez Usługobiorcę urządzenia końcowego (komputera, smartfona lub innego urządzenia) z dostępem do Internetu oraz aktualnej przeglądarki internetowej obsługującej standardy techniczne wykorzystywane przez Serwis.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca zobowiązany jest korzystać z Serwisu w sposób zgodny z jego przeznaczeniem oraz obowiązującymi przepisami prawa, a także zasadami współżycia społecznego.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Zabrania się podejmowania przez Usługobiorcę jakichkolwiek działań mogących zakłócić, uszkodzić lub ograniczyć prawidłowe funkcjonowanie Serwisu.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 7. Zawarcie umowy i realizacja usług</h2>
+                  <p className="text-gray-300 mb-4">
+                    Umowa o świadczenie usług zostaje zawarta z chwilą potwierdzenia przyjęcia zamówienia przez Usługodawcę oraz opłacenia faktury przez Usługobiorcę, chyba że strony ustalą inaczej.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Realizacja usługi rozpoczyna się po otrzymaniu wszystkich wymaganych dokumentów oraz zaksięgowaniu płatności.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca wyraża zgodę na rozpoczęcie realizacji usługi niezwłocznie po zawarciu umowy.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca traci prawo do odstąpienia od umowy po rozpoczęciu realizacji usługi.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 8. Płatności</h2>
+                  <p className="text-gray-300 mb-4">
+                    Wynagrodzenie za usługi określone jest w cenniku dostępnym na stronie Serwisu lub ustalane indywidualnie.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Płatność następuje na podstawie faktury elektronicznej przesłanej na adres e-mail Usługobiorcy.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Realizacja usługi następuje po zaksięgowaniu płatności.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Na wyraźną prośbę Usługobiorcy możliwe jest wystawienie faktury proforma.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 9. Ochrona danych osobowych</h2>
+                  <p className="text-gray-300 mb-4">
+                    Administratorem danych osobowych jest Usługodawca.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Dane przetwarzane są zgodnie z RODO w celu realizacji usług oraz wypełnienia obowiązków prawnych.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Szczegółowe informacje znajdują się w Polityce Prywatności dostępnej na stronie Serwisu.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługobiorca zobowiązany jest do przekazywania danych osobowych osób trzecich wyłącznie w zakresie i na zasadach zgodnych z obowiązującymi przepisami prawa.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 10. Klauzula dotycząca przekazywania danych osobowych</h2>
+                  <p className="text-gray-300 mb-4">
+                    W ramach realizacji usług Usługodawca przekazuje dane osobowe Usługobiorcy do systemów rejestrowych, w tym platformy S24, Portalu Rejestrów Sądowych (PRS) oraz bezpośrednio do sądów rejestrowych.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Przekazanie danych osobowych jest niezbędne do wykonania umowy oraz realizacji usług i nie jest możliwe bez ich udostępnienia właściwym organom rejestrowym.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Ministerstwo Sprawiedliwości oraz sądy rejestrowe są administratorami danych osobowych w zakresie przetwarzania danych w systemach S24, PRS oraz w sądach rejestrowych.
+                  </p>
+
+                  <h2 className="text-xl font-semibold text-white mt-8 mb-4">§ 11. Wyłączenie odpowiedzialności</h2>
+                  <p className="text-gray-300 mb-4">
+                    Materiały, informacje oraz treści udostępnione w Serwisie mają charakter wyłącznie informacyjny i edukacyjny. Nie stanowią one profesjonalnej porady prawnej, podatkowej, finansowej ani innej specjalistycznej usługi doradczej świadczonej przez Usługodawcę.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Usługodawca oraz podmioty współpracujące z nim przy prowadzeniu Serwisu nie ponoszą odpowiedzialności za skutki jakiegokolwiek wykorzystania, interpretacji lub zastosowania informacji zawartych w Serwisie przez Usługobiorców lub osoby trzecie.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Każda sytuacja prawna, podatkowa, finansowa lub inna, której dotyczy zainteresowanie Usługobiorcy, jest indywidualna i wymaga szczegółowej analizy oraz konsultacji z odpowiednio wykwalifikowanym profesjonalistą.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Informacje i materiały dostępne w Serwisie nie mogą zastępować profesjonalnej porady i nie zwalniają Usługobiorcy z obowiązku uzyskania takiej porady przed podjęciem jakichkolwiek działań.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Korzystanie z Serwisu oraz informacji w nim zawartych odbywa się na wyłączną odpowiedzialność Usługobiorcy. Usługodawca nie ponosi odpowiedzialności za decyzje podjęte na podstawie tych informacji.
+                  </p>
+                  <p className="text-gray-300 mb-4">
+                    Materiały i informacje zamieszczone w Serwisie nie stanowią oferty handlowej ani zobowiązania do świadczenia usług.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <ul className="space-y-3 text-sm text-slate-200">
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Wszystkie dokumenty przekazane przez klienta traktujemy jako poufne i wykorzystujemy wyłącznie do celów realizacji umowy.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Wynagrodzenie nie obejmuje kosztów zewnętrznych – opłat sądowych, notarialnych i podatkowych.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
-                <span>Klient zobowiązuje się dostarczyć wymagane dokumenty w terminie, aby uniknąć przesunięć w harmonogramie.</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          {sections.map((section) => (
-            <SEOExpandableSection key={section.pageId} title={section.title} content={section.content} pageId={section.pageId} />
-          ))}
-        </section>
-
-        <section className="rounded-3xl bg-amber-500/10 px-10 py-12 text-center text-slate-900 backdrop-blur">
-          <h2 className="text-3xl font-semibold text-white">Chcesz rozpocząć współpracę?</h2>
-          <p className="mt-4 text-base text-slate-100 md:text-lg">
-            Zapoznaj się z regulaminem i skontaktuj się z nami, aby przygotować umowę dopasowaną do Twojego projektu.
-          </p>
-          <a
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-500 px-8 py-3 text-base font-semibold text-slate-900 transition hover:bg-amber-400"
-            href="/kontakt"
-          >
-            Porozmawiajmy o szczegółach
-          </a>
         </section>
       </main>
 
