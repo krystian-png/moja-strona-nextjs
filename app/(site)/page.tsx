@@ -74,7 +74,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
         aria-hidden
       />
       {/* Jedyny overlay — docelowo jaśniej niż stan „za ciemno” */}
-      <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
+      <div className="fixed inset-0 -z-10 bg-slate-900/60" aria-hidden />
 
       <Navbar />
       <main className="py-32">
