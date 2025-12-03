@@ -35,19 +35,19 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full bg-[#4a2816] text-amber-50 shadow-md">
-      <div className="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 text-sm">
+    <header className="bg-background shadow-sm border-b border-border sticky top-0 z-50">
+      <div className="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 text-sm text-foreground">
         {/* Kontakt */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <a
             href="tel:572234779"
-            className="font-semibold tracking-wide text-amber-50 transition-colors hover:text-amber-300"
+            className="font-semibold tracking-wide text-foreground transition-colors hover:text-amber-800"
           >
             {"572\u202f234\u202f779"}
           </a>
           <a
             href="mailto:kontakt@zmianakrs.pl"
-            className="text-amber-100 transition-colors hover:text-amber-300"
+            className="text-muted-foreground transition-colors hover:text-foreground"
           >
             kontakt@zmianakrs.pl
           </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
         >
           <span className="sr-only">Przełącz menu</span>
           <svg
-            className="h-5 w-5"
+            className="h-5 w-5 text-foreground"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +101,8 @@ export default function Navbar() {
                     aria-current={active ? "page" : undefined}
                     className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       active
-                        ? "bg-amber-400 text-[#4a2816]"
-                        : "text-amber-100 hover:bg-amber-300 hover:text-[#4a2816]"
+                        ? "bg-amber-800 text-white px-3 py-1 rounded"
+                        : "text-muted-foreground hover:text-amber-800"
                     }`}
                   >
                     {item.label}
@@ -116,10 +116,7 @@ export default function Navbar() {
 
       {/* Menu mobilne */}
       {isMenuOpen ? (
-        <div
-          className="border-t border-amber-300/40 bg-[#3b1e10] md:hidden"
-          id="mobile-navigation"
-        >
+        <div className="border-t border-border bg-background md:hidden" id="mobile-navigation">
           <nav className="mx-auto w-11/12 max-w-7xl px-4 py-4">
             <ul className="flex flex-col gap-2 text-sm">
               {navItems.map((item) => {
@@ -131,8 +128,8 @@ export default function Navbar() {
                       aria-current={active ? "page" : undefined}
                       className={`block rounded-lg px-4 py-3 font-medium transition-colors ${
                         active
-                          ? "bg-amber-400 text-[#4a2816]"
-                          : "text-amber-100 hover:bg-amber-300 hover:text-[#4a2816]"
+                          ? "bg-amber-800 text-white px-3 py-1 rounded"
+                          : "text-muted-foreground hover:text-amber-800"
                       }`}
                     >
                       {item.label}
