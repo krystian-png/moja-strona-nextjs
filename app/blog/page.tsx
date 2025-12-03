@@ -1,18 +1,22 @@
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BlogContent, { type Article } from "./blog-content";
-import { allPosts } from "contentlayer/generated";
-import { articlesMetadata } from "@/app/(site)/artykul/[slug]/articles-data";
+import type { Metadata } from "next"
+import Script from "next/script"
 
-const pageUrl = "https://zmianakrs.pl/blog";
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import BlogContent, { type Article } from "./blog-content"
+import { allPosts } from "contentlayer/generated"
+import { articlesMetadata } from "@/app/(site)/artykul/[slug]/articles-data"
+import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
+
+const pagePath = "/blog"
+const pageUrl = `${siteUrl}${pagePath}`
 
 export const metadata: Metadata = {
   title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
   description:
     "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
   alternates: {
-    canonical: pageUrl,
+    canonical: pagePath,
   },
   openGraph: {
     title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
@@ -20,31 +24,55 @@ export const metadata: Metadata = {
       "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
     url: pageUrl,
     type: "website",
+    siteName: brandName,
+    images: [
+      {
+        url: `${siteUrl}/images/krs-services.png`,
+        width: 1200,
+        height: 630,
+        alt: "Blog o zmianach w KRS",
+      },
+    ],
   },
-};
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
+    description:
+      "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
+    images: [`${siteUrl}/images/krs-services.png`],
+  },
+}
 
-const defaultCategory = "Aktualności";
+const defaultCategory = "Aktualności"
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Blog ZmianaKRS – zmiany w KRS",
+  url: pageUrl,
+  publisher: organizationSchema,
+}
 
 function resolveCoverPath(cover?: string) {
   if (!cover) {
-    return undefined;
+    return undefined
   }
 
   if (cover.startsWith("http")) {
-    return cover;
+    return cover
   }
 
   if (cover.startsWith("/")) {
-    return cover;
+    return cover
   }
 
-  const normalized = cover.replace(/^images\//, "");
-  return `/images/${normalized}`;
+  const normalized = cover.replace(/^images\//, "")
+  return `/images/${normalized}`
 }
 
 function toTimestamp(value: string) {
-  const timestamp = new Date(value).getTime();
-  return Number.isNaN(timestamp) ? 0 : timestamp;
+  const timestamp = new Date(value).getTime()
+  return Number.isNaN(timestamp) ? 0 : timestamp
 }
 
 function getStaticArticles(): Article[] {
@@ -57,7 +85,7 @@ function getStaticArticles(): Article[] {
     imageUrl: article.imageUrl,
     imageAlt: article.imageAlt,
     publishedAt: article.publishedAt,
-  }));
+  }))
 }
 
 function getDynamicArticles(): Article[] {
@@ -72,36 +100,40 @@ function getDynamicArticles(): Article[] {
       imageUrl: resolveCoverPath(post.cover),
       imageAlt: post.title,
       publishedAt: post.date,
-    }));
+    }))
 }
 
 function mapPostsToArticles(): Article[] {
-  const combined = [...getStaticArticles(), ...getDynamicArticles()];
+  const combined = [...getStaticArticles(), ...getDynamicArticles()]
 
-  const bySlug = new Map<string, Article>();
+  const bySlug = new Map<string, Article>()
 
   combined.forEach((article) => {
-    const existing = bySlug.get(article.slug);
+    const existing = bySlug.get(article.slug)
     if (!existing || toTimestamp(article.publishedAt) > toTimestamp(existing.publishedAt)) {
-      bySlug.set(article.slug, article);
+      bySlug.set(article.slug, article)
     }
-  });
+  })
 
   return Array.from(bySlug.values()).sort(
     (a, b) => toTimestamp(b.publishedAt) - toTimestamp(a.publishedAt),
-  );
+  )
 }
 
 export default function BlogPage() {
-  const articles = mapPostsToArticles();
+  const articles = mapPostsToArticles()
 
   return (
     <div className="relative min-h-screen text-white">
+      <Script id="blog-structured-data" type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </Script>
+
       <Navbar />
       <main>
         <BlogContent articles={articles} />
       </main>
       <Footer />
     </div>
-  );
+  )
 }
