@@ -56,7 +56,7 @@ export default function Navbar() {
           </a>
           <a
             href="mailto:kontakt@zmianakrs.pl"
-            className="flex items-center gap-2 text-gray-800 transition-colors hover:text-amber-800 md:font-bold"
+            className="flex items-center gap-2 text-amber-800 transition-colors hover:text-amber-700 md:font-bold"
           >
             <svg
               className="h-5 w-5"
@@ -119,7 +119,7 @@ export default function Navbar() {
                     aria-current={active ? "page" : undefined}
                     className={`inline-flex items-center text-base transition-colors ${
                       active
-                        ? "bg-amber-100 text-amber-900 px-4 py-2 rounded-full"
+                        ? "bg-amber-800 text-white px-4 py-2 rounded-full"
                         : "px-4 py-2 rounded-full text-amber-900 hover:text-amber-700"
                     }`}
                   >
@@ -140,18 +140,18 @@ export default function Navbar() {
               {navItems.map((item) => {
                 const active = isActive(item.href);
                 return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={active ? "page" : undefined}
-                      className={`block text-base transition-colors ${
-                        active
-                          ? "bg-amber-100 text-amber-900 px-4 py-3 rounded-lg"
-                          : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`block text-base transition-colors ${
+                      active
+                        ? "bg-amber-800 text-white px-4 py-3 rounded-lg"
+                        : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
                   </li>
                 );
               })}
