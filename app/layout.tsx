@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Providers from './providers'
+import ContactPopup from '@/components/ContactPopup'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl">
       <body className="min-h-screen">
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <ContactPopup />
+        </Providers>
       </body>
     </html>
   )
