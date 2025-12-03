@@ -41,13 +41,13 @@ export default function Navbar() {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <a
             href="tel:572234779"
-            className="font-semibold tracking-wide text-foreground transition-colors hover:text-amber-800"
+            className="font-semibold tracking-wide text-amber-800 transition-colors hover:text-amber-700"
           >
             {"572\u202f234\u202f779"}
           </a>
           <a
             href="mailto:kontakt@zmianakrs.pl"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-gray-700 transition-colors hover:text-amber-800"
           >
             kontakt@zmianakrs.pl
           </a>
@@ -99,10 +99,10 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`inline-flex items-center text-sm transition-colors ${
                       active
-                        ? "bg-amber-800 text-white px-3 py-1 rounded"
-                        : "text-muted-foreground hover:text-amber-800"
+                        ? "bg-amber-800 text-white px-3 py-1 rounded font-medium"
+                        : "px-4 py-2 rounded-full text-gray-700 hover:text-amber-800 font-medium"
                     }`}
                   >
                     {item.label}
@@ -126,10 +126,10 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`block rounded-lg px-4 py-3 font-medium transition-colors ${
+                      className={`block text-sm transition-colors ${
                         active
-                          ? "bg-amber-800 text-white px-3 py-1 rounded"
-                          : "text-muted-foreground hover:text-amber-800"
+                          ? "bg-amber-800 text-white px-3 py-1 rounded font-medium"
+                          : "px-4 py-3 rounded-lg text-gray-700 hover:text-amber-800 font-medium"
                       }`}
                     >
                       {item.label}
