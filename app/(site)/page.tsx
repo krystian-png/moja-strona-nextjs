@@ -7,7 +7,6 @@ import Features from "@/components/Features"
 import Trust from "@/components/Trust"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 import Footer from "@/components/Footer"
-import professionalWaitingRoomImage from "@/public/images/Profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pagePath = "/"
@@ -26,17 +25,20 @@ const structuredData = {
     name: brandName,
     url: siteUrl,
   },
+  image: `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
+  title:
+    "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
   description:
     "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
+    title:
+      "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
     description:
       "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
     url: pageUrl,
@@ -44,19 +46,22 @@ export const metadata: Metadata = {
     siteName: brandName,
     images: [
       {
-        url: `${siteUrl}/images/krs-services.png`,
+        url: `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
         width: 1200,
         height: 630,
-        alt: "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków",
+        alt: "Zmiana wpisu w KRS bez stresu – profesjonalna obsługa wniosków KRS dla spółek",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
+    title:
+      "Zmiana wpisu w KRS bez stresu - profesjonalna obsługa wniosków | ZmianaKRS",
     description:
       "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
-    images: [`${siteUrl}/images/krs-services.png`],
+    images: [
+      `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
+    ],
   },
 }
 
@@ -104,7 +109,8 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
       <div
         className="fixed inset-0 -z-20"
         style={{
-          backgroundImage: `url(${professionalWaitingRoomImage.src})`,
+          backgroundImage:
+            "url(/images/zmiana-wpisu-w-krs-profesjonalna-poczekalnia-prawnicza-uslugi-krs.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
