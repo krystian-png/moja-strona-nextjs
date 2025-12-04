@@ -12,7 +12,7 @@ const features: Feature[] = [
     icon: '🕒',
     title: 'Dostępność',
     description:
-      'Obsługujemy klientów z całej Polski, działamy zdalnie.',
+      'Obsługujemy klientów z całej Polski i przeprowadzamy zmiany wpisu w KRS w pełni online – bez względu na siedzibę Twojej spółki.',
     href: '/uslugi',
   },
   {
@@ -26,7 +26,7 @@ const features: Feature[] = [
     icon: '📄',
     title: 'Prosty cennik',
     description:
-      'Stosujemy jasny system wynagradzania, wiesz ile i za co zapłacisz przed zleceniem usługi.',
+      'Stosujemy jasny system wynagradzania, wiesz ile i za co zapłacisz przed zleceniem usługi zmiany wpisu w KRS.',
     href: '/cennik',
   },
 ]
@@ -37,11 +37,10 @@ export default function Features() {
       <div className="mx-auto w-full px-6 sm:px-8">
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">
-            Dlaczego Wybierają Nas Klienci
+            Dlaczego przedsiębiorcy powierzają nam zmiany wpisów w KRS
           </h2>
           <p className="mt-3 text-lg text-gray-200">
-            Ponad 10 lat doświadczenia w obsłudze firm. Zaufały nam już setki
-            przedsiębiorców.
+            Od lat zajmujemy się zmianami danych spółek w KRS, rejestracją zmian zarządu, wspólników i adresów. Pomogliśmy setkom przedsiębiorców przejść proces aktualizacji wpisu bez zwrotów i poprawek.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
