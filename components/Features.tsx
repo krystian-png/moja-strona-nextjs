@@ -12,7 +12,7 @@ const features: Feature[] = [
     icon: '🕒',
     title: 'Dostępność',
     description:
-      'Obsługujemy klientów z całej Polski i przeprowadzamy zmiany wpisu w KRS w pełni online – bez względu na siedzibę Twojej spółki.',
+      'Obsługujemy klientów z całej Polski i przeprowadzamy zmiany wpisu w KRS w pełni online – bez względu na miejsce siedziby Twojej spółki.',
     href: '/uslugi',
   },
   {
