@@ -66,9 +66,9 @@ export default function ArticleContent({ article }: ArticleContentProps) {
             </time>
           </header>
 
-          <div 
-            className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-strong:text-white prose-em:text-gray-300 prose-img:w-full prose-img:h-auto prose-img:min-h-[400px] prose-img:object-cover prose-img:rounded-lg prose-img:mb-8" 
-            dangerouslySetInnerHTML={{ __html: content }}
+          <div
+            className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-strong:text-white prose-em:text-gray-300 prose-img:w-full prose-img:h-auto prose-img:min-h-[400px] prose-img:object-cover prose-img:rounded-lg prose-img:mb-8"
+            dangerouslySetInnerHTML={{ __html: content ?? "" }}
           />
 
           <div className="mt-16 pt-8 border-t border-white/10">
