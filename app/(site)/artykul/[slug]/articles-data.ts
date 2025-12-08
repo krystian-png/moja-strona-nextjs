@@ -1305,6 +1305,10 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
   Każda zmiana powinna być zgłaszana do rejestru w terminie 7 dni od jej zaistnienia.
   Jeśli potrzebujesz wsparcia przy aktualizacji danych w KRS – skontaktuj się z nami.
 </p>
+<p><strong><a href="/uslugi" style="color: #f59e0b; font-weight: bold;">Więcej o naszych usługach</a></strong></p>
+<hr>
+<p><strong>Disclaimer:</strong><br>
+Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
 
