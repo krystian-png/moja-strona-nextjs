@@ -85,6 +85,7 @@ function getStaticArticles(): Article[] {
     imageUrl: article.imageUrl,
     imageAlt: article.imageAlt,
     publishedAt: article.publishedAt,
+    href: `/artykul/${article.slug}`,
   }))
 }
 
@@ -100,6 +101,7 @@ function getDynamicArticles(): Article[] {
       imageUrl: resolveCoverPath(post.cover),
       imageAlt: post.title,
       publishedAt: post.date,
+      href: post.url,
     }))
 }
 
