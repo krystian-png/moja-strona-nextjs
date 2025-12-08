@@ -45,6 +45,22 @@ export const metadata: Metadata = {
 
 const defaultCategory = "Aktualności"
 
+const manualBlogArticles: Article[] = [
+  {
+    id: "czym-jest-krajowy-rejestr-sadowy-krs",
+    title: "Czym jest Krajowy Rejestr Sądowy (KRS) i jakie dane ujawnia?",
+    slug: "czym-jest-krajowy-rejestr-sadowy-krs",
+    excerpt:
+      "Kompletny przewodnik po Krajowym Rejestrze Sądowym: czym jest KRS, jakie dane ujawnia, jak działa PRS i S24 oraz dlaczego aktualizacja danych spółki w KRS jest obowiązkowa.",
+    category: "KRS",
+    imageUrl: "/images/budynek-krs-tablica-przy-wejsciu.webp",
+    imageAlt:
+      "Tablica Krajowy Rejestr Sądowy przy wejściu do budynku – symbol jawności rejestrów przedsiębiorców",
+    publishedAt: "2024-10-15",
+    href: "/blog/czym-jest-krajowy-rejestr-sadowy-krs",
+  },
+]
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -76,7 +92,7 @@ function toTimestamp(value: string) {
 }
 
 function getStaticArticles(): Article[] {
-  return articlesMetadata.map((article) => ({
+  const legacyArticles = articlesMetadata.map((article) => ({
     id: article.slug,
     title: article.title,
     slug: article.slug,
@@ -85,7 +101,10 @@ function getStaticArticles(): Article[] {
     imageUrl: article.imageUrl,
     imageAlt: article.imageAlt,
     publishedAt: article.publishedAt,
+    href: `/artykul/${article.slug}`,
   }))
+
+  return [...manualBlogArticles, ...legacyArticles]
 }
 
 function getDynamicArticles(): Article[] {
@@ -100,6 +119,7 @@ function getDynamicArticles(): Article[] {
       imageUrl: resolveCoverPath(post.cover),
       imageAlt: post.title,
       publishedAt: post.date,
+      href: post.url,
     }))
 }
 

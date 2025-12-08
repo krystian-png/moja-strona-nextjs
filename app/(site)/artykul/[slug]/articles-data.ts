@@ -1191,6 +1191,123 @@ Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie eduka
 Wszystkie treści zamieszczone na naszym blogu mają charakter wyłącznie edukacyjny i informacyjny. Nie stanowią one porady prawnej ani nie mogą być traktowane jako wyczerpująca analiza konkretnych sytuacji prawnych. Każdy przypadek wymaga indywidualnego podejścia i konsultacji z wykwalifikowanym prawnikiem. Nie ponosimy odpowiedzialności za skutki podjętych działań na podstawie informacji zawartych w artykule. W przypadku potrzeby profesjonalnej pomocy prawnej, zachęcamy do skontaktowania się z nami lub innym specjalistą.</p>
 `,
   },
+  {
+    metadata: {
+      slug: "czym-jest-krajowy-rejestr-sadowy-krs",
+      title:
+        "Czym jest Krajowy Rejestr Sądowy (KRS) i dlaczego aktualizacja danych jest tak ważna?",
+      excerpt:
+        "Wyjaśniamy, czym jest Krajowy Rejestr Sądowy (KRS), jakie dane ujawnia rejestr oraz dlaczego terminowe zgłaszanie zmian ma kluczowe znaczenie dla bezpieczeństwa obrotu gospodarczego i odpowiedzialności zarządu.",
+      category: "Spółki i zmiany w KRS",
+      imageUrl: "/images/budynek-krs-tablica-przy-wejsciu.webp",
+      imageAlt: "Budynek KRS z tablicą przy wejściu",
+      publishedAt: "2025-06-01T00:00:00.000Z",
+    },
+    content: `
+<h2>Czym jest Krajowy Rejestr Sądowy (KRS)?</h2>
+<img
+  src="/images/budynek-krs-tablica-przy-wejsciu.webp"
+  alt="Budynek Krajowego Rejestru Sądowego z tablicą przy wejściu"
+  width="800"
+  height="600"
+  loading="eager"
+/>
+<p>
+  <strong>Krajowy Rejestr Sądowy (KRS)</strong> to centralny, jawny rejestr publiczny
+  prowadzony przez sądy rejestrowe zgodnie z ustawą z dnia 20 sierpnia 1997 r.
+  o Krajowym Rejestrze Sądowym. Rejestr ten stanowi kluczowy filar przejrzystości
+  i bezpieczeństwa obrotu prawnego i gospodarczego w Polsce.
+</p>
+<p>
+  Zgodnie z art. 8 ust. 1 uKRS, rejestr jest jawny – każdy ma prawo dostępu do
+  danych ujawnionych w KRS bez konieczności wykazywania interesu prawnego.
+  Wpisy korzystają z domniemania prawdziwości (art. 17 uKRS), a informacje są
+  dostępne przez wyszukiwarkę eKRS.
+</p>
+<h3>Struktura KRS – jakie rejestry obejmuje?</h3>
+<p>
+  Krajowy Rejestr Sądowy składa się z kilku odrębnych rejestrów:
+</p>
+<ul>
+  <li><strong>Rejestr przedsiębiorców</strong> – obejmuje spółki osobowe i kapitałowe, spółdzielnie, przedsiębiorstwa państwowe oraz oddziały przedsiębiorców zagranicznych.</li>
+  <li><strong>Rejestr stowarzyszeń, fundacji i organizacji</strong> – gromadzi dane o organizacjach pozarządowych i podmiotach działających w sferze społecznej.</li>
+  <li><strong>Krajowy Rejestr Zadłużonych (KRZ)</strong> – zawiera informacje o postępowaniach upadłościowych i restrukturyzacyjnych.</li>
+</ul>
+<h3>Jakie dane ujawnia się w KRS?</h3>
+<img
+  src="/images/dokumenty-finansowe-repozytorium-krs.webp"
+  alt="Dokumenty finansowe w repozytorium KRS"
+  width="800"
+  height="600"
+  loading="lazy"
+/>
+<p>
+  W przypadku spółek handlowych KRS obejmuje w szczególności:
+</p>
+<ul>
+  <li>firmę (nazwę) i formę prawną spółki,</li>
+  <li>numer KRS, NIP i REGON,</li>
+  <li>adres siedziby oraz ewentualne oddziały,</li>
+  <li>przedmiot działalności według PKD,</li>
+  <li>skład organów – członków zarządu, rady nadzorczej, prokurentów,</li>
+  <li>wysokość kapitału zakładowego,</li>
+  <li>informacje o postępowaniach upadłościowych lub likwidacyjnych.</li>
+</ul>
+<h3>Kto podlega obowiązkowi rejestracji w KRS?</h3>
+<p>
+  Obowiązek wpisu do KRS dotyczy spółek handlowych (osobowych i kapitałowych),
+  spółdzielni, przedsiębiorstw państwowych, fundacji, stowarzyszeń, związków
+  zawodowych i innych organizacji społecznych.
+</p>
+<h3>Charakter wpisów – konstytutywny i deklaratoryjny</h3>
+<p>
+  Wpis do KRS może mieć charakter <strong>konstytutywny</strong> (tworzy nowy stan prawny)
+  albo <strong>deklaratoryjny</strong> (potwierdza istniejący stan).
+  Przykładowo rejestracja spółki czy zmiana umowy spółki wymagają wpisu do KRS,
+  aby były skuteczne. Powołanie członka zarządu jest skuteczne z chwilą uchwały,
+  ale ujawnienie w KRS ma znaczenie dla bezpieczeństwa obrotu.
+</p>
+<h3>Tryby elektroniczne: PRS i S24</h3>
+<p>
+  Wnioski do KRS składa się wyłącznie elektronicznie – przez systemy
+  <strong>PRS</strong> (Portal Rejestrów Sądowych) lub <strong>S24</strong>
+  (uproszczony system dla prostszych przypadków). Obie platformy wymagają
+  podpisu kwalifikowanego lub profilu zaufanego.
+</p>
+<h3>Repozytorium dokumentów KRS</h3>
+<p>
+  Spółki mają obowiązek składać do KRS sprawozdania finansowe, sprawozdania
+  z działalności oraz uchwały o zatwierdzeniu sprawozdań. Brak złożenia
+  dokumentów może skutkować grzywną lub wszczęciem postępowania o rozwiązanie
+  spółki.
+</p>
+<h3>Znaczenie KRS dla bezpieczeństwa obrotu</h3>
+<img
+  src="/images/budynek-urzedu-osoby-z-teczkami-przy-wejsciu-do-krs.webp"
+  alt="Przedsiębiorcy przy wejściu do sądu rejestrowego KRS"
+  width="800"
+  height="600"
+  loading="lazy"
+/>
+<p>
+  Dane ujawnione w KRS są wiążące wobec osób trzecich. Kontrahent może ufać
+  danym z rejestru, a ryzyko nieaktualności wpisu obciąża podmiot wpisany.
+  Aktualne dane w KRS są podstawą oceny wiarygodności spółki.
+</p>
+<h3>Aktualizacja danych w KRS – dlaczego to ważne?</h3>
+<ul>
+  <li>Nieaktualne dane mogą prowadzić do zakwestionowania czynności prawnych,</li>
+  <li>brak ujawnienia zmian w zarządzie może rodzić spory co do ważności umów,</li>
+  <li>zaniedbanie obowiązku zgłoszenia zmian naraża zarząd na odpowiedzialność,</li>
+  <li>brak aktualizacji może skutkować karami finansowymi.</li>
+</ul>
+<p>
+  Każda zmiana powinna być zgłaszana do rejestru w terminie 7 dni od jej zaistnienia.
+  Jeśli potrzebujesz wsparcia przy aktualizacji danych w KRS – skontaktuj się z nami.
+</p>
+`,
+  },
+
 ];
 
 export const articlesMetadata: ArticleMetadata[] = articleEntries.map(
@@ -1201,9 +1318,7 @@ export function getArticle(slug: string): ArticleMetadata | undefined {
   return articleEntries.find((entry) => entry.metadata.slug === slug)?.metadata;
 }
 
-export function getArticleContent(slug: string): string {
-  return (
-    articleEntries.find((entry) => entry.metadata.slug === slug)?.content ||
-    "<p>Artykuł w przygotowaniu...</p>"
-  );
+export function getArticleContent(slug: string): string | undefined {
+  const entry = articleEntries.find((entry) => entry.metadata.slug === slug)
+  return entry?.content
 }

@@ -14,6 +14,7 @@ export interface Article {
   imageUrl?: string;
   imageAlt?: string;
   publishedAt: string;
+  href?: string;
 }
 
 interface BlogContentProps {
@@ -129,7 +130,7 @@ export default function BlogContent({ articles, isLoading = false }: BlogContent
               articles.map((article) => (
                 <Link
                   key={article.id}
-                  href={`/artykul/${article.slug}`}
+                  href={article.href ?? `/artykul/${article.slug}`}
                   className="group block h-full"
                 >
                   <Card className="h-full overflow-hidden border-white/20 bg-white/10 shadow-none transition-all duration-300 hover:bg-white/15 backdrop-blur-sm">
