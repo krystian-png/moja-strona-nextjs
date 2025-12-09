@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import Features from "@/components/Features"
 import Trust from "@/components/Trust"
+import FAQ from "@/components/FAQ"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 import Footer from "@/components/Footer"
 import heroBackgroundImage from "@/public/images/zmiana-wpisu-w-krs-tlo-strony-glownej-profesjonalna-poczekalnia-prawnicza.webp"
@@ -127,6 +128,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
         <Hero />
         <Features />
         <Trust />
+        <FAQ />
         <SEOExpandableSection
           title="Więcej o naszych usługach KRS"
           content={seoSectionContent}
