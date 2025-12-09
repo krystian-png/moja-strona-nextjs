@@ -139,7 +139,7 @@ export default function PricingPage() {
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 space-y-16">
               {/* Sekcja: Koszt zmiany wpisu */}
-              <section className="rounded-3xl bg-slate-900/40 px-8 py-12 backdrop-blur-sm text-left">
+              <section className="rounded-3xl bg-white/10 border border-white/20 px-8 py-12 backdrop-blur-sm text-left">
                 <div className="text-center">
                   <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
                     Koszt zmiany wpisu w rejestrze przedsiębiorców KRS
