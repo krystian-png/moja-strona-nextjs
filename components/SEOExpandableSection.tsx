@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 export type SEOExpandableSectionProps = {
@@ -30,6 +31,18 @@ export default function SEOExpandableSection({
     .split(/\n\s*\n/)
     .map((p) => p.trim())
     .filter(Boolean);
+
+  const renderParagraph = (paragraph: string) =>
+    paragraph === "➡️ Cennik" ? (
+      <Link
+        href="/cennik"
+        className="text-amber-300 hover:text-amber-200 font-medium underline-offset-4 hover:underline"
+      >
+        ➡️ Cennik
+      </Link>
+    ) : (
+      paragraph
+    );
 
   return (
     <section
@@ -67,7 +80,7 @@ export default function SEOExpandableSection({
             className="mt-6 space-y-4 text-gray-300 text-sm sm:text-base text-justify"
           >
             {paragraphs.map((paragraph, index) => (
-              <p key={`${contentId}-${index}`}>{paragraph}</p>
+              <p key={`${contentId}-${index}`}>{renderParagraph(paragraph)}</p>
             ))}
           </div>
         ) : null}
