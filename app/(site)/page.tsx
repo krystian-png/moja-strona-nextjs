@@ -72,39 +72,41 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  const seoSectionContent = `Profesjonalna obsługa zmian wpisu w KRS dla spółek i biur rachunkowych
+  const seoSectionContent = `Zgłoszenie zmiany wpisu w KRS – kompleksowa i profesjonalna obsługa
 
-Oferujemy kompleksową pomoc w zmianie wpisu w Krajowym Rejestrze Sądowym (KRS), dostosowaną do potrzeb spółek prawa handlowego, fundacji i stowarzyszeń. Przygotowujemy i składamy wniosek o zmianę w KRS, pomagamy w aktualizacji danych w KRS, zmianie danych spółki w KRS oraz rejestracji zmian w rejestrze sądowym. Nasze usługi KRS dla spółek obejmują pełną obsługę formalności, dzięki czemu proces zgłoszenia zmiany do KRS jest szybki i bezproblemowy.
+Oferujemy kompleksową obsługę zmian wpisu w Krajowym Rejestrze Sądowym (KRS), dedykowaną spółkom prawa handlowego, fundacjom i stowarzyszeniom. Zapewniamy pełne wsparcie przy przygotowaniu i złożeniu wniosku o zmianę wpisu w KRS, dzięki czemu aktualizacja danych w rejestrze przedsiębiorców KRS przebiega szybko, poprawnie i bez ryzyka zwrotu wniosku przez sąd rejestrowy.
 
-Specjalizujemy się w obsłudze wniosków KRS, oferując przygotowanie uchwał do KRS i wszystkich niezbędnych dokumentów rejestrowych spółki. Nasz zespół doradza, jak zmienić dane w KRS i jak skutecznie złożyć wniosek o zmianę wpisu w KRS, minimalizując ryzyko odrzucenia przez sąd rejestrowy. Zapewniamy pełne wsparcie przy zmianie umowy spółki KRS – w tym zmianie PKD, adresu siedziby, kapitału zakładowego, składu wspólników i zarządu w KRS.
+Nasza usługa obejmuje zmianę danych spółki w KRS – w tym zmianę zarządu, adresu siedziby, PKD, treści umowy spółki oraz innych informacji wymagających ujawnienia w KRS. Dzięki praktycznemu doświadczeniu gwarantujemy, że wniosek o zmianę wpisu w KRS zostanie sporządzony zgodnie z obowiązującymi przepisami, a wpis zmian do KRS zostanie skutecznie dokonany.
 
-Zakres naszych usług obejmuje między innymi:
+Co obejmuje profesjonalna obsługa wniosku o zmianę wpisu w KRS
 
-przygotowanie i składanie wniosku o zmianę w KRS
+Nasze usługi KRS obejmują między innymi:
 
-zmianę zarządu w KRS
+• przygotowanie i złożenie wniosku o zmianę w KRS,
+• zmianę zarządu w KRS oraz sposobu reprezentacji,
+• zmianę danych rejestrowych w KRS (adres, PKD, kapitał, umowa spółki),
+• zgłoszenie zmian do KRS drogą elektroniczną,
+• elektroniczne zgłoszenie zmian do KRS przez system S24,
+• przygotowanie uchwał, załączników i pozostałych dokumentów rejestrowych,
+• pełną obsługę wniosków KRS dla spółek i biur rachunkowych.
 
-zmianę danych rejestracyjnych w KRS
-
-zgłoszenie zmian do KRS drogą elektroniczną lub tradycyjną
-
-elektroniczne zgłoszenie zmian do KRS przez system S24
-
-wpis zmian do KRS w rejestrze sądowym
-
-przygotowanie uchwał i dokumentów do KRS
-
-pełną obsługę wniosków KRS dla spółek i biur rachunkowych
+Naszym celem jest odciążenie przedsiębiorców i biur rachunkowych z formalności oraz minimalizacja ryzyka błędów skutkujących zwrotem lub oddaleniem wniosku o zmianę wpisu w KRS.
 
 Obsługa zmian w KRS przez system S24
 
-Oferujemy również pełną obsługę elektronicznego zgłoszenia zmian do KRS poprzez system S24. Przygotowujemy dokumenty i pomagamy w składaniu wniosków online, co znacząco skraca czas rejestracji zmian i obniża koszty opłat sądowych. Elektroniczne wnioski KRS to wygodne i nowoczesne rozwiązanie dla przedsiębiorców, którzy cenią szybkość i efektywność.
+Oferujemy pełną obsługę elektronicznego zgłoszenia zmian do KRS przez system S24. Przygotowujemy dokumenty, wspieramy proces podpisania ich podpisem elektronicznym oraz pomagamy w złożeniu wniosku online. Dzięki temu zmiana wpisu w KRS przez S24 przebiega szybciej, sprawniej i może obniżyć koszty związane z opłatami sądowymi.
 
 Współpraca z biurami rachunkowymi
 
-Zapraszamy do współpracy biura rachunkowe. Oferujemy partnerstwo w zakresie obsługi zmian KRS dla biur rachunkowych, zapewniając kompleksowe wsparcie ich klientów w procesie aktualizacji danych spółki w KRS. Proponujemy atrakcyjne warunki B2B, indywidualną wycenę i gwarancję profesjonalnej obsługi wniosków KRS.
+Zapraszamy do współpracy biura rachunkowe działające w modelu B2B. Oferujemy kompleksową obsługę zmian wpisów w KRS dla klientów biur rachunkowych, zapewniając profesjonalne przygotowanie dokumentów, terminowe złożenie wniosku oraz pełne wsparcie proceduralne w procesie aktualizacji danych w KRS.
 
-Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla spółek i biur rachunkowych. Z nami zmiana danych w KRS, zgłoszenie zmian sądowi rejestrowemu i przygotowanie dokumentów rejestrowych spółki stają się proste, szybkie i bezpieczne.`
+Sprawdź koszty zmian wpisu w KRS
+
+Jeżeli chcesz poznać koszt zmiany wpisu w rejestrze przedsiębiorców KRS, wysokość opłat sądowych lub koszt obsługi naszej usługi, przejdź do zakładki:
+
+➡️ Cennik
+
+Znajdziesz tam szczegółowe stawki oraz opłaty obowiązujące przy zmianie wpisu w KRS.`
 
   return (
     <div className="relative pb-20">
