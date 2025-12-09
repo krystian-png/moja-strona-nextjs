@@ -149,13 +149,15 @@ export default function PricingPage() {
         <section className="relative flex-1 pt-20 pb-20 text-white overflow-hidden">
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 space-y-16">
-              <section className="rounded-3xl bg-slate-900/60 px-8 py-12 backdrop-blur text-left">
-                <h2 className="text-2xl font-semibold text-white mb-6">
-                  Koszt zmiany wpisu w rejestrze przedsiębiorców KRS
-                </h2>
-                <p className="text-slate-200 mb-8">
-                  Na koszt zmiany wpisu w rejestrze przedsiębiorców KRS składają się cztery niezależne elementy:
-                </p>
+              <section className="rounded-3xl bg-slate-900/40 px-8 py-12 backdrop-blur-sm text-left">
+                <div className="text-center">
+                  <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
+                    Koszt zmiany wpisu w rejestrze przedsiębiorców KRS
+                  </h2>
+                  <p className="text-lg sm:text-xl text-slate-200 mb-10">
+                    Na koszt zmiany wpisu w rejestrze przedsiębiorców KRS składają się cztery niezależne elementy:
+                  </p>
+                </div>
 
                 <div className="space-y-6">
                   {/* 1. Opłata sądowa */}
@@ -166,7 +168,7 @@ export default function PricingPage() {
                       </span>
                       <h3 className="text-lg font-semibold text-white">Opłata sądowa</h3>
                     </div>
-                    <p className="text-sm text-slate-300 pl-11">
+                    <p className="text-base sm:text-lg text-slate-300 pl-11">
                       Opłata sądowa za zmianę wpisu w rejestrze przedsiębiorców KRS wynosi
                       <span className="font-semibold text-amber-300"> 250 zł</span>. Jest to stała
                       opłata uiszczana przy składaniu wniosku w systemie PRS lub S24, niezależnie
@@ -183,7 +185,7 @@ export default function PricingPage() {
                       </span>
                       <h3 className="text-lg font-semibold text-white">Wynagrodzenie za naszą usługę</h3>
                     </div>
-                    <p className="text-sm text-slate-300 pl-11">
+                    <p className="text-base sm:text-lg text-slate-300 pl-11">
                       Wysokość wynagrodzenia zależy od zakresu zmian i nakładu pracy, w tym m.in.
                       liczby i rodzaju przygotowanych dokumentów niezbędnych do załączenia do wniosku.
                       Szczegółowe stawki naszych usług znajdziesz poniżej w sekcji pakietów.
@@ -198,7 +200,7 @@ export default function PricingPage() {
                       </span>
                       <h3 className="text-lg font-semibold text-white">Opłata skarbowa od pełnomocnictwa</h3>
                     </div>
-                    <p className="text-sm text-slate-300 pl-11">
+                    <p className="text-base sm:text-lg text-slate-300 pl-11">
                       Opłata skarbowa od pełnomocnictwa wynosi
                       <span className="font-semibold text-amber-300"> 17 zł</span> i jest wymagana
                       wyłącznie wtedy, gdy zmiana wpisu dokonywana jest przez pełnomocnika.
@@ -213,7 +215,7 @@ export default function PricingPage() {
                       </span>
                       <h3 className="text-lg font-semibold text-white">Ewentualne koszty notarialne</h3>
                     </div>
-                    <p className="text-sm text-slate-300 pl-11">
+                    <p className="text-base sm:text-lg text-slate-300 pl-11">
                       Jeżeli dana czynność wymaga aktu notarialnego (np. zmiana umowy spółki poza S24),
                       do opłaty sądowej i wynagrodzenia za naszą usługę dochodzą jeszcze opłaty notarialne.
                       Są to odrębne koszty, które nie stanowią części opłaty sądowej, ale wpływają na
