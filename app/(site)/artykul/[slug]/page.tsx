@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import Script from "next/script"
 import Image from "next/image"
 import { allPosts } from "contentlayer/generated"
+import { useMDXComponent } from "next-contentlayer/hooks"
 
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
@@ -68,6 +69,11 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
         : [],
     },
   }
+}
+
+function MDXContent({ code }: { code: string }) {
+  const Component = useMDXComponent(code)
+  return <Component />
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
@@ -147,10 +153,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               </time>
             </header>
 
-            <div
-              className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-200 prose-p:mb-4 prose-strong:text-white prose-em:text-gray-300 prose-a:text-amber-400 prose-a:underline hover:prose-a:text-amber-300 prose-ul:text-gray-200 prose-ul:my-4 prose-li:mb-2 prose-img:w-full prose-img:h-auto prose-img:rounded-lg prose-img:my-6"
-              dangerouslySetInnerHTML={{ __html: post.body.html }}
-            />
+            <div className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-200 prose-p:mb-4 prose-strong:text-white prose-em:text-gray-300 prose-a:text-amber-400 prose-a:underline hover:prose-a:text-amber-300 prose-ul:text-gray-200 prose-ul:my-4 prose-li:mb-2 prose-img:w-full prose-img:h-auto prose-img:rounded-lg prose-img:my-6">
+              <MDXContent code={post.body.code} />
+            </div>
           </article>
         </div>
       </main>
