@@ -43,6 +43,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       url: pageUrl,
       type: "article",
       siteName: brandName,
+      publishedTime: post.date,
+      modifiedTime: post.date,
       images: post.cover
         ? [
             {
@@ -94,6 +96,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         : `${siteUrl}${post.cover}`
       : undefined,
     datePublished: post.date,
+    dateModified: post.date,
+    articleSection: "Spółki i zmiany w KRS",
     author: {
       "@type": "Organization",
       name: brandName,
