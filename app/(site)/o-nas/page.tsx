@@ -119,20 +119,23 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
 
               <div className="space-y-8 mb-16">
                 <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-6 text-center">
-                  Doświadczenie w obsłudze wniosków o zmianę wpisu w KRS
+                  Doświadczenie w obsłudze wniosków o zmianę wpisu w KRS i aktualizacji danych
+                  spółki w rejestrze
                 </h2>
 
                 <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 leading-relaxed text-justify">
                   Jesteśmy zespołem specjalistów z ponad 10-letnim doświadczeniem w obsłudze formalności związanych z Krajowym
                   Rejestrem Sądowym. Od lat wspieramy przedsiębiorców w całej Polsce w skutecznym i bezbłędnym składaniu wniosków o
-                  zmianę wpisu w KRS. Przeprowadziliśmy już kilkaset postępowań rejestrowych, pomagając zarówno małym firmom, jak i
-                  dużym spółkom kapitałowym.
+                  zmianę wpisu w KRS, aktualizacji danych spółki w rejestrze przedsiębiorców KRS oraz zgłoszeniach składanych
+                  elektronicznie w systemach PRS i S24. Przeprowadziliśmy już kilkaset postępowań rejestrowych, pomagając zarówno
+                  małym firmom, jak i dużym spółkom kapitałowym.
                 </p>
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-justify">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
                   Wiemy, że dla wielu przedsiębiorców zmiany w KRS bywają stresujące, czasochłonne i pełne niejasności. Dlatego
                   stworzyliśmy zdalną usługę, która łączy kompleksową pomoc prawną, profesjonalną obsługę wniosków KRS oraz
                   transparentny model rozliczeń. Naszym celem jest uproszczenie procedur i zagwarantowanie pełnego bezpieczeństwa
-                  prawnego na każdym etapie — od przygotowania dokumentów aż po uzyskanie wpisu w rejestrze.
+                  prawnego na każdym etapie — od przygotowania dokumentów aż po uzyskanie wpisu zmian do rejestru przedsiębiorców
+                  KRS.
                 </p>
               </div>
 
