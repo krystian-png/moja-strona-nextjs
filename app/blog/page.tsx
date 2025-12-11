@@ -10,17 +10,18 @@ import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 const pagePath = "/blog"
 const pageUrl = `${siteUrl}${pagePath}`
 
+const pageDescription =
+  "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych."
+
 export const metadata: Metadata = {
   title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
-  description:
-    "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
+  description: pageDescription,
   alternates: {
     canonical: pagePath,
   },
   openGraph: {
     title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
-    description:
-      "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
+    description: pageDescription,
     url: pageUrl,
     type: "website",
     siteName: brandName,
@@ -36,18 +37,31 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
-    description:
-      "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych.",
+    description: pageDescription,
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
+
+const blogPostsStructuredData = allPosts.map((post) => ({
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  url: `${siteUrl}/artykul/${post.slug}`,
+  datePublished: post.date,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/artykul/${post.slug}`,
+  },
+}))
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
   name: "Blog ZmianaKRS – zmiany w KRS",
   url: pageUrl,
+  description: pageDescription,
   publisher: organizationSchema,
+  blogPost: blogPostsStructuredData,
 }
 
 function resolveCoverPath(cover?: string) {
