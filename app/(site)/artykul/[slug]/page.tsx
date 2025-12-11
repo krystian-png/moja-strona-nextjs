@@ -18,24 +18,24 @@ interface ArticlePageProps {
 }
 
 function getPostBySlug(slug: string) {
-  return allPosts.find((post) => post._raw.flattenedPath === slug)
+  return allPosts.find((post) => post.slug === slug)
 }
 
 export async function generateStaticParams() {
-  return allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
+  return allPosts.map((post) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const post = getPostBySlug(params.slug)
   if (!post) return {}
 
-  const pageUrl = `${siteUrl}/artykul/${post._raw.flattenedPath}`
+  const pageUrl = `${siteUrl}/artykul/${post.slug}`
 
   return {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `/artykul/${post._raw.flattenedPath}`,
+      canonical: `/artykul/${post.slug}`,
     },
     openGraph: {
       title: post.title,
@@ -101,7 +101,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     publisher: organizationSchema,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteUrl}/artykul/${post._raw.flattenedPath}`,
+      "@id": `${siteUrl}/artykul/${post.slug}`,
     },
   }
 
