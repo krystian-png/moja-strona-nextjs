@@ -43,14 +43,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       url: pageUrl,
       type: "article",
       siteName: brandName,
-      publishedTime: post.date,
-      modifiedTime: post.date,
       images: post.cover
         ? [
             {
-              url: post.cover.startsWith("http")
-                ? post.cover
-                : `${siteUrl}${post.cover}`,
+              url: post.cover.startsWith("http") ? post.cover : `${siteUrl}${post.cover}`,
               width: 1200,
               height: 630,
               alt: post.title,
@@ -63,11 +59,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       title: post.title,
       description: post.description,
       images: post.cover
-        ? [
-            post.cover.startsWith("http")
-              ? post.cover
-              : `${siteUrl}${post.cover}`,
-          ]
+        ? [post.cover.startsWith("http") ? post.cover : `${siteUrl}${post.cover}`]
         : [],
     },
   }
@@ -96,8 +88,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         : `${siteUrl}${post.cover}`
       : undefined,
     datePublished: post.date,
-    dateModified: post.date,
-    articleSection: "Spółki i zmiany w KRS",
     author: {
       "@type": "Organization",
       name: brandName,
@@ -149,12 +139,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 {post.title}
               </h1>
-              <time
-                className="text-gray-400 block"
-                dateTime={post.date}
-              >
-                Opublikowano {formatDate(post.date)}
-              </time>
+              <div className="text-gray-400 space-y-1">
+                <time dateTime={post.date} className="block">
+                  Opublikowano {formatDate(post.date)}
+                </time>
+                {post.updated && (
+                  <time dateTime={post.updated as string} className="block">
+                    Zaktualizowano {formatDate(post.updated as string)}
+                  </time>
+                )}
+              </div>
             </header>
 
             <div className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-200 prose-p:mb-4 prose-strong:text-white prose-em:text-gray-300 prose-a:text-amber-400 prose-a:underline hover:prose-a:text-amber-300 prose-ul:text-gray-200 prose-ul:my-4 prose-li:mb-2 prose-img:w-full prose-img:h-auto prose-img:rounded-lg prose-img:my-6">
