@@ -186,9 +186,9 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
                         <Link href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">
                           usługi KRS
                         </Link>{" "}
-                        są wyceniane w sposób jasny i zrozumiały. Wiesz, ile zapłacisz i co dokładnie otrzymasz. Ceny zaczynają się już
-                        od 799 zł netto za kompletne złożenie wniosku o zmianę w KRS z dokumentami dostarczonymi przez klienta.
-                        Szczegóły znajdziesz w{" "}
+                        są wyceniane w sposób jasny i zrozumiały, dzięki czemu od razu wiesz, jaki będzie koszt zmiany wpisu w KRS w
+                        Twojej sprawie. Ceny zaczynają się już od 799 zł netto za kompletne złożenie wniosku o zmianę w KRS z dokumentami
+                        dostarczonymi przez klienta. Szczegóły znajdziesz w{" "}
                         <Link href="/cennik" className="text-amber-400 hover:text-amber-300 underline">
                           cenniku usług KRS
                         </Link>
