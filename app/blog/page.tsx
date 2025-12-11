@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import BlogContent, { type Article } from "./blog-content"
 import { allPosts } from "contentlayer/generated"
-import { articlesMetadata } from "@/app/(site)/artykul/[slug]/articles-data"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pagePath = "/blog"
@@ -43,24 +42,6 @@ export const metadata: Metadata = {
   },
 }
 
-const defaultCategory = "Aktualności"
-
-const manualBlogArticles: Article[] = [
-  {
-    id: "czym-jest-krajowy-rejestr-sadowy-krs",
-    title: "Czym jest Krajowy Rejestr Sądowy (KRS) i jakie dane ujawnia?",
-    slug: "czym-jest-krajowy-rejestr-sadowy-krs",
-    excerpt:
-      "Kompletny przewodnik po Krajowym Rejestrze Sądowym: czym jest KRS, jakie dane ujawnia, jak działa PRS i S24 oraz dlaczego aktualizacja danych spółki w KRS jest obowiązkowa.",
-    category: "KRS",
-    imageUrl: "/images/budynek-krs-tablica-przy-wejsciu.webp",
-    imageAlt:
-      "Tablica Krajowy Rejestr Sądowy przy wejściu do budynku – symbol jawności rejestrów przedsiębiorców",
-    publishedAt: "2024-10-15",
-    href: "/blog/czym-jest-krajowy-rejestr-sadowy-krs",
-  },
-]
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -73,15 +54,9 @@ function resolveCoverPath(cover?: string) {
   if (!cover) {
     return undefined
   }
-
-  if (cover.startsWith("http")) {
+  if (cover.startsWith("http") || cover.startsWith("/")) {
     return cover
   }
-
-  if (cover.startsWith("/")) {
-    return cover
-  }
-
   const normalized = cover.replace(/^images\//, "")
   return `/images/${normalized}`
 }
@@ -91,23 +66,7 @@ function toTimestamp(value: string) {
   return Number.isNaN(timestamp) ? 0 : timestamp
 }
 
-function getStaticArticles(): Article[] {
-  const legacyArticles = articlesMetadata.map((article) => ({
-    id: article.slug,
-    title: article.title,
-    slug: article.slug,
-    excerpt: article.excerpt,
-    category: article.category,
-    imageUrl: article.imageUrl,
-    imageAlt: article.imageAlt,
-    publishedAt: article.publishedAt,
-    href: `/artykul/${article.slug}`,
-  }))
-
-  return [...manualBlogArticles, ...legacyArticles]
-}
-
-function getDynamicArticles(): Article[] {
+function mapPostsToArticles(): Article[] {
   return [...allPosts]
     .sort((a, b) => toTimestamp(b.date) - toTimestamp(a.date))
     .map((post) => ({
@@ -115,29 +74,12 @@ function getDynamicArticles(): Article[] {
       title: post.title,
       slug: post.slug,
       excerpt: post.description,
-      category: post.tags?.[0] ?? defaultCategory,
+      category: post.tags?.[0] ?? "Spółki i zmiany w KRS",
       imageUrl: resolveCoverPath(post.cover),
       imageAlt: post.title,
       publishedAt: post.date,
-      href: post.url,
+      href: `/artykul/${post.slug}`,
     }))
-}
-
-function mapPostsToArticles(): Article[] {
-  const combined = [...getStaticArticles(), ...getDynamicArticles()]
-
-  const bySlug = new Map<string, Article>()
-
-  combined.forEach((article) => {
-    const existing = bySlug.get(article.slug)
-    if (!existing || toTimestamp(article.publishedAt) > toTimestamp(existing.publishedAt)) {
-      bySlug.set(article.slug, article)
-    }
-  })
-
-  return Array.from(bySlug.values()).sort(
-    (a, b) => toTimestamp(b.publishedAt) - toTimestamp(a.publishedAt),
-  )
 }
 
 export default function BlogPage() {
