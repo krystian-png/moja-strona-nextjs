@@ -140,11 +140,16 @@ const benefits: Benefit[] = [
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": ["Service", "ProfessionalService"],
   name: "Profesjonalne usługi zmian wpisu w KRS",
   url: pageUrl,
   description:
     "Kompleksowa obsługa wniosków o zmianę wpisu w KRS wraz z zakładaniem spółek i przygotowaniem dokumentów zgromadzeń wspólników.",
+  serviceType: "Usługi zmian wpisu w KRS i obsługa wniosków KRS dla spółek",
+  areaServed: {
+    "@type": "Country",
+    name: "Polska",
+  },
   provider: organizationSchema,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -158,14 +163,16 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Usługi zmian w KRS",
+  title:
+    "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS.pl",
   description:
-    "Profesjonalna obsługa zmian wpisu w KRS, zakładania spółek oraz przygotowania dokumentów zgromadzeń wspólników.",
+    "Profesjonalne usługi zmian wpisu w KRS dla spółek – przygotowanie dokumentów, obsługa wniosków KRS i zakładanie spółek z o.o. Zajmujemy się zmianą danych spółki w KRS od analizy dokumentów po wpis zmian do rejestru.",
   alternates: {
     canonical: pagePath,
   },
   openGraph: {
-    title: "Usługi zmian w KRS | ZmianaKRS",
+    title:
+      "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS.pl",
     description:
       "Kompleksowa obsługa wniosków o zmianę wpisu w KRS, rejestracji spółek z o.o. oraz dokumentów zgromadzeń wspólników.",
     url: pageUrl,
@@ -181,7 +188,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Usługi zmian w KRS",
+    title:
+      "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS",
     description:
       "Dowiedz się, jak wspieramy spółki w zmianach wpisu w KRS, rejestracji spółek i przygotowaniu dokumentów zgromadzeń.",
     images: [`${siteUrl}/images/krs-services.png`],
@@ -244,10 +252,10 @@ export default function ServicesPage() {
         <section className="pt-32 pb-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Profesjonalne usługi zmian wpisu w KRS
+              Profesjonalne usługi zmian wpisu w KRS dla spółek
             </h1>
             <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-4">
-              Kompleksowa obsługa wniosków o zmianę wpisu w KRS
+              Kompleksowa obsługa wniosków o zmianę wpisu w KRS dla spółek i biur rachunkowych
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed mb-6">
               Niezależnie od tego, czy potrzebujesz zmienić wpis w KRS czy założyć nową spółkę z ograniczoną odpowiedzialnością,
