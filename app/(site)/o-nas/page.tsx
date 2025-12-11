@@ -20,18 +20,19 @@ const structuredData = {
   url: pageUrl,
   publisher: organizationSchema,
   description:
-    "Poznaj zespół ZmianaKRS odpowiedzialny za obsługę zmian w Krajowym Rejestrze Sądowym dla spółek i biur rachunkowych.",
+    "Poznaj zespół ZmianaKRS — specjalistów ds. zmian wpisu w KRS i obsługi wniosków rejestrowych. Od lat wspieramy spółki w bezpiecznym i sprawnym przeprowadzeniu zmian w rejestrze.",
+  mainEntityOfPage: pageUrl,
 }
 
 export const metadata: Metadata = {
-  title: "O nas",
+  title: "O nas – Eksperci ds. zmian wpisu w KRS | ZmianaKRS",
   description:
-    "Jesteśmy zespołem prawników, analityków i konsultantów ds. KRS. Od 2015 roku pomagamy spółkom sprawnie przechodzić przez zmiany w rejestrze.",
+    "Poznaj zespół ZmianaKRS — specjalistów ds. zmian wpisu w KRS i obsługi wniosków rejestrowych. Od lat wspieramy spółki w bezpiecznym i sprawnym przeprowadzeniu zmian w rejestrze.",
   alternates: {
     canonical: pagePath,
   },
   openGraph: {
-    title: "O nas | ZmianaKRS",
+    title: "O nas – Eksperci ds. zmian wpisu w KRS | ZmianaKRS",
     description:
       "Dowiedz się, jak pracujemy przy obsłudze zmian w KRS. Poznaj proces, wartości i doświadczenie zespołu ZmianaKRS.",
     url: pageUrl,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Poznaj ZmianaKRS",
+    title: "Poznaj ZmianaKRS – ekspertów ds. zmian wpisu w KRS",
     description: "Sprawdź, kto stoi za sukcesem setek obsłużonych zmian w KRS i jak wspieramy naszych klientów.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
