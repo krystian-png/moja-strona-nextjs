@@ -207,9 +207,9 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Z nami zmiana wpisu w KRS to formalność</h3>
                 <div className="space-y-6 text-gray-300">
                   <p className="text-base sm:text-lg leading-relaxed text-justify">
-                    Jeśli zależy Ci na szybkiej, rzetelnej i wygodnej obsłudze zmian w KRS, jesteśmy do Twojej dyspozycji. Zapewniamy
-                    kompleksową pomoc przy wpisie do KRS, profesjonalne wsparcie merytoryczne oraz realne odciążenie Cię od żmudnych
-                    procedur. Sprawdź nasze{" "}
+                    Jeśli zależy Ci na szybkiej, rzetelnej i wygodnej obsłudze zmian w KRS — w tym zmiany danych spółki w KRS —
+                    jesteśmy do Twojej dyspozycji. Zapewniamy kompleksową pomoc przy wpisie do KRS, profesjonalne wsparcie merytoryczne
+                    oraz realne odciążenie Cię od żmudnych procedur. Sprawdź nasze{" "}
                     <Link href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">
                       usługi zmian wpisu w KRS
                     </Link>{" "}
@@ -226,8 +226,8 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
                     >
                       Skontaktuj się z nami
                     </Link>{" "}
-                    i przekonaj się, że wniosek o zmianę wpisu w KRS nie musi być trudny ani czasochłonny. My zajmiemy się
-                    formalnościami — Ty możesz zająć się prowadzeniem biznesu.
+                    i przekonaj się, że wniosek o zmianę wpisu w KRS — również gdy zastanawiasz się, jak zmienić dane w KRS — nie
+                    musi być trudny ani czasochłonny. My zajmiemy się formalnościami — Ty możesz zająć się prowadzeniem biznesu.
                   </p>
                 </div>
               </div>
