@@ -21,6 +21,7 @@ export default function Navbar() {
     { href: "/cennik", label: "Cennik" },
     { href: "/blog", label: "Blog" },
     { href: "/kontakt", label: "Kontakt" },
+    { href: "/en", label: "English" },
   ];
 
   const isActive = (href: string) => {
@@ -112,6 +113,7 @@ export default function Navbar() {
           <ul className="flex items-center gap-1 lg:gap-2 text-base font-semibold">
             {navItems.map((item) => {
               const active = isActive(item.href);
+              const isEnglish = item.href === "/en";
               return (
                 <li key={item.href}>
                   <Link
@@ -121,7 +123,7 @@ export default function Navbar() {
                       active
                         ? "bg-amber-800 text-white px-4 py-2 rounded-full"
                         : "px-4 py-2 rounded-full text-amber-900 hover:text-amber-700"
-                    }`}
+                    }${isEnglish ? " text-sm" : ""}`}
                   >
                     {item.label}
                   </Link>
@@ -139,6 +141,7 @@ export default function Navbar() {
             <ul className="flex flex-col gap-2 text-base font-semibold">
               {navItems.map((item) => {
                 const active = isActive(item.href);
+                const isEnglish = item.href === "/en";
                 return (
                 <li key={item.href}>
                   <Link
@@ -148,7 +151,7 @@ export default function Navbar() {
                       active
                         ? "bg-amber-800 text-white px-4 py-3 rounded-lg"
                         : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
-                    }`}
+                    }${isEnglish ? " text-sm" : ""}`}
                   >
                     {item.label}
                   </Link>
