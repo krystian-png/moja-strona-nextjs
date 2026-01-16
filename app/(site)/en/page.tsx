@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Script from "next/script";
+import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -54,6 +55,68 @@ const structuredData = {
   inLanguage: "en",
 };
 
+function SectionCard({
+  id,
+  title,
+  children,
+}: {
+  id: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      aria-labelledby={id}
+      className="rounded-2xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8"
+    >
+      <h2 id={id} className="text-xl font-semibold md:text-2xl">
+        {title}
+      </h2>
+      <div className="mt-4 text-white/85">{children}</div>
+    </section>
+  );
+}
+
+function FeatureCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+      <div className="flex items-start gap-3">
+        <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-amber-400" />
+        <div>
+          <h3 className="text-base font-semibold text-white">{title}</h3>
+          <p className="mt-1 text-sm text-white/80">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StepCard({
+  number,
+  title,
+  description,
+}: {
+  number: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
+      <div className="text-sm font-semibold tracking-wide text-amber-300">
+        {number}
+      </div>
+      <h3 className="mt-2 text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-sm text-white/80">{description}</p>
+    </div>
+  );
+}
+
 export default function EnglishLandingPage() {
   return (
     <div className="relative min-h-screen text-white">
@@ -64,7 +127,7 @@ export default function EnglishLandingPage() {
       <Navbar />
 
       <main className="relative">
-        {/* Background image */}
+        {/* Background */}
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp"
@@ -74,131 +137,266 @@ export default function EnglishLandingPage() {
             className="object-cover"
             sizes="100vw"
           />
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Overlay: gradient like service pages for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/70" />
         </div>
 
-        {/* Content */}
-        <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-          <div className="mx-auto max-w-4xl rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-md md:p-10">
-            <header className="space-y-4">
-              <h1 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Changes in the Polish Company Register (KRS)
-              </h1>
-              <p className="text-base text-white/85 md:text-lg">
-                Professional assistance for companies registered in Poland
-              </p>
-            </header>
+        <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+          {/* HERO (service-like) */}
+          <div className="mx-auto max-w-5xl">
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-7 shadow-sm backdrop-blur-md md:p-10">
+              <header className="space-y-5">
+                <h1 className="text-3xl font-semibold leading-tight md:text-5xl">
+                  Changes in the Polish Company Register{" "}
+                  <span className="text-amber-400">(KRS)</span>
+                </h1>
 
-            <div className="mt-8 space-y-10">
-              <section aria-labelledby="en-intro" className="space-y-4">
-                <h2 id="en-intro" className="text-xl font-semibold md:text-2xl">
-                  Overview
-                </h2>
-                <p className="text-white/85">
-                  The Polish National Court Register (Krajowy Rejestr Sądowy – KRS) is the official register of companies operating in Poland.
-                  Any changes concerning a company’s structure, management board or registered details must be properly documented and reported to the register.
+                <p className="text-base text-white/85 md:text-lg">
+                  Professional assistance for companies registered in Poland
                 </p>
-                <p className="text-white/85">
-                  We provide professional assistance with preparing documentation and handling formal procedures related to changes in the Polish Company Register.
-                  Our services are addressed to companies registered in Poland, including those with foreign shareholders or management.
-                </p>
-                <p className="text-white/85">
-                  Cooperation can be carried out remotely, without the need to visit Poland.
-                </p>
-              </section>
 
-              <section aria-labelledby="en-scope" className="space-y-4">
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
+                    Remote support
+                  </span>
+                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
+                    English communication
+                  </span>
+                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
+                    KRS filings & documentation
+                  </span>
+                </div>
+              </header>
+
+              {/* Quick value row */}
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                  <div className="text-sm font-semibold text-white">
+                    Clear process
+                  </div>
+                  <p className="mt-2 text-sm text-white/80">
+                    We focus on formal steps, documentation and reliable
+                    communication.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                  <div className="text-sm font-semibold text-white">
+                    Remote cooperation
+                  </div>
+                  <p className="mt-2 text-sm text-white/80">
+                    Cooperation can be carried out remotely based on a power of
+                    attorney.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                  <div className="text-sm font-semibold text-white">
+                    Companies in Poland
+                  </div>
+                  <p className="mt-2 text-sm text-white/80">
+                    Services dedicated to companies registered in Poland,
+                    including those with foreign shareholders or management.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CONTENT SECTIONS (cards & grids like services) */}
+            <div className="mt-10 space-y-6">
+              <SectionCard id="en-overview" title="Overview">
+                <p>
+                  The Polish National Court Register (Krajowy Rejestr Sądowy –
+                  KRS) is the official register of companies operating in
+                  Poland. Any changes concerning a company’s structure,
+                  management board or registered details must be properly
+                  documented and reported to the register.
+                </p>
+                <p className="mt-4">
+                  We provide professional assistance with preparing
+                  documentation and handling formal procedures related to
+                  changes in the Polish Company Register. Our services are
+                  addressed to companies registered in Poland, including those
+                  with foreign shareholders or management.
+                </p>
+                <p className="mt-4">
+                  Cooperation can be carried out remotely, without the need to
+                  visit Poland.
+                </p>
+              </SectionCard>
+
+              {/* Scope as service tiles */}
+              <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
                 <h2 id="en-scope" className="text-xl font-semibold md:text-2xl">
                   Scope of services
                 </h2>
-                <p className="text-white/85">
-                  We assist companies with the preparation and handling of formal documentation related to entries and changes in the Polish Company Register, including in particular:
+                <p className="mt-4 text-white/85">
+                  We assist companies with the preparation and handling of
+                  formal documentation related to entries and changes in the
+                  Polish Company Register, including in particular:
                 </p>
-                <ul className="list-disc space-y-2 pl-6 text-white/85">
-                  <li>changes in the management board and representation of the company,</li>
-                  <li>updates of company details disclosed in the register,</li>
-                  <li>amendments to the articles of association,</li>
-                  <li>preparation and filing of applications to the Polish Company Register (KRS),</li>
-                  <li>incorporation of companies using the S24 system or through a notarial route.</li>
-                </ul>
-                <p className="text-white/85">
-                  The scope of services is always determined individually, depending on the specific situation of the company and the type of change to be reported.
-                </p>
+
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  <FeatureCard
+                    title="Management board changes"
+                    description="Changes in the management board and representation of the company."
+                  />
+                  <FeatureCard
+                    title="Updates of company details"
+                    description="Updates of company details disclosed in the register."
+                  />
+                  <FeatureCard
+                    title="Amendments to articles of association"
+                    description="Formal preparation of documentation for amendments and related filings."
+                  />
+                  <FeatureCard
+                    title="KRS applications"
+                    description="Preparation and filing of applications to the Polish Company Register (KRS)."
+                  />
+                  <FeatureCard
+                    title="Company incorporation (S24 or notarial)"
+                    description="Incorporation of companies using the S24 system or through a notarial route."
+                  />
+                  <FeatureCard
+                    title="Individual scope"
+                    description="The scope is always determined individually depending on the situation and the type of change."
+                  />
+                </div>
               </section>
 
-              <section aria-labelledby="en-remote" className="space-y-4">
-                <h2 id="en-remote" className="text-xl font-semibold md:text-2xl">
+              {/* PESEL highlighted callout */}
+              <section className="rounded-3xl border border-amber-400/30 bg-amber-400/10 p-6 backdrop-blur-md md:p-8">
+                <h2
+                  id="en-remote"
+                  className="text-xl font-semibold md:text-2xl"
+                >
                   Remote cooperation and PESEL number
                 </h2>
-                <p className="text-white/85">
-                  Remote cooperation is possible based on a power of attorney and the exchange of documents by electronic means.
-                </p>
-                <p className="text-white/85">
-                  Please note that in certain cases, in order to complete specific registration or filing procedures in Poland, obtaining a Polish PESEL number may be required.
-                  This applies in particular to some electronic procedures and signing methods used in the registration systems.
-                </p>
-                <p className="text-white/85">
-                  Each case is assessed individually, and the required formal steps depend on the circumstances of the company and the persons involved.
-                </p>
+                <div className="mt-4 text-white/90">
+                  <p>
+                    Remote cooperation is possible based on a power of attorney
+                    and the exchange of documents by electronic means.
+                  </p>
+                  <p className="mt-4">
+                    Please note that in certain cases, in order to complete
+                    specific registration or filing procedures in Poland,
+                    obtaining a Polish PESEL number may be required. This
+                    applies in particular to some electronic procedures and
+                    signing methods used in the registration systems.
+                  </p>
+                  <p className="mt-4">
+                    Each case is assessed individually, and the required formal
+                    steps depend on the circumstances of the company and the
+                    persons involved.
+                  </p>
+                </div>
               </section>
 
-              <section aria-labelledby="en-process" className="space-y-4">
-                <h2 id="en-process" className="text-xl font-semibold md:text-2xl">
+              {/* Process as 3 steps */}
+              <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
+                <h2
+                  id="en-process"
+                  className="text-xl font-semibold md:text-2xl"
+                >
                   How we work
                 </h2>
-                <p className="text-white/85">
+                <p className="mt-4 text-white/85">
                   The cooperation process is straightforward and transparent:
                 </p>
-                <ol className="list-decimal space-y-2 pl-6 text-white/85">
-                  <li>You contact us and describe your situation.</li>
-                  <li>We review the scope of the required changes and formal requirements.</li>
-                  <li>We prepare the necessary documentation and guide you through the registration process.</li>
-                </ol>
-                <p className="text-white/85">
-                  All activities are carried out in compliance with applicable Polish regulations.
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  <StepCard
+                    number="01"
+                    title="Contact"
+                    description="You contact us and describe your situation."
+                  />
+                  <StepCard
+                    number="02"
+                    title="Assessment"
+                    description="We review the scope of the required changes and formal requirements."
+                  />
+                  <StepCard
+                    number="03"
+                    title="Documentation & guidance"
+                    description="We prepare the necessary documentation and guide you through the registration process."
+                  />
+                </div>
+                <p className="mt-6 text-white/85">
+                  All activities are carried out in compliance with applicable
+                  Polish regulations.
                 </p>
               </section>
 
-              <section aria-labelledby="en-audience" className="space-y-4">
-                <h2 id="en-audience" className="text-xl font-semibold md:text-2xl">
+              {/* Audience as tiles */}
+              <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
+                <h2
+                  id="en-audience"
+                  className="text-xl font-semibold md:text-2xl"
+                >
                   Who we work with
                 </h2>
-                <p className="text-white/85">
+                <p className="mt-4 text-white/85">
                   Our services are addressed in particular to:
                 </p>
-                <ul className="list-disc space-y-2 pl-6 text-white/85">
-                  <li>foreign shareholders of Polish companies,</li>
-                  <li>members of management boards and company directors,</li>
-                  <li>entrepreneurs managing Polish entities remotely,</li>
-                  <li>accounting firms and advisors working with international clients.</li>
-                </ul>
-                <p className="text-white/85">Communication in English is available.</p>
-              </section>
-
-              <section aria-labelledby="en-why" className="space-y-4">
-                <h2 id="en-why" className="text-xl font-semibold md:text-2xl">
-                  Why work with us
-                </h2>
-                <ul className="list-disc space-y-2 pl-6 text-white/85">
-                  <li>experience in handling procedures related to the Polish Company Register (KRS),</li>
-                  <li>clear and structured communication,</li>
-                  <li>possibility of remote cooperation,</li>
-                  <li>documentation prepared in accordance with Polish law and registration practice.</li>
-                </ul>
-                <p className="text-white/85">
-                  Our role is to support companies in navigating formal registration requirements efficiently and reliably.
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  <FeatureCard
+                    title="Foreign shareholders"
+                    description="Foreign shareholders of Polish companies who need support with KRS procedures."
+                  />
+                  <FeatureCard
+                    title="Board members & directors"
+                    description="Members of management boards and company directors responsible for formal changes."
+                  />
+                  <FeatureCard
+                    title="Remote owners"
+                    description="Entrepreneurs managing Polish entities remotely, without regular presence in Poland."
+                  />
+                  <FeatureCard
+                    title="Accounting firms & advisors"
+                    description="Accounting firms and advisors working with international clients."
+                  />
+                </div>
+                <p className="mt-6 text-white/85">
+                  Communication in English is available.
                 </p>
               </section>
 
-              <section aria-labelledby="en-cta" className="space-y-4">
+              {/* Why us */}
+              <SectionCard id="en-why" title="Why work with us">
+                <ul className="list-disc space-y-2 pl-6">
+                  <li>
+                    experience in handling procedures related to the Polish
+                    Company Register (KRS),
+                  </li>
+                  <li>clear and structured communication,</li>
+                  <li>possibility of remote cooperation,</li>
+                  <li>
+                    documentation prepared in accordance with Polish law and
+                    registration practice.
+                  </li>
+                </ul>
+                <p className="mt-4">
+                  Our role is to support companies in navigating formal
+                  registration requirements efficiently and reliably.
+                </p>
+              </SectionCard>
+
+              {/* CTA -> /contact (EN copy) */}
+              <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
                 <h2 id="en-cta" className="text-xl font-semibold md:text-2xl">
                   Contact
                 </h2>
-                <p className="text-white/85">
+                <p className="mt-4 text-white/85">
                   Contact us. You can write to us in English.
                 </p>
-                {/* Na tym etapie NIE dodawaj /en/contact. Link dodamy w kolejnym kroku. */}
+                <div className="mt-6">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                  >
+                    Contact us in English
+                  </Link>
+                  <p className="mt-3 text-sm text-white/75">
+                    You will be redirected to the contact page.
+                  </p>
+                </div>
               </section>
             </div>
           </div>
