@@ -71,7 +71,7 @@ function SectionCard({
       className="rounded-2xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8"
     >
       <div>
-        <h2 id={id} className="text-2xl font-bold text-white md:text-3xl">
+        <h2 id={id} className="text-2xl font-bold text-amber-400 md:text-3xl">
           {title}
         </h2>
       </div>
@@ -222,7 +222,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-trust-experience"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Trust & experience
                   </h2>
@@ -253,7 +253,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-scope"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Scope of services
                   </h2>
@@ -297,7 +297,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-remote"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Remote cooperation and PESEL number
                   </h2>
@@ -328,7 +328,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-process"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     How we work
                   </h2>
@@ -364,7 +364,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-audience"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Who we work with
                   </h2>
@@ -439,7 +439,7 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-cta"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Contact
                   </h2>
