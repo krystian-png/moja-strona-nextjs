@@ -119,11 +119,15 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`inline-flex items-center text-base transition-colors ${
-                      active
-                        ? "bg-amber-800 text-white px-4 py-2 rounded-full"
-                        : "px-4 py-2 rounded-full text-amber-900 hover:text-amber-700"
-                    }${isEnglish ? " text-sm" : ""}`}
+                    className={
+                      isEnglish
+                        ? "inline-flex items-center rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-400"
+                        : `inline-flex items-center text-base transition-colors ${
+                            active
+                              ? "bg-amber-800 text-white px-4 py-2 rounded-full"
+                              : "px-4 py-2 rounded-full text-amber-900 hover:text-amber-700"
+                          }`
+                    }
                   >
                     {item.label}
                   </Link>
@@ -147,11 +151,15 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`block text-base transition-colors ${
-                      active
-                        ? "bg-amber-800 text-white px-4 py-3 rounded-lg"
-                        : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
-                    }${isEnglish ? " text-sm" : ""}`}
+                    className={
+                      isEnglish
+                        ? "inline-flex w-fit items-center rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-400"
+                        : `block text-base transition-colors ${
+                            active
+                              ? "bg-amber-800 text-white px-4 py-3 rounded-lg"
+                              : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
+                          }`
+                    }
                   >
                     {item.label}
                   </Link>
