@@ -464,7 +464,7 @@ export default function EnglishLandingPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer variant="english" />
     </div>
   );
 }
