@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/regulamin": "app/(site)/regulamin/page.tsx",
     "/contact": "app/(site)/contact/page.tsx",
     "/ksiegowi": "app/(site)/ksiegowi/page.tsx",
-    "/rodo": "app/(site)/rodo/page.tsx",
     "/o-nas": "app/(site)/o-nas/page.tsx",
     "/cennik": "app/(site)/cennik/page.tsx",
     "/uslugi": "app/(site)/uslugi/page.tsx",
