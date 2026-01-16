@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/o-nas": "app/(site)/o-nas/page.tsx",
     "/cennik": "app/(site)/cennik/page.tsx",
     "/uslugi": "app/(site)/uslugi/page.tsx",
+    "/en": "app/(site)/en/page.tsx",
   };
 
   const routes = Object.entries(routeFileMap).map(([route, file]) => ({
