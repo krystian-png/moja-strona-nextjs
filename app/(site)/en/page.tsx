@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
@@ -7,6 +6,7 @@ import { CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo";
+import servicesBackground from "@/public/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp";
 
 const pagePath = "/en";
 const pageUrl = `${siteUrl}${pagePath}`;
@@ -71,10 +71,9 @@ function SectionCard({
       className="rounded-2xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8"
     >
       <div>
-        <h2 id={id} className="text-2xl font-bold text-white md:text-3xl">
+        <h2 id={id} className="text-2xl font-bold text-amber-400 md:text-3xl">
           {title}
         </h2>
-        <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
       </div>
       <div className="mt-4 text-white/85">{children}</div>
     </section>
@@ -90,12 +89,9 @@ function FeatureCard({
 }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-      <div className="flex items-start gap-3">
-        <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-amber-400" />
-        <div>
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
-          <p className="mt-1 text-sm text-white/80">{description}</p>
-        </div>
+      <div>
+        <h3 className="text-lg font-semibold text-amber-400">{title}</h3>
+        <p className="mt-1 text-sm text-gray-300">{description}</p>
       </div>
     </div>
   );
@@ -113,8 +109,8 @@ function StepCard({
   return (
     <div className="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
       <div className="text-2xl font-semibold text-amber-400">{number}</div>
-      <h3 className="mt-2 text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm text-white/80">{description}</p>
+      <h3 className="mt-2 text-lg font-semibold text-amber-400">{title}</h3>
+      <p className="mt-2 text-sm text-gray-300">{description}</p>
     </div>
   );
 }
@@ -126,23 +122,20 @@ export default function EnglishLandingPage() {
         {JSON.stringify(structuredData)}
       </Script>
 
+      <div
+        className="fixed inset-0 -z-20"
+        style={{
+          backgroundImage: `url(${servicesBackground.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        aria-hidden
+      />
+      <div className="fixed inset-0 -z-10 bg-slate-950/60" aria-hidden />
+
       <Navbar />
 
       <main className="relative">
-        {/* Background */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp"
-            alt="Solid legal foundations for KRS services – change of entry in KRS"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* Overlay: gradient like service pages for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/70" />
-        </div>
-
         <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
           {/* HERO (service-like) */}
           <div className="mx-auto max-w-4xl text-center">
@@ -173,28 +166,28 @@ export default function EnglishLandingPage() {
               {/* Quick value row */}
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-amber-400">
                     Clear process
                   </div>
-                  <p className="mt-2 text-sm text-white/80">
+                  <p className="mt-2 text-sm text-gray-300">
                     We focus on formal steps, documentation and reliable
                     communication.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-amber-400">
                     Remote cooperation
                   </div>
-                  <p className="mt-2 text-sm text-white/80">
+                  <p className="mt-2 text-sm text-gray-300">
                     Cooperation can be carried out remotely based on a power of
                     attorney.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-amber-400">
                     Companies in Poland
                   </div>
-                  <p className="mt-2 text-sm text-white/80">
+                  <p className="mt-2 text-sm text-gray-300">
                     Services dedicated to companies registered in Poland,
                     including those with foreign shareholders or management.
                   </p>
@@ -225,16 +218,45 @@ export default function EnglishLandingPage() {
                 </p>
               </SectionCard>
 
+              <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
+                <div>
+                  <h2
+                    id="en-trust-experience"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
+                  >
+                    Trust & experience
+                  </h2>
+                </div>
+                <p className="mt-4 text-lg text-white/90">
+                  We handle KRS-related formalities in a structured and reliable
+                  way, with a strong focus on documentation quality and
+                  procedural correctness.
+                </p>
+                <p className="mt-4 text-white/85">
+                  Over the years, we have successfully supported several
+                  hundred company-related changes and registration processes in
+                  the Polish Company Register, including cases involving
+                  foreign shareholders or management board members.
+                </p>
+                <p className="mt-4 text-white/85">
+                  Our work focuses on clear communication, practical
+                  registration requirements and a well-organised process — from
+                  identifying the scope of changes to preparing and filing the
+                  required documentation. Cooperation can be carried out
+                  remotely based on a power of attorney. Communication in
+                  English is available.
+                </p>
+              </section>
+
               {/* Scope as service tiles */}
               <section className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-sm backdrop-blur-md md:p-8">
                 <div>
                   <h2
                     id="en-scope"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Scope of services
                   </h2>
-                  <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
                 </div>
                 <p className="mt-4 text-white/85">
                   We assist companies with the preparation and handling of
@@ -275,11 +297,10 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-remote"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Remote cooperation and PESEL number
                   </h2>
-                  <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
                 </div>
                 <div className="mt-4 text-gray-100">
                   <p>
@@ -307,11 +328,10 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-process"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     How we work
                   </h2>
-                  <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
                 </div>
                 <p className="mt-4 text-white/85">
                   The cooperation process is straightforward and transparent:
@@ -344,11 +364,10 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-audience"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Who we work with
                   </h2>
-                  <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
                 </div>
                 <p className="mt-4 text-white/85">
                   Our services are addressed in particular to:
@@ -377,15 +396,15 @@ export default function EnglishLandingPage() {
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
-                      <CheckCircle className="mt-1 h-5 w-5 text-green-400" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-white">
+                      <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-green-400" />
+                      <span className="text-gray-300">
+                        <span className="block text-lg font-semibold text-amber-400">
                           {item.title}
-                        </h3>
-                        <p className="mt-1 text-white/80">
+                        </span>
+                        <span className="mt-1 block text-sm text-gray-300">
                           {item.description}
-                        </p>
-                      </div>
+                        </span>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -404,8 +423,8 @@ export default function EnglishLandingPage() {
                     "documentation prepared in accordance with Polish law and registration practice.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle className="mt-1 h-5 w-5 text-green-400" />
-                      <span>{item}</span>
+                      <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-green-400" />
+                      <span className="text-gray-300">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -420,11 +439,10 @@ export default function EnglishLandingPage() {
                 <div>
                   <h2
                     id="en-cta"
-                    className="text-2xl font-bold text-white md:text-3xl"
+                    className="text-2xl font-bold text-amber-400 md:text-3xl"
                   >
                     Contact
                   </h2>
-                  <div className="mt-2 h-1 w-16 rounded-full bg-amber-400/70" />
                 </div>
                 <p className="mt-4 text-white/85">
                   Contact us. You can write to us in English.
@@ -432,7 +450,7 @@ export default function EnglishLandingPage() {
                 <div className="mt-6">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                    className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
                   >
                     Contact us in English
                   </Link>
