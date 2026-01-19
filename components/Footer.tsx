@@ -4,10 +4,15 @@ import Link from "next/link"
 
 export type FooterProps = {
   className?: string
+  variant?: "default" | "english"
 }
 
-export default function Footer({ className }: FooterProps = {}) {
+export default function Footer({
+  className,
+  variant = "default",
+}: FooterProps = {}) {
   const currentYear = new Date().getFullYear()
+  const isEnglish = variant === "english"
 
   const footerClassName = [
     "bg-slate-900 text-white",
@@ -20,127 +25,150 @@ export default function Footer({ className }: FooterProps = {}) {
     <footer className={footerClassName} role="contentinfo">
       <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
-          <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-12">
-            <div>
-              <h3 className="mb-1 text-sm font-bold">Zmiana KRS</h3>
-              <p className="text-xs text-gray-300">
-                Profesjonalne usługi KRS dla Twojej firmy.
-              </p>
+          {isEnglish ? (
+            <div className="flex flex-col items-start gap-4">
+              <ul className="space-y-3 text-base font-semibold text-white md:text-lg">
+                <li>
+                  <Link
+                    href="/en/terms-of-service"
+                    className="transition-colors hover:text-amber-400"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/en/cookie-policy"
+                    className="transition-colors hover:text-amber-400"
+                  >
+                    Privacy and Cookies Policy
+                  </Link>
+                </li>
+              </ul>
             </div>
-
-            <div className="flex flex-col gap-6 md:flex-row lg:gap-8">
+          ) : (
+            <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-12">
               <div>
-                <h4 className="mb-1 text-xs font-semibold">Usługi</h4>
-                <ul className="space-y-1 text-xs text-gray-300">
-                  <li>
-                    <Link
-                      href="/uslugi"
-                      className="transition-colors hover:text-white"
-                    >
-                      Zmiana wpisu w KRS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/uslugi"
-                      className="transition-colors hover:text-white"
-                    >
-                      Zmiana zarządu w KRS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/uslugi"
-                      className="transition-colors hover:text-white"
-                    >
-                      Zmiana umowy spółki
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/cennik"
-                      className="transition-colors hover:text-white"
-                    >
-                      Cennik usług KRS
-                    </Link>
-                  </li>
-                </ul>
+                <h3 className="mb-1 text-sm font-bold">Zmiana KRS</h3>
+                <p className="text-xs text-gray-300">
+                  Profesjonalne usługi KRS dla Twojej firmy.
+                </p>
               </div>
 
-              <div>
-                <h4 className="mb-1 text-xs font-semibold">Firma</h4>
-                <ul className="space-y-1 text-xs text-gray-300">
-                  <li>
-                    <Link
-                      href="/o-nas"
-                      className="transition-colors hover:text-white"
-                    >
-                      O nas
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blog"
-                      className="transition-colors hover:text-white"
-                    >
-                      Blog KRS
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/ksiegowi"
-                      className="transition-colors hover:text-white"
-                    >
-                      Dla księgowych
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/kontakt"
-                      className="transition-colors hover:text-white"
-                    >
-                      Kontakt
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <div className="flex flex-col gap-6 md:flex-row lg:gap-8">
+                <div>
+                  <h4 className="mb-1 text-xs font-semibold">Usługi</h4>
+                  <ul className="space-y-1 text-xs text-gray-300">
+                    <li>
+                      <Link
+                        href="/uslugi"
+                        className="transition-colors hover:text-white"
+                      >
+                        Zmiana wpisu w KRS
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/uslugi"
+                        className="transition-colors hover:text-white"
+                      >
+                        Zmiana zarządu w KRS
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/uslugi"
+                        className="transition-colors hover:text-white"
+                      >
+                        Zmiana umowy spółki
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/cennik"
+                        className="transition-colors hover:text-white"
+                      >
+                        Cennik usług KRS
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              <div>
-                <h4 className="mb-1 text-xs font-semibold">Pomoc</h4>
-                <ul className="space-y-1 text-xs text-gray-300">
-                  <li>
-                    <Link
-                      href="/regulamin"
-                      className="transition-colors hover:text-white"
-                    >
-                      Regulamin
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/polityka-prywatnosci"
-                      className="transition-colors hover:text-white"
-                    >
-                      Polityka prywatności
-                    </Link>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        window.dispatchEvent(
-                          new CustomEvent("openCookieSettings")
-                        )
-                      }
-                      className="text-left transition-colors hover:text-white"
-                    >
-                      Zmiana ustawień cookies
-                    </button>
-                  </li>
-                </ul>
+                <div>
+                  <h4 className="mb-1 text-xs font-semibold">Firma</h4>
+                  <ul className="space-y-1 text-xs text-gray-300">
+                    <li>
+                      <Link
+                        href="/o-nas"
+                        className="transition-colors hover:text-white"
+                      >
+                        O nas
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/blog"
+                        className="transition-colors hover:text-white"
+                      >
+                        Blog KRS
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/ksiegowi"
+                        className="transition-colors hover:text-white"
+                      >
+                        Dla księgowych
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/kontakt"
+                        className="transition-colors hover:text-white"
+                      >
+                        Kontakt
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="mb-1 text-xs font-semibold">Pomoc</h4>
+                  <ul className="space-y-1 text-xs text-gray-300">
+                    <li>
+                      <Link
+                        href="/regulamin"
+                        className="transition-colors hover:text-white"
+                      >
+                        Regulamin
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/polityka-prywatnosci"
+                        className="transition-colors hover:text-white"
+                      >
+                        Polityka prywatności
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.dispatchEvent(
+                            new CustomEvent("openCookieSettings")
+                          )
+                        }
+                        className="text-left transition-colors hover:text-white"
+                      >
+                        Zmiana ustawień cookies
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="lg:text-right">
             <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
@@ -165,7 +193,7 @@ export default function Footer({ className }: FooterProps = {}) {
                     href="tel:+48572234779"
                     className="text-base font-semibold text-white transition-colors hover:text-amber-400"
                   >
-                    572 234 779
+                    {isEnglish ? "+48 572 234 779" : "572 234 779"}
                   </a>
                 </div>
               </div>
