@@ -41,7 +41,7 @@ export default function Footer({
                     href="/en/cookie-policy"
                     className="transition-colors hover:text-amber-400"
                   >
-                    Cookie Policy
+                    Privacy and Cookies Policy
                   </Link>
                 </li>
               </ul>
