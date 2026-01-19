@@ -452,7 +452,7 @@ export default function EnglishLandingPage() {
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/contact"
+                    href="/en/contact"
                     className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
                   >
                     Contact us in English
