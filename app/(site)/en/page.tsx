@@ -141,26 +141,29 @@ export default function EnglishLandingPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="rounded-3xl border border-white/10 bg-white/10 p-7 shadow-sm backdrop-blur-md md:p-10">
               <header className="space-y-5">
-                <h1 className="text-3xl font-semibold leading-tight md:text-5xl">
+                <h1 className="text-3xl font-semibold leading-tight text-amber-400 md:text-5xl">
                   Changes in the Polish Company Register{" "}
                   <span className="text-amber-400">(KRS)</span>
                 </h1>
 
-                <p className="text-base text-gray-200 md:text-lg">
+                <p className="text-lg font-medium text-amber-300 md:text-xl">
                   Professional assistance for companies registered in Poland
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-2 pt-1">
-                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
-                    Remote support
-                  </span>
-                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
-                    English communication
-                  </span>
-                  <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
-                    KRS filings & documentation
-                  </span>
-                </div>
+                <ul className="space-y-2 pt-1">
+                  <li className="flex items-start justify-center gap-3 text-amber-300">
+                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                    <span className="text-base">Remote support</span>
+                  </li>
+                  <li className="flex items-start justify-center gap-3 text-amber-300">
+                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                    <span className="text-base">English communication</span>
+                  </li>
+                  <li className="flex items-start justify-center gap-3 text-amber-300">
+                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                    <span className="text-base">KRS filings & documentation</span>
+                  </li>
+                </ul>
               </header>
 
               {/* Quick value row */}
