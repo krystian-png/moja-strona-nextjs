@@ -460,7 +460,7 @@ export default function PricingPage() {
                 </div>
                 <div className="mt-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg text-left">
                   <p className="text-slate-300 text-sm">
-                    * i ** - podane ceny nie obejmują kosztów notarialnych, sądowych, w tym za ogłoszenie w MSiG i opłat skarbowych
+                    * i ** - podane ceny nie obejmują kosztów notarialnych, sądowych oraz opłat skarbowych
                   </p>
                 </div>
                 {/* Sekcja: Jak przebiega współpraca - H2 biały, kółka AMBER */}
