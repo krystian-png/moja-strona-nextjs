@@ -13,9 +13,6 @@ export const metadata: Metadata = {
   },
   description:
     'Profesjonalna obsługa zmian w KRS dla spółek – zmiana zarządu, umowy spółki, danych w KRS.',
-  alternates: {
-    canonical: '/', // <-- TO USTAWIA POPRAWNY KANONICZNY ADRES DLA STRONY GŁÓWNEJ
-  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
