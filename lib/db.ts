@@ -12,4 +12,11 @@ export function getDb() {
   return drizzle(sql)
 }
 
-export const db = getDb()
+// Lazy getter
+let _db: ReturnType<typeof getDb> | null = null
+export const db = new Proxy({} as ReturnType<typeof getDb>, {
+  get(_, prop) {
+    if (!_db) _db = getDb()
+    return (_db as any)[prop]
+  },
+})
