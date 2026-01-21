@@ -7,11 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
   BarChart3,
-  Users,
   FileText,
-  Mail,
-  Upload,
-  Database,
   LogOut,
   Eye,
   MessageSquare,
@@ -61,11 +57,6 @@ export default function AdminDashboardPage() {
   const menuItems = [
     { href: "/admin/analytics", icon: BarChart3, label: "Analityka", description: "Statystyki odwiedzin" },
     { href: "/admin/contacts", icon: MessageSquare, label: "Kontakty", description: "Wiadomości z formularza" },
-    { href: "/admin/seo", icon: FileText, label: "SEO", description: "Meta tagi i opisy" },
-    { href: "/admin/upload", icon: Upload, label: "Pliki", description: "Zarządzanie plikami" },
-    { href: "/admin/email", icon: Mail, label: "E-mail", description: "Konfiguracja SMTP" },
-    { href: "/admin/users", icon: Users, label: "Użytkownicy", description: "Zarządzanie kontami" },
-    { href: "/admin/backup", icon: Database, label: "Backup", description: "Kopie zapasowe" },
   ]
 
   return (
@@ -134,7 +125,7 @@ export default function AdminDashboardPage() {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {menuItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
