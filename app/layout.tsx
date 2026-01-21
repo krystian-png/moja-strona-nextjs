@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Providers from './providers'
 import ContactPopup from '@/components/ContactPopup'
+import { PageTracker } from '@/components/PageTracker'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           {children}
           <ContactPopup />
+          <PageTracker />
         </Providers>
       </body>
     </html>
