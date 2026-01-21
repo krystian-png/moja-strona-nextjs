@@ -35,6 +35,14 @@ export const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(fu
   return <h3 ref={ref} className={cn("text-lg font-semibold", className)} {...props} />
 })
 
+export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+
+export const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescriptionProps>(
+  function CardDescription({ className, ...props }, ref) {
+    return <p ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
+  }
+)
+
 export interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(function CardContent(
