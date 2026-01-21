@@ -25,6 +25,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
+    "drizzle-kit": "^0.31.8",
     "drizzle-orm": "^0.39.1",
     "lucide-react": "^0.544.0",
     "markdown-wasm": "^1.2.0",
