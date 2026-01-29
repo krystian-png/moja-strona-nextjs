@@ -12,7 +12,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from "@/hooks/use-toast"
 import { apiRequest } from "@/lib/queryClient"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
@@ -61,9 +60,12 @@ const defaultValues: ContactFormData = {
 }
 
 export default function ContactPageContent() {
-  const { toast } = useToast()
   const queryClient = useQueryClient()
   const [captchaQuestion, setCaptchaQuestion] = useState({ question: "", answer: "" })
+  const [submissionStatus, setSubmissionStatus] = useState<{
+    type: "success" | "error"
+    message: string
+  } | null>(null)
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -95,25 +97,25 @@ export default function ContactPageContent() {
         data,
       }),
     onSuccess: () => {
-      toast({
-        title: "Dziękujemy za wiadomość",
-        description: "Skontaktujemy się z Tobą najszybciej jak to możliwe.",
+      setSubmissionStatus({
+        type: "success",
+        message: "Wiadomość została wysłana. Odezwiemy się bezzwłocznie.",
       })
       queryClient.invalidateQueries({ queryKey: ["contact-submissions"] }).catch(() => undefined)
       form.reset(defaultValues)
       generateCaptcha()
     },
     onError: (error: unknown) => {
-      toast({
-        title: "Nie udało się wysłać formularza",
-        description: error instanceof Error ? error.message : "Spróbuj ponownie później.",
-        variant: "destructive",
+      setSubmissionStatus({
+        type: "error",
+        message: error instanceof Error ? error.message : "Nie udało się wysłać formularza. Spróbuj ponownie później.",
       })
       generateCaptcha()
     },
   })
 
   const onSubmit = (data: ContactFormData) => {
+    setSubmissionStatus(null)
     // Clear any previous manual errors
     form.clearErrors("captcha")
 
@@ -215,6 +217,18 @@ export default function ContactPageContent() {
           <div className="space-y-8">
             <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
               <h3 className="text-xl font-bold text-white mb-6">Formularz Kontaktowy</h3>
+              {submissionStatus ? (
+                <div
+                  className={`mb-6 rounded-md border px-4 py-3 text-sm ${
+                    submissionStatus.type === "success"
+                      ? "border-emerald-400/60 bg-emerald-500/10 text-emerald-100"
+                      : "border-red-400/60 bg-red-500/10 text-red-100"
+                  }`}
+                  role={submissionStatus.type === "error" ? "alert" : "status"}
+                >
+                  {submissionStatus.message}
+                </div>
+              ) : null}
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
