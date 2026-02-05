@@ -155,8 +155,7 @@ export default function PricingPage() {
                       <h3 className="text-lg font-semibold text-white">Opłata sądowa</h3>
                     </div>
                     <p className="text-base sm:text-lg text-slate-300 pl-11">
-                      Opłata sądowa za zmianę wpisu w rejestrze przedsiębiorców KRS wynosi
-                      <span className="font-bold text-amber-400"> 250 zł</span>. Jest to stała opłata uiszczana przy składaniu wniosku w systemie PRS lub S24, niezależnie od rodzaju wprowadzanych zmian (chyba że przepisy stanowią inaczej w przypadku szczególnych czynności zgłoszeniowych).
+                      Opłata sądowa za zmianę wpisu w rejestrze przedsiębiorców KRS zależy od trybu złożenia wniosku. W przypadku dokonania zmiany w systemie S24 z wykorzystaniem wzorca uchwały udostępnionego w systemie teleinformatycznym, opłata wynosi 200 zł. Jeżeli natomiast wniosek składany jest w standardowym trybie przez Portal Rejestrów Sądowych (PRS), opłata stała wynosi 250 zł. Jest to opłata pobierana od jednego wniosku, niezależnie od liczby zmian objętych danym zgłoszeniem.
                     </p>
                   </div>
                   <div className="space-y-2">
