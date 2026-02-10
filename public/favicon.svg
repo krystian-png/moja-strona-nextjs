@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zmiana KRS favicon">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6ab1e"/>
+      <stop offset="100%" stop-color="#df8a0f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="10" fill="#f3efea"/>
+  <path d="M21 12h18l8 7v24a5 5 0 0 1-5 5H21a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M39 12v7h8" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M23 26h16M23 32h10M23 38h12" stroke="#b56828" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="42" cy="40" r="10" fill="url(#badge)"/>
+  <path d="m37 40 4 4 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
