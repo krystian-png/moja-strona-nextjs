@@ -1,14 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zmiana KRS favicon">
   <defs>
-    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f6ab1e"/>
-      <stop offset="100%" stop-color="#df8a0f"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7a00"/>
+      <stop offset="100%" stop-color="#ff5a00"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="10" fill="#f3efea"/>
-  <path d="M21 12h18l8 7v24a5 5 0 0 1-5 5H21a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M39 12v7h8" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M23 26h16M23 32h10M23 38h12" stroke="#b56828" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="42" cy="40" r="10" fill="url(#badge)"/>
-  <path d="m37 40 4 4 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path
+    d="M13 8h27l11 11v31a6 6 0 0 1-6 6H19a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6Z"
+    fill="url(#accent)"
+  />
+  <path d="M40 8v9a4 4 0 0 0 4 4h7" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linejoin="round"/>
+
+  <path
+    d="M20 14h19l8 8v24a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4Z"
+    fill="#ffffff"
+  />
+
+  <path d="M25 26h15M25 32h9M25 38h7" stroke="url(#accent)" stroke-width="2.8" stroke-linecap="round"/>
+
+  <circle cx="41" cy="43" r="13" fill="url(#accent)"/>
+  <path d="m35.5 42.7 4.2 4.2 8.8-8.8" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
