@@ -1,14 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zmiana KRS favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Favicon Zmiana KRS">
   <defs>
+    <linearGradient id="docStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c85b1a"/>
+      <stop offset="100%" stop-color="#d06e28"/>
+    </linearGradient>
     <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f6ab1e"/>
-      <stop offset="100%" stop-color="#df8a0f"/>
+      <stop offset="0%" stop-color="#ff940d"/>
+      <stop offset="100%" stop-color="#f48a0b"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="10" fill="#f3efea"/>
-  <path d="M21 12h18l8 7v24a5 5 0 0 1-5 5H21a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5Z" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M39 12v7h8" fill="none" stroke="#b56828" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M23 26h16M23 32h10M23 38h12" stroke="#b56828" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="42" cy="40" r="10" fill="url(#badge)"/>
-  <path d="m37 40 4 4 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect width="512" height="512" rx="96" fill="#efefef"/>
+
+  <path
+    d="M159 111h183l94 92v143a48 48 0 0 1-48 48H159a48 48 0 0 1-48-48V159a48 48 0 0 1 48-48Z"
+    fill="#fff"
+    stroke="url(#docStroke)"
+    stroke-width="20"
+    stroke-linejoin="round"
+  />
+  <path d="M342 111v76a20 20 0 0 0 20 20h74" fill="#fff" stroke="url(#docStroke)" stroke-width="20" stroke-linejoin="round"/>
+
+  <path d="M170 234h129M170 275h74M170 315h74" fill="none" stroke="#c85b1a" stroke-width="18" stroke-linecap="round"/>
+
+  <circle cx="332" cy="332" r="105" fill="url(#badge)"/>
+  <path d="m290 332 38 38 77-77" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
