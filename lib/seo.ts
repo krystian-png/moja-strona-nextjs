@@ -1,7 +1,7 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://zmianakrs.pl"
 
-export const brandName = "ZmianaKRS"
+export const brandName = "zmianakrs.pl"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -10,8 +10,8 @@ export const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/images/krs-logo.png`,
   sameAs: [
-    "https://www.facebook.com/zmianakrs",
-    "https://www.linkedin.com/company/zmianakrs",
+    "https://www.facebook.com/profile.php?id=61588617781836",
+    "https://www.linkedin.com/company/zmianakrs-pl/",
   ],
   contactPoint: {
     "@type": "ContactPoint",

@@ -13,6 +13,10 @@ export default function Footer({
 }: FooterProps = {}) {
   const currentYear = new Date().getFullYear()
   const isEnglish = variant === "english"
+  const socialLinks = {
+    facebook: "https://www.facebook.com/profile.php?id=61588617781836",
+    linkedin: "https://www.linkedin.com/company/zmianakrs-pl/",
+  }
 
   const footerClassName = [
     "bg-slate-900 text-white",
@@ -170,7 +174,7 @@ export default function Footer({
             </div>
           )}
 
-          <div className="lg:text-right">
+          <div className={isEnglish ? "text-center w-full" : "lg:text-right"}>
             <div className="flex flex-col gap-4 lg:flex-row lg:gap-6">
               <div className="flex items-center space-x-2 lg:justify-end">
                 <div className="rounded-full bg-blue-600 p-1.5">
@@ -223,6 +227,35 @@ export default function Footer({
                   </a>
                 </div>
               </div>
+            </div>
+
+            <div
+              className={`mt-4 flex items-center gap-3 ${
+                isEnglish ? "justify-center" : "justify-start lg:justify-end"
+              }`}
+            >
+              <a
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 text-white transition-colors hover:border-amber-400 hover:text-amber-400"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.76-1.61 1.54V12h2.74l-.44 2.89h-2.3v6.99A10 10 0 0022 12z" />
+                </svg>
+              </a>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 text-white transition-colors hover:border-amber-400 hover:text-amber-400"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <path d="M19 3A2 2 0 0121 5V19A2 2 0 0119 21H5A2 2 0 013 19V5A2 2 0 015 3H19ZM8.34 18.34V9.67H5.67v8.67h2.67ZM7 8.5a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1Zm11.34 9.84v-4.73c0-2.53-1.35-3.71-3.15-3.71-1.45 0-2.1.8-2.46 1.36v-1.17h-2.67v8.25h2.67v-4.61c0-1.22.23-2.4 1.74-2.4 1.49 0 1.51 1.39 1.51 2.48v4.53h2.36Z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
