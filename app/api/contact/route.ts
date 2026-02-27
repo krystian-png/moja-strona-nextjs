@@ -3,15 +3,11 @@ import { z } from "zod"
 import nodemailer from "nodemailer"
 
 const payloadSchema = z.object({
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
+  fullName: z.string().trim().min(3),
   email: z.string().email(),
-  phone: z.string().optional(),
-  service: z.string().optional(),
-  message: z.string().min(1),
-  privacyConsent: z.boolean(),
-  captcha: z.string().optional(),
-  name: z.string().min(1),
+  phone: z.string().max(20).optional(),
+  message: z.string().min(10),
+  website: z.string().optional(),
 })
 
 const transporter = nodemailer.createTransport({
@@ -33,12 +29,16 @@ export async function POST(request: Request) {
       errors: parsed.error.flatten(),
     }, { status: 400 })
   }
-  const { firstName, lastName, email, phone, service, message } = parsed.data
+  const { fullName, email, phone, message, website } = parsed.data
+
+  if (website && website.trim().length > 0) {
+    return NextResponse.json({ success: true })
+  }
+
   const emailBody = `Otrzymano nowe zapytanie kontaktowe ze strony zmianakrs.pl:
-Imię i nazwisko: ${firstName} ${lastName}
+Imię i nazwisko: ${fullName}
 Email: ${email}
 Telefon: ${phone || "Nie podano"}
-Usługa: ${service || "Zapytanie ogólne"}
 Treść wiadomości:
 ${message}
 Data zgłoszenia: ${new Date().toLocaleString("pl-PL")}
@@ -48,7 +48,7 @@ Wiadomość została wysłana automatycznie z systemu zmianakrs.pl`
     await transporter.sendMail({
       from: `"Zmiana KRS - System powiadomień" <${process.env.SMTP_USER || "biuro@zmianakrs.pl"}>`,
       to: process.env.CONTACT_EMAIL || "biuro@kancelaria-karpiuk.pl",
-      subject: `Nowe zgłoszenie kontaktowe od ${firstName} ${lastName}`,
+      subject: `Nowe zgłoszenie kontaktowe od ${fullName}`,
       text: emailBody,
       html: emailBody.replace(/\n/g, "<br>"),
     })
