@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -9,59 +9,33 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Checkbox } from "@/components/ui/checkbox"
 import { apiRequest } from "@/lib/queryClient"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
-
-const phoneValidation = z
-  .string({
-    required_error: "Numer telefonu jest wymagany",
-  })
-  .min(1, "Numer telefonu jest wymagany")
-  .refine((val) => {
-    const cleanPhone = val.replace(/[\s-]/g, "")
-    return /^(\+48\d{9}|\d{9})$/.test(cleanPhone)
-  }, "Nieprawidłowy format numeru telefonu. Prawidłowy format: +48123456789 lub 123456789")
+import Link from "next/link"
 
 const contactFormSchema = z.object({
-  firstName: z.string().min(2, "Imię musi mieć co najmniej 2 znaki"),
-  lastName: z.string().min(2, "Nazwisko musi mieć co najmniej 2 znaki"),
+  fullName: z.string().trim().min(3, "Imię i nazwisko musi mieć co najmniej 3 znaki"),
   email: z.string().email("Nieprawidłowy adres email"),
-  phone: phoneValidation,
-  service: z.string().optional(),
+  phone: z.string().max(20, "Numer telefonu może mieć maksymalnie 20 znaków").optional(),
   message: z.string().min(10, "Wiadomość musi mieć co najmniej 10 znaków"),
-  privacyConsent: z.boolean().refine((val) => val === true, {
-    message: "Musisz wyrazić zgodę na przetwarzanie danych osobowych",
-  }),
-  captcha: z.string().optional(),
+  website: z.string().optional(),
 })
 
 export type ContactFormData = z.infer<typeof contactFormSchema>
 
-type ContactFormPayload = ContactFormData & { name: string }
-
-const serviceOptions = [
-  { value: "zmiana-wpisu-w-krs", label: "Zmiana wpisu w KRS" },
-  { value: "obsluga-dokumentow-krs", label: "Obsługa dokumentów rejestrowych" },
-  { value: "inne-zapytanie", label: "Inne zapytanie dotyczące KRS" },
-]
+type ContactFormPayload = ContactFormData
 
 const defaultValues: ContactFormData = {
-  firstName: "",
-  lastName: "",
+  fullName: "",
   email: "",
   phone: "",
-  service: "",
   message: "",
-  privacyConsent: false,
-  captcha: "",
+  website: "",
 }
 
 export default function ContactPageContent() {
   const queryClient = useQueryClient()
-  const [captchaQuestion, setCaptchaQuestion] = useState({ question: "", answer: "" })
   const [submissionStatus, setSubmissionStatus] = useState<{
     type: "success" | "error"
     message: string
@@ -71,24 +45,6 @@ export default function ContactPageContent() {
     resolver: zodResolver(contactFormSchema),
     defaultValues,
   })
-
-  const generateCaptcha = useCallback(() => {
-    const num1 = Math.floor(Math.random() * 10) + 1
-    const num2 = Math.floor(Math.random() * 10) + 1
-    setCaptchaQuestion({
-      question: `${num1} + ${num2} = ?`,
-      answer: (num1 + num2).toString(),
-    })
-  }, [])
-
-  useEffect(() => {
-    const num1 = Math.floor(Math.random() * 10) + 1
-    const num2 = Math.floor(Math.random() * 10) + 1
-    setCaptchaQuestion({
-      question: `${num1} + ${num2} = ?`,
-      answer: (num1 + num2).toString(),
-    })
-  }, [])
 
   const submitContactMutation = useMutation({
     mutationFn: (data: ContactFormPayload) =>
@@ -103,55 +59,18 @@ export default function ContactPageContent() {
       })
       queryClient.invalidateQueries({ queryKey: ["contact-submissions"] }).catch(() => undefined)
       form.reset(defaultValues)
-      generateCaptcha()
     },
     onError: (error: unknown) => {
       setSubmissionStatus({
         type: "error",
         message: error instanceof Error ? error.message : "Nie udało się wysłać formularza. Spróbuj ponownie później.",
       })
-      generateCaptcha()
     },
   })
 
   const onSubmit = (data: ContactFormData) => {
     setSubmissionStatus(null)
-    // Clear any previous manual errors
-    form.clearErrors("captcha")
-
-    // Sprawdź czy captcha została wypełniona
-    if (!data.captcha || data.captcha.trim() === "") {
-      form.setError("captcha", {
-        type: "manual",
-        message: "Potwierdź, że nie jesteś robotem",
-      })
-      return
-    }
-
-    // Sprawdź odpowiedź na captcha
-    if (data.captcha !== captchaQuestion.answer) {
-      form.setError("captcha", {
-        type: "manual",
-        message: "Nieprawidłowa odpowiedź na pytanie kontrolne",
-      })
-      // Wygeneruj nowe pytanie
-      const num1 = Math.floor(Math.random() * 10) + 1
-      const num2 = Math.floor(Math.random() * 10) + 1
-      const question = `${num1} + ${num2} = ?`
-      const answer = (num1 + num2).toString()
-      setCaptchaQuestion({ question, answer })
-
-      form.setValue("captcha", "")
-      return
-    }
-
-    // Połącz firstName i lastName w jedno pole name
-    const submitData = {
-      ...data,
-      name: `${data.firstName} ${data.lastName}`.trim(),
-    }
-
-    submitContactMutation.mutate(submitData)
+    submitContactMutation.mutate(data)
   }
 
   const isSubmitting = submitContactMutation.isPending
@@ -230,200 +149,109 @@ export default function ContactPageContent() {
                 </div>
               ) : null}
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="space-y-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <FormField
-                          control={form.control}
-                          name="firstName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-white">Imię</FormLabel>
-                              <FormControl>
-                                <Input
-                                  {...field}
-                                  required
-                                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="lastName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-white">Nazwisko</FormLabel>
-                              <FormControl>
-                                <Input
-                                  {...field}
-                                  required
-                                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">Email</FormLabel>
-                            <FormControl>
-                              <Input
-                                type="email"
-                                {...field}
-                                required
-                                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">Telefon</FormLabel>
-                            <FormControl>
-                              <Input
-                                id="phone"
-                                type="tel"
-                                placeholder="+48123456789 lub 123456789"
-                                {...field}
-                                required
-                                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="service"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">Zakres zapytania (opcjonalnie)</FormLabel>
-                            <FormControl>
-                              <Select value={field.value} onValueChange={field.onChange}>
-                                <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                                  <SelectValue placeholder="Wybierz usługę" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  {serviceOptions.map((option) => (
-                                    <SelectItem key={option.value} value={option.value}>
-                                      {option.label}
-                                    </SelectItem>
-                                  ))}
-                                </SelectContent>
-                              </Select>
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                    <div className="space-y-6">
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">Wiadomość</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Opisz swoją sprawę..."
-                                className="min-h-[96px] bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                {...field}
-                                required
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="captcha"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-white">
-                              Pytanie kontrolne: {captchaQuestion.question}
-                            </FormLabel>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                placeholder="Wpisz odpowiedź"
-                                className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                required
-                              />
-                            </FormControl>
-                            <FormMessage /> {/* ← TO MUSI BYĆ! */}
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="privacyConsent"
-                      render={({ field }) => (
-                        <FormItem
-                          style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", gap: "12px" }}
-                        >
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                              style={{ marginTop: "4px", minWidth: "16px", minHeight: "16px" }}
-                              className="border-amber-500 data-[state=checked]:bg-amber-600 data-[state=checked]:border-amber-600"
-                            />
-                          </FormControl>
-                          <div style={{ flex: 1 }}>
-                            <FormLabel className="text-white text-xs leading-relaxed">
-                              Oświadczam, że zapoznałem/am się z treścią Polityki Prywatności i Cookies dostępnych na stronie
-                              www.zmianakrs.pl i wyrażam dobrowolną i świadomą zgodę na przetwarzanie moich danych osobowych
-                              podanych w powyższym formularzu przez:
-                              <br />
-                              <br />
-                              <strong>Krystian Karpiuk Kancelaria Radcy Prawnego</strong>, ul. Wschodnia 24/3, 62-030 Luboń, NIP:
-                              669-217-69-58 w celu:
-                              <br />
-                              a) udzielenia odpowiedzi na moje zapytanie przesłane za pośrednictwem formularza kontaktowego,
-                              <br />
-                              b) przedstawienia oferty dotyczącej świadczonych usług,
-                              <br />
-                              c) komunikacji ze mną w sprawach związanych z moim zapytaniem.
-                              <br />
-                              <br />
-                              Rozumiem, że w każdej chwili mogę wycofać tę zgodę, kontaktując się z Administratorem danych
-                              osobowych pod adresem kontakt@zmianakrs.pl, a wycofanie zgody nie wpłynie na zgodność z prawem
-                              przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
-                        </FormItem>
-                      )}
-                    />
+                <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-2xl space-y-5">
+                  <FormField
+                    control={form.control}
+                    name="fullName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Imię i nazwisko</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            required
+                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Adres email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            {...field}
+                            required
+                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Telefon</FormLabel>
+                        <FormControl>
+                          <Input
+                            id="phone"
+                            type="tel"
+                            maxLength={20}
+                            placeholder="Opcjonalnie"
+                            {...field}
+                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Wiadomość</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Opisz swoją sprawę..."
+                            className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                            {...field}
+                            required
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="website"
+                    render={({ field }) => (
+                      <FormItem className="hidden" aria-hidden="true">
+                        <FormControl>
+                          <Input type="text" autoComplete="off" tabIndex={-1} {...field} />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  <div className="space-y-3 pt-2">
                     <div className="flex justify-center">
-                      <Button
-                        type="submit"
-                        className="w-1/2 bg-amber-600 hover:bg-amber-700 text-white"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? "Wysyłanie..." : "Wyślij Zapytanie"}
+                      <Button type="submit" className="w-full sm:w-1/2 bg-amber-600 hover:bg-amber-700 text-white" disabled={isSubmitting}>
+                        {isSubmitting ? "Wysyłanie..." : "Wyślij zapytanie"}
                       </Button>
                     </div>
+                    <p className="text-center text-xs text-gray-300">
+                      Wysyłając formularz, potwierdzasz zapoznanie się z{" "}
+                      <Link
+                        href="https://zmianakrs.pl/polityka-prywatnosci"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-amber-400/70 underline-offset-2 hover:text-amber-300"
+                      >
+                        Polityką prywatności
+                      </Link>
+                      .
+                    </p>
                   </div>
                 </form>
               </Form>
