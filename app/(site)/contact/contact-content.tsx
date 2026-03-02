@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { apiRequest } from "@/lib/queryClient"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Phone, Mail, Clock } from "lucide-react"
 import Link from "next/link"
 
 const contactFormSchema = z.object({
@@ -94,13 +94,6 @@ export default function ContactPageContent() {
         title: "Godziny Pracy",
         href: undefined,
         value: "Pon-Pt: 8:00-18:00",
-      },
-      {
-        icon: MapPin,
-        title: "Adres",
-        href: undefined,
-        value: "ul. Wschodnia 24/3, 62-030 Luboń",
-        helper: "Krystian Karpiuk Kancelaria Radcy Prawnego, NIP: 669-217-69-58",
       },
     ],
     []
@@ -258,11 +251,11 @@ export default function ContactPageContent() {
             </div>
             <Card className="bg-black/30 backdrop-blur-sm border border-white/20 p-6">
               <CardHeader className="mb-6">
-                <CardTitle className="text-white text-lg">Dane Kontaktowe</CardTitle>
+                <CardTitle className="w-full text-center text-white text-lg">Dane kontaktowe</CardTitle>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
+              <CardContent className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                 {contactDetails.map(({ icon: Icon, title, value, helper, href }) => (
-                  <div key={title} className="flex items-center justify-center sm:justify-start text-left">
+                  <div key={title} className="flex items-center justify-center text-left">
                     <Icon className="h-5 w-5 text-amber-400 mr-3 shrink-0" />
                     <div>
                       <div className="font-medium text-white text-sm">{title}</div>
