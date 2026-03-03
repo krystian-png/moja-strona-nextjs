@@ -7,7 +7,15 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "@id": `${siteUrl}/#organization`,
-  name: brandName,
+  name: "Krystian Karpiuk Kancelaria Radcy Prawnego",
+  alternateName: "zmianakrs.pl",
+  telephone: "+48572234779",
+  email: "biuro@zmianakrs.pl",
+  taxID: "669-217-69-58",
+  areaServed: {
+    "@type": "Country",
+    name: "Polska",
+  },
   url: siteUrl,
   logo: `${siteUrl}/images/krs-logo.png`,
   sameAs: [
