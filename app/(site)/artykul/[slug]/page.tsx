@@ -88,11 +88,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         : `${siteUrl}${post.cover}`
       : undefined,
     datePublished: post.date,
-    author: {
-      "@type": "Organization",
-      name: brandName,
-    },
-    publisher: organizationSchema,
+    author: { "@id": `${siteUrl}/#organization` },
+    publisher: { "@id": `${siteUrl}/#organization` },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${siteUrl}/artykul/${post.slug}`,
