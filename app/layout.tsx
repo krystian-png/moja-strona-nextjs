@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Providers from './providers'
 import ContactPopup from '@/components/ContactPopup'
+import { siteUrl, organizationSchema, brandName } from '@/lib/seo'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -18,10 +20,22 @@ export const metadata: Metadata = {
   },
 }
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: brandName,
+  publisher: { '@id': `${siteUrl}/#organization` },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
       <body className="min-h-screen">
+        <Script id="global-structured-data" type="application/ld+json">
+          {JSON.stringify([organizationSchema, websiteSchema])}
+        </Script>
         <Providers>
           {children}
           <ContactPopup />
