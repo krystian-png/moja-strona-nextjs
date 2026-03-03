@@ -22,11 +22,6 @@ const structuredData = {
   description:
     "Potrzebujesz zmienić wpis w KRS? Oferujemy kompleksową obsługę wniosków o zmianę danych spółki w KRS. Szybko, bezpiecznie i w przystępnej cenie.",
   publisher: organizationSchema,
-  mainEntity: {
-    "@type": "Organization",
-    name: brandName,
-    url: siteUrl,
-  },
   image: `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
   primaryImageOfPage: {
     "@type": "ImageObject",
