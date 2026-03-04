@@ -263,6 +263,32 @@ export default function ZmianaZarzaduPage() {
           </div>
 
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+            <div className="space-y-4">
+              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Podstawa prawna zmiany zarządu spółki z o.o.</h2>
+              <p className="text-lg text-white/90">
+                Zmiana zarządu spółki z ograniczoną odpowiedzialnością (powołanie, odwołanie albo rezygnacja członka zarządu)
+                wynika przede wszystkim z regulacji zawartych w Kodeksie spółek handlowych dotyczących funkcjonowania zarządu jako
+                organu spółki.
+              </p>
+              <p className="text-lg text-white/90">
+                Zgodnie z art. 201 § 1 Kodeksu spółek handlowych zarząd prowadzi sprawy spółki i reprezentuje ją na zewnątrz. W myśl
+                art. 201 § 4 KSH członek zarządu jest co do zasady powoływany i odwoływany uchwałą wspólników, chyba że umowa spółki
+                przewiduje inny tryb.
+              </p>
+              <p className="text-lg text-white/90">
+                Po dokonaniu zmiany w strukturze organu spółki konieczne jest również ujawnienie tej zmiany w rejestrze
+                przedsiębiorców KRS. Zgodnie z art. 22 ustawy o Krajowym Rejestrze Sądowym wniosek o wpis zmiany do rejestru
+                powinien zostać złożony w terminie 7 dni od dnia zdarzenia uzasadniającego dokonanie wpisu.
+              </p>
+              <p className="text-lg text-white/90">
+                W praktyce oznacza to, że zmiana zarządu spółki z o.o. wymaga zarówno prawidłowego przygotowania dokumentów
+                korporacyjnych (np. uchwały wspólników lub oświadczenia o rezygnacji), jak i złożenia kompletnego wniosku do
+                Krajowego Rejestru Sądowego.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-5">
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Jak zgłosimy zmianę zarządu Twojej spółki</h2>
               <ol className="space-y-4 text-lg text-white/90">
@@ -368,6 +394,37 @@ export default function ZmianaZarzaduPage() {
           </div>
 
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+            <div className="space-y-4">
+              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Przykładowe sytuacje, w których konieczna jest zmiana zarządu spółki z o.o.</h2>
+              <p className="text-lg text-white/90">
+                W praktyce zmiana zarządu spółki z o.o. najczęściej jest elementem szerszego zdarzenia w spółce. Poniżej
+                przedstawiamy przykładowe sytuacje, w których przedsiębiorcy decydują się na zmianę składu zarządu.
+              </p>
+              <p className="text-lg font-semibold text-white">Rezygnacja członka zarządu</p>
+              <p className="text-lg text-white/90">
+                Jednym z najczęstszych przypadków jest dobrowolna rezygnacja członka zarządu z pełnionej funkcji. W takiej sytuacji
+                konieczne jest zarówno prawidłowe udokumentowanie rezygnacji, jak i powołanie nowej osoby do zarządu oraz zgłoszenie
+                zmian do KRS.
+              </p>
+              <p className="text-lg font-semibold text-white">Sprzedaż udziałów i zmiana kontroli nad spółką</p>
+              <p className="text-lg text-white/90">
+                Po sprzedaży udziałów nowy właściciel spółki często decyduje się na zmianę składu zarządu lub powołanie nowego
+                prezesa. W takich przypadkach zmiana zarządu jest elementem reorganizacji struktury zarządzania spółką.
+              </p>
+              <p className="text-lg font-semibold text-white">Odwołanie członka zarządu przez wspólników</p>
+              <p className="text-lg text-white/90">
+                Zgromadzenie wspólników może w każdej chwili odwołać członka zarządu uchwałą, jeżeli uzna to za konieczne dla
+                prawidłowego funkcjonowania spółki.
+              </p>
+              <p className="text-lg font-semibold text-white">Zmiana prezesa zarządu</p>
+              <p className="text-lg text-white/90">
+                W wielu spółkach dochodzi do zmiany funkcji w ramach istniejącego zarządu, np. gdy dotychczasowy członek zarządu
+                zostaje powołany na stanowisko prezesa.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-5">
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Najczęściej zadawane pytania</h2>
               <div className="space-y-3">
@@ -403,6 +460,30 @@ export default function ZmianaZarzaduPage() {
                 <p className="text-lg text-white/90">
                   Zasadniczo nie, chyba że zmiana wiąże się ze zmianą sposobu reprezentacji i wymaga zmiany umowy spółki w formie
                   aktu notarialnego.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold">Czy zmiana zarządu spółki z o.o. wymaga wizyty u notariusza?</h3>
+                <p className="text-lg text-white/90">
+                  Nie zawsze. W większości przypadków zmiana zarządu następuje na podstawie uchwały wspólników i nie wymaga aktu notarialnego, chyba że jednocześnie zmieniana jest umowa spółki.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold">Ile trwa wpis zmiany zarządu w KRS?</h3>
+                <p className="text-lg text-white/90">
+                  Czas rozpoznania wniosku zależy od obciążenia sądu rejestrowego, jednak w praktyce wpis zmiany zarządu najczęściej następuje w ciągu kilku tygodni od złożenia kompletnego wniosku.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold">Czy zmianę zarządu można zgłosić w systemie S24?</h3>
+                <p className="text-lg text-white/90">
+                  W niektórych przypadkach tak, jeżeli spółka została założona w systemie S24 i spełnione są wymagania tego systemu. W pozostałych sytuacjach wniosek składa się przez Portal Rejestrów Sądowych.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold">Czy brak zgłoszenia zmiany zarządu do KRS może mieć konsekwencje?</h3>
+                <p className="text-lg text-white/90">
+                  Tak. Nieaktualne dane w rejestrze mogą powodować problemy w kontaktach z bankami, kontrahentami lub urzędami, a także prowadzić do wezwań ze strony sądu rejestrowego do uzupełnienia wpisu.
                 </p>
               </div>
             </div>
