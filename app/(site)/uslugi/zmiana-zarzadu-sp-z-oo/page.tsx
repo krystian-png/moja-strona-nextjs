@@ -145,97 +145,105 @@ export default function ZmianaZarzaduPage() {
 
       <Navbar />
 
-      <main className="relative">
-        <section className="px-4 pb-14 pt-24 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl space-y-6">
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu
-            </h1>
-            <p className="text-gray-200">
-              Zmiana zarządu sp. z o.o. to jeden z najważniejszych momentów w funkcjonowaniu spółki. Powołanie nowego członka
-              zarządu, odwołanie dotychczasowego albo rezygnacja z pełnienia funkcji wymaga prawidłowego przygotowania dokumentów
-              oraz terminowego zgłoszenia zmian do Krajowego Rejestru Sądowego.
-            </p>
-            <p className="text-gray-200">
-              Oferujemy kompleksową obsługę zmiany zarządu sp. z o.o. – od analizy umowy spółki i przygotowania uchwał, po
-              elektroniczne złożenie wniosku w PRS lub S24 oraz monitorowanie sprawy aż do dokonania wpisu w KRS.
-            </p>
-            <p className="text-lg">📞 572 234 779</p>
-            <p>
-              <a href="#formularz" className="text-amber-300 underline underline-offset-2 hover:text-amber-200">
-                [formularz kontaktowy – oddzwonimy]
-              </a>
-            </p>
-            <div id="formularz" className="pt-2">
-              <InlineContactForm />
+      <main className="relative px-4 pb-14 pt-24 sm:px-6 lg:px-8">
+        <section className="mx-auto mb-12 max-w-7xl">
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+              <div className="space-y-6">
+                <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                  Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu
+                </h1>
+                <p className="text-lg text-gray-200/90">
+                  Zmiana zarządu sp. z o.o. to jeden z najważniejszych momentów w funkcjonowaniu spółki. Powołanie nowego członka
+                  zarządu, odwołanie dotychczasowego albo rezygnacja z pełnienia funkcji wymaga prawidłowego przygotowania
+                  dokumentów oraz terminowego zgłoszenia zmian do Krajowego Rejestru Sądowego.
+                </p>
+                <p className="text-lg text-gray-200/90">
+                  Oferujemy kompleksową obsługę zmiany zarządu sp. z o.o. – od analizy umowy spółki i przygotowania uchwał, po
+                  elektroniczne złożenie wniosku w PRS lub S24 oraz monitorowanie sprawy aż do dokonania wpisu w KRS.
+                </p>
+                <p className="text-xl">📞 572 234 779</p>
+                <p>
+                  <a href="#formularz" className="text-amber-300 underline underline-offset-2 hover:text-amber-200">
+                    [formularz kontaktowy – oddzwonimy]
+                  </a>
+                </p>
+              </div>
+              <div id="formularz" className="w-full lg:pt-2">
+                <InlineContactForm className="max-w-md" />
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl space-y-10">
+        <section className="mx-auto max-w-6xl space-y-10">
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Podstawa prawna zmiany zarządu w spółce z o.o.</h2>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Zmiana zarządu sp. z o.o. wynika z przepisów Kodeksu spółek handlowych regulujących funkcjonowanie zarządu oraz z
                 ustawy o Krajowym Rejestrze Sądowym, która określa obowiązek aktualizacji danych ujawnionych w rejestrze
                 przedsiębiorców.
               </p>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Najważniejsze zasady praktyczne są dwie: zmiana składu zarządu wymaga odpowiedniej uchwały lub oświadczenia, a
                 zgłoszenie zmiany zarządu sp. z o.o. do KRS należy złożyć w terminie 7 dni od jej dokonania.
               </p>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Terminowa aktualizacja danych jest istotna także z perspektywy praktyki obrotu – banki, leasingodawcy i kontrahenci
                 bardzo często oczekują potwierdzenia aktualnego składu zarządu ujawnionego w KRS.
               </p>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Koszty zmiany zarządu sp. z o.o.</h2>
-              <p className="text-gray-200">Koszt zgłoszenia zmiany zarządu zależy od sposobu złożenia wniosku:</p>
+              <p className="text-lg text-gray-200/90">Koszt zgłoszenia zmiany zarządu zależy od sposobu złożenia wniosku:</p>
               <div className="overflow-x-auto rounded-lg border border-white/20 bg-white/5">
-                <table className="w-full border-collapse text-left text-sm">
+                <table className="w-full min-w-[420px] border-collapse text-left text-base">
                   <thead>
                     <tr className="border-b border-white/20 bg-white/10">
-                      <th className="px-4 py-3">Tryb złożenia wniosku</th>
-                      <th className="px-4 py-3">Opłata sądowa</th>
+                      <th className="px-5 py-3.5">Tryb złożenia wniosku</th>
+                      <th className="px-5 py-3.5">Opłata sądowa</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-white/10">
-                      <td className="px-4 py-3">Portal Rejestrów Sądowych (PRS)</td>
-                      <td className="px-4 py-3">250 zł</td>
+                    <tr className="border-b border-white/20 bg-white/5">
+                      <td className="px-5 py-3.5">Portal Rejestrów Sądowych (PRS)</td>
+                      <td className="px-5 py-3.5">250 zł</td>
                     </tr>
-                    <tr>
-                      <td className="px-4 py-3">System S24</td>
-                      <td className="px-4 py-3">200 zł</td>
+                    <tr className="bg-white/[0.03]">
+                      <td className="px-5 py-3.5">System S24</td>
+                      <td className="px-5 py-3.5">200 zł</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Opłata skarbowa za pełnomocnictwo wynosi 17 zł (jeżeli wniosek składa pełnomocnik).
               </p>
-              <p className="text-gray-200">Nie pobiera się już opłaty za ogłoszenie wpisu w Monitorze Sądowym i Gospodarczym.</p>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">Nie pobiera się już opłaty za ogłoszenie wpisu w Monitorze Sądowym i Gospodarczym.</p>
+              <p className="text-lg text-gray-200/90">
                 Jeżeli zmiana zarządu wiąże się jednocześnie ze zmianą sposobu reprezentacji wymagającą zmiany umowy spółki w formie
                 aktu notarialnego, należy uwzględnić również koszty notarialne.
               </p>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Koszt naszej obsługi zmiany zarządu sp. z o.o. zaczyna się od około 799 zł, w zależności od zakresu zmian oraz liczby
                 przygotowywanych dokumentów.
               </p>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Dokumenty do zmiany zarządu sp. z o.o.</h2>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Do zgłoszenia zmiany zarządu sp. z o.o. w KRS należy przygotować komplet dokumentów potwierdzających dokonanie zmian
                 w organie spółki.
               </p>
-              <p className="text-gray-200">Najczęściej są to:</p>
-              <ul className="list-disc space-y-2 pl-6 text-gray-200">
+              <p className="text-lg text-gray-200/90">Najczęściej są to:</p>
+              <ul className="list-disc space-y-2 pl-6 text-lg text-gray-200/90">
                 <li>uchwała o powołaniu lub odwołaniu członka zarządu,</li>
                 <li>zgoda na pełnienie funkcji członka zarządu,</li>
                 <li>oświadczenie o adresie do doręczeń,</li>
@@ -243,15 +251,17 @@ export default function ZmianaZarzaduPage() {
                 <li>pełnomocnictwo (jeżeli działa pełnomocnik),</li>
                 <li>potwierdzenie uiszczenia opłaty sądowej.</li>
               </ul>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Brak któregokolwiek z wymaganych dokumentów lub rozbieżności między uchwałą a wnioskiem są jedną z najczęstszych
                 przyczyn wezwań sądu do uzupełnienia braków formalnych.
               </p>
             </div>
+          </div>
 
-            <div className="space-y-4">
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+            <div className="space-y-5">
               <h2 className="text-2xl font-bold sm:text-3xl">Jak zgłosimy zmianę zarządu Twojej spółki</h2>
-              <ol className="space-y-4 text-gray-200">
+              <ol className="space-y-4 text-lg text-gray-200/90">
                 <li>
                   <p className="font-semibold text-white">1. Analiza dokumentów spółki</p>
                   <p>Sprawdzamy umowę spółki oraz aktualny sposób reprezentacji, aby ustalić właściwy tryb dokonania zmian.</p>
@@ -278,61 +288,73 @@ export default function ZmianaZarzaduPage() {
                   [formularz – zleć zmianę zarządu]
                 </a>
               </p>
-              <InlineContactForm />
+              <InlineContactForm className="max-w-md" />
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Zdarzenia w ramach zmiany zarządu sp. z o.o.</h2>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Zmiana zarządu sp. z o.o. obejmuje najczęściej powołanie nowego członka zarządu, odwołanie dotychczasowego albo
                 rezygnację z pełnienia funkcji.
               </p>
 
-              <h3 className="pt-2 text-xl font-semibold sm:text-2xl">Powołanie członka zarządu sp. z o.o.</h3>
-              <p className="text-gray-200">
-                Powołanie członka zarządu sp. z o.o. następuje na podstawie uchwały właściwego organu spółki, najczęściej
-                zgromadzenia wspólników. Do zgłoszenia powołania przygotowuje się dokumenty potwierdzające zgodę na pełnienie
-                funkcji oraz dane do doręczeń nowego członka zarządu. Po powołaniu nowej osoby spółka powinna zgłosić zmianę zarządu
-                sp. z o.o. do KRS w terminie 7 dni.
-              </p>
+              <div className="mt-6 space-y-4">
+                <h3 className="text-xl font-semibold sm:text-2xl">Powołanie członka zarządu sp. z o.o.</h3>
+                <p className="text-lg text-gray-200/90">
+                  Powołanie członka zarządu sp. z o.o. następuje na podstawie uchwały właściwego organu spółki, najczęściej
+                  zgromadzenia wspólników. Do zgłoszenia powołania przygotowuje się dokumenty potwierdzające zgodę na pełnienie
+                  funkcji oraz dane do doręczeń nowego członka zarządu. Po powołaniu nowej osoby spółka powinna zgłosić zmianę
+                  zarządu sp. z o.o. do KRS w terminie 7 dni.
+                </p>
+              </div>
 
-              <h3 className="pt-2 text-xl font-semibold sm:text-2xl">Odwołanie członka zarządu sp. z o.o.</h3>
-              <p className="text-gray-200">
-                Odwołanie członka zarządu sp. z o.o. polega na podjęciu uchwały o zakończeniu pełnienia funkcji przez daną osobę. W
-                praktyce kluczowe jest prawidłowe określenie daty odwołania oraz aktualnego składu zarządu po dokonanej zmianie.
-                Odwołanie członka zarządu sp. z o.o. wymaga zgłoszenia zmiany zarządu spółki do KRS.
-              </p>
+              <div className="mt-8 space-y-4">
+                <h3 className="text-xl font-semibold sm:text-2xl">Odwołanie członka zarządu sp. z o.o.</h3>
+                <p className="text-lg text-gray-200/90">
+                  Odwołanie członka zarządu sp. z o.o. polega na podjęciu uchwały o zakończeniu pełnienia funkcji przez daną osobę. W
+                  praktyce kluczowe jest prawidłowe określenie daty odwołania oraz aktualnego składu zarządu po dokonanej zmianie.
+                  Odwołanie członka zarządu sp. z o.o. wymaga zgłoszenia zmiany zarządu spółki do KRS.
+                </p>
+              </div>
 
-              <h3 className="pt-2 text-xl font-semibold sm:text-2xl">Rezygnacja członka zarządu sp. z o.o.</h3>
-              <p className="text-gray-200">
-                Rezygnacja członka zarządu sp. z o.o. powoduje wygaśnięcie mandatu i również wymaga zgłoszenia zmiany w KRS. W
-                praktyce istotne jest prawidłowe złożenie oświadczenia o rezygnacji oraz uporządkowanie dokumentacji spółki po
-                wygaśnięciu mandatu, zwłaszcza gdy rezygnacja wpływa na sposób reprezentacji.
-              </p>
-              <p className="text-gray-200">
-                Czytaj więcej:{" "}
-                <Link
-                  href="/artykul/rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
-                  className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
-                >
-                  rezygnacja członka zarządu sp. z o.o. – formalności i wpis do KRS.
-                </Link>
-              </p>
+              <div className="mt-8 space-y-4">
+                <h3 className="text-xl font-semibold sm:text-2xl">Rezygnacja członka zarządu sp. z o.o.</h3>
+                <p className="text-lg text-gray-200/90">
+                  Rezygnacja członka zarządu sp. z o.o. powoduje wygaśnięcie mandatu i również wymaga zgłoszenia zmiany w KRS. W
+                  praktyce istotne jest prawidłowe złożenie oświadczenia o rezygnacji oraz uporządkowanie dokumentacji spółki po
+                  wygaśnięciu mandatu, zwłaszcza gdy rezygnacja wpływa na sposób reprezentacji.
+                </p>
+                <p className="text-lg text-gray-200/90">
+                  Czytaj więcej:{" "}
+                  <Link
+                    href="/artykul/rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
+                    className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
+                  >
+                    rezygnacja członka zarządu sp. z o.o. – formalności i wpis do KRS.
+                  </Link>
+                </p>
+              </div>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Konsekwencje nieterminowego zgłoszenia</h2>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Nieterminowe zgłoszenie zmiany zarządu może skutkować sankcjami finansowymi oraz problemami organizacyjnymi. W
                 praktyce brak aktualnego wpisu często powoduje trudności w relacjach z bankami, leasingodawcami i kontrahentami,
                 którzy oczekują potwierdzenia umocowania do reprezentacji spółki.
               </p>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Najczęstsze błędy przy zmianie zarządu</h2>
-              <p className="text-gray-200">Najczęstsze problemy pojawiające się przy zmianie zarządu spółki to:</p>
-              <ul className="list-disc space-y-2 pl-6 text-gray-200">
+              <p className="text-lg text-gray-200/90">Najczęstsze problemy pojawiające się przy zmianie zarządu spółki to:</p>
+              <ul className="list-disc space-y-2 pl-6 text-lg text-gray-200/90">
                 <li>brak wymaganych załączników,</li>
                 <li>niezgodność uchwały z treścią wniosku,</li>
                 <li>podpisanie dokumentów przez osoby nieuprawnione,</li>
@@ -340,54 +362,58 @@ export default function ZmianaZarzaduPage() {
                 <li>nieprawidłowe zgłoszenie elektroniczne,</li>
                 <li>brak opłaty lub niewłaściwe potwierdzenie opłaty.</li>
               </ul>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Skutkiem takich błędów może być odrzucenie wniosku przez sąd rejestrowy oraz wydłużenie całej procedury.
               </p>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-5">
               <h2 className="text-2xl font-bold sm:text-3xl">Najczęściej zadawane pytania</h2>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Czy każdą zmianę zarządu trzeba zgłaszać do KRS?</h3>
-                <p className="text-gray-200">
+                <p className="text-lg text-gray-200/90">
                   Tak. Każde powołanie, odwołanie lub rezygnacja członka zarządu powoduje zmianę składu organu spółki i wymaga
                   zgłoszenia do KRS.
                 </p>
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Ile trwa wpis zmiany zarządu sp. z o.o.?</h3>
-                <p className="text-gray-200">
+                <p className="text-lg text-gray-200/90">
                   Przy poprawnie przygotowanych dokumentach wpis może zostać dokonany nawet w ciągu kilku dni roboczych, jednak czas
                   zależy od obciążenia sądu rejestrowego.
                 </p>
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Czy powołanie lub odwołanie członka zarządu to zmiana zarządu?</h3>
-                <p className="text-gray-200">
+                <p className="text-lg text-gray-200/90">
                   Tak. Zarówno powołanie nowego członka zarządu, jak i odwołanie dotychczasowego powodują zmianę składu zarządu
                   spółki.
                 </p>
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Czy rezygnacja członka zarządu wymaga zgłoszenia do KRS?</h3>
-                <p className="text-gray-200">
+                <p className="text-lg text-gray-200/90">
                   Tak. Rezygnacja powoduje wygaśnięcie mandatu i powinna zostać zgłoszona do KRS, aby dane w rejestrze odpowiadały
                   rzeczywistemu stanowi spółki.
                 </p>
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Czy zmiana zarządu może wymagać notariusza?</h3>
-                <p className="text-gray-200">
+                <p className="text-lg text-gray-200/90">
                   Zasadniczo nie, chyba że zmiana wiąże się ze zmianą sposobu reprezentacji i wymaga zmiany umowy spółki w formie
                   aktu notarialnego.
                 </p>
               </div>
             </div>
+          </div>
 
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Chcesz wiedzieć więcej?</h2>
-              <p className="text-gray-200">Jeżeli interesują Cię szczegółowe formalności i procedura krok po kroku, przeczytaj:</p>
-              <p>
+              <p className="text-lg text-gray-200/90">Jeżeli interesują Cię szczegółowe formalności i procedura krok po kroku, przeczytaj:</p>
+              <p className="text-lg text-gray-200/90">
                 👉{" "}
                 <Link
                   href="/artykul/zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci"
@@ -396,8 +422,8 @@ export default function ZmianaZarzaduPage() {
                   https://zmianakrs.pl/artykul/zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci
                 </Link>
               </p>
-              <p className="text-gray-200">Jeżeli dotyczy Cię rezygnacja członka zarządu, przeczytaj także:</p>
-              <p>
+              <p className="text-lg text-gray-200/90">Jeżeli dotyczy Cię rezygnacja członka zarządu, przeczytaj także:</p>
+              <p className="text-lg text-gray-200/90">
                 👉{" "}
                 <Link
                   href="/artykul/rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
@@ -407,18 +433,21 @@ export default function ZmianaZarzaduPage() {
                 </Link>
               </p>
             </div>
+          </div>
 
-            <div className="space-y-4 pb-6">
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+            <div className="space-y-4">
               <h2 className="text-2xl font-bold sm:text-3xl">Zleć zmianę zarządu sp. z o.o.</h2>
-              <p className="text-gray-200">
+              <p className="text-lg text-gray-200/90">
                 Jeżeli chcesz przeprowadzić zmianę zarządu spółki szybko i bez ryzyka błędów formalnych, skontaktuj się z nami.
               </p>
-              <p className="text-lg">📞 572 234 779</p>
+              <p className="text-xl">📞 572 234 779</p>
               <p>
                 <a href="#formularz" className="text-amber-300 underline underline-offset-2 hover:text-amber-200">
                   [formularz kontaktowy]
                 </a>
               </p>
+              <InlineContactForm className="max-w-md" />
             </div>
           </div>
         </section>
