@@ -190,7 +190,12 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
 
           <p className="pt-1 text-xs text-gray-200/90">
             Wysyłając formularz, potwierdzasz zapoznanie się z{" "}
-            <Link href="/polityka-prywatnosci" className="text-amber-400 underline hover:text-amber-300">
+            <Link
+              href="/polityka-prywatnosci"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-400 underline hover:text-amber-300"
+            >
               Polityką prywatności
             </Link>
             .

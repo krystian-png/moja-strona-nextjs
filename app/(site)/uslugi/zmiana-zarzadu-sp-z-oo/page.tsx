@@ -449,11 +449,6 @@ export default function ZmianaZarzaduPage() {
                     572 234 779
                   </a>
                 </p>
-              <p>
-                <a href="#formularz" className="text-amber-300 underline underline-offset-2 hover:text-amber-200">
-                  [formularz kontaktowy]
-                </a>
-              </p>
               <InlineContactForm className="max-w-md" />
             </div>
           </div>
