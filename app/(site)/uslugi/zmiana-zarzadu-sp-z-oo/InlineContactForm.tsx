@@ -5,6 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -104,7 +105,7 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
                   <Input
                     {...field}
                     required
-                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-300"
                   />
                 </FormControl>
                 <FormMessage />
@@ -123,7 +124,7 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
                     type="email"
                     {...field}
                     required
-                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-300"
                   />
                 </FormControl>
                 <FormMessage />
@@ -144,7 +145,7 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
                     maxLength={20}
                     placeholder="Opcjonalnie"
                     {...field}
-                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="h-10 bg-white/10 border-white/20 text-white placeholder:text-gray-300"
                   />
                 </FormControl>
                 <FormMessage />
@@ -161,7 +162,7 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
                 <FormControl>
                   <Textarea
                     placeholder="Opisz swoją sprawę..."
-                    className="min-h-[96px] bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                    className="min-h-[96px] bg-white/10 border-white/20 text-white placeholder:text-gray-300"
                     {...field}
                     required
                   />
@@ -186,6 +187,14 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
           <Button type="submit" className="h-10 w-full bg-amber-600 text-white hover:bg-amber-700" disabled={isSubmitting}>
             {isSubmitting ? "Wysyłanie..." : "Wyślij zapytanie"}
           </Button>
+
+          <p className="pt-1 text-xs text-gray-200/90">
+            Wysyłając formularz, potwierdzasz zapoznanie się z{" "}
+            <Link href="/polityka-prywatnosci" className="text-amber-400 underline hover:text-amber-300">
+              Polityką prywatności
+            </Link>
+            .
+          </p>
         </form>
       </Form>
     </div>
