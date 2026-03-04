@@ -183,19 +183,26 @@ export default function ZmianaZarzaduPage() {
         <section className="mx-auto max-w-6xl space-y-10">
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Podstawa prawna zmiany zarządu w spółce z o.o.</h2>
+              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Podstawa prawna zmiany zarządu spółki z o.o.</h2>
               <p className="text-lg text-white/90">
-                Zmiana zarządu sp. z o.o. wynika z przepisów Kodeksu spółek handlowych regulujących funkcjonowanie zarządu oraz z
-                ustawy o Krajowym Rejestrze Sądowym, która określa obowiązek aktualizacji danych ujawnionych w rejestrze
-                przedsiębiorców.
+                Zmiana zarządu spółki z ograniczoną odpowiedzialnością (powołanie, odwołanie albo rezygnacja członka zarządu)
+                wynika przede wszystkim z regulacji zawartych w Kodeksie spółek handlowych dotyczących funkcjonowania zarządu jako
+                organu spółki.
               </p>
               <p className="text-lg text-white/90">
-                Najważniejsze zasady praktyczne są dwie: zmiana składu zarządu wymaga odpowiedniej uchwały lub oświadczenia, a
-                zgłoszenie zmiany zarządu sp. z o.o. do KRS należy złożyć w terminie 7 dni od jej dokonania.
+                Zgodnie z art. 201 § 1 Kodeksu spółek handlowych zarząd prowadzi sprawy spółki i reprezentuje ją na zewnątrz. W myśl
+                art. 201 § 4 KSH członek zarządu jest co do zasady powoływany i odwoływany uchwałą wspólników, chyba że umowa spółki
+                przewiduje inny tryb.
               </p>
               <p className="text-lg text-white/90">
-                Terminowa aktualizacja danych jest istotna także z perspektywy praktyki obrotu – banki, leasingodawcy i kontrahenci
-                bardzo często oczekują potwierdzenia aktualnego składu zarządu ujawnionego w KRS.
+                Po dokonaniu zmiany w strukturze organu spółki konieczne jest również ujawnienie tej zmiany w rejestrze
+                przedsiębiorców KRS. Zgodnie z art. 22 ustawy o Krajowym Rejestrze Sądowym wniosek o wpis zmiany do rejestru
+                powinien zostać złożony w terminie 7 dni od dnia zdarzenia uzasadniającego dokonanie wpisu.
+              </p>
+              <p className="text-lg text-white/90">
+                W praktyce oznacza to, że zmiana zarządu spółki z o.o. wymaga zarówno prawidłowego przygotowania dokumentów
+                korporacyjnych (np. uchwały wspólników lub oświadczenia o rezygnacji), jak i złożenia kompletnego wniosku do
+                Krajowego Rejestru Sądowego.
               </p>
             </div>
           </div>
@@ -258,32 +265,6 @@ export default function ZmianaZarzaduPage() {
               <p className="text-lg text-white/90">
                 Brak któregokolwiek z wymaganych dokumentów lub rozbieżności między uchwałą a wnioskiem są jedną z najczęstszych
                 przyczyn wezwań sądu do uzupełnienia braków formalnych.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Podstawa prawna zmiany zarządu spółki z o.o.</h2>
-              <p className="text-lg text-white/90">
-                Zmiana zarządu spółki z ograniczoną odpowiedzialnością (powołanie, odwołanie albo rezygnacja członka zarządu)
-                wynika przede wszystkim z regulacji zawartych w Kodeksie spółek handlowych dotyczących funkcjonowania zarządu jako
-                organu spółki.
-              </p>
-              <p className="text-lg text-white/90">
-                Zgodnie z art. 201 § 1 Kodeksu spółek handlowych zarząd prowadzi sprawy spółki i reprezentuje ją na zewnątrz. W myśl
-                art. 201 § 4 KSH członek zarządu jest co do zasady powoływany i odwoływany uchwałą wspólników, chyba że umowa spółki
-                przewiduje inny tryb.
-              </p>
-              <p className="text-lg text-white/90">
-                Po dokonaniu zmiany w strukturze organu spółki konieczne jest również ujawnienie tej zmiany w rejestrze
-                przedsiębiorców KRS. Zgodnie z art. 22 ustawy o Krajowym Rejestrze Sądowym wniosek o wpis zmiany do rejestru
-                powinien zostać złożony w terminie 7 dni od dnia zdarzenia uzasadniającego dokonanie wpisu.
-              </p>
-              <p className="text-lg text-white/90">
-                W praktyce oznacza to, że zmiana zarządu spółki z o.o. wymaga zarówno prawidłowego przygotowania dokumentów
-                korporacyjnych (np. uchwały wspólników lub oświadczenia o rezygnacji), jak i złożenia kompletnego wniosku do
-                Krajowego Rejestru Sądowego.
               </p>
             </div>
           </div>
