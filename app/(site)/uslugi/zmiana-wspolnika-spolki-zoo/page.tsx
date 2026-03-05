@@ -201,23 +201,19 @@ export default function ZmianaWspolnikaSpolkiZooPage() {
               </h2>
 
               <p className="text-lg text-white/90">
-                Najczęstszym mechanizmem zmiany wspólnika w spółce z o.o. jest zbycie udziałów w formie sprzedaży albo darowizny. Co do zasady umowa zbycia udziałów wymaga formy pisemnej z podpisami notarialnie poświadczonymi. Wyjątek dotyczy spółek obsługiwanych w S24, gdzie zbycie udziałów może zostać dokonane w trybie przewidzianym dla wzorca systemowego i podpisane elektronicznie.
+                Najczęstszym mechanizmem zmiany wspólnika w spółce z o.o. jest zbycie udziałów w formie sprzedaży albo darowizny. Co do zasady zbycie udziału, jego części albo ułamkowej części udziału wymaga zachowania formy pisemnej z podpisami notarialnie poświadczonymi, co wynika z art. 180 § 1 Kodeksu spółek handlowych. W praktyce wyjątkiem jest obrót udziałami realizowany w trybie przewidzianym dla spółek obsługiwanych w systemie S24, gdzie czynność może zostać dokonana w ramach wzorca systemowego i podpisana elektronicznie.
               </p>
 
               <p className="text-lg text-white/90">
-                W praktyce przed transakcją konieczna jest analiza umowy spółki, ponieważ umowa może uzależniać zbycie udziałów od zgody spółki albo w inny sposób ograniczać obrót udziałami. W szczególności spotykane są postanowienia o obowiązku uzyskania zgody organu spółki, prawie pierwszeństwa nabycia udziałów przez wspólników albo obowiązku zaoferowania udziałów przed sprzedażą osobie trzeciej.
+                Przed transakcją konieczna jest analiza umowy spółki, ponieważ może ona uzależniać zbycie udziałów od zgody spółki albo w inny sposób ograniczać obrót udziałami, zgodnie z art. 182 § 1 Kodeksu spółek handlowych. W szczególności spotykane są postanowienia o obowiązku uzyskania zgody organu spółki, prawie pierwszeństwa nabycia udziałów przez wspólników albo obowiązku zaoferowania udziałów przed sprzedażą osobie trzeciej.
               </p>
 
               <p className="text-lg text-white/90">
-                Jeżeli w wyniku zmiany struktury udziałowej zmieniają się dane podlegające ujawnieniu w rejestrze przedsiębiorców, konieczne jest zgłoszenie zmian do KRS. W rejestrze ujawnia się wspólników posiadających co najmniej 10% kapitału zakładowego wraz z informacją o liczbie i wartości nominalnej udziałów ujawnionego wspólnika.
+                Jeżeli w wyniku zmiany struktury udziałowej zmieniają się dane podlegające ujawnieniu w rejestrze przedsiębiorców, powstaje obowiązek zgłoszenia zmian do KRS. Zakres ujawnienia obejmuje w szczególności wspólników posiadających co najmniej 10% kapitału zakładowego wraz z informacją o liczbie i wartości nominalnej ich udziałów, co wynika z art. 38 ustawy o Krajowym Rejestrze Sądowym.
               </p>
 
               <p className="text-lg text-white/90">
-                Zasadniczy termin zgłoszenia zdarzenia uzasadniającego wpis do rejestru przedsiębiorców wynosi 7 dni. W praktyce kompletność i spójność dokumentów wpływa bezpośrednio na sprawność postępowania i ryzyko wezwań do uzupełnienia braków formalnych.
-              </p>
-
-              <p className="text-lg text-white/90">
-                Podstawa prawna: art. 180 § 1 oraz art. 182 § 1 Kodeksu spółek handlowych, art. 38 oraz art. 22 ustawy o Krajowym Rejestrze Sądowym.
+                Zasadniczy termin zgłoszenia zdarzenia uzasadniającego wpis do rejestru przedsiębiorców wynosi 7 dni, zgodnie z art. 22 ustawy o Krajowym Rejestrze Sądowym. W praktyce kompletność i spójność dokumentów wpływa bezpośrednio na sprawność postępowania i ogranicza ryzyko wezwań do uzupełnienia braków formalnych.
               </p>
             </div>
           </div>
