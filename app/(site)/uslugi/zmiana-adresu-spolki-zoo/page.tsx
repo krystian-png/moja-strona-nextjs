@@ -260,7 +260,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
               <p className="text-lg text-white/90"><strong>Koszt naszej obsługi zmiany adresu/siedziby sp. z o.o. zaczyna się od 799 zł netto</strong> i zależy od tego, czy sprawa jest prostą aktualizacją adresu, czy zmianą siedziby wymagającą pełnego pakietu korporacyjnego oraz od liczby dokumentów i złożoności stanu faktycznego.</p>
               <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany adresu/siedziby do KRS?</h3>
               <p className="text-lg text-white/90">Czas zależy od obciążenia sądu rejestrowego oraz od jakości wniosku i dokumentów. W praktyce opóźnienia wynikają najczęściej z wezwań do uzupełnienia braków formalnych: rozbieżności danych, braków w dokumentach stanowiących podstawę wpisu albo problemów z podpisami i załącznikami. Dlatego w tej usłudze nacisk kładziemy na kompletność i spójność dokumentacji „od razu”, zanim wniosek trafi do sądu.</p>
-              <p className="text-lg text-white/90">Wiesz już, ile kosztuje zmiana adresu spółki z o.o. — zostaw dane, wycenimy Twoją sprawę i powiemy, czy idziemy PRS czy S24.</p>
+              <p className="text-lg text-white/90">Wiesz już, ile kosztuje zmiana adresu spółki z o.o. — zostaw dane, wycenimy Twoją sprawę.</p>
               <p className="text-lg text-white/90">Poznaj koszt innych zmian: <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300"><strong>Poznaj koszt innych zmian</strong></Link>.</p>
             </div>
           </div>
@@ -414,8 +414,8 @@ export default function ZmianaAdresuSpolkiZooPage() {
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zleć zmianę adresu / siedziby spółki z o.o.</h2>
               <p className="text-lg text-white/90">
                 Jeżeli chcesz zrobić zmianę adresu albo siedziby bez ryzyka braków formalnych, zleć to nam. Ustalimy prawidłową
-                kwalifikację (adres vs siedziba), przygotujemy dokumenty, złożymy wniosek elektronicznie i doprowadzimy sprawę do
-                wpisu w KRS.
+                kwalifikację (adres vs siedziba), przygotujemy dokumenty, złożymy wniosek elektronicznie i przeprowadzimy procedurę
+                zgłoszenia zmiany wpisu w KRS.
               </p>
               <p className="text-lg text-white/90">
                 Zobacz też inne{" "}
