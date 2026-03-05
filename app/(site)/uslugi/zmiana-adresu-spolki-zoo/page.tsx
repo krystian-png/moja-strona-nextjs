@@ -166,9 +166,9 @@ export default function ZmianaAdresuSpolkiZooPage() {
                 </p>
                 <p className="text-lg text-white/90">
                   <strong>Szukasz „zmiana adresu spółki z o.o.”?</strong> Zgłosimy zmianę adresu Twojej spółki z o.o. do KRS (PRS/S24)
-                  i doprowadzimy sprawę do wpisu — pełna obsługa od <strong>799 zł netto</strong>. <strong>CTA (hero):</strong> Wyceń
-                  zmianę / zostaw dane w formularzu lub zadzwoń: <strong>572 234 779</strong>.
+                  i doprowadzimy sprawę do wpisu — pełna obsługa od <strong>799 zł netto</strong>.
                 </p>
+                <p className="text-lg text-white/90">Wyceń zmianę adresu spółki z o.o. – zostaw dane w formularzu albo zadzwoń: 572 234 779.</p>
                 <p className="text-lg text-white/90">
                   W tej usłudze prowadzimy sprawę „od kwalifikacji do wpisu”: ustalamy, czy masz <strong>zmianę adresu</strong>
                   (ulica/numer/lokal w tej samej miejscowości), czy <strong>zmianę siedziby</strong> (inna miejscowość), dobieramy
@@ -260,7 +260,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
               <p className="text-lg text-white/90"><strong>Koszt naszej obsługi zmiany adresu/siedziby sp. z o.o. zaczyna się od 799 zł netto</strong> i zależy od tego, czy sprawa jest prostą aktualizacją adresu, czy zmianą siedziby wymagającą pełnego pakietu korporacyjnego oraz od liczby dokumentów i złożoności stanu faktycznego.</p>
               <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany adresu/siedziby do KRS?</h3>
               <p className="text-lg text-white/90">Czas zależy od obciążenia sądu rejestrowego oraz od jakości wniosku i dokumentów. W praktyce opóźnienia wynikają najczęściej z wezwań do uzupełnienia braków formalnych: rozbieżności danych, braków w dokumentach stanowiących podstawę wpisu albo problemów z podpisami i załącznikami. Dlatego w tej usłudze nacisk kładziemy na kompletność i spójność dokumentacji „od razu”, zanim wniosek trafi do sądu.</p>
-              <p className="text-lg text-white/90"><strong>Mini-CTA (po kosztach):</strong> Wiesz już, ile kosztuje zmiana adresu spółki z o.o. — zostaw dane, <strong>wycenimy Twoją sprawę</strong> i powiemy, czy idziemy PRS czy S24.</p>
+              <p className="text-lg text-white/90">Wiesz już, ile kosztuje zmiana adresu spółki z o.o. — zostaw dane, wycenimy Twoją sprawę i powiemy, czy idziemy PRS czy S24.</p>
               <p className="text-lg text-white/90">Poznaj koszt innych zmian: <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300"><strong>Poznaj koszt innych zmian</strong></Link>.</p>
             </div>
           </div>
@@ -356,14 +356,13 @@ export default function ZmianaAdresuSpolkiZooPage() {
                 w rejestrze (art. 133 § 2² k.p.c.).
               </p>
               <p className="text-lg text-white/90">
-                Link do poradnika technicznego PRS/S24 (bez dublowania instrukcji w landingu):{" "}
+                Chcesz pełną instrukcję techniczną PRS/S24 i przykłady wypełnienia wniosku? Zobacz poradnik:{" "}
                 <Link
                   href="/artykul/zmiana-adresu-i-siedziby-spolki-w-krs-krok-po-kroku"
                   className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
                 >
-                  /artykul/zmiana-adresu-i-siedziby-spolki-w-krs-krok-po-kroku
+                  https://zmianakrs.pl/artykul/zmiana-adresu-i-siedziby-spolki-w-krs-krok-po-kroku
                 </Link>
-                .
               </p>
               {/* TODO: potwierdzić/podmienić slug artykułu, jeśli docelowa ścieżka będzie inna */}
             </div>
@@ -407,14 +406,6 @@ export default function ZmianaAdresuSpolkiZooPage() {
                 <h3 className="text-lg font-semibold">Jakie ryzyko wiąże się z brakiem aktualizacji danych adresowych?</h3>
                 <p className="text-lg text-white/90">Brak aktualizacji może powodować ryzyka doręczeń i skutki procesowe (art. 133 § 2² k.p.c.) oraz ryzyka obrotowe wynikające z zasady zaufania do rejestru (art. 17 ust. 1–2 ustawy o KRS).</p>
               </div>
-
-              <p className="text-xl font-bold text-white/90"># Pełne brzmienie cytowanych przepisów (do weryfikacji)</p>
-              <p className="text-lg text-white/90">1) art. 41 k.c.</p>
-              <p className="text-lg text-white/90">2) art. 22 ust. 1 ustawy o KRS</p>
-              <p className="text-lg text-white/90">3) art. 255 § 1 KSH</p>
-              <p className="text-lg text-white/90">4) art. 17 ust. 1–2 ustawy o KRS</p>
-              <p className="text-lg text-white/90">5) art. 55 pkt 2–3 u.k.s.c.</p>
-              <p className="text-lg text-white/90">6) art. 133 § 2² k.p.c.</p>
             </div>
           </div>
 
