@@ -240,8 +240,15 @@ export default function ZmianaZarzaduPage() {
                 aktu notarialnego, należy uwzględnić również koszty notarialne.
               </p>
               <p className="text-lg text-white/90">
-                Koszt naszej obsługi zmiany zarządu sp. z o.o. zaczyna się od około 799 zł, w zależności od zakresu zmian oraz liczby
+                Koszt naszej obsługi zmiany zarządu sp. z o.o. zaczyna się od 799 zł, w zależności od zakresu zmian oraz liczby
                 przygotowywanych dokumentów.
+              </p>
+              <p className="text-lg text-white/90">
+                Chcesz porównać koszty innych spraw rejestrowych? Zobacz{" "}
+                <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
+                  cennik usług KRS
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -404,6 +411,14 @@ export default function ZmianaZarzaduPage() {
               </p>
             </div>
           </div>
+
+          <p className="text-lg text-white/90">
+            Zobacz też inne{" "}
+            <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
+              usługi zmian wpisu w KRS
+            </Link>
+            .
+          </p>
 
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-5">
