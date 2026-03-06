@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 
-import InlineContactForm from "../zmiana-zarzadu-spolki-zoo/InlineContactForm"
+import InlineContactForm from "../_components/InlineContactForm"
 
 const pagePath = "/uslugi/zmiana-wspolnika-spolki-zoo"
 const pageUrl = `${siteUrl}${pagePath}`
