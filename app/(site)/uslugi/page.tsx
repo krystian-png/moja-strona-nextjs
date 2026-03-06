@@ -268,7 +268,9 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <LandingServices title="Najczęściej wybierane usługi" />
+        <div className="pt-8 sm:pt-10">
+          <LandingServices title="Najczęściej wybierane usługi" />
+        </div>
 
         <section className="pt-0 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
