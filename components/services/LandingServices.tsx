@@ -49,8 +49,8 @@ export default function LandingServices({
 }: LandingServicesProps) {
   return (
     <section className={className}>
-      <div className="rounded-2xl border border-white/20 p-6 backdrop-blur-sm sm:p-8">
-        <div className="mb-8">
+      <div>
+        <div className="mb-6">
           <h2 className="text-center text-2xl font-bold text-amber-400 sm:text-3xl">{title}</h2>
         </div>
 
@@ -63,18 +63,18 @@ export default function LandingServices({
                 key={card.href}
                 href={card.href}
                 aria-label={card.ariaLabel}
-                className="group flex h-full flex-col rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition hover:bg-white/15"
+                className="group flex h-full flex-col rounded-xl border border-white/20 bg-white/10 p-4 transition hover:bg-white/15 sm:p-5"
               >
-                <div className="mb-4">
+                <div className="mb-3">
                   <div className={`inline-flex rounded-lg p-2.5 ${card.iconBgClassName}`}>
                     <Icon className="h-5 w-5" />
                   </div>
                 </div>
 
-                <h3 className="mb-2 text-center text-lg font-semibold text-amber-400">{card.title}</h3>
-                <p className="mb-5 flex-1 text-sm leading-relaxed text-white/80">{card.description}</p>
+                <h3 className="mb-2 text-center text-xl font-semibold leading-snug text-amber-400 sm:text-2xl">{card.title}</h3>
+                <p className="mb-4 flex-1 text-base leading-relaxed text-white/85">{card.description}</p>
 
-                <div className="mt-auto inline-flex items-center justify-between text-sm font-medium text-amber-300">
+                <div className="mt-auto inline-flex items-center justify-between text-base font-medium text-amber-300">
                   <span>Sprawdź usługę</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </div>
