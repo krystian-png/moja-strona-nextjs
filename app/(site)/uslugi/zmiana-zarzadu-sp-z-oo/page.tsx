@@ -10,7 +10,7 @@ import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-
 
 import InlineContactForm from "./InlineContactForm"
 
-const pagePath = "/uslugi/zmiana-zarzadu-sp-z-oo"
+const pagePath = "/uslugi/zmiana-zarzadu-spolki-zoo"
 const pageUrl = `${siteUrl}${pagePath}`
 
 const legalServiceSchema = {
