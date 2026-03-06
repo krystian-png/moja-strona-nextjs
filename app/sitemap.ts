@@ -21,6 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/o-nas": "app/(site)/o-nas/page.tsx",
     "/cennik": "app/(site)/cennik/page.tsx",
     "/uslugi": "app/(site)/uslugi/page.tsx",
+    "/uslugi/zmiana-zarzadu-spolki-zoo": "app/(site)/uslugi/zmiana-zarzadu-spolki-zoo/page.tsx",
+    "/uslugi/zmiana-umowy-spolki-zoo": "app/(site)/uslugi/zmiana-umowy-spolki-zoo/page.tsx",
+    "/uslugi/zmiana-adresu-spolki-zoo": "app/(site)/uslugi/zmiana-adresu-spolki-zoo/page.tsx",
+    "/uslugi/zmiana-wspolnika-spolki-zoo": "app/(site)/uslugi/zmiana-wspolnika-spolki-zoo/page.tsx",
     "/en": "app/(site)/en/page.tsx",
     "/en/contact": "app/(site)/en/contact/page.tsx",
   };
