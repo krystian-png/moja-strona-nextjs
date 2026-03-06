@@ -63,7 +63,7 @@ export default function LandingServices({
                 key={card.href}
                 href={card.href}
                 aria-label={card.ariaLabel}
-                className="group flex h-full flex-col rounded-xl border border-white/20 bg-slate-900/70 p-5 transition hover:bg-slate-900/80 sm:p-6"
+                className="group flex h-full flex-col rounded-xl border border-white/20 bg-stone-900/60 p-4 transition hover:bg-stone-900/70 sm:p-5"
               >
                 <div className="mb-3">
                   <div className={`inline-flex rounded-lg p-2.5 ${card.iconBgClassName}`}>
@@ -71,8 +71,8 @@ export default function LandingServices({
                   </div>
                 </div>
 
-                <h3 className="mb-3 min-h-[3.5rem] text-center text-xl font-semibold leading-tight text-amber-400 sm:text-[1.4rem]">{card.title}</h3>
-                <p className="mb-4 min-h-[7.5rem] text-base leading-relaxed text-white/90">{card.description}</p>
+                <h3 className="mb-2 min-h-[3.2rem] text-center text-xl font-semibold leading-tight text-amber-400 sm:text-[1.4rem]">{card.title}</h3>
+                <p className="mb-3 min-h-[6.5rem] text-[1.08rem] leading-relaxed text-white/90">{card.description}</p>
 
                 <div className="mt-auto inline-flex items-center justify-between text-base font-medium text-amber-300">
                   <span>Sprawdź usługę</span>
