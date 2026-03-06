@@ -513,6 +513,35 @@ export default function ZmianaZarzaduPage() {
 
           <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
             <div className="space-y-4">
+              <h2 className="mb-2 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zobacz także</h2>
+              <p className="text-lg text-white/90">Sprawdź również inne najczęściej wybierane usługi związane ze zmianami w KRS.</p>
+              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
+                <li>
+                  <Link href="/uslugi/zmiana-adresu-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
+                    zmiana adresu spółki z o.o.
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/uslugi/zmiana-wspolnika-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
+                    zmiana wspólnika spółki z o.o.
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/uslugi/zmiana-umowy-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
+                    zmiana umowy spółki z o.o.
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
+                    wszystkie usługi zmian w KRS
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+            <div className="space-y-4">
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zleć zmianę zarządu sp. z o.o.</h2>
               <p className="text-lg text-white/90">
                 Jeżeli chcesz przeprowadzić zmianę zarządu spółki szybko i bez ryzyka błędów formalnych, skontaktuj się z nami.
