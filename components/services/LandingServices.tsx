@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, FileText, MapPin, Settings, Users } from "lucide-react"
+import { ArrowRight, FileText, MapPin, Users } from "lucide-react"
 
 type LandingServicesProps = {
   title?: string
@@ -49,10 +49,9 @@ export default function LandingServices({
 }: LandingServicesProps) {
   return (
     <section className={className}>
-      <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-        <div className="mb-8 space-y-3">
-          <h2 className="text-2xl font-bold text-amber-400 sm:text-3xl">{title}</h2>
-          <p className="text-lg text-white/90">{description}</p>
+      <div className="rounded-2xl border border-white/20 p-6 backdrop-blur-sm sm:p-8">
+        <div className="mb-8">
+          <h2 className="text-center text-2xl font-bold text-amber-400 sm:text-3xl">{title}</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -66,14 +65,13 @@ export default function LandingServices({
                 aria-label={card.ariaLabel}
                 className="group flex h-full flex-col rounded-xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm transition hover:bg-white/15"
               >
-                <div className="mb-4 flex items-start justify-between gap-3">
-                  <div className={`rounded-lg p-2.5 ${card.iconBgClassName}`}>
+                <div className="mb-4">
+                  <div className={`inline-flex rounded-lg p-2.5 ${card.iconBgClassName}`}>
                     <Icon className="h-5 w-5" />
                   </div>
-                  <Settings className="h-5 w-5 text-white/30 transition group-hover:text-white/50" />
                 </div>
 
-                <h3 className="mb-2 text-lg font-semibold text-white">{card.title}</h3>
+                <h3 className="mb-2 text-center text-lg font-semibold text-amber-400">{card.title}</h3>
                 <p className="mb-5 flex-1 text-sm leading-relaxed text-white/80">{card.description}</p>
 
                 <div className="mt-auto inline-flex items-center justify-between text-sm font-medium text-amber-300">
