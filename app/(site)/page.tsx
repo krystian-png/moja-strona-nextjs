@@ -8,6 +8,7 @@ import Trust from "@/components/Trust"
 import FAQ from "@/components/FAQ"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
 import Footer from "@/components/Footer"
+import LandingServices from "@/components/services/LandingServices"
 import heroBackgroundImage from "@/public/images/zmiana-wpisu-w-krs-tlo-strony-glownej-profesjonalna-poczekalnia-prawnicza.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
@@ -123,6 +124,7 @@ Znajdziesz tam szczegółowe stawki oraz opłaty obowiązujące przy zmianie wpi
       <Navbar />
       <main className="py-32">
         <Hero />
+        <LandingServices />
         <Features />
         <Trust />
         <FAQ />

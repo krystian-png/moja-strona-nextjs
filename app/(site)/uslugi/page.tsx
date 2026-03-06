@@ -5,6 +5,7 @@ import Script from "next/script"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import SEOExpandableSection from "@/components/SEOExpandableSection"
+import LandingServices from "@/components/services/LandingServices"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 import ServicesList from "./ServicesList"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
@@ -267,7 +268,11 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="pt-0 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="pt-8 sm:pt-10">
+          <LandingServices title="Najczęściej wybierane usługi" />
+        </div>
+
+        <section className="pt-12 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="space-y-12">
               <div

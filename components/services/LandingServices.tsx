@@ -1,0 +1,88 @@
+import Link from "next/link"
+import { ArrowRight, FileText, MapPin, Users } from "lucide-react"
+
+type LandingServicesProps = {
+  title?: string
+  description?: string
+  className?: string
+}
+
+const serviceCards = [
+  {
+    title: "Zmiana zarządu spółki z o.o.",
+    description: "Powołanie, odwołanie lub rezygnacja członka zarządu oraz zgłoszenie zmiany do KRS.",
+    href: "/uslugi/zmiana-zarzadu-spolki-zoo",
+    ariaLabel: "Zmiana zarządu spółki z o.o. – usługa obsługi wniosku KRS",
+    icon: Users,
+    iconBgClassName: "bg-indigo-500/20 text-indigo-300",
+  },
+  {
+    title: "Zmiana adresu spółki z o.o.",
+    description: "Zmiana siedziby lub adresu spółki wraz z przygotowaniem dokumentów i zgłoszeniem do KRS.",
+    href: "/uslugi/zmiana-adresu-spolki-zoo",
+    ariaLabel: "Zmiana adresu spółki z o.o. – usługa obsługi wniosku KRS",
+    icon: MapPin,
+    iconBgClassName: "bg-emerald-500/20 text-emerald-300",
+  },
+  {
+    title: "Zmiana wspólnika spółki z o.o.",
+    description: "Zbycie udziałów oraz aktualizacja listy wspólników i zgłoszenie zmiany do KRS.",
+    href: "/uslugi/zmiana-wspolnika-spolki-zoo",
+    ariaLabel: "Zmiana wspólnika spółki z o.o. – usługa obsługi wniosku KRS",
+    icon: Users,
+    iconBgClassName: "bg-amber-500/20 text-amber-300",
+  },
+  {
+    title: "Zmiana umowy spółki z o.o.",
+    description: "Zmiana treści umowy spółki wraz z przygotowaniem dokumentów i wpisem do KRS.",
+    href: "/uslugi/zmiana-umowy-spolki-zoo",
+    ariaLabel: "Zmiana umowy spółki z o.o. – usługa obsługi wniosku KRS",
+    icon: FileText,
+    iconBgClassName: "bg-sky-500/20 text-sky-300",
+  },
+] as const
+
+export default function LandingServices({
+  title = "Najczęściej wybierane zmiany danych spółki w KRS",
+  description = "Obsługujemy najczęstsze zmiany wpisów w KRS dla spółek z o.o. – od przygotowania dokumentów po złożenie wniosku do sądu rejestrowego.",
+  className,
+}: LandingServicesProps) {
+  return (
+    <section className={className}>
+      <div>
+        <div className="mb-6">
+          <h2 className="text-center text-3xl font-bold text-amber-400 sm:text-4xl lg:text-5xl">{title}</h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {serviceCards.map((card) => {
+            const Icon = card.icon
+
+            return (
+              <Link
+                key={card.href}
+                href={card.href}
+                aria-label={card.ariaLabel}
+                className="group flex h-full flex-col rounded-xl border border-white/20 bg-stone-900/60 p-4 transition hover:bg-stone-900/70 sm:p-5"
+              >
+                <div className="mb-3">
+                  <div className={`inline-flex rounded-lg p-2.5 ${card.iconBgClassName}`}>
+                    <Icon className="h-5 w-5" />
+                  </div>
+                </div>
+
+                <h3 className="mb-2 min-h-[3.2rem] text-center text-xl font-semibold leading-tight text-amber-400 sm:text-[1.4rem]">{card.title}</h3>
+                <p className="mb-3 min-h-[6.5rem] text-[1.08rem] leading-relaxed text-white/90">{card.description}</p>
+
+                <div className="mt-auto inline-flex items-center justify-between text-base font-medium text-amber-300">
+                  <span>Sprawdź usługę</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}

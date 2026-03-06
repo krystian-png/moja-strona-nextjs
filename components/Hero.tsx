@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center py-20 px-4 sm:py-24 bg-transparent">
+    <section className="flex flex-col items-center justify-center text-center px-4 pb-20 pt-10 sm:pb-24 sm:pt-14 bg-transparent">
       <div className="w-4/5 mx-auto text-white">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 leading-tight">
           Zmiana wpisu w <span className="text-amber-400">KRS</span>{' '}
