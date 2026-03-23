@@ -5,8 +5,9 @@ import { AlertTriangle, CheckCircle, FileText, Mail, Phone } from "lucide-react"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import SEOExpandableSection from "@/components/SEOExpandableSection"
 import { Card } from "@/components/ui/card"
+
+import InlineContactForm from "../uslugi/_components/InlineContactForm"
 import professionalWaitingRoomImage from "@/public/images/profesjonalna-poczekalnia-prawnicza-z-eleganckimi-krzeslami-atmosfera-zaufania-podczas-ustalania-cen.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
@@ -30,15 +31,6 @@ const benefits = [
   "Dokumenty gotowe do podpisu i bezpieczne złożenie wniosku",
 ]
 
-const seoContent = `Cennik usług – zmiana danych w KRS dla spółek i biur rachunkowych
-Oferujemy konkurencyjne ceny za kompleksową obsługę zmian wpisu w Krajowym Rejestrze Sądowym (KRS). Każdą usługę wyceniamy indywidualnie, biorąc pod uwagę zakres zmian w KRS, tryb zgłoszenia (papierowy lub elektroniczny przez system S24) oraz potrzeby klienta. Dzięki temu masz pewność, że płacisz tylko za to, czego faktycznie potrzebujesz.
-Zapewniamy pełną obsługę wniosków KRS – od analizy potrzeb, przez przygotowanie uchwał do KRS i wszystkich dokumentów rejestrowych spółki, po złożenie wniosku o zmianę w KRS w sądzie rejestrowym. Obsługujemy zarówno zmiany zarządu w KRS, zmianę danych rejestracyjnych spółki (adresu, PKD, wspólników, kapitału), jak i zmianę umowy spółki KRS.
-Obsługa elektronicznego zgłoszenia zmian do KRS – system S24
-Proponujemy również kompleksowe wsparcie w elektronicznym zgłoszeniu zmian do KRS za pośrednictwem systemu S24. To szybki i wygodny sposób na rejestrację zmian, pozwalający ograniczyć formalności i skrócić czas oczekiwania na wpis zmian do KRS. Przygotowujemy komplet dokumentów i pomagamy w ich prawidłowym złożeniu online.
-Indywidualna wycena i elastyczne warunki współpracy
-Każda zmiana w KRS ma swoją specyfikę. Dlatego zawsze przygotowujemy indywidualną wycenę dostosowaną do potrzeb Twojej firmy. Proponujemy elastyczne warunki dla spółek oraz dla biur rachunkowych obsługujących wielu klientów i chcących korzystać z naszej obsługi wniosków KRS.
-Skontaktuj się z nami, aby poznać szczegóły oferty
-Zachęcamy do kontaktu w celu uzyskania indywidualnej wyceny i omówienia szczegółów współpracy. Oferujemy konkurencyjne ceny, profesjonalne doradztwo i pełne bezpieczeństwo formalno-prawne w procesie zmiany wpisu w KRS.`
 
 const pagePath = "/cennik"
 const pageUrl = `${siteUrl}${pagePath}`
@@ -96,23 +88,23 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Cennik obsługi zmian w KRS",
+  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
   description:
-    "Sprawdź ile kosztuje złożenie wniosku o zmianę w KRS, przygotowanie dokumentów oraz wsparcie przy założeniu spółki z o.o.",
-  alternates: { canonical: pagePath },
+    "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Cennik obsługi zmian w KRS | ZmianaKRS",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
     description:
-      "Przejrzyste ceny obsługi zmian w KRS, przygotowania dokumentów i rejestracji spółek z o.o.",
+      "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     url: pageUrl,
     siteName: brandName,
     images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Cennik usług KRS" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cennik obsługi zmian w KRS",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
     description:
-      "Poznaj ceny złożenia wniosku do KRS, przygotowania dokumentów i rejestracji spółek.",
+      "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -141,9 +133,9 @@ export default function PricingPage() {
               {/* Sekcja: Koszt zmiany wpisu */}
               <section className="rounded-3xl bg-white/10 border border-white/20 px-8 py-12 backdrop-blur-sm text-left">
                 <div className="text-center">
-                  <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
+                  <h1 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
                     Koszt zmiany wpisu w rejestrze przedsiębiorców KRS
-                  </h2>
+                  </h1>
                   <p className="text-lg sm:text-xl text-slate-300 mb-10">
                     Na koszt zmiany wpisu w rejestrze przedsiębiorców KRS składają się cztery niezależne elementy:
                   </p>
@@ -190,9 +182,9 @@ export default function PricingPage() {
               </section>
               {/* H1 - Główny nagłówek - CAŁY ŻÓŁTY */}
               <div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-amber-400">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-amber-400">
                   Cennik usług zmian wpisu w KRS
-                </h1>
+                </h2>
                 <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mx-auto max-w-4xl">
                   Oferujemy jasne, przejrzyste ceny i elastyczny model rozliczeń – dopasowany do Twoich potrzeb. Z góry wiesz, ile zapłacisz i za co. Każdy klient sam decyduje o zakresie usługi – możesz zlecić nam tylko złożenie wniosku o zmianę wpisu w KRS, albo także przygotowanie potrzebnych dokumentów. Ty wybierasz – my działamy.
                 </p>
@@ -203,6 +195,62 @@ export default function PricingPage() {
                   <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                     Przejrzyste ceny wniosków o zmianę wpisu w KRS
                   </h2>
+                </div>
+                <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 mb-8">
+                  <h3 className="text-xl font-bold text-white mb-6 text-center">
+                    Podsumowanie opłat za zmianę wpisu w KRS
+                  </h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-white/20">
+                          <th className="text-left py-3 px-4 text-white font-semibold">Co</th>
+                          <th className="text-right py-3 px-4 text-amber-400 font-semibold">Ile</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-white/10">
+                        <tr>
+                          <td className="py-3 px-4 text-slate-300">
+                            Opłata sądowa — wniosek przez PRS
+                          </td>
+                          <td className="py-3 px-4 text-amber-400 font-bold text-right">250 zł</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-4 text-slate-300">
+                            Opłata sądowa — wniosek przez S24
+                            (przy spełnieniu warunków ustawowych)
+                          </td>
+                          <td className="py-3 px-4 text-amber-400 font-bold text-right">200 zł</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-4 text-slate-300">
+                            Opłata skarbowa od pełnomocnictwa
+                          </td>
+                          <td className="py-3 px-4 text-amber-400 font-bold text-right">17 zł</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-4 text-slate-300">
+                            Nasza obsługa — złożenie wniosku
+                          </td>
+                          <td className="py-3 px-4 text-amber-400 font-bold text-right">od 799 zł netto</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-4 text-slate-300">
+                            Przygotowanie dokumentów
+                          </td>
+                          <td className="py-3 px-4 text-amber-400 font-bold text-right">od 50 zł netto / dokument</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="mt-8 border-t border-white/10 pt-8">
+                    <h3 className="text-lg font-bold text-white mb-4 text-center">
+                      Masz pytanie o cenę? Napisz do nas
+                    </h3>
+                    <div className="flex justify-center">
+                      <InlineContactForm className="w-full max-w-md" />
+                    </div>
+                  </div>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8">
                   {/* Karta 1: Złożenie wniosku - ikona AMBER */}
@@ -494,7 +542,6 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
-        <SEOExpandableSection content={seoContent} pageId="pricing" />
       </main>
       <Footer />
     </div>
