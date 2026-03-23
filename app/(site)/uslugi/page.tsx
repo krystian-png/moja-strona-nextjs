@@ -273,6 +273,117 @@ export default function ServicesPage() {
                     <p className="mt-2 text-justify text-base leading-relaxed text-gray-300">
                       {popularService.description}
                     </p>
+
+                    <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+                      <div>
+                        <h4 className="mb-3 text-lg font-semibold text-white">
+                          Oferujemy pomoc w zakresie:
+                        </h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link 
+                                href="/uslugi/zmiana-zarzadu-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Zmiany zarządu (powołanie, odwołanie, rezygnacja)
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link
+                                href="/uslugi/zmiana-adresu-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Zmiany adresu siedziby spółki
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link
+                                href="/uslugi/zmiana-umowy-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Zmiany przedmiotu działalności (PKD)
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link
+                                href="/uslugi/zmiana-wspolnika-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Zmiany wspólników (zbycie udziałów)
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link
+                                href="/uslugi/zmiana-umowy-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Zmiany sposobu reprezentacji spółki
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">
+                              <Link
+                                href="/uslugi/zmiana-wspolnika-spolki-zoo"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Aktualizacji listy wspólników
+                              </Link>
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                            <span className="text-sm">Wpisania lub zmiany prokurenta</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="mb-3 text-lg font-semibold text-white">
+                          W cenie usługi:
+                        </h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
+                            <span className="text-sm">
+                              Przygotowanie lub sprawdzenie dokumentów do KRS
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
+                            <span className="text-sm">
+                              Opracowanie kompletnego wniosku o zmianę wpisu
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
+                            <span className="text-sm">
+                              Złożenie wniosku elektronicznie przez PRS
+                            </span>
+                          </li>
+                          <li className="flex items-start gap-3 text-gray-200">
+                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
+                            <span className="text-sm">
+                              Bieżąca komunikacja z sądem
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
