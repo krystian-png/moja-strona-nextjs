@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   description:
     "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title: "Zmiana adresu i siedziby spółki z o.o. – zgłoszenie do KRS (PRS/S24) | ZmianaKRS.pl",

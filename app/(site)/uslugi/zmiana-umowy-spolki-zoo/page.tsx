@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   description:
     "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian. Obsługa od 799 zł.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title: "Zmiana umowy sp. z o.o. – S24 lub notariusz, wpis do KRS | ZmianaKRS.pl",
