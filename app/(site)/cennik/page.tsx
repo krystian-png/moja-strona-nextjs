@@ -202,38 +202,47 @@ export default function PricingPage() {
                       Podsumowanie opłat za zmianę wpisu w KRS
                     </h3>
                     <div className="w-full max-w-md flex-1 rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-sm sm:p-6">
-                      <ul className="space-y-3">
-                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-3">
+                      <ul className="space-y-4">
+                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Opłata sądowa — PRS
                           </span>
                           <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">250 zł</span>
                         </li>
-                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-3">
+                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Opłata sądowa — S24
                           </span>
                           <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">200 zł</span>
                         </li>
-                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-3">
+                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Opłata skarbowa od pełnomocnictwa
                           </span>
                           <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">17 zł</span>
                         </li>
-                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-3">
+                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Nasza obsługa — złożenie wniosku
                           </span>
                           <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">od 799 zł netto</span>
                         </li>
-                        <li className="flex items-center justify-between gap-3">
+                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Przygotowanie dokumentów
                           </span>
                           <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">od 50 zł netto / dokument</span>
                         </li>
+                        <li className="flex items-center justify-between gap-3">
+                          <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
+                            Opłaty notarialne
+                          </span>
+                          <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">w zależności od czynności</span>
+                        </li>
                       </ul>
+                      <p className="mt-6 border-t border-white/10 pt-4 text-xs leading-relaxed text-slate-300">
+                        Obowiązek publikacji ogłoszeń o wpisie do KRS w Monitorze Sądowym i Gospodarczym (MSiG) oraz powiązana z nim opłata (zazwyczaj 100 zł) zostały zniesione od 29 listopada 2025 roku.
+                      </p>
                     </div>
                   </div>
 
