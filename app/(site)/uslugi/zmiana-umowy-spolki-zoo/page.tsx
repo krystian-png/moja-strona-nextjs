@@ -20,6 +20,15 @@ const legalServiceSchema = {
   url: pageUrl,
   description:
     "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Dobór trybu: S24 vs notariusz. Obsługa od 799 zł.",
+  offers: {
+    "@type": "Offer",
+    price: "799",
+    priceCurrency: "PLN",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      description: "cena netto od",
+    },
+  },
   provider: organizationSchema,
 }
 

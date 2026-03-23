@@ -5,7 +5,7 @@ export const brandName = "zmianakrs.pl"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": ["LegalService", "Organization"],
   "@id": `${siteUrl}/#organization`,
   name: "Krystian Karpiuk Kancelaria Radcy Prawnego",
   alternateName: "zmianakrs.pl",

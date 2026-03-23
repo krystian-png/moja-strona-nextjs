@@ -20,6 +20,15 @@ const legalServiceSchema = {
   url: pageUrl,
   description:
     "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki (ograniczenia zbywalności), dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
+  offers: {
+    "@type": "Offer",
+    price: "799",
+    priceCurrency: "PLN",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      description: "cena netto od",
+    },
+  },
   provider: organizationSchema,
 }
 
