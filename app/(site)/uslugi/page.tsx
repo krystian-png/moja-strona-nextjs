@@ -4,7 +4,6 @@ import Script from "next/script"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import SEOExpandableSection from "@/components/SEOExpandableSection"
 import LandingServices from "@/components/services/LandingServices"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 import ServicesList from "./ServicesList"
@@ -169,7 +168,7 @@ export const metadata: Metadata = {
   description:
     "Profesjonalne usługi zmian wpisu w KRS dla spółek – przygotowanie dokumentów, obsługa wniosków KRS i zakładanie spółek z o.o. Zajmujemy się zmianą danych spółki w KRS od analizy dokumentów po wpis zmian do rejestru.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title:
@@ -197,33 +196,6 @@ export const metadata: Metadata = {
   },
 }
 
-const seoSectionContent = `Nasze usługi – kompleksowa obsługa zmian w KRS dla spółek i biur rachunkowych
-
-Świadczymy pełen zakres usług związanych ze zmianami danych w KRS dla spółek prawa handlowego, fundacji i stowarzyszeń. Pomagamy w przygotowaniu dokumentów, sporządzaniu uchwał i składaniu wniosków do sądu rejestrowego. Zapewniamy kompleksową obsługę wniosków KRS – od analizy potrzeb klienta, przez przygotowanie dokumentów, aż po złożenie wniosku i monitorowanie wpisu zmian do KRS.
-
-Specjalizujemy się w profesjonalnej pomocy przy zmianie wpisu w KRS – niezależnie od zakresu zmian. Doradzamy, jak zmienić dane w KRS, przygotowujemy uchwały do KRS i pomagamy w prawidłowym sporządzeniu wniosku o zmianę w KRS. Naszym celem jest zapewnienie szybkiego, bezpiecznego i zgodnego z przepisami przeprowadzenia całego procesu.
-
-Zakres naszych usług obejmuje między innymi:
-
-przygotowanie i składanie wniosku o zmianę w KRS
-zmianę zarządu w KRS
-zmianę danych rejestracyjnych spółki w KRS
-zmianę adresu siedziby, PKD, wspólników lub kapitału zakładowego
-zgłoszenie zmian do KRS drogą elektroniczną lub tradycyjną
-elektroniczne zgłoszenie zmian do KRS przez system S24
-wpis zmian do KRS w rejestrze sądowym
-przygotowanie uchwał i dokumentów do KRS
-obsługę wniosków KRS dla spółek i biur rachunkowych
-
-Elektroniczne zgłoszenie zmian do KRS – system S24
-
-Ułatwiamy również elektroniczne zgłoszenie zmian do KRS poprzez system S24. Przygotowujemy wszystkie wymagane dokumenty i pomagamy w ich poprawnym złożeniu online. System S24 to szybki i wygodny sposób na rejestrację zmian w KRS, oszczędzający czas i ograniczający formalności.
-
-Współpraca z biurami rachunkowymi
-
-Oferujemy dedykowaną obsługę zmian w KRS dla biur rachunkowych. Wspieramy ich klientów w procesie aktualizacji danych spółki w KRS, przygotowując kompletne dokumenty i wnioski. Proponujemy atrakcyjne warunki współpracy, indywidualne podejście i profesjonalne wsparcie na każdym etapie obsługi wniosków KRS.
-
-Skontaktuj się z nami i poznaj szczegóły naszej oferty. Dzięki nam zmiana danych w KRS, zgłoszenie zmian sądowi rejestrowemu i przygotowanie dokumentów rejestrowych spółki przebiegają sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function ServicesPage() {
   const popularService = mainServices[0]
@@ -303,36 +275,15 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-                    <div>
-                      <h4 className="mb-3 text-lg font-semibold text-white">Oferujemy pomoc w zakresie:</h4>
-                      <ul className="space-y-2">
-                        {popularService.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-3 text-gray-200">
-                            <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {popularService.included && (
-                      <div>
-                        <h4 className="mb-3 text-lg font-semibold text-white">W cenie usługi:</h4>
-                        <ul className="space-y-2">
-                          {popularService.included.map((item) => (
-                            <li key={item} className="flex items-start gap-3 text-gray-200">
-                              <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                              <span className="text-sm">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="mt-6">
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                      href="/contact"
+                      href="/uslugi/zmiana-zarzadu-spolki-zoo"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                    >
+                      Sprawdź szczegóły usługi →
+                    </Link>
+                    <Link
+                      href="/kontakt"
                       className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                     >
                       Skontaktuj się w tej sprawie
@@ -400,7 +351,7 @@ export default function ServicesPage() {
 
                       <div className="mt-6 space-y-4">
                         <Link
-                          href="/contact"
+                          href="/kontakt"
                           className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                         >
                           Skontaktuj się w tej sprawie
@@ -475,7 +426,7 @@ export default function ServicesPage() {
 
                 <div className="mt-6">
                   <Link
-                    href="/contact"
+                    href="/kontakt"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
                     Skontaktuj się w tej sprawie
@@ -617,7 +568,7 @@ export default function ServicesPage() {
               </div>
               <div className="mt-12 text-center">
                 <Link
-                  href="/contact"
+                  href="/kontakt"
                   className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
                 >
                   Porozmawiajmy o Twoich potrzebach
@@ -628,11 +579,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <SEOExpandableSection content={seoSectionContent} pageId="services" />
-          </div>
-        </section>
       </main>
 
       <Footer />
