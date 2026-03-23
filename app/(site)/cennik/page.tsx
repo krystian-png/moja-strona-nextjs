@@ -196,53 +196,50 @@ export default function PricingPage() {
                     Przejrzyste ceny wniosków o zmianę wpisu w KRS
                   </h2>
                 </div>
-                <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 mb-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-start">
-                    <div>
-                      <h3 className="text-xl font-bold text-amber-400 mb-6">
-                        Podsumowanie opłat za zmianę wpisu w KRS
-                      </h3>
-                      <ul className="space-y-3">
-                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
-                          <span className="text-slate-300 text-sm">
-                            Opłata sądowa — wniosek przez PRS
-                          </span>
-                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">250 zł</span>
-                        </li>
-                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
-                          <span className="text-slate-300 text-sm">
-                            Opłata sądowa — wniosek przez S24
-                            (przy spełnieniu warunków ustawowych)
-                          </span>
-                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">200 zł</span>
-                        </li>
-                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
-                          <span className="text-slate-300 text-sm">
-                            Opłata skarbowa od pełnomocnictwa
-                          </span>
-                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">17 zł</span>
-                        </li>
-                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
-                          <span className="text-slate-300 text-sm">
-                            Nasza obsługa — złożenie wniosku
-                          </span>
-                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 799 zł netto</span>
-                        </li>
-                        <li className="flex items-center justify-between">
-                          <span className="text-slate-300 text-sm">
-                            Przygotowanie dokumentów
-                          </span>
-                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 50 zł netto / dokument</span>
-                        </li>
-                      </ul>
-                    </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                  <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8">
+                    <h3 className="text-xl font-bold text-amber-400 mb-6">
+                      Podsumowanie opłat za zmianę wpisu w KRS
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-center justify-between border-b border-white/10 pb-4">
+                        <span className="text-white font-semibold text-sm">
+                          Opłata sądowa — PRS
+                        </span>
+                        <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">250 zł</span>
+                      </li>
+                      <li className="flex items-center justify-between border-b border-white/10 pb-4">
+                        <span className="text-white font-semibold text-sm">
+                          Opłata sądowa — S24
+                        </span>
+                        <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">200 zł</span>
+                      </li>
+                      <li className="flex items-center justify-between border-b border-white/10 pb-4">
+                        <span className="text-white font-semibold text-sm">
+                          Opłata skarbowa od pełnomocnictwa
+                        </span>
+                        <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">17 zł</span>
+                      </li>
+                      <li className="flex items-center justify-between border-b border-white/10 pb-4">
+                        <span className="text-white font-semibold text-sm">
+                          Nasza obsługa — złożenie wniosku
+                        </span>
+                        <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 799 zł netto</span>
+                      </li>
+                      <li className="flex items-center justify-between">
+                        <span className="text-white font-semibold text-sm">
+                          Przygotowanie dokumentów
+                        </span>
+                        <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 50 zł netto / dokument</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                    <div>
-                      <h3 className="text-xl font-bold text-amber-400 mb-6">
-                        Masz pytanie o cenę? Napisz do nas
-                      </h3>
-                      <InlineContactForm className="w-full" />
-                    </div>
+                  <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 flex flex-col">
+                    <h3 className="text-xl font-bold text-amber-400 mb-6">
+                      Masz pytanie o cenę? Napisz do nas
+                    </h3>
+                    <InlineContactForm className="w-full" />
                   </div>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8">
