@@ -73,7 +73,7 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/uslugi"
+                        href="/uslugi/zmiana-zarzadu-spolki-zoo"
                         className="transition-colors hover:text-white"
                       >
                         Zmiana zarządu w KRS
@@ -81,10 +81,26 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
-                        href="/uslugi"
+                        href="/uslugi/zmiana-umowy-spolki-zoo"
                         className="transition-colors hover:text-white"
                       >
                         Zmiana umowy spółki
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/uslugi/zmiana-adresu-spolki-zoo"
+                        className="transition-colors hover:text-white"
+                      >
+                        Zmiana adresu spółki
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/uslugi/zmiana-wspolnika-spolki-zoo"
+                        className="transition-colors hover:text-white"
+                      >
+                        Zmiana wspólnika spółki
                       </Link>
                     </li>
                     <li>
