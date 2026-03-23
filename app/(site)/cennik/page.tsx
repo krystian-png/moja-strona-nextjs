@@ -197,58 +197,51 @@ export default function PricingPage() {
                   </h2>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 mb-8">
-                  <h3 className="text-xl font-bold text-white mb-6 text-center">
-                    Podsumowanie opłat za zmianę wpisu w KRS
-                  </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-white/20">
-                          <th className="text-left py-3 px-4 text-white font-semibold">Co</th>
-                          <th className="text-right py-3 px-4 text-amber-400 font-semibold">Ile</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-white/10">
-                        <tr>
-                          <td className="py-3 px-4 text-slate-300">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-start">
+                    <div>
+                      <h3 className="text-xl font-bold text-amber-400 mb-6">
+                        Podsumowanie opłat za zmianę wpisu w KRS
+                      </h3>
+                      <ul className="space-y-3">
+                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
+                          <span className="text-slate-300 text-sm">
                             Opłata sądowa — wniosek przez PRS
-                          </td>
-                          <td className="py-3 px-4 text-amber-400 font-bold text-right">250 zł</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4 text-slate-300">
+                          </span>
+                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">250 zł</span>
+                        </li>
+                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
+                          <span className="text-slate-300 text-sm">
                             Opłata sądowa — wniosek przez S24
                             (przy spełnieniu warunków ustawowych)
-                          </td>
-                          <td className="py-3 px-4 text-amber-400 font-bold text-right">200 zł</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4 text-slate-300">
+                          </span>
+                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">200 zł</span>
+                        </li>
+                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
+                          <span className="text-slate-300 text-sm">
                             Opłata skarbowa od pełnomocnictwa
-                          </td>
-                          <td className="py-3 px-4 text-amber-400 font-bold text-right">17 zł</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4 text-slate-300">
+                          </span>
+                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">17 zł</span>
+                        </li>
+                        <li className="flex items-center justify-between border-b border-white/10 pb-3">
+                          <span className="text-slate-300 text-sm">
                             Nasza obsługa — złożenie wniosku
-                          </td>
-                          <td className="py-3 px-4 text-amber-400 font-bold text-right">od 799 zł netto</td>
-                        </tr>
-                        <tr>
-                          <td className="py-3 px-4 text-slate-300">
+                          </span>
+                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 799 zł netto</span>
+                        </li>
+                        <li className="flex items-center justify-between">
+                          <span className="text-slate-300 text-sm">
                             Przygotowanie dokumentów
-                          </td>
-                          <td className="py-3 px-4 text-amber-400 font-bold text-right">od 50 zł netto / dokument</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="mt-8 border-t border-white/10 pt-8">
-                    <h3 className="text-lg font-bold text-white mb-4 text-center">
-                      Masz pytanie o cenę? Napisz do nas
-                    </h3>
-                    <div className="flex justify-center">
-                      <InlineContactForm className="w-full max-w-md" />
+                          </span>
+                          <span className="text-amber-400 font-bold text-sm ml-4 shrink-0">od 50 zł netto / dokument</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-bold text-amber-400 mb-6">
+                        Masz pytanie o cenę? Napisz do nas
+                      </h3>
+                      <InlineContactForm className="w-full" />
                     </div>
                   </div>
                 </div>
