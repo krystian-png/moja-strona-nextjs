@@ -130,6 +130,15 @@ export default function PricingPage() {
         <section className="relative flex-1 pt-20 pb-20 text-white overflow-hidden">
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
             <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 space-y-16">
+              {/* H1 - Główny nagłówek - CAŁY ŻÓŁTY */}
+              <div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-amber-400">
+                  Cennik usług zmian wpisu w KRS
+                </h2>
+                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mx-auto max-w-4xl">
+                  Oferujemy jasne, przejrzyste ceny i elastyczny model rozliczeń – dopasowany do Twoich potrzeb. Z góry wiesz, ile zapłacisz i za co. Każdy klient sam decyduje o zakresie usługi – możesz zlecić nam tylko złożenie wniosku o zmianę wpisu w KRS, albo także przygotowanie potrzebnych dokumentów. Ty wybierasz – my działamy.
+                </p>
+              </div>
               {/* Sekcja: Koszt zmiany wpisu */}
               <section className="rounded-3xl bg-white/10 border border-white/20 px-8 py-12 backdrop-blur-sm text-left">
                 <div className="text-center">
@@ -180,15 +189,6 @@ export default function PricingPage() {
                   </div>
                 </div>
               </section>
-              {/* H1 - Główny nagłówek - CAŁY ŻÓŁTY */}
-              <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-amber-400">
-                  Cennik usług zmian wpisu w KRS
-                </h2>
-                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mx-auto max-w-4xl">
-                  Oferujemy jasne, przejrzyste ceny i elastyczny model rozliczeń – dopasowany do Twoich potrzeb. Z góry wiesz, ile zapłacisz i za co. Każdy klient sam decyduje o zakresie usługi – możesz zlecić nam tylko złożenie wniosku o zmianę wpisu w KRS, albo także przygotowanie potrzebnych dokumentów. Ty wybierasz – my działamy.
-                </p>
-              </div>
               <div className="space-y-8">
                 {/* H2 - Biały */}
                 <div className="text-center mb-8">
@@ -196,7 +196,7 @@ export default function PricingPage() {
                     Przejrzyste ceny wniosków o zmianę wpisu w KRS
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 items-start">
                   <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8">
                     <h3 className="text-xl font-bold text-amber-400 mb-6">
                       Podsumowanie opłat za zmianę wpisu w KRS
@@ -235,7 +235,7 @@ export default function PricingPage() {
                     </ul>
                   </div>
 
-                  <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 sm:p-8 flex flex-col">
+                  <div>
                     <h3 className="text-xl font-bold text-amber-400 mb-6">
                       Masz pytanie o cenę? Napisz do nas
                     </h3>
