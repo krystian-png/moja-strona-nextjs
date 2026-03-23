@@ -20,6 +20,15 @@ const legalServiceSchema = {
   url: pageUrl,
   description:
     "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń. Obsługa od 799 zł.",
+  offers: {
+    "@type": "Offer",
+    price: "799",
+    priceCurrency: "PLN",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      description: "cena netto od",
+    },
+  },
   provider: organizationSchema,
 }
 

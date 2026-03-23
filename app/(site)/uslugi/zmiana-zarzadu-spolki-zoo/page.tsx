@@ -20,6 +20,15 @@ const legalServiceSchema = {
   url: pageUrl,
   description:
     "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 799 zł.",
+  offers: {
+    "@type": "Offer",
+    price: "799",
+    priceCurrency: "PLN",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      description: "cena netto od",
+    },
+  },
   provider: organizationSchema,
 }
 
@@ -65,6 +74,38 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Zasadniczo nie, chyba że zmiana wiąże się ze zmianą sposobu reprezentacji i wymaga zmiany umowy spółki w formie aktu notarialnego.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Czy zmiana zarządu spółki z o.o. wymaga wizyty u notariusza?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nie zawsze. W większości przypadków zmiana zarządu następuje na podstawie uchwały wspólników i nie wymaga aktu notarialnego, chyba że jednocześnie zmieniana jest umowa spółki.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Ile trwa wpis zmiany zarządu w KRS?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Czas rozpoznania wniosku zależy od obciążenia sądu rejestrowego, jednak w praktyce wpis zmiany zarządu najczęściej następuje w ciągu kilku tygodni od złożenia kompletnego wniosku.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Czy zmianę zarządu można zgłosić w systemie S24?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "W niektórych przypadkach tak, jeżeli spółka została założona w systemie S24 i spełnione są wymagania tego systemu. W pozostałych sytuacjach wniosek składa się przez Portal Rejestrów Sądowych.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Czy brak zgłoszenia zmiany zarządu do KRS może mieć konsekwencje?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tak. Nieaktualne dane w rejestrze mogą powodować problemy w kontaktach z bankami, kontrahentami lub urzędami, a także prowadzić do wezwań ze strony sądu rejestrowego do uzupełnienia wpisu.",
       },
     },
   ],
