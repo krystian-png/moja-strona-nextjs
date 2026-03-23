@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo";
 import servicesBackground from "@/public/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp";
+import InlineContactFormEn from "../uslugi/_components/InlineContactFormEn";
 
 const pagePath = "/en";
 const pageUrl = `${siteUrl}${pagePath}`;
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title: pageTitle,
@@ -138,62 +138,69 @@ export default function EnglishLandingPage() {
       <main className="relative">
         <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
           {/* HERO (service-like) */}
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-6xl">
             <div className="rounded-3xl border border-white/10 bg-white/10 p-7 shadow-sm backdrop-blur-md md:p-10">
-              <header className="space-y-5">
-                <h1 className="text-3xl font-semibold leading-tight text-amber-400 md:text-5xl">
-                  Changes in the Polish Company Register{" "}
-                  <span className="text-amber-400">(KRS)</span>
-                </h1>
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+                <div className="space-y-8 text-center lg:text-left">
+                  <header className="space-y-5">
+                    <h1 className="text-3xl font-semibold leading-tight text-amber-400 md:text-5xl">
+                      Changes in the Polish Company Register{" "}
+                      <span className="text-amber-400">(KRS)</span>
+                    </h1>
 
-                <p className="text-lg font-medium text-amber-300 md:text-xl">
-                  Professional assistance for companies registered in Poland
-                </p>
+                    <p className="text-lg font-medium text-amber-300 md:text-xl">
+                      Professional assistance for companies registered in Poland
+                    </p>
 
-                <ul className="space-y-2 pt-1">
-                  <li className="flex items-start justify-center gap-3 text-amber-300">
-                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                    <span className="text-base">Remote support</span>
-                  </li>
-                  <li className="flex items-start justify-center gap-3 text-amber-300">
-                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                    <span className="text-base">English communication</span>
-                  </li>
-                  <li className="flex items-start justify-center gap-3 text-amber-300">
-                    <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                    <span className="text-base">KRS filings & documentation</span>
-                  </li>
-                </ul>
-              </header>
+                    <ul className="space-y-2 pt-1">
+                      <li className="flex items-start justify-center gap-3 text-amber-300 lg:justify-start">
+                        <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                        <span className="text-base">Remote support</span>
+                      </li>
+                      <li className="flex items-start justify-center gap-3 text-amber-300 lg:justify-start">
+                        <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                        <span className="text-base">English communication</span>
+                      </li>
+                      <li className="flex items-start justify-center gap-3 text-amber-300 lg:justify-start">
+                        <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
+                        <span className="text-base">KRS filings & documentation</span>
+                      </li>
+                    </ul>
+                  </header>
 
-              {/* Quick value row */}
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-amber-400">
-                    Clear process
+                  {/* Quick value row */}
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                      <div className="text-sm font-semibold text-amber-400">
+                        Clear process
+                      </div>
+                      <p className="mt-2 text-sm text-gray-300">
+                        We focus on formal steps, documentation and reliable
+                        communication.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                      <div className="text-sm font-semibold text-amber-400">
+                        Remote cooperation
+                      </div>
+                      <p className="mt-2 text-sm text-gray-300">
+                        Cooperation can be carried out remotely based on a power of
+                        attorney.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
+                      <div className="text-sm font-semibold text-amber-400">
+                        Companies in Poland
+                      </div>
+                      <p className="mt-2 text-sm text-gray-300">
+                        Services dedicated to companies registered in Poland,
+                        including those with foreign shareholders or management.
+                      </p>
+                    </div>
                   </div>
-                  <p className="mt-2 text-sm text-gray-300">
-                    We focus on formal steps, documentation and reliable
-                    communication.
-                  </p>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-amber-400">
-                    Remote cooperation
-                  </div>
-                  <p className="mt-2 text-sm text-gray-300">
-                    Cooperation can be carried out remotely based on a power of
-                    attorney.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur-md">
-                  <div className="text-sm font-semibold text-amber-400">
-                    Companies in Poland
-                  </div>
-                  <p className="mt-2 text-sm text-gray-300">
-                    Services dedicated to companies registered in Poland,
-                    including those with foreign shareholders or management.
-                  </p>
+                <div className="w-full lg:pt-2">
+                  <InlineContactFormEn className="max-w-md" />
                 </div>
               </div>
             </div>
@@ -451,15 +458,7 @@ export default function EnglishLandingPage() {
                   Contact us. You can write to us in English.
                 </p>
                 <div className="mt-6">
-                  <Link
-                    href="/en/contact"
-                    className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
-                  >
-                    Contact us in English
-                  </Link>
-                  <p className="mt-3 text-sm text-white/75">
-                    You will be redirected to the contact page.
-                  </p>
+                  <InlineContactFormEn className="max-w-md" />
                 </div>
               </section>
             </div>
