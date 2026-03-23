@@ -96,14 +96,14 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana adresu i siedziby spółki z o.o. – zgłoszenie do KRS (PRS/S24) | ZmianaKRS.pl",
+  title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
   description:
-    "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
+    "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Bez błędów, bez zwrotów. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana adresu i siedziby spółki z o.o. – zgłoszenie do KRS (PRS/S24) | ZmianaKRS.pl",
+    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
     description:
       "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
     url: pageUrl,
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana adresu i siedziby spółki z o.o. – zgłoszenie do KRS (PRS/S24) | ZmianaKRS.pl",
+    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
     description:
       "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
     images: [`${siteUrl}/images/krs-services.png`],
