@@ -19,7 +19,7 @@ export default function Hero() {
         </p>
 
         <p className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-8 text-gray-300 leading-relaxed text-justify">
-          Zrobimy to za Ciebie kompleksowo i bezpiecznie: przygotujemy wszystkie dokumenty, wypełnimy i złożymy elektroniczny wniosek o zmianę wpisu w KRS, dopilnujemy podpisów i zadbamy o kontakt z sądem rejestrowym, tak aby Twoja zmiana danych w KRS przeszła bez zwrotów, poprawek i niepotrzebnego stresu.
+          Zrobimy to za Ciebie kompleksowo i bezpiecznie: przygotujemy wszystkie dokumenty, wypełnimy i złożymy elektroniczny wniosek, dopilnujemy podpisów i zadbamy o kontakt z sądem rejestrowym — tak aby cały proces przebiegł bez zwrotów, poprawek i niepotrzebnego stresu.
         </p>
       </div>
       <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
