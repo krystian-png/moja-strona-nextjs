@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   description:
     "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 799 zł.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title: "Zmiana zarządu sp. z o.o. – powołanie, odwołanie, rezygnacja | ZmianaKRS.pl",

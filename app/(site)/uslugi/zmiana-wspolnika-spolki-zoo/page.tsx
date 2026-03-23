@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   description:
     "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
   alternates: {
-    canonical: pagePath,
+    canonical: pageUrl,
   },
   openGraph: {
     title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, zgłoszenie do KRS | ZmianaKRS.pl",
