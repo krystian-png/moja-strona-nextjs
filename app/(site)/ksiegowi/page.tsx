@@ -3,10 +3,11 @@ import Script from "next/script"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import SEOExpandableSection from "@/components/SEOExpandableSection"
 import accountantsBackground from "@/public/images/miejsce-pracy-ksiegowego-kawa-dokumenty-atmosfera-zaufania-profesjonalna-wspolpraca-obsluga-krs.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import { Calculator, Clock, FileText, TrendingUp, Users } from "lucide-react"
+
+import InlineContactForm from "../uslugi/_components/InlineContactForm"
 
 const pageUrl = `${siteUrl}/ksiegowi`
 
@@ -24,16 +25,16 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Współpraca z biurami księgowymi | ZmianaKRS",
+  title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
   description:
-    "Profesjonalne wsparcie w obsłudze zmian wpisów do KRS dla biur rachunkowych. Zadbaj o klientów, a my przejmiemy formalności.",
+    "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Współpraca z biurami księgowymi | ZmianaKRS",
+    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
     description:
-      "Pozwól zespołowi ZmianaKRS przygotować dokumenty i złożyć wnioski do KRS, a Twoje biuro skoncentruje się na księgowości.",
+      "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wsparcie KRS dla biur księgowych",
+    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
     description:
-      "Deleguj przygotowanie i złożenie wniosków KRS ekspertom. Zapewnij klientom pełną obsługę bez obciążania zespołu.",
+      "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -135,49 +136,6 @@ const cooperationProcess = [
   },
 ]
 
-const seoContent = `Obsługa zmian w KRS dla biur rachunkowych – profesjonalne wsparcie Twoich klientów
-
-Oferujemy kompleksowe usługi w zakresie obsługi zmian wpisu w Krajowym Rejestrze Sądowym (KRS) dla spółek obsługiwanych przez biura rachunkowe. Współpracujemy z biurami rachunkowymi, które chcą zapewnić swoim klientom profesjonalne i bezpieczne wprowadzenie zmian do rejestru sądowego – bez konieczności angażowania dodatkowych zasobów czy tracenia czasu na skomplikowane formalności.
-
-Specjalizujemy się w przygotowaniu wniosków o zmianę w KRS, sporządzaniu uchwał do KRS i kompletnej obsłudze dokumentów rejestrowych spółki. Doradzamy, jak skutecznie zgłosić zmianę danych rejestracyjnych w KRS – w tym zmianę zarządu, adresu siedziby spółki, PKD, wspólników czy kapitału zakładowego.
-
-Zakres naszej obsługi dla biur rachunkowych:
-
-przygotowanie i składanie wniosków o zmianę w KRS
-
-sporządzanie uchwał i dokumentów rejestrowych spółki
-
-zmiana zarządu w KRS
-
-zmiana danych spółki w KRS (adres, PKD, wspólnicy, kapitał)
-
-elektroniczne zgłoszenie zmian do KRS przez system S24
-
-monitorowanie wpisu zmian do KRS
-
-kompleksowe doradztwo na każdym etapie procesu
-
-Elektroniczne zgłoszenie zmian do KRS – system S24
-
-Zapewniamy pełne wsparcie w zakresie elektronicznego zgłoszenia zmian do KRS przez system S24. Przygotowujemy dokumenty i pomagamy w ich prawidłowym złożeniu online, co pozwala Twoim klientom na szybkie i wygodne dokonanie zmian rejestrowych.
-
-Dlaczego warto z nami współpracować?
-
-Wieloletnie doświadczenie w obsłudze zmian w KRS
-
-Specjalizacja w elektronicznym zgłaszaniu zmian przez system S24
-
-Elastyczne warunki współpracy dostosowane do potrzeb biura rachunkowego
-
-Konkurencyjne ceny i indywidualne wyceny
-
-Terminowość, rzetelność i pełne bezpieczeństwo formalno-prawne
-
-Współpraca B2B z biurami rachunkowymi
-
-Naszym celem jest wsparcie biur rachunkowych w kompleksowej obsłudze ich klientów. Dzięki naszej pomocy możesz rozszerzyć ofertę swojego biura o profesjonalne usługi związane z rejestracją zmian w KRS i zaoferować klientom pełne wsparcie w tym zakresie – bez konieczności inwestowania we własne zasoby czy szkolenia pracowników.
-
-Skontaktuj się z nami, aby omówić szczegóły współpracy. Razem zadbamy o to, aby Twoi klienci mogli wprowadzać zmiany w KRS sprawnie, bezpiecznie i zgodnie z przepisami.`
 
 export default function AccountantsPage() {
   return (
@@ -205,7 +163,7 @@ export default function AccountantsPage() {
           <div className={`relative z-10 text-center ${containerPadding}`}>
             <div className="mx-auto max-w-4xl">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
-                Współpraca z <span className="text-amber-400">Biurami Księgowymi</span>
+                Współpraca z <span className="text-amber-400">biurami rachunkowymi</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Profesjonalne wsparcie w zakresie wpisów do KRS. Pozwól nam zająć się formalnościami, podczas gdy Ty skupiasz się
@@ -326,13 +284,22 @@ export default function AccountantsPage() {
           </div>
         </section>
 
-        <SEOExpandableSection
-          title="Obsługa zmian w KRS dla biur rachunkowych"
-          buttonLabel="Więcej o naszych usługach KRS"
-          content={seoContent}
-          pageId="accountants-seo"
-        />
       </main>
+
+
+      <section className="relative py-14 text-white overflow-hidden">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Zainteresowany współpracą?
+            </h2>
+            <p className="text-lg text-gray-200 mb-8">
+              Napisz do nas — omówimy warunki i zakres współpracy dopasowany do potrzeb Twojego biura.
+            </p>
+            <InlineContactForm className="w-full" />
+          </div>
+        </div>
+      </section>
 
       <Footer className="mt-0" />
     </div>
