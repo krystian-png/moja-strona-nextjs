@@ -6,7 +6,7 @@ const nextConfig = {
   experimental: { mdxRs: true },
   async redirects() {
     return [
-      { source: "/kontakt", destination: "/contact", permanent: true },
+      { source: "/contact", destination: "/kontakt", permanent: true },
       { source: "/dla-ksiegowych", destination: "/ksiegowi", permanent: true },
     ]
   },
@@ -19,4 +19,3 @@ nextConfig.experimental = {
 }
 
 export default withContentlayer(nextConfig)
-
