@@ -282,7 +282,7 @@ export default function ServicesPage() {
                         <ul className="space-y-2">
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link 
                                 href="/uslugi/zmiana-zarzadu-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -293,7 +293,7 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link
                                 href="/uslugi/zmiana-adresu-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -304,7 +304,7 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link
                                 href="/uslugi/zmiana-umowy-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link
                                 href="/uslugi/zmiana-wspolnika-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -326,7 +326,7 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link
                                 href="/uslugi/zmiana-umowy-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -337,7 +337,7 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               <Link
                                 href="/uslugi/zmiana-wspolnika-spolki-zoo"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
@@ -348,7 +348,14 @@ export default function ServicesPage() {
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                            <span className="text-sm">Wpisania lub zmiany prokurenta</span>
+                            <span className="text-base">
+                              <Link
+                                href="/uslugi/prokurent-krs"
+                                className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
+                              >
+                                Wpis, zmiana lub wykreślenie prokurenta
+                              </Link>
+                            </span>
                           </li>
                         </ul>
                       </div>
@@ -359,25 +366,25 @@ export default function ServicesPage() {
                         <ul className="space-y-2">
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               Przygotowanie lub sprawdzenie dokumentów do KRS
                             </span>
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               Opracowanie kompletnego wniosku o zmianę wpisu
                             </span>
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               Złożenie wniosku elektronicznie przez PRS
                             </span>
                           </li>
                           <li className="flex items-start gap-3 text-gray-200">
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-400" />
-                            <span className="text-sm">
+                            <span className="text-base">
                               Bieżąca komunikacja z sądem
                             </span>
                           </li>
