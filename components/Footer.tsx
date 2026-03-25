@@ -105,6 +105,14 @@ export default function Footer({
                     </li>
                     <li>
                       <Link
+                        href="/uslugi/prokurent-krs"
+                        className="transition-colors hover:text-white"
+                      >
+                        Wpis prokurenta do KRS
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
                         href="/cennik"
                         className="transition-colors hover:text-white"
                       >
