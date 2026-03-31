@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import Providers from './providers'
 import ContactPopup from '@/components/ContactPopup'
 import { siteUrl, organizationSchema, brandName } from '@/lib/seo'
@@ -36,6 +37,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="global-structured-data" type="application/ld+json">
           {JSON.stringify([organizationSchema, websiteSchema])}
         </Script>
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+            <GoogleAnalytics />
+          </>
+        ) : null}
         <Providers>
           {children}
           <ContactPopup />
