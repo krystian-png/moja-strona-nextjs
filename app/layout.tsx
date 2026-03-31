@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
 import Providers from './providers'
 import ContactPopup from '@/components/ContactPopup'
 import { siteUrl, organizationSchema, brandName } from '@/lib/seo'
+import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -37,29 +37,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="global-structured-data" type="application/ld+json">
           {JSON.stringify([organizationSchema, websiteSchema])}
         </Script>
-        {process.env.NEXT_PUBLIC_GA_ID ? (
+        {process.env.NEXT_PUBLIC_GA_ID && (
           <>
+            <Script
+              id="gtag-consent-default"
+              strategy="beforeInteractive"
+            >{`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500,
+              });
+              var _stored = null;
+              try { _stored = localStorage.getItem('cookie_consent'); } catch(e){}
+              if (_stored === 'accepted') {
+                gtag('consent', 'update', {
+                  analytics_storage: 'granted',
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                });
+              }
+            `}</Script>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
               strategy="afterInteractive"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                window.gtag = gtag;
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-            <GoogleAnalytics />
+            <Script id="gtag-config" strategy="afterInteractive">{`
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true });
+            `}</Script>
           </>
-        ) : null}
+        )}
         <Providers>
           {children}
           <ContactPopup />
+          <CookieBanner />
         </Providers>
       </body>
     </html>
