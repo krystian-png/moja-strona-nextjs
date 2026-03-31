@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <>
             <Script
               id="gtag-consent-default"
-              strategy="beforeInteractive"
+              strategy="afterInteractive"
             >{`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
