@@ -15,7 +15,7 @@ const pageUrl = `${siteUrl}${pagePath}`
 
 const legalServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": "Service",
   name: "Zmiana adresu i siedziby sp. z o.o. – zgłoszenie do KRS (PRS/S24)",
   url: pageUrl,
   description:
@@ -29,6 +29,7 @@ const legalServiceSchema = {
       description: "cena netto od",
     },
   },
+  areaServed: { "@type": "Country", name: "Poland" },
   provider: organizationSchema,
 }
 
@@ -105,14 +106,14 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
+  title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS",
   description:
     "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Bez błędów, bez zwrotów. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
+    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS",
     description:
       "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
     url: pageUrl,
@@ -128,7 +129,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS.pl",
+    title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS",
     description:
       "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
     images: [`${siteUrl}/images/krs-services.png`],
