@@ -8,7 +8,7 @@ import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 import ContactPageContent from "./contact-content"
 
-const pagePath = "/contact"
+const pagePath = "/kontakt"
 const pageUrl = `${siteUrl}${pagePath}`
 
 const structuredData = {
