@@ -8,7 +8,7 @@ import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://moja-strona-nextjs.vercel.app'
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zmianakrs.pl'
   ),
   title: {
     default: 'Zmiana KRS – zmiana wpisu w KRS dla spółek',

@@ -6,7 +6,7 @@ import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://moja-strona-nextjs.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://zmianakrs.pl";
 
   const baseUrl = base.replace(/\/$/, "");
 
