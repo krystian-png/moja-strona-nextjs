@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   title: "Polityka prywatności - ochrona danych osobowych w usługach KRS",
   description:
     "Dowiedz się jak chronimy Twoje dane osobowe podczas obsługi wniosków KRS. Zgodność z RODO i zasady przetwarzania danych klientów.",
-  alternates: { canonical: pagePath },
+  alternates: { canonical: pageUrl },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Polityka prywatności | ZmianaKRS",
     description: "Dowiedz się jak chronimy Twoje dane osobowe podczas obsługi wniosków KRS.",
