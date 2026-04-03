@@ -1,14 +1,14 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://zmianakrs.pl"
 
-export const brandName = "zmianakrs.pl"
+export const brandName = "ZmianaKRS"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["LegalService", "Organization"],
+  "@type": "Organization",
   "@id": `${siteUrl}/#organization`,
-  name: "Krystian Karpiuk Kancelaria Radcy Prawnego",
-  alternateName: "zmianakrs.pl",
+  name: "ZmianaKRS",
+  alternateName: ["zmianakrs.pl", "Zmiana KRS", "Krystian Karpiuk Kancelaria Radcy Prawnego"],
   telephone: "+48572234779",
   email: "biuro@zmianakrs.pl",
   taxID: "669-217-69-58",
