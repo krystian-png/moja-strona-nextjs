@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   title: "Regulamin świadczenia usług - warunki obsługi wniosków KRS",
   description:
     "Zapoznaj się z regulaminem świadczenia usług obsługi wniosków KRS. Warunki współpracy, prawa i obowiązki stron w procesie zmiany wpisu.",
-  alternates: { canonical: pagePath },
+  alternates: { canonical: pageUrl },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Regulamin świadczenia usług | ZmianaKRS",
     description: "Zapoznaj się z regulaminem świadczenia usług obsługi wniosków KRS.",
