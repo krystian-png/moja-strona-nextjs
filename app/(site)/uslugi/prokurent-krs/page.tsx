@@ -14,7 +14,7 @@ const pageUrl = `${siteUrl}${pagePath}`
 
 const legalServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": "Service",
   name: "Prokurent w spółce – ustanowienie prokury i wpis do KRS",
   url: pageUrl,
   provider: organizationSchema,
@@ -23,7 +23,7 @@ const legalServiceSchema = {
     price: "799",
     priceCurrency: "PLN",
   },
-  areaServed: { "@type": "Country", name: "Polska" },
+  areaServed: { "@type": "Country", name: "Poland" },
 }
 
 const faqSchema = {
@@ -99,22 +99,23 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS.pl",
+  title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
   description:
     "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS.pl",
+    title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
     description:
       "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
     url: pageUrl,
     siteName: brandName,
-    images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Prokurent w spółce – ZmianaKRS.pl" }],
+    images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Prokurent w spółce – ZmianaKRS" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS.pl",
-    description: "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Obsługa od 799 zł netto.",
+    title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
+    description:
+      "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
