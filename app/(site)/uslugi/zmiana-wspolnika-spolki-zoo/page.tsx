@@ -15,7 +15,7 @@ const pageUrl = `${siteUrl}${pagePath}`
 
 const legalServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": "Service",
   name: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, wejście inwestora, zgłoszenie do KRS",
   url: pageUrl,
   description:
@@ -29,6 +29,7 @@ const legalServiceSchema = {
       description: "cena netto od",
     },
   },
+  areaServed: { "@type": "Country", name: "Poland" },
   provider: organizationSchema,
 }
 
@@ -105,14 +106,14 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS.pl",
+  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
   description:
     "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Bez błędów. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS.pl",
+    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
     description:
       "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
     url: pageUrl,
@@ -128,7 +129,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS.pl",
+    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
     description:
       "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
     images: [`${siteUrl}/images/krs-services.png`],
