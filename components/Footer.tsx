@@ -55,7 +55,7 @@ export default function Footer({
               <div>
                 <h3 className="mb-1 text-sm font-bold">Zmiana KRS</h3>
                 <p className="text-xs text-gray-300">
-                  Profesjonalne usługi KRS dla Twojej firmy.
+                  Profesjonalne usługi KRS dla Twojej firmy
                 </p>
               </div>
 
