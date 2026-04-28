@@ -70,6 +70,19 @@ function MDXContent({ code }: { code: string }) {
   return <Component />
 }
 
+function toAbsoluteCoverUrl(cover?: string) {
+  if (!cover) {
+    return undefined
+  }
+  if (cover.startsWith("http")) {
+    return cover
+  }
+  if (cover.startsWith("/")) {
+    return `${siteUrl}${cover}`
+  }
+  return `${siteUrl}/${cover}`
+}
+
 export default function ArticlePage({ params }: ArticlePageProps) {
   const post = getPostBySlug(params.slug)
 
@@ -82,11 +95,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    image: post.cover
-      ? post.cover.startsWith("http")
-        ? post.cover
-        : `${siteUrl}${post.cover}`
-      : undefined,
+    image: toAbsoluteCoverUrl(post.cover),
+    url: `${siteUrl}/artykul/${post.slug}`,
+    isPartOf: { "@id": `${siteUrl}/blog` },
     datePublished: post.date,
     author: { "@id": `${siteUrl}/#organization` },
     publisher: { "@id": `${siteUrl}/#organization` },
