@@ -9,18 +9,19 @@ import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 const pagePath = "/blog"
 const pageUrl = `${siteUrl}${pagePath}`
+const pageTitle = "Blog ZmianaKRS | Artykuły o zmianach w KRS"
 
 const pageDescription =
   "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych."
 
 export const metadata: Metadata = {
-  title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
+  title: pageTitle,
   description: pageDescription,
   alternates: {
     canonical: pagePath,
   },
   openGraph: {
-    title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
+    title: pageTitle,
     description: pageDescription,
     url: pageUrl,
     type: "website",
@@ -36,30 +37,53 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog KRS - ZmianaKRS | Przydatne artykuły o zmianach w KRS",
+    title: pageTitle,
     description: pageDescription,
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
 
-const blogPostsStructuredData = allPosts.map((post) => ({
-  "@type": "BlogPosting",
-  headline: post.title,
-  description: post.description,
-  url: `${siteUrl}/artykul/${post.slug}`,
-  datePublished: post.date,
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `${siteUrl}/artykul/${post.slug}`,
-  },
-}))
+function toAbsoluteImageUrl(path?: string) {
+  if (!path) {
+    return undefined
+  }
+  if (path.startsWith("http")) {
+    return path
+  }
+  if (path.startsWith("/")) {
+    return `${siteUrl}${path}`
+  }
+  return undefined
+}
+
+const blogPostsStructuredData = allPosts.map((post) => {
+  const coverPath = resolveCoverPath(post.cover)
+
+  return {
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: toAbsoluteImageUrl(coverPath),
+    url: `${siteUrl}/artykul/${post.slug}`,
+    datePublished: post.date,
+    author: { "@id": `${siteUrl}/#organization` },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    isPartOf: { "@id": pageUrl },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/artykul/${post.slug}`,
+    },
+  }
+})
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  name: "Blog ZmianaKRS – zmiany w KRS",
+  "@id": pageUrl,
+  name: "Blog ZmianaKRS",
   url: pageUrl,
   description: pageDescription,
+  isPartOf: { "@id": `${siteUrl}/#website` },
   publisher: organizationSchema,
   blogPost: blogPostsStructuredData,
 }
