@@ -164,7 +164,7 @@ const structuredData = {
 
 export const metadata: Metadata = {
   title:
-    "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS.pl",
+    "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS",
   description:
     "Profesjonalne usługi zmian wpisu w KRS dla spółek – przygotowanie dokumentów, obsługa wniosków KRS i zakładanie spółek z o.o. Zajmujemy się zmianą danych spółki w KRS od analizy dokumentów po wpis zmian do rejestru.",
   alternates: {
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS.pl",
+      "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS",
     description:
       "Kompleksowa obsługa wniosków o zmianę wpisu w KRS, rejestracji spółek z o.o. oraz dokumentów zgromadzeń wspólników.",
     url: pageUrl,

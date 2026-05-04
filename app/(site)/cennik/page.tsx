@@ -88,12 +88,12 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
+  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
   description:
     "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
     description:
       "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     url: pageUrl,
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS.pl",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
     description:
       "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     images: [`${siteUrl}/images/krs-services.png`],
