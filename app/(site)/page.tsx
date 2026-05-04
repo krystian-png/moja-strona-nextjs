@@ -15,7 +15,7 @@ const pageUrl = siteUrl
 
 export const metadata: Metadata = {
   title:
-    "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS.pl",
+    "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
   description:
     "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
   alternates: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS.pl",
+      "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
     description:
       "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
     url: pageUrl,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS.pl",
+      "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
     description:
       "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
     images: [

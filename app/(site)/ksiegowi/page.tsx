@@ -25,14 +25,14 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
+  title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS",
   description:
     "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
+    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS",
     description:
       "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
     url: pageUrl,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS.pl",
+    title: "Obsługa KRS dla biur rachunkowych – współpraca B2B | ZmianaKRS",
     description:
       "Profesjonalne wsparcie w zmianach wpisów KRS dla biur rachunkowych. Przejmujemy formalności rejestrowe Twoich klientów – dokumenty, wnioski, kontakt z sądem. Sprawdź warunki współpracy.",
     images: [`${siteUrl}/images/krs-services.png`],
