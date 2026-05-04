@@ -20,7 +20,7 @@ const structuredData = {
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+48572234779",
-    email: "kontakt@zmianakrs.pl",
+    email: "biuro@zmianakrs.pl",
     contactType: "customer service",
     areaServed: "PL",
     availableLanguage: ["pl-PL"],

@@ -53,7 +53,7 @@ export default function Footer({
           ) : (
             <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-12">
               <div>
-                <h3 className="mb-1 text-sm font-bold">Zmiana KRS</h3>
+                <h3 className="mb-1 text-sm font-bold">ZmianaKRS</h3>
                 <p className="text-xs text-gray-300">
                   Profesjonalne usługi KRS dla Twojej firmy.
                 </p>
@@ -286,7 +286,7 @@ export default function Footer({
 
         <div className="mt-6 border-t border-gray-700 pt-4 text-left">
           <p className="text-xs text-gray-300">
-            &copy; {currentYear} Zmiana KRS. Wszystkie prawa zastrzeżone.
+            &copy; {currentYear} ZmianaKRS. Wszystkie prawa zastrzeżone.
           </p>
         </div>
       </div>

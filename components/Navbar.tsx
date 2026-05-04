@@ -56,7 +56,7 @@ export default function Navbar() {
             {"572\u202f234\u202f779"}
           </a>
           <a
-            href="mailto:kontakt@zmianakrs.pl"
+            href="mailto:biuro@zmianakrs.pl"
             className="flex items-center gap-2 text-amber-800 transition-colors hover:text-amber-700 md:font-bold"
           >
             <svg
@@ -68,7 +68,7 @@ export default function Navbar() {
             >
               <path d="M4 5c-1.105 0-2 .895-2 2v10c0 1.105.895 2 2 2h16c1.105 0 2-.895 2-2V7c0-1.105-.895-2-2-2H4zm0 2h16v.01L12 13 4 7.01V7zm0 3.236 7.445 4.591a1 1 0 0 0 1.11 0L20 10.236V17H4v-6.764z" />
             </svg>
-            kontakt@zmianakrs.pl
+            biuro@zmianakrs.pl
           </a>
         </div>
 

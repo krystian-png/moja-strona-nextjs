@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zmianakrs.pl'
   ),
   title: {
-    default: 'Zmiana KRS – zmiana wpisu w KRS dla spółek',
-    template: '%s | Zmiana KRS',
+    default: 'ZmianaKRS – zmiana wpisu w KRS dla spółek',
+    template: '%s | ZmianaKRS',
   },
   description:
     'Profesjonalna obsługa zmian w KRS dla spółek – zmiana zarządu, umowy spółki, danych w KRS.',
