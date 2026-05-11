@@ -14,6 +14,12 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { apiRequest } from "@/lib/queryClient"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 const contactFormSchema = z.object({
   fullName: z.string().trim().min(3, "Full name must be at least 3 characters"),
   email: z.string().email("Invalid email address"),
@@ -53,6 +59,13 @@ export default function ContactPageContent() {
         data,
       }),
     onSuccess: () => {
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          form_name: "contact_page_form_en",
+          method: "contact_form",
+          page_path: window.location.pathname,
+        })
+      }
       setSubmissionStatus({
         type: "success",
         message: "Your message has been sent. We will respond promptly.",
