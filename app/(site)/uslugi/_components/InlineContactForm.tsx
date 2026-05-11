@@ -14,6 +14,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { apiRequest } from "@/lib/queryClient"
 import { cn } from "@/lib/utils"
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 const contactFormSchema = z.object({
   fullName: z.string().trim().min(3, "Imię i nazwisko musi mieć co najmniej 3 znaki"),
   email: z.string().email("Nieprawidłowy adres email"),
@@ -56,6 +62,13 @@ export default function InlineContactForm({ className }: InlineContactFormProps)
         data,
       }),
     onSuccess: () => {
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          form_name: "inline_contact_form",
+          method: "contact_form",
+          page_path: window.location.pathname,
+        })
+      }
       setSubmissionStatus({
         type: "success",
         message: "Wiadomość została wysłana. Odezwiemy się bezzwłocznie.",
