@@ -3,7 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import Providers from './providers'
 import ContactPopup from '@/components/ContactPopup'
-import { siteUrl, organizationSchema, brandName } from '@/lib/seo'
+import { siteUrl, organizationSchema, personSchema, brandName } from '@/lib/seo'
 import CookieBanner from '@/components/CookieBanner'
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pl">
       <body className="min-h-screen">
         <Script id="global-structured-data" type="application/ld+json">
-          {JSON.stringify([organizationSchema, websiteSchema])}
+          {JSON.stringify([organizationSchema, websiteSchema, personSchema])}
         </Script>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>

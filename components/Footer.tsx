@@ -17,6 +17,9 @@ export default function Footer({
     facebook: "https://www.facebook.com/profile.php?id=61588617781836",
     linkedin: "https://www.linkedin.com/company/zmianakrs-pl/",
   }
+  const footerLinks = [
+    { href: "https://kancelaria-karpiuk.pl", label: "Krystian Karpiuk Kancelaria Radcy Prawnego", external: true },
+  ]
 
   const footerClassName = [
     "bg-slate-900 text-white",
@@ -261,7 +264,7 @@ export default function Footer({
               <a
                 href={socialLinks.facebook}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 aria-label="Facebook"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 text-white transition-colors hover:border-amber-400 hover:text-amber-400"
               >
@@ -272,7 +275,7 @@ export default function Footer({
               <a
                 href={socialLinks.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 aria-label="LinkedIn"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-600 text-white transition-colors hover:border-amber-400 hover:text-amber-400"
               >
@@ -288,6 +291,19 @@ export default function Footer({
           <p className="text-xs text-gray-300">
             &copy; {currentYear} ZmianaKRS. Wszystkie prawa zastrzeżone.
           </p>
+          <div className="mt-3 flex flex-wrap gap-3 text-xs text-gray-300">
+            {footerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener" : undefined}
+                className="transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

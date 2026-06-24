@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     "Skontaktuj się z zespołem ZmianaKRS. Konsultacja telefoniczna, spotkanie online lub wsparcie mailowe w zakresie zmian w KRS.",
   alternates: {
     canonical: pagePath,
+    languages: {
+      "pl": "https://zmianakrs.pl/kontakt",
+      "en": "https://zmianakrs.pl/en/contact",
+      "x-default": "https://zmianakrs.pl/kontakt",
+    },
   },
   openGraph: {
     title: "Kontakt | ZmianaKRS",
