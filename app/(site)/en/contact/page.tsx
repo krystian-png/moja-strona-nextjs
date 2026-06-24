@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     "Get in touch about updating an entry in the Polish Company Register (KRS). We respond promptly to enquiries about KRS filings.",
   alternates: {
     canonical: pagePath,
+    languages: {
+      "pl": "https://zmianakrs.pl/kontakt",
+      "en": "https://zmianakrs.pl/en/contact",
+      "x-default": "https://zmianakrs.pl/kontakt",
+    },
   },
   openGraph: {
     title: "Contact | ZmianaKRS",
@@ -40,6 +45,7 @@ export const metadata: Metadata = {
       "Need help with KRS? Contact our experts and receive prompt support for Polish Company Register filings.",
     url: pageUrl,
     siteName: brandName,
+    locale: "en_US",
     images: [
       {
         url: `${siteUrl}/images/krs-services.png`,

@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description: pageDescription,
   alternates: {
     canonical: pageUrl,
+    languages: {
+      "pl": "https://zmianakrs.pl",
+      "en": "https://zmianakrs.pl/en",
+      "x-default": "https://zmianakrs.pl",
+    },
   },
   openGraph: {
     title: pageTitle,
@@ -27,6 +32,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     type: "website",
     siteName: brandName,
+    locale: "en_US",
     images: [
       {
         url: `${siteUrl}/images/solidne-fundamenty-prawne-eksperci-krs-doswiadczenie-wnioski-zmiana-wpisu.webp`,
