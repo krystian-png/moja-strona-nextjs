@@ -14,6 +14,7 @@ import {
   Building,
   CheckCircle,
   Clock,
+  FileSearch,
   FileText,
   Mail,
   Phone,
@@ -117,6 +118,14 @@ const mainServices: MainService[] = [
   },
 ]
 
+const urgentService = {
+  title: "Zmiana kodów PKD w KRS",
+  description:
+    "Po 31 grudnia 2026 r. system wymieni kody sam – i przy 185 kodach wybierze za spółkę. Sprawdź w wyszukiwarce, co dostanie Twoja spółka.",
+  price: "od 599 zł netto",
+  icon: FileSearch,
+}
+
 const benefits: Benefit[] = [
   {
     icon: Clock,
@@ -198,6 +207,7 @@ export const metadata: Metadata = {
 
 
 export default function ServicesPage() {
+  const UrgentServiceIcon = urgentService.icon
   const popularService = mainServices[0]
   const PopularServiceIcon = popularService.icon
   const closingService = mainServices[3]
@@ -247,6 +257,36 @@ export default function ServicesPage() {
         <section className="pt-12 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="space-y-12">
+              <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 sm:p-8">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-lg bg-amber-600 p-2">
+                      <UrgentServiceIcon className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-semibold text-white">{urgentService.title}</h3>
+                      <div className="mt-1 text-2xl font-bold text-amber-400">{urgentService.price}</div>
+                    </div>
+                  </div>
+                  <p className="text-justify text-base leading-relaxed text-gray-300">{urgentService.description}</p>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link
+                    href="/uslugi/zmiana-kodow-pkd"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                  >
+                    Sprawdź szczegóły usługi →
+                  </Link>
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
+                  >
+                    Skontaktuj się w tej sprawie
+                  </Link>
+                </div>
+              </div>
+
               <div
                 className={`relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 ${
                   popularService.popular ? "ring-2 ring-amber-400" : ""

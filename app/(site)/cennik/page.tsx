@@ -256,6 +256,25 @@ export default function PricingPage() {
                   </div>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-8">
+                  {/* Karta: Zmiana kodów PKD */}
+                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
+                    <CardContent>
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="flex items-center justify-center w-12 h-12 bg-amber-600 rounded-lg">
+                          <FileText className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1 text-left">
+                          <h3 className="text-xl font-bold text-white mb-2">
+                            Zmiana kodów PKD (PKD 2007 → PKD 2025)
+                          </h3>
+                          <p className="text-2xl font-bold text-amber-400">599 zł <span className="text-base font-normal text-slate-300">netto</span></p>
+                        </div>
+                      </div>
+                      <p className="text-slate-300 text-left text-sm">
+                        Jedna spółka, do 10 pozycji, bez zmiany umowy spółki. Wniosek złożony do 31.12.2026 r. bez opłaty sądowej (art. 20e ust. 3 ustawy o KRS).
+                      </p>
+                    </CardContent>
+                  </Card>
                   {/* Karta 1: Złożenie wniosku - ikona AMBER */}
                   <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
                     <CardContent>
