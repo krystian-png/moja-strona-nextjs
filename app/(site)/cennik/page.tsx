@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from "react"
 import type { Metadata } from "next"
+import Link from "next/link"
 import Script from "next/script"
 import { AlertTriangle, CheckCircle, FileText, Mail, Phone } from "lucide-react"
 
@@ -255,26 +256,41 @@ export default function PricingPage() {
                     </div>
                   </div>
                 </div>
-                <div className="grid lg:grid-cols-2 gap-8">
-                  {/* Karta: Zmiana kodów PKD */}
-                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
-                    <CardContent>
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="flex items-center justify-center w-12 h-12 bg-amber-600 rounded-lg">
-                          <FileText className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1 text-left">
-                          <h3 className="text-xl font-bold text-white mb-2">
-                            Zmiana kodów PKD (PKD 2007 → PKD 2025)
-                          </h3>
-                          <p className="text-2xl font-bold text-amber-400">599 zł <span className="text-base font-normal text-slate-300">netto</span></p>
-                        </div>
+                <Link
+                  href="/uslugi/zmiana-kodow-pkd"
+                  className="group block w-full rounded-2xl border border-white/20 bg-white/10 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-amber-400/40 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 sm:p-6"
+                >
+                  <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+                    <div className="flex min-w-0 items-start gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-amber-600">
+                        <FileText className="h-6 w-6 text-white" />
                       </div>
-                      <p className="text-slate-300 text-left text-sm">
-                        Jedna spółka, do 10 pozycji, bez zmiany umowy spółki. Wniosek złożony do 31.12.2026 r. bez opłaty sądowej (art. 20e ust. 3 ustawy o KRS).
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-bold text-white">
+                          Zmiana kodów PKD (PKD 2007 → PKD 2025)
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                          Analiza kodów ujawnionych w KRS, dobór właściwych PKD 2025 oraz przygotowanie i przeprowadzenie zmiany wpisu. Jedna spółka, do 10 pozycji, bez zmiany umowy spółki.
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                          Oferta dotyczy wyłącznie aktualizacji kodów PKD 2007 → PKD 2025 w okresie przejściowym.
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                          Wniosek dotyczący samej wymiany kodów, złożony do 31.12.2026 r., jest zwolniony z opłaty sądowej.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="shrink-0 pl-16 lg:pl-0 lg:text-right">
+                      <p className="text-2xl font-bold text-amber-400">
+                        599 zł <span className="text-base font-normal text-slate-300">netto</span>
                       </p>
-                    </CardContent>
-                  </Card>
+                      <span className="mt-2 inline-block text-sm font-semibold text-amber-400 transition-colors group-hover:text-amber-300">
+                        Sprawdź usługę →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+                <div className="grid lg:grid-cols-2 gap-8">
                   {/* Karta 1: Złożenie wniosku - ikona AMBER */}
                   <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
                     <CardContent>
