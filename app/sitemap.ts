@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/uslugi/zmiana-adresu-spolki-zoo": "app/(site)/uslugi/zmiana-adresu-spolki-zoo/page.tsx",
     "/uslugi/zmiana-wspolnika-spolki-zoo": "app/(site)/uslugi/zmiana-wspolnika-spolki-zoo/page.tsx",
     "/uslugi/prokurent-krs": "app/(site)/uslugi/prokurent-krs/page.tsx",
+    "/uslugi/zmiana-kodow-pkd": "app/(site)/uslugi/zmiana-kodow-pkd/page.tsx",
     "/en": "app/(site)/en/page.tsx",
     "/en/contact": "app/(site)/en/contact/page.tsx",
   };
