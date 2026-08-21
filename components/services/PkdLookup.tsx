@@ -22,6 +22,21 @@ const normalizeCode = (value: string) => {
 const secondaryButton =
   "inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-400 px-4 py-2.5 font-semibold transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
 
+const searchExamples = [
+  "oprogramowanie",
+  "informatyki",
+  "przetwarzanie danych",
+  "projektowania",
+  "agencji transportowych",
+  "transport drogowy",
+  "magazynowanie",
+  "roboty budowlane",
+  "nieruchomości",
+  "rachunkowo-księgowa",
+  "sprzątanie",
+  "telekomunikacji",
+]
+
 function odmianaOdpowiednik(n: number): string {
   if (n === 1) return "odpowiednik"
   const ost = n % 10
@@ -95,6 +110,16 @@ export default function PkdLookup() {
     setShowAll(false)
   }
 
+  const chooseExample = (example: string) => {
+    setValue(example)
+    setSelectedCode(null)
+    setSuggestionsOpen(true)
+    setActiveIndex(-1)
+    setShowAll(false)
+    void loadData()
+    requestAnimationFrame(() => inputRef.current?.focus())
+  }
+
   const reset = () => {
     setValue("")
     setSelectedCode(null)
@@ -131,7 +156,7 @@ export default function PkdLookup() {
   return (
     <div className="rounded-2xl bg-white p-6 text-slate-900 shadow-lg sm:p-8">
       <label htmlFor="pkd-code" className="mb-2 block font-semibold">
-        Kod PKD 2007
+        Kod PKD 2007 lub nazwa działalności
       </label>
       <div className="relative">
         <input
@@ -151,14 +176,14 @@ export default function PkdLookup() {
             setShowAll(false)
           }}
           onKeyDown={handleKeyDown}
-          placeholder="np. 62.01.Z"
+          placeholder="np. 45.11.Z albo: sprzedaż samochodów"
           autoComplete="off"
           role="combobox"
           aria-autocomplete="list"
           aria-controls="pkd-suggestions"
           aria-expanded={suggestionsOpen && suggestions.length > 0}
           aria-activedescendant={activeIndex >= 0 ? `pkd-option-${activeIndex}` : undefined}
-          className="w-full rounded-xl border-2 border-slate-300 px-4 py-3 font-mono text-xl tracking-wide outline-none transition placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500/30"
+          className="w-full rounded-xl border-2 border-slate-300 px-4 py-3 font-mono text-lg font-normal tracking-wide outline-none transition placeholder:text-slate-400 focus-visible:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-500/30"
         />
         {suggestionsOpen && suggestions.length > 0 && (
           <ul
@@ -190,17 +215,45 @@ export default function PkdLookup() {
         )}
       </div>
 
+      {!value && !match && (
+        <div className="mt-3">
+          <p className="text-sm text-slate-600">Nie masz odpisu pod ręką? Sprawdź po nazwie:</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {searchExamples.map((example) => (
+              <button
+                key={example}
+                type="button"
+                onClick={() => chooseExample(example)}
+                className="rounded-full border border-slate-300 px-2.5 py-1 text-sm text-slate-600 transition hover:border-amber-500 hover:bg-amber-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
+              >
+                {example}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div aria-live="polite" className="mt-6">
         {value && (loadState === "idle" || loadState === "loading") && <p>Wczytywanie danych…</p>}
         {loadState === "error" && <p>Nie udało się wczytać danych. Odśwież stronę albo napisz do nas.</p>}
 
+        {match && selectedCode && (
+          <div className="mb-4 border-t border-slate-200 pt-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold uppercase text-slate-600">PKD 2007</span>
+              <span className="font-mono text-2xl font-bold tracking-wide">{selectedCode}</span>
+            </div>
+            {pkd2007Names[selectedCode] && (
+              <p className="mt-2 break-words text-slate-700">{pkd2007Names[selectedCode]}</p>
+            )}
+          </div>
+        )}
+
+        {match && <p className="mb-3 text-center text-sm text-slate-500">↓ co się z nim stanie</p>}
+
         {match?.t.length === 1 && data && (
           <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod przejdzie jednoznacznie</h2>
-            <p className="mt-4 font-mono text-xl font-bold">{selectedCode}</p>
-            {selectedCode && pkd2007Names[selectedCode] && (
-              <p className="mt-1 break-words text-sm text-slate-600">{pkd2007Names[selectedCode]}</p>
-            )}
             <p className="mt-4 font-mono text-3xl font-bold">{match.t[0]}</p>
             <p className="mt-1">{data.n[match.t[0]]}</p>
             <p className="mt-4 leading-relaxed">Temu kodowi odpowiada dokładnie jedna podklasa PKD 2025. System wpisze ją automatycznie i wybór będzie prawidłowy.</p>
@@ -214,15 +267,15 @@ export default function PkdLookup() {
         {match && match.t.length > 1 && data && (
           <div className="rounded-xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmianaOdpowiednik(match.t.length)} tego kodu</h2>
-            <p className="mt-4 font-mono text-xl font-bold">{selectedCode}</p>
-            {selectedCode && pkd2007Names[selectedCode] && (
-              <p className="mt-1 break-words text-sm text-slate-600">{pkd2007Names[selectedCode]}</p>
-            )}
-            <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
+            <span className="mt-4 inline-flex rounded-full bg-amber-200 px-2 py-0.5 text-xs font-semibold uppercase text-amber-900 sm:hidden">PKD 2025</span>
+            <ul className="mt-3 max-h-80 space-y-2 overflow-y-auto pr-1 sm:mt-4">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className={`flex min-w-0 flex-col gap-1 rounded-lg bg-white p-3 sm:flex-row sm:gap-3 ${code === match.p ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
-                  <span className="shrink-0 font-mono font-bold">{code}</span>
-                  <span className="break-words">{data.n[code]}</span>
+                  <span className="flex shrink-0 flex-wrap items-center gap-2">
+                    <span className="font-mono font-bold">{code}</span>
+                    <span className="hidden rounded-full bg-amber-200 px-2 py-0.5 text-xs font-semibold uppercase text-amber-900 sm:inline-flex">PKD 2025</span>
+                  </span>
+                  <span className="min-w-0 break-words">{data.n[code]}</span>
                   {code === match.p && <span className="text-sm font-semibold text-amber-900 sm:ml-auto">wybór systemu</span>}
                 </li>
               ))}
