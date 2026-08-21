@@ -19,7 +19,7 @@ const normalizeCode = (value: string) => {
 const secondaryButton =
   "inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-400 px-4 py-2.5 font-semibold transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
 
-function odmiana(n: number): string {
+function odmianaOdpowiednik(n: number): string {
   if (n === 1) return "odpowiednik"
   const ost = n % 10
   const dwie = n % 100
@@ -175,15 +175,15 @@ export default function PkdLookup() {
             <p className="mt-1">{data.n[match.t[0]]}</p>
             <p className="mt-4 leading-relaxed">Temu kodowi odpowiada dokładnie jedna podklasa PKD 2025. System wpisze ją automatycznie i wybór będzie prawidłowy.</p>
             <p className="mt-4 leading-relaxed">W dziale 3 Twojej spółki może być do dziesięciu kodów. Wystarczy jeden wieloznaczny, żeby po automatycznej wymianie część wpisu przestała odpowiadać rzeczywistości.</p>
-            <p className="mt-4 text-sm">Nie chcesz sprawdzać wszystkich ręcznie? <a href="#oferta" className="font-semibold underline">Zrobimy to za Ciebie — 599 zł netto</a></p>
-            {isMarker && <p className="mt-4 border-t border-emerald-300 pt-4 font-semibold">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że wpis spółki nie był aktualizowany od wejścia w życie nowej klasyfikacji.</p>}
+            <p className="mt-4 text-sm">Nie chcesz sprawdzać wszystkich ręcznie? <a href="#oferta" className="font-semibold underline">Sprawdzimy cały dział 3 — 599 zł netto</a></p>
+            {isMarker && <p className="mt-4 border-t border-emerald-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <button type="button" onClick={reset} className={`${secondaryButton} mt-5`}>Sprawdź kolejny kod</button>
           </div>
         )}
 
         {match && match.t.length > 1 && data && (
           <div className="rounded-xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
-            <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmiana(match.t.length)} tego kodu</h2>
+            <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmianaOdpowiednik(match.t.length)} tego kodu</h2>
             <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className={`flex min-w-0 flex-col gap-1 rounded-lg bg-white p-3 sm:flex-row sm:gap-3 ${code === match.p ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
@@ -196,8 +196,8 @@ export default function PkdLookup() {
             {!showAll && match.t.length > 5 && <button type="button" onClick={() => setShowAll(true)} className={`${secondaryButton} mt-3`}>Pokaż wszystkie ({match.t.length})</button>}
             <p className="mt-4 rounded-lg border border-amber-300 bg-amber-100 p-4 leading-relaxed">Jeżeli nie złożysz wniosku do 31 grudnia 2026 r., system wpisze <span className="font-mono font-bold">{match.p}</span> – {data.n[match.p]}.</p>
             <p className="mt-4 leading-relaxed">Z samego starego kodu nie da się ustalić, która z tych podklas jest właściwa dla Twojej spółki. Klucz interpretacyjny wybiera jedną z nich technicznie, żeby konwersja mogła się odbyć bez udziału człowieka — nie po to, żeby ocenić, czym spółka faktycznie się zajmuje.</p>
-            <p className="mt-4 leading-relaxed">Sprawdzimy wszystkie kody z Twojego działu 3, dobierzemy właściwe PKD 2025, sprawdzimy umowę spółki, przygotujemy wniosek i poprowadzimy sprawę do wpisu.</p>
-            {isMarker && <p className="mt-4 border-t border-amber-300 pt-4 font-semibold">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że wpis spółki nie był aktualizowany od wejścia w życie nowej klasyfikacji.</p>}
+            <p className="mt-4 leading-relaxed">Na podstawie odpisu z KRS i informacji o działalności Twojej spółki sprawdzimy wszystkie kody ujawnione w dziale 3, zaproponujemy odpowiadające im kody PKD 2025, sprawdzimy pokrycie w umowie spółki i złożymy wniosek do sądu rejestrowego.</p>
+            {isMarker && <p className="mt-4 border-t border-amber-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a href="#oferta" className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-500 px-4 py-2.5 text-center font-bold text-slate-950 transition hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700">Zleć zmianę kodów PKD w KRS — 599 zł netto</a>
               <button type="button" onClick={reset} className={secondaryButton}>Sprawdź kolejny kod</button>

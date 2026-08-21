@@ -270,7 +270,7 @@ export default function PricingPage() {
                           Zmiana kodów PKD (PKD 2007 → PKD 2025)
                         </h3>
                         <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                          Analiza kodów ujawnionych w KRS, dobór właściwych PKD 2025 oraz przygotowanie i przeprowadzenie zmiany wpisu. Jedna spółka, do 10 pozycji, bez zmiany umowy spółki.
+                          Analiza kodów ujawnionych w KRS, dobór kodów PKD 2025 w oparciu o informacje o działalności przekazane przez klienta, przygotowanie i złożenie wniosku oraz prowadzenie sprawy przed sądem rejestrowym. Jedna spółka, do 10 pozycji ujawnionych w KRS, bez zmiany umowy spółki.
                         </p>
                         <p className="mt-2 text-sm leading-relaxed text-slate-300">
                           Oferta dotyczy wyłącznie aktualizacji kodów PKD 2007 → PKD 2025 w okresie przejściowym.
