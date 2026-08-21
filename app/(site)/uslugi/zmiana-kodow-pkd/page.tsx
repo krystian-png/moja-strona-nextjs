@@ -70,14 +70,14 @@ export default function ZmianaKodowPkdPage() {
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD Twojej spółki</h1>
               <p className="text-lg text-white/90">Wymiana nastąpi bez wniosku spółki i bez badania, czym spółka faktycznie się zajmuje. Przy 185 kodach jednemu kodowi PKD 2007 odpowiada kilka podklas PKD 2025 — wtedy system wybiera jedną z nich za spółkę.</p>
               <p className="text-lg text-white/90">Wpisz kod z działu 3 swojego odpisu i sprawdź, co się z nim stanie.</p>
-              <div id="wyszukiwarka" className="scroll-mt-24"><PkdLookup /></div>
+              <div id="wyszukiwarka" className="scroll-mt-28"><PkdLookup /></div>
               <p className="text-sm text-white/70">Dane pochodzą z kluczy przejścia PKD 2007 – PKD 2025, stanowiących część załącznika do rozporządzenia Rady Ministrów z dnia 18 grudnia 2024 r. w sprawie Polskiej Klasyfikacji Działalności (Dz.U. poz. 1936). Kod oznaczony jako wpisywany przez system to kod wskazany w kluczu interpretacyjnym, do którego odsyła art. 20e ust. 1 pkt 2 ustawy o KRS. Narzędzie ma charakter informacyjny i nie zastępuje analizy konkretnego przypadku.</p>
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl space-y-10">
-          <div id="oferta" className={`${card} scroll-mt-24`}>
+          <div id="oferta" className={`${card} scroll-mt-28`}>
             <h2 className={heading}>Co obejmuje usługa za 599 zł netto</h2>
             <p className="mb-6 text-lg text-white/90">Usługa dotyczy kodów PKD ujawnionych w dziale 3 wpisu w rejestrze przedsiębiorców — czyli maksymalnie dziesięciu pozycji, które faktycznie widnieją w odpisie z KRS.</p>
             <div className="space-y-4 text-lg text-white/90">
@@ -95,8 +95,8 @@ export default function ZmianaKodowPkdPage() {
                 <div className="space-y-4"><p>To częstsza sytuacja, niż się wydaje. Jeden kod PKD 2007 może rozpaść się na trzy albo cztery podklasy PKD 2025, a w rejestrze mieści się dziesięć pozycji.</p><p>Wtedy trzeba wybrać. Proponujemy zestaw w oparciu o informacje o działalności, które nam przekażesz — zaczynając od działalności przeważającej i tych, które są regulowane albo wymagają wpisu do rejestrów branżowych, a rezygnując z kodów, które nigdy nie były wykorzystywane. Ostateczną decyzję podejmuje spółka.</p><p>Wybór nie jest ostateczny — kody można uzupełnić przy kolejnym wniosku o zmianę wpisu.</p></div>
               </div>
             </div>
-            <p className="mt-8 inline-flex items-center gap-2 text-lg text-white/90">Wolisz porozmawiać? Zadzwoń: <a href="tel:+48572234779" className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"><Phone className="h-5 w-5 text-amber-400" />572 234 779</a></p>
-            <div id="wycena" className="scroll-mt-24">
+            <div id="wycena" className="scroll-mt-28">
+              <p className="mt-8 inline-flex items-center gap-2 text-lg text-white/90">Wolisz porozmawiać? Zadzwoń: <a href="tel:+48572234779" className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"><Phone className="h-5 w-5 text-amber-400" />572 234 779</a></p>
               <InlineContactForm className="mt-8 max-w-xl" />
             </div>
           </div>

@@ -308,9 +308,9 @@ export default function PkdLookup() {
                     <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
                     <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
                     <span className="min-w-0 flex-1 break-words">{data.n[code]}</span>
-                    {code === match.p && <span className="hidden shrink-0 text-sm font-semibold text-amber-900 sm:inline">wybór systemu</span>}
+                    {code === match.p && <span className="hidden shrink-0 text-sm font-semibold text-amber-900 sm:inline">system wpisze automatycznie</span>}
                   </div>
-                  {code === match.p && <span className="ml-[6rem] mt-1 block text-sm font-semibold text-amber-900 sm:hidden">wybór systemu</span>}
+                  {code === match.p && <span className="ml-[6rem] mt-1 block text-sm font-semibold text-amber-900 sm:hidden">system wpisze</span>}
                 </li>
               ))}
             </ul>
