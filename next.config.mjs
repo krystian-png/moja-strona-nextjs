@@ -14,6 +14,7 @@ const nextConfig = {
       },
       { source: "/contact", destination: "/kontakt", permanent: true },
       { source: "/dla-ksiegowych", destination: "/ksiegowi", permanent: true },
+      { source: "/artykul/zmiana-kodow-pkd-2025", destination: "/artykul/jak-sprawdzic-kody-pkd-spolki-w-krs", permanent: true },
     ]
   },
 }
