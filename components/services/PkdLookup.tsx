@@ -22,19 +22,34 @@ const normalizeCode = (value: string) => {
 const secondaryButton =
   "inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-400 px-4 py-2.5 font-semibold transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
 
-const searchExamples = [
-  "oprogramowanie",
-  "informatyki",
-  "przetwarzanie danych",
-  "projektowania",
-  "agencji transportowych",
-  "transport drogowy",
-  "magazynowanie",
-  "roboty budowlane",
-  "nieruchomości",
-  "rachunkowo-księgowa",
-  "sprzątanie",
-  "telekomunikacji",
+const BRANZE: { etykieta: string; fraza: string }[] = [
+  { etykieta: "Spedycja i logistyka", fraza: "agencji transportowych" },
+  { etykieta: "Oprogramowanie i gamedev", fraza: "oprogramowaniem" },
+  { etykieta: "Cyberbezpieczeństwo i IT", fraza: "doradztwem w zakresie informatyki" },
+  { etykieta: "Hosting i centra danych", fraza: "przetwarzanie danych" },
+  { etykieta: "Pożyczki i lombardy", fraza: "udzielania kredytów" },
+  { etykieta: "Telekomunikacja i ISP", fraza: "telekomunikacji" },
+  { etykieta: "Suplementy i żywność", fraza: "artykułów spożywczych" },
+  { etykieta: "Sprzedaż przez internet", fraza: "domy sprzedaży wysyłkowej" },
+  { etykieta: "Roboty budowlane", fraza: "roboty budowlane" },
+  { etykieta: "Nieruchomości", fraza: "nieruchomości" },
+  { etykieta: "Projektowanie i wzornictwo", fraza: "specjalistycznego projektowania" },
+  { etykieta: "Sprzątanie i DDD", fraza: "sprzątanie" },
+  { etykieta: "Budowa budynków", fraza: "wznoszeniem budynków" },
+  { etykieta: "Handel samochodami", fraza: "samochodów osobowych i furgonetek" },
+  { etykieta: "Transport drogowy", fraza: "transport drogowy" },
+  { etykieta: "Magazynowanie", fraza: "magazynowanie" },
+  { etykieta: "Wynajem i leasing flot", fraza: "wynajem i dzierżawa" },
+  { etykieta: "Usługi medyczne", fraza: "opieki zdrowotnej" },
+  { etykieta: "Wyroby medyczne", fraza: "wyrobów medycznych" },
+  { etykieta: "Kluby fitness", fraza: "edukacji sportowej" },
+  { etykieta: "Biuro rachunkowe", fraza: "rachunkowo" },
+  { etykieta: "Recykling i odzysk", fraza: "odzysk surowców" },
+  { etykieta: "Public relations", fraza: "public relations" },
+  { etykieta: "Fundusze inwestycyjne", fraza: "wspomagająca usługi finansowe" },
+  { etykieta: "Agrochemia i pestycydy", fraza: "pestycydów" },
+  { etykieta: "Domeny internetowe", fraza: "własności intelektualnej" },
+  { etykieta: "Maszyny specjalistyczne", fraza: "maszyn specjalnego" },
 ]
 
 function odmianaOdpowiednik(n: number): string {
@@ -54,6 +69,8 @@ export default function PkdLookup() {
   const [activeIndex, setActiveIndex] = useState(-1)
   const [suggestionsOpen, setSuggestionsOpen] = useState(true)
   const [showAll, setShowAll] = useState(false)
+  const [showMoreBranze, setShowMoreBranze] = useState(false)
+  const [resultBranzeOpen, setResultBranzeOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const loadData = useCallback(async () => {
@@ -108,14 +125,16 @@ export default function PkdLookup() {
     setSuggestionsOpen(false)
     setActiveIndex(-1)
     setShowAll(false)
+    setResultBranzeOpen(false)
   }
 
-  const chooseExample = (example: string) => {
-    setValue(example)
+  const chooseExample = (fraza: string) => {
+    setValue(fraza)
     setSelectedCode(null)
     setSuggestionsOpen(true)
     setActiveIndex(-1)
     setShowAll(false)
+    setResultBranzeOpen(false)
     void loadData()
     requestAnimationFrame(() => inputRef.current?.focus())
   }
@@ -126,6 +145,8 @@ export default function PkdLookup() {
     setSuggestionsOpen(true)
     setActiveIndex(-1)
     setShowAll(false)
+    setShowMoreBranze(false)
+    setResultBranzeOpen(false)
     requestAnimationFrame(() => inputRef.current?.focus())
   }
 
@@ -152,6 +173,33 @@ export default function PkdLookup() {
   const match = selectedCode && data ? data.d[selectedCode] : null
   const isMarker = Boolean(selectedCode && data?.m.includes(selectedCode))
   const notFound = loadState === "ready" && /^\d/.test(value) && compactValue.length === 5 && !match
+
+  const branze = (
+    <div>
+      <p className="text-sm text-slate-600">
+        <strong>Branże, w których kody zmieniają się najmocniej</strong> — kliknij, żeby sprawdzić
+      </p>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {BRANZE.slice(0, showMoreBranze ? undefined : 12).map(({ etykieta, fraza }) => (
+          <button
+            key={etykieta}
+            type="button"
+            onClick={() => chooseExample(fraza)}
+            className="cursor-pointer rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-sm text-amber-900 transition-colors hover:border-amber-400 hover:bg-amber-100 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1"
+          >
+            {etykieta}
+          </button>
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={() => setShowMoreBranze((current) => !current)}
+        className="mt-2 text-sm text-slate-600 underline hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1"
+      >
+        {showMoreBranze ? "Pokaż mniej" : `Pokaż więcej branż (${BRANZE.length - 12})`}
+      </button>
+    </div>
+  )
 
   return (
     <div className="rounded-2xl bg-white p-6 text-slate-900 shadow-lg sm:p-8">
@@ -216,21 +264,7 @@ export default function PkdLookup() {
       </div>
 
       {!value && !match && (
-        <div className="mt-3">
-          <p className="text-sm text-slate-600">Nie masz odpisu pod ręką? Sprawdź po nazwie:</p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {searchExamples.map((example) => (
-              <button
-                key={example}
-                type="button"
-                onClick={() => chooseExample(example)}
-                className="rounded-full border border-slate-300 px-2.5 py-1 text-sm text-slate-600 transition hover:border-amber-500 hover:bg-amber-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500"
-              >
-                {example}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div className="mt-3">{branze}</div>
       )}
 
       <div aria-live="polite" className="mt-6">
@@ -289,6 +323,25 @@ export default function PkdLookup() {
               <a href="#oferta" className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-500 px-4 py-2.5 text-center font-bold text-slate-950 transition hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700">Zleć zmianę kodów PKD w KRS — 599 zł netto</a>
               <button type="button" onClick={reset} className={secondaryButton}>Sprawdź kolejny kod</button>
             </div>
+          </div>
+        )}
+
+        {match && (
+          <div className="mt-4">
+            {resultBranzeOpen ? (
+              branze
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  setShowMoreBranze(false)
+                  setResultBranzeOpen(true)
+                }}
+                className="text-sm text-slate-500 underline hover:text-slate-700 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1"
+              >
+                Sprawdź inną branżę
+              </button>
+            )}
           </div>
         )}
 
