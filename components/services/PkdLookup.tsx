@@ -11,6 +11,9 @@ type PkdData = {
 }
 type LoadState = "idle" | "loading" | "ready" | "error"
 
+const normalizeText = (value: string) =>
+  value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pl").replace(/ł/g, "l")
+
 const normalizeCode = (value: string) => {
   const compact = value.toUpperCase().replace(/[^0-9A-Z]/g, "").slice(0, 5)
   return [compact.slice(0, 2), compact.slice(2, 4), compact.slice(4, 5)].filter(Boolean).join(".")
@@ -30,6 +33,7 @@ function odmianaOdpowiednik(n: number): string {
 export default function PkdLookup() {
   const [loadState, setLoadState] = useState<LoadState>("idle")
   const [data, setData] = useState<PkdData | null>(null)
+  const [pkd2007Names, setPkd2007Names] = useState<Record<string, string>>({})
   const [value, setValue] = useState("")
   const [selectedCode, setSelectedCode] = useState<string | null>(null)
   const [activeIndex, setActiveIndex] = useState(-1)
@@ -41,22 +45,40 @@ export default function PkdLookup() {
     if (loadState !== "idle") return
     setLoadState("loading")
     try {
-      const response = await fetch("/pkd-klucze-2007-2025.json")
+      const [response, names] = await Promise.all([
+        fetch("/pkd-klucze-2007-2025.json"),
+        fetch("/pkd-2007-nazwy.json")
+          .then((namesResponse) => {
+            if (!namesResponse.ok) throw new Error("Unable to load PKD 2007 names")
+            return namesResponse.json() as Promise<Record<string, string>>
+          })
+          .catch(() => ({})),
+      ])
       if (!response.ok) throw new Error("Unable to load PKD data")
       setData((await response.json()) as PkdData)
+      setPkd2007Names(names)
       setLoadState("ready")
     } catch {
       setLoadState("error")
     }
   }, [loadState])
 
-  const compactValue = value.replace(/[^0-9A-Z]/g, "")
+  const compactValue = value.toUpperCase().replace(/[^0-9A-Z]/g, "")
   const suggestions = useMemo(() => {
-    if (!data || compactValue.length < 2 || selectedCode) return []
-    return Object.keys(data.d)
-      .filter((code) => code.replace(/\./g, "").startsWith(compactValue))
-      .slice(0, 8)
-  }, [compactValue, data, selectedCode])
+    if (!data || selectedCode) return []
+
+    const codes = Object.keys(data.d)
+    if (/^\d/.test(value)) {
+      if (compactValue.length < 2) return []
+      return codes
+        .filter((code) => code.replace(/\./g, "").startsWith(compactValue))
+        .slice(0, 8)
+    }
+
+    const query = normalizeText(value.trim())
+    if (query.length < 3) return []
+    return codes.filter((code) => normalizeText(pkd2007Names[code] ?? "").includes(query)).slice(0, 8)
+  }, [compactValue, data, pkd2007Names, selectedCode, value])
 
   useEffect(() => {
     if (data && compactValue.length === 5 && data.d[value]) {
@@ -104,7 +126,7 @@ export default function PkdLookup() {
 
   const match = selectedCode && data ? data.d[selectedCode] : null
   const isMarker = Boolean(selectedCode && data?.m.includes(selectedCode))
-  const notFound = loadState === "ready" && compactValue.length === 5 && !match
+  const notFound = loadState === "ready" && /^\d/.test(value) && compactValue.length === 5 && !match
 
   return (
     <div className="rounded-2xl bg-white p-6 text-slate-900 shadow-lg sm:p-8">
@@ -121,7 +143,8 @@ export default function PkdLookup() {
             setSuggestionsOpen(true)
           }}
           onChange={(event) => {
-            setValue(normalizeCode(event.target.value))
+            const nextValue = event.target.value
+            setValue(/^\d/.test(nextValue) ? normalizeCode(nextValue) : nextValue)
             setSelectedCode(null)
             setSuggestionsOpen(true)
             setActiveIndex(-1)
@@ -154,9 +177,12 @@ export default function PkdLookup() {
                   type="button"
                   onMouseDown={(event) => event.preventDefault()}
                   onClick={() => chooseCode(code)}
-                  className={`w-full rounded-lg px-4 py-2.5 text-left font-mono focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-500 ${activeIndex === index ? "bg-amber-100" : "hover:bg-slate-100"}`}
+                  className={`flex w-full min-w-0 items-baseline gap-2 rounded-lg px-4 py-2.5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-500 ${activeIndex === index ? "bg-amber-100" : "hover:bg-slate-100"}`}
                 >
-                  {code}
+                  <span className="shrink-0 font-mono">{code}</span>
+                  {pkd2007Names[code] && (
+                    <span className="min-w-0 truncate text-sm text-slate-600">— {pkd2007Names[code]}</span>
+                  )}
                 </button>
               </li>
             ))}
@@ -171,6 +197,10 @@ export default function PkdLookup() {
         {match?.t.length === 1 && data && (
           <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod przejdzie jednoznacznie</h2>
+            <p className="mt-4 font-mono text-xl font-bold">{selectedCode}</p>
+            {selectedCode && pkd2007Names[selectedCode] && (
+              <p className="mt-1 break-words text-sm text-slate-600">{pkd2007Names[selectedCode]}</p>
+            )}
             <p className="mt-4 font-mono text-3xl font-bold">{match.t[0]}</p>
             <p className="mt-1">{data.n[match.t[0]]}</p>
             <p className="mt-4 leading-relaxed">Temu kodowi odpowiada dokładnie jedna podklasa PKD 2025. System wpisze ją automatycznie i wybór będzie prawidłowy.</p>
@@ -184,6 +214,10 @@ export default function PkdLookup() {
         {match && match.t.length > 1 && data && (
           <div className="rounded-xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmianaOdpowiednik(match.t.length)} tego kodu</h2>
+            <p className="mt-4 font-mono text-xl font-bold">{selectedCode}</p>
+            {selectedCode && pkd2007Names[selectedCode] && (
+              <p className="mt-1 break-words text-sm text-slate-600">{pkd2007Names[selectedCode]}</p>
+            )}
             <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className={`flex min-w-0 flex-col gap-1 rounded-lg bg-white p-3 sm:flex-row sm:gap-3 ${code === match.p ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
