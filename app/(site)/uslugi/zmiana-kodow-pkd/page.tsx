@@ -95,7 +95,10 @@ export default function ZmianaKodowPkdPage() {
                 <div className="space-y-4"><p>To częstsza sytuacja, niż się wydaje. Jeden kod PKD 2007 może rozpaść się na trzy albo cztery podklasy PKD 2025, a w rejestrze mieści się dziesięć pozycji.</p><p>Wtedy trzeba wybrać. Proponujemy zestaw w oparciu o informacje o działalności, które nam przekażesz — zaczynając od działalności przeważającej i tych, które są regulowane albo wymagają wpisu do rejestrów branżowych, a rezygnując z kodów, które nigdy nie były wykorzystywane. Ostateczną decyzję podejmuje spółka.</p><p>Wybór nie jest ostateczny — kody można uzupełnić przy kolejnym wniosku o zmianę wpisu.</p></div>
               </div>
             </div>
-            <InlineContactForm className="mt-8 max-w-xl" />
+            <p className="mt-8 inline-flex items-center gap-2 text-lg text-white/90">Wolisz porozmawiać? Zadzwoń: <a href="tel:+48572234779" className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"><Phone className="h-5 w-5 text-amber-400" />572 234 779</a></p>
+            <div id="wycena" className="scroll-mt-24">
+              <InlineContactForm className="mt-8 max-w-xl" />
+            </div>
           </div>
 
           <div className={card}>

@@ -70,7 +70,6 @@ export default function PkdLookup() {
   const [suggestionsOpen, setSuggestionsOpen] = useState(true)
   const [showAll, setShowAll] = useState(false)
   const [showMoreBranze, setShowMoreBranze] = useState(false)
-  const [resultBranzeOpen, setResultBranzeOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const loadData = useCallback(async () => {
@@ -125,7 +124,6 @@ export default function PkdLookup() {
     setSuggestionsOpen(false)
     setActiveIndex(-1)
     setShowAll(false)
-    setResultBranzeOpen(false)
   }
 
   const chooseExample = (fraza: string) => {
@@ -134,7 +132,6 @@ export default function PkdLookup() {
     setSuggestionsOpen(true)
     setActiveIndex(-1)
     setShowAll(false)
-    setResultBranzeOpen(false)
     void loadData()
     requestAnimationFrame(() => inputRef.current?.focus())
   }
@@ -146,7 +143,6 @@ export default function PkdLookup() {
     setActiveIndex(-1)
     setShowAll(false)
     setShowMoreBranze(false)
-    setResultBranzeOpen(false)
     requestAnimationFrame(() => inputRef.current?.focus())
   }
 
@@ -273,13 +269,13 @@ export default function PkdLookup() {
 
         {match && selectedCode && (
           <div className="mb-4 border-t border-slate-200 pt-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold uppercase text-slate-600">PKD 2007</span>
-              <span className="font-mono text-2xl font-bold tracking-wide">{selectedCode}</span>
+            <div className="flex min-w-0 items-baseline gap-2">
+              <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-slate-600">PKD 2007</span>
+              <span className="shrink-0 whitespace-nowrap font-mono font-bold">{selectedCode}</span>
+              {pkd2007Names[selectedCode] && (
+                <span className="min-w-0 flex-1 break-words text-slate-700">{pkd2007Names[selectedCode]}</span>
+              )}
             </div>
-            {pkd2007Names[selectedCode] && (
-              <p className="mt-2 break-words text-slate-700">{pkd2007Names[selectedCode]}</p>
-            )}
           </div>
         )}
 
@@ -288,29 +284,33 @@ export default function PkdLookup() {
         {match?.t.length === 1 && data && (
           <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod przejdzie jednoznacznie</h2>
-            <p className="mt-4 font-mono text-3xl font-bold">{match.t[0]}</p>
-            <p className="mt-1">{data.n[match.t[0]]}</p>
+            <div className="mt-4 flex min-w-0 items-baseline gap-2">
+              <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
+              <span className="shrink-0 whitespace-nowrap font-mono font-bold">{match.t[0]}</span>
+              <span className="min-w-0 flex-1 break-words">{data.n[match.t[0]]}</span>
+            </div>
             <p className="mt-4 leading-relaxed">Temu kodowi odpowiada dokładnie jedna podklasa PKD 2025. System wpisze ją automatycznie i wybór będzie prawidłowy.</p>
             <p className="mt-4 leading-relaxed">W dziale 3 Twojej spółki może być do dziesięciu kodów. Wystarczy jeden wieloznaczny, żeby po automatycznej wymianie część wpisu przestała odpowiadać rzeczywistości.</p>
-            <p className="mt-4 text-sm">Nie chcesz sprawdzać wszystkich ręcznie? <a href="#oferta" className="font-semibold underline">Sprawdzimy cały dział 3 — 599 zł netto</a></p>
+            <p className="mt-4 text-sm">Nie chcesz sprawdzać wszystkich ręcznie? <a href="#wycena" className="font-semibold underline">Sprawdzimy cały dział 3 — 599 zł netto</a></p>
             {isMarker && <p className="mt-4 border-t border-emerald-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <button type="button" onClick={reset} className={`${secondaryButton} mt-5`}>Sprawdź kolejny kod</button>
+            <p className="mt-2 text-sm text-slate-600"><a href="#oferta" className="underline underline-offset-2 hover:text-slate-900">Co obejmuje usługa za 599 zł</a></p>
           </div>
         )}
 
         {match && match.t.length > 1 && data && (
           <div className="rounded-xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmianaOdpowiednik(match.t.length)} tego kodu</h2>
-            <span className="mt-4 inline-flex rounded-full bg-amber-200 px-2 py-0.5 text-xs font-semibold uppercase text-amber-900 sm:hidden">PKD 2025</span>
-            <ul className="mt-3 max-h-80 space-y-2 overflow-y-auto pr-1 sm:mt-4">
+            <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
-                <li key={code} className={`flex min-w-0 flex-col gap-1 rounded-lg bg-white p-3 sm:flex-row sm:gap-3 ${code === match.p ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
-                  <span className="flex shrink-0 flex-wrap items-center gap-2">
-                    <span className="font-mono font-bold">{code}</span>
-                    <span className="hidden rounded-full bg-amber-200 px-2 py-0.5 text-xs font-semibold uppercase text-amber-900 sm:inline-flex">PKD 2025</span>
-                  </span>
-                  <span className="min-w-0 break-words">{data.n[code]}</span>
-                  {code === match.p && <span className="text-sm font-semibold text-amber-900 sm:ml-auto">wybór systemu</span>}
+                <li key={code} className={`min-w-0 rounded-lg bg-white p-3 ${code === match.p ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
+                  <div className="flex min-w-0 items-baseline gap-2">
+                    <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
+                    <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
+                    <span className="min-w-0 flex-1 break-words">{data.n[code]}</span>
+                    {code === match.p && <span className="hidden shrink-0 text-sm font-semibold text-amber-900 sm:inline">wybór systemu</span>}
+                  </div>
+                  {code === match.p && <span className="ml-[6rem] mt-1 block text-sm font-semibold text-amber-900 sm:hidden">wybór systemu</span>}
                 </li>
               ))}
             </ul>
@@ -320,28 +320,10 @@ export default function PkdLookup() {
             <p className="mt-4 leading-relaxed">Na podstawie odpisu z KRS i informacji o działalności Twojej spółki sprawdzimy wszystkie kody ujawnione w dziale 3, zaproponujemy odpowiadające im kody PKD 2025, sprawdzimy pokrycie w umowie spółki i złożymy wniosek do sądu rejestrowego.</p>
             {isMarker && <p className="mt-4 border-t border-amber-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <a href="#oferta" className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-500 px-4 py-2.5 text-center font-bold text-slate-950 transition hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700">Zleć zmianę kodów PKD w KRS — 599 zł netto</a>
+              <a href="#wycena" className="inline-flex min-h-11 items-center justify-center rounded-lg bg-amber-500 px-4 py-2.5 text-center font-bold text-slate-950 transition hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700">Zleć zmianę kodów PKD w KRS — 599 zł netto</a>
               <button type="button" onClick={reset} className={secondaryButton}>Sprawdź kolejny kod</button>
             </div>
-          </div>
-        )}
-
-        {match && (
-          <div className="mt-4">
-            {resultBranzeOpen ? (
-              branze
-            ) : (
-              <button
-                type="button"
-                onClick={() => {
-                  setShowMoreBranze(false)
-                  setResultBranzeOpen(true)
-                }}
-                className="text-sm text-slate-500 underline hover:text-slate-700 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1"
-              >
-                Sprawdź inną branżę
-              </button>
-            )}
+            <p className="mt-2 text-sm text-slate-600"><a href="#oferta" className="underline underline-offset-2 hover:text-slate-900">Co obejmuje usługa za 599 zł</a></p>
           </div>
         )}
 
