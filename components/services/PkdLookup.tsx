@@ -80,6 +80,7 @@ export default function PkdLookup() {
   const [loadState, setLoadState] = useState<LoadState>("idle")
   const [data, setData] = useState<PkdData | null>(null)
   const [pkd2004Collisions, setPkd2004Collisions] = useState<Set<string>>(() => new Set())
+  const [pkd2025Only, setPkd2025Only] = useState<Record<string, string>>({})
   const [explanations, setExplanations] = useState<Record<string, string> | null>(null)
   const [explanationsUnavailable, setExplanationsUnavailable] = useState<Set<string>>(() => new Set())
   const [expandedExplanation, setExpandedExplanation] = useState<string | null>(null)
@@ -96,15 +97,19 @@ export default function PkdLookup() {
     if (loadState !== "idle") return
     setLoadState("loading")
     try {
-      const [response, collisions] = await Promise.all([
+      const [response, collisions, currentCodes] = await Promise.all([
         fetch("/pkd-klucze-all.json"),
         fetch("/pkd-2004-kolizje.json")
           .then(async (collisionResponse) => collisionResponse.ok ? await collisionResponse.json() as string[] : [])
           .catch(() => [] as string[]),
+        fetch("/pkd-2025-tylko.json")
+          .then(async (currentCodesResponse) => currentCodesResponse.ok ? await currentCodesResponse.json() as Record<string, string> : {})
+          .catch(() => ({} as Record<string, string>)),
       ])
       if (!response.ok) throw new Error("Unable to load PKD data")
       setData((await response.json()) as PkdData)
       setPkd2004Collisions(new Set(collisions))
+      setPkd2025Only(currentCodes)
       setLoadState("ready")
     } catch {
       setLoadState("error")
@@ -130,11 +135,11 @@ export default function PkdLookup() {
   }, [compactValue, data, selectedCode, value])
 
   useEffect(() => {
-    if (data && compactValue.length >= 2 && data.d[value]) {
+    if (data && compactValue.length >= 2 && (data.d[value] || pkd2025Only[value])) {
       setSelectedCode(value)
       setSuggestionsOpen(false)
     }
-  }, [compactValue.length, data, value])
+  }, [compactValue.length, data, pkd2025Only, value])
 
   const chooseCode = (code: string) => {
     setValue(code)
@@ -186,17 +191,18 @@ export default function PkdLookup() {
   }
 
   const match = selectedCode && data ? data.d[selectedCode] : null
+  const currentPkdName = selectedCode ? pkd2025Only[selectedCode] : null
   const isMarker = match?.m === 1
   const isPkd2004Collision = selectedCode ? pkd2004Collisions.has(selectedCode) : false
 
   useEffect(() => {
     setNotFoundReady(false)
-    if (loadState !== "ready" || !/^\d/.test(value) || compactValue.length < 2 || match) return
+    if (loadState !== "ready" || !/^\d/.test(value) || compactValue.length < 2 || match || currentPkdName) return
     const timer = window.setTimeout(() => setNotFoundReady(true), 450)
     return () => window.clearTimeout(timer)
-  }, [compactValue, loadState, match, value])
+  }, [compactValue, currentPkdName, loadState, match, value])
 
-  const notFound = loadState === "ready" && /^\d/.test(value) && compactValue.length >= 2 && !match && notFoundReady
+  const notFound = loadState === "ready" && /^\d/.test(value) && compactValue.length >= 2 && !match && !currentPkdName && notFoundReady
 
   const toggleExplanation = async (code: string) => {
     if (expandedExplanation === code) {
@@ -336,7 +342,7 @@ export default function PkdLookup() {
               <span className="min-w-0 flex-1 break-words">{data.n[match.t[0]]}</span>
             </div>
             <p className="mt-4 leading-relaxed">Klucze przejścia przypisują temu kodowi dokładnie jeden odpowiednik. System wykreśli dotychczasowy wpis i w jego miejsce wpisze ten kod.</p>
-            {(match.p === "g" || match.p === "d") && <p className="mt-4 leading-relaxed">Stanie się tak również wtedy, gdy numer i nazwa są takie same w obu klasyfikacjach — stary wpis zostaje wykreślony, nowy wpisany.</p>}
+            {match.t[0] === selectedCode && <p className="mt-4 leading-relaxed">Numer pozostaje ten sam, więc w odpisie nie zobaczysz różnicy. Wpis i tak zostanie wykreślony i dokonany na nowo — zmieni się podstawa klasyfikacyjna, nie treść pozycji.</p>}
             {isMarker && <p className="mt-4 border-t border-emerald-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <button type="button" onClick={reset} className={`${secondaryButton} mt-5`}>Sprawdź kolejny kod</button>
             <p className="mt-2 text-sm text-slate-600"><a href="#oferta" className="underline underline-offset-2 hover:text-slate-900">Co obejmuje usługa za 799 zł</a></p>
@@ -395,7 +401,7 @@ export default function PkdLookup() {
             </ul>
             {!showAll && match.t.length > 5 && <button type="button" onClick={() => setShowAll(true)} className={`${secondaryButton} mt-3`}>Pokaż wszystkie ({match.t.length})</button>}
             <p className="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 font-semibold">Klucze przejścia nie wskazują, który z nich ma zostać wpisany. W takiej sytuacji system wykreśla pozycję z rejestru i nie wpisuje w jej miejsce żadnego kodu.</p>
-            <p className="mt-4 leading-relaxed">Potwierdziło to Ministerstwo Sprawiedliwości w piśmie z 24 września 2026 r. (znak DIRS-XV.5411.84.2026): jeżeli przeklasyfikowanie nie jest możliwe na podstawie powiązań jednoznacznych ani interpretacji powiązań wieloznacznych, działalność zostaje wykreślona z rejestru.</p>
+            <p className="mt-4 leading-relaxed">Wynika to ze stanowiska Ministerstwa Sprawiedliwości: jeżeli przeklasyfikowanie nie jest możliwe na podstawie powiązań jednoznacznych ani interpretacji powiązań wieloznacznych, działalność zostaje wykreślona z rejestru.</p>
             <p className="mt-4 leading-relaxed">Dotyczy to 112 kodów zapisanych na poziomie działu albo grupy. Wskazanie, który kod wpisać, występuje wyłącznie przy kodach na poziomie klasy i przy kodach pełnych.</p>
             <p className="mt-4 leading-relaxed">Jeżeli złożysz wniosek do 31 grudnia 2026 r., sam decydujesz, jaki kod znajdzie się w rejestrze. Po tej dacie pozycja zniknie, a jej przywrócenie będzie wymagało osobnego, płatnego wniosku.</p>
             {isMarker && <p className="mt-4 border-t border-red-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
@@ -413,6 +419,21 @@ export default function PkdLookup() {
             <p className="mt-4 leading-relaxed">W PKD 2004, obowiązującej do końca 2007 r., kod <span className="font-mono font-semibold">{selectedCode}</span> oznaczał inną działalność niż dziś. Jeżeli przedmiot działalności Twojej spółki nie był zmieniany od 2007 r., wpis może pochodzić właśnie stamtąd — a wtedy powyższy wynik go nie dotyczy.</p>
             <p className="mt-4 leading-relaxed">Kody ze starszej klasyfikacji nie mają odpowiednika w kluczach przejścia i zostaną wykreślone z rejestru bez zastąpienia.</p>
             <a href="#wycena" className={`${secondaryButton} mt-5`}>Sprawdzimy to za Ciebie — 799 zł netto</a>
+          </div>
+        )}
+
+        {!match && selectedCode && currentPkdName && (
+          <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
+            <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod jest już aktualny</h2>
+            <div className="mt-4 flex min-w-0 items-baseline gap-2">
+              <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
+              <span className="shrink-0 whitespace-nowrap font-mono font-bold">{selectedCode}</span>
+              <span className="min-w-0 flex-1 break-words">{currentPkdName}</span>
+            </div>
+            <p className="mt-4 leading-relaxed">To kod z obowiązującej klasyfikacji PKD 2025. Nie podlega automatycznej wymianie i nie wymaga zmiany.</p>
+            <p className="mt-4 leading-relaxed">Jeżeli wszystkie pozycje w dziale 3 wyglądają tak, wpis Twojej spółki został już zaktualizowany.</p>
+            <button type="button" onClick={reset} className={`${secondaryButton} mt-5`}>Sprawdź kolejny kod</button>
+            <p className="mt-2 text-sm text-slate-600"><a href="#oferta" className="underline underline-offset-2 hover:text-slate-900">Co obejmuje usługa za 799 zł</a></p>
           </div>
         )}
 
