@@ -323,10 +323,12 @@ export default function PkdLookup() {
 
         {match && selectedCode && (
           <div className="mb-4 border-t border-slate-200 pt-4">
-            <div className="flex min-w-0 items-baseline gap-2">
-              <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-slate-600">PKD 2007</span>
-              <span className="shrink-0 whitespace-nowrap font-mono font-bold">{selectedCode}</span>
-              <span className="min-w-0 flex-1 break-words text-slate-700">{match.n}</span>
+            <div className="flex min-w-0 flex-wrap items-baseline gap-2">
+              <div className="flex items-baseline gap-2">
+                <span className="shrink-0 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-slate-600 sm:w-[5.5rem]">PKD 2007</span>
+                <span className="shrink-0 whitespace-nowrap font-mono font-bold">{selectedCode}</span>
+              </div>
+              <span className="min-w-0 w-full text-slate-700 sm:w-auto sm:flex-1">{match.n}</span>
             </div>
           </div>
         )}
@@ -336,10 +338,12 @@ export default function PkdLookup() {
         {match?.t.length === 1 && data && (
           <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod zostanie przeklasyfikowany</h2>
-            <div className="mt-4 flex min-w-0 items-baseline gap-2">
-              <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
-              <span className="shrink-0 whitespace-nowrap font-mono font-bold">{match.t[0]}</span>
-              <span className="min-w-0 flex-1 break-words">{data.n[match.t[0]]}</span>
+            <div className="mt-4 flex min-w-0 flex-wrap items-baseline gap-2">
+              <div className="flex items-baseline gap-2">
+                <span className="shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800 sm:w-[5.5rem]">PKD 2025</span>
+                <span className="shrink-0 whitespace-nowrap font-mono font-bold">{match.t[0]}</span>
+              </div>
+              <span className="min-w-0 w-full sm:w-auto sm:flex-1">{data.n[match.t[0]]}</span>
             </div>
             <p className="mt-4 leading-relaxed">Klucze przejścia przypisują temu kodowi dokładnie jeden odpowiednik. System wykreśli dotychczasowy wpis i w jego miejsce wpisze ten kod.</p>
             {match.t[0] === selectedCode && <p className="mt-4 leading-relaxed">Numer pozostaje ten sam, więc w odpisie nie zobaczysz różnicy. Wpis i tak zostanie wykreślony i dokonany na nowo — zmieni się podstawa klasyfikacyjna, nie treść pozycji.</p>}
@@ -355,13 +359,15 @@ export default function PkdLookup() {
             <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className={`min-w-0 rounded-lg bg-white p-3 ${code === match.i ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
-                  <div className="flex min-w-0 items-baseline gap-2">
-                    <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
-                    <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
-                    <span className="min-w-0 flex-1 break-words">{data.n[code]}</span>
+                  <div className="flex min-w-0 flex-wrap items-baseline gap-2">
+                    <div className="flex items-baseline gap-2">
+                      <span className="shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800 sm:w-[5.5rem]">PKD 2025</span>
+                      <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
+                    </div>
+                    <span className="min-w-0 w-full sm:w-auto sm:flex-1">{data.n[code]}</span>
                     {code === match.i && <span className="hidden shrink-0 text-sm font-semibold text-amber-900 sm:inline">system wpisze automatycznie</span>}
                   </div>
-                  {code === match.i && <span className="ml-[6rem] mt-1 block text-sm font-semibold text-amber-900 sm:hidden">system wpisze</span>}
+                  {code === match.i && <span className="mt-1 block text-sm font-semibold text-amber-900 sm:hidden">system wpisze</span>}
                 </li>
               ))}
             </ul>
@@ -385,10 +391,12 @@ export default function PkdLookup() {
             <ul className="mt-4 space-y-2 pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className="min-w-0 rounded-lg bg-white p-3">
-                  <div className="flex min-w-0 items-baseline gap-2">
-                    <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
-                    <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
-                    <span className="min-w-0 flex-1 break-words">{data.n[code]}</span>
+                  <div className="flex min-w-0 flex-wrap items-baseline gap-2">
+                    <div className="flex items-baseline gap-2">
+                      <span className="shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800 sm:w-[5.5rem]">PKD 2025</span>
+                      <span className="shrink-0 whitespace-nowrap font-mono font-bold">{code}</span>
+                    </div>
+                    <span className="min-w-0 w-full sm:w-auto sm:flex-1">{data.n[code]}</span>
                   </div>
                   {EXPLANATION_CODES.has(code) && !explanationsUnavailable.has(code) && (
                     <button type="button" onClick={() => void toggleExplanation(code)} className="ml-[6rem] mt-2 text-left text-sm font-semibold text-red-800 underline underline-offset-2">
@@ -401,7 +409,7 @@ export default function PkdLookup() {
             </ul>
             {!showAll && match.t.length > 5 && <button type="button" onClick={() => setShowAll(true)} className={`${secondaryButton} mt-3`}>Pokaż wszystkie ({match.t.length})</button>}
             <p className="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 font-semibold">Klucze przejścia nie wskazują, który z nich ma zostać wpisany. W takiej sytuacji system wykreśla pozycję z rejestru i nie wpisuje w jej miejsce żadnego kodu.</p>
-            <p className="mt-4 leading-relaxed">Wynika to ze stanowiska Ministerstwa Sprawiedliwości: jeżeli przeklasyfikowanie nie jest możliwe na podstawie powiązań jednoznacznych ani interpretacji powiązań wieloznacznych, działalność zostaje wykreślona z rejestru.</p>
+            <p className="mt-4 leading-relaxed">Zgodnie z mechanizmem automatycznej aktualizacji w KRS, jeżeli dla starego kodu nie ma ani relacji jednoznacznej, ani wskazanej relacji interpretacyjnej, dotychczasowy wpis ma zostać wykreślony bez wpisania w jego miejsce któregokolwiek z możliwych kodów PKD 2025.</p>
             <p className="mt-4 leading-relaxed">Dotyczy to 112 kodów zapisanych na poziomie działu albo grupy. Wskazanie, który kod wpisać, występuje wyłącznie przy kodach na poziomie klasy i przy kodach pełnych.</p>
             <p className="mt-4 leading-relaxed">Jeżeli złożysz wniosek do 31 grudnia 2026 r., sam decydujesz, jaki kod znajdzie się w rejestrze. Po tej dacie pozycja zniknie, a jej przywrócenie będzie wymagało osobnego, płatnego wniosku.</p>
             {isMarker && <p className="mt-4 border-t border-red-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
