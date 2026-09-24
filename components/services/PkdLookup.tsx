@@ -79,6 +79,7 @@ function poziomLiczebnik(p: string, n: number): string {
 export default function PkdLookup() {
   const [loadState, setLoadState] = useState<LoadState>("idle")
   const [data, setData] = useState<PkdData | null>(null)
+  const [pkd2004Collisions, setPkd2004Collisions] = useState<Set<string>>(() => new Set())
   const [explanations, setExplanations] = useState<Record<string, string> | null>(null)
   const [explanationsUnavailable, setExplanationsUnavailable] = useState<Set<string>>(() => new Set())
   const [expandedExplanation, setExpandedExplanation] = useState<string | null>(null)
@@ -95,9 +96,15 @@ export default function PkdLookup() {
     if (loadState !== "idle") return
     setLoadState("loading")
     try {
-      const response = await fetch("/pkd-klucze-all.json")
+      const [response, collisions] = await Promise.all([
+        fetch("/pkd-klucze-all.json"),
+        fetch("/pkd-2004-kolizje.json")
+          .then(async (collisionResponse) => collisionResponse.ok ? await collisionResponse.json() as string[] : [])
+          .catch(() => [] as string[]),
+      ])
       if (!response.ok) throw new Error("Unable to load PKD data")
       setData((await response.json()) as PkdData)
+      setPkd2004Collisions(new Set(collisions))
       setLoadState("ready")
     } catch {
       setLoadState("error")
@@ -180,6 +187,7 @@ export default function PkdLookup() {
 
   const match = selectedCode && data ? data.d[selectedCode] : null
   const isMarker = match?.m === 1
+  const isPkd2004Collision = selectedCode ? pkd2004Collisions.has(selectedCode) : false
 
   useEffect(() => {
     setNotFoundReady(false)
@@ -321,13 +329,13 @@ export default function PkdLookup() {
 
         {match?.t.length === 1 && data && (
           <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 sm:p-6">
-            <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod przejdzie jednoznacznie</h2>
+            <h2 className="text-xl font-bold text-emerald-900 sm:text-2xl">Ten kod zostanie przeklasyfikowany</h2>
             <div className="mt-4 flex min-w-0 items-baseline gap-2">
               <span className="w-[5.5rem] shrink-0 whitespace-nowrap rounded-full border border-amber-200 bg-amber-100 px-2 py-0.5 text-center text-xs font-semibold uppercase tracking-wide text-amber-800">PKD 2025</span>
               <span className="shrink-0 whitespace-nowrap font-mono font-bold">{match.t[0]}</span>
               <span className="min-w-0 flex-1 break-words">{data.n[match.t[0]]}</span>
             </div>
-            <p className="mt-4 leading-relaxed">Temu kodowi odpowiada dokładnie jeden kod PKD 2025. System wykreśli dotychczasowy wpis i w jego miejsce wpisze ten kod.</p>
+            <p className="mt-4 leading-relaxed">Klucze przejścia przypisują temu kodowi dokładnie jeden odpowiednik. System wykreśli dotychczasowy wpis i w jego miejsce wpisze ten kod.</p>
             {(match.p === "g" || match.p === "d") && <p className="mt-4 leading-relaxed">Stanie się tak również wtedy, gdy numer i nazwa są takie same w obu klasyfikacjach — stary wpis zostaje wykreślony, nowy wpisany.</p>}
             {isMarker && <p className="mt-4 border-t border-emerald-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <button type="button" onClick={reset} className={`${secondaryButton} mt-5`}>Sprawdź kolejny kod</button>
@@ -365,8 +373,8 @@ export default function PkdLookup() {
         )}
 
         {match && match.t.length > 1 && match.i === null && data && (
-          <div className="rounded-xl border border-orange-400 bg-orange-50 p-5 sm:p-6">
-            <h2 className="text-xl font-bold text-orange-950 sm:text-2xl">Nie wiadomo, co system zrobi z tym kodem</h2>
+          <div className="rounded-xl border border-red-300 bg-red-50 p-5 sm:p-6">
+            <h2 className="text-xl font-bold text-red-900 sm:text-2xl">Ten kod zostanie wykreślony bez zastąpienia</h2>
             <p className="mt-4 leading-relaxed">W PKD 2025 zakres {poziomDopelniacz(match.p)} został rozdzielony między {match.t.length} {poziomLiczebnik(match.p, match.t.length)}:</p>
             <ul className="mt-4 space-y-2 pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
@@ -377,7 +385,7 @@ export default function PkdLookup() {
                     <span className="min-w-0 flex-1 break-words">{data.n[code]}</span>
                   </div>
                   {EXPLANATION_CODES.has(code) && !explanationsUnavailable.has(code) && (
-                    <button type="button" onClick={() => void toggleExplanation(code)} className="ml-[6rem] mt-2 text-left text-sm font-semibold text-orange-800 underline underline-offset-2">
+                    <button type="button" onClick={() => void toggleExplanation(code)} className="ml-[6rem] mt-2 text-left text-sm font-semibold text-red-800 underline underline-offset-2">
                       {expandedExplanation === code ? "Zwiń opis" : "Co obejmuje ten kod"}
                     </button>
                   )}
@@ -386,10 +394,11 @@ export default function PkdLookup() {
               ))}
             </ul>
             {!showAll && match.t.length > 5 && <button type="button" onClick={() => setShowAll(true)} className={`${secondaryButton} mt-3`}>Pokaż wszystkie ({match.t.length})</button>}
-            <p className="mt-4 rounded-lg border border-orange-400 bg-orange-100 p-4 font-semibold">Klucze nie wskazują, który z nich zostanie wpisany.</p>
-            <p className="mt-4 leading-relaxed">Przy kodach zapisanych pełnym numerem, takich jak 10.81.Z, klucze zawierają takie wskazanie. Przy kodach na poziomie grupy i działu nie ma go w żadnym ze 124 przypadków.</p>
-            <p className="mt-4 leading-relaxed">Art. 20e ust. 1 ustawy o KRS przewiduje trzy warianty: podmianę według powiązania jednoznacznego, podmianę według wskazania przy powiązaniu wieloznacznym albo — w pozostałych przypadkach — wykreślenie bez wpisania nowego kodu. Który z nich zadziała w tym przypadku, nie wynika ani z przepisów, ani z dokumentów GUS.</p>
-            {isMarker && <p className="mt-4 border-t border-orange-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
+            <p className="mt-4 rounded-lg border border-red-300 bg-red-100 p-4 font-semibold">Klucze przejścia nie wskazują, który z nich ma zostać wpisany. W takiej sytuacji system wykreśla pozycję z rejestru i nie wpisuje w jej miejsce żadnego kodu.</p>
+            <p className="mt-4 leading-relaxed">Potwierdziło to Ministerstwo Sprawiedliwości w piśmie z 24 września 2026 r. (znak DIRS-XV.5411.84.2026): jeżeli przeklasyfikowanie nie jest możliwe na podstawie powiązań jednoznacznych ani interpretacji powiązań wieloznacznych, działalność zostaje wykreślona z rejestru.</p>
+            <p className="mt-4 leading-relaxed">Dotyczy to 112 kodów zapisanych na poziomie działu albo grupy. Wskazanie, który kod wpisać, występuje wyłącznie przy kodach na poziomie klasy i przy kodach pełnych.</p>
+            <p className="mt-4 leading-relaxed">Jeżeli złożysz wniosek do 31 grudnia 2026 r., sam decydujesz, jaki kod znajdzie się w rejestrze. Po tej dacie pozycja zniknie, a jej przywrócenie będzie wymagało osobnego, płatnego wniosku.</p>
+            {isMarker && <p className="mt-4 border-t border-red-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a href="#wycena" className="inline-flex min-h-11 items-center justify-center rounded-lg bg-orange-600 px-4 py-2.5 text-center font-bold text-white transition hover:bg-orange-500">Zleć zmianę kodów PKD w KRS — 799 zł netto</a>
               <button type="button" onClick={reset} className={secondaryButton}>Sprawdź kolejny kod</button>
@@ -398,10 +407,20 @@ export default function PkdLookup() {
           </div>
         )}
 
+        {match && selectedCode && isPkd2004Collision && (
+          <div className="mt-4 rounded-xl border border-slate-300 bg-slate-50 p-5 sm:p-6">
+            <h3 className="text-xl font-bold text-slate-900">Ten numer istniał także w starszej klasyfikacji</h3>
+            <p className="mt-4 leading-relaxed">W PKD 2004, obowiązującej do końca 2007 r., kod <span className="font-mono font-semibold">{selectedCode}</span> oznaczał inną działalność niż dziś. Jeżeli przedmiot działalności Twojej spółki nie był zmieniany od 2007 r., wpis może pochodzić właśnie stamtąd — a wtedy powyższy wynik go nie dotyczy.</p>
+            <p className="mt-4 leading-relaxed">Kody ze starszej klasyfikacji nie mają odpowiednika w kluczach przejścia i zostaną wykreślone z rejestru bez zastąpienia.</p>
+            <a href="#wycena" className={`${secondaryButton} mt-5`}>Sprawdzimy to za Ciebie — 799 zł netto</a>
+          </div>
+        )}
+
         {notFound && (
           <div className="rounded-xl border border-slate-300 bg-slate-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold sm:text-2xl">Nie znaleziono kodu</h2>
-            <p className="mt-4 leading-relaxed">Sprawdź zapis kodu w odpisie z KRS. W dziale 3 kody bywają zapisane na różnym poziomie: jako sam dział (np. 43), grupa (43.1), klasa (43.11) albo pełny kod (43.11.Z). Wyszukiwarka obsługuje wszystkie te warianty. Jeżeli kod jest zapisany prawidłowo, a mimo to go tu nie ma — napisz do nas.</p>
+            <p className="mt-4 leading-relaxed">Sprawdź zapis kodu w odpisie z KRS. W dziale 3 kody bywają zapisane na różnym poziomie: jako sam dział (43), grupa (43.1), klasa (43.11) albo pełny kod (43.11.Z). Wyszukiwarka obsługuje wszystkie te warianty.</p>
+            <p className="mt-4 leading-relaxed">Jeżeli kod jest zapisany prawidłowo, a mimo to go tu nie ma, wpis może pochodzić z klasyfikacji sprzed 2008 r. Takie kody nie mają odpowiednika w kluczach przejścia i zostaną wykreślone z rejestru bez zastąpienia. Napisz do nas.</p>
             <Link href="/kontakt" className={`${secondaryButton} mt-5`}>Napisz do nas</Link>
           </div>
         )}
