@@ -368,7 +368,7 @@ export default function PkdLookup() {
           <div className="rounded-xl border border-orange-400 bg-orange-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-orange-950 sm:text-2xl">Nie wiadomo, co system zrobi z tym kodem</h2>
             <p className="mt-4 leading-relaxed">W PKD 2025 zakres {poziomDopelniacz(match.p)} został rozdzielony między {match.t.length} {poziomLiczebnik(match.p, match.t.length)}:</p>
-            <ul className="mt-4 max-h-96 space-y-2 overflow-y-auto pr-1">
+            <ul className="mt-4 space-y-2 pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className="min-w-0 rounded-lg bg-white p-3">
                   <div className="flex min-w-0 items-baseline gap-2">
