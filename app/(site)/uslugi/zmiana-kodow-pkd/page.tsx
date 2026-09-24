@@ -13,7 +13,7 @@ import InlineContactForm from "../_components/InlineContactForm"
 
 const pagePath = "/uslugi/zmiana-kodow-pkd"
 const pageUrl = `${siteUrl}${pagePath}`
-const description = "Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD w dziale 3 rejestru. Sprawdź w wyszukiwarce, jaki kod dostanie Twoja spółka. Obsługa wniosku – 599 zł netto."
+const description = "Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD w dziale 3 rejestru. Sprawdź w wyszukiwarce, jaki kod dostanie Twoja spółka. Obsługa wniosku – 799 zł netto."
 
 const faqItems = [
   { question: 'Czy KRS automatycznie zmieni kody PKD 2007 na PKD 2025?', answer: 'Tak. Po zakończeniu okresu przejściowego kody w dziale 3 rejestru wymienia system teleinformatyczny KRS, bez wniosku spółki i bez opłaty (art. 20e ust. 1 ustawy o KRS). Warto to odróżnić od tego, co dzieje się w rejestrze REGON i w CEIDG — tam obowiązują odrębne przepisy i odrębne terminy. Wymiana w KRS nie obejmuje działalności pożytku publicznego (art. 20e ust. 2 ustawy o KRS).' },
@@ -26,7 +26,7 @@ const faqItems = [
   { question: 'Czy system może wpisać niewłaściwy kod PKD?', answer: 'Może wpisać kod, który nie odpowiada faktycznej działalności spółki. Nie jest to błąd — system działa dokładnie zgodnie z kluczem interpretacyjnym. Rzecz w tym, że klucz został przygotowany na potrzeby masowej konwersji, a nie oceny pojedynczej spółki, a sąd rejestrowy przy automatycznej wymianie nie bada, czym spółka się zajmuje.' },
   { question: 'Ile kodów PKD można ujawnić w KRS?', answer: 'Nie więcej niż dziesięć pozycji, w tym jedną działalność przeważającą określoną na poziomie podklasy (art. 40 pkt 1 ustawy o KRS). To limit dotyczący rejestru, nie umowy spółki — w umowie przedmiot działalności może być określony znacznie szerzej.' },
   { question: 'Co, jeżeli prawidłowych kodów PKD 2025 wyjdzie więcej niż dziesięć?', answer: 'W rejestrze można ujawnić maksymalnie dziesięć pozycji (art. 40 pkt 1 ustawy o KRS), więc trzeba wybrać. Pierwszeństwo mają działalność przeważająca oraz te rodzaje działalności, które są regulowane albo wymagają wpisu do rejestrów branżowych. Wybór nie jest ostateczny — pozostałe kody można ujawnić przy kolejnym wniosku o zmianę wpisu.' },
-  { question: 'Ile kosztuje zmiana PKD w KRS?', answer: 'Wniosek dotyczący wymiany kodów PKD 2007 na PKD 2025, złożony do 31 grudnia 2026 r., jest zwolniony z opłaty sądowej (art. 20e ust. 3 ustawy o KRS). Standardowa opłata za zmianę wpisu w rejestrze przedsiębiorców wynosi 250 zł. Koszt naszej obsługi to 599 zł netto.' },
+  { question: 'Ile kosztuje zmiana PKD w KRS?', answer: 'Wniosek dotyczący wymiany kodów PKD 2007 na PKD 2025, złożony do 31 grudnia 2026 r., jest zwolniony z opłaty sądowej (art. 20e ust. 3 ustawy o KRS). Standardowa opłata za zmianę wpisu w rejestrze przedsiębiorców wynosi 250 zł. Koszt naszej obsługi to 799 zł netto.' },
   { question: 'Czy zmiana PKD do końca 2026 r. jest bez opłaty sądowej?', answer: 'Tak, jeżeli wniosek dotyczy wymiany dotychczasowych kodów PKD 2007 na odpowiadające im kody PKD 2025 i został złożony do 31 grudnia 2026 r. (art. 20e ust. 3 ustawy o KRS). Zwolnienie dotyczy samej wymiany kodów — jeżeli przy okazji zgłaszasz inne zmiany w rejestrze, do tych zmian stosuje się zasady ogólne.' },
   { question: 'Czy przy zmianie PKD trzeba zmieniać umowę spółki?', answer: 'Nie zawsze. W rejestrze ujawnia się maksymalnie dziesięć kodów, natomiast umowa spółki określa przedmiot działalności zwykle znacznie szerzej. Jeżeli kody, które chcesz ujawnić, mieszczą się w przedmiocie działalności wynikającym z umowy, wystarczy zgłoszenie zmiany wpisu. Zmiana umowy jest konieczna dopiero wtedy, gdy nowe kody wykraczają poza to, co umowa przewiduje.' },
   { question: 'Czy do zmiany PKD potrzebny jest notariusz?', answer: 'Do samego zgłoszenia zmiany kodów w rejestrze — nie. Notariusz wchodzi w grę dopiero wtedy, gdy konieczna okazuje się zmiana umowy spółki: w spółce z o.o. uchwała o zmianie umowy wymaga protokołu sporządzonego przez notariusza (art. 255 § 3 KSH). Wyjątkiem jest zmiana dokonywana przy użyciu wzorca umowy w systemie S24, jeżeli spółka spełnia warunki tego trybu.' },
@@ -34,7 +34,7 @@ const faqItems = [
 ]
 
 const schemas = [
-  { "@context": "https://schema.org", "@type": "Service", name: "Zmiana kodów PKD w KRS (PKD 2007 → PKD 2025)", url: pageUrl, description, offers: { "@type": "Offer", price: "599", priceCurrency: "PLN", priceSpecification: { "@type": "UnitPriceSpecification", description: "cena netto" } }, areaServed: { "@type": "Country", name: "Poland" }, provider: organizationSchema },
+  { "@context": "https://schema.org", "@type": "Service", name: "Zmiana kodów PKD w KRS (PKD 2007 → PKD 2025)", url: pageUrl, description, offers: { "@type": "Offer", price: "799", priceCurrency: "PLN", priceSpecification: { "@type": "UnitPriceSpecification", description: "cena netto" } }, areaServed: { "@type": "Country", name: "Poland" }, provider: organizationSchema },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqItems.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
   { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: "Strona główna", item: `${siteUrl}/` },
@@ -78,7 +78,7 @@ export default function ZmianaKodowPkdPage() {
 
         <section className="mx-auto max-w-6xl space-y-10">
           <div id="oferta" className={`${card} scroll-mt-28`}>
-            <h2 className={heading}>Co obejmuje usługa za 599 zł netto</h2>
+            <h2 className={heading}>Co obejmuje usługa za 799 zł netto</h2>
             <p className="mb-6 text-lg text-white/90">Usługa dotyczy kodów PKD ujawnionych w dziale 3 wpisu w rejestrze przedsiębiorców — czyli maksymalnie dziesięciu pozycji, które faktycznie widnieją w odpisie z KRS.</p>
             <div className="space-y-4 text-lg text-white/90">
               <div><strong>1. Analiza kodów z działu 3</strong><p>Sprawdzamy wszystkie kody figurujące w odpisie, nie tylko ten wpisany do wyszukiwarki. Ustalamy, które przechodzą jednoznacznie, a które wymagają decyzji.</p></div>
@@ -86,10 +86,10 @@ export default function ZmianaKodowPkdPage() {
               <div><strong>3. Sprawdzenie pokrycia w umowie spółki</strong><p>Weryfikujemy, czy proponowane kody znajdują pokrycie w przedmiocie działalności określonym w umowie spółki. Przy okazji wychwytujemy rozbieżności między umową a tym, co figuruje w rejestrze — zdarza się, że wpis i umowa rozjechały się przy wcześniejszych zmianach.</p></div>
               <div><strong>4. Przygotowanie i złożenie wniosku</strong><p>Przygotowujemy dokumenty i składamy wniosek elektronicznie. Nie zostawiamy Cię z instrukcją do samodzielnego wykonania.</p></div>
               <div><strong>5. Prowadzenie sprawy przed sądem rejestrowym</strong><p>Monitorujemy sprawę i odpowiadamy na wezwania sądu do uzupełnienia braków formalnych.</p></div>
-              <div className="rounded-xl border border-amber-400/50 bg-amber-400/10 p-5"><p className="text-2xl font-bold text-amber-400">599 zł netto</p><p className="mt-1 text-base">maksymalnie 10 pozycji PKD ujawnionych w KRS • jedna spółka • bez zmiany umowy spółki</p></div>
+              <div className="rounded-xl border border-amber-400/50 bg-amber-400/10 p-5"><p className="text-2xl font-bold text-amber-400">799 zł netto</p><p className="mt-1 text-base">maksymalnie 10 pozycji PKD ujawnionych w KRS • jedna spółka • bez zmiany umowy spółki</p></div>
               <p className="font-bold">Cena obejmuje kody ujawnione w dziale 3 rejestru. Nie obejmuje analizy ani porządkowania całego przedmiotu działalności zapisanego w umowie spółki — umowę sprawdzamy wyłącznie pod kątem pokrycia dla proponowanych kodów.</p>
               <p className="font-bold">Dobór kodów wymaga informacji o rzeczywistej działalności spółki. Zakres i termin realizacji zależą od tego, kiedy otrzymamy odpis z KRS, umowę spółki oraz opis prowadzonej działalności.</p>
-              <p className="font-bold">Jeżeli proponowane kody nie znajdują pokrycia w umowie i konieczna okaże się jej zmiana, poinformujemy Cię o tym przed wykonaniem jakichkolwiek dodatkowych czynności. Zmiana umowy nie jest objęta ceną 599 zł i wymaga osobnej wyceny.</p>
+              <p className="font-bold">Jeżeli proponowane kody nie znajdują pokrycia w umowie i konieczna okaże się jej zmiana, poinformujemy Cię o tym przed wykonaniem jakichkolwiek dodatkowych czynności. Zmiana umowy nie jest objęta ceną 799 zł i wymaga osobnej wyceny.</p>
               <div className="rounded-xl border border-white/20 bg-white/10 p-5 sm:p-6">
                 <h3 className="mb-4 text-xl font-bold text-amber-400 sm:text-2xl">A jeżeli prawidłowych kodów wyjdzie więcej niż dziesięć?</h3>
                 <div className="space-y-4"><p>To częstsza sytuacja, niż się wydaje. Jeden kod PKD 2007 może rozpaść się na trzy albo cztery podklasy PKD 2025, a w rejestrze mieści się dziesięć pozycji.</p><p>Wtedy trzeba wybrać. Proponujemy zestaw w oparciu o informacje o działalności, które nam przekażesz — zaczynając od działalności przeważającej i tych, które są regulowane albo wymagają wpisu do rejestrów branżowych, a rezygnując z kodów, które nigdy nie były wykorzystywane. Ostateczną decyzję podejmuje spółka.</p><p>Wybór nie jest ostateczny — kody można uzupełnić przy kolejnym wniosku o zmianę wpisu.</p></div>

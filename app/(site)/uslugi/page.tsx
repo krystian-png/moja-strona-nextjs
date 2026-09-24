@@ -122,7 +122,7 @@ const urgentService = {
   title: "Zmiana kodów PKD w KRS",
   description:
     "Po 31 grudnia 2026 r. system wymieni kody sam — a przy części z nich wybierze za spółkę. Sprawdź w wyszukiwarce, co dostanie Twoja spółka.",
-  price: "od 599 zł netto",
+  price: "od 799 zł netto",
   icon: FileSearch,
 }
 

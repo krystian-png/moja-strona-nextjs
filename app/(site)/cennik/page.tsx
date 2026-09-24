@@ -282,7 +282,7 @@ export default function PricingPage() {
                     </div>
                     <div className="shrink-0 pl-16 lg:pl-0 lg:text-right">
                       <p className="text-2xl font-bold text-amber-400">
-                        599 zł <span className="text-base font-normal text-slate-300">netto</span>
+                        799 zł <span className="text-base font-normal text-slate-300">netto</span>
                       </p>
                       <span className="mt-2 inline-block text-sm font-semibold text-amber-400 transition-colors group-hover:text-amber-300">
                         Sprawdź usługę →
