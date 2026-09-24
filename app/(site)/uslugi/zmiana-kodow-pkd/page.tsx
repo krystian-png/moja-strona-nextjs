@@ -69,9 +69,9 @@ export default function ZmianaKodowPkdPage() {
             <div className="space-y-6">
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD Twojej spółki</h1>
               <p className="text-lg text-white/90">Wymiana nastąpi bez wniosku spółki i bez badania, czym spółka faktycznie się zajmuje. Przy 455 kodach PKD 2007 zakres został w nowej klasyfikacji rozdzielony między kilka kodów — wtedy system wybiera jeden z nich za spółkę. Przy 112 z nich klucze przejścia w ogóle nie wskazują, który to ma być.</p>
-              <p className="text-lg text-white/90">Wpisz kod z działu 3 swojego odpisu i sprawdź, co się z nim stanie.</p>
+              <p className="text-lg text-white/90">Zobacz, co stanie się ze starymi kodami PKD Twojej spółki po 31 grudnia 2026 r. Wpisz kod z odpisu z KRS — wyszukiwarka pokaże, na jaki kod PKD 2025 zostanie zamieniony albo czy zostanie wykreślony bez zastąpienia.</p>
               <div id="wyszukiwarka" className="scroll-mt-28"><PkdLookup /></div>
-              <p className="text-sm text-white/70">Dane pochodzą z kluczy przejścia PKD 2007 – PKD 2025, stanowiących część załącznika do rozporządzenia Rady Ministrów z dnia 18 grudnia 2024 r. w sprawie Polskiej Klasyfikacji Działalności (Dz.U. poz. 1936). Kod oznaczony jako wpisywany przez system to kod wskazany w kluczu interpretacyjnym, do którego odsyła art. 20e ust. 1 pkt 2 ustawy o KRS. Wskazanie takie występuje wyłącznie przy kodach na poziomie klasy i podklasy — przy kodach na poziomie działu i grupy klucze go nie zawierają. Narzędzie ma charakter informacyjny i nie zastępuje analizy konkretnego przypadku.</p>
+              <p className="text-sm text-white/70">Wynik automatycznej aktualizacji PKD 2007 → PKD 2025 w Krajowym Rejestrze Sądowym. Obliczony na podstawie kluczy przejścia opublikowanych przez Główny Urząd Statystyczny — dla kodu na każdym poziomie, od samego działu po pełny numer. Narzędzie ma charakter informacyjny i nie zastępuje analizy konkretnego przypadku.</p>
             </div>
           </div>
         </section>
