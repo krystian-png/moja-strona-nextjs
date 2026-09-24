@@ -53,12 +53,27 @@ const BRANZE: { etykieta: string; fraza: string }[] = [
   { etykieta: "Maszyny specjalistyczne", fraza: "maszyn specjalnego" },
 ]
 
-function odmianaOdpowiednik(n: number): string {
-  if (n === 1) return "odpowiednik"
+function poziomDopelniacz(p: string): string {
+  switch (p) {
+    case "s": return "tej sekcji"
+    case "d": return "tego działu"
+    case "g": return "tej grupy"
+    case "k": return "tej klasy"
+    default:  return "tej podklasy"
+  }
+}
+
+function poziomLiczebnik(p: string, n: number): string {
   const ost = n % 10
   const dwie = n % 100
-  if (ost >= 2 && ost <= 4 && !(dwie >= 12 && dwie <= 14)) return "odpowiedniki"
-  return "odpowiedników"
+  const male = ost >= 2 && ost <= 4 && !(dwie >= 12 && dwie <= 14)
+  switch (p) {
+    case "s": return male ? "sekcje" : "sekcji"
+    case "d": return male ? "działy" : "działów"
+    case "g": return male ? "grupy" : "grup"
+    case "k": return male ? "klasy" : "klas"
+    default:  return male ? "podklasy" : "podklas"
+  }
 }
 
 export default function PkdLookup() {
@@ -322,7 +337,7 @@ export default function PkdLookup() {
 
         {match && match.t.length > 1 && match.i !== null && data && (
           <div className="rounded-xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
-            <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">PKD 2025 przewiduje {match.t.length} {odmianaOdpowiednik(match.t.length)} tego kodu</h2>
+            <h2 className="text-xl font-bold text-amber-950 sm:text-2xl">W PKD 2025 zakres {poziomDopelniacz(match.p)} został rozdzielony między {match.t.length} {poziomLiczebnik(match.p, match.t.length)}</h2>
             <ul className="mt-4 max-h-80 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className={`min-w-0 rounded-lg bg-white p-3 ${code === match.i ? "border-l-4 border-amber-500 bg-amber-100" : ""}`}>
@@ -352,7 +367,7 @@ export default function PkdLookup() {
         {match && match.t.length > 1 && match.i === null && data && (
           <div className="rounded-xl border border-orange-400 bg-orange-50 p-5 sm:p-6">
             <h2 className="text-xl font-bold text-orange-950 sm:text-2xl">Nie wiadomo, co system zrobi z tym kodem</h2>
-            <p className="mt-4 leading-relaxed">Klucze przejścia przypisują temu kodowi {match.t.length} {odmianaOdpowiednik(match.t.length)} w PKD 2025:</p>
+            <p className="mt-4 leading-relaxed">W PKD 2025 zakres {poziomDopelniacz(match.p)} został rozdzielony między {match.t.length} {poziomLiczebnik(match.p, match.t.length)}:</p>
             <ul className="mt-4 max-h-96 space-y-2 overflow-y-auto pr-1">
               {match.t.slice(0, showAll ? undefined : 5).map((code) => (
                 <li key={code} className="min-w-0 rounded-lg bg-white p-3">
@@ -371,7 +386,7 @@ export default function PkdLookup() {
               ))}
             </ul>
             {!showAll && match.t.length > 5 && <button type="button" onClick={() => setShowAll(true)} className={`${secondaryButton} mt-3`}>Pokaż wszystkie ({match.t.length})</button>}
-            <p className="mt-4 rounded-lg border border-orange-400 bg-orange-100 p-4 font-semibold">Klucze nie wskazują, który z nich ma zostać wpisany.</p>
+            <p className="mt-4 rounded-lg border border-orange-400 bg-orange-100 p-4 font-semibold">Klucze nie wskazują, który z nich zostanie wpisany.</p>
             <p className="mt-4 leading-relaxed">Przy kodach zapisanych pełnym numerem, takich jak 10.81.Z, klucze zawierają takie wskazanie. Przy kodach na poziomie grupy i działu nie ma go w żadnym ze 124 przypadków.</p>
             <p className="mt-4 leading-relaxed">Art. 20e ust. 1 ustawy o KRS przewiduje trzy warianty: podmianę według powiązania jednoznacznego, podmianę według wskazania przy powiązaniu wieloznacznym albo — w pozostałych przypadkach — wykreślenie bez wpisania nowego kodu. Który z nich zadziała w tym przypadku, nie wynika ani z przepisów, ani z dokumentów GUS.</p>
             {isMarker && <p className="mt-4 border-t border-orange-300 pt-4">Ten kod nie ma swojego numeru w klasyfikacji PKD 2025. Jego obecność w dziale 3 oznacza, że <strong>przedmiot działalności ujawniony w rejestrze nie był aktualizowany</strong> od wejścia w życie nowej klasyfikacji. Nie mówi to nic o pozostałych danych spółki w KRS.</p>}
