@@ -19,10 +19,10 @@ const legalServiceSchema = {
   name: "Zmiana zarządu sp. z o.o. – powołanie, odwołanie, rezygnacja",
   url: pageUrl,
   description:
-    "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 799 zł.",
+    "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 999 zł.",
   offers: {
     "@type": "Offer",
-    price: "799",
+    price: "999",
     priceCurrency: "PLN",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
@@ -138,16 +138,16 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana zarządu sp. z o.o. – obsługa od 799 zł | ZmianaKRS",
+  title: "Zmiana zarządu sp. z o.o. – obsługa od 999 zł | ZmianaKRS",
   description:
-    "Powołanie, odwołanie lub rezygnacja członka zarządu sp. z o.o. Przygotujemy dokumenty i złożymy wniosek do KRS za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 799 zł netto.",
+    "Powołanie, odwołanie lub rezygnacja członka zarządu sp. z o.o. Przygotujemy dokumenty i złożymy wniosek do KRS za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana zarządu sp. z o.o. – obsługa od 799 zł | ZmianaKRS",
+    title: "Zmiana zarządu sp. z o.o. – obsługa od 999 zł | ZmianaKRS",
     description:
-      "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 799 zł.",
+      "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 999 zł.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -161,9 +161,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana zarządu sp. z o.o. – obsługa od 799 zł | ZmianaKRS",
+    title: "Zmiana zarządu sp. z o.o. – obsługa od 999 zł | ZmianaKRS",
     description:
-      "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 799 zł.",
+      "Zmiana zarządu sp. z o.o. – powołanie, odwołanie lub rezygnacja członka zarządu. Dokumenty, koszty PRS/S24 i zgłoszenie do KRS. Obsługa od 999 zł.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -282,7 +282,7 @@ export default function ZmianaZarzaduPage() {
                 aktu notarialnego, należy uwzględnić również koszty notarialne.
               </p>
               <p className="text-lg text-white/90">
-                Koszt naszej obsługi zmiany zarządu sp. z o.o. zaczyna się od 799 zł, w zależności od zakresu zmian oraz liczby
+                Koszt naszej obsługi zmiany zarządu sp. z o.o. zaczyna się od 999 zł, w zależności od zakresu zmian oraz liczby
                 przygotowywanych dokumentów.
               </p>
               <p className="text-lg text-white/90">
