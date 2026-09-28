@@ -140,7 +140,7 @@ const breadcrumbSchema = {
 export const metadata: Metadata = {
   title: "Zmiana zarządu sp. z o.o. – obsługa od 799 zł | ZmianaKRS",
   description:
-    "Powołanie, odwołanie lub rezygnacja członka zarządu sp. z o.o. Przygotujemy dokumenty i złożymy wniosek do KRS za Ciebie. Bez błędów, bez zwrotów. Od 799 zł netto.",
+    "Powołanie, odwołanie lub rezygnacja członka zarządu sp. z o.o. Przygotujemy dokumenty i złożymy wniosek do KRS za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
@@ -586,7 +586,7 @@ export default function ZmianaZarzaduPage() {
             <div className="space-y-4">
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zleć zmianę zarządu sp. z o.o.</h2>
               <p className="text-lg text-white/90">
-                Jeżeli chcesz przeprowadzić zmianę zarządu spółki szybko i bez ryzyka błędów formalnych, skontaktuj się z nami.
+                Jeżeli chcesz przeprowadzić zmianę zarządu spółki sprawnie i z ograniczeniem ryzyka błędów formalnych, skontaktuj się z nami.
               </p>
               <p className="text-xl">
                   <a

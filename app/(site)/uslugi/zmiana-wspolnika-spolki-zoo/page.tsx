@@ -108,7 +108,7 @@ const breadcrumbSchema = {
 export const metadata: Metadata = {
   title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
   description:
-    "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Bez błędów. Od 799 zł netto.",
+    "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Ograniczamy ryzyko błędów formalnych. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
@@ -506,7 +506,7 @@ export default function ZmianaWspolnikaSpolkiZooPage() {
               </h2>
 
               <p className="text-lg text-white/90">
-                Jeżeli chcesz przeprowadzić zmianę wspólnika spółki z o.o. w sposób sprawny i bez ryzyka błędów formalnych, skontaktuj się z nami. Przeanalizujemy umowę spółki i dokumenty transakcyjne, ustalimy, czy w danym stanie faktycznym powstaje obowiązek aktualizacji danych ujawnianych w rejestrze przedsiębiorców, a następnie przygotujemy i przeprowadzimy zgłoszenie w PRS lub S24, jeżeli jest wymagane.
+                Jeżeli chcesz przeprowadzić zmianę wspólnika spółki z o.o. w sposób sprawny i z ograniczeniem ryzyka błędów formalnych, skontaktuj się z nami. Przeanalizujemy umowę spółki i dokumenty transakcyjne, ustalimy, czy w danym stanie faktycznym powstaje obowiązek aktualizacji danych ujawnianych w rejestrze przedsiębiorców, a następnie przygotujemy i przeprowadzimy zgłoszenie w PRS lub S24, jeżeli jest wymagane.
               </p>
 
               <p className="text-lg text-white/90">

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title:
     "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
   description:
-    "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
+    "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
     languages: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title:
       "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
     description:
-      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
+      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 799 zł netto.",
     url: pageUrl,
     type: "website",
     siteName: brandName,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
         width: 1200,
         height: 630,
-        alt: "Zmiana wpisu w KRS bez stresu – profesjonalna obsługa wniosków KRS dla spółek",
+        alt: "Zmiana wpisu w KRS – profesjonalna obsługa wniosków KRS dla spółek",
       },
     ],
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title:
       "Zmiana wpisu w KRS dla spółek – od 799 zł, zdalnie | ZmianaKRS",
     description:
-      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Szybko, bez błędów, od 799 zł netto.",
+      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 799 zł netto.",
     images: [
       `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
     ],

@@ -68,7 +68,7 @@ const accountantBenefits = [
     icon: FileText,
     title: "Zapewnić klientom profesjonalną obsługę prawną",
     description:
-      "Dzięki naszemu wsparciu Wasi klienci unikną błędów i opóźnień w procedurach KRS.",
+      "Dzięki naszemu wsparciu Wasi klienci ograniczą ryzyko błędów i opóźnień w procedurach KRS.",
   },
   {
     icon: Users,
@@ -95,7 +95,7 @@ const trustReasons = [
     icon: Clock,
     title: "Szybka i skuteczna obsługa",
     description:
-      "Zapewniamy szybkie i skuteczne przeprowadzenie całej procedury – od przygotowania dokumentów po złożenie wniosku i uzyskanie wpisu.",
+      "Prowadzimy całą procedurę sprawnie i kompleksowo – od przygotowania dokumentów po złożenie wniosku i prowadzenie sprawy przed sądem rejestrowym.",
   },
   {
     icon: TrendingUp,

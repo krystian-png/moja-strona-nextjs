@@ -47,7 +47,7 @@ const mainServices: MainService[] = [
   {
     title: "Zmiana wpisu w KRS",
     description:
-      "Składanie wniosków o zmianę w KRS może być czasochłonne i pełne pułapek formalnych. My robimy to za Ciebie – zgodnie z obowiązującymi przepisami, bez zbędnych błędów i opóźnień.",
+      "Składanie wniosków o zmianę w KRS może być czasochłonne i pełne pułapek formalnych. My robimy to za Ciebie – zgodnie z obowiązującymi przepisami, ograniczając ryzyko błędów i opóźnień.",
     price: "od 799 zł netto",
     features: [
       "Zmiany zarządu (powołanie, odwołanie, rezygnacja)",
@@ -113,7 +113,7 @@ const mainServices: MainService[] = [
       "Pomoc w złożeniu kompletu dokumentów do Repozytorium Dokumentów Finansowych KRS",
     ],
     note:
-      "Usługa przeznaczona dla spółek z o.o. chcących w terminie i bez błędów wypełnić obowiązki rejestrowe i uniknąć kar za opóźnienie lub brak złożenia dokumentów",
+      "Usługa przeznaczona dla spółek z o.o. chcących prawidłowo i terminowo wypełnić obowiązki rejestrowe oraz ograniczyć ryzyko kar za opóźnienie lub brak złożenia dokumentów",
     icon: FileText,
   },
 ]
@@ -143,7 +143,7 @@ const benefits: Benefit[] = [
     icon: Users,
     title: "Doświadczenie",
     description:
-      "Wieloletnie doświadczenie w obsłudze KRS gwarantuje profesjonalną realizację zleceń.",
+      "Wieloletnie doświadczenie w obsłudze KRS przekłada się na profesjonalną realizację zleceń.",
   },
 ]
 
@@ -560,7 +560,7 @@ export default function ServicesPage() {
                   </div>
                   <div>
                     <h4 className="mb-3 text-lg font-semibold text-white">
-                      Zamów i złóż dokumenty do KRS na czas – bez stresu
+                      Zamów i złóż dokumenty do KRS w terminie
                     </h4>
                     <p className="mb-4 text-sm leading-relaxed text-gray-300">{closingService.note}</p>
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

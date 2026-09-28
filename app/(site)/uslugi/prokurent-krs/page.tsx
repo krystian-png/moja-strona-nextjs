@@ -318,7 +318,7 @@ export default function ProkurentKrsPage() {
                 </li>
                 <li>
                   <p className="font-semibold text-white">3. Weryfikacja dokumentów</p>
-                  <p>Sprawdzamy spójność uchwały, danych prokurenta i zakresu wpisu — eliminując ryzyko wezwania sądu do uzupełnienia braków.</p>
+                  <p>Sprawdzamy spójność uchwały, danych prokurenta i zakresu wpisu — ograniczając ryzyko wezwania sądu do uzupełnienia braków.</p>
                 </li>
                 <li>
                   <p className="font-semibold text-white">4. Złożenie wniosku elektronicznego</p>

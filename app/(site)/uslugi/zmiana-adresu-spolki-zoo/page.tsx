@@ -108,7 +108,7 @@ const breadcrumbSchema = {
 export const metadata: Metadata = {
   title: "Zmiana adresu spółki z o.o. – obsługa od 799 zł | ZmianaKRS",
   description:
-    "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Bez błędów, bez zwrotów. Od 799 zł netto.",
+    "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 799 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
@@ -171,8 +171,8 @@ export default function ZmianaAdresuSpolkiZooPage() {
                   1 ustawy o KRS). W tej usłudze prowadzimy sprawę od kwalifikacji do wpisu: ustalamy, czy masz zmianę adresu (ulica,
                   numer, lokal w tej samej miejscowości), czy zmianę siedziby (inna miejscowość), dobieramy właściwy tryb złożenia
                   wniosku (PRS albo – jeśli spełnione warunki – S24), przygotowujemy dokumenty i składamy wniosek elektronicznie,
-                  pilnując spójności danych oraz podpisów. Jeżeli chcesz przeprowadzić zmianę adresu spółki z o.o. bez ryzyka braków
-                  formalnych i wezwań sądu, możemy przeprowadzić całą procedurę w Twoim imieniu – pełna obsługa od 799 zł netto.
+                  pilnując spójności danych oraz podpisów. Jeżeli chcesz przeprowadzić zmianę adresu spółki z o.o. z ograniczeniem ryzyka braków
+                  formalnych, możemy przeprowadzić całą procedurę w Twoim imieniu – pełna obsługa od 799 zł netto.
                 </p>
                 <p className="text-lg text-white/90">
                   <strong>Szukasz „zmiana adresu spółki z o.o.”?</strong> Zgłosimy zmianę adresu Twojej spółki z o.o. do KRS (PRS/S24)
@@ -452,7 +452,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
             <div className="space-y-4">
               <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zleć zmianę adresu / siedziby spółki z o.o.</h2>
               <p className="text-lg text-white/90">
-                Jeżeli chcesz zrobić zmianę adresu albo siedziby bez ryzyka braków formalnych, zleć to nam. Ustalimy prawidłową
+                Jeżeli chcesz zrobić zmianę adresu albo siedziby z ograniczeniem ryzyka braków formalnych, zleć to nam. Ustalimy prawidłową
                 kwalifikację (adres vs siedziba), przygotujemy dokumenty, złożymy wniosek elektronicznie i przeprowadzimy procedurę
                 zgłoszenia zmiany wpisu w KRS.
               </p>

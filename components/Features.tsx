@@ -40,7 +40,7 @@ export default function Features() {
             Dlaczego przedsiębiorcy powierzają nam zmiany wpisów w KRS
           </h2>
           <p className="mt-3 text-lg text-gray-200">
-            Od lat zajmujemy się zmianami danych spółek w KRS, rejestracją zmian zarządu, wspólników i adresów. Pomogliśmy setkom przedsiębiorców przejść proces aktualizacji wpisu bez zwrotów i poprawek.
+            Od lat zajmujemy się zmianami danych spółek w KRS, rejestracją zmian zarządu, wspólników i adresów. Pomogliśmy setkom przedsiębiorców sprawnie przejść proces aktualizacji wpisu i ograniczyć ryzyko błędów formalnych.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
