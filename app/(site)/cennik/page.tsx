@@ -48,17 +48,9 @@ const structuredData = {
     {
       "@type": "Offer",
       name: "Złożenie wniosku o zmianę wpisu w KRS",
-      priceSpecification: { "@type": "PriceSpecification", price: "799", priceCurrency: "PLN" },
+      priceSpecification: { "@type": "PriceSpecification", price: "999", priceCurrency: "PLN" },
       description:
         "Podstawowa usługa obejmująca przygotowanie i złożenie elektronicznego wniosku o zmianę wpisu w KRS wraz z monitoringiem sprawy.",
-      availability: "https://schema.org/InStock",
-    },
-    {
-      "@type": "Offer",
-      name: "Przygotowanie dokumentów do wniosku KRS",
-      priceSpecification: { "@type": "PriceSpecification", price: "50", priceCurrency: "PLN" },
-      description:
-        "Przygotowanie pojedynczych dokumentów, uchwał i list wymaganych do skutecznego zgłoszenia zmian w KRS.",
       availability: "https://schema.org/InStock",
     },
     {
@@ -91,12 +83,12 @@ const structuredData = {
 export const metadata: Metadata = {
   title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
   description:
-    "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+    "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
     description:
-      "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+      "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     url: pageUrl,
     siteName: brandName,
     images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Cennik usług KRS" }],
@@ -105,7 +97,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
     description:
-      "Sprawdź cennik zmian w KRS: złożenie wniosku od 799 zł, przygotowanie dokumentów od 50 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+      "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -226,13 +218,7 @@ export default function PricingPage() {
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
                             Nasza obsługa — złożenie wniosku
                           </span>
-                          <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">od 799 zł netto</span>
-                        </li>
-                        <li className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
-                          <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
-                            Przygotowanie dokumentów
-                          </span>
-                          <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">od 50 zł netto / dokument</span>
+                          <span className="ml-4 shrink-0 text-xs font-bold text-amber-400 sm:text-sm">od 999 zł netto</span>
                         </li>
                         <li className="flex items-center justify-between gap-3">
                           <span className="text-xs font-semibold leading-snug text-white sm:text-sm">
@@ -290,7 +276,7 @@ export default function PricingPage() {
                     </div>
                   </div>
                 </Link>
-                <div className="grid lg:grid-cols-2 gap-8">
+                <div className="mx-auto w-full max-w-4xl">
                   {/* Karta 1: Złożenie wniosku - ikona AMBER */}
                   <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
                     <CardContent>
@@ -302,7 +288,7 @@ export default function PricingPage() {
                           <h3 className="text-xl font-bold text-white mb-2">
                             Podstawowa usługa: Złożenie wniosku o zmianę wpisu w KRS
                           </h3>
-                          <p className="text-2xl font-bold text-amber-400">799 zł <span className="text-base font-normal text-slate-300">netto*</span></p>
+                          <p className="text-2xl font-bold text-amber-400">999 zł <span className="text-base font-normal text-slate-300">netto*</span></p>
                         </div>
                       </div>
                       <div className="space-y-6 text-left">
@@ -335,40 +321,6 @@ export default function PricingPage() {
                       </div>
                     </CardContent>
                   </Card>
-                  {/* Karta 2: Przygotowanie dokumentów - ikona AMBER */}
-                  <Card className="!p-0 bg-white/10 backdrop-blur-sm !border-white/20 !shadow-none hover:bg-white/15 transition-all duration-300">
-                    <CardContent>
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="flex items-center justify-center w-12 h-12 bg-amber-600 rounded-lg">
-                          <FileText className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="flex-1 text-left">
-                          <h3 className="text-xl font-bold text-white mb-2">Przygotowanie dokumentów wymaganych do wniosku</h3>
-                          <p className="text-2xl font-bold text-amber-400">50 zł <span className="text-base font-normal text-slate-300">netto / dokument</span></p>
-                        </div>
-                      </div>
-                      <p className="text-slate-300 mb-4 text-left text-sm">
-                        Jeśli nie posiadasz gotowych dokumentów – możemy je dla Ciebie przygotować. Dotyczy to w szczególności:
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4 text-left">
-                        <ul className="space-y-2 text-slate-300 text-sm">
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> uchwały o zmianie zarządu</li>
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> uchwały o zmianie siedziby/adresu spółki</li>
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> zgody wspólników na zbycie udziałów</li>
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> listy wspólników</li>
-                        </ul>
-                        <ul className="space-y-2 text-slate-300 text-sm">
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> listy osób uprawnionych do powołania zarządu</li>
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> listy aktualnych członków zarządu</li>
-                          <li className="flex items-start gap-2"><span className="text-amber-400">•</span> innych dokumentów koniecznych do złożenia wniosku o zmianę w KRS</li>
-                        </ul>
-                      </div>
-                      <div className="mt-4 text-sm text-slate-300 space-y-2 text-left">
-                        <p>Umowy zbycia udziałów wyceniane są osobno (od 100 zł netto) w zależności od stopnia złożoności i sytuacji właścicielskiej spółki.</p>
-                        <p>Dokumenty przygotowywane są na podstawie informacji dostarczonych przez klienta i zawsze zgodnie z aktualnym stanem prawnym.</p>
-                      </div>
-                    </CardContent>
-                  </Card>
                 </div>
                 {/* Karta: Zmiana umowy spółki - ikona AMBER */}
                 <div className="flex justify-center">
@@ -386,6 +338,9 @@ export default function PricingPage() {
                         </div>
                         <p className="text-slate-300 text-left text-sm">
                           Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="/kontakt" className="text-amber-400 hover:text-amber-300 underline">Skontaktuj się</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
+                        </p>
+                        <p className="text-slate-300 text-left text-sm">
+                          Umowy zbycia udziałów wyceniane są osobno (od 100 zł netto) w zależności od stopnia złożoności i sytuacji właścicielskiej spółki.
                         </p>
                       </CardContent>
                     </Card>

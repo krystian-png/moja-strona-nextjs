@@ -48,7 +48,7 @@ const mainServices: MainService[] = [
     title: "Zmiana wpisu w KRS",
     description:
       "Składanie wniosków o zmianę w KRS może być czasochłonne i pełne pułapek formalnych. My robimy to za Ciebie – zgodnie z obowiązującymi przepisami, ograniczając ryzyko błędów i opóźnień.",
-    price: "od 799 zł netto",
+    price: "od 999 zł netto",
     features: [
       "Zmiany zarządu (powołanie, odwołanie, rezygnacja)",
       "Zmiany adresu siedziby spółki",
@@ -122,7 +122,7 @@ const urgentService = {
   title: "Zmiana kodów PKD w KRS",
   description:
     "Po 31 grudnia 2026 r. system wymieni kody sam — a przy części z nich wybierze za spółkę. Sprawdź w wyszukiwarce, co dostanie Twoja spółka.",
-  price: "od 799 zł netto",
+  price: "799 zł netto",
   icon: FileSearch,
 }
 
@@ -633,7 +633,7 @@ export default function ServicesPage() {
                       <li>dokładną wycenę usługi w oparciu o rzeczywisty zakres czynności</li>
                     </ul>
                     <p className="mt-3 leading-relaxed text-white/90">
-                      Wszystko klarownie i bez ukrytych kosztów – nasze przejrzyste zasady rozliczeń zaczynają się już od 799 zł netto za złożenie kompletnego wniosku do KRS.
+                      Wszystko klarownie i bez ukrytych kosztów – nasze przejrzyste zasady rozliczeń zaczynają się już od 999 zł netto za złożenie kompletnego wniosku do KRS.
                     </p>
                   </div>
                 </div>

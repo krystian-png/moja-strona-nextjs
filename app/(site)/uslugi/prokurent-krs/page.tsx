@@ -20,7 +20,7 @@ const legalServiceSchema = {
   provider: organizationSchema,
   offers: {
     "@type": "Offer",
-    price: "799",
+    price: "999",
     priceCurrency: "PLN",
   },
   areaServed: { "@type": "Country", name: "Poland" },
@@ -101,12 +101,12 @@ const breadcrumbSchema = {
 export const metadata: Metadata = {
   title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
   description:
-    "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
+    "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 999 zł netto.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
     description:
-      "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
+      "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 999 zł netto.",
     url: pageUrl,
     siteName: brandName,
     images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Prokurent w spółce – ZmianaKRS" }],
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
     description:
-      "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 799 zł netto.",
+      "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 999 zł netto.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -259,13 +259,9 @@ export default function ProkurentKrsPage() {
                       <td className="px-5 py-3.5">Opłata skarbowa od pełnomocnictwa</td>
                       <td className="px-5 py-3.5">17 zł</td>
                     </tr>
-                    <tr className="border-b border-white/20 bg-white/[0.03]">
+                    <tr className="bg-white/[0.03]">
                       <td className="px-5 py-3.5">Nasza obsługa — złożenie wniosku</td>
-                      <td className="px-5 py-3.5">od 799 zł netto</td>
-                    </tr>
-                    <tr className="bg-white/5">
-                      <td className="px-5 py-3.5">Przygotowanie dokumentów (uchwała, oświadczenie prokurenta)</td>
-                      <td className="px-5 py-3.5">od 50 zł netto / dokument</td>
+                      <td className="px-5 py-3.5">od 999 zł netto</td>
                     </tr>
                   </tbody>
                 </table>

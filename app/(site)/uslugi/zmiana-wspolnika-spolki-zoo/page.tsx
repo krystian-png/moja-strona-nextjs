@@ -19,10 +19,10 @@ const legalServiceSchema = {
   name: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, wejście inwestora, zgłoszenie do KRS",
   url: pageUrl,
   description:
-    "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki (ograniczenia zbywalności), dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
+    "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki (ograniczenia zbywalności), dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 999 zł.",
   offers: {
     "@type": "Offer",
-    price: "799",
+    price: "999",
     priceCurrency: "PLN",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
@@ -106,16 +106,16 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
+  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 999 zł | ZmianaKRS",
   description:
-    "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Ograniczamy ryzyko błędów formalnych. Od 799 zł netto.",
+    "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
+    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 999 zł | ZmianaKRS",
     description:
-      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
+      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 999 zł.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -129,9 +129,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 799 zł | ZmianaKRS",
+    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 999 zł | ZmianaKRS",
     description:
-      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 799 zł.",
+      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24. Obsługa od 999 zł.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -266,7 +266,7 @@ export default function ZmianaWspolnikaSpolkiZooPage() {
               </p>
 
               <p className="text-lg text-white/90">
-                Koszt obsługi zmiany wspólnika spółki z o.o. zaczyna się od 799 zł. Cena zależy od scenariusza oraz zakresu dokumentów, w szczególności od tego, czy transakcja wymaga uwzględnienia ograniczeń zbywalności w umowie spółki oraz czy powstaje obowiązek zgłoszenia zmian do rejestru przedsiębiorców.
+                Koszt obsługi zmiany wspólnika spółki z o.o. zaczyna się od 999 zł. Cena zależy od scenariusza oraz zakresu dokumentów, w szczególności od tego, czy transakcja wymaga uwzględnienia ograniczeń zbywalności w umowie spółki oraz czy powstaje obowiązek zgłoszenia zmian do rejestru przedsiębiorców.
               </p>
 
               <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany wspólnika w KRS?</h3>
