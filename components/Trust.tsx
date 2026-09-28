@@ -32,7 +32,7 @@ export default function Trust() {
         </p>
 
         <h3 className="text-lg sm:text-xl font-semibold text-amber-400 mb-4">
-          Profesjonalne wsparcie bez formalności i stresu
+          Profesjonalne wsparcie na każdym etapie postępowania
         </h3>
 
         <p className="text-base sm:text-lg text-gray-200 leading-relaxed mb-6">
@@ -48,7 +48,7 @@ export default function Trust() {
         </p>
 
         <p className="text-center text-xl text-amber-400 font-semibold mb-6">
-          Skorzystaj z naszego doświadczenia i uniknij błędów – powierz wpis zmian w KRS specjalistom.
+          Skorzystaj z naszego doświadczenia i ogranicz ryzyko błędów – powierz wpis zmian w KRS specjalistom.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">

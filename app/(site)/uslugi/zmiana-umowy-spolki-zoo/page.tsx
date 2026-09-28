@@ -547,7 +547,7 @@ export default function ZmianaUmowySpZooPage() {
               </h2>
 
               <p className="text-lg text-white/90">
-                Jeżeli chcesz przeprowadzić zmianę umowy spółki szybko i bez ryzyka błędów formalnych, skontaktuj się z nami.
+                Jeżeli chcesz przeprowadzić zmianę umowy spółki sprawnie i z ograniczeniem ryzyka błędów formalnych, skontaktuj się z nami.
                 Dobierzemy właściwy tryb (S24 lub notariusz), przygotujemy dokumenty i doprowadzimy sprawę do wpisu w KRS.
               </p>
 

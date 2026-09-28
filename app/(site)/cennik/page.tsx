@@ -434,9 +434,9 @@ export default function PricingPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-base font-semibold text-white mb-3">Zamów i złóż dokumenty do KRS na czas – bez stresu</h4>
+                        <h4 className="text-base font-semibold text-white mb-3">Zamów i złóż dokumenty do KRS w terminie</h4>
                         <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                          Usługa przeznaczona dla spółek z o.o. chcących w terminie i bez błędów wypełnić obowiązki rejestrowe i uniknąć kar za opóźnienie lub brak złożenia dokumentów
+                          Usługa przeznaczona dla spółek z o.o. chcących prawidłowo i terminowo wypełnić obowiązki rejestrowe oraz ograniczyć ryzyko kar za opóźnienie lub brak złożenia dokumentów
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                           <a
@@ -464,7 +464,7 @@ export default function PricingPage() {
                 </div>
                 <div className="text-center mb-8">
                   <p className="text-lg text-slate-300 leading-relaxed">
-                    Chcesz założyć spółkę z o.o. bez błędów, sprawnie i z pełną zgodnością z przepisami? Dobrze trafiłeś. Pomogliśmy już w utworzeniu kilkuset spółek w całej Polsce – zarówno przez system S24, jak i w formie aktu notarialnego. Działamy zdalnie, szybko i bezpiecznie.
+                    Chcesz sprawnie i bezpiecznie założyć spółkę z o.o. z profesjonalnym wsparciem na każdym etapie? Dobrze trafiłeś. Pomogliśmy już w utworzeniu kilkuset spółek w całej Polsce – zarówno przez system S24, jak i w formie aktu notarialnego. Działamy zdalnie, szybko i bezpiecznie.
                   </p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-8 text-left">
