@@ -31,8 +31,106 @@ export const metadata: Metadata = {
   },
 }
 
+const sections = [
+  ["§ 1. Postanowienia ogólne",
+    "Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem zmianakrs.pl, zwanego dalej „Serwisem”, zasady świadczenia usług drogą elektroniczną za pośrednictwem Serwisu oraz podstawowe zasady zamawiania i realizacji odpłatnych usług przez Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń, NIP: 669-217-69-58, zwanego dalej „Usługodawcą”.",
+    "Serwis prezentuje ofertę Usługodawcy w zakresie obsługi prawnej i formalnej związanej w szczególności z Krajowym Rejestrem Sądowym, funkcjonowaniem spółek i innych podmiotów oraz zawiera publikacje, materiały i narzędzia o charakterze informacyjnym.",
+    "Za pośrednictwem Serwisu Usługodawca świadczy również usługi drogą elektroniczną, w szczególności polegające na udostępnianiu treści Serwisu, formularza kontaktowego oraz dostępnych w Serwisie narzędzi informacyjnych.",
+    "Regulamin jest dostępny nieodpłatnie w Serwisie w sposób umożliwiający jego pozyskanie, odtwarzanie, utrwalenie i wydrukowanie.",
+    "Korzystanie z Serwisu oraz świadczenie Usług odbywa się na zasadach określonych w Regulaminie oraz zgodnie z obowiązującymi przepisami prawa."],
+  ["§ 2. Definicje",
+    "Usługodawca – Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń, NIP: 669-217-69-58.",
+    "Klient – osoba fizyczna, osoba prawna albo jednostka organizacyjna nieposiadająca osobowości prawnej, która zawarła z Usługodawcą umowę o świadczenie Usługi.",
+    "Serwis – serwis internetowy dostępny pod adresem zmianakrs.pl.",
+    "Usługa – odpłatna usługa świadczona przez Usługodawcę na rzecz Klienta, w szczególności w zakresie przygotowywania dokumentów, obsługi postępowań rejestrowych, składania wniosków, zakładania spółek, zmian danych ujawnianych w KRS, obsługi korporacyjnej spółek oraz innych czynności prawnych lub formalnych uzgodnionych z Klientem.",
+    "Usługa elektroniczna – usługa świadczona drogą elektroniczną za pośrednictwem Serwisu, w szczególności udostępnianie treści Serwisu, formularza kontaktowego lub narzędzi informacyjnych.",
+    "Regulamin – niniejszy Regulamin.",
+    "Formularz kontaktowy – narzędzie dostępne w Serwisie umożliwiające przesłanie zapytania do Usługodawcy."],
+  ["§ 3. Klienci i zakres stosowania Regulaminu",
+    "Oferta Usługodawcy kierowana jest przede wszystkim do przedsiębiorców, spółek, innych jednostek organizacyjnych oraz osób działających w związku z prowadzoną działalnością gospodarczą lub zawodową.",
+    "Usługodawca może świadczyć Usługi również na rzecz osób fizycznych nieprowadzących działalności gospodarczej lub zawierających umowę poza zakresem prowadzonej działalności gospodarczej lub zawodowej.",
+    "Jeżeli Klient jest konsumentem albo osobą fizyczną prowadzącą działalność gospodarczą, do której w odniesieniu do danej umowy stosuje się na podstawie obowiązujących przepisów przepisy dotyczące konsumenta, postanowienia Regulaminu stosuje się z uwzględnieniem przysługującej takiej osobie ochrony.",
+    "Postanowienia Regulaminu nie wyłączają ani nie ograniczają praw Klienta wynikających z bezwzględnie obowiązujących przepisów prawa."],
+  ["§ 4. Rodzaj i zakres Usług",
+    "Usługodawca świadczy w szczególności Usługi obejmujące przygotowywanie i weryfikację dokumentów związanych z wpisami i zmianami w Krajowym Rejestrze Sądowym, przygotowywanie i składanie wniosków do KRS, reprezentowanie Klientów w postępowaniach rejestrowych, zakładanie spółek, obsługę zmian umów i danych spółek, przygotowywanie dokumentacji korporacyjnej oraz inne czynności prawne lub formalne indywidualnie uzgodnione z Klientem.",
+    "Szczegółowy zakres konkretnej Usługi wynika z informacji zamieszczonych w Serwisie oraz indywidualnych ustaleń dokonanych z Klientem, w szczególności w korespondencji elektronicznej.",
+    "Jeżeli zakres Usługi został indywidualnie uzgodniony z Klientem w sposób odmienny od informacji znajdujących się w Serwisie lub Regulaminie, pierwszeństwo mają indywidualne ustalenia stron.",
+    "Czynności niewskazane w zakresie zamówionej Usługi nie są objęte wynagrodzeniem, chyba że strony uzgodnią inaczej.",
+    "Opłaty sądowe, skarbowe, notarialne oraz inne opłaty należne osobom trzecim lub organom publicznym nie stanowią części wynagrodzenia Usługodawcy, chyba że wyraźnie wskazano inaczej."],
+  ["§ 5. Obowiązki Klienta",
+    "Klient zobowiązany jest przekazywać Usługodawcy informacje i dokumenty zgodne z prawdą, kompletne i aktualne w zakresie niezbędnym do realizacji Usługi.",
+    "Klient zobowiązany jest niezwłocznie informować Usługodawcę o zmianie okoliczności mogących mieć znaczenie dla realizowanej Usługi.",
+    "Klient odpowiada za prawdziwość, kompletność oraz aktualność informacji i dokumentów przekazanych Usługodawcy, z zastrzeżeniem obowiązków Usługodawcy wynikających z przepisów prawa, zasad wykonywania zawodu radcy prawnego oraz uzgodnionego zakresu Usługi.",
+    "Klient zobowiązany jest przekazać dokumenty, złożyć podpisy, udzielić pełnomocnictw lub dokonać innych czynności wymagających jego działania w terminie umożliwiającym prawidłową realizację Usługi.",
+    "Zabronione jest przekazywanie za pośrednictwem Serwisu treści bezprawnych lub naruszających prawa osób trzecich."],
+  ["§ 6. Warunki techniczne korzystania z Serwisu",
+    "Do korzystania z Serwisu niezbędne jest urządzenie posiadające dostęp do Internetu oraz aktualną przeglądarkę internetową.",
+    "Do korzystania z formularza kontaktowego oraz prowadzenia korespondencji związanej z Usługą niezbędne jest posiadanie aktywnego adresu poczty elektronicznej.",
+    "Klient zobowiązany jest korzystać z Serwisu zgodnie z jego przeznaczeniem, obowiązującymi przepisami prawa oraz dobrymi obyczajami.",
+    "Zabronione jest podejmowanie działań mogących zakłócić, uszkodzić albo ograniczyć prawidłowe funkcjonowanie Serwisu lub naruszać bezpieczeństwo jego systemów informatycznych.",
+    "Usługodawca może czasowo ograniczyć dostępność Serwisu w szczególności z przyczyn technicznych, konserwacyjnych, związanych z bezpieczeństwem albo wynikających z działania dostawców infrastruktury teleinformatycznej."],
+  ["§ 7. Zawarcie umowy i realizacja Usługi",
+    "Przesłanie zapytania za pośrednictwem Serwisu, poczty elektronicznej, telefonu lub innego kanału komunikacji nie powoduje samo przez się zawarcia umowy o świadczenie Usługi.",
+    "Przed zawarciem umowy Klient otrzymuje informację o zakresie Usługi i wynagrodzeniu, a w razie potrzeby również o innych istotnych warunkach jej realizacji.",
+    "Regulamin stanowi wzorzec umowny i znajduje zastosowanie również do odpłatnych Usług. Usługodawca udostępnia Klientowi Regulamin przed zawarciem umowy, w szczególności przez wskazanie w korespondencji zawierającej ofertę, wycenę lub warunki zlecenia adresu, pod którym Regulamin jest dostępny, w sposób umożliwiający Klientowi jego przechowywanie i odtwarzanie.",
+    "Umowa o świadczenie Usługi zostaje zawarta z chwilą zaakceptowania przez Klienta przedstawionych warunków i potwierdzenia przyjęcia zlecenia przez Usługodawcę albo z chwilą zapłaty wynagrodzenia lub kwoty wskazanej w fakturze proforma, jeżeli z przedstawionych Klientowi warunków wynika, że dokonanie płatności stanowi akceptację oferty, chyba że strony uzgodnią inaczej.",
+    "Rozpoczęcie czynności wymagających dokumentów, informacji, pełnomocnictwa lub współdziałania Klienta następuje po ich otrzymaniu przez Usługodawcę.",
+    "Terminy realizacji wskazywane przez Usługodawcę dotyczą czynności pozostających po stronie Usługodawcy i – o ile wyraźnie nie wskazano inaczej – nie obejmują czasu działania sądów, organów administracji publicznej, systemów teleinformatycznych ani innych niezależnych od Usługodawcy podmiotów.",
+    "Jeżeli w opisie Usługi, ofercie lub korespondencji użyto określenia „obsługa do wpisu”, „prowadzenie sprawy do wpisu” albo określenia o podobnym znaczeniu, oznacza ono zakres obsługi obejmujący prowadzenie sprawy rejestrowej do jej zakończenia w zakresie uzgodnionym z Klientem, w tym odpowiedź na wezwania sądu objęte zakresem Usługi. Określenie takie nie stanowi gwarancji dokonania przez sąd określonego wpisu ani wydania rozstrzygnięcia określonej treści.",
+    "Usługodawca może odmówić przyjęcia zlecenia albo – w przypadkach dopuszczonych prawem i zasadami wykonywania zawodu radcy prawnego – zakończyć jego wykonywanie, w szczególności w przypadku konfliktu interesów, braku wymaganego współdziałania Klienta, żądania dokonania czynności sprzecznej z prawem lub zasadami etyki zawodowej albo innych okoliczności uniemożliwiających prawidłowe świadczenie pomocy prawnej."],
+  ["§ 8. Wynagrodzenie i płatności",
+    "Wynagrodzenie za Usługi określane jest w cenniku zamieszczonym w Serwisie albo indywidualnie uzgadniane z Klientem.",
+    "Jeżeli zakres Usługi wymaga wykonania czynności dodatkowych, nieobjętych pierwotnym zleceniem, Usługodawca informuje o tym Klienta przed wykonaniem takich czynności wymagających dodatkowego wynagrodzenia.",
+    "Płatność następuje na podstawie faktury, faktury proforma albo innego dokumentu lub informacji przekazanej Klientowi.",
+    "O ile strony nie uzgodnią inaczej, wynagrodzenie Usługodawcy jest płatne przed rozpoczęciem realizacji Usługi.",
+    "Wynagrodzenie Usługodawcy nie obejmuje opłat sądowych, skarbowych, notarialnych ani innych kosztów należnych osobom trzecim lub organom publicznym, chyba że z oferty albo indywidualnych ustaleń wyraźnie wynika inaczej.",
+    "W przypadku zmiany zakresu zlecenia na żądanie Klienta albo ujawnienia się konieczności wykonania czynności wykraczających poza pierwotnie uzgodniony zakres Usługi wysokość dodatkowego wynagrodzenia wymaga uzgodnienia z Klientem."],
+  ["§ 9. Odpowiedzialność związana z Usługami",
+    "Usługodawca wykonuje Usługi z należytą starannością wymaganą przy wykonywaniu zawodu radcy prawnego, zgodnie z obowiązującymi przepisami prawa oraz zasadami wykonywania zawodu.",
+    "Zobowiązanie Usługodawcy ma charakter zobowiązania starannego działania, chyba że z bezwzględnie obowiązujących przepisów prawa lub wyraźnych indywidualnych ustaleń stron wynika inaczej.",
+    "Usługodawca nie gwarantuje wydania przez sąd rejestrowy, organ administracji publicznej ani inny właściwy organ rozstrzygnięcia określonej treści, w szczególności dokonania żądanego wpisu do Krajowego Rejestru Sądowego.",
+    "Usługodawca nie gwarantuje terminu rozpoznania sprawy przez sąd lub organ ani terminu działania niezależnych systemów teleinformatycznych.",
+    "Usługodawca nie ponosi odpowiedzialności za następstwa podania przez Klienta informacji nieprawdziwych, niepełnych lub nieaktualnych, zatajenia informacji mających znaczenie dla sprawy, nieprzekazania wymaganych dokumentów albo niewykonania w terminie czynności wymagającej działania Klienta, chyba że Usługodawca wiedział albo przy zachowaniu wymaganej staranności powinien był wiedzieć o nieprawidłowości mającej znaczenie dla wykonania Usługi.",
+    "Usługodawca nie ponosi odpowiedzialności za skutki działania lub zaniechania sądów, organów administracji publicznej ani za niezależne od Usługodawcy działanie, awarie lub niedostępność systemów teleinformatycznych, w szczególności Portalu Rejestrów Sądowych i systemu S24, chyba że szkoda wynika z okoliczności, za które odpowiedzialność ponosi Usługodawca.",
+    "W przypadku Klienta będącego przedsiębiorcą, z wyłączeniem osoby fizycznej, do której w odniesieniu do danej umowy stosuje się przepisy art. 385¹–385³ Kodeksu cywilnego, odpowiedzialność Usługodawcy z tytułu niewykonania lub nienależytego wykonania Usługi obejmuje wyłącznie rzeczywiście poniesioną stratę i nie obejmuje utraconych korzyści.",
+    "W przypadku Klienta, o którym mowa w ust. 7, łączna odpowiedzialność odszkodowawcza Usługodawcy wynikająca z niewykonania lub nienależytego wykonania konkretnej Usługi jest ograniczona do dwukrotności wynagrodzenia netto faktycznie zapłaconego Usługodawcy za Usługę, z której wynikła szkoda.",
+    "Ograniczeń odpowiedzialności określonych w ust. 7 i 8 nie stosuje się do szkody wyrządzonej umyślnie.",
+    "Umowa o świadczenie Usługi określa prawa i obowiązki Usługodawcy oraz Klienta i nie ustanawia obowiązków Usługodawcy wobec osób trzecich. W szczególności wspólnicy, członkowie organów, prokurenci, pracownicy oraz kontrahenci Klienta nie nabywają na podstawie umowy zawartej z Klientem samodzielnych uprawnień odszkodowawczych wobec Usługodawcy. Postanowienie to nie wyłącza odpowiedzialności Usługodawcy wobec osoby trzeciej, jeżeli jej podstawa wynika bezpośrednio z obowiązujących przepisów prawa.",
+    "Postanowienia niniejszego paragrafu nie wyłączają ani nie ograniczają odpowiedzialności Usługodawcy w zakresie, w którym jej wyłączenie albo ograniczenie jest niedopuszczalne na podstawie bezwzględnie obowiązujących przepisów prawa."],
+  ["§ 10. Reklamacje",
+    "Klient może zgłosić reklamację dotyczącą funkcjonowania Serwisu, Usługi elektronicznej albo wykonania Usługi.",
+    "Reklamację można przesłać pocztą elektroniczną na adres biuro@zmianakrs.pl albo pisemnie na adres Usługodawcy.",
+    "Reklamacja powinna zawierać informacje pozwalające na identyfikację Klienta i sprawy oraz opis zgłaszanych zastrzeżeń.",
+    "Usługodawca rozpatruje reklamację bez zbędnej zwłoki, nie później niż w terminie wynikającym z obowiązujących przepisów prawa.",
+    "Jeżeli rozpatrzenie reklamacji wymaga uzyskania od Klienta dodatkowych informacji, Usługodawca może zwrócić się o ich przekazanie."],
+  ["§ 11. Ochrona danych osobowych",
+    "Administratorem danych osobowych przetwarzanych przez Usługodawcę w związku z korzystaniem z Serwisu i świadczeniem Usług jest Krystian Karpiuk Kancelaria Radcy Prawnego.",
+    "Dane osobowe są przetwarzane w zakresie niezbędnym w szczególności do obsługi zapytań, zawierania i wykonywania umów, świadczenia pomocy prawnej, realizacji obowiązków prawnych oraz dochodzenia lub obrony roszczeń.",
+    "Szczegółowe informacje dotyczące przetwarzania danych osobowych, podstaw prawnych, okresów przechowywania danych oraz praw osób, których dane dotyczą, znajdują się w Polityce prywatności dostępnej w Serwisie.",
+    "Klient przekazujący Usługodawcy dane osobowe innych osób zobowiązany jest posiadać podstawę prawną do ich przekazania."],
+  ["§ 12. Przekazywanie danych w związku z realizacją Usług",
+    "Realizacja niektórych Usług wymaga przekazania danych osobowych do właściwych sądów, organów administracji publicznej lub systemów teleinformatycznych wykorzystywanych w postępowaniach rejestrowych, w szczególności Portalu Rejestrów Sądowych i systemu S24.",
+    "Zakres przekazywanych danych jest ograniczony do danych niezbędnych do realizacji danej czynności lub wykonania obowiązku prawnego.",
+    "Sądy, organy publiczne oraz inne podmioty otrzymujące dane w związku z realizacją Usługi mogą przetwarzać je jako odrębni administratorzy, jeżeli wynika to z właściwych przepisów prawa.",
+    "Szczegółowe zasady przetwarzania danych przez Usługodawcę określa Polityka prywatności."],
+  ["§ 13. Materiały i informacje dostępne w Serwisie",
+    "Artykuły, poradniki, wyszukiwarki, kalkulatory, zestawienia oraz inne ogólnodostępne materiały zamieszczone w Serwisie mają charakter informacyjny i edukacyjny.",
+    "Materiały, o których mowa w ust. 1, nie stanowią indywidualnej porady prawnej, podatkowej ani finansowej i nie zastępują analizy konkretnego stanu faktycznego.",
+    "Zamieszczenie w Serwisie informacji dotyczącej określonego zagadnienia nie oznacza przyjęcia przez Usługodawcę zlecenia ani powstania stosunku prawnego pomiędzy Usługodawcą a osobą korzystającą z materiałów.",
+    "Usługodawca dokłada należytej staranności, aby informacje zamieszczane w Serwisie były rzetelne i aktualne, jednak przepisy prawa, praktyka organów i sądów oraz funkcjonalność systemów teleinformatycznych mogą ulegać zmianom.",
+    "Usługodawca nie ponosi odpowiedzialności za działania lub zaniechania podjęte wyłącznie na podstawie ogólnych materiałów dostępnych w Serwisie, bez uwzględnienia okoliczności konkretnej sprawy.",
+    "Postanowienia niniejszego paragrafu dotyczą ogólnodostępnych materiałów i informacji zamieszczonych w Serwisie i nie stanowią wyłączenia ani ograniczenia odpowiedzialności Usługodawcy za odpłatną Usługę świadczoną na podstawie umowy zawartej z Klientem."],
+  ["§ 14. Prawa własności intelektualnej",
+    "Treści zamieszczone w Serwisie, w szczególności teksty, opracowania, materiały, elementy graficzne, układ Serwisu oraz stworzone przez Usługodawcę narzędzia, mogą podlegać ochronie na podstawie przepisów dotyczących własności intelektualnej.",
+    "Korzystanie z Serwisu nie powoduje przeniesienia na użytkownika jakichkolwiek praw do materiałów udostępnionych w Serwisie.",
+    "Materiały mogą być wykorzystywane na własny użytek w zakresie dozwolonym przez obowiązujące przepisy prawa.",
+    "Kopiowanie, rozpowszechnianie lub wykorzystywanie materiałów w celach komercyjnych w zakresie wykraczającym poza dozwolony użytek wymaga zgody Usługodawcy, chyba że obowiązujące przepisy stanowią inaczej."],
+  ["§ 15. Postanowienia końcowe",
+    "Regulamin obowiązuje od dnia wskazanego na jego początku.",
+    "Do umów zawartych przed wejściem w życie nowej wersji Regulaminu stosuje się Regulamin obowiązujący w chwili zawarcia umowy, chyba że strony zgodnie postanowią inaczej albo zmiana wynika z bezwzględnie obowiązujących przepisów prawa."],
+] as const
+
 const paragraphClass = "text-gray-300 mb-4"
-const listClass = "list-disc pl-6 text-gray-300 mb-4 space-y-2"
 const headingClass = "text-xl font-semibold text-white mt-8 mb-4"
 
 export default function RegulaminPage() {
@@ -45,92 +143,17 @@ export default function RegulaminPage() {
       <main className="relative z-10 flex-1">
         <section className="relative pt-20 pb-20 overflow-hidden">
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8"><div className="max-w-4xl mx-auto"><div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-            <h1 className="text-3xl font-bold text-white mb-2">REGULAMIN SERWISU INTERNETOWEGO ZMIANAKRS.PL</h1>
-            <p className="text-gray-300 italic mb-8">wersja obowiązująca od 4 września 2026 r.</p>
+            <h1 className="text-3xl font-bold text-white mb-2">Regulamin serwisu internetowego ZmianaKRS.pl</h1>
+            <p className="text-gray-300 italic mb-8">obowiązujący od 28 września 2026 r.</p>
             <div className="prose prose-invert max-w-none">
-              <h2 className={headingClass}>§ 1. Postanowienia ogólne</h2>
-              <p className={paragraphClass}>1. Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem www.zmianakrs.pl („Serwis”), zasady świadczenia usług drogą elektroniczną za pośrednictwem Serwisu oraz podstawowe zasady zamawiania i realizacji usług świadczonych przez Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń, NIP 669-217-69-58 („Usługodawca”).</p>
-              <p className={paragraphClass}>2. Serwis prezentuje informacje o usługach Usługodawcy dotyczących w szczególności Krajowego Rejestru Sądowego, rejestracji podmiotów i zmian danych rejestrowych oraz zawiera materiały o charakterze informacyjnym i edukacyjnym.</p>
-              <p className={paragraphClass}>3. Regulamin jest udostępniany nieodpłatnie w Serwisie w sposób umożliwiający jego pozyskanie, odtwarzanie i utrwalanie.</p>
-              <p className={paragraphClass}>4. Przed rozpoczęciem korzystania z usługi świadczonej drogą elektroniczną Usługobiorca powinien zapoznać się z Regulaminem. Rozpoczęcie korzystania z danej usługi elektronicznej oznacza zawarcie umowy o jej świadczenie na zasadach określonych w Regulaminie.</p>
-              <p className={paragraphClass}>5. Samo przeglądanie publicznie dostępnych treści Serwisu nie prowadzi do zawarcia umowy o odpłatną usługę prawną lub rejestrową.</p>
-
-              <h2 className={headingClass}>§ 2. Definicje</h2>
-              <p className={paragraphClass}><strong className="text-white">Usługodawca –</strong> Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń, NIP 669-217-69-58.</p>
-              <p className={paragraphClass}><strong className="text-white">Usługobiorca –</strong> osoba korzystająca z Serwisu lub usług świadczonych za jego pośrednictwem.</p>
-              <p className={paragraphClass}><strong className="text-white">Serwis –</strong> serwis internetowy dostępny pod adresem www.zmianakrs.pl.</p>
-              <p className={paragraphClass}><strong className="text-white">Usługi elektroniczne –</strong> usługi świadczone drogą elektroniczną w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną, w szczególności formularz kontaktowy oraz udostępnianie funkcjonalności Serwisu wymagających indywidualnego żądania użytkownika.</p>
-              <p className={paragraphClass}><strong className="text-white">Usługi kancelarii –</strong> odpłatne usługi prawne, rejestrowe i formalne świadczone przez Usługodawcę na podstawie indywidualnych ustaleń z klientem, w szczególności dotyczące KRS, S24, PRS, zakładania podmiotów, przygotowania dokumentów i reprezentacji w postępowaniach rejestrowych.</p>
-              <p className={paragraphClass}><strong className="text-white">Formularz kontaktowy –</strong> narzędzie umożliwiające przesłanie do Usługodawcy zapytania dotyczącego usług.</p>
-
-              <h2 className={headingClass}>§ 3. Adresaci Serwisu i usług</h2>
-              <p className={paragraphClass}>1. Oferta odpłatnych Usług kancelarii jest kierowana przede wszystkim do przedsiębiorców, spółek i innych podmiotów organizacyjnych oraz osób działających w związku z działalnością gospodarczą lub zawodową.</p>
-              <p className={paragraphClass}>2. Usługodawca nie kieruje oferty Serwisu do konsumentów. Jeżeli jednak w konkretnym przypadku bezwzględnie obowiązujące przepisy przyznają Usługobiorcy ochronę właściwą konsumentowi albo przedsiębiorcy korzystającemu z określonych uprawnień konsumenckich, postanowienia Regulaminu nie wyłączają ani nie ograniczają tej ochrony.</p>
-              <p className={paragraphClass}>3. Usługodawca może odmówić przyjęcia zlecenia, w szczególności w razie konfliktu interesów, braku możliwości wykonania zlecenia zgodnie z prawem lub zasadami wykonywania zawodu radcy prawnego albo gdy charakter sprawy wykracza poza zakres świadczonych usług.</p>
-
-              <h2 className={headingClass}>§ 4. Rodzaje i zakres usług świadczonych drogą elektroniczną</h2>
-              <p className={paragraphClass}>1. Za pośrednictwem Serwisu Usługodawca świadczy nieodpłatnie usługi elektroniczne obejmujące:</p>
-              <ul className={listClass}><li>umożliwienie przeglądania treści i informacji udostępnionych w Serwisie;</li><li>umożliwienie przesłania zapytania za pomocą formularza kontaktowego;</li><li>inne funkcjonalności Serwisu, jeżeli zostaną wyraźnie udostępnione jako usługi realizowane na indywidualne żądanie użytkownika.</li></ul>
-              <p className={paragraphClass}>2. Przesłanie formularza kontaktowego nie oznacza automatycznego przyjęcia zlecenia ani zawarcia umowy o odpłatną Usługę kancelarii.</p>
-              <p className={paragraphClass}>3. Usługa formularza kontaktowego rozpoczyna się z chwilą rozpoczęcia korzystania z formularza i kończy z chwilą jego skutecznego wysłania albo rezygnacji z wysłania.</p>
-
-              <h2 className={headingClass}>§ 5. Wymagania techniczne i zasady korzystania z Serwisu</h2>
-              <p className={paragraphClass}>1. Do korzystania z Serwisu potrzebne są: urządzenie z dostępem do Internetu, aktualna przeglądarka internetowa oraz – w przypadku formularza – aktywny adres e-mail.</p>
-              <p className={paragraphClass}>2. Korzystanie z Serwisu może wiązać się ze standardowymi zagrożeniami występującymi w Internecie. Usługobiorca powinien korzystać z aktualnego oprogramowania i odpowiednich zabezpieczeń urządzenia.</p>
-              <p className={paragraphClass}>3. Zabronione jest dostarczanie za pośrednictwem Serwisu treści o charakterze bezprawnym oraz podejmowanie działań mogących zakłócić, uszkodzić lub ograniczyć prawidłowe funkcjonowanie Serwisu.</p>
-              <p className={paragraphClass}>4. Usługobiorca powinien przekazywać dane zgodne z prawdą i nie powinien przesyłać danych lub dokumentów, których przekazanie nie jest potrzebne do przedstawienia zapytania.</p>
-
-              <h2 className={headingClass}>§ 6. Zawarcie i rozwiązanie umowy o usługę elektroniczną</h2>
-              <p className={paragraphClass}>1. Umowa o świadczenie nieodpłatnej usługi elektronicznej zostaje zawarta z chwilą rozpoczęcia korzystania z danej funkcjonalności Serwisu.</p>
-              <p className={paragraphClass}>2. Usługobiorca może w każdej chwili zakończyć korzystanie z usługi elektronicznej przez opuszczenie Serwisu, zaprzestanie korzystania z danej funkcjonalności lub niewysłanie formularza.</p>
-              <p className={paragraphClass}>3. Usługodawca może czasowo ograniczyć dostęp do Serwisu w związku z pracami technicznymi, bezpieczeństwem systemu lub awarią.</p>
-
-              <h2 className={headingClass}>§ 7. Zamawianie i realizacja Usług kancelarii</h2>
-              <p className={paragraphClass}>1. Informacje o Usługach kancelarii zamieszczone w Serwisie mają charakter informacyjny i – o ile wyraźnie nie wskazano inaczej – nie stanowią oferty w rozumieniu Kodeksu cywilnego.</p>
-              <p className={paragraphClass}>2. Zakres, wynagrodzenie, dokumenty wymagane do realizacji zlecenia oraz inne istotne warunki mogą być określone na stronie danej usługi albo uzgadniane indywidualnie z klientem.</p>
-              <p className={paragraphClass}>3. Umowa o Usługę kancelarii zostaje zawarta w sposób wynikający z indywidualnych ustaleń stron, w szczególności przez potwierdzenie przyjęcia zlecenia przez Usługodawcę oraz dokonanie wymaganej płatności, chyba że strony uzgodnią inaczej.</p>
-              <p className={paragraphClass}>4. Rozpoczęcie realizacji może być uzależnione od otrzymania wymaganych danych, dokumentów, pełnomocnictw oraz płatności.</p>
-              <p className={paragraphClass}>5. Terminy wskazywane przez Usługodawcę odnoszą się do czynności pozostających po jego stronie i nie obejmują czasu działania sądów, organów, systemów teleinformatycznych ani innych podmiotów trzecich, chyba że wyraźnie wskazano inaczej.</p>
-
-              <h2 className={headingClass}>§ 8. Wynagrodzenie, opłaty i dokumenty rozliczeniowe</h2>
-              <p className={paragraphClass}>1. Wynagrodzenie za Usługi kancelarii wynika z cennika w Serwisie albo z indywidualnej wyceny.</p>
-              <p className={paragraphClass}>2. O ile przy danej usłudze lub w indywidualnych ustaleniach nie wskazano inaczej, opłaty sądowe, skarbowe, notarialne i inne koszty zewnętrzne nie stanowią wynagrodzenia Usługodawcy.</p>
-              <p className={paragraphClass}>3. Usługodawca może przesłać klientowi fakturę pro forma, fakturę lub inne informacje niezbędne do dokonania płatności.</p>
-              <p className={paragraphClass}>4. Jeżeli klient przekazuje Usługodawcy środki przeznaczone na opłaty sądowe lub inne koszty zewnętrzne, ich przeznaczenie jest wskazywane w ustaleniach dotyczących konkretnego zlecenia.</p>
-
-              <h2 className={headingClass}>§ 9. Reklamacje dotyczące usług świadczonych drogą elektroniczną</h2>
-              <p className={paragraphClass}>1. Reklamacje dotyczące działania Serwisu lub usług świadczonych drogą elektroniczną można składać na adres e-mail: biuro@zmianakrs.pl.</p>
-              <p className={paragraphClass}>2. Reklamacja powinna zawierać informacje pozwalające zidentyfikować problem oraz dane kontaktowe umożliwiające udzielenie odpowiedzi.</p>
-              <p className={paragraphClass}>3. Usługodawca rozpatruje reklamację bez zbędnej zwłoki, co do zasady w terminie 14 dni od jej otrzymania. Jeżeli rozpatrzenie reklamacji wymaga dodatkowych informacji, Usługodawca może zwrócić się o ich uzupełnienie.</p>
-              <p className={paragraphClass}>4. Postanowienia niniejszego paragrafu dotyczą reklamacji usług elektronicznych i nie ograniczają uprawnień wynikających z bezwzględnie obowiązujących przepisów ani zasad odpowiedzialności związanych z właściwą Usługą kancelarii.</p>
-
-              <h2 className={headingClass}>§ 10. Dane osobowe i prywatność</h2>
-              <p className={paragraphClass}>1. Administratorem danych osobowych przetwarzanych w związku z Serwisem i świadczeniem Usług kancelarii jest Krystian Karpiuk Kancelaria Radcy Prawnego.</p>
-              <p className={paragraphClass}>2. Szczegółowe informacje o przetwarzaniu danych osobowych, w tym informacje wymagane przez art. 13 i 14 RODO, znajdują się w Polityce Prywatności i Cookies dostępnej w Serwisie.</p>
-              <p className={paragraphClass}>3. Zasady wykorzystywania plików cookies i podobnych technologii określa Polityka Prywatności i Cookies oraz ustawienia mechanizmu zarządzania zgodami dostępnego w Serwisie.</p>
-
-              <h2 className={headingClass}>§ 11. Dane przekazywane do rejestrów i organów</h2>
-              <p className={paragraphClass}>1. W ramach realizacji Usług kancelarii dane mogą być przekazywane do właściwych systemów i organów, w szczególności Portalu Rejestrów Sądowych, systemu S24, Krajowego Rejestru Sądowego, sądów rejestrowych oraz innych organów właściwych dla danego zlecenia.</p>
-              <p className={paragraphClass}>2. Zakres przekazywanych danych zależy od rodzaju zlecenia i wymagań wynikających z przepisów prawa oraz funkcjonalności właściwego systemu.</p>
-              <p className={paragraphClass}>3. Podmioty publiczne otrzymujące dane działają jako odrębni administratorzy w zakresie wynikającym z przepisów regulujących ich działalność.</p>
-
-              <h2 className={headingClass}>§ 12. Materiały informacyjne i odpowiedzialność</h2>
-              <p className={paragraphClass}>1. Publicznie dostępne artykuły, opisy usług i inne materiały w Serwisie mają charakter ogólny i informacyjny. Nie stanowią indywidualnej porady prawnej ani opinii odnoszącej się do konkretnego stanu faktycznego.</p>
-              <p className={paragraphClass}>2. Indywidualna pomoc prawna lub rejestrowa jest świadczona dopiero w ramach przyjętego zlecenia i w zakresie uzgodnionym z klientem.</p>
-              <p className={paragraphClass}>3. Usługodawca dokłada należytej staranności do prawidłowego działania Serwisu, jednak nie gwarantuje jego nieprzerwanej dostępności, w szczególności w przypadku awarii, prac technicznych lub zdarzeń pozostających poza kontrolą Usługodawcy.</p>
-              <p className={paragraphClass}>4. Postanowienia Regulaminu nie wyłączają odpowiedzialności, której zgodnie z bezwzględnie obowiązującymi przepisami prawa nie można wyłączyć ani ograniczyć.</p>
-
-              <h2 className={headingClass}>§ 13. Prawa własności intelektualnej</h2>
-              <p className={paragraphClass}>1. Treści udostępnione w Serwisie mogą stanowić przedmiot praw autorskich lub innych praw własności intelektualnej.</p>
-              <p className={paragraphClass}>2. Korzystanie z Serwisu nie oznacza nabycia praw do jego treści. Dozwolone jest korzystanie z nich w granicach wynikających z przepisów prawa lub wyraźnej zgody uprawnionego.</p>
-
-              <h2 className={headingClass}>§ 14. Zmiany Regulaminu</h2>
-              <p className={paragraphClass}>1. Usługodawca może zmienić Regulamin z ważnych przyczyn, w szczególności w razie zmiany prawa, funkcjonalności Serwisu, sposobu świadczenia usług lub konieczności zwiększenia bezpieczeństwa.</p>
-              <p className={paragraphClass}>2. Aktualna wersja Regulaminu jest publikowana w Serwisie wraz z datą obowiązywania.</p>
-              <p className={paragraphClass}>3. Zmiana Regulaminu nie narusza praw nabytych ani warunków odpłatnej Usługi kancelarii już uzgodnionych z klientem, chyba że zmiana wynika z bezwzględnie obowiązujących przepisów.</p>
-
-              <h2 className={headingClass}>§ 15. Kontakt</h2>
-              <p className={paragraphClass}>Kontakt z Usługodawcą: biuro@zmianakrs.pl, tel. 572 234 779, Krystian Karpiuk Kancelaria Radcy Prawnego, ul. Wschodnia 24/3, 62-030 Luboń.</p>
+              {sections.map(([heading, ...paragraphs]) => (
+                <section key={heading}>
+                  <h2 className={headingClass}>{heading}</h2>
+                  {paragraphs.map((paragraph, index) => (
+                    <p className={paragraphClass} key={paragraph}>{index + 1}. {paragraph}</p>
+                  ))}
+                </section>
+              ))}
             </div>
           </div></div></div>
         </section>
