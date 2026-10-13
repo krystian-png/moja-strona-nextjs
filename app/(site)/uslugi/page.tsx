@@ -279,7 +279,7 @@ export default function ServicesPage() {
                     Sprawdź szczegóły usługi →
                   </Link>
                   <Link
-                    href="/kontakt"
+                    href="/uslugi/zmiana-kodow-pkd#wycena"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
                     Skontaktuj się w tej sprawie
@@ -441,7 +441,7 @@ export default function ServicesPage() {
                       Sprawdź szczegóły usługi →
                     </Link>
                     <Link
-                      href="/kontakt"
+                      href="/cennik#formularz"
                       className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                     >
                       Skontaktuj się w tej sprawie
