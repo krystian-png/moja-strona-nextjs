@@ -237,7 +237,7 @@ export default function PricingPage() {
                     <h3 className="mb-6 text-center text-xl font-bold text-amber-400">
                       Masz pytanie o cenę? Napisz do nas
                     </h3>
-                    <div className="flex w-full flex-1 justify-center">
+                    <div id="formularz" className="flex w-full flex-1 justify-center">
                       <InlineContactForm className="h-full w-full max-w-md" />
                     </div>
                   </div>
@@ -337,7 +337,7 @@ export default function PricingPage() {
                           </div>
                         </div>
                         <p className="text-slate-300 text-left text-sm">
-                          Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="/kontakt" className="text-amber-400 hover:text-amber-300 underline">Skontaktuj się</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
+                          Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="/uslugi/zmiana-umowy-spolki-zoo" className="text-amber-400 hover:text-amber-300 underline">Skontaktuj się</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
                         </p>
                         <p className="text-slate-300 text-left text-sm">
                           Umowy zbycia udziałów wyceniane są osobno (od 100 zł netto) w zależności od stopnia złożoności i sytuacji właścicielskiej spółki.
