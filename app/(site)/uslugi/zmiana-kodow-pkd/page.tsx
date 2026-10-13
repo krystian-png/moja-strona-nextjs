@@ -64,7 +64,7 @@ export default function ZmianaKodowPkdPage() {
       <Navbar />
 
       <main className="relative px-4 pb-14 pt-24 sm:px-6 lg:px-8">
-        <section className="mx-auto mb-12 max-w-7xl">
+        <section className="relative z-20 mx-auto mb-12 max-w-7xl">
           <div className={`${card} lg:p-10`}>
             <div className="space-y-6">
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD Twojej spółki</h1>
