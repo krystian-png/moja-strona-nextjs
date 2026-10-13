@@ -66,7 +66,7 @@ const faqSchema = {
       name: "Ile kosztuje zgłoszenie zmiany adresu lub siedziby do KRS?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 pkt 2–3 u.k.s.c.).",
+        text: "Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 ust. 1–2 u.k.s.c.).",
       },
     },
     {
@@ -264,7 +264,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-lg text-white/90">Podstawa prawna opłat: <strong>250 zł</strong> (art. 55 pkt 2 u.k.s.c.) oraz <strong>200 zł</strong> w przypadkach ustawowych (art. 55 pkt 3 u.k.s.c.).</p>
+              <p className="text-lg text-white/90">Podstawa prawna opłat: <strong>250 zł</strong> (art. 55 ust. 1 u.k.s.c.) oraz <strong>200 zł</strong> w przypadkach ustawowych (art. 55 ust. 2 u.k.s.c.).</p>
               <p className="text-lg text-white/90">Jeżeli wniosek składa pełnomocnik, standardowo dochodzi opłata skarbowa od pełnomocnictwa.</p>
               <p className="text-lg text-white/90">Jeżeli mamy <strong>zmianę siedziby (miejscowości)</strong>, zwykle dochodzi też koszt przygotowania dokumentów „umownych” (uchwała/zmiana umowy) i – zależnie od trybu – ewentualne koszty notarialne, jeżeli dana zmiana wymaga formy aktu notarialnego.</p>
               <p className="text-lg text-white/90"><strong>Koszt naszej obsługi zmiany adresu/siedziby sp. z o.o. zaczyna się od 999 zł netto</strong> i zależy od tego, czy sprawa jest prostą aktualizacją adresu, czy zmianą siedziby wymagającą pełnego pakietu korporacyjnego oraz od liczby dokumentów i złożoności stanu faktycznego.</p>
@@ -328,7 +328,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
                   <strong>Złożenie wniosku elektronicznie</strong>
                   <br />
                   Składamy wniosek w systemie teleinformatycznym, dołączając dokumenty i wnosząc opłatę sądową adekwatną do trybu
-                  (art. 55 pkt 2 albo pkt 3 u.k.s.c.).
+                  (art. 55 ust. 1 albo ust. 2 u.k.s.c.).
                 </li>
                 <li>
                   <strong>Monitoring do wpisu</strong>
@@ -410,7 +410,7 @@ export default function ZmianaAdresuSpolkiZooPage() {
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Ile kosztuje zgłoszenie zmiany adresu lub siedziby do KRS?</h3>
-                <p className="text-lg text-white/90">Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 pkt 2–3 u.k.s.c.).</p>
+                <p className="text-lg text-white/90">Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 ust. 1–2 u.k.s.c.).</p>
               </div>
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Jakie ryzyko wiąże się z brakiem aktualizacji danych adresowych?</h3>
