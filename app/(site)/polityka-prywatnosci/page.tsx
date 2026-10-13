@@ -45,7 +45,7 @@ export default function PolitykaPrywatnosciPage() {
       <main className="relative z-10 flex-1"><section className="relative pt-20 pb-20 overflow-hidden">
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8"><div className="max-w-4xl mx-auto"><div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
           <h1 className="text-3xl font-bold text-white mb-2">POLITYKA PRYWATNOŚCI I COOKIES ZMIANAKRS.PL</h1>
-          <p className="text-gray-300 italic mb-8">wersja obowiązująca od 4 września 2026 r.</p>
+          <p className="text-gray-300 italic mb-8">wersja obowiązująca od 13 października 2026 r.</p>
           <div className="prose prose-invert max-w-none">
             <h2 className={headingClass}>§ 1. Informacje ogólne</h2>
             <p className={paragraphClass}>1. Niniejsza Polityka Prywatności i Cookies opisuje zasady przetwarzania danych osobowych w związku z korzystaniem z serwisu www.zmianakrs.pl („Serwis”), kontaktem z Administratorem oraz korzystaniem z usług świadczonych przez Krystian Karpiuk Kancelaria Radcy Prawnego.</p>
@@ -72,6 +72,7 @@ export default function PolitykaPrywatnosciPage() {
             <p className={paragraphClass}>2. Dane takie mogą pochodzić od klienta lub osoby działającej w jego imieniu, z dokumentów przekazanych Administratorowi, z publicznych rejestrów i ewidencji, w szczególności KRS, CEIDG i CRBR, a także z innych publicznie dostępnych źródeł, jeżeli jest to potrzebne do realizacji zlecenia.</p>
             <p className={paragraphClass}>3. Kategorie przetwarzanych danych obejmują dane identyfikacyjne, kontaktowe, informacje o funkcji lub relacji z podmiotem oraz inne dane niezbędne do przygotowania dokumentów lub wykonania czynności objętych zleceniem.</p>
             <p className={paragraphClass}>4. Wobec osób, których dane Administrator uzyskał z innych źródeł, obowiązek informacyjny jest realizowany zgodnie z art. 14 RODO, z uwzględnieniem przewidzianych w tym przepisie wyjątków. Publiczne udostępnienie niniejszej Polityki może stanowić jeden ze środków zapewnienia przejrzystości przetwarzania, lecz nie zastępuje indywidualnego obowiązku informacyjnego tam, gdzie prawo wymaga jego indywidualnej realizacji.</p>
+            <p className={paragraphClass}>5. W szczególności, jeżeli dane muszą pozostać poufne ze względu na obowiązek zachowania ustawowej tajemnicy zawodowej radcy prawnego, może mieć zastosowanie wyjątek określony w art. 14 ust. 5 lit. d RODO, z uwzględnieniem art. 3 ust. 3–5 ustawy z dnia 6 lipca 1982 r. o radcach prawnych.</p>
 
             <h2 className={headingClass}>§ 6. Odbiorcy danych</h2>
             <p className={paragraphClass}>Dane mogą być ujawniane lub powierzane – wyłącznie w zakresie potrzebnym do danego celu – następującym kategoriom odbiorców:</p>
@@ -100,7 +101,8 @@ export default function PolitykaPrywatnosciPage() {
             <h2 className={headingClass}>§ 11. Prawa osób, których dane dotyczą</h2>
             <p className={paragraphClass}>W granicach wynikających z RODO osobie, której dane dotyczą, przysługuje prawo do:</p>
             <ul className={listClass}><li>dostępu do danych i uzyskania ich kopii;</li><li>sprostowania danych;</li><li>usunięcia danych;</li><li>ograniczenia przetwarzania;</li><li>przenoszenia danych – gdy spełnione są przesłanki ustawowe;</li><li>wniesienia sprzeciwu wobec przetwarzania opartego na art. 6 ust. 1 lit. f RODO;</li><li>cofnięcia zgody w dowolnym momencie, gdy przetwarzanie opiera się na zgodzie, bez wpływu na zgodność z prawem wcześniejszego przetwarzania;</li><li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li></ul>
-            <p className={paragraphClass}>Realizację praw można zgłaszać na adres: biuro@zmianakrs.pl. Zakres poszczególnych praw zależy od podstawy i celu przetwarzania oraz od wyjątków przewidzianych w RODO i innych przepisach.</p>
+            <p className={paragraphClass}>Realizację praw można zgłaszać na adres: biuro@zmianakrs.pl.</p>
+            <p className={paragraphClass}>Zakres poszczególnych praw zależy od podstawy i celu przetwarzania oraz od wyjątków przewidzianych w RODO i innych przepisach. W przypadku danych pozyskanych przez radcę prawnego w związku z udzielaniem pomocy prawnej zastosowanie mają również szczególne regulacje ustawy o radcach prawnych, w tym art. 5a tej ustawy, służące ochronie tajemnicy zawodowej. W zakresie przewidzianym w tych przepisach realizacja niektórych praw może podlegać ograniczeniom; w szczególności art. 21 ust. 1 RODO nie ma zastosowania do danych osobowych pozyskanych przez radcę prawnego w związku z udzielaniem pomocy prawnej.</p>
 
             <h2 className={headingClass}>§ 12. Zautomatyzowane podejmowanie decyzji i profilowanie</h2>
             <p className={paragraphClass}>Administrator nie podejmuje wobec osób decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, które wywoływałyby wobec nich skutki prawne lub w podobny sposób istotnie na nie wpływały w rozumieniu art. 22 RODO.</p>
@@ -114,13 +116,15 @@ export default function PolitykaPrywatnosciPage() {
             <p className={paragraphClass}>2. Technologie niezbędne mogą być stosowane bez zgody, jeżeli są konieczne do transmisji komunikatu lub dostarczenia usługi żądanej przez użytkownika.</p>
             <p className={paragraphClass}>3. Cookies i podobne technologie służące celom analitycznym, marketingowym lub innym celom niewymaganym do działania żądanej usługi są uruchamiane po uzyskaniu wymaganej zgody.</p>
             <p className={paragraphClass}>4. Użytkownik może wyrazić, odmówić lub wycofać zgodę za pomocą mechanizmu zarządzania zgodami dostępnego w Serwisie. Wycofanie zgody nie wpływa na zgodność z prawem działań dokonanych przed jej wycofaniem.</p>
-            <p className={paragraphClass}>5. Szczegółowa lista wykorzystywanych technologii, ich dostawców, celów i okresów działania powinna odpowiadać faktycznej konfiguracji Serwisu i jest prezentowana w panelu zarządzania zgodami, jeżeli dany mechanizm taką funkcję zapewnia.</p>
+            <p className={paragraphClass}>5. Informacje o aktualnie wykorzystywanych technologiach, ich dostawcach, celach oraz okresach działania są udostępniane w mechanizmie zarządzania zgodami lub bezpośrednio w Serwisie, zgodnie z faktyczną konfiguracją Serwisu.</p>
 
             <h2 className={headingClass}>§ 15. Narzędzia zewnętrzne</h2>
-            <p className={paragraphClass}>Serwis może korzystać z usług zewnętrznych dostawców, w tym narzędzi analitycznych, komunikacyjnych lub reklamowych. Zakres ich działania zależy od aktualnej konfiguracji Serwisu. Narzędzia wymagające zgody są uruchamiane dopiero po jej udzieleniu. Informacje o konkretnych dostawcach powinny być zgodne z faktycznie aktywnymi narzędziami wskazanymi w panelu zarządzania zgodami lub innych informacjach udostępnionych w Serwisie.</p>
+            <p className={paragraphClass}>1. Serwis może korzystać z usług zewnętrznych dostawców, w tym narzędzi analitycznych, komunikacyjnych lub reklamowych.</p>
+            <p className={paragraphClass}>2. Zakres działania tych narzędzi zależy od aktualnej konfiguracji Serwisu. Narzędzia wymagające zgody są uruchamiane dopiero po jej udzieleniu.</p>
+            <p className={paragraphClass}>3. Informacje o konkretnych dostawcach aktywnych w Serwisie są udostępniane w mechanizmie zarządzania zgodami lub w innych informacjach udostępnionych w Serwisie.</p>
 
             <h2 className={headingClass}>§ 16. Usługi świadczone drogą elektroniczną</h2>
-            <p className={paragraphClass}>Serwis umożliwia korzystanie z usług świadczonych drogą elektroniczną, w szczególności z formularza kontaktowego. Zasady świadczenia tych usług, wymagania techniczne oraz tryb reklamacyjny określa Regulamin Serwisu.</p>
+            <p className={paragraphClass}>Serwis umożliwia korzystanie z usług świadczonych drogą elektroniczną, w szczególności z formularza kontaktowego oraz narzędzi informacyjnych, w tym wyszukiwarki kodów PKD. Zasady świadczenia tych usług, wymagania techniczne, zasady zawierania i rozwiązywania umów o Usługi elektroniczne oraz tryb reklamacyjny określa Regulamin Serwisu.</p>
 
             <h2 className={headingClass}>§ 17. Zmiany Polityki</h2>
             <p className={paragraphClass}>1. Polityka może być aktualizowana w szczególności w razie zmiany prawa, sposobu przetwarzania danych, funkcjonalności Serwisu lub wykorzystywanych narzędzi.</p>
