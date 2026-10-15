@@ -145,7 +145,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <Navbar />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className={isReport ? `${reportStyles.reportLayout} mx-auto grid w-full max-w-[1400px] grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1040px)_320px]` : "max-w-4xl mx-auto"}>
+        <div className={isReport ? `${reportStyles.reportLayout} mx-auto w-full` : "max-w-4xl mx-auto"}>
           <div className={isReport ? `${reportStyles.reportMain} min-w-0` : undefined}>
           <article className={isReport ? reportStyles.reportArticle : "bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8"}>
             <header className="mb-6">
