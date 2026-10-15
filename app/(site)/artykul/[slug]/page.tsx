@@ -8,6 +8,7 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import reportStyles from "./report.module.css"
+import InlineContactForm from "@/app/(site)/uslugi/_components/InlineContactForm"
 import { Badge } from "@/components/ui/badge"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
@@ -144,7 +145,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <Navbar />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className={isReport ? "max-w-5xl mx-auto" : "max-w-4xl mx-auto"}>
+        <div className={isReport ? reportStyles.reportLayout : "max-w-4xl mx-auto"}>
+          <div className={isReport ? reportStyles.reportMain : undefined}>
           <article className={isReport ? reportStyles.reportArticle : "bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8"}>
             <header className="mb-6">
               <Badge className="bg-amber-600 text-white mb-4 hover:bg-amber-700">
@@ -169,6 +171,19 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <MDXContent code={post.body.code} />
             </div>
           </article>
+          </div>
+          {isReport && (
+            <aside className={reportStyles.reportSidebar} aria-label="Zleć zmianę kodów PKD">
+              <div className={reportStyles.reportSticky}>
+                <div className={reportStyles.reportSidebarIntro}>
+                  <span className={reportStyles.reportSidebarEyebrow}>OBSŁUGA ZMIAN W KRS</span>
+                  <h2>Zleć zmianę kodów PKD</h2>
+                  <p>Sprawdzimy zakres zmian i przygotujemy wniosek do KRS. Napisz, czego potrzebuje Twoja spółka.</p>
+                </div>
+                <InlineContactForm className={reportStyles.reportContactForm} />
+              </div>
+            </aside>
+          )}
         </div>
       </main>
 
