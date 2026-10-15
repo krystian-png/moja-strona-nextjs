@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar"
 import LandingServices from "@/components/services/LandingServices"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 import ServicesList from "./ServicesList"
+import InlineContactForm from "./_components/InlineContactForm"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import type { LucideIcon } from "lucide-react"
 import {
@@ -16,8 +17,6 @@ import {
   Clock,
   FileSearch,
   FileText,
-  Mail,
-  Phone,
   RefreshCw,
   Shield,
   Users,
@@ -273,16 +272,16 @@ export default function ServicesPage() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
+                    href="#formularz"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
+                  >
+                    Wyślij zapytanie
+                  </Link>
+                  <Link
                     href="/uslugi/zmiana-kodow-pkd"
                     className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
                   >
                     Sprawdź szczegóły usługi →
-                  </Link>
-                  <Link
-                    href="/kontakt"
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
-                  >
-                    Skontaktuj się w tej sprawie
                   </Link>
                 </div>
               </div>
@@ -435,16 +434,16 @@ export default function ServicesPage() {
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                      href="/uslugi/zmiana-zarzadu-spolki-zoo"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
-                    >
-                      Sprawdź szczegóły usługi →
-                    </Link>
-                    <Link
-                      href="/kontakt"
+                      href="#formularz"
                       className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                     >
-                      Skontaktuj się w tej sprawie
+                      Wyślij zapytanie
+                    </Link>
+                    <Link
+                      href="/cennik"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                    >
+                      Zobacz cennik →
                     </Link>
                   </div>
                 </div>
@@ -507,24 +506,19 @@ export default function ServicesPage() {
                         </div>
                       )}
 
-                      <div className="mt-6 space-y-4">
+                      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                         <Link
-                          href="/kontakt"
+                          href="#formularz"
                           className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                         >
-                          Skontaktuj się w tej sprawie
+                          Wyślij zapytanie
                         </Link>
-                        <p className="text-sm text-gray-300">
-                          Sprawdź również{" "}
-                          <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                            cennik usług KRS
-                          </Link>{" "}
-                          lub przeczytaj{" "}
-                          <Link href="/blog" className="text-amber-400 underline transition hover:text-amber-300">
-                            artykuły o zmianach w KRS
-                          </Link>{" "}
-                          na naszym blogu.
-                        </p>
+                        <Link
+                          href="/cennik"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                        >
+                          Zobacz cennik →
+                        </Link>
                       </div>
                     </div>
                   )
@@ -563,35 +557,36 @@ export default function ServicesPage() {
                       Zamów i złóż dokumenty do KRS w terminie
                     </h4>
                     <p className="mb-4 text-sm leading-relaxed text-gray-300">{closingService.note}</p>
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                      <a
-                        href="tel:+48572234779"
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700"
-                      >
-                        <Phone className="h-4 w-4" />
-                        Zadzwoń
-                      </a>
-                      <a
-                        href="mailto:biuro@zmianakrs.pl"
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-                      >
-                        <Mail className="h-4 w-4" />
-                        Email
-                      </a>
-                    </div>
+                    
                   </div>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
-                    href="/kontakt"
+                    href="#formularz"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
-                    Skontaktuj się w tej sprawie
+                    Wyślij zapytanie
+                  </Link>
+                  <Link
+                    href="/cennik"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                  >
+                    Zobacz cennik →
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="formularz" className="scroll-mt-28 px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="formularz-heading">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 id="formularz-heading" className="mb-3 text-3xl font-bold text-white">Zapytaj o realizację usługi</h2>
+            <p className="mb-8 text-base text-white/90">
+              Opisz, czego potrzebujesz. Odpowiemy i przedstawimy dalsze kroki.
+            </p>
+            <InlineContactForm className="mx-auto" />
           </div>
         </section>
 
@@ -726,10 +721,10 @@ export default function ServicesPage() {
               </div>
               <div className="mt-12 text-center">
                 <Link
-                  href="/kontakt"
+                  href="#formularz"
                   className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
                 >
-                  Porozmawiajmy o Twoich potrzebach
+                  Wyślij zapytanie
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
