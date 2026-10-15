@@ -235,9 +235,9 @@ export default function PricingPage() {
 
                   <div className="flex h-full flex-col items-center">
                     <h3 className="mb-6 text-center text-xl font-bold text-amber-400">
-                      Masz pytanie o cenę? Napisz do nas
+                      Zapytaj o realizację usługi
                     </h3>
-                    <div className="flex w-full flex-1 justify-center">
+                    <div id="formularz" className="flex w-full flex-1 scroll-mt-28 justify-center">
                       <InlineContactForm className="h-full w-full max-w-md" />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export default function PricingPage() {
                         799 zł <span className="text-base font-normal text-slate-300">netto</span>
                       </p>
                       <span className="mt-2 inline-block text-sm font-semibold text-amber-400 transition-colors group-hover:text-amber-300">
-                        Sprawdź usługę →
+                        Sprawdź ofertę PKD →
                       </span>
                     </div>
                   </div>
@@ -316,6 +316,7 @@ export default function PricingPage() {
                           </p>
                         </div>
                       </div>
+                      <a href="#formularz" className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-amber-700">Zapytaj o złożenie wniosku →</a>
                       <div className="mt-6 p-4 bg-amber-500/10 border border-amber-500/20 rounded-lg text-left">
                         <p className="text-slate-300 text-sm">* Podana cena nie uwzględnia opłat sądowych i skarbowych</p>
                       </div>
@@ -337,11 +338,12 @@ export default function PricingPage() {
                           </div>
                         </div>
                         <p className="text-slate-300 text-left text-sm">
-                          Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="/kontakt" className="text-amber-400 hover:text-amber-300 underline">Skontaktuj się</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
+                          Zmiana umowy spółki (np. zmiana PKD, kapitału zakładowego, siedziby czy innych postanowień umowy) wyceniana jest osobno w zależności od stopnia złożoności i zakresu zmian. <a href="#formularz" className="text-amber-400 hover:text-amber-300 underline">zapytaj o wycenę</a> żeby ustalić szczegóły lub sprawdź nasze <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline">usługi KRS</a>.
                         </p>
                         <p className="text-slate-300 text-left text-sm">
                           Umowy zbycia udziałów wyceniane są osobno (od 100 zł netto) w zależności od stopnia złożoności i sytuacji właścicielskiej spółki.
                         </p>
+                        <a href="#formularz" className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-amber-700">Zapytaj o wycenę →</a>
                       </CardContent>
                     </Card>
                   </div>
@@ -393,7 +395,8 @@ export default function PricingPage() {
                         <p className="text-slate-300 text-sm leading-relaxed mb-4">
                           Usługa przeznaczona dla spółek z o.o. chcących prawidłowo i terminowo wypełnić obowiązki rejestrowe oraz ograniczyć ryzyko kar za opóźnienie lub brak złożenia dokumentów
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <a href="#formularz" className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-amber-700">Zapytaj o usługę →</a>
+                        <div className="mt-4 flex flex-col sm:flex-row gap-4">
                           <a
                             href="tel:+48572234779"
                             className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
@@ -458,6 +461,7 @@ export default function PricingPage() {
                           <li className="flex items-start gap-2"><span className="text-amber-400">•</span> korzystania z szablonowej umowy spółki, bez możliwości jej modyfikacji poza dostępnymi polami</li>
                         </ul>
                       </div>
+                      <a href="#formularz" className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-amber-700">Zapytaj o rejestrację →</a>
                     </CardContent>
                   </Card>
                   {/* Karta PRS - ikona AMBER */}
@@ -495,6 +499,7 @@ export default function PricingPage() {
                           </ul>
                         </div>
                       </div>
+                      <a href="#formularz" className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-amber-600 px-5 py-3 text-center font-semibold text-white transition hover:bg-amber-700">Zapytaj o rejestrację →</a>
                     </CardContent>
                   </Card>
                 </div>
