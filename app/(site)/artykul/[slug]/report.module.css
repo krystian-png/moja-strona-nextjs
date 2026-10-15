@@ -80,3 +80,23 @@
 .reportBody :global(.report-code-columns .report-code-arrow) { color: #ffb563; }
 .reportBody :global(.report-code-explanation) { border-top-color: #607e97; }
 @media (max-width: 1279px) { .reportLayout { max-width: 900px; grid-template-columns: minmax(0,1fr); } }
+
+/* GUS mapping: meaningful visual proportion instead of a two-number table */
+.reportBody :global(.report-mapping-summary) { margin: 1.6rem 0 2rem; border: 1px solid #cbd5df; border-radius: 5px; overflow: hidden; }
+.reportBody :global(.report-mapping-title) { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; background: #203d58; color: #fff !important; font-weight: 800; margin: 0; padding: 14px 18px; }
+.reportBody :global(.report-mapping-title span) { color: #fbd0a2; font-weight: 600; }
+.reportBody :global(.report-mapping-cards) { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.reportBody :global(.report-mapping-card) { padding: 20px; background: #f4f7fa; }
+.reportBody :global(.report-mapping-card-multiple) { background: #e4edf5; border-left: 1px solid #cad5df; }
+.reportBody :global(.report-mapping-label) { color: #29435b; display: block; font-size: .86rem; font-weight: 800; }
+.reportBody :global(.report-mapping-figure) { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.reportBody :global(.report-mapping-figure strong) { font-size: 2.4rem; line-height: 1.2; color: #203d58; }
+.reportBody :global(.report-mapping-figure span) { color: #465f73; font-weight: 700; }
+.reportBody :global(.report-mapping-card p) { margin: 0; font-size: .88rem; line-height: 1.55; }
+.reportBody :global(.report-mapping-bar) { display: flex; height: 12px; }
+.reportBody :global(.report-mapping-bar span:first-child) { width: 71.8%; background: #203d58; }
+.reportBody :global(.report-mapping-bar span:last-child) { width: 28.2%; background: #c47d35; }
+.reportDisclaimer { margin-top: 20px; padding: 17px 21px; background: #e9ecee; border-left: 3px solid #8193a3; color: #405469; font-size: .82rem; line-height: 1.6; }
+.reportDisclaimer strong { display: block; margin-bottom: 5px; color: #2b4358; font-size: .86rem; }
+.reportDisclaimer p { margin: 0; }
+@media (max-width: 640px) { .reportBody :global(.report-mapping-cards) { grid-template-columns: 1fr; } .reportBody :global(.report-mapping-card-multiple) { border-left: 0; border-top: 1px solid #cad5df; } }
