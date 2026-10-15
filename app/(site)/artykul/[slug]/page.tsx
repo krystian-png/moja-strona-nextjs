@@ -171,6 +171,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <MDXContent code={post.body.code} />
             </div>
           </article>
+          {isReport && (
+            <aside className={reportStyles.reportDisclaimer} aria-label="Informacja prawna">
+              <strong>Informacja prawna</strong>
+              <p>Raport ma charakter informacyjny i edukacyjny. Nie stanowi indywidualnej porady prawnej, podatkowej ani finansowej i nie zastępuje analizy konkretnego stanu faktycznego. Przepisy prawa oraz praktyka organów i sądów mogą ulegać zmianom. Przed podjęciem decyzji dotyczącej wpisu PKD należy uwzględnić rzeczywisty zakres działalności przedsiębiorstwa i aktualne przepisy.</p>
+            </aside>
+          )}
           </div>
           {isReport && (
             <aside className={`${reportStyles.reportSidebar} hidden xl:block min-w-0`} aria-label="Zleć zmianę kodów PKD">
