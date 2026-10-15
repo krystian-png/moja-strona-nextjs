@@ -16,8 +16,6 @@ import {
   Clock,
   FileSearch,
   FileText,
-  Mail,
-  Phone,
   RefreshCw,
   Shield,
   Users,
@@ -273,16 +271,16 @@ export default function ServicesPage() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
+                    href="/kontakt"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
+                  >
+                    Wyślij zapytanie
+                  </Link>
+                  <Link
                     href="/uslugi/zmiana-kodow-pkd"
                     className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
                   >
                     Sprawdź szczegóły usługi →
-                  </Link>
-                  <Link
-                    href="/kontakt"
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
-                  >
-                    Skontaktuj się w tej sprawie
                   </Link>
                 </div>
               </div>
@@ -435,16 +433,16 @@ export default function ServicesPage() {
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                      href="/uslugi/zmiana-zarzadu-spolki-zoo"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
-                    >
-                      Sprawdź szczegóły usługi →
-                    </Link>
-                    <Link
                       href="/kontakt"
                       className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                     >
-                      Skontaktuj się w tej sprawie
+                      Wyślij zapytanie
+                    </Link>
+                    <Link
+                      href="/cennik"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                    >
+                      Zobacz cennik →
                     </Link>
                   </div>
                 </div>
@@ -507,24 +505,19 @@ export default function ServicesPage() {
                         </div>
                       )}
 
-                      <div className="mt-6 space-y-4">
+                      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                         <Link
                           href="/kontakt"
                           className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                         >
-                          Skontaktuj się w tej sprawie
+                          Wyślij zapytanie
                         </Link>
-                        <p className="text-sm text-gray-300">
-                          Sprawdź również{" "}
-                          <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                            cennik usług KRS
-                          </Link>{" "}
-                          lub przeczytaj{" "}
-                          <Link href="/blog" className="text-amber-400 underline transition hover:text-amber-300">
-                            artykuły o zmianach w KRS
-                          </Link>{" "}
-                          na naszym blogu.
-                        </p>
+                        <Link
+                          href="/cennik"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                        >
+                          Zobacz cennik →
+                        </Link>
                       </div>
                     </div>
                   )
@@ -563,31 +556,22 @@ export default function ServicesPage() {
                       Zamów i złóż dokumenty do KRS w terminie
                     </h4>
                     <p className="mb-4 text-sm leading-relaxed text-gray-300">{closingService.note}</p>
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                      <a
-                        href="tel:+48572234779"
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700"
-                      >
-                        <Phone className="h-4 w-4" />
-                        Zadzwoń
-                      </a>
-                      <a
-                        href="mailto:biuro@zmianakrs.pl"
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-                      >
-                        <Mail className="h-4 w-4" />
-                        Email
-                      </a>
-                    </div>
+                    
                   </div>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href="/kontakt"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
-                    Skontaktuj się w tej sprawie
+                    Wyślij zapytanie
+                  </Link>
+                  <Link
+                    href="/cennik"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
+                  >
+                    Zobacz cennik →
                   </Link>
                 </div>
               </div>
