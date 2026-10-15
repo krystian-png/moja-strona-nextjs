@@ -145,8 +145,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <Navbar />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className={isReport ? reportStyles.reportLayout : "max-w-4xl mx-auto"}>
-          <div className={isReport ? reportStyles.reportMain : undefined}>
+        <div className={isReport ? `${reportStyles.reportLayout} mx-auto grid w-full max-w-[1200px] grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,800px)_320px]` : "max-w-4xl mx-auto"}>
+          <div className={isReport ? `${reportStyles.reportMain} min-w-0` : undefined}>
           <article className={isReport ? reportStyles.reportArticle : "bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8"}>
             <header className="mb-6">
               <Badge className="bg-amber-600 text-white mb-4 hover:bg-amber-700">
@@ -173,8 +173,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           </article>
           </div>
           {isReport && (
-            <aside className={reportStyles.reportSidebar} aria-label="Zleć zmianę kodów PKD">
-              <div className={reportStyles.reportSticky}>
+            <aside className={`${reportStyles.reportSidebar} hidden xl:block min-w-0`} aria-label="Zleć zmianę kodów PKD">
+              <div className={`${reportStyles.reportSticky} sticky top-28 rounded-lg bg-[#17334e] p-4 text-white shadow-lg`}>
                 <div className={reportStyles.reportSidebarIntro}>
                   <span className={reportStyles.reportSidebarEyebrow}>OBSŁUGA ZMIAN W KRS</span>
                   <h2>Zleć zmianę kodów PKD</h2>
