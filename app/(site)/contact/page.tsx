@@ -3,7 +3,6 @@ import Script from "next/script"
 
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import contactBackground from "@/public/images/contact-bg.webp"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
 import ContactPageContent from "./contact-content"
@@ -73,10 +72,7 @@ export default function ContactPage() {
       <div
         className="fixed inset-0 -z-10"
         style={{
-          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url(${contactBackground.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          background: "linear-gradient(145deg, #101B2D 0%, #142238 55%, #101B2D 100%)",
         }}
       />
 
