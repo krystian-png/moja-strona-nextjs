@@ -145,6 +145,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <Navbar />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        {isReport && (
+          <div className="sticky top-[76px] z-30 mx-auto mb-4 flex max-w-[900px] items-center justify-between gap-3 rounded-lg border border-[#315574] bg-[#17334e] px-3 py-2.5 shadow-lg sm:px-4 xl:hidden" aria-label="Zleć zmianę kodów PKD">
+            <span className="min-w-0 text-sm font-semibold leading-tight text-white sm:text-base">Potrzebujesz zmiany PKD w KRS?</span>
+            <a href="/uslugi/zmiana-kodow-pkd#wycena" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-md bg-amber-500 px-3 py-2 text-center text-sm font-bold text-slate-950 transition hover:bg-amber-400 sm:px-5">Zleć zmianę PKD →</a>
+          </div>
+        )}
         <div className={isReport ? `${reportStyles.reportLayout} mx-auto w-full` : "max-w-4xl mx-auto"}>
           <div className={isReport ? `${reportStyles.reportMain} min-w-0` : undefined}>
           <article className={isReport ? reportStyles.reportArticle : "bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8"}>
@@ -171,14 +177,6 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <MDXContent code={post.body.code} />
             </div>
           </article>
-          {isReport && (
-            <div className="mt-5 rounded-lg border border-[#d9c6ae] bg-white px-5 py-5 shadow-sm xl:hidden">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#9c6028]">Obsługa zmian w KRS</p>
-              <h2 className="mt-2 text-xl font-bold text-[#243e55]">Chcesz poprawić kody PKD swojej spółki?</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[#42586b]">Sprawdzimy zakres zmian i przygotujemy wniosek do KRS.</p>
-              <a href="/uslugi/zmiana-kodow-pkd#wycena" className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-amber-600 px-4 py-3 text-center font-bold text-white transition hover:bg-amber-700">Zleć zmianę kodów PKD →</a>
-            </div>
-          )}
           {isReport && (
             <aside className={reportStyles.reportDisclaimer} aria-label="Informacja prawna">
               <strong>Informacja prawna</strong>
