@@ -7,6 +7,8 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import reportStyles from "./report.module.css"
+import InlineContactForm from "@/app/(site)/uslugi/_components/InlineContactForm"
 import { Badge } from "@/components/ui/badge"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 
@@ -90,6 +92,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     notFound()
   }
 
+  const isReport = post.slug === "pkd-2025-raport-wdrozenia-reformy"
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -117,37 +121,41 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="relative min-h-screen">
+    <div className={isReport ? `relative min-h-screen ${reportStyles.reportPage}` : "relative min-h-screen"}>
       <Script id="article-structured-data" type="application/ld+json">
         {JSON.stringify(structuredData)}
       </Script>
 
-      <div className="fixed inset-0 -z-20">
-        <Image
-          src={woodenStructureImage}
-          alt="Drewniana konstrukcja z dokumentami prawnymi"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-      </div>
-
-      <div className="fixed inset-0 -z-10 bg-slate-900/60" aria-hidden />
+      {!isReport && (
+        <>
+          <div className="fixed inset-0 -z-20">
+            <Image
+              src={woodenStructureImage}
+              alt="Drewniana konstrukcja z dokumentami prawnymi"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
+          <div className="fixed inset-0 -z-10 bg-slate-900/60" aria-hidden />
+        </>
+      )}
 
       <Navbar />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <article className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8">
+        <div className={isReport ? `${reportStyles.reportLayout} mx-auto w-full` : "max-w-4xl mx-auto"}>
+          <div className={isReport ? `${reportStyles.reportMain} min-w-0` : undefined}>
+          <article className={isReport ? reportStyles.reportArticle : "bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 sm:p-8"}>
             <header className="mb-6">
               <Badge className="bg-amber-600 text-white mb-4 hover:bg-amber-700">
                 Spółki i zmiany w KRS
               </Badge>
-              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              <h1 className={isReport ? reportStyles.reportTitle : "text-3xl sm:text-4xl font-bold text-white mb-4"}>
                 {post.title}
               </h1>
-              <div className="text-gray-400 space-y-1">
+              <div className={isReport ? `${reportStyles.reportMeta} space-y-1` : "text-gray-400 space-y-1"}>
                 <time dateTime={post.date} className="block">
                   Opublikowano {formatDate(post.date)}
                 </time>
@@ -159,10 +167,29 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               </div>
             </header>
 
-            <div className="text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-200 prose-p:mb-4 prose-strong:text-white prose-em:text-gray-300 prose-a:text-amber-400 prose-a:underline hover:prose-a:text-amber-300 prose-ul:text-gray-200 prose-ul:my-4 prose-li:mb-2 prose-img:w-full prose-img:h-auto prose-img:rounded-lg prose-img:my-6">
+            <div className={isReport ? `${reportStyles.reportBody} prose max-w-none` : "text-lg leading-relaxed text-gray-200 prose prose-lg max-w-none prose-headings:text-white prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-200 prose-p:mb-4 prose-strong:text-white prose-em:text-gray-300 prose-a:text-amber-400 prose-a:underline hover:prose-a:text-amber-300 prose-ul:text-gray-200 prose-ul:my-4 prose-li:mb-2 prose-img:w-full prose-img:h-auto prose-img:rounded-lg prose-img:my-6"}>
               <MDXContent code={post.body.code} />
             </div>
           </article>
+          {isReport && (
+            <aside className={reportStyles.reportDisclaimer} aria-label="Informacja prawna">
+              <strong>Informacja prawna</strong>
+              <p>Raport ma charakter informacyjny i edukacyjny. Nie stanowi indywidualnej porady prawnej, podatkowej ani finansowej i nie zastępuje analizy konkretnego stanu faktycznego. Przepisy prawa oraz praktyka organów i sądów mogą ulegać zmianom. Przed podjęciem decyzji dotyczącej wpisu PKD należy uwzględnić rzeczywisty zakres działalności przedsiębiorstwa i aktualne przepisy.</p>
+            </aside>
+          )}
+          </div>
+          {isReport && (
+            <aside className={`${reportStyles.reportSidebar} hidden xl:block min-w-0`} aria-label="Zleć zmianę kodów PKD">
+              <div className={`${reportStyles.reportSticky} sticky top-28 rounded-lg bg-[#17334e] p-4 text-white shadow-lg`}>
+                <div className={reportStyles.reportSidebarIntro}>
+                  <span className={reportStyles.reportSidebarEyebrow}>OBSŁUGA ZMIAN W KRS</span>
+                  <h2>Zleć zmianę kodów PKD</h2>
+                  <p>Sprawdzimy zakres zmian i przygotujemy wniosek do KRS. Napisz, czego potrzebuje Twoja spółka.</p>
+                </div>
+                <InlineContactForm className={reportStyles.reportContactForm} />
+              </div>
+            </aside>
+          )}
         </div>
       </main>
 
