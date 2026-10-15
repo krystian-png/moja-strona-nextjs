@@ -71,6 +71,12 @@ export default function ZmianaKodowPkdPage() {
               <p className="text-lg text-white/90">Wymiana nastąpi bez wniosku spółki i bez badania, czym spółka faktycznie się zajmuje. Przy 455 kodach PKD 2007 zakres został w nowej klasyfikacji rozdzielony między kilka kodów — wtedy system wybiera jeden z nich za spółkę. Przy 112 z nich klucze przejścia w ogóle nie wskazują, który to ma być.</p>
               <p className="text-lg text-white/90">Zobacz, co stanie się ze starymi kodami PKD Twojej spółki po 31 grudnia 2026 r. Wpisz kod z odpisu z KRS — wyszukiwarka pokaże, na jaki kod PKD 2025 zostanie zamieniony albo czy zostanie wykreślony bez zastąpienia.</p>
               <div id="wyszukiwarka" className="scroll-mt-28"><PkdLookup /></div>
+              <div className="mt-6 rounded-xl border border-amber-500/40 bg-[#17334e] p-5 sm:p-6">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-amber-300">Raport · październik 2026</p>
+                <h2 className="mt-2 text-xl font-bold leading-snug text-white sm:text-2xl">PKD 2025. Jak przedsiębiorstwa przygotowały się do reformy?</h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">Sprawdziliśmy 46 firm z budownictwa, IT, transportu i e-commerce. Zobacz wyniki badania i konkretne przykłady zmian kodów w KRS.</p>
+                <Link href="/artykul/pkd-2025-raport-wdrozenia-reformy" className="mt-4 inline-flex min-h-11 items-center gap-2 font-bold text-amber-300 underline underline-offset-4 transition hover:text-amber-200">Przeczytaj raport PKD 2025 <span aria-hidden="true">→</span></Link>
+              </div>
               <p className="text-sm text-white/70">Wynik automatycznej aktualizacji PKD 2007 → PKD 2025 w Krajowym Rejestrze Sądowym. Obliczony na podstawie kluczy przejścia opublikowanych przez Główny Urząd Statystyczny — dla kodu na każdym poziomie, od samego działu po pełny numer. Narzędzie ma charakter informacyjny i nie zastępuje analizy konkretnego przypadku.</p>
             </div>
           </div>
