@@ -172,6 +172,14 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             </div>
           </article>
           {isReport && (
+            <div className="mt-5 rounded-lg border border-[#d9c6ae] bg-white px-5 py-5 shadow-sm xl:hidden">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#9c6028]">Obsługa zmian w KRS</p>
+              <h2 className="mt-2 text-xl font-bold text-[#243e55]">Chcesz poprawić kody PKD swojej spółki?</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[#42586b]">Sprawdzimy zakres zmian i przygotujemy wniosek do KRS.</p>
+              <a href="/uslugi/zmiana-kodow-pkd#wycena" className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-amber-600 px-4 py-3 text-center font-bold text-white transition hover:bg-amber-700">Zleć zmianę kodów PKD →</a>
+            </div>
+          )}
+          {isReport && (
             <aside className={reportStyles.reportDisclaimer} aria-label="Informacja prawna">
               <strong>Informacja prawna</strong>
               <p>Raport ma charakter informacyjny i edukacyjny. Nie stanowi indywidualnej porady prawnej, podatkowej ani finansowej i nie zastępuje analizy konkretnego stanu faktycznego. Przepisy prawa oraz praktyka organów i sądów mogą ulegać zmianom. Przed podjęciem decyzji dotyczącej wpisu PKD należy uwzględnić rzeczywisty zakres działalności przedsiębiorstwa i aktualne przepisy.</p>

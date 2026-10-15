@@ -76,6 +76,16 @@ export default function ZmianaKodowPkdPage() {
           </div>
         </section>
 
+        {/* Editorial link after the search panel: visually separate from the lookup widget. */}
+        <section aria-labelledby="pkd-report-link-title" className="relative z-20 mx-auto mb-12 max-w-7xl px-0">
+          <div className="rounded-xl border border-amber-400/60 bg-[#183650] px-6 py-6 shadow-xl sm:px-9 sm:py-8">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-amber-300">Raport z badania · październik 2026</p>
+            <h2 id="pkd-report-link-title" className="mt-2 text-2xl font-bold leading-snug text-white sm:text-3xl">PKD 2025. Stan wdrożenia reformy</h2>
+            <p className="mt-3 max-w-4xl text-base leading-relaxed text-slate-100">Sprawdziliśmy 46 przedsiębiorstw z czterech branż. Zobacz wyniki badania, konkretne przykłady zmian kodów i skutki automatycznej aktualizacji wpisów w KRS.</p>
+            <Link href="/artykul/pkd-2025-raport-wdrozenia-reformy" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-amber-500 px-5 py-3 font-bold text-slate-950 transition hover:bg-amber-400">Przeczytaj raport PKD 2025 <span className="ml-2" aria-hidden="true">→</span></Link>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-6xl space-y-10">
           <div id="oferta" className={`${card} scroll-mt-28`}>
             <h2 className={heading}>Co obejmuje usługa za 799 zł netto</h2>
