@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar"
 import LandingServices from "@/components/services/LandingServices"
 import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
 import ServicesList from "./ServicesList"
+import InlineContactForm from "./_components/InlineContactForm"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
 import type { LucideIcon } from "lucide-react"
 import {
@@ -271,7 +272,7 @@ export default function ServicesPage() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
-                    href="/kontakt"
+                    href="#formularz"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
                     Wyślij zapytanie
@@ -433,7 +434,7 @@ export default function ServicesPage() {
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                      href="/kontakt"
+                      href="#formularz"
                       className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                     >
                       Wyślij zapytanie
@@ -507,7 +508,7 @@ export default function ServicesPage() {
 
                       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                         <Link
-                          href="/kontakt"
+                          href="#formularz"
                           className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                         >
                           Wyślij zapytanie
@@ -562,7 +563,7 @@ export default function ServicesPage() {
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
-                    href="/kontakt"
+                    href="#formularz"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
                   >
                     Wyślij zapytanie
@@ -576,6 +577,16 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="formularz" className="scroll-mt-28 px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="formularz-heading">
+          <div className="mx-auto max-w-xl text-center">
+            <h2 id="formularz-heading" className="mb-3 text-3xl font-bold text-white">Zapytaj o realizację usługi</h2>
+            <p className="mb-8 text-base text-white/90">
+              Opisz, czego potrzebujesz. Odpowiemy i przedstawimy dalsze kroki.
+            </p>
+            <InlineContactForm className="mx-auto" />
           </div>
         </section>
 
@@ -710,10 +721,10 @@ export default function ServicesPage() {
               </div>
               <div className="mt-12 text-center">
                 <Link
-                  href="/kontakt"
+                  href="#formularz"
                   className="inline-flex items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-amber-700"
                 >
-                  Porozmawiajmy o Twoich potrzebach
+                  Wyślij zapytanie
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
