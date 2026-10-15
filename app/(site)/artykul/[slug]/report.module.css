@@ -59,7 +59,7 @@
 
 
 /* Scoped PKD report layout: readable text column and persistent desktop contact */
-.reportLayout { max-width: 1200px; grid-template-columns: minmax(0,800px) 320px; gap: 24px; }
+.reportLayout { display: grid; width: 100%; max-width: 1400px; grid-template-columns: minmax(0,1fr) 320px; align-items: start; gap: 24px; }
 .reportMain { min-width: 0; }
 .reportSidebar { min-width: 0; align-self: stretch; }
 .reportSticky { position: sticky; top: 112px; max-height: calc(100vh - 124px); overflow-y: auto; scrollbar-width: thin; border: 1px solid #315574; border-top: 4px solid #d59651; }
