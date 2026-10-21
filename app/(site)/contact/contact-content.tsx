@@ -1,353 +1,106 @@
-"use client"
-
-import { useMemo, useState } from "react"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { apiRequest } from "@/lib/queryClient"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import Link from "next/link"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void
-  }
-}
+import InlineContactForm from "../uslugi/_components/InlineContactForm"
 
-const contactFormSchema = z.object({
-  fullName: z.string().trim().min(3, "Imię i nazwisko musi mieć co najmniej 3 znaki"),
-  email: z.string().email("Nieprawidłowy adres email"),
-  phone: z.string().max(20, "Numer telefonu może mieć maksymalnie 20 znaków").optional(),
-  message: z.string().min(10, "Wiadomość musi mieć co najmniej 10 znaków"),
-  website: z.string().optional(),
-})
-
-export type ContactFormData = z.infer<typeof contactFormSchema>
-
-type ContactFormPayload = ContactFormData
-
-const defaultValues: ContactFormData = {
-  fullName: "",
-  email: "",
-  phone: "",
-  message: "",
-  website: "",
-}
+const contactDetails = [
+  {
+    icon: Phone,
+    title: "Telefon",
+    value: "+48 572 234 779",
+    href: "tel:+48572234779",
+  },
+  {
+    icon: Mail,
+    title: "E-mail",
+    value: "biuro@zmianakrs.pl",
+    href: "mailto:biuro@zmianakrs.pl",
+  },
+  {
+    icon: Clock,
+    title: "Godziny kontaktu",
+    value: "Pon.–pt. 8:00–18:00",
+  },
+  {
+    icon: MapPin,
+    title: "Adres kancelarii",
+    value: "ul. Wschodnia 24/3, 62-030 Luboń",
+    helper: "Krystian Karpiuk Kancelaria Radcy Prawnego, NIP: 669-217-69-58",
+  },
+]
 
 export default function ContactPageContent() {
-  const queryClient = useQueryClient()
-  const [submissionStatus, setSubmissionStatus] = useState<{
-    type: "success" | "error"
-    message: string
-  } | null>(null)
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues,
-  })
-
-  const submitContactMutation = useMutation({
-    mutationFn: (data: ContactFormPayload) =>
-      apiRequest<{ success: boolean }>("/api/contact", {
-        method: "POST",
-        data,
-      }),
-    onSuccess: () => {
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag("event", "generate_lead", {
-          form_name: "contact_page_form",
-          method: "contact_form",
-          page_path: window.location.pathname,
-        })
-      }
-      setSubmissionStatus({
-        type: "success",
-        message: "Wiadomość została wysłana. Odezwiemy się bezzwłocznie.",
-      })
-      queryClient.invalidateQueries({ queryKey: ["contact-submissions"] }).catch(() => undefined)
-      form.reset(defaultValues)
-    },
-    onError: (error: unknown) => {
-      setSubmissionStatus({
-        type: "error",
-        message: error instanceof Error ? error.message : "Nie udało się wysłać formularza. Spróbuj ponownie później.",
-      })
-    },
-  })
-
-  const onSubmit = (data: ContactFormData) => {
-    setSubmissionStatus(null)
-    submitContactMutation.mutate(data)
-  }
-
-  const isSubmitting = submitContactMutation.isPending
-
-  const contactDetails = useMemo(
-    () => [
-      {
-        icon: Phone,
-        title: "Telefon",
-        href: "tel:+48572234779",
-        value: "+48 572 234 779",
-      },
-      {
-        icon: Mail,
-        title: "Email",
-        href: "mailto:biuro@zmianakrs.pl",
-        value: "biuro@zmianakrs.pl",
-      },
-      {
-        icon: Clock,
-        title: "Godziny Pracy",
-        href: undefined,
-        value: "Pon-Pt: 8:00-18:00",
-      },
-      {
-        icon: MapPin,
-        title: "Adres",
-        href: undefined,
-        value: "ul. Wschodnia 24/3, 62-030 Luboń",
-        helper: "Krystian Karpiuk Kancelaria Radcy Prawnego, NIP: 669-217-69-58",
-      },
-    ],
-    []
-  )
-
   return (
-    <main className="relative flex flex-col">
-      <section className="relative pt-20 pb-6 text-white overflow-hidden">
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">
-              Kontakt - Eksperci ds. zmian wpisu w <span className="text-amber-400">KRS</span>
-            </h1>
-            <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-6 text-center">
-              Skontaktuj się w sprawie wniosku o zmianę wpisu w KRS
+    <main className="relative px-4 pb-14 pt-28 text-white sm:px-6 sm:pt-32 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <header className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl">
+            Skontaktuj się z nami
+          </h1>
+          <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">
+            Potrzebujesz pomocy w sprawach KRS? Opisz swoją sprawę — odpowiemy
+            i przedstawimy możliwe rozwiązania.
+          </p>
+        </header>
+
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-12">
+          <section aria-labelledby="contact-form-heading" className="min-w-0">
+            <h2 id="contact-form-heading" className="mb-4 text-xl font-semibold sm:text-2xl">
+              Wyślij zapytanie
             </h2>
+            <InlineContactForm className="max-w-none p-5 sm:p-7" />
+          </section>
 
-            <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Potrzebujesz pomocy z KRS? Skontaktuj się z naszymi ekspertami. Odpowiemy bezzwłocznie.
+          <aside className="min-w-0 pt-1 lg:pt-12" aria-labelledby="contact-details-heading">
+            <h2 id="contact-details-heading" className="text-xl font-semibold sm:text-2xl">
+              Porozmawiajmy o Twojej sprawie
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-200 sm:text-base">
+              Pomagamy przedsiębiorcom i biurom rachunkowym w zmianach wpisów
+              KRS, przygotowaniu dokumentów spółek i obowiązkach rejestrowych.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <section id="contact" className="relative py-20 text-white overflow-hidden">
-        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Skontaktuj Się z Nami</h2>
-            <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
-              Masz pytania? Potrzebujesz wyceny? Skontaktuj się z nami już dziś.
-            </p>
-          </div>
-          <div className="space-y-8">
-            <div className="bg-black/30 backdrop-blur-sm rounded-lg p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white text-center mb-6">Formularz Kontaktowy</h3>
-              {submissionStatus ? (
-                <div
-                  className={`mb-6 rounded-md border px-4 py-3 text-sm ${
-                    submissionStatus.type === "success"
-                      ? "border-emerald-400/60 bg-emerald-500/10 text-emerald-100"
-                      : "border-red-400/60 bg-red-500/10 text-red-100"
-                  }`}
-                  role={submissionStatus.type === "error" ? "alert" : "status"}
-                >
-                  {submissionStatus.message}
-                </div>
-              ) : null}
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-2xl space-y-5">
-                  <FormField
-                    control={form.control}
-                    name="fullName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white">Imię i nazwisko</FormLabel>
-                        <FormControl>
-                          <Input
-                            {...field}
-                            required
-                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white">Adres email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            {...field}
-                            required
-                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white">Telefon</FormLabel>
-                        <FormControl>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            maxLength={20}
-                            placeholder="Opcjonalnie"
-                            {...field}
-                            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white">Wiadomość</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Opisz swoją sprawę..."
-                            className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                            {...field}
-                            required
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="website"
-                    render={({ field }) => (
-                      <FormItem className="hidden" aria-hidden="true">
-                        <FormControl>
-                          <Input type="text" autoComplete="off" tabIndex={-1} {...field} />
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
-                  <div className="space-y-3 pt-2">
-                    <div className="flex justify-center">
-                      <Button type="submit" className="w-full sm:w-1/2 bg-amber-600 hover:bg-amber-700 text-white" disabled={isSubmitting}>
-                        {isSubmitting ? "Wysyłanie..." : "Wyślij zapytanie"}
-                      </Button>
-                    </div>
-                    <p className="text-center text-xs text-gray-300">
-                      Wysyłając formularz, potwierdzasz zapoznanie się z{" "}
-                      <Link
-                        href="https://zmianakrs.pl/polityka-prywatnosci"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-amber-400/70 underline-offset-2 hover:text-amber-300"
+            <div className="mt-8 space-y-7">
+              {contactDetails.map(({ icon: Icon, title, value, href, helper }) => (
+                <div key={title} className="flex items-start gap-4">
+                  <Icon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-white">{title}</h3>
+                    {href ? (
+                      <a
+                        href={href}
+                        className="mt-1 inline-block break-words text-sm text-slate-200 transition-colors hover:text-amber-300 sm:text-base"
                       >
-                        Polityką prywatności
-                      </Link>
-                      .
-                    </p>
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="mt-1 text-sm text-slate-200 sm:text-base">{value}</p>
+                    )}
+                    {helper ? (
+                      <p className="mt-2 text-xs leading-relaxed text-slate-300">{helper}</p>
+                    ) : null}
                   </div>
-                </form>
-              </Form>
+                </div>
+              ))}
             </div>
-            <Card className="bg-black/30 backdrop-blur-sm border border-white/20 p-6">
-              <CardHeader className="mb-6">
-                <CardTitle className="text-white text-lg">Dane Kontaktowe</CardTitle>
-              </CardHeader>
-              <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
-                {contactDetails.map(({ icon: Icon, title, value, helper, href }) => (
-                  <div key={title} className="flex items-center justify-center sm:justify-start text-left">
-                    <Icon className="h-5 w-5 text-amber-400 mr-3 shrink-0" />
-                    <div>
-                      <div className="font-medium text-white text-sm">{title}</div>
-                      {href ? (
-                        <a
-                          href={href}
-                          className="text-gray-300 text-sm hover:text-amber-400 transition-colors"
-                        >
-                          {value}
-                        </a>
-                      ) : (
-                        <div className="text-gray-300 text-sm">{value}</div>
-                      )}
-                      {helper ? (
-                        <div className="text-gray-400 text-xs mt-1">{helper}</div>
-                      ) : null}
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </div>
+          </aside>
         </div>
-      </section>
 
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 shadow-none">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">Skontaktuj się z nami</h2>
-
-            <div className="space-y-6 text-white">
-              <div>
-                <h3 className="text-xl font-semibold text-amber-400 mb-3">
-                  Skontaktuj się z nami – profesjonalna pomoc w zmianach KRS
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Potrzebujesz wsparcia przy zmianie wpisu w KRS? Chcesz złożyć wniosek o zmianę w KRS lub przygotować wymagane
-                  dokumenty rejestrowe spółki? Zapraszamy do kontaktu – odpowiemy na wszystkie pytania, doradzimy najlepsze
-                  rozwiązanie i przygotujemy indywidualną ofertę dostosowaną do Twoich potrzeb. Zobacz nasze
-                  <a href="/uslugi" className="text-amber-400 hover:text-amber-300 underline"> usługi zmian wpisu w KRS</a>
-                  i<a href="/cennik" className="text-amber-400 hover:text-amber-300 underline"> cennik obsługi KRS</a>.
-                </p>
-              </div>
-
-              <p className="text-gray-300 leading-relaxed">
-                Specjalizujemy się w kompleksowej obsłudze wniosków KRS dla spółek i biur rachunkowych. Pomagamy w przygotowaniu
-                uchwał do KRS, elektronicznym zgłoszeniu zmian do KRS przez system S24, a także w pełnym procesie aktualizacji danych
-                rejestracyjnych spółki. Poznaj naszą
-                <a href="/o-nas" className="text-amber-400 hover:text-amber-300 underline"> historię i doświadczenie</a>
-                oraz przeczytaj<a href="/blog" className="text-amber-400 hover:text-amber-300 underline"> artykuły o zmianach w KRS</a>.
-              </p>
-
-              <div>
-                <h4 className="text-lg font-semibold text-amber-400 mb-3">
-                  Dlaczego warto do nas napisać lub zadzwonić?
-                </h4>
-                <ul className="space-y-2 text-gray-300 list-disc list-inside">
-                  <li>Indywidualna wycena i elastyczne warunki współpracy</li>
-                  <li>Profesjonalne doradztwo na każdym etapie procesu</li>
-                  <li>Terminowa i rzetelna obsługa wniosków KRS</li>
-                </ul>
-              </div>
-
-              <p className="text-gray-300 leading-relaxed">
-                Wsparcie przy zmianie zarządu w KRS, zmianie danych spółki, umowy spółki KRS i innych wpisach do rejestru. Skontaktuj
-                się z nami już dziś i zapewnij swojej firmie lub klientom sprawny, bezpieczny i profesjonalny proces zgłoszenia zmian
-                do KRS.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section aria-label="Zakres pomocy" className="mt-12 border-t border-white/15 pt-6">
+          <p className="max-w-5xl text-sm leading-relaxed text-slate-300">
+            Wspieramy spółki m.in. przy zmianie zarządu, adresu, umowy spółki,
+            aktualizacji danych w KRS i przygotowaniu wniosków rejestrowych.
+            Poznaj nasze{" "}
+            <Link href="/uslugi" className="text-amber-400 underline underline-offset-4 hover:text-amber-300">
+              usługi zmian wpisu w KRS
+            </Link>{" "}
+            lub sprawdź{" "}
+            <Link href="/cennik" className="text-amber-400 underline underline-offset-4 hover:text-amber-300">
+              cennik obsługi KRS
+            </Link>.
+          </p>
+        </section>
+      </div>
     </main>
   )
 }
