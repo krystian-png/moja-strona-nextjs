@@ -4,7 +4,7 @@ import KrsContactForm from "@/components/krs-language/KrsContactForm"
 import DocumentLocale from "@/components/krs-language/DocumentLocale"
 import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 
-const icons = [Users, FileCheck2, MapPin, FilePenLine, Building2, ClipboardCheck]
+const icons = [Users, FileCheck2, MapPin, FilePenLine, Building2, ClipboardCheck, Building2]
 
 function Heading({ eyebrow, title, id, inverse = false, description }: { eyebrow: string; title: string; id?: string; inverse?: boolean; description?: string }) {
   return (
@@ -18,8 +18,8 @@ function Heading({ eyebrow, title, id, inverse = false, description }: { eyebrow
 
 export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
   return (
-    <div lang="uk" className="min-h-screen bg-white text-[#18242D]">
-      <DocumentLocale locale="uk" />
+    <div lang={t.locale === "zh" ? "zh-Hans" : t.locale} className="min-h-screen bg-white text-[#18242D]">
+      <DocumentLocale locale={t.locale === "zh" ? "zh-Hans" : t.locale} />
       <LocalizedNav t={t} />
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <section className="grid items-start gap-10 border-b border-[#D8DEE3] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14">
@@ -28,16 +28,16 @@ export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
             <h1 className="text-3xl font-semibold leading-[1.13] tracking-tight text-[#1B2D3C] sm:text-4xl lg:text-[3.25rem]">
               {t.titleLineOne}<span className="mt-2 block text-[#31475A]">{t.titleLineTwo}</span>
             </h1>
-            <div className="mt-7 max-w-xl space-y-4 text-base leading-8 text-[#1D252D] sm:text-lg">{t.hero.map(p => <p key={p}>{p}</p>)}</div>
+            <div className="mt-7 max-w-xl space-y-4 text-base leading-8 text-[#1D252D] sm:text-lg">{t.hero.map(p => <p key={p}>{p}</p>)}<p className="border-l-2 border-amber-600 pl-4 font-semibold text-[#152433]">{t.experienceNote}</p></div>
             <ul className="mt-8 flex flex-wrap gap-2.5">{t.highlights.map(item => (
               <li key={item} className="inline-flex items-center gap-2 rounded-full border border-[#CFD6DD] bg-[#F4F6F7] px-3.5 py-2 text-sm font-medium text-[#1D2934]"><Check className="h-4 w-4 shrink-0 text-[#99601F]" aria-hidden="true" />{item}</li>
             ))}</ul>
           </div>
-          <section id="contact-krs" aria-labelledby="form-title-uk" className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#172B3D] to-[#253D51] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,.17)] sm:p-7">
+          <section id="contact-krs" aria-labelledby="form-title-krs" className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#172B3D] to-[#253D51] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,.17)] sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[.16em] text-amber-300">{t.eyebrow}</p>
-            <h2 id="form-title-uk" className="mt-2 text-2xl font-semibold text-white sm:text-3xl">{t.form.heading}</h2>
+            <h2 id="form-title-krs" className="mt-2 text-2xl font-semibold text-white sm:text-3xl">{t.form.heading}</h2>
             <p className="mb-6 mt-3 text-base leading-7 text-[#E4EBF1]">{t.form.intro}</p>
-            <KrsContactForm locale="uk" copy={t.form} />
+            <KrsContactForm locale={t.locale} copy={t.form} />
           </section>
         </section>
         <section aria-labelledby="services-krs" className="my-5 rounded-2xl border border-[#E4E8EB] bg-[#F3F5F6] px-5 py-12 sm:px-8 md:py-16 lg:px-10">
@@ -52,8 +52,8 @@ export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
             )})}
           </div>
         </section>
-        <section aria-labelledby="steps-uk" className="rounded-2xl border border-[#21384E] bg-[#203447] px-5 py-10 sm:px-8 lg:px-12">
-          <Heading eyebrow={t.sections.stepsEyebrow} title={t.sections.stepsTitle} id="steps-uk" inverse/>
+        <section aria-labelledby="steps-krs" className="rounded-2xl border border-[#21384E] bg-[#203447] px-5 py-10 sm:px-8 lg:px-12">
+          <Heading eyebrow={t.sections.stepsEyebrow} title={t.sections.stepsTitle} id="steps-krs" inverse/>
           <div className="grid gap-7 md:grid-cols-3">{t.steps.map((step,i)=>(
             <article key={step.title} className="border-t border-slate-400 pt-5">
               <p className="text-3xl font-light text-amber-300">0{i+1}</p>
@@ -69,9 +69,9 @@ export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
           <div><Scale aria-hidden="true" className="mb-5 h-9 w-9 text-[#995F22]"/><h2 className="text-2xl font-semibold text-[#1B2D3C] sm:text-3xl">{t.sections.lawyerTitle}</h2></div>
           <div className="space-y-4 text-base leading-8 text-[#202830]">{t.sections.lawyerBody.map(p=><p key={p}>{p}</p>)}</div>
         </section>
-        <section aria-labelledby="pricing-uk" className="rounded-2xl border border-[#DEE4E8] bg-[#F0F3F5] p-6 sm:p-8 lg:p-10">
+        <section aria-labelledby="pricing-krs" className="rounded-2xl border border-[#DEE4E8] bg-[#F0F3F5] p-6 sm:p-8 lg:p-10">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,.75fr)_minmax(0,1.25fr)] lg:gap-12">
-            <Heading id="pricing-uk" eyebrow={t.sections.pricingEyebrow} title={t.sections.pricingTitle}/>
+            <Heading id="pricing-krs" eyebrow={t.sections.pricingEyebrow} title={t.sections.pricingTitle}/>
             <div className="space-y-4 text-base leading-8 text-[#202830]">{t.sections.pricingBody.map(p=><p key={p}>{p}</p>)}</div>
           </div>
         </section>
@@ -84,10 +84,10 @@ export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
             </article>
           ))}</div>
         </section>
-        <section aria-labelledby="cta-uk" className="flex flex-col items-start justify-between gap-7 rounded-2xl bg-gradient-to-r from-[#1B3043] to-[#263C4F] px-6 py-9 sm:px-9 md:flex-row md:items-center">
+        <section aria-labelledby="cta-krs" className="flex flex-col items-start justify-between gap-7 rounded-2xl bg-gradient-to-r from-[#1B3043] to-[#263C4F] px-6 py-9 sm:px-9 md:flex-row md:items-center">
           <div className="max-w-2xl">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[.17em] text-amber-300">{t.sections.ctaEyebrow}</p>
-            <h2 id="cta-uk" className="text-2xl font-semibold text-white sm:text-3xl">{t.sections.ctaTitle}</h2>
+            <h2 id="cta-krs" className="text-2xl font-semibold text-white sm:text-3xl">{t.sections.ctaTitle}</h2>
             <p className="mt-3 text-base leading-7 text-[#E5EDF3]">{t.sections.ctaBody}</p>
           </div>
           <a href="#contact-krs" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 font-semibold text-slate-950 hover:bg-amber-400">{t.sections.ctaLabel}<ArrowRight aria-hidden="true" className="h-5 w-5"/></a>
