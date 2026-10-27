@@ -143,7 +143,7 @@ export default function KrsContactForm({
 
           <p className="text-xs leading-5 text-slate-200">
             {copy.policyBefore}
-            <Link href="/polityka-prywatnosci" target="_blank" rel="noopener noreferrer" className="font-medium text-amber-300 underline underline-offset-2">
+            <Link href={locale === "uk" ? "/podglad/uk/polityka-prywatnosci" : "/polityka-prywatnosci"} target="_blank" rel="noopener noreferrer" className="font-medium text-amber-300 underline underline-offset-2">
               {copy.policyLink}
             </Link>
             {copy.policyAfter}
