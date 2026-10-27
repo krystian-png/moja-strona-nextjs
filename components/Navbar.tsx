@@ -22,6 +22,7 @@ export default function Navbar() {
     { href: "/blog", label: "Blog" },
     { href: "/kontakt", label: "Kontakt" },
     { href: "/en", label: "English" },
+    { href: "/uk", label: "Українська" },
   ];
 
   const isActive = (href: string) => {
@@ -113,7 +114,7 @@ export default function Navbar() {
           <ul className="flex items-center gap-1 lg:gap-2 text-base font-semibold">
             {navItems.map((item) => {
               const active = isActive(item.href);
-              const isEnglish = item.href === "/en";
+              const isEnglish = item.href === "/en" || item.href === "/uk";
               return (
                 <li key={item.href}>
                   <Link
@@ -145,7 +146,7 @@ export default function Navbar() {
             <ul className="flex flex-col gap-2 text-base font-semibold">
               {navItems.map((item) => {
                 const active = isActive(item.href);
-                const isEnglish = item.href === "/en";
+                const isEnglish = item.href === "/en" || item.href === "/uk";
                 return (
                 <li key={item.href}>
                   <Link
