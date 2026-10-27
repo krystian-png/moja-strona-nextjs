@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     languages: {
       "pl": "https://zmianakrs.pl",
       "en": "https://zmianakrs.pl/en",
+      "uk": "https://zmianakrs.pl/uk",
       "x-default": "https://zmianakrs.pl",
     },
   },

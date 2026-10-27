@@ -3,9 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   // Zamykaj mobilne menu przy zmianie ścieżki
@@ -21,7 +22,6 @@ export default function Navbar() {
     { href: "/cennik", label: "Cennik" },
     { href: "/blog", label: "Blog" },
     { href: "/kontakt", label: "Kontakt" },
-    { href: "/en", label: "English" },
   ];
 
   const isActive = (href: string) => {
@@ -113,7 +113,7 @@ export default function Navbar() {
           <ul className="flex items-center gap-1 lg:gap-2 text-base font-semibold">
             {navItems.map((item) => {
               const active = isActive(item.href);
-              const isEnglish = item.href === "/en";
+              const isEnglish = item.href === "/en" || item.href === "/uk";
               return (
                 <li key={item.href}>
                   <Link
@@ -136,6 +136,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
+        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : "pl"} /></div>
       </div>
 
       {/* Menu mobilne */}
@@ -145,7 +146,7 @@ export default function Navbar() {
             <ul className="flex flex-col gap-2 text-base font-semibold">
               {navItems.map((item) => {
                 const active = isActive(item.href);
-                const isEnglish = item.href === "/en";
+                const isEnglish = item.href === "/en" || item.href === "/uk";
                 return (
                 <li key={item.href}>
                   <Link
@@ -167,6 +168,7 @@ export default function Navbar() {
                 );
               })}
             </ul>
+            <div className="mt-4"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : "pl"} mobile /></div>
           </nav>
         </div>
       ) : null}
