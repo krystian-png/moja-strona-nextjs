@@ -1,10 +1,13 @@
 import type { AppProps } from "next/app"
+import { useRouter } from "next/router"
 import Script from "next/script"
 import "@/app/globals.css"
 import Providers from "@/app/providers"
 import CookieBanner from "@/components/CookieBanner"
 
 export default function LocalizedPagesApp({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter()
+  const locale = pathname.startsWith("/en") ? "en" : "uk"
   return <>
     {process.env.NEXT_PUBLIC_GA_ID && <>
       <Script id="uk-gtag-consent-default" strategy="afterInteractive">{`
@@ -18,6 +21,6 @@ export default function LocalizedPagesApp({ Component, pageProps }: AppProps) {
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />
       <Script id="uk-gtag-config" strategy="afterInteractive">{`gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true });`}</Script>
     </>}
-    <Providers><Component {...pageProps} /><CookieBanner forceLocale="uk" /></Providers>
+    <Providers><Component {...pageProps} /><CookieBanner forceLocale={locale} /></Providers>
   </>
 }
