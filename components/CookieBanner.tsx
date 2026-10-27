@@ -29,9 +29,9 @@ function storeConsent(value: "accepted" | "declined") {
   } catch {}
 }
 
-export default function CookieBanner() {
+export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {}) {
   const pathname = usePathname()
-  const ukrainianPreview = pathname === "/podglad/uk" || pathname?.startsWith("/podglad/uk/")
+  const ukrainianPreview = forceLocale === "uk" || pathname === "/uk" || pathname?.startsWith("/uk/") || pathname === "/podglad/uk" || pathname?.startsWith("/podglad/uk/")
   const [show, setShow] = useState(false)
   const [showPanel, setShowPanel] = useState(false)
 
@@ -81,7 +81,7 @@ export default function CookieBanner() {
               <>Używamy plików cookies do analizy ruchu (Google Analytics) oraz zapewnienia poprawnego działania serwisu. Możesz zaakceptować wszystkie lub odrzucić opcjonalne cookies. </>
             )}
             <a
-              href={ukrainianPreview ? "/podglad/uk/polityka-prywatnosci" : "/polityka-prywatnosci"}
+              href={ukrainianPreview ? "/uk/polityka-prywatnosci" : "/polityka-prywatnosci"}
               className="text-amber-400 underline hover:text-amber-300"
             >
               {ukrainianPreview ? "Політика конфіденційності та cookies" : "Polityka prywatności"}
