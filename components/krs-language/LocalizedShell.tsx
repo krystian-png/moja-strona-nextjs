@@ -1,11 +1,7 @@
 import Link from "next/link"
-import { Globe2, Mail, Phone, ChevronDown } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
+import LanguageSwitcher from "@/components/LanguageSwitcher"
 import type { KrsLandingCopy } from "@/lib/krs-language-copy"
-
-const languageOptions = [
-  {code:"pl", name:"Polski", href:"/"},
-  {code:"uk", name:"Українська", href:"/uk"},
-]
 
 export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
   return (
@@ -20,20 +16,7 @@ export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
           <a href="#services-krs" className="rounded-md px-2 py-2 text-[#243445] hover:bg-slate-100">{t.sections.servicesEyebrow}</a>
           <a href="#faq-krs" className="rounded-md px-2 py-2 text-[#243445] hover:bg-slate-100">FAQ</a>
           <a href="#contact-krs" className="rounded-md bg-amber-500 px-3 py-2 text-slate-950 hover:bg-amber-400">{t.sections.ctaLabel}</a>
-          <details className="group relative">
-            <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-2 text-[#182B3C] marker:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-700">
-              <Globe2 className="h-4 w-4" aria-hidden="true"/><span className="uppercase">{t.locale}</span><ChevronDown className="h-4 w-4" aria-hidden="true"/>
-            </summary>
-            <div className="absolute right-0 top-full z-50 mt-2 min-w-[190px] rounded-lg border border-slate-200 bg-white p-1.5 shadow-xl">
-              {languageOptions.map(option=> (
-                <Link key={option.code} href={option.href} hrefLang={option.code === "zh" ? "zh-Hans" : option.code} lang={option.code}
-                  aria-current={option.code === t.locale ? "page" : undefined}
-                  className={`block rounded-md px-3 py-2.5 text-sm text-[#203142] hover:bg-slate-100 ${option.code === t.locale ? "bg-slate-100 font-bold" : ""}`}>
-                  {option.name}
-                </Link>
-              ))}
-            </div>
-          </details>
+          <LanguageSwitcher current="uk" />
         </nav>
       </div>
     </header>
