@@ -81,10 +81,10 @@ export default function CookieBanner() {
               <>Używamy plików cookies do analizy ruchu (Google Analytics) oraz zapewnienia poprawnego działania serwisu. Możesz zaakceptować wszystkie lub odrzucić opcjonalne cookies. </>
             )}
             <a
-              href="/polityka-prywatnosci"
+              href={ukrainianPreview ? "/podglad/uk/polityka-prywatnosci" : "/polityka-prywatnosci"}
               className="text-amber-400 underline hover:text-amber-300"
             >
-              {ukrainianPreview ? "Політика конфіденційності (польською мовою)" : "Polityka prywatności"}
+              {ukrainianPreview ? "Політика конфіденційності та cookies" : "Polityka prywatności"}
             </a>
           </p>
         </div>
