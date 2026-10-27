@@ -4,7 +4,7 @@ import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 
 const languageOptions = [
   {code:"pl", name:"Polski", href:"/"},
-  {code:"uk", name:"Українська", href:"/podglad/uk"},
+  {code:"uk", name:"Українська", href:"/uk"},
 ]
 
 export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
@@ -46,8 +46,8 @@ export function LocalizedFooter({ t }: { t: KrsLandingCopy }) {
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-5 py-9 text-sm sm:flex-row sm:items-center">
         <div><strong className="text-base">ZmianaKRS</strong><p className="mt-1 text-slate-200">{t.footer}</p><p className="mt-2 text-slate-300">{t.polishLegalNote}</p></div>
         <div className="flex flex-wrap gap-x-5 gap-y-3">
-          <Link href={t.locale === "uk" ? "/podglad/uk/regulamin" : "/regulamin"} lang={t.locale === "uk" ? "uk" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Умови користування" : "Regulamin (PL)"}</Link>
-          <Link href={t.locale === "uk" ? "/podglad/uk/polityka-prywatnosci" : "/polityka-prywatnosci"} lang={t.locale === "uk" ? "uk" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Політика конфіденційності та cookies" : "Polityka prywatności (PL)"}</Link>
+          <Link href={t.locale === "uk" ? "/uk/regulamin" : "/regulamin"} lang={t.locale === "uk" ? "uk" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Умови користування" : "Regulamin (PL)"}</Link>
+          <Link href={t.locale === "uk" ? "/uk/polityka-prywatnosci" : "/polityka-prywatnosci"} lang={t.locale === "uk" ? "uk" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Політика конфіденційності та cookies" : "Polityka prywatności (PL)"}</Link>
           <a href="mailto:biuro@zmianakrs.pl" className="text-amber-200 hover:underline">biuro@zmianakrs.pl</a>
         </div>
       </div>
