@@ -1,22 +1,29 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, Phone } from "lucide-react"
 import LanguageSwitcher from "@/components/LanguageSwitcher"
 import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 
 export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
+  const currentLanguage = t.locale === "ru" ? "ru" : t.locale === "en" ? "en" : "uk"
   return (
     <header className="sticky top-0 z-50 border-b border-[#D4D9DE] bg-[#FAFAF9]/95 shadow-sm backdrop-blur-md" lang={t.locale}>
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-5 gap-y-3 px-4 py-3 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold sm:text-base">
-          <Link href="/" className="text-lg font-bold text-[#22364A] hover:text-[#8B5C24]">ZmianaKRS</Link>
-          <a className="inline-flex items-center gap-1.5 text-[#73471F] hover:underline" href="tel:+48572234779"><Phone className="h-4 w-4" aria-hidden="true"/>+48 572 234 779</a>
-          <a className="inline-flex items-center gap-1.5 text-[#73471F] hover:underline" href="mailto:biuro@zmianakrs.pl"><Mail className="h-4 w-4" aria-hidden="true"/>biuro@zmianakrs.pl</a>
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-4 py-2.5 sm:px-6 lg:flex lg:flex-wrap lg:justify-between lg:gap-x-5 lg:gap-y-3 lg:px-8 lg:py-3">
+        <Link href="/" aria-label="ZmianaKRS.pl — strona główna" className="col-start-1 inline-flex w-fit items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
+          <Image src="/images/logo-zmianakrs-email.png" alt="ZmianaKRS.pl" width={600} height={182} priority className="h-auto w-[158px] sm:w-[174px] lg:w-[164px]" />
+        </Link>
+        <div className="col-start-2 justify-self-end lg:hidden">
+          <LanguageSwitcher current={currentLanguage} />
         </div>
-        <nav aria-label={t.languageName} className="flex flex-wrap items-center gap-2 text-sm font-semibold">
-          <a href="#services-krs" className="rounded-md px-2 py-2 text-[#243445] hover:bg-slate-100">{t.sections.servicesEyebrow}</a>
-          <a href="#faq-krs" className="rounded-md px-2 py-2 text-[#243445] hover:bg-slate-100">FAQ</a>
-          <a href="#contact-krs" className="rounded-md bg-amber-500 px-3 py-2 text-slate-950 hover:bg-amber-400">{t.sections.ctaLabel}</a>
-          <LanguageSwitcher current={t.locale === "ru" ? "ru" : t.locale === "en" ? "en" : "uk"} />
+        <div className="col-span-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] font-semibold sm:text-sm lg:col-span-1 lg:gap-x-5 lg:text-base">
+          <a className="inline-flex items-center gap-1.5 whitespace-nowrap text-[#73471F] hover:underline" href="tel:+48572234779"><Phone className="h-4 w-4 shrink-0" aria-hidden="true"/>+48 572 234 779</a>
+          <a className="inline-flex items-center gap-1.5 whitespace-nowrap text-[#73471F] hover:underline" href="mailto:biuro@zmianakrs.pl"><Mail className="h-4 w-4 shrink-0" aria-hidden="true"/>biuro@zmianakrs.pl</a>
+        </div>
+        <nav aria-label={t.languageName} className="col-span-2 flex min-w-0 flex-wrap items-center gap-1 text-[13px] font-semibold sm:gap-2 sm:text-sm lg:col-span-1">
+          <a href="#services-krs" className="rounded-md px-1.5 py-2 text-[#243445] hover:bg-slate-100 sm:px-2">{t.sections.servicesEyebrow}</a>
+          <a href="#faq-krs" className="rounded-md px-1.5 py-2 text-[#243445] hover:bg-slate-100 sm:px-2">FAQ</a>
+          <a href="#contact-krs" className="rounded-md bg-amber-500 px-2.5 py-2 text-slate-950 hover:bg-amber-400 sm:px-3">{t.sections.ctaLabel}</a>
+          <div className="hidden lg:block"><LanguageSwitcher current={currentLanguage} /></div>
         </nav>
       </div>
     </header>
