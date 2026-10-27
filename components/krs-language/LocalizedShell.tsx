@@ -6,6 +6,8 @@ const languageOptions = [
   {code:"pl", name:"Polski", href:"/podglad/obsluga-miedzynarodowa"},
   {code:"uk", name:"Українська", href:"/podglad/uk"},
   {code:"ru", name:"Русский", href:"/podglad/ru"},
+  {code:"zh", name:"简体中文", href:"/podglad/zh"},
+  {code:"vi", name:"Tiếng Việt", href:"/podglad/vi"},
   {code:"vi", name:"Tiếng Việt", href:"/podglad/vi"},
 ]
 
