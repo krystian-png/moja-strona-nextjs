@@ -24,10 +24,12 @@ export default function KrsLocalizedLanding({ t }: { t: KrsLandingCopy }) {
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <section className="grid items-start gap-10 border-b border-[#D8DEE3] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14">
           <div className="max-w-2xl lg:pt-8">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[.15em] text-[#956020] sm:text-sm">{t.eyebrow}</p>
-            <h1 className="text-3xl font-semibold leading-[1.13] tracking-tight text-[#1B2D3C] sm:text-4xl lg:text-[3.25rem]">
-              {t.titleLineOne}<span className="mt-2 block text-[#31475A]">{t.titleLineTwo}</span>
+            <h1 className="max-w-xl text-[2.25rem] font-semibold leading-[1.12] tracking-tight text-[#1B2D3C] sm:text-[2.65rem] lg:text-[2.8rem]">
+              {t.titleLineOne}
             </h1>
+            <p className="mt-5 max-w-xl text-lg font-medium leading-[1.45] text-[#445667] sm:text-xl">
+              {t.titleLineTwo}
+            </p>
             <div className="mt-7 max-w-xl space-y-4 text-base leading-8 text-[#1D252D] sm:text-lg">{t.hero.map(p => <p key={p}>{p}</p>)}<p className="border-l-2 border-amber-600 pl-4 font-semibold text-[#152433]">{t.experienceNote}</p></div>
             <ul className="mt-8 flex flex-wrap gap-2.5">{t.highlights.map(item => (
               <li key={item} className="inline-flex items-center gap-2 rounded-full border border-[#CFD6DD] bg-[#F4F6F7] px-3.5 py-2 text-sm font-medium text-[#1D2934]"><Check className="h-4 w-4 shrink-0 text-[#99601F]" aria-hidden="true" />{item}</li>
