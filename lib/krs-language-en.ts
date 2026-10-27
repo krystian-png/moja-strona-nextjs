@@ -53,7 +53,8 @@ export const enLanding: KrsLandingCopy = {
     {question:"Do I need a Polish electronic signature?",answer:"Not in every case. The answer depends on the documents, signatories and filing procedure. We assess the possibility of acting through a representative."},
     {question:"Can I communicate in English?",answer:"Yes. You can send your enquiry and correspond with us in English. Documents for Polish authorities must comply with Polish legal requirements."},
     {question:"What is the difference between a change of address and a change of seat?",answer:"A company's seat (siedziba) refers to the town or city, while its address identifies a specific location. Different documentation may be required."},
-    {question:"Should KRS changes be filed through PRS or S24?",answer:"Changes in the register of entrepreneurs are filed electronically. The appropriate system depends on the company's formation documents and the nature of the change."}
+    {question:"Should KRS changes be filed through PRS or S24?",answer:"Changes in the register of entrepreneurs are filed electronically. The appropriate system depends on the company's formation documents and the nature of the change."},
+    {question:"Is a Polish PESEL number required for KRS changes?",answer:"Not in every case. This depends on the filing procedure, signatories and the system used. We assess PESEL requirements for each matter."}
   ],
   form:{
     heading:"Describe your case",intro:"Tell us what needs to change in your company. If you know its KRS number, include it in your message.",
