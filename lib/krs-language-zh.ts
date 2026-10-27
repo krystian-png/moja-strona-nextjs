@@ -38,8 +38,9 @@ services:[
 {title:"公司地址或注册所在地变更",description:"办理公司地址或注册所在地（siedziba）变更，并确定相应文件和登记程序。"},
 {title:"修改公司章程或公司合同",description:"协助准备修改公司合同的文件及登记申请，同时考虑必要的法律形式要求。"},
 {title:"更新 PKD 行业代码",description:"分析公司的实际经营活动、选择适用的 PKD 行业分类代码并准备登记变更材料。"},
-{title:"商业代理权及其他登记事项",description:"办理 prokura 商业代理权的设立、撤销，以及其他需要向 KRS 报告的变更。"}
-],
+{title:"商业代理权及其他登记事项",description:"办理 prokura 商业代理权的设立、撤销，以及其他需要向 KRS 报告的变更。"},
+    {title:"在波兰注册公司",description:"协助通过 S24 或公证途径设立波兰有限责任公司（sp. z o.o.），按具体情况确定费用。"}
+  ],
 steps:[
 {title:"说明拟办理的变更",description:"提供 KRS 编号和简要情况。如有需要，我们会进一步询问并要求提供相关文件。"},
 {title:"核查手续并确认报价",description:"确定所需决议、声明、授权书、公证或签名要求，并向您说明服务内容和费用。"},
@@ -62,5 +63,6 @@ policyBefore:"提交表单即表示您已阅读",policyLink:"隐私政策（波�
 validationName:"请填写至少 3 个字符的姓名。",validationEmail:"请输入有效的电子邮箱地址。",
 validationPhone:"电话号码最多 20 个字符。",validationMessage:"留言至少需要 10 个字符。"
 },
-footer:"波兰 KRS 公司登记变更法律服务",polishLegalNote:"法律条款及隐私政策目前提供波兰语版本。"
+experienceNote:"我们拥有数百起波兰 KRS 公司变更与登记事项的处理经验。",
+  footer:"波兰 KRS 公司登记变更法律服务",polishLegalNote:"法律条款及隐私政策目前提供波兰语版本。"
 }
