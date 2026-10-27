@@ -3,8 +3,8 @@ import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 export const enLanding: KrsLandingCopy = {
   locale:"en", languageName:"English", homeLabel:"Home",
   eyebrow:"POLISH COMPANY REGISTER · LEGAL SUPPORT",
-  titleLineOne:"Changes to your company's KRS registration.",
-  titleLineTwo:"Documents and filings supported by Polish legal counsel.",
+  titleLineOne:"Changes in the Polish Company Register (KRS)",
+  titleLineTwo:"Documents, resolutions and registration filings handled by Polish legal advisers.",
   hero:[
     "Do you operate a limited liability company (sp. z o.o.) or another company registered in Poland? We assist with updating information in the National Court Register (KRS).",
     "We identify the applicable procedure, prepare the necessary documentation and handle the application to amend your company's KRS entry before the registration court.",
