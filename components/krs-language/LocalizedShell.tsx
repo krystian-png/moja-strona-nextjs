@@ -9,7 +9,6 @@ const languageOptions = [
   {code:"ru", name:"Русский", href:"/podglad/ru"},
   {code:"zh", name:"简体中文", href:"/podglad/zh"},
   {code:"vi", name:"Tiếng Việt", href:"/podglad/vi"},
-  {code:"vi", name:"Tiếng Việt", href:"/podglad/vi"},
 ]
 
 export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
