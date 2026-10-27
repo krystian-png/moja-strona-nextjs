@@ -136,7 +136,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
-        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : "pl"} /></div>
+        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : "pl"} /></div>
       </div>
 
       {/* Menu mobilne */}
@@ -168,7 +168,7 @@ export default function Navbar() {
                 );
               })}
             </ul>
-            <div className="mt-4"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : "pl"} mobile /></div>
+            <div className="mt-4"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : "pl"} mobile /></div>
           </nav>
         </div>
       ) : null}

@@ -3,13 +3,14 @@
 import Link from "next/link"
 import { Check, ChevronDown, Globe2 } from "lucide-react"
 
-type Locale = "pl" | "en" | "uk" | "ru"
+type Locale = "pl" | "en" | "uk" | "ru" | "zh"
 
 const languages: { code: Locale; label: string; flag: string; href: string }[] = [
   { code: "pl", label: "Polski", flag: "🇵🇱", href: "/" },
   { code: "en", label: "English", flag: "🇬🇧", href: "/en" },
   { code: "uk", label: "Українська", flag: "🇺🇦", href: "/uk" },
   { code: "ru", label: "Русский", flag: "🌐", href: "/ru" },
+  { code: "zh", label: "简体中文", flag: "🇨🇳", href: "/zh" },
 ]
 
 export default function LanguageSwitcher({

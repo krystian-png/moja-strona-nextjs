@@ -31,6 +31,7 @@ function storeConsent(value: "accepted" | "declined") {
 
 export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {}) {
   const pathname = usePathname()
+  const chinesePage = forceLocale === "zh" || pathname === "/zh" || pathname?.startsWith("/zh/")
   const russianPage = forceLocale === "ru" || pathname === "/ru" || pathname?.startsWith("/ru/")
   const englishPage = forceLocale === "en" || pathname === "/en" || pathname?.startsWith("/en/")
   const ukrainianPreview = forceLocale === "uk" || pathname === "/uk" || pathname?.startsWith("/uk/") || pathname === "/podglad/uk" || pathname?.startsWith("/podglad/uk/")
@@ -71,7 +72,7 @@ export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={ukrainianPreview ? "Налаштування cookies" : englishPage ? "Cookie settings" : russianPage ? "Настройки cookies" : "Ustawienia cookies"}
+      aria-label={ukrainianPreview ? "Налаштування cookies" : englishPage ? "Cookie settings" : russianPage ? "Настройки cookies" : chinesePage ? "Cookie 设置" : "Ustawienia cookies"}
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-700 bg-slate-900 px-4 py-5 shadow-2xl sm:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -79,6 +80,8 @@ export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {
           <p className="text-sm text-gray-300">
             {ukrainianPreview ? (
               <>Ми використовуємо файли cookies для аналізу відвідуваності (Google Analytics) і належної роботи сайту. Ви можете прийняти всі cookies або відхилити необов’язкові. </>
+            ) : chinesePage ? (
+              <>我们使用网站运行所需的 Cookie，以及经您同意才启用的可选分析 Cookie（Google Analytics）。您可以接受全部或仅保留必要 Cookie。</>
             ) : russianPage ? (
               <>Мы используем необходимые cookies для работы сайта и необязательные cookies для аналитики (Google Analytics). Вы можете принять все или отклонить необязательные. </>
             ) : englishPage ? (
@@ -87,10 +90,10 @@ export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {
               <>Używamy plików cookies do analizy ruchu (Google Analytics) oraz zapewnienia poprawnego działania serwisu. Możesz zaakceptować wszystkie lub odrzucić opcjonalne cookies. </>
             )}
             <a
-              href={ukrainianPreview ? "/uk/polityka-prywatnosci" : englishPage ? "/en/cookie-policy" : russianPage ? "/ru/polityka-prywatnosci" : "/polityka-prywatnosci"}
+              href={ukrainianPreview ? "/uk/polityka-prywatnosci" : englishPage ? "/en/cookie-policy" : russianPage ? "/ru/polityka-prywatnosci" : chinesePage ? "/zh/polityka-prywatnosci" : "/polityka-prywatnosci"}
               className="text-amber-400 underline hover:text-amber-300"
             >
-              {ukrainianPreview ? "Політика конфіденційності та cookies" : englishPage ? "Privacy and Cookies Policy" : russianPage ? "Политика конфиденциальности и cookies" : "Polityka prywatności"}
+              {ukrainianPreview ? "Політика конфіденційності та cookies" : englishPage ? "Privacy and Cookies Policy" : russianPage ? "Политика конфиденциальности и cookies" : chinesePage ? "隐私及 Cookie 政策" : "Polityka prywatności"}
             </a>
           </p>
         </div>
@@ -100,14 +103,14 @@ export default function CookieBanner({ forceLocale }: {forceLocale?: string} = {
             onClick={declineAll}
             className="rounded border border-gray-600 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-400 hover:text-white"
           >
-            {ukrainianPreview ? "Лише необхідні" : englishPage ? "Necessary only" : russianPage ? "Только необходимые" : "Tylko niezbędne"}
+            {ukrainianPreview ? "Лише необхідні" : englishPage ? "Necessary only" : russianPage ? "Только необходимые" : chinesePage ? "仅必要的 Cookie" : "Tylko niezbędne"}
           </button>
           <button
             type="button"
             onClick={acceptAll}
             className="rounded bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-amber-400"
           >
-            {ukrainianPreview ? "Приймаю всі" : englishPage ? "Accept all" : russianPage ? "Принять все" : "Akceptuję wszystkie"}
+            {ukrainianPreview ? "Приймаю всі" : englishPage ? "Accept all" : russianPage ? "Принять все" : chinesePage ? "全部接受" : "Akceptuję wszystkie"}
           </button>
         </div>
       </div>
