@@ -6,7 +6,7 @@ export default function EnglishLegalPage({document,t}:{document:LegalDocument;t:
  return <div lang="en" className="min-h-screen bg-white text-[#18242D]">
   <LocalizedNav t={t}/>
   <main className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-   <Link href="/en" className="text-sm font-semibold text-amber-800 hover:underline">← Back to KRS services</Link>
+   <Link href={t.locale === "ru" ? "/ru" : "/en"} className="text-sm font-semibold text-amber-800 hover:underline">← {t.locale === "ru" ? "К услугам KRS" : "Back to KRS services"}</Link>
    <h1 className="mt-8 text-3xl font-bold leading-tight text-[#172B3D] sm:text-4xl">{document.title}</h1>
    <p className="mt-3 text-sm text-slate-700">{document.effective}</p>
    <p className="mt-6 rounded-lg border-l-4 border-amber-600 bg-slate-100 p-4 leading-7">{document.intro}</p>
