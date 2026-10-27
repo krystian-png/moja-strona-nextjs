@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
   const pathname = usePathname() ?? "";
@@ -21,8 +22,6 @@ export default function Navbar() {
     { href: "/cennik", label: "Cennik" },
     { href: "/blog", label: "Blog" },
     { href: "/kontakt", label: "Kontakt" },
-    { href: "/en", label: "English" },
-    { href: "/uk", label: "Українська" },
   ];
 
   const isActive = (href: string) => {
@@ -137,6 +136,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
+        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : "pl"} /></div>
       </div>
 
       {/* Menu mobilne */}
@@ -168,6 +168,7 @@ export default function Navbar() {
                 );
               })}
             </ul>
+            <div className="mt-4"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : "pl"} mobile /></div>
           </nav>
         </div>
       ) : null}
