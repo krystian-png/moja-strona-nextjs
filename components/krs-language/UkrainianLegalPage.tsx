@@ -13,7 +13,7 @@ export default function UkrainianLegalPage({document}: {document: LegalDocument}
  <DocumentLocale locale="uk" />
  <LocalizedNav t={ukLanding} />
  <main className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
- <Link href="/podglad/uk" className="text-sm font-semibold text-amber-800 hover:underline">← Повернутися до послуг</Link>
+ <Link href="/uk" className="text-sm font-semibold text-amber-800 hover:underline">← Повернутися до послуг</Link>
  <h1 className="mt-8 text-3xl font-bold leading-tight text-[#172B3D] sm:text-4xl">{document.title}</h1>
  <p className="mt-3 text-sm text-slate-700">{document.effective}</p>
  <p className="mt-6 rounded-lg border-l-4 border-amber-600 bg-slate-100 p-4 leading-7">{document.intro}</p>
