@@ -7,7 +7,7 @@ import CookieBanner from "@/components/CookieBanner"
 
 export default function LocalizedPagesApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter()
-  const locale = pathname.startsWith("/en") ? "en" : "uk"
+  const locale = pathname.startsWith("/en") ? "en" : pathname.startsWith("/ru") ? "ru" : "uk"
   return <>
     {process.env.NEXT_PUBLIC_GA_ID && <>
       <Script id="uk-gtag-consent-default" strategy="afterInteractive">{`
