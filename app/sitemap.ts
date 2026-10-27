@@ -31,6 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/uk/regulamin": "pages/uk/regulamin.tsx",
     "/uk/polityka-prywatnosci": "pages/uk/polityka-prywatnosci.tsx",
     "/en": "pages/en/index.tsx",
+    "/ru": "pages/ru/index.tsx",
+    "/ru/regulamin": "pages/ru/regulamin.tsx",
+    "/ru/polityka-prywatnosci": "pages/ru/polityka-prywatnosci.tsx",
     "/en/contact": "app/(site)/en/contact/page.tsx",
   };
 
