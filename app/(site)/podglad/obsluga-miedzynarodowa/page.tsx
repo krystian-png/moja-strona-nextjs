@@ -136,14 +136,14 @@ function SectionHeading({
 }) {
   return (
     <header className="mb-8 max-w-3xl md:mb-10">
-      <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.18em] ${inverse ? "text-[#D9B885]" : "text-[#754E2C]"}`}>
+      <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.18em] ${inverse ? "text-[#D9B885]" : "text-[#976020]"}`}>
         {eyebrow}
       </p>
-      <h2 id={id} className={`text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl ${inverse ? "text-[#F9F5EF]" : "text-[#1D2934]"}`}>
+      <h2 id={id} className={`text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-4xl ${inverse ? "text-[#F9F5EF]" : "text-[#18232C]"}`}>
         {title}
       </h2>
       {description ? (
-        <p className={`mt-4 text-base leading-7 md:text-lg md:leading-8 ${inverse ? "text-[#D9DBDC]" : "text-[#293741]"}`}>
+        <p className={`mt-4 text-base leading-7 md:text-lg md:leading-8 ${inverse ? "text-[#D9DBDC]" : "text-[#1E2730]"}`}>
           {description}
         </p>
       ) : null}
@@ -153,38 +153,29 @@ function SectionHeading({
 
 export default function InternationalLandingPreview() {
   return (
-    <div className="relative min-h-screen bg-[#DCE1E4] text-[#1F2A33]">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 86% 6%, rgba(128,143,153,.16) 0%, transparent 34%), radial-gradient(ellipse at 5% 45%, rgba(91,103,112,.08) 0%, transparent 40%), linear-gradient(180deg, #E6E8E9 0%, #D7DEE2 48%, #E5E7E8 100%)",
-        }}
-      />
-
+    <div className="relative min-h-screen bg-white text-[#18242D]">
       <Navbar />
 
       <main className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-20">
         <section
           aria-labelledby="glowny-naglowek"
-          className="grid items-start gap-10 border-b border-[#ADB8C0] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14 lg:pb-20"
+          className="grid items-start gap-10 border-b border-[#D8DEE3] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14 lg:pb-20"
         >
           <div className="max-w-2xl lg:pt-8">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#77502C] sm:text-sm">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#956020] sm:text-sm">
               Zmiany w KRS · obsługa prawna spółek
             </p>
             <h1
               id="glowny-naglowek"
-              className="max-w-2xl text-3xl font-semibold leading-[1.13] tracking-tight text-[#1D2934] sm:text-4xl lg:text-[3.25rem]"
+              className="max-w-2xl text-3xl font-semibold leading-[1.13] tracking-tight text-[#1B2D3C] sm:text-4xl lg:text-[3.25rem]"
             >
               Zmiany w KRS Twojej spółki.
-              <span className="mt-2 block text-[#8C5B2E]">
+              <span className="mt-2 block text-[#31475A]">
                 Dokumenty i wniosek pod opieką radcy prawnego.
               </span>
             </h1>
 
-            <div className="mt-7 max-w-xl space-y-4 text-base leading-7 text-[#2B3740] sm:text-lg sm:leading-8">
+            <div className="mt-7 max-w-xl space-y-4 text-base leading-7 text-[#1D252D] sm:text-lg sm:leading-8">
               <p>
                 Prowadzisz spółkę z o.o. lub inną spółkę zarejestrowaną w Polsce?
                 Pomagamy w zmianie danych w Krajowym Rejestrze Sądowym (KRS).
@@ -209,9 +200,9 @@ export default function InternationalLandingPreview() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#ABB6C0] bg-[#E4E8EA]/70 px-3.5 py-2 text-sm text-[#26343F]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#CFD6DD] bg-[#F4F6F7] px-3.5 py-2 text-sm font-medium text-[#1D2934]"
                 >
-                  <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-[#81562D]" />
+                  <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-[#99601F]" />
                   {item}
                 </li>
               ))}
@@ -221,7 +212,7 @@ export default function InternationalLandingPreview() {
           <section
             id="formularz"
             aria-labelledby="naglowek-formularza"
-            className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#233342] to-[#303F4D] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,0.17)] sm:p-7"
+            className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#172B3D] to-[#253D51] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,0.17)] sm:p-7"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
               Kontakt z kancelarią
@@ -232,7 +223,7 @@ export default function InternationalLandingPreview() {
             >
               Opisz nam swoją sprawę
             </h2>
-            <p className="mb-6 mt-3 text-sm leading-6 text-slate-300 sm:text-base">
+            <p className="mb-6 mt-3 text-base leading-7 text-[#E4EBF1]">
               Napisz, jakiej zmiany potrzebuje Twoja spółka. Jeśli znasz numer
               KRS, podaj go w wiadomości.
             </p>
@@ -240,7 +231,7 @@ export default function InternationalLandingPreview() {
           </section>
         </section>
 
-        <section aria-labelledby="zakres-uslug" className="py-16 md:py-20">
+        <section aria-labelledby="zakres-uslug" className="my-5 rounded-2xl border border-[#E4E8EB] bg-[#F3F5F6] px-5 py-12 sm:px-8 md:py-16 lg:px-10">
           <SectionHeading
             eyebrow="Zakres pomocy"
             title="Jakie zmiany zgłaszamy do KRS?"
@@ -251,15 +242,15 @@ export default function InternationalLandingPreview() {
             {services.map(({ icon: Icon, title, description }) => (
               <article
                 key={title}
-                className="border-t border-[#A7B2BB] px-1 pb-3 pt-5 transition-colors hover:border-[#A6763F]"
+                className="border-t border-[#C5CDD3] px-1 pb-3 pt-5 transition-colors hover:border-[#B27B31]"
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#CAD2D7]/85">
-                  <Icon aria-hidden="true" className="h-5 w-5 text-[#A86C24]" strokeWidth={1.8} />
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#E4E9ED]">
+                  <Icon aria-hidden="true" className="h-5 w-5 text-[#995F22]" strokeWidth={1.8} />
                 </span>
-                <h3 className="mt-4 text-lg font-semibold leading-snug text-[#263545]">
+                <h3 className="mt-4 text-lg font-semibold leading-snug text-[#152433]">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#2B3740]">
+                <p className="mt-3 text-base leading-7 text-[#1E252C]">
                   {description}
                 </p>
               </article>
@@ -269,7 +260,7 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="wspolpraca"
-          className="rounded-2xl border border-[#253442] bg-[#2A3947] px-5 py-10 shadow-[0_16px_42px_rgba(49,53,57,.12)] sm:px-8 md:py-14 lg:px-12"
+          className="rounded-2xl border border-[#21384E] bg-[#203447] px-5 py-10 shadow-[0_16px_42px_rgba(49,53,57,.12)] sm:px-8 md:py-14 lg:px-12"
         >
           <SectionHeading
             eyebrow="Przebieg sprawy"
@@ -286,7 +277,7 @@ export default function InternationalLandingPreview() {
                 <h3 className="mt-3 text-lg font-semibold text-[#FFF7E9]">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#D1D6DB]">
+                <p className="mt-3 text-base leading-7 text-[#EEF2F5]">
                   {step.description}
                 </p>
               </article>
@@ -294,7 +285,7 @@ export default function InternationalLandingPreview() {
           </div>
           <div className="mt-9 flex items-start gap-3 rounded-lg border border-[#8B9AA8]/40 bg-[#172A3C]/45 px-4 py-4 sm:px-5">
             <FileText aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#E1B779]" />
-            <p className="text-sm leading-7 text-[#D1D6DB]">
+            <p className="text-base leading-7 text-[#EEF2F5]">
               Znaczną część komunikacji i obsługi dokumentów można przeprowadzić
               elektronicznie. Niektóre czynności wymagają jednak szczególnej
               formy dokumentów, odpowiedniego sposobu podpisania lub udziału
@@ -306,13 +297,13 @@ export default function InternationalLandingPreview() {
         <section className="grid gap-8 py-16 md:py-20 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
           <div>
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-[#B2BDC6] bg-[#D0D8DD]">
-              <Scale aria-hidden="true" className="h-6 w-6 text-[#A86C24]" strokeWidth={1.7} />
+              <Scale aria-hidden="true" className="h-6 w-6 text-[#995F22]" strokeWidth={1.7} />
             </span>
-            <h2 className="mt-5 text-2xl font-semibold leading-tight text-[#263545] sm:text-3xl">
+            <h2 className="mt-5 text-2xl font-semibold leading-tight text-[#1B2D3C] sm:text-3xl">
               Twoja sprawa pod opieką radcy prawnego
             </h2>
           </div>
-          <div className="space-y-4 text-base leading-8 text-[#59616A]">
+          <div className="space-y-4 text-base leading-8 text-[#202830]">
             <p>
               Sprawami zajmują się radcy prawni, którzy wspierają przedsiębiorców
               w sprawach dotyczących funkcjonowania spółek oraz postępowań
@@ -331,18 +322,18 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="wycena"
-          className="rounded-2xl border border-[#B5C0C8] bg-[#CDD5DA] p-6 sm:p-8 lg:p-10"
+          className="rounded-2xl border border-[#DEE4E8] bg-[#F0F3F5] p-6 sm:p-8 lg:p-10"
         >
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-12">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A86C24]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#995F22]">
                 Jasne zasady
               </p>
-              <h2 id="wycena" className="text-2xl font-semibold leading-tight text-[#263545] sm:text-3xl">
+              <h2 id="wycena" className="text-2xl font-semibold leading-tight text-[#1B2D3C] sm:text-3xl">
                 Ile kosztuje zmiana wpisu w KRS?
               </h2>
             </div>
-            <div className="space-y-4 text-base leading-8 text-[#59616A]">
+            <div className="space-y-4 text-base leading-8 text-[#202830]">
               <p>
                 Koszt zmiany danych w KRS zależy od rodzaju planowanych zmian, liczby
                 wymaganych dokumentów i stopnia złożoności sprawy.
@@ -368,13 +359,13 @@ export default function InternationalLandingPreview() {
             {questions.map(({ question, answer }) => (
               <article
                 key={question}
-                className="border-t border-[#A7B2BB] px-1 pb-3 pt-5"
+                className="border-t border-[#C7D0D6] px-1 pb-3 pt-5"
               >
-                <h3 className="flex items-start gap-3 text-lg font-semibold leading-snug text-[#263545]">
-                  <BadgeCheck aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#A86C24]" strokeWidth={1.8} />
+                <h3 className="flex items-start gap-3 text-lg font-semibold leading-snug text-[#162330]">
+                  <BadgeCheck aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#995F22]" strokeWidth={1.8} />
                   <span>{question}</span>
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-[#59616A]">
+                <p className="mt-4 text-base leading-7 text-[#1C242C]">
                   {answer}
                 </p>
               </article>
@@ -384,7 +375,7 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="kontakt-koncowy"
-          className="flex flex-col items-start justify-between gap-7 rounded-2xl border border-[#263442] bg-gradient-to-r from-[#293947] to-[#374651] px-6 py-9 shadow-[0_18px_35px_rgba(40,42,45,.13)] sm:px-9 md:flex-row md:items-center md:py-10"
+          className="flex flex-col items-start justify-between gap-7 rounded-2xl border border-[#263442] bg-gradient-to-r from-[#1B3043] to-[#263C4F] px-6 py-9 shadow-[0_18px_35px_rgba(40,42,45,.13)] sm:px-9 md:flex-row md:items-center md:py-10"
         >
           <div className="max-w-2xl">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.17em] text-amber-300">
@@ -393,7 +384,7 @@ export default function InternationalLandingPreview() {
             <h2 id="kontakt-koncowy" className="text-2xl font-semibold leading-tight text-white sm:text-3xl">
               Potrzebujesz zgłosić zmianę w KRS?
             </h2>
-            <p className="mt-3 text-base leading-7 text-slate-300">
+            <p className="mt-3 text-base leading-7 text-[#E5EDF3]">
               Opisz nam swoją sprawę i podaj numer KRS spółki. Sprawdzimy zakres
               potrzebnych czynności i przedstawimy propozycję obsługi.
             </p>
