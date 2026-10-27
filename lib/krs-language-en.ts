@@ -39,7 +39,8 @@ export const enLanding: KrsLandingCopy = {
     {title:"Change of registered address or seat",description:"Registration of a change of address or a move of the company's registered seat (siedziba), using the procedure required for the circumstances."},
     {title:"Amendments to articles of association",description:"Assistance with drafting amendments to a company's constitutional documents and the filings required to register them in the prescribed legal form."},
     {title:"Changes to PKD activity codes",description:"Review of the company's business activities, selection of appropriate PKD classification codes and preparation of filings for the KRS."},
-    {title:"Commercial proxy and other data",description:"Filing appointments and revocations of commercial proxies (prokurent) and other reportable changes to company data."}
+    {title:"Commercial proxy and other data",description:"Filing appointments and revocations of commercial proxies (prokurent) and other reportable changes to company data."},
+    {title:"Company incorporation in Poland",description:"We assist with forming a Polish sp. z o.o. via S24 or a notarial procedure, subject to an individual quotation."}
   ],
   steps:[
     {title:"You describe the proposed changes",description:"Provide your company's KRS number and a short description of the issue. We may request further information and documents."},
@@ -63,6 +64,7 @@ export const enLanding: KrsLandingCopy = {
     validationName:"Enter your full name (at least 3 characters).",validationEmail:"Enter a valid email address.",
     validationPhone:"The phone number must not exceed 20 characters.",validationMessage:"Your message must contain at least 10 characters."
   },
+  experienceNote:"We have experience handling several hundred company changes and KRS registration proceedings.",
   footer:"Polish KRS company registration legal services",
   polishLegalNote:"Legal terms and privacy policy are currently available in Polish."
 }
