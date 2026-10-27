@@ -3,6 +3,7 @@ import { ArrowRight, BadgeCheck, Building2, Check, ClipboardCheck, FileCheck2, F
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import KrsContactForm from "@/components/krs-language/KrsContactForm"
+import DocumentLocale from "@/components/krs-language/DocumentLocale"
 import { ukLanding as t } from "@/lib/krs-language-copy"
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ function Heading({ eyebrow, title, id, inverse = false, description }: { eyebrow
 export default function UkrainianKrsPreview() {
   return (
     <div lang="uk" className="min-h-screen bg-white text-[#18242D]">
+      <DocumentLocale locale="uk" />
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <section className="grid items-start gap-10 border-b border-[#D8DEE3] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14">
