@@ -40,7 +40,7 @@ const services = [
     icon: FileCheck2,
     title: "Zmiany dotyczące wspólników",
     description:
-      "Obsługa aktualizacji danych wspólników podlegających ujawnieniu w KRS, w tym przygotowanie wymaganych dokumentów i zgłoszeń.",
+      "Przygotowujemy dokumenty niezbędne do zbycia udziałów, w tym wymagane uchwały i umowy zbycia udziałów. Obsługujemy również związane z tym zmiany danych wspólników podlegające zgłoszeniu do KRS.",
   },
   {
     icon: MapPin,
@@ -123,14 +123,14 @@ function SectionHeading({
 }) {
   return (
     <header className="mb-8 max-w-3xl md:mb-10">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300/90">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A86C24]/90">
         {eyebrow}
       </p>
-      <h2 className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
+      <h2 className="text-2xl font-semibold leading-tight tracking-tight text-[#193047] sm:text-3xl md:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-4 text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+        <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg md:leading-8">
           {description}
         </p>
       ) : null}
@@ -140,13 +140,13 @@ function SectionHeading({
 
 export default function InternationalLandingPreview() {
   return (
-    <div className="relative min-h-screen bg-[#101B2D] text-slate-100">
+    <div className="relative min-h-screen bg-[#F8F9F7] text-[#25384A]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(ellipse at 83% 9%, rgba(61,84,112,.26) 0%, transparent 37%), radial-gradient(ellipse at 9% 54%, rgba(60,72,91,.15) 0%, transparent 42%), linear-gradient(145deg, #101B2D 0%, #17263C 54%, #101B2D 100%)",
+            "radial-gradient(ellipse at 90% 7%, rgba(219,232,242,.72) 0%, transparent 36%), radial-gradient(ellipse at 3% 45%, rgba(249,226,194,.23) 0%, transparent 37%), linear-gradient(180deg, #FCFBF7 0%, #EFF5FA 54%, #FAF9F7 100%)",
         }}
       />
 
@@ -155,23 +155,23 @@ export default function InternationalLandingPreview() {
       <main className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-20">
         <section
           aria-labelledby="glowny-naglowek"
-          className="grid items-start gap-10 border-b border-white/10 pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14 lg:pb-20"
+          className="grid items-start gap-10 border-b border-[#DCE4EB] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14 lg:pb-20"
         >
           <div className="max-w-2xl lg:pt-8">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300 sm:text-sm">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#A86C24] sm:text-sm">
               Zmiany w KRS · obsługa prawna spółek
             </p>
             <h1
               id="glowny-naglowek"
-              className="max-w-2xl text-3xl font-semibold leading-[1.13] tracking-tight text-white sm:text-4xl lg:text-[3.25rem]"
+              className="max-w-2xl text-3xl font-semibold leading-[1.13] tracking-tight text-[#193047] sm:text-4xl lg:text-[3.25rem]"
             >
               Zmiany w KRS Twojej spółki.
-              <span className="mt-2 block text-amber-300">
+              <span className="mt-2 block text-[#A86C24]">
                 Dokumenty i wniosek pod opieką radcy prawnego.
               </span>
             </h1>
 
-            <div className="mt-7 max-w-xl space-y-4 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            <div className="mt-7 max-w-xl space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               <p>
                 Prowadzisz spółkę zarejestrowaną w Polsce i potrzebujesz
                 zgłosić zmiany do Krajowego Rejestru Sądowego?
@@ -196,9 +196,9 @@ export default function InternationalLandingPreview() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-2 text-sm text-slate-200"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#D8E2E9] bg-white/85 px-3.5 py-2 text-sm text-[#405269] shadow-sm"
                 >
-                  <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-amber-300" />
+                  <Check aria-hidden="true" className="h-4 w-4 shrink-0 text-[#A86C24]" />
                   {item}
                 </li>
               ))}
@@ -208,7 +208,7 @@ export default function InternationalLandingPreview() {
           <section
             id="formularz"
             aria-labelledby="naglowek-formularza"
-            className="scroll-mt-28 rounded-3xl border border-white/15 bg-white/[0.07] p-5 shadow-[0_20px_55px_rgba(0,0,0,0.13)] sm:p-7"
+            className="scroll-mt-28 rounded-3xl border border-[#20354B] bg-gradient-to-br from-[#172940] to-[#263C55] p-5 text-white shadow-[0_20px_50px_rgba(30,51,78,0.18)] sm:p-7"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
               Kontakt z kancelarią
@@ -237,15 +237,15 @@ export default function InternationalLandingPreview() {
             {services.map(({ icon: Icon, title, description }) => (
               <article
                 key={title}
-                className="rounded-2xl border border-white/10 bg-white/[0.055] p-6 transition-colors hover:border-amber-300/25 hover:bg-white/[0.08]"
+                className="rounded-2xl border border-[#DDE5EC] bg-white p-6 shadow-[0_10px_26px_rgba(28,50,73,0.055)] transition-all hover:border-[#D8B582] hover:shadow-[0_14px_32px_rgba(28,50,73,0.09)]"
               >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-amber-200/15 bg-amber-300/10">
-                  <Icon aria-hidden="true" className="h-5 w-5 text-amber-300" strokeWidth={1.8} />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#EFDABD] bg-[#FBF0DF]">
+                  <Icon aria-hidden="true" className="h-5 w-5 text-[#A86C24]" strokeWidth={1.8} />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold leading-snug text-white">
+                <h3 className="mt-5 text-lg font-semibold leading-snug text-[#193047]">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   {description}
                 </p>
               </article>
@@ -255,7 +255,7 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="wspolpraca"
-          className="rounded-3xl border border-white/10 bg-[#1B2C43]/75 px-5 py-10 sm:px-8 md:py-14 lg:px-12"
+          className="rounded-3xl border border-[#D8E2EB] bg-[#EAF1F6] px-5 py-10 sm:px-8 md:py-14 lg:px-12"
         >
           <SectionHeading
             eyebrow="Przebieg sprawy"
@@ -263,22 +263,22 @@ export default function InternationalLandingPreview() {
           />
           <div id="wspolpraca" className="grid gap-7 md:grid-cols-3 md:gap-8">
             {steps.map((step) => (
-              <article key={step.number} className="border-t border-amber-300/40 pt-5">
-                <p className="text-3xl font-light tracking-tight text-amber-300">
+              <article key={step.number} className="border-t border-[#CEAC79] pt-5">
+                <p className="text-3xl font-light tracking-tight text-[#A86C24]">
                   {step.number}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold text-white">
+                <h3 className="mt-3 text-lg font-semibold text-[#193047]">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   {step.description}
                 </p>
               </article>
             ))}
           </div>
-          <div className="mt-9 flex items-start gap-3 rounded-xl border border-white/10 bg-black/10 px-4 py-4 sm:px-5">
-            <FileText aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" />
-            <p className="text-sm leading-7 text-slate-300">
+          <div className="mt-9 flex items-start gap-3 rounded-xl border border-[#D6E1E9] bg-white/75 px-4 py-4 sm:px-5">
+            <FileText aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#A86C24]" />
+            <p className="text-sm leading-7 text-slate-600">
               Znaczną część komunikacji i obsługi dokumentów można przeprowadzić
               elektronicznie. Niektóre czynności wymagają jednak szczególnej
               formy dokumentów, odpowiedniego sposobu podpisania lub udziału
@@ -289,18 +289,18 @@ export default function InternationalLandingPreview() {
 
         <section className="grid gap-8 py-16 md:py-20 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-16">
           <div>
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-amber-200/20 bg-amber-300/10">
-              <Scale aria-hidden="true" className="h-6 w-6 text-amber-300" strokeWidth={1.7} />
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[#ECD9BC] bg-[#FBF0DF]">
+              <Scale aria-hidden="true" className="h-6 w-6 text-[#A86C24]" strokeWidth={1.7} />
             </span>
-            <h2 className="mt-5 text-2xl font-semibold leading-tight text-white sm:text-3xl">
+            <h2 className="mt-5 text-2xl font-semibold leading-tight text-[#193047] sm:text-3xl">
               Twoja sprawa pod opieką radcy prawnego
             </h2>
           </div>
-          <div className="space-y-4 text-base leading-8 text-slate-300">
+          <div className="space-y-4 text-base leading-8 text-slate-600">
             <p>
-              Obsługę prawną prowadzi Krystian Karpiuk — radca prawny, świadczący
-              pomoc przedsiębiorcom w sprawach dotyczących funkcjonowania
-              spółek oraz postępowań przed Krajowym Rejestrem Sądowym.
+              Sprawami zajmują się radcy prawni, którzy wspierają przedsiębiorców
+              w sprawach dotyczących funkcjonowania spółek oraz postępowań
+              przed Krajowym Rejestrem Sądowym.
             </p>
             <p>
               Pomagamy ustalić, jakie dokumenty są potrzebne do konkretnej
@@ -315,18 +315,18 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="wycena"
-          className="rounded-3xl border border-amber-300/15 bg-gradient-to-br from-[#26374A] to-[#19293D] p-6 sm:p-8 lg:p-10"
+          className="rounded-3xl border border-[#E9DACA] bg-gradient-to-br from-[#FBF1E5] to-[#F3F7FA] p-6 sm:p-8 lg:p-10"
         >
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-12">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A86C24]">
                 Jasne zasady
               </p>
-              <h2 id="wycena" className="text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              <h2 id="wycena" className="text-2xl font-semibold leading-tight text-[#193047] sm:text-3xl">
                 Ile kosztuje obsługa zmian w KRS?
               </h2>
             </div>
-            <div className="space-y-4 text-base leading-8 text-slate-300">
+            <div className="space-y-4 text-base leading-8 text-slate-600">
               <p>
                 Koszt obsługi zależy od rodzaju planowanych zmian, liczby
                 wymaganych dokumentów i stopnia złożoności sprawy.
@@ -352,13 +352,13 @@ export default function InternationalLandingPreview() {
             {questions.map(({ question, answer }) => (
               <article
                 key={question}
-                className="rounded-2xl border border-white/10 bg-white/[0.055] p-6 sm:p-7"
+                className="rounded-2xl border border-[#DDE5EC] bg-white p-6 shadow-[0_8px_25px_rgba(28,50,73,0.05)] sm:p-7"
               >
-                <h3 className="flex items-start gap-3 text-lg font-semibold leading-snug text-white">
-                  <BadgeCheck aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" strokeWidth={1.8} />
+                <h3 className="flex items-start gap-3 text-lg font-semibold leading-snug text-[#193047]">
+                  <BadgeCheck aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#A86C24]" strokeWidth={1.8} />
                   <span>{question}</span>
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-300">
+                <p className="mt-4 text-sm leading-7 text-slate-600">
                   {answer}
                 </p>
               </article>
@@ -368,7 +368,7 @@ export default function InternationalLandingPreview() {
 
         <section
           aria-labelledby="kontakt-koncowy"
-          className="flex flex-col items-start justify-between gap-7 rounded-3xl border border-white/10 bg-white/[0.075] px-6 py-9 sm:px-9 md:flex-row md:items-center md:py-10"
+          className="flex flex-col items-start justify-between gap-7 rounded-3xl border border-[#273F58] bg-gradient-to-r from-[#1B2F48] to-[#263E56] px-6 py-9 shadow-[0_18px_36px_rgba(28,50,73,0.12)] sm:px-9 md:flex-row md:items-center md:py-10"
         >
           <div className="max-w-2xl">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.17em] text-amber-300">
