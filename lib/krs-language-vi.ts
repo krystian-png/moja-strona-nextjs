@@ -39,7 +39,8 @@ export const viLanding: KrsLandingCopy = {
     {title:"Thay đổi địa chỉ hoặc trụ sở",description:"Đăng ký thay đổi địa chỉ công ty hoặc chuyển trụ sở (siedziba) sang địa phương khác và xác định thủ tục cần thực hiện."},
     {title:"Sửa đổi hợp đồng hoặc điều lệ công ty",description:"Hỗ trợ soạn các sửa đổi và tài liệu đăng ký phù hợp với yêu cầu về hình thức pháp lý của từng giao dịch."},
     {title:"Cập nhật mã ngành PKD",description:"Phân tích hoạt động kinh doanh, lựa chọn mã ngành PKD phù hợp và chuẩn bị hồ sơ thay đổi tại KRS."},
-    {title:"Quyền đại diện prokura và dữ liệu khác",description:"Đăng ký bổ nhiệm hoặc chấm dứt quyền đại diện thương mại (prokura) cùng những thay đổi khác cần khai báo tại KRS."}
+    {title:"Quyền đại diện prokura và dữ liệu khác",description:"Đăng ký bổ nhiệm hoặc chấm dứt quyền đại diện thương mại (prokura) cùng những thay đổi khác cần khai báo tại KRS."},
+    {title:"Thành lập công ty tại Ba Lan",description:"Hỗ trợ thành lập sp. z o.o. qua S24 hoặc thủ tục công chứng; chi phí xác định theo vụ việc."}
   ],
   steps:[
     {title:"Bạn mô tả thay đổi cần thực hiện",description:"Gửi số KRS và mô tả ngắn gọn vụ việc. Khi cần, chúng tôi sẽ hỏi thêm và yêu cầu tài liệu liên quan."},
@@ -64,6 +65,7 @@ export const viLanding: KrsLandingCopy = {
     validationName:"Vui lòng nhập họ tên ít nhất 3 ký tự.",validationEmail:"Vui lòng nhập email hợp lệ.",
     validationPhone:"Số điện thoại không được vượt quá 20 ký tự.",validationMessage:"Nội dung phải có ít nhất 10 ký tự."
   },
+  experienceNote:"Chúng tôi có kinh nghiệm xử lý hàng trăm thay đổi và thủ tục đăng ký KRS.",
   footer:"Hỗ trợ pháp lý về đăng ký KRS cho công ty tại Ba Lan",
   polishLegalNote:"Điều khoản và chính sách quyền riêng tư hiện có bằng tiếng Ba Lan."
 }
