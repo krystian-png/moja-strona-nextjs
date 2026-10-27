@@ -27,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/uslugi/zmiana-wspolnika-spolki-zoo": "app/(site)/uslugi/zmiana-wspolnika-spolki-zoo/page.tsx",
     "/uslugi/prokurent-krs": "app/(site)/uslugi/prokurent-krs/page.tsx",
     "/uslugi/zmiana-kodow-pkd": "app/(site)/uslugi/zmiana-kodow-pkd/page.tsx",
+    "/uk": "pages/uk/index.tsx",
+    "/uk/regulamin": "pages/uk/regulamin.tsx",
+    "/uk/polityka-prywatnosci": "pages/uk/polityka-prywatnosci.tsx",
     "/en": "app/(site)/en/page.tsx",
     "/en/contact": "app/(site)/en/contact/page.tsx",
   };
