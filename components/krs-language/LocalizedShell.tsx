@@ -5,6 +5,7 @@ import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 const languageOptions = [
   {code:"pl", name:"Polski", href:"/podglad/obsluga-miedzynarodowa"},
   {code:"uk", name:"Українська", href:"/podglad/uk"},
+  {code:"ru", name:"Русский", href:"/podglad/ru"},
   {code:"vi", name:"Tiếng Việt", href:"/podglad/vi"},
 ]
 
