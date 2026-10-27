@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { ArrowRight, BadgeCheck, Building2, Check, ClipboardCheck, FileCheck2, FilePenLine, FileText, MapPin, Scale, Users } from "lucide-react"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
+import { LocalizedNav, LocalizedFooter } from "@/components/krs-language/LocalizedShell"
 import KrsContactForm from "@/components/krs-language/KrsContactForm"
 import DocumentLocale from "@/components/krs-language/DocumentLocale"
 import { ukLanding as t } from "@/lib/krs-language-copy"
@@ -28,7 +27,7 @@ export default function UkrainianKrsPreview() {
   return (
     <div lang="uk" className="min-h-screen bg-white text-[#18242D]">
       <DocumentLocale locale="uk" />
-      <Navbar />
+      <LocalizedNav t={t} />
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-20">
         <section className="grid items-start gap-10 border-b border-[#D8DEE3] pb-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-14">
           <div className="max-w-2xl lg:pt-8">
@@ -41,15 +40,15 @@ export default function UkrainianKrsPreview() {
               <li key={item} className="inline-flex items-center gap-2 rounded-full border border-[#CFD6DD] bg-[#F4F6F7] px-3.5 py-2 text-sm font-medium text-[#1D2934]"><Check className="h-4 w-4 shrink-0 text-[#99601F]" aria-hidden="true" />{item}</li>
             ))}</ul>
           </div>
-          <section id="formularz-uk" aria-labelledby="form-title-uk" className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#172B3D] to-[#253D51] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,.17)] sm:p-7">
+          <section id="contact-krs" aria-labelledby="form-title-uk" className="scroll-mt-28 rounded-2xl border border-[#263442] bg-gradient-to-br from-[#172B3D] to-[#253D51] p-5 text-white shadow-[0_20px_40px_rgba(40,42,45,.17)] sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[.16em] text-amber-300">{t.eyebrow}</p>
             <h2 id="form-title-uk" className="mt-2 text-2xl font-semibold text-white sm:text-3xl">{t.form.heading}</h2>
             <p className="mb-6 mt-3 text-base leading-7 text-[#E4EBF1]">{t.form.intro}</p>
             <KrsContactForm locale="uk" copy={t.form} />
           </section>
         </section>
-        <section aria-labelledby="services-uk" className="my-5 rounded-2xl border border-[#E4E8EB] bg-[#F3F5F6] px-5 py-12 sm:px-8 md:py-16 lg:px-10">
-          <Heading eyebrow={t.sections.servicesEyebrow} title={t.sections.servicesTitle} description={t.sections.servicesIntro} id="services-uk"/>
+        <section aria-labelledby="services-krs" className="my-5 rounded-2xl border border-[#E4E8EB] bg-[#F3F5F6] px-5 py-12 sm:px-8 md:py-16 lg:px-10">
+          <Heading eyebrow={t.sections.servicesEyebrow} title={t.sections.servicesTitle} description={t.sections.servicesIntro} id="services-krs"/>
           <div className="grid gap-x-9 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {t.services.map((service,i) => {const Icon=icons[i];return (
               <article key={service.title} className="border-t border-[#C5CDD3] px-1 pb-3 pt-5">
@@ -83,8 +82,8 @@ export default function UkrainianKrsPreview() {
             <div className="space-y-4 text-base leading-8 text-[#202830]">{t.sections.pricingBody.map(p=><p key={p}>{p}</p>)}</div>
           </div>
         </section>
-        <section aria-labelledby="faq-uk" className="py-16 md:py-20">
-          <Heading id="faq-uk" eyebrow={t.sections.faqEyebrow} title={t.sections.faqTitle}/>
+        <section aria-labelledby="faq-krs" className="py-16 md:py-20">
+          <Heading id="faq-krs" eyebrow={t.sections.faqEyebrow} title={t.sections.faqTitle}/>
           <div className="grid gap-x-9 gap-y-6 md:grid-cols-2">{t.faq.map(item=>(
             <article key={item.question} className="border-t border-[#C7D0D6] px-1 pb-3 pt-5">
               <h3 className="flex items-start gap-3 text-lg font-semibold leading-snug text-[#162330]"><BadgeCheck aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-[#995F22]"/>{item.question}</h3>
@@ -98,10 +97,10 @@ export default function UkrainianKrsPreview() {
             <h2 id="cta-uk" className="text-2xl font-semibold text-white sm:text-3xl">{t.sections.ctaTitle}</h2>
             <p className="mt-3 text-base leading-7 text-[#E5EDF3]">{t.sections.ctaBody}</p>
           </div>
-          <a href="#formularz-uk" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 font-semibold text-slate-950 hover:bg-amber-400">{t.sections.ctaLabel}<ArrowRight aria-hidden="true" className="h-5 w-5"/></a>
+          <a href="#contact-krs" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 font-semibold text-slate-950 hover:bg-amber-400">{t.sections.ctaLabel}<ArrowRight aria-hidden="true" className="h-5 w-5"/></a>
         </section>
       </main>
-      <Footer className="mt-0"/>
+      <LocalizedFooter t={t} />
     </div>
   )
 }
