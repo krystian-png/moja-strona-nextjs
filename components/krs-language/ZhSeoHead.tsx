@@ -12,7 +12,7 @@ export function ZhSeoHead({page,isProduction}:{page:Kind;isProduction:boolean}){
  return <Head><title>{d.title}</title><meta name="description" content={d.description}/>
  <meta name="robots" content={isProduction?"index,follow":"noindex,nofollow"}/>
  <link rel="canonical" href={url}/>
- {page==="landing"&&<><link rel="alternate" hrefLang="zh-CN" href={url}/><link rel="alternate" hrefLang="pl" href={siteUrl}/><link rel="alternate" hrefLang="en" href={`${siteUrl}/en`}/><link rel="alternate" hrefLang="uk" href={`${siteUrl}/uk`}/><link rel="alternate" hrefLang="ru" href={`${siteUrl}/ru`}/><link rel="alternate" hrefLang="x-default" href={siteUrl}/></>}
+ {page==="landing"&&<><link rel="alternate" hrefLang="zh-CN" href={url}/><link rel="alternate" hrefLang="pl" href={siteUrl}/><link rel="alternate" hrefLang="en" href={`${siteUrl}/en`}/><link rel="alternate" hrefLang="uk" href={`${siteUrl}/uk`}/><link rel="alternate" hrefLang="ru" href={`${siteUrl}/ru`}/><link rel="alternate" hrefLang="vi" href={`${siteUrl}/vi`}/><link rel="alternate" hrefLang="x-default" href={siteUrl}/></>}
  <meta property="og:type" content="website"/><meta property="og:title" content={d.title}/><meta property="og:description" content={d.description}/><meta property="og:url" content={url}/><meta property="og:locale" content="zh_CN"/><meta property="og:site_name" content="ZmianaKRS"/>
  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content={d.title}/><meta name="twitter:description" content={d.description}/>
  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>

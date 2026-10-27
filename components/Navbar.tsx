@@ -136,7 +136,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
-        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : "pl"} /></div>
+        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : pathname.startsWith("/vi") ? "vi" : "pl"} /></div>
       </div>
 
       {/* Menu mobilne */}

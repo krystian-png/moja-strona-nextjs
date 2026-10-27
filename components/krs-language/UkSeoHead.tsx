@@ -18,7 +18,7 @@ export function UkSeoHead({page, isProduction}:{page:PageKind;isProduction:boole
      <link rel="alternate" hrefLang="uk" href={url}/>
      <link rel="alternate" hrefLang="pl" href={siteUrl}/>
      <link rel="alternate" hrefLang="en" href={`${siteUrl}/en`}/><link rel="alternate" hrefLang="ru" href={`${siteUrl}/ru`}/><link rel="alternate" hrefLang="zh-CN" href={`${siteUrl}/zh`}/>
-     <link rel="alternate" hrefLang="x-default" href={siteUrl}/>
+     <link rel="alternate" hrefLang="vi" href={`${siteUrl}/vi`}/><link rel="alternate" hrefLang="x-default" href={siteUrl}/>
    </>}
    <meta property="og:type" content="website"/><meta property="og:title" content={title}/>
    <meta property="og:description" content={description}/><meta property="og:url" content={url}/>

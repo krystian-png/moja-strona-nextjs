@@ -5,12 +5,12 @@ import LanguageSwitcher from "@/components/LanguageSwitcher"
 import type { KrsLandingCopy } from "@/lib/krs-language-copy"
 
 export function LocalizedNav({ t }: { t: KrsLandingCopy }) {
-  const currentLanguage = t.locale === "zh" ? "zh" : t.locale === "ru" ? "ru" : t.locale === "en" ? "en" : "uk"
+  const currentLanguage = t.locale === "vi" ? "vi" : t.locale === "zh" ? "zh" : t.locale === "ru" ? "ru" : t.locale === "en" ? "en" : "uk"
   return (
     <header className="sticky top-0 z-50 border-b border-[#D4D9DE] bg-[#FAFAF9]/95 shadow-sm backdrop-blur-md" lang={t.locale}>
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-2 px-4 py-2.5 sm:px-6 lg:flex lg:flex-wrap lg:justify-between lg:gap-x-5 lg:gap-y-3 lg:px-8 lg:py-3">
         <Link href="/" aria-label="ZmianaKRS.pl — strona główna" className="col-start-1 inline-flex w-fit items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">
-          <Image src="/images/logo-zmianakrs-email.png" alt="ZmianaKRS.pl" width={600} height={182} priority className="h-auto w-[158px] sm:w-[174px] lg:w-[164px]" />
+          <Image src="/images/logo-zmianakrs-header.svg" alt="ZmianaKRS.pl" width={374} height={120} priority className="h-auto w-[152px] sm:w-[165px] lg:w-[210px] xl:w-[225px]" />
         </Link>
         <div className="col-start-2 justify-self-end lg:hidden">
           <LanguageSwitcher current={currentLanguage} />
@@ -36,8 +36,8 @@ export function LocalizedFooter({ t }: { t: KrsLandingCopy }) {
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-5 py-9 text-sm sm:flex-row sm:items-center">
         <div><strong className="text-base">ZmianaKRS</strong><p className="mt-1 text-slate-200">{t.footer}</p><p className="mt-2 text-slate-300">{t.polishLegalNote}</p></div>
         <div className="flex flex-wrap gap-x-5 gap-y-3">
-          <Link href={t.locale === "uk" ? "/uk/regulamin" : t.locale === "en" ? "/en/terms-of-service" : t.locale === "ru" ? "/ru/regulamin" : t.locale === "zh" ? "/zh/regulamin" : "/regulamin"} lang={t.locale === "uk" ? "uk" : t.locale === "en" ? "en" : t.locale === "ru" ? "ru" : t.locale === "zh" ? "zh-Hans" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Умови користування" : t.locale === "en" ? "Terms of Service" : t.locale === "ru" ? "Условия оказания услуг" : t.locale === "zh" ? "服务条款" : "Regulamin (PL)"}</Link>
-          <Link href={t.locale === "uk" ? "/uk/polityka-prywatnosci" : t.locale === "en" ? "/en/cookie-policy" : t.locale === "ru" ? "/ru/polityka-prywatnosci" : t.locale === "zh" ? "/zh/polityka-prywatnosci" : "/polityka-prywatnosci"} lang={t.locale === "zh" ? "zh-Hans" : t.locale} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Політика конфіденційності та cookies" : t.locale === "en" ? "Privacy and Cookies Policy" : t.locale === "ru" ? "Политика конфиденциальности и cookies" : t.locale === "zh" ? "隐私及 Cookie 政策" : "Polityka prywatności (PL)"}</Link>
+          <Link href={t.locale === "uk" ? "/uk/regulamin" : t.locale === "en" ? "/en/terms-of-service" : t.locale === "ru" ? "/ru/regulamin" : t.locale === "zh" ? "/zh/regulamin" : t.locale === "vi" ? "/vi/regulamin" : "/regulamin"} lang={t.locale === "uk" ? "uk" : t.locale === "en" ? "en" : t.locale === "ru" ? "ru" : t.locale === "zh" ? "zh-Hans" : t.locale === "vi" ? "vi" : "pl"} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Умови користування" : t.locale === "en" ? "Terms of Service" : t.locale === "ru" ? "Условия оказания услуг" : t.locale === "zh" ? "服务条款" : t.locale === "vi" ? "Điều khoản dịch vụ" : "Regulamin (PL)"}</Link>
+          <Link href={t.locale === "uk" ? "/uk/polityka-prywatnosci" : t.locale === "en" ? "/en/cookie-policy" : t.locale === "ru" ? "/ru/polityka-prywatnosci" : t.locale === "zh" ? "/zh/polityka-prywatnosci" : t.locale === "vi" ? "/vi/polityka-prywatnosci" : "/polityka-prywatnosci"} lang={t.locale === "zh" ? "zh-Hans" : t.locale} className="text-amber-200 underline-offset-2 hover:underline">{t.locale === "uk" ? "Політика конфіденційності та cookies" : t.locale === "en" ? "Privacy and Cookies Policy" : t.locale === "ru" ? "Политика конфиденциальности и cookies" : t.locale === "zh" ? "隐私及 Cookie 政策" : t.locale === "vi" ? "Quyền riêng tư và Cookie" : "Polityka prywatności (PL)"}</Link>
           <a href="mailto:biuro@zmianakrs.pl" className="text-amber-200 hover:underline">biuro@zmianakrs.pl</a>
         </div>
       </div>

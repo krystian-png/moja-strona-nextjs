@@ -17,7 +17,7 @@ export function EnSeoHead({page,isProduction}:{page:PageKind;isProduction:boolea
    <link rel="alternate" hrefLang="en" href={url}/>
    <link rel="alternate" hrefLang="pl" href={siteUrl}/>
    <link rel="alternate" hrefLang="uk" href={`${siteUrl}/uk`}/><link rel="alternate" hrefLang="ru" href={`${siteUrl}/ru`}/><link rel="alternate" hrefLang="zh-CN" href={`${siteUrl}/zh`}/>
-   <link rel="alternate" hrefLang="x-default" href={siteUrl}/>
+   <link rel="alternate" hrefLang="vi" href={`${siteUrl}/vi`}/><link rel="alternate" hrefLang="x-default" href={siteUrl}/>
   </>}
   <meta property="og:type" content="website"/><meta property="og:title" content={d.title}/>
   <meta property="og:description" content={d.description}/><meta property="og:url" content={url}/>
