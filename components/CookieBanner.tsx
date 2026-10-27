@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 
 type ConsentState = "granted" | "denied"
 
@@ -29,6 +30,8 @@ function storeConsent(value: "accepted" | "declined") {
 }
 
 export default function CookieBanner() {
+  const pathname = usePathname()
+  const ukrainianPreview = pathname === "/podglad/uk" || pathname?.startsWith("/podglad/uk/")
   const [show, setShow] = useState(false)
   const [showPanel, setShowPanel] = useState(false)
 
@@ -66,20 +69,22 @@ export default function CookieBanner() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Ustawienia cookies"
+      aria-label={ukrainianPreview ? "Налаштування cookies" : "Ustawienia cookies"}
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-700 bg-slate-900 px-4 py-5 shadow-2xl sm:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
           <p className="text-sm text-gray-300">
-            Używamy plików cookies do analizy ruchu (Google Analytics) oraz zapewnienia
-            poprawnego działania serwisu. Możesz zaakceptować wszystkie lub odrzucić
-            opcjonalne cookies.{" "}
+            {ukrainianPreview ? (
+              <>Ми використовуємо файли cookies для аналізу відвідуваності (Google Analytics) і належної роботи сайту. Ви можете прийняти всі cookies або відхилити необов’язкові. </>
+            ) : (
+              <>Używamy plików cookies do analizy ruchu (Google Analytics) oraz zapewnienia poprawnego działania serwisu. Możesz zaakceptować wszystkie lub odrzucić opcjonalne cookies. </>
+            )}
             <a
               href="/polityka-prywatnosci"
               className="text-amber-400 underline hover:text-amber-300"
             >
-              Polityka prywatności
+              {ukrainianPreview ? "Політика конфіденційності (польською мовою)" : "Polityka prywatności"}
             </a>
           </p>
         </div>
@@ -89,14 +94,14 @@ export default function CookieBanner() {
             onClick={declineAll}
             className="rounded border border-gray-600 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-400 hover:text-white"
           >
-            Tylko niezbędne
+            {ukrainianPreview ? "Лише необхідні" : "Tylko niezbędne"}
           </button>
           <button
             type="button"
             onClick={acceptAll}
             className="rounded bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-amber-400"
           >
-            Akceptuję wszystkie
+            {ukrainianPreview ? "Приймаю всі" : "Akceptuję wszystkie"}
           </button>
         </div>
       </div>
