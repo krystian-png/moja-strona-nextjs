@@ -50,7 +50,9 @@ export type KrsLandingCopy = {
   }
   services: { title: string; description: string }[]
   steps: { title: string; description: string }[]
-  faq: { question: string; answer: string }[]
+  faq: { question: string; answer: string }[,
+    {question:"Чи потрібен номер PESEL для зміни даних у KRS?",answer:"Не в усіх випадках. Вимоги залежать від конкретної процедури, особи, яка підписує документи, та використаної системи. Ми перевіряємо це індивідуально."}
+  ]
   form: KrsFormCopy
   experienceNote: string
   footer: string
