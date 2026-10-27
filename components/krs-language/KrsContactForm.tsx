@@ -68,7 +68,7 @@ export default function KrsContactForm({
     onSuccess: () => {
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
         window.gtag("event", "generate_lead", {
-          form_name: \`localized_krs_\${locale}\`,
+          form_name: `localized_krs_${locale}`,
           method: "contact_form",
           page_path: window.location.pathname,
         })
@@ -85,7 +85,7 @@ export default function KrsContactForm({
       {status && (
         <p
           role={status.type === "error" ? "alert" : "status"}
-          className={\`mb-4 rounded-md border px-4 py-3 text-sm \${status.type === "success" ? "border-teal-300/50 bg-teal-900/30 text-white" : "border-red-300/50 bg-red-950/40 text-white"}\`}
+          className={`mb-4 rounded-md border px-4 py-3 text-sm ${status.type === "success" ? "border-teal-300/50 bg-teal-900/30 text-white" : "border-red-300/50 bg-red-950/40 text-white"}`}
         >
           {status.message}
         </p>
