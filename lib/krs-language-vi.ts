@@ -53,7 +53,8 @@ export const viLanding: KrsLandingCopy = {
     {question:"Có bắt buộc phải có chữ ký điện tử của Ba Lan không?",answer:"Tùy loại hồ sơ, người ký và phương thức nộp. Chúng tôi sẽ kiểm tra khả năng sử dụng người đại diện hoặc các hình thức hợp lệ khác."},
     {question:"Có thể trao đổi bằng tiếng Việt không?",answer:"Có. Bạn có thể gửi yêu cầu và trao đổi bằng văn bản tiếng Việt. Tài liệu nộp cho cơ quan Ba Lan phải đáp ứng các yêu cầu của pháp luật Ba Lan."},
     {question:"Thay đổi địa chỉ khác gì thay đổi trụ sở công ty?",answer:"Trụ sở (siedziba) chỉ địa phương, còn địa chỉ là vị trí cụ thể. Tùy trường hợp, hai loại thay đổi có thể yêu cầu tài liệu khác nhau."},
-    {question:"Nộp đơn thay đổi KRS qua PRS hay S24?",answer:"Đơn thay đổi đăng ký doanh nghiệp được nộp điện tử. Hệ thống phù hợp phụ thuộc vào hồ sơ thành lập, tài liệu của công ty và nội dung thay đổi."}
+    {question:"Nộp đơn thay đổi KRS qua PRS hay S24?",answer:"Đơn thay đổi đăng ký doanh nghiệp được nộp điện tử. Hệ thống phù hợp phụ thuộc vào hồ sơ thành lập, tài liệu của công ty và nội dung thay đổi."},
+    {question:"Có cần số PESEL để thay đổi KRS không?",answer:"Không phải mọi trường hợp đều cần. Điều này phụ thuộc vào thủ tục, người ký hồ sơ và hệ thống nộp đơn. Chúng tôi sẽ kiểm tra riêng từng trường hợp."}
   ],
   form:{
     heading:"Mô tả yêu cầu của bạn",intro:"Hãy cho biết công ty của bạn cần thay đổi gì. Nếu biết số KRS, vui lòng ghi trong tin nhắn.",
