@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useRef, type MouseEvent } from "react"
 import { Check, ChevronDown, Globe2 } from "lucide-react"
 
 type Locale = "pl" | "en" | "uk" | "ru" | "zh" | "vi"
@@ -22,9 +23,41 @@ export default function LanguageSwitcher({
   mobile?: boolean
 }) {
   const selected = languages.find((item) => item.code === current) ?? languages[0]
+  const detailsRef = useRef<HTMLDetailsElement>(null)
+
+  useEffect(() => {
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      const details = detailsRef.current
+      if (details?.open && !details.contains(event.target as Node)) {
+        details.open = false
+      }
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      const details = detailsRef.current
+      if (event.key === "Escape" && details?.open) {
+        details.open = false
+        details.querySelector<HTMLElement>("summary")?.focus()
+      }
+    }
+
+    document.addEventListener("pointerdown", closeOnOutsidePointer)
+    document.addEventListener("keydown", closeOnEscape)
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsidePointer)
+      document.removeEventListener("keydown", closeOnEscape)
+    }
+  }, [])
+
+  const handleLanguageClick = (event: MouseEvent<HTMLAnchorElement>, code: Locale) => {
+    if (code === current) {
+      event.preventDefault()
+    }
+    if (detailsRef.current) detailsRef.current.open = false
+  }
 
   return (
-    <details className={`group relative z-[60] text-sm ${mobile ? "w-full" : "shrink-0"}`}>
+    <details ref={detailsRef} className={`group relative z-[60] text-sm ${mobile ? "w-full" : "shrink-0"}`}>
       <summary
         aria-label="Wybierz język / Select language"
         className={`flex cursor-pointer list-none items-center justify-center gap-2 rounded-full border border-[#D4C5B4] bg-white px-3.5 py-2.5 font-semibold text-[#263649] shadow-sm transition hover:border-[#9D6225] hover:bg-[#FFF8EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#AD6B23] [&::-webkit-details-marker]:hidden ${mobile ? "w-full justify-between" : ""}`}
@@ -39,6 +72,7 @@ export default function LanguageSwitcher({
           <Link
             key={code}
             href={href}
+            onClick={(event) => handleLanguageClick(event, code)}
             hrefLang={code}
             lang={code}
             aria-current={current === code ? "page" : undefined}
