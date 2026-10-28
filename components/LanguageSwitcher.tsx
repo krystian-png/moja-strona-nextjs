@@ -34,7 +34,7 @@ export default function LanguageSwitcher({
         <span>{selected.code.toUpperCase()}</span>
         <ChevronDown aria-hidden="true" className="h-4 w-4 text-[#506174] transition-transform group-open:rotate-180" />
       </summary>
-      <div className={`z-[70] mt-2 rounded-xl border border-[#DCE2E8] bg-white p-1.5 shadow-xl ${mobile ? "w-full" : "absolute right-0 top-full w-max min-w-[194px] max-w-[calc(100vw-2rem)]"}`}>
+      <div className={`z-[70] mt-2 max-h-[calc(100dvh-10rem)] overflow-y-auto overscroll-contain rounded-xl border border-[#DCE2E8] bg-white p-1.5 shadow-xl ${mobile ? "w-full" : "absolute right-0 top-full w-max min-w-[194px] max-w-[calc(100vw-2rem)]"}`}>
         {languages.map(({code, label, flag, href}) => (
           <Link
             key={code}

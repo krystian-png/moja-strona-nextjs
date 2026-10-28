@@ -72,7 +72,8 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Przycisk mobilny */}
+        {/* Mobilna nawigacja: menu po lewej, języki zawsze widoczne po prawej. */}
+        <div className="flex w-full items-center justify-between md:hidden">
         <button
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-full border border-amber-200 text-amber-50 transition-colors hover:border-amber-300 hover:text-amber-200 md:hidden"
@@ -107,6 +108,8 @@ export default function Navbar() {
             )}
           </svg>
         </button>
+          <LanguageSwitcher current="pl" />
+        </div>
 
         {/* Menu desktop */}
         <nav className="hidden md:block">
@@ -168,7 +171,6 @@ export default function Navbar() {
                 );
               })}
             </ul>
-            <div className="mt-4"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : "pl"} mobile /></div>
           </nav>
         </div>
       ) : null}
