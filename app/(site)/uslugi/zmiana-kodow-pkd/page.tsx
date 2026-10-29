@@ -44,7 +44,7 @@ const schemas = [
 ]
 
 export const metadata: Metadata = {
-  title: "Zmiana kodów PKD w KRS – sprawdź, co wpisze system | ZmianaKRS",
+  title: "Zmiana kodów PKD w KRS – sprawdź, co wpisze system",
   description,
   alternates: { canonical: pageUrl },
   openGraph: { title: "Zmiana kodów PKD w KRS – sprawdź, co wpisze system | ZmianaKRS", description, url: pageUrl, siteName: brandName, images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Zmiana kodów PKD w KRS" }] },
