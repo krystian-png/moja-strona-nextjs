@@ -71,7 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const posts = allPosts.map((post) => ({
     url: `${baseUrl}/artykul/${post.slug}`,
-    lastModified: new Date(post.slug === "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs" ? post.updated || post.date : post.date),
+    lastModified: new Date(
+      post.updated && [
+        "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs",
+        "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci",
+      ].includes(post.slug) ? post.updated : post.date,
+    ),
   }));
 
   return [...routes, ...posts];

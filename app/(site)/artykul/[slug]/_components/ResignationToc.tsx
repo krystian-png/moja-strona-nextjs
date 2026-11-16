@@ -5,12 +5,12 @@ import styles from "../resignation.module.css"
 
 type Entry = { id: string; text: string }
 
-export default function ResignationToc({ mobile = false }: { mobile?: boolean }) {
+export default function ResignationToc({ mobile = false, contentId = "resignation-content" }: { mobile?: boolean; contentId?: string }) {
   const [entries, setEntries] = useState<Entry[]>([])
   const [activeId, setActiveId] = useState("")
 
   useEffect(() => {
-    const content = document.getElementById("resignation-content")
+    const content = document.getElementById(contentId)
     const page = content?.closest<HTMLElement>("[data-resignation-page]")
     const navbar = page?.querySelector<HTMLElement>(":scope > header")
     if (!content || !page || !navbar) return
@@ -59,7 +59,7 @@ export default function ResignationToc({ mobile = false }: { mobile?: boolean })
       cancelAnimationFrame(frame)
       if (!mobile) page.style.removeProperty("--resignation-sticky-top")
     }
-  }, [mobile])
+  }, [mobile, contentId])
 
   if (!entries.length) return null
 
