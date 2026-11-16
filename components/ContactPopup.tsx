@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react"
 import { MessageCircle, X } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 
 export default function ContactPopup() {
   const [showBubble, setShowBubble] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,7 +27,7 @@ export default function ContactPopup() {
     router.push("/kontakt")
   }
 
-  if (!showBubble) return null
+  if (!showBubble || pathname === "/artykul/rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs") return null
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
