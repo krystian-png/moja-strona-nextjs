@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import resignationStyles from "./resignation.module.css"
 import reportStyles from "./report.module.css"
+import ResignationToc from "./_components/ResignationToc"
+import ResignationHelpCard from "./_components/ResignationHelpCard"
 import InlineContactForm from "@/app/(site)/uslugi/_components/InlineContactForm"
 import { Badge } from "@/components/ui/badge"
 import { brandName, organizationSchema, personSchema, siteUrl } from "@/lib/seo"
@@ -125,7 +127,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   if (isResignation) {
     return (
-      <div className={resignationStyles.page}>
+      <div className={resignationStyles.page} data-resignation-page>
         <Script id="article-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</Script>
         <Navbar />
         <main className={resignationStyles.main}>
@@ -142,9 +144,14 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 </div>
               </div>
             </header>
-            <div className={resignationStyles.body}>
-              <a className={resignationStyles.serviceLink} href="/uslugi/zmiana-zarzadu-spolki-zoo">Zmiana zarządu spółki z o.o. w KRS →</a>
-              <MDXContent code={post.body.code} resignation />
+            <div className={resignationStyles.layout}>
+              <ResignationToc />
+              <div className={resignationStyles.body} id="resignation-content">
+                <a className={resignationStyles.serviceLink} href="/uslugi/zmiana-zarzadu-spolki-zoo">Zmiana zarządu spółki z o.o. w KRS →</a>
+                <ResignationToc mobile />
+                <MDXContent code={post.body.code} resignation />
+              </div>
+              <ResignationHelpCard />
             </div>
           </article>
         </main>

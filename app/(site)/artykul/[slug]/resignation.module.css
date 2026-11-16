@@ -7,22 +7,24 @@
   --page-section: #EEF2F9;
   --page-white: #FFFFFF;
   --page-highlight: #DCE6F6;
+  --resignation-sticky-top: 160px;
   background: var(--page-ivory);
   color: var(--page-navy);
   min-height: 100vh;
 }
 .main { padding-top: 80px; padding-bottom: 80px; }
 .hero { background: var(--page-navy); color: var(--page-white); padding: 72px 24px 64px; border-bottom: 5px solid var(--page-gold); }
-.heroInner { max-width: 1040px; margin: auto; }
+.heroInner { max-width: 1340px; margin: auto; }
 .eyebrow { color: var(--page-gold); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
 .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.15; max-width: 1000px; font-weight: 700; margin: 24px 0; text-wrap: balance; }
 .hero p { font-size: 19px; line-height: 1.8; max-width: 840px; }
 .meta { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 32px; font-size: 14px; }
 .meta span { width: 100%; font-weight: 700; }
-.body { max-width: 860px; padding: 48px 24px 0; margin: auto; font-size: 18px; line-height: 1.85; overflow-wrap: anywhere; }
+.layout { max-width: 1388px; padding: 48px 24px 0; margin: auto; display: grid; grid-template-columns: minmax(0, 760px); justify-content: center; gap: 40px; align-items: stretch; }
+.body { width: 100%; max-width: 760px; min-width: 0; container-type: inline-size; font-size: 18px; line-height: 1.85; overflow-wrap: anywhere; }
 .body > p, .body :global(.situations) p, .body :global(.procedure) p, .body :global(.caseLaw) p, .body :global(.contactPanel) > p { margin: 0 0 24px; }
-.body h2 { font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.35; margin: 64px 0 24px; font-weight: 700; color: var(--page-navy); scroll-margin-top: 100px; }
-.body h3 { color: var(--page-sapphire); font-weight: 700; font-size: 1.2rem; line-height: 1.5; margin: 32px 0 16px; scroll-margin-top: 100px; }
+.body h2 { font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.35; margin: 64px 0 24px; font-weight: 700; color: var(--page-navy); scroll-margin-top: var(--resignation-sticky-top); }
+.body h3 { color: var(--page-sapphire); font-weight: 700; font-size: 1.2rem; line-height: 1.5; margin: 32px 0 16px; scroll-margin-top: var(--resignation-sticky-top); }
 .body h4 { font-weight: 700; margin-bottom: 12px; }
 .body > a, .body > p a { color: var(--page-blue); text-decoration: underline; text-underline-offset: 4px; }
 .body > a:focus-visible, .body > p a:focus-visible { outline: 3px solid var(--page-gold); outline-offset: 4px; }
@@ -33,7 +35,7 @@
 .body li { padding-left: 8px; margin-bottom: 12px; }
 .body li::marker { color: var(--page-blue); font-weight: 700; }
 .body hr { border-color: var(--page-highlight); margin: 40px 0; }
-.body :global(.situations) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 32px -90px; }
+.body :global(.situations) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 32px 0; }
 .body :global(.situations) section { background: var(--page-white); border: 1px solid var(--page-highlight); border-top: 4px solid var(--page-blue); border-radius: 16px; padding: 24px; font-size: 16px; }
 .body :global(.situations) h3 { margin-top: 0; color: var(--page-navy); font-size: 18px; }
 .body :global(.procedure), .body :global(.caseLaw) { border: 1px solid var(--page-highlight); border-radius: 16px; padding: 32px; margin: 32px 0; background: var(--page-section); }
@@ -49,12 +51,41 @@
 .body table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--page-white); font-size: 16px; }
 .body th, .body td { text-align: left; border: 1px solid var(--page-highlight); padding: 16px; }
 .body th { background: var(--page-section); }
-@media (max-width: 1100px) { .body :global(.situations) { margin: 32px 0; } }
+@container (max-width: 699px) { .body :global(.situations) { grid-template-columns: 1fr; } }
+.body :global(.contactPanel) { scroll-margin-top: var(--resignation-sticky-top); }
+.body :global(.situations), .body :global(.procedure), .body :global(.caseLaw), .body :global(.legislation), .body :global(.contactPanel) { width: 100%; min-width: 0; max-width: 100%; }
+.body table { table-layout: fixed; }
+.tocSidebar, .helpSidebar { display: none; min-width: 0; }
+.stickyToc, .helpCard { position: sticky; top: var(--resignation-sticky-top); }
+.stickyToc { max-height: calc(100dvh - var(--resignation-sticky-top) - 24px); overflow-y: auto; }
+.stickyToc h2, .mobileToc summary { font-size: 15px; font-weight: 700; margin: 0 0 16px; }
+.tocNav { font-size: 14px; line-height: 1.45; }
+.tocNav a { display: block; padding: 8px 12px; border-left: 3px solid var(--page-highlight); color: var(--page-sapphire); text-decoration: none; }
+.tocNav a[aria-current="location"] { color: var(--page-navy); font-weight: 700; border-left-color: var(--page-gold); }
+.tocNav a:focus-visible, .mobileToc summary:focus-visible, .helpCard button:focus-visible { outline: 3px solid var(--page-gold); outline-offset: 3px; }
+.mobileToc { margin-bottom: 32px; padding: 16px; border: 1px solid var(--page-highlight); border-radius: 12px; background: var(--page-white); }
+.mobileToc summary { cursor: pointer; margin: 0; }
+.mobileToc[open] summary { margin-bottom: 16px; }
+.helpCard { background: var(--page-white); border: 1px solid var(--page-highlight); border-top: 4px solid var(--page-navy); border-radius: 16px; padding: 24px; opacity: 1; visibility: visible; transition: opacity .2s, visibility .2s; }
+.helpCard[data-hidden="true"] { opacity: 0; visibility: hidden; pointer-events: none; }
+.helpCard h2 { font-size: 20px; line-height: 1.4; font-weight: 700; margin-bottom: 16px; }
+.helpCard p { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+.helpCard button { width: 100%; padding: 12px; border-radius: 8px; background: var(--page-gold); color: var(--page-navy); font-weight: 700; }
+@media (min-width: 1100px) {
+  .layout { grid-template-columns: 220px minmax(0, 760px); justify-content: start; }
+  .tocSidebar { display: block; }
+  .mobileToc { display: none; }
+}
+@media (min-width: 1360px) {
+  .layout { grid-template-columns: 240px minmax(0, 760px) 260px; }
+  .helpSidebar { display: block; }
+}
+@media (prefers-reduced-motion: reduce) { .helpCard { transition: none; } }
 @media (max-width: 767px) {
   .hero { padding: 40px 20px; }
   .hero p { font-size: 17px; }
-  .body { padding: 32px 20px 0; font-size: 17px; }
-  .body :global(.situations) { grid-template-columns: 1fr; }
+  .layout { padding: 32px 20px 0; }
+  .body { font-size: 17px; }
   .body :global(.procedure), .body :global(.caseLaw), .body :global(.contactPanel) { padding: 24px 20px; }
   .body :global(.legislation) { padding: 18px; }
   .meta { gap: 10px; flex-direction: column; }
