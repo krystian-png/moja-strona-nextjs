@@ -3,184 +3,87 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Mail, Menu, Phone, X } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-type NavbarProps = {
-  contactAction?: { href: string; label: string };
-  className?: string;
-};
+const navItems = [
+  { href: "/o-nas", label: "O nas" },
+  { href: "/uslugi", label: "Usługi" },
+  { href: "/ksiegowi", label: "Dla księgowych" },
+  { href: "/cennik", label: "Cennik" },
+  { href: "/blog", label: "Blog" },
+  { href: "/kontakt", label: "Kontakt" },
+];
+const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFFFFF]";
+const cta = `inline-flex h-10 items-center justify-center whitespace-nowrap rounded-lg bg-[#E7A944] px-[18px] text-[15px] font-bold text-[#111E41] hover:shadow-[inset_0_0_0_2px_#FFFFFF] ${focus}`;
+type NavbarProps = { contactAction?: { href: string; label: string } };
 
-export default function Navbar({ contactAction, className }: NavbarProps = {}) {
+export default function Navbar({ contactAction = { href: "/kontakt", label: "Opisz sprawę" } }: NavbarProps = {}) {
   const pathname = usePathname() ?? "";
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const menuButton = React.useRef<HTMLButtonElement>(null);
 
-  // Zamykaj mobilne menu przy zmianie ścieżki
+  React.useEffect(() => { setIsMenuOpen(false); }, [pathname]);
   React.useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (desktop.matches) setIsMenuOpen(false); };
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    closeOnDesktop();
+    onScroll();
+    desktop.addEventListener("change", closeOnDesktop);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      desktop.removeEventListener("change", closeOnDesktop);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+  React.useEffect(() => {
+    if (!isMenuOpen) return;
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [isMenuOpen]);
 
-  const navItems = [
-    { href: "/", label: "Strona główna" },
-    { href: "/o-nas", label: "O nas" },
-    { href: "/uslugi", label: "Usługi" },
-    { href: "/ksiegowi", label: "Dla księgowych" },
-    { href: "/cennik", label: "Cennik" },
-    { href: "/blog", label: "Blog" },
-    { href: "/kontakt", label: "Kontakt" },
-  ];
-
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    if (href === "/blog")
-      return (
-        pathname === "/blog" ||
-        pathname.startsWith("/blog/") ||
-        pathname.startsWith("/artykul")
-      );
-    return pathname.startsWith(href);
-  };
+  const isActive = (href: string) => href === "/blog"
+    ? pathname === "/blog" || pathname.startsWith("/blog/") || pathname.startsWith("/artykul")
+    : pathname.startsWith(href);
+  const close = () => setIsMenuOpen(false);
 
   return (
-    <header className={["bg-background shadow-sm border-b border-border sticky top-0 z-50", className].filter(Boolean).join(" ")}>
-      <div className="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 text-sm text-foreground">
-        {/* Kontakt */}
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base md:text-lg font-semibold">
-          <a
-            href="tel:572234779"
-            className="flex items-center gap-2 text-amber-800 transition-colors hover:text-amber-700 md:text-xl md:font-bold"
-          >
-            <svg
-              className="h-5 w-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden
-            >
-              <path d="M2.25 4.5c0-.414.336-.75.75-.75h3.06a.75.75 0 0 1 .739.615l.72 3.6a.75.75 0 0 1-.434.836l-1.548.69a11.27 11.27 0 0 0 5.27 5.27l.69-1.548a.75.75 0 0 1 .836-.434l3.6.72a.75.75 0 0 1 .615.739v3.06a.75.75 0 0 1-.75.75H14.25C7.484 17.625 2.25 12.391 2.25 5.625V4.5z" />
-            </svg>
-            {"572\u202f234\u202f779"}
-          </a>
-          <a
-            href="mailto:biuro@zmianakrs.pl"
-            className="flex items-center gap-2 text-amber-800 transition-colors hover:text-amber-700 md:font-bold"
-          >
-            <svg
-              className="h-5 w-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden
-            >
-              <path d="M4 5c-1.105 0-2 .895-2 2v10c0 1.105.895 2 2 2h16c1.105 0 2-.895 2-2V7c0-1.105-.895-2-2-2H4zm0 2h16v.01L12 13 4 7.01V7zm0 3.236 7.445 4.591a1 1 0 0 0 1.11 0L20 10.236V17H4v-6.764z" />
-            </svg>
-            biuro@zmianakrs.pl
-          </a>
+    <header className={`sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[#20376F] bg-[#111E41] text-[#FFFFFF] ${scrolled ? "shadow-[0_4px_12px_#111E4140]" : ""}`}>
+      <nav aria-label="Główna nawigacja" className="mx-auto flex h-full max-w-[1280px] items-center px-4 lg:px-6">
+        <BrandLogo />
+        <ul className="ml-6 hidden items-center gap-5 whitespace-nowrap lg:flex xl:ml-10 xl:gap-7">
+          {navItems.map(({ href, label }) => <li key={href}>
+            <Link href={href} aria-current={isActive(href) ? "page" : undefined} className={`relative rounded-sm text-[15px] hover:text-[#FFFFFF] ${focus} ${isActive(href) ? "font-semibold text-[#FFFFFF] after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-[#E7A944]" : "font-medium text-[#DCE6F6]"}`}>{label}</Link>
+          </li>)}
+        </ul>
+        <div className="ml-auto hidden items-center gap-4 pl-4 lg:flex">
+          <a href="tel:+48572234779" aria-label="Zadzwoń: 572 234 779" className={`flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-lg text-[15px] font-semibold xl:w-auto ${focus}`}><Phone size={16} aria-hidden="true" /><span className="hidden whitespace-nowrap xl:inline">572 234 779</span></a>
+          <LanguageSwitcher current="pl" tone="dark" />
+          <a href={contactAction.href} className={cta}>{contactAction.label}</a>
         </div>
-
-        {/* Mobilna nawigacja: menu po lewej, języki zawsze widoczne po prawej. */}
-        <div className="flex w-full items-center justify-between md:hidden">
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-amber-200 text-amber-50 transition-colors hover:border-amber-300 hover:text-amber-200 md:hidden"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
-        >
-          <span className="sr-only">Przełącz menu</span>
-          <svg
-            className="h-5 w-5 text-foreground"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isMenuOpen ? (
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-          {contactAction && <a href={contactAction.href} onClick={() => setIsMenuOpen(false)}>{contactAction.label}</a>}
-          <LanguageSwitcher current="pl" />
+        <div className="ml-auto flex lg:hidden">
+          <a href="tel:+48572234779" aria-label="Zadzwoń: 572 234 779" className={`flex h-11 w-11 items-center justify-center rounded-lg ${focus}`}><Phone size={20} aria-hidden="true" /></a>
+          <button ref={menuButton} type="button" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-expanded={isMenuOpen} aria-controls="mobile-navigation" aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"} className={`flex h-11 w-11 items-center justify-center rounded-lg ${focus}`}>{isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}</button>
         </div>
-
-        {/* Menu desktop */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-1 lg:gap-2 text-base font-semibold">
-            {navItems.map((item) => {
-              const active = isActive(item.href);
-              const isEnglish = item.href === "/en" || item.href === "/uk";
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={
-                      isEnglish
-                        ? "inline-flex items-center rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-400"
-                        : `inline-flex items-center text-base transition-colors ${
-                            active
-                              ? "bg-amber-800 text-white px-4 py-2 rounded-full"
-                              : "px-4 py-2 rounded-full text-amber-900 hover:text-amber-700"
-                          }`
-                    }
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
+        <div id="mobile-navigation" onClick={(event) => { if ((event.target as HTMLElement).closest("a")) close(); }} hidden={!isMenuOpen} className="absolute inset-x-0 top-full max-h-[calc(100dvh-var(--site-header-height))] overflow-y-auto border-t border-[#20376F] bg-[#111E41] px-4 pb-6 lg:hidden">
+          <ul className="mb-5">
+            {navItems.map(({ href, label }) => <li key={href} className="border-b border-[#20376F]"><Link href={href} onClick={close} aria-current={isActive(href) ? "page" : undefined} className={`flex min-h-[48px] items-center border-l-[3px] px-4 text-[17px] hover:bg-[#20376F] focus-visible:outline-offset-[-2px] ${focus} ${isActive(href) ? "border-[#E7A944] font-semibold text-[#FFFFFF]" : "border-transparent font-medium text-[#DCE6F6]"}`}>{label}</Link></li>)}
           </ul>
-        </nav>
-        {contactAction && <a className="hidden md:inline-flex" href={contactAction.href}>{contactAction.label}</a>}
-        <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : pathname.startsWith("/vi") ? "vi" : "pl"} /></div>
-      </div>
-
-      {/* Menu mobilne */}
-      {isMenuOpen ? (
-        <div className="border-t border-border bg-background md:hidden" id="mobile-navigation">
-          <nav className="mx-auto w-11/12 max-w-7xl px-4 py-4">
-            <ul className="flex flex-col gap-2 text-base font-semibold">
-              {navItems.map((item) => {
-                const active = isActive(item.href);
-                const isEnglish = item.href === "/en" || item.href === "/uk";
-                return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={
-                      isEnglish
-                        ? "inline-flex w-fit items-center rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-400"
-                        : `block text-base transition-colors ${
-                            active
-                              ? "bg-amber-800 text-white px-4 py-3 rounded-lg"
-                              : "px-4 py-3 rounded-lg text-amber-900 hover:text-amber-700"
-                          }`
-                    }
-                  >
-                    {item.label}
-                  </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <a href={contactAction.href} onClick={close} className={`${cta} w-full`}>{contactAction.label}</a>
+          <a href="tel:+48572234779" onClick={close} className={`my-4 flex min-h-[44px] items-center gap-3 rounded-sm ${focus}`}><Phone size={18} aria-hidden="true" />572 234 779</a>
+          <a href="mailto:biuro@zmianakrs.pl" onClick={close} className={`mb-4 flex min-h-[44px] items-center gap-3 rounded-sm ${focus}`}><Mail size={18} aria-hidden="true" />biuro@zmianakrs.pl</a>
+          <LanguageSwitcher current="pl" tone="dark" mobile />
         </div>
-      ) : null}
+      </nav>
     </header>
   );
 }

@@ -7,7 +7,7 @@
   --page-section: #EEF2F9;
   --page-white: #FFFFFF;
   --page-highlight: #DCE6F6;
-  --resignation-sticky-top: 160px;
+  --resignation-sticky-top: calc(var(--site-header-height) + 24px);
   background: var(--page-ivory);
   color: var(--page-navy);
   min-height: 100vh;

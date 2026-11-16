@@ -18,9 +18,11 @@ const languages: { code: Locale; label: string; flag: string; href: string }[] =
 export default function LanguageSwitcher({
   current = "pl",
   mobile = false,
+  tone,
 }: {
   current?: Locale
   mobile?: boolean
+  tone?: "dark"
 }) {
   const selected = languages.find((item) => item.code === current) ?? languages[0]
   const detailsRef = useRef<HTMLDetailsElement>(null)
@@ -60,12 +62,12 @@ export default function LanguageSwitcher({
     <details ref={detailsRef} className={`group relative z-[60] text-sm ${mobile ? "w-full" : "shrink-0"}`}>
       <summary
         aria-label="Wybierz język / Select language"
-        className={`flex cursor-pointer list-none items-center justify-center gap-2 rounded-full border border-[#D4C5B4] bg-white px-3.5 py-2.5 font-semibold text-[#263649] shadow-sm transition hover:border-[#9D6225] hover:bg-[#FFF8EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#AD6B23] [&::-webkit-details-marker]:hidden ${mobile ? "w-full justify-between" : ""}`}
+        className={tone === "dark" ? `flex h-10 cursor-pointer list-none items-center justify-center gap-2 rounded-full border border-[#20376F] bg-transparent px-3 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#20376F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFFFFF] [&::-webkit-details-marker]:hidden ${mobile ? "w-full justify-between" : ""}` : `flex cursor-pointer list-none items-center justify-center gap-2 rounded-full border border-[#D4C5B4] bg-white px-3.5 py-2.5 font-semibold text-[#263649] shadow-sm transition hover:border-[#9D6225] hover:bg-[#FFF8EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#AD6B23] [&::-webkit-details-marker]:hidden ${mobile ? "w-full justify-between" : ""}`}
       >
-        <Globe2 aria-hidden="true" className="h-4 w-4 text-[#A66423]" />
-        <span>{selected.flag}</span>
+        <Globe2 aria-hidden="true" className={tone === "dark" ? "h-4 w-4 text-[#E7A944]" : "h-4 w-4 text-[#A66423]"} />
+        {tone !== "dark" && <span>{selected.flag}</span>}
         <span>{selected.code.toUpperCase()}</span>
-        <ChevronDown aria-hidden="true" className="h-4 w-4 text-[#506174] transition-transform group-open:rotate-180" />
+        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform group-open:rotate-180 ${tone === "dark" ? "text-[#DCE6F6]" : "text-[#506174]"}`} />
       </summary>
       <div className={`z-[70] mt-2 max-h-[calc(100dvh-10rem)] overflow-y-auto overscroll-contain rounded-xl border border-[#DCE2E8] bg-white p-1.5 shadow-xl ${mobile ? "w-full" : "absolute right-0 top-full w-max min-w-[194px] max-w-[calc(100vw-2rem)]"}`}>
         {languages.map(({code, label, flag, href}) => (

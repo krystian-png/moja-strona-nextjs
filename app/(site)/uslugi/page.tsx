@@ -580,7 +580,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section id="formularz" className="scroll-mt-28 px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="formularz-heading">
+        <section id="formularz" className="scroll-mt-[calc(var(--site-header-height)+24px)] px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="formularz-heading">
           <div className="mx-auto max-w-xl text-center">
             <h2 id="formularz-heading" className="mb-3 text-3xl font-bold text-white">Zapytaj o realizację usługi</h2>
             <p className="mb-8 text-base text-white/90">

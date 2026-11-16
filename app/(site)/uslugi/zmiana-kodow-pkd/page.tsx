@@ -70,7 +70,7 @@ export default function ZmianaKodowPkdPage() {
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Po 31 grudnia 2026 r. system KRS sam wymieni kody PKD Twojej spółki</h1>
               <p className="text-lg text-white/90">Wymiana nastąpi bez wniosku spółki i bez badania, czym spółka faktycznie się zajmuje. Przy 455 kodach PKD 2007 zakres został w nowej klasyfikacji rozdzielony między kilka kodów — wtedy system wybiera jeden z nich za spółkę. Przy 112 z nich klucze przejścia w ogóle nie wskazują, który to ma być.</p>
               <p className="text-lg text-white/90">Zobacz, co stanie się ze starymi kodami PKD Twojej spółki po 31 grudnia 2026 r. Wpisz kod z odpisu z KRS — wyszukiwarka pokaże, na jaki kod PKD 2025 zostanie zamieniony albo czy zostanie wykreślony bez zastąpienia.</p>
-              <div id="wyszukiwarka" className="scroll-mt-28"><PkdLookup /></div>
+              <div id="wyszukiwarka" className="scroll-mt-[calc(var(--site-header-height)+24px)]"><PkdLookup /></div>
               <p className="text-sm text-white/70">Wynik automatycznej aktualizacji PKD 2007 → PKD 2025 w Krajowym Rejestrze Sądowym. Obliczony na podstawie kluczy przejścia opublikowanych przez Główny Urząd Statystyczny — dla kodu na każdym poziomie, od samego działu po pełny numer. Narzędzie ma charakter informacyjny i nie zastępuje analizy konkretnego przypadku.</p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function ZmianaKodowPkdPage() {
         </section>
 
         <section className="mx-auto max-w-6xl space-y-10">
-          <div id="oferta" className={`${card} scroll-mt-28`}>
+          <div id="oferta" className={`${card} scroll-mt-[calc(var(--site-header-height)+24px)]`}>
             <h2 className={heading}>Co obejmuje usługa za 799 zł netto</h2>
             <p className="mb-6 text-lg text-white/90">Usługa dotyczy kodów PKD ujawnionych w dziale 3 wpisu w rejestrze przedsiębiorców — czyli maksymalnie dziesięciu pozycji, które faktycznie widnieją w odpisie z KRS.</p>
             <div className="space-y-4 text-lg text-white/90">
@@ -105,7 +105,7 @@ export default function ZmianaKodowPkdPage() {
                 <div className="space-y-4"><p>To częstsza sytuacja, niż się wydaje. Jeden kod PKD 2007 może rozpaść się na trzy albo cztery podklasy PKD 2025, a w rejestrze mieści się dziesięć pozycji.</p><p>Wtedy trzeba wybrać. Proponujemy zestaw w oparciu o informacje o działalności, które nam przekażesz — zaczynając od działalności przeważającej i tych, które są regulowane albo wymagają wpisu do rejestrów branżowych, a rezygnując z kodów, które nigdy nie były wykorzystywane. Ostateczną decyzję podejmuje spółka.</p><p>Wybór nie jest ostateczny — kody można uzupełnić przy kolejnym wniosku o zmianę wpisu.</p></div>
               </div>
             </div>
-            <div id="wycena" className="scroll-mt-28">
+            <div id="wycena" className="scroll-mt-[calc(var(--site-header-height)+24px)]">
               <p className="mt-8 inline-flex items-center gap-2 text-lg text-white/90">Wolisz porozmawiać? Zadzwoń: <a href="tel:+48572234779" className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"><Phone className="h-5 w-5 text-amber-400" />572 234 779</a></p>
               <InlineContactForm className="mt-8 max-w-xl" />
             </div>

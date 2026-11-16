@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --site-header-height: 64px;
   --background: 40 20% 95%;
   --foreground: 20 60% 15%;
   --card: 40 20% 95%;
@@ -69,4 +70,8 @@ body {
 .page-wrapper::before {
   content: none !important;
   opacity: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  :root { --site-header-height: 72px; }
 }
