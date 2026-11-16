@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     title: post.seoTitle || post.title,
     description: post.description,
     alternates: {
-      canonical: ["zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci", "zmiana-adresu-i-siedziby-spolki-w-krs"].includes(post.slug)
+      canonical: ["prokurent-krs-ustanowienie-prokury-wpis", "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci", "zmiana-adresu-i-siedziby-spolki-w-krs"].includes(post.slug)
         ? `https://zmianakrs.pl/artykul/${post.slug}`
         : `/artykul/${post.slug}`,
     },
@@ -111,10 +111,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   const isResignation = post.slug === "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
   const isBoardGuide = post.slug === "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci"
   const isAddressGuide = post.slug === "zmiana-adresu-i-siedziby-spolki-w-krs"
-  const hasGuideLead = isBoardGuide || isAddressGuide
+  const isProkuraGuide = post.slug === "prokurent-krs-ustanowienie-prokury-wpis"
+  const hasGuideLead = isBoardGuide || isAddressGuide || isProkuraGuide
   const isGuide = isResignation || hasGuideLead
   const guideLead = hasGuideLead ? post.body.raw.trim().split(/\n\s*\n/)[0] : undefined
-  const contentId = isAddressGuide ? "address-guide-content" : isBoardGuide ? "board-guide-content" : "resignation-content"
+  const contentId = isProkuraGuide ? "prokura-guide-content" : isAddressGuide ? "address-guide-content" : isBoardGuide ? "board-guide-content" : "resignation-content"
   const isReport = post.slug === "pkd-2025-raport-wdrozenia-reformy"
 
   const structuredData = {
@@ -146,9 +147,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   if (isGuide) {
     return (
-      <div className={`${resignationStyles.page} ${hasGuideLead ? resignationStyles.boardGuide : ""} ${isAddressGuide ? resignationStyles.addressGuide : ""}`} data-resignation-page>
+      <div className={`${resignationStyles.page} ${hasGuideLead ? resignationStyles.boardGuide : ""} ${isAddressGuide || isProkuraGuide ? resignationStyles.addressGuide : ""}`} data-resignation-page>
         <Script id="article-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</Script>
-        <Navbar {...(isAddressGuide ? { contactAction: { href: "#formularz-kontaktowy", label: "Opisz sprawę" } } : {})} />
+        <Navbar {...(isAddressGuide || isProkuraGuide ? { contactAction: { href: "#formularz-kontaktowy", label: "Opisz sprawę" } } : {})} />
         <main className={resignationStyles.main}>
           <article>
             <header className={resignationStyles.hero}>
@@ -174,8 +175,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 heading: "Wolisz zlecić zgłoszenie?",
                 text: "Przygotujemy dokumenty i złożymy wniosek do KRS w imieniu spółki.",
                 buttonLabel: "Opisz sprawę",
-                ariaLabel: isAddressGuide ? "Pomoc przy zgłoszeniu zmiany adresu lub siedziby" : "Pomoc przy zgłoszeniu zmiany zarządu",
-                ...(isAddressGuide ? { href: "#formularz-kontaktowy" } : {}),
+                ariaLabel: isProkuraGuide ? "Pomoc przy zgłoszeniu prokury" : isAddressGuide ? "Pomoc przy zgłoszeniu zmiany adresu lub siedziby" : "Pomoc przy zgłoszeniu zmiany zarządu",
+                ...(isAddressGuide || isProkuraGuide ? { href: "#formularz-kontaktowy" } : {}),
               } : {})} />
             </div>
           </article>
