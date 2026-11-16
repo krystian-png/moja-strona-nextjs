@@ -1,4 +1,4 @@
-import { AlertTriangle } from "lucide-react"
+import { AlertTriangle, Check } from "lucide-react"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Script from "next/script"
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     title: post.seoTitle || post.title,
     description: post.description,
     alternates: {
-      canonical: post.slug === "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci"
+      canonical: ["zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci", "zmiana-adresu-i-siedziby-spolki-w-krs"].includes(post.slug)
         ? `https://zmianakrs.pl/artykul/${post.slug}`
         : `/artykul/${post.slug}`,
     },
@@ -78,6 +78,7 @@ function MDXContent({ code, resignation = false, lead }: { code: string; resigna
   return <Component components={resignation ? {
     InlineContactForm,
     AlertTriangle,
+    Check,
     ResignationToc,
     ...(lead ? {
       // The guide's opening paragraph is rendered once in the shared hero.
@@ -109,9 +110,11 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   const isResignation = post.slug === "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
   const isBoardGuide = post.slug === "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci"
-  const isGuide = isResignation || isBoardGuide
-  const guideLead = isBoardGuide ? post.body.raw.trim().split(/\n\s*\n/)[0] : undefined
-  const contentId = isBoardGuide ? "board-guide-content" : "resignation-content"
+  const isAddressGuide = post.slug === "zmiana-adresu-i-siedziby-spolki-w-krs"
+  const hasGuideLead = isBoardGuide || isAddressGuide
+  const isGuide = isResignation || hasGuideLead
+  const guideLead = hasGuideLead ? post.body.raw.trim().split(/\n\s*\n/)[0] : undefined
+  const contentId = isAddressGuide ? "address-guide-content" : isBoardGuide ? "board-guide-content" : "resignation-content"
   const isReport = post.slug === "pkd-2025-raport-wdrozenia-reformy"
 
   const structuredData = {
@@ -143,16 +146,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   if (isGuide) {
     return (
-      <div className={`${resignationStyles.page} ${isBoardGuide ? resignationStyles.boardGuide : ""}`} data-resignation-page>
+      <div className={`${resignationStyles.page} ${hasGuideLead ? resignationStyles.boardGuide : ""} ${isAddressGuide ? resignationStyles.addressGuide : ""}`} data-resignation-page>
         <Script id="article-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</Script>
-        <Navbar />
+        <Navbar {...(isAddressGuide ? { contactAction: { href: "#formularz-kontaktowy", label: "Opisz sprawę" } } : {})} />
         <main className={resignationStyles.main}>
           <article>
             <header className={resignationStyles.hero}>
               <div className={resignationStyles.heroInner}>
                 <span className={resignationStyles.eyebrow}>Spółki i zmiany w KRS</span>
                 <h1>{post.title}</h1>
-                {isBoardGuide ? <p>{guideLead}</p> : <p>Członek zarządu spółki z ograniczoną odpowiedzialnością może w każdym czasie zrezygnować z pełnionej funkcji. Rezygnacja nie wymaga zgody ani zatwierdzenia przez wspólników. Jej skuteczność zależy jednak od tego, komu i w jakim trybie ją złożono.</p>}
+                {hasGuideLead ? <p>{guideLead}</p> : <p>Członek zarządu spółki z ograniczoną odpowiedzialnością może w każdym czasie zrezygnować z pełnionej funkcji. Rezygnacja nie wymaga zgody ani zatwierdzenia przez wspólników. Jej skuteczność zależy jednak od tego, komu i w jakim trybie ją złożono.</p>}
                 <div className={resignationStyles.meta}>
                   <span>Krystian Karpiuk, radca prawny</span>
                   <time dateTime={post.date}>Opublikowano {formatDate(post.date)}</time>
@@ -163,15 +166,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             <div className={resignationStyles.layout}>
               <ResignationToc contentId={contentId} />
               <div className={resignationStyles.body} id={contentId}>
-                {!isBoardGuide && <a className={resignationStyles.serviceLink} href="/uslugi/zmiana-zarzadu-spolki-zoo">Zmiana zarządu spółki z o.o. w KRS →</a>}
-                {!isBoardGuide && <ResignationToc mobile contentId={contentId} />}
+                {!hasGuideLead && <a className={resignationStyles.serviceLink} href="/uslugi/zmiana-zarzadu-spolki-zoo">Zmiana zarządu spółki z o.o. w KRS →</a>}
+                {!hasGuideLead && <ResignationToc mobile contentId={contentId} />}
                 <MDXContent code={post.body.code} resignation lead={guideLead} />
               </div>
-              <ResignationHelpCard contentId={contentId} {...(isBoardGuide ? {
+              <ResignationHelpCard contentId={contentId} {...(hasGuideLead ? {
                 heading: "Wolisz zlecić zgłoszenie?",
                 text: "Przygotujemy dokumenty i złożymy wniosek do KRS w imieniu spółki.",
                 buttonLabel: "Opisz sprawę",
-                ariaLabel: "Pomoc przy zgłoszeniu zmiany zarządu",
+                ariaLabel: isAddressGuide ? "Pomoc przy zgłoszeniu zmiany adresu lub siedziby" : "Pomoc przy zgłoszeniu zmiany zarządu",
+                ...(isAddressGuide ? { href: "#formularz-kontaktowy" } : {}),
               } : {})} />
             </div>
           </article>

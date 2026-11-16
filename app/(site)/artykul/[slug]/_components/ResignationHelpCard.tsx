@@ -4,13 +4,14 @@ import { useEffect, useState } from "react"
 import styles from "../resignation.module.css"
 
 export default function ResignationHelpCard({
+  href,
   contentId = "resignation-content",
   panelSelector = ".contactPanel",
   heading = "Potrzebujesz pomocy przy rezygnacji?",
   text = "Sprawdzimy, jaki tryb ma zastosowanie w Twojej sytuacji, i pomożemy przygotować dokumenty.",
   buttonLabel = "Napisz do nas",
   ariaLabel = "Pomoc przy rezygnacji",
-}: { contentId?: string; panelSelector?: string; heading?: string; text?: string; buttonLabel?: string; ariaLabel?: string }) {
+}: { href?: string; contentId?: string; panelSelector?: string; heading?: string; text?: string; buttonLabel?: string; ariaLabel?: string }) {
   const [panelVisible, setPanelVisible] = useState(false)
 
   useEffect(() => {
@@ -47,7 +48,11 @@ export default function ResignationHelpCard({
       <div className={styles.helpCard} data-hidden={panelVisible} aria-hidden={panelVisible}>
         <h2>{heading}</h2>
         <p>{text}</p>
-        <button type="button" onClick={goToForm} disabled={panelVisible}>{buttonLabel}</button>
+        {href ? (
+          <a href={href} onClick={(event) => { event.preventDefault(); goToForm() }} tabIndex={panelVisible ? -1 : undefined}>{buttonLabel}</a>
+        ) : (
+          <button type="button" onClick={goToForm} disabled={panelVisible}>{buttonLabel}</button>
+        )}
       </div>
     </aside>
   )
