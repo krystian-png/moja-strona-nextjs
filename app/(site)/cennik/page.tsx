@@ -81,7 +81,7 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
+  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług",
   description:
     "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
   alternates: { canonical: pageUrl },

@@ -106,7 +106,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana umowy spółki z o.o. – S24 lub notariusz, od 999 zł | ZmianaKRS",
+  title: "Zmiana umowy spółki z o.o. – S24 lub notariusz, od 999 zł",
   description:
     "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian. Obsługa od 999 zł.",
   alternates: {

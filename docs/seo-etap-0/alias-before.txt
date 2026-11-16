@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+date: Mon, 16 Nov 2026 10:37:06 GMT
+server: envoy
+
+HTTP/2 308 
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+date: Mon, 16 Nov 2026 10:37:07 GMT
+location: /artykul/prokurent-krs-ustanowienie-prokury-wpis
+server: envoy
+strict-transport-security: max-age=63072000
+vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url
+x-matched-path: /blog/[slug]
+x-powered-by: Next.js
+x-vercel-cache: MISS
+x-vercel-id: cle1::iad1::tdhz4-1794825427606-943e73a1ddc4
+x-envoy-upstream-service-time: 229
+

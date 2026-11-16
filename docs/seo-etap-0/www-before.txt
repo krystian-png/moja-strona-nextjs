@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+date: Mon, 16 Nov 2026 10:35:10 GMT
+server: envoy
+
+HTTP/2 301 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+date: Mon, 16 Nov 2026 10:35:10 GMT
+location: https://zmianakrs.pl/
+server: envoy
+strict-transport-security: max-age=63072000
+x-vercel-id: cle1::tdhz4-1794825310706-0e0bd0bf8a1c
+x-envoy-upstream-service-time: 184
+

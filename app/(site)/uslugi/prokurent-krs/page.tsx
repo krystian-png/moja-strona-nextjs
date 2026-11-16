@@ -99,7 +99,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS | ZmianaKRS",
+  title: "Prokurent w spółce – ustanowienie prokury i wpis do KRS",
   description:
     "Ustanowienie prokurenta, powołanie lub odwołanie prokury i wpis do KRS. Przygotujemy dokumenty i złożymy wniosek w PRS lub S24 za Ciebie. Obsługa od 999 zł netto.",
   alternates: { canonical: pageUrl },
@@ -419,7 +419,7 @@ export default function ProkurentKrsPage() {
               <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
                 <li>
                   <Link
-                    href="/blog/prokurent-krs-ustanowienie-prokury-wpis"
+                    href="/artykul/prokurent-krs-ustanowienie-prokury-wpis"
                     className="text-amber-400 underline transition hover:text-amber-300"
                   >
                     Prokurent w KRS – kompletny przewodnik

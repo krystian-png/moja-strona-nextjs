@@ -15,7 +15,7 @@ const pageDescription =
   "Blog o zmianach w KRS. Przydatne artykuły o aktualizacji danych w KRS, zmianach w umowie spółki i procedurach rejestracyjnych."
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: "Blog | Artykuły o zmianach w KRS",
   description: pageDescription,
   alternates: {
     canonical: pagePath,

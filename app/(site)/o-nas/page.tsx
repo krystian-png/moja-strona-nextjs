@@ -25,7 +25,7 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
-  title: "O nas – Eksperci ds. zmian wpisu w KRS | ZmianaKRS",
+  title: "O nas – Eksperci ds. zmian wpisu w KRS",
   description:
     "Poznaj zespół ZmianaKRS — specjalistów ds. zmian wpisu w KRS i obsługi wniosków rejestrowych. Od lat wspieramy spółki w bezpiecznym i sprawnym przeprowadzeniu zmian w rejestrze.",
   alternates: {

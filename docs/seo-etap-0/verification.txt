@@ -1,0 +1,26 @@
+/: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/cennik: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/o-nas: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/ksiegowi: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/blog: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/zmiana-zarzadu-spolki-zoo: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/zmiana-adresu-spolki-zoo: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/prokurent-krs: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/zmiana-umowy-spolki-zoo: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/zmiana-wspolnika-spolki-zoo: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/zmiana-kodow-pkd: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/prokurent-krs-ustanowienie-prokury-wpis: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/zmiana-adresu-i-siedziby-spolki-w-krs: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/zmiana-przedmiotu-dzialalnosci-spolka-zoo: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/zmiany-spolka-jawna-zgloszenie-krs: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/artykul/zmiana-umowy-spolki-portal-s24-instrukcja: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/blog/prokurent-krs-ustanowienie-prokury-wpis: HTTP 200, 1 title, 1 marka, 1 H1, canonical i kotwice zachowane; bez noindex
+/uslugi/prokurent-krs → /artykul/prokurent-krs-ustanowienie-prokury-wpis: href obecny, bez przekierowania, HTTP 200, właściwy canonical
+/uslugi/zmiana-adresu-spolki-zoo → /artykul/zmiana-adresu-i-siedziby-spolki-w-krs: href obecny, bez przekierowania, HTTP 200, właściwy canonical
+/uslugi → /uslugi/zmiana-kodow-pkd: href obecny, bez przekierowania, HTTP 200, właściwy canonical
+Wszystkie 17 wygenerowanych artykułów: dokładnie 1 H1
+Preview lokalny: HTTP 200 + X-Robots-Tag noindex, nofollow na głównej, PKD i artykule; robots Allow: /; admin 401 — PASS
+OG/Twitter title: identyczne z produkcją na wszystkich 19 stronach — PASS
