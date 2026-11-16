@@ -5,7 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-export default function Navbar() {
+type NavbarProps = {
+  contactAction?: { href: string; label: string };
+  className?: string;
+};
+
+export default function Navbar({ contactAction, className }: NavbarProps = {}) {
   const pathname = usePathname() ?? "";
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -36,7 +41,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-background shadow-sm border-b border-border sticky top-0 z-50">
+    <header className={["bg-background shadow-sm border-b border-border sticky top-0 z-50", className].filter(Boolean).join(" ")}>
       <div className="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 text-sm text-foreground">
         {/* Kontakt */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base md:text-lg font-semibold">
@@ -108,6 +113,7 @@ export default function Navbar() {
             )}
           </svg>
         </button>
+          {contactAction && <a href={contactAction.href} onClick={() => setIsMenuOpen(false)}>{contactAction.label}</a>}
           <LanguageSwitcher current="pl" />
         </div>
 
@@ -139,6 +145,7 @@ export default function Navbar() {
             })}
           </ul>
         </nav>
+        {contactAction && <a className="hidden md:inline-flex" href={contactAction.href}>{contactAction.label}</a>}
         <div className="hidden md:block"><LanguageSwitcher current={pathname.startsWith("/en") ? "en" : pathname.startsWith("/uk") ? "uk" : pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/zh") ? "zh" : pathname.startsWith("/vi") ? "vi" : "pl"} /></div>
       </div>
 
