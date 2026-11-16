@@ -131,3 +131,23 @@
 }
 
 .boardGuide .body :global(.guideServiceLink) { display: inline-block; font-size: 16px; margin-bottom: 24px; }
+
+/* Address guide only: numbered H3 steps, checklist and local contact action. */
+.addressGuide .body :global(.addressStep) { position: relative; padding-left: 58px; min-height: 40px; }
+.addressGuide .body :global(.addressStep) > span:first-child { position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 40px; height: 40px; background: var(--page-gold); color: var(--page-navy); border-radius: 50%; }
+.addressGuide .body :global(.addressChecklist) { list-style: none; padding: 0; }
+.addressGuide .body :global(.addressChecklist) li { display: flex; align-items: start; gap: 14px; padding: 0; }
+.addressGuide .body :global(.addressChecklist) svg { flex-shrink: 0; margin-top: 6px; color: var(--page-blue); }
+.addressGuide .helpCard a { display: block; width: 100%; padding: 12px; border-radius: 8px; background: var(--page-gold); color: var(--page-navy); font-weight: 700; text-align: center; text-decoration: none; }
+.addressGuide .helpCard a:focus-visible { outline: 3px solid var(--page-blue); outline-offset: 4px; }
+.addressGuide .body :global(.contactPanel) :is(a, button, input, textarea):focus-visible { outline-color: var(--page-white); }
+.addressGuide .body :global(.contactPanel) a { color: var(--page-gold); }
+.addressGuide .body :global(.contactPanel) button[type="submit"], .addressGuide .body :global(.contactPanel) button[type="submit"]:is(:hover, :focus, :disabled) { background: var(--page-gold); color: var(--page-navy); opacity: 1; }
+.addressGuide .body :global(.contactPanel) button[type="submit"]:is(:hover, :focus) { box-shadow: inset 0 0 0 2px var(--page-white); }
+.addressGuide .body :global(.contactPanel) button[type="submit"]:disabled { cursor: wait; border: 2px dashed var(--page-navy); text-decoration: underline; }
+.addressGuide .body :global(.contactPanel) input, .addressGuide .body :global(.contactPanel) textarea { background: var(--page-white); color: var(--page-navy); }
+.addressGuide .body :global(.contactPanel) :is(input, textarea)::placeholder { color: var(--page-sapphire); }
+@media (max-width: 767px) {
+ .addressGuide .hero { padding-inline: 16px; }
+ .addressGuide .layout { padding-inline: 16px; }
+}

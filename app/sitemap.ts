@@ -75,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       post.updated && [
         "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs",
         "zmiana-zarzadu-spolka-zoo-krok-po-kroku-najwazniejsze-formalnosci",
+        "zmiana-adresu-i-siedziby-spolki-w-krs",
       ].includes(post.slug) ? post.updated : post.date,
     ),
   }));

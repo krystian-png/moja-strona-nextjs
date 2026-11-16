@@ -1,484 +1,411 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import Script from "next/script"
-import { Phone } from "lucide-react"
+import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { brandName, organizationSchema } from "@/lib/seo";
+import InlineContactForm from "../_components/InlineContactForm";
+import styles from "./page.module.css";
 
-import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
-import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
-import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
-
-import InlineContactForm from "../_components/InlineContactForm"
-
-const pagePath = "/uslugi/zmiana-adresu-spolki-zoo"
-const pageUrl = `${siteUrl}${pagePath}`
-
-const legalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Zmiana adresu i siedziby sp. z o.o. – zgłoszenie do KRS (PRS/S24)",
-  url: pageUrl,
-  description:
-    "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń. Obsługa od 999 zł.",
-  offers: {
-    "@type": "Offer",
-    price: "999",
-    priceCurrency: "PLN",
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      description: "cena netto od",
-    },
-  },
-  areaServed: { "@type": "Country", name: "Poland" },
-  provider: organizationSchema,
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Czym różni się zmiana adresu od zmiany siedziby spółki z o.o.?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Siedziba to miejscowość (art. 41 k.c.). Zmiana ulicy/numeru/lokalu w tej samej miejscowości to zmiana adresu, a zmiana miejscowości to zmiana siedziby.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Jaki jest termin na zgłoszenie zmiany adresu lub siedziby do KRS?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Wniosek o wpis do rejestru składa się nie później niż w terminie 7 dni od zdarzenia uzasadniającego wpis (art. 22 ust. 1 ustawy o KRS).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Czy zmiana siedziby zawsze oznacza zmianę umowy spółki?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tak, zmiana siedziby (miejscowości) to zmiana umowy spółki i wymaga uchwały wspólników oraz wpisu do KRS (art. 255 § 1 KSH).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Ile kosztuje zgłoszenie zmiany adresu lub siedziby do KRS?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 ust. 1–2 u.k.s.c.).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Jakie ryzyko wiąże się z brakiem aktualizacji danych adresowych?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Brak aktualizacji może powodować ryzyka doręczeń i skutki procesowe (art. 133 § 2² k.p.c.) oraz ryzyka obrotowe wynikające z zasady zaufania do rejestru (art. 17 ust. 1–2 ustawy o KRS).",
-      },
-    },
-  ],
-}
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Strona główna",
-      item: `${siteUrl}/`,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Usługi",
-      item: `${siteUrl}/uslugi`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Zmiana adresu i siedziby sp. z o.o.",
-      item: pageUrl,
-    },
-  ],
-}
-
+const pageUrl = "https://zmianakrs.pl/uslugi/zmiana-adresu-spolki-zoo";
+const title = "Zmiana adresu i siedziby spółki z o.o. w KRS";
+const description =
+  "Ta sama miejscowość czy inna? Sprawdź, kiedy wystarczy uchwała zarządu, kiedy zmienić umowę spółki, ile kosztuje wpis i jak przeprowadzimy zgłoszenie.";
 export const metadata: Metadata = {
-  title: "Zmiana adresu spółki z o.o. – obsługa od 999 zł",
-  description:
-    "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
-  alternates: {
-    canonical: pageUrl,
-  },
+  title,
+  description,
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Zmiana adresu spółki z o.o. – obsługa od 999 zł | ZmianaKRS",
-    description:
-      "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
+    title: `${title} | ${brandName}`,
+    description,
     url: pageUrl,
     siteName: brandName,
     images: [
       {
-        url: `${siteUrl}/images/krs-services.png`,
+        url: "https://zmianakrs.pl/images/krs-services.png",
         width: 1200,
         height: 630,
-        alt: "Zmiana adresu i siedziby spółki z o.o. – obsługa ZmianaKRS",
+        alt: title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana adresu spółki z o.o. – obsługa od 999 zł | ZmianaKRS",
-    description:
-      "Zmiana adresu spółki z o.o. i zmiana siedziby w KRS: różnice prawne, dokumenty, wniosek przez PRS/S24, opłaty 250/200 zł, terminy, najczęstsze błędy i ryzyka doręczeń.",
-    images: [`${siteUrl}/images/krs-services.png`],
+    title: `${title} | ${brandName}`,
+    description,
+    images: ["https://zmianakrs.pl/images/krs-services.png"],
   },
-}
+};
+const faq = [
+  {
+    question: "Ile mam czasu na zgłoszenie do KRS?",
+    paragraphs: [
+      "Wniosek należy złożyć w terminie 7 dni od zdarzenia uzasadniającego wpis. Przy zmianie adresu jest to co do zasady dzień zmiany wskazany w uchwale zarządu. Przy zmianie siedziby licz ten termin od podjęcia uchwały zmieniającej umowę spółki.",
+      "Przy zmianie siedziby obowiązuje też drugi, ważniejszy termin. Zmiana umowy, której nie zgłoszono do sądu rejestrowego w ciągu 6 miesięcy od jej podjęcia, nie wywołuje skutków prawnych (uchwała Sądu Najwyższego z 29 kwietnia 2022 r., III CZP 75/22). Jeżeli umowę zmieniono na wzorcu w S24, termin ten wynosi 7 dni (art. 256 § 3 w zw. z art. 169 § 2 k.s.h.).",
+    ],
+  },
+  {
+    question: "Od kiedy zmiana jest skuteczna?",
+    paragraphs: [
+      "Zmiana siedziby jest skuteczna od dnia wpisu do KRS. Jeżeli zmieniasz sam adres w tej samej miejscowości i umowa spółki pozostaje bez zmian, zmiana jest co do zasady skuteczna z dniem wskazanym w uchwale zarządu, a wpis ujawnia nowy adres. Do czasu aktualizacji KRS zadbaj o odbiór pism pod dotychczasowym adresem.",
+    ],
+  },
+  {
+    question: "Czy przeprowadzkę można załatwić przez S24?",
+    paragraphs: [
+      "Zmianę siedziby można przeprowadzić w S24, jeżeli umowę spółki zawarto na wzorcu, nie zmieniano jej później poza wzorcem, a postanowienie o siedzibie można zmienić w tym systemie. W przeciwnym razie uchwałę zmieniającą umowę protokołuje notariusz, a wniosek składa się w PRS. Przy samej zmianie adresu sprawdzimy, czy spółka może skorzystać z wzorca uchwały adresowej w S24.",
+    ],
+  },
+  {
+    question: "Czy mogę zgłosić przeprowadzkę razem z innymi zmianami?",
+    paragraphs: [
+      "Tak, jeżeli zmiany da się ująć we wspólnym wniosku. Jeśli równocześnie zmieniasz zarząd albo inne postanowienia umowy, ustalimy kolejność czynności i zakres zgłoszenia.",
+    ],
+  },
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: title,
+    description,
+    url: pageUrl,
+    provider: organizationSchema,
+    areaServed: { "@type": "Country", name: "Poland" },
+    offers: {
+      "@type": "Offer",
+      url: `${pageUrl}#zmiana-adresu`,
+      description: "Standardowa zmiana adresu w tej samej miejscowości",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: 499,
+        priceCurrency: "PLN",
+        valueAddedTaxIncluded: false,
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Strona główna",
+        item: "https://zmianakrs.pl/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Usługi",
+        item: "https://zmianakrs.pl/uslugi",
+      },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ question, paragraphs }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: paragraphs.join(" ") },
+    })),
+  },
+];
 
-export default function ZmianaAdresuSpolkiZooPage() {
+export default function AddressPage() {
   return (
-    <div className="relative min-h-screen text-white">
-      <Script id="zmiana-adresu-structured-data" type="application/ld+json">
-        {JSON.stringify([legalServiceSchema, faqSchema, breadcrumbSchema])}
-      </Script>
-
-      <div
-        className="fixed inset-0 -z-20"
-        style={{
-          backgroundImage: `url(${servicesBackground.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+    <div className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemas).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="fixed inset-0 -z-10 bg-slate-950/60" />
-
-      <Navbar />
-
-      <main className="relative px-4 pb-14 pt-24 sm:px-6 lg:px-8">
-        <section className="mx-auto mb-12 max-w-7xl">
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8 lg:p-10">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
-              <div className="space-y-6">
-                <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                  Zmiana adresu i siedziby spółki z o.o. – zgłoszenie do KRS (PRS / S24)
-                </h1>
-                <p className="text-lg text-white/90">
-                  Zmiana adresu spółki z o.o. w obrębie tej samej miejscowości oraz zmiana siedziby (czyli miejscowości) to dwa różne
-                  zdarzenia rejestrowe, które w praktyce wymagają innej dokumentacji i innej kwalifikacji prawnej. W KRS ujawnia się
-                  zarówno siedzibę, jak i adres, a spółka ma obowiązek zgłaszać zmiany danych w ustawowym terminie 7 dni (art. 22 ust.
-                  1 ustawy o KRS). W tej usłudze prowadzimy sprawę od kwalifikacji do wpisu: ustalamy, czy masz zmianę adresu (ulica,
-                  numer, lokal w tej samej miejscowości), czy zmianę siedziby (inna miejscowość), dobieramy właściwy tryb złożenia
-                  wniosku (PRS albo – jeśli spełnione warunki – S24), przygotowujemy dokumenty i składamy wniosek elektronicznie,
-                  pilnując spójności danych oraz podpisów. Jeżeli chcesz przeprowadzić zmianę adresu spółki z o.o. z ograniczeniem ryzyka braków
-                  formalnych, możemy przeprowadzić całą procedurę w Twoim imieniu – pełna obsługa od 999 zł netto.
+      <Navbar contactAction={{ href: "#kontakt", label: "Opisz sprawę" }} />
+      <main>
+        <section className={styles.hero}>
+          <div className={styles.container}>
+            <div className={styles.heroGrid}>
+              <div>
+                <h1>{title}</h1>
+                <p>
+                  Zmieniasz biuro w tej samej miejscowości? Zwykle wystarczy
+                  decyzja o nowym adresie i zgłoszenie do KRS. Przy
+                  przeprowadzce do innej miejscowości trzeba również zmienić
+                  umowę spółki. Przygotujemy dokumenty i przeprowadzimy
+                  zgłoszenie.
                 </p>
-                <p className="text-lg text-white/90">
-                  <strong>Szukasz „zmiana adresu spółki z o.o.”?</strong> Zgłosimy zmianę adresu Twojej spółki z o.o. do KRS (PRS/S24)
-                  i doprowadzimy sprawę do wpisu — pełna obsługa od <strong>999 zł netto</strong>.
-                </p>
-                <p className="text-lg text-white/90">Wyceń zmianę adresu spółki z o.o. – zostaw dane w formularzu albo zadzwoń: 572 234 779.</p>
-                <p className="text-lg text-white/90">
-                  W tej usłudze prowadzimy sprawę „od kwalifikacji do wpisu”: ustalamy, czy masz <strong>zmianę adresu</strong>
-                  (ulica/numer/lokal w tej samej miejscowości), czy <strong>zmianę siedziby</strong> (inna miejscowość), dobieramy
-                  właściwy tryb złożenia wniosku (PRS albo – jeśli spełnione warunki – S24), przygotowujemy dokumenty i składamy
-                  wniosek elektronicznie, pilnując spójności danych oraz podpisów.
-                </p>
-                <p className="text-lg text-white/90">
-                  Na naszej stronie znajdziesz również inne usługi związane ze zmianami w KRS – zobacz: <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">usługi dotyczące zmian wpisów w KRS</Link>.
-                </p>
-                <p className="text-xl">
-                  <a
-                    href="tel:+48572234779"
-                    className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"
-                  >
-                    <Phone className="h-5 w-5 text-amber-400" />
-                    572 234 779
+                <p>
+                  <a className={styles.primary} href="#kontakt">
+                    Zleć zmianę adresu lub siedziby
                   </a>
                 </p>
               </div>
-              <div className="w-full lg:pt-2">
-                <InlineContactForm className="max-w-md" />
-              </div>
+              <aside className={styles.priceCard}>
+                <p className={styles.heroPrice}>
+                  <strong>od 499 zł netto</strong>
+                </p>
+                <p>standardowa zmiana adresu w tej samej miejscowości</p>
+              </aside>
+            </div>
+            <div className={styles.scenarios}>
+              <a href="#zmiana-adresu" className={styles.scenario}>
+                <h3>Ta sama miejscowość</h3>
+                <p>
+                  Zmienia się ulica, numer budynku lub lokalu. Zwykle decyzję
+                  podejmuje zarząd. Jeżeli w umowie spółki wpisano także pełny
+                  adres, sprawdzimy, czy trzeba zmienić jej treść.
+                </p>
+                <span className={styles.scenarioLink}>
+                  Zobacz zakres zmiany adresu →
+                </span>
+              </a>
+              <a href="#zmiana-siedziby" className={styles.scenario}>
+                <h3>Inna miejscowość</h3>
+                <p>
+                  Zmienia się siedziba spółki. Potrzebna jest uchwała wspólników
+                  zmieniająca umowę i wpis do KRS. Sprawdzimy, czy można
+                  przeprowadzić zmianę w S24, czy potrzebny będzie notariusz.
+                </p>
+                <span className={styles.scenarioLink}>
+                  Zobacz zakres zmiany siedziby →
+                </span>
+              </a>
             </div>
           </div>
         </section>
-
-        <section className="mx-auto max-w-6xl space-y-10">
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Podstawa prawna zmiany adresu i siedziby spółki z o.o.</h2>
-              <p className="text-lg text-white/90">
-                W rejestrze przedsiębiorców ujawnia się m.in. siedzibę i adres podmiotu, więc ich aktualizacja jest klasycznym
-                obowiązkiem rejestrowym. Ustawa o KRS przewiduje krótki termin: <strong>wniosek o wpis do rejestru składa się nie
-                później niż w terminie 7 dni od zdarzenia uzasadniającego wpis</strong> (art. 22 ust. 1 ustawy o KRS).
+        <section id="zakres" className={styles.tinted}>
+          <div className={styles.container}>
+            <h2>Ile kosztuje zmiana adresu lub siedziby spółki?</h2>
+            <div className={styles.offers}>
+              <article id="zmiana-adresu" className={styles.addressOffer}>
+                <h3>Zmiana adresu w tej samej miejscowości</h3>
+                <p>
+                  <strong>Od 499 zł netto</strong> za obsługę standardowej zmiany adresu.
+                  Sprawdzimy umowę spółki, przygotujemy potrzebne dokumenty i
+                  zgłosimy nowy adres do KRS. Postępowanie przed sądem
+                  rejestrowym prowadzimy w uzgodnionym zakresie. Opłatę sądową i
+                  ewentualną opłatę skarbową rozliczamy osobno.
+                </p>
+              </article>
+              <article id="zmiana-siedziby" className={styles.seatOffer}>
+                <h3>Zmiana siedziby i adresu</h3>
+                <p>
+                  Ustalimy, jak zmienić umowę spółki, przygotujemy dokumenty i
+                  zgłosimy nową siedzibę oraz adres do KRS. Jeżeli zmianę umowy
+                  można przeprowadzić w S24, jej obsługa kosztuje 599 zł netto.
+                  Jeżeli potrzebny jest protokół notarialny, koordynujemy
+                  czynności z notariuszem, a obsługa zmiany umowy w tym
+                  wariancie zaczyna się od 1 100 zł netto. Zakres i wycenę całej
+                  przeprowadzki podamy przed rozpoczęciem pracy. Koszt
+                  notariusza i opłaty urzędowe rozliczamy osobno.
+                </p>
+                <p>
+                  <a href="/uslugi/zmiana-umowy-spolki-zoo">
+                    Sprawdź zakres usługi zmiany umowy spółki
+                  </a>
+                </p>
+              </article>
+            </div>
+            <article className={styles.readyOffer}>
+              <h3>Masz już uchwałę lub inne dokumenty?</h3>
+              <p>
+                Napisz, jakie dokumenty są gotowe. Sprawdzimy je pod kątem
+                zgłoszenia i ustalimy zakres obsługi samego wniosku.
               </p>
-              <p className="text-lg text-white/90">
-                Rozróżnienie „adres vs siedziba” nie jest językowe, tylko prawne. Zgodnie z Kodeksem cywilnym <strong>siedzibą osoby
-                prawnej jest miejscowość</strong> (art. 41 k.c.). To znaczy, że:
+              <p>
+                <a href="#kontakt">Opisz gotowe dokumenty</a>
               </p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>gdy zmieniasz <strong>ulicę/numer/lokal</strong> w tej samej miejscowości — aktualizujesz <strong>adres</strong>,</li>
-                <li>gdy zmieniasz <strong>miejscowość</strong> — zmieniasz <strong>siedzibę</strong>.</li>
-              </ul>
-              <p className="text-lg text-white/90">
-                W spółce z o.o. zmiana siedziby (miejscowości) wchodzi w reżim czynności korporacyjnej: <strong>jest to zmiana umowy
-                spółki</strong> i wymaga <strong>uchwały wspólników oraz wpisu do rejestru</strong> (art. 255 § 1 KSH). W praktyce ma to
-                „twardy” skutek: bez właściwej dokumentacji (uchwały/zmiany umowy) wniosek o zmianę siedziby będzie traktowany jak
-                niekompletny.
+            </article>
+            <div className={styles.feeCard}>
+              <h3>Opłaty sądowe i pozostałe koszty</h3>
+              <table className={styles.fees}>
+                <caption>Opłaty sądowe i pozostałe koszty</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Rodzaj opłaty</th>
+                    <th scope="col">Kwota</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      Standardowy wniosek o zmianę wpisu przez PRS
+                    </th>
+                    <td>250 zł</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Zmiana dokonana na wzorcu uchwały w S24, gdy sprawę można
+                      złożyć w tym systemie
+                    </th>
+                    <td>200 zł</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Opłata skarbowa od złożenia pełnomocnictwa, jeśli jest
+                      należna
+                    </th>
+                    <td>17 zł</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      Notariusz – protokół uchwały zmieniającej umowę (tylko
+                      poza S24)
+                    </th>
+                    <td>według taksy, maksymalnie 900 zł + VAT, oraz wypisy</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                Od 29 listopada 2025 r. do wniosków o zmianę wpisu nie dolicza
+                się 100 zł za ogłoszenie w Monitorze Sądowym i Gospodarczym.
               </p>
-              <p className="text-lg text-white/90">
-                Dodatkowo, aktualność danych ma znaczenie „obrotowe”. Ustawa o KRS wprowadza domniemania dotyczące danych ujawnionych
-                w rejestrze oraz ogranicza możliwość powoływania się wobec osób trzecich na niezgodność wpisu ze stanem rzeczywistym,
-                jeżeli podmiot zaniedbał zgłoszenia zmian (art. 17 ust. 1–2 ustawy o KRS). To jest jeden z powodów, dla których przy
-                zmianach adresowych nie warto odkładać wniosku.
+              <p>
+                Przykład. Przy standardowej zmianie adresu zgłaszanej przez PRS
+                koszt obejmuje honorarium od 499 zł netto i 250 zł opłaty
+                sądowej. Do honorarium doliczamy VAT. Jeżeli składamy
+                pełnomocnictwo, dochodzi opłata skarbowa, o ile jest należna.
+              </p>
+              <p>
+                <a href="/cennik">Zobacz cennik obsługi zmian w KRS</a>
+              </p>
+              <p>
+                <a href="#kontakt">Opisz swoją sprawę</a>
               </p>
             </div>
           </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Koszty zmiany adresu spółki z o.o. w KRS (PRS/S24) + czas wpisu</h2>
-              <p className="text-lg text-white/90">Opłata sądowa za wpis zmiany w rejestrze przedsiębiorców zależy od trybu złożenia wniosku:</p>
-              <div className="overflow-x-auto rounded-lg border border-white/20 bg-white/5">
-                <table className="w-full min-w-[420px] border-collapse text-left text-base">
-                  <thead>
-                    <tr className="border-b border-white/20 bg-white/10">
-                      <th className="px-5 py-3.5">Zakres zmiany</th>
-                      <th className="px-5 py-3.5">Opłata sądowa</th>
-                      <th className="px-5 py-3.5">Uwagi praktyczne</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-white/20 bg-white/5">
-                      <td className="px-5 py-3.5">Zmiana adresu (ta sama miejscowość)</td>
-                      <td className="px-5 py-3.5">250 zł (PRS) / 200 zł (S24)</td>
-                      <td className="px-5 py-3.5">S24 tylko w sytuacjach ustawowych przy wykorzystaniu wzorca</td>
-                    </tr>
-                    <tr className="bg-white/[0.03]">
-                      <td className="px-5 py-3.5">Zmiana siedziby (inna miejscowość)</td>
-                      <td className="px-5 py-3.5">250 zł (PRS)</td>
-                      <td className="px-5 py-3.5">Zwykle dochodzą dokumenty zmiany umowy spółki</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-lg text-white/90">Podstawa prawna opłat: <strong>250 zł</strong> (art. 55 ust. 1 u.k.s.c.) oraz <strong>200 zł</strong> w przypadkach ustawowych (art. 55 ust. 2 u.k.s.c.).</p>
-              <p className="text-lg text-white/90">Jeżeli wniosek składa pełnomocnik, standardowo dochodzi opłata skarbowa od pełnomocnictwa.</p>
-              <p className="text-lg text-white/90">Jeżeli mamy <strong>zmianę siedziby (miejscowości)</strong>, zwykle dochodzi też koszt przygotowania dokumentów „umownych” (uchwała/zmiana umowy) i – zależnie od trybu – ewentualne koszty notarialne, jeżeli dana zmiana wymaga formy aktu notarialnego.</p>
-              <p className="text-lg text-white/90"><strong>Koszt naszej obsługi zmiany adresu/siedziby sp. z o.o. zaczyna się od 999 zł netto</strong> i zależy od tego, czy sprawa jest prostą aktualizacją adresu, czy zmianą siedziby wymagającą pełnego pakietu korporacyjnego oraz od liczby dokumentów i złożoności stanu faktycznego.</p>
-              <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany adresu/siedziby do KRS?</h3>
-              <p className="text-lg text-white/90">Czas zależy od obciążenia sądu rejestrowego oraz od jakości wniosku i dokumentów. W praktyce opóźnienia wynikają najczęściej z wezwań do uzupełnienia braków formalnych: rozbieżności danych, braków w dokumentach stanowiących podstawę wpisu albo problemów z podpisami i załącznikami. Dlatego w tej usłudze nacisk kładziemy na kompletność i spójność dokumentacji „od razu”, zanim wniosek trafi do sądu.</p>
-              <p className="text-lg text-white/90">Wiesz już, ile kosztuje zmiana adresu spółki z o.o. — zostaw dane, wycenimy Twoją sprawę.</p>
-              <p className="text-lg text-white/90">Poznaj koszt innych zmian: <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300"><strong>Poznaj koszt innych zmian</strong></Link>.</p>
+        </section>
+        <section className={styles.cooperation}>
+          <div className={styles.container}>
+            <h2>Jak przeprowadzimy zmianę?</h2>
+            <ol className={styles.steps}>
+              <li>
+                <span className={styles.stepNumber} aria-hidden="true">
+                  1
+                </span>
+                <h3>Ustalamy zakres.</h3>
+                <p>
+                  Podajesz nazwę spółki oraz obecny i planowany adres.
+                  Sprawdzamy umowę, dotychczasowy tryb zmian w spółce i
+                  dokumenty, które już masz.
+                </p>
+              </li>
+              <li>
+                <span className={styles.stepNumber} aria-hidden="true">
+                  2
+                </span>
+                <h3>Przygotowujemy dokumenty.</h3>
+                <p>
+                  Ustalamy, kto podejmuje decyzję i kto podpisuje dokumenty oraz
+                  wniosek. Jeżeli zmiana wymaga notariusza, uzgadniamy z nim
+                  czynności.
+                </p>
+              </li>
+              <li>
+                <span className={styles.stepNumber} aria-hidden="true">
+                  3
+                </span>
+                <h3>Zgłaszamy zmianę.</h3>
+                <p>
+                  Składamy wniosek w odpowiednim systemie i informujemy o
+                  przebiegu postępowania przed sądem rejestrowym. Po wpisie
+                  przekazujemy potwierdzenie zmiany w KRS.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section className={styles.section}>
+          <div className={styles.narrow}>
+            <article>
+              <h2>Uchwała zarządu o zmianie adresu spółki</h2>
+              <p>
+                Jeżeli spółka przeprowadza się w tej samej miejscowości, a
+                zmiana mieści się w kompetencjach zarządu, decyzję zwykle
+                dokumentuje uchwała zarządu. Sprawdź najpierw umowę spółki.
+                Jeżeli wskazuje konkretną ulicę i numer, może być potrzebna
+                także zmiana umowy.
+              </p>
+              <blockquote>
+                <strong>Przykładowa treść postanowienia uchwały</strong>
+                <p>
+                  &quot;Zarząd [nazwa spółki] sp. z o.o. postanawia zmienić adres
+                  spółki na [ulica, numer budynku i lokalu, kod pocztowy,
+                  miejscowość] z dniem [data].&quot;
+                </p>
+              </blockquote>
+              <p>
+                W dokumencie podaj datę podjęcia uchwały. Ustal, kto podpisuje
+                dokument zgodnie z zasadami podejmowania i dokumentowania uchwał
+                zarządu. Podpis pod wnioskiem do KRS to osobna kwestia. Wniosek
+                podpisują osoby uprawnione do reprezentacji spółki albo jej
+                pełnomocnik procesowy.
+              </p>
+              <p>
+                Przy zmianie miejscowości wspólnicy podejmują uchwałę
+                zmieniającą postanowienie umowy o siedzibie. Do zgłoszenia
+                potrzebny jest również tekst jednolity zmienionej umowy. Jeżeli
+                uchwałę zaprotokołował notariusz, we wniosku w PRS wskazuje się
+                numer dokumentu w CREWAN.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section className={styles.tinted}>
+          <div className={styles.narrow}>
+            <h2>Termin zgłoszenia i skuteczność zmiany</h2>
+            <div className={styles.faq}>
+              {faq.map(({ question, paragraphs }) => (
+                <article key={question}>
+                  <h3>{question}</h3>
+                  {paragraphs.map((text) => (
+                    <p key={text}>{text}</p>
+                  ))}
+                </article>
+              ))}
             </div>
           </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Dokumenty do zmiany adresu i siedziby spółki z o.o.</h2>
-              <p className="text-lg text-white/90">
-                Dokumenty dobiera się przede wszystkim do tego, czy mamy zmianę <strong>adresu</strong> (w tej samej miejscowości),
-                czy zmianę <strong>siedziby</strong> (inna miejscowość).
+        </section>
+        <section className={styles.section}>
+          <div className={styles.narrow}>
+            <article>
+              <h2>Składasz wniosek samodzielnie?</h2>
+              <p>
+                W poradniku pokazujemy, gdzie zgłosić zmianę, jakie dane
+                uzupełnić, co dołączyć do wniosku i jak go podpisać oraz wysłać.
               </p>
-              <p className="text-lg text-white/90">Przy <strong>zmianie adresu w tej samej miejscowości</strong> najczęściej potrzebne są:</p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>dokument korporacyjny potwierdzający decyzję o zmianie adresu (zwykle uchwała zarządu, chyba że umowa spółki przewiduje inny tryb),</li>
-                <li>wniosek elektroniczny o zmianę danych w KRS (PRS albo – gdy to dopuszczalne – S24),</li>
-                <li>prawidłowe podpisy elektroniczne pod wnioskiem i załącznikami (zgodnie z zasadami reprezentacji).</li>
-              </ul>
-              <p className="text-lg text-white/90">Przy <strong>zmianie siedziby (miejscowości)</strong> potrzebujesz dokumentów „umownych”:</p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>uchwały wspólników o zmianie umowy spółki w zakresie siedziby,</li>
-                <li>dokumentu zmiany umowy w wymaganej formie (w zależności od trybu),</li>
-                <li>w praktyce często także tekstu jednolitego umowy po zmianie – żeby uniknąć niespójności między dokumentami i wnioskiem,</li>
-                <li>wniosku do KRS z właściwymi załącznikami.</li>
-              </ul>
-              <p className="text-lg text-white/90">
-                Tu działa kluczowa reguła: <strong>zmiana umowy spółki wymaga uchwały i wpisu do rejestru</strong> (art. 255 § 1 KSH),
-                więc przy zmianie miejscowości sąd będzie oczekiwał dokumentów potwierdzających zmianę umowy.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-5">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Jak zgłosimy zmianę adresu / siedziby Twojej spółki</h2>
-              <ol className="list-decimal space-y-3 pl-6 text-lg text-white/90">
-                <li>
-                  <strong>Kwalifikacja zmiany (adres czy siedziba)</strong>
-                  <br />
-                  Ustalamy, czy zmieniasz tylko elementy adresowe w tej samej miejscowości, czy zmieniasz miejscowość (siedzibę w
-                  rozumieniu art. 41 k.c.). Od tego zależy cała dokumentacja.
-                </li>
-                <li>
-                  <strong>Dobór trybu i komplet dokumentów</strong>
-                  <br />
-                  Dobieramy tryb złożenia wniosku (PRS albo – gdy spełnione warunki – S24) oraz listę dokumentów. Przy zmianie
-                  siedziby przygotowujemy komplet korporacyjny (uchwała/zmiana umowy) zgodnie z art. 255 § 1 KSH.
-                </li>
-                <li>
-                  <strong>Spójność danych i podpisów</strong>
-                  <br />
-                  Weryfikujemy, czy adres/siedziba są identycznie wpisane w dokumentach, wniosku i załącznikach (miejscowość, kod,
-                  numer lokalu, format zapisu). W praktyce to właśnie niespójność danych jest najczęstszą przyczyną wezwań.
-                </li>
-                <li>
-                  <strong>Złożenie wniosku elektronicznie</strong>
-                  <br />
-                  Składamy wniosek w systemie teleinformatycznym, dołączając dokumenty i wnosząc opłatę sądową adekwatną do trybu
-                  (art. 55 ust. 1 albo ust. 2 u.k.s.c.).
-                </li>
-                <li>
-                  <strong>Monitoring do wpisu</strong>
-                  <br />
-                  Pilnujemy sprawy i reagujemy, jeśli sąd wezwie do uzupełnienia braków, tak żeby nie tracić czasu na „drugie
-                  podejście”.
-                </li>
-              </ol>
-              <InlineContactForm className="max-w-md" />
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Typowe sytuacje klientów – kiedy potrzebna jest zmiana adresu/siedziby w KRS</h2>
-              <h3 className="text-xl font-semibold sm:text-2xl">Przeniesienie biura w tej samej miejscowości (zmiana adresu)</h3>
-              <p className="text-lg text-white/90">
-                To klasyczny przypadek aktualizacji adresu: zmienia się ulica/numer/lokal, ale miejscowość pozostaje ta sama. W
-                takich sprawach kluczowe są spójność danych w dokumentach oraz poprawna forma i podpisy pod załącznikami.
-              </p>
-              <p className="text-lg text-white/90">
-                Przykład praktyczny: uchwała wskazuje „ul. X 10/12”, a we wniosku wpisano „ul. X 10” bez lokalu. Dla spółki to
-                drobiazg, ale dla sądu to rozbieżność danych rejestrowych i typowy powód wezwania.
-              </p>
-              <h3 className="text-xl font-semibold sm:text-2xl">Przeniesienie działalności do innego miasta (zmiana siedziby)</h3>
-              <p className="text-lg text-white/90">
-                To nie jest „zmiana adresu”. Zmienia się siedziba w rozumieniu prawa, czyli miejscowość (art. 41 k.c.), a w spółce z
-                o.o. oznacza to <strong>zmianę umowy spółki</strong> wymagającą uchwały wspólników i wpisu (art. 255 § 1 KSH).
-              </p>
-              <p className="text-lg text-white/90">
-                Tu dochodzi praktyczny wątek skuteczności i komunikacji „na zewnątrz”: przy zmianie siedziby ostrożnie planuje się
-                moment, od którego spółka zaczyna posługiwać się nową miejscowością jako danymi „publicznymi” (umowy, banki,
-                kontrahenci), bo formalnie funkcjonujesz w reżimie ujawnienia danych w rejestrze. Równolegle trzeba zadbać o ciągłość
-                odbioru korespondencji pod starym adresem, bo w obrocie i w doręczeniach punkt odniesienia bywa adresem udostępnionym
-                w rejestrze (art. 133 § 2² k.p.c.).
-              </p>
-              <p className="text-lg text-white/90">
-                Chcesz pełną instrukcję techniczną PRS/S24 i przykłady wypełnienia wniosku? Zobacz poradnik:{" "}
-                <Link
-                  href="/artykul/zmiana-adresu-i-siedziby-spolki-w-krs"
-                  className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
-                >
-                  Zmiana adresu i siedziby spółki w KRS – poradnik krok po kroku
-                </Link>
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Najczęstsze błędy przy zmianie adresu/siedziby spółki z o.o.</h2>
-              <p className="text-lg text-white/90">Najczęściej problem nie wynika z „trudnego formularza”, tylko z klasycznych błędów formalnych:</p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li><strong>Pomylenie adresu z siedzibą</strong>: we wniosku pojawia się nowa miejscowość, ale brak uchwały wspólników i dokumentów zmiany umowy — a w sp. z o.o. to obowiązkowe (art. 255 § 1 KSH).</li>
-                <li><strong>Niespójność danych</strong>: różnice w numerze lokalu, kodzie pocztowym, zapisie miejscowości albo ulicy między uchwałą a wnioskiem.</li>
-                <li><strong>Błędne podpisy</strong>: podpis niezgodny z ujawnioną w KRS reprezentacją.</li>
-                <li><strong>Załączniki w nieprawidłowej formie</strong>: wniosek jest podpisany, ale podstawowe dokumenty są dołączone jako „skan papieru” bez właściwej formy i podpisu elektronicznego.</li>
-                <li><strong>Zły dobór trybu</strong>: próba przeprowadzenia sprawy w S24 w sytuacji, gdy realnie trzeba złożyć wniosek w PRS.</li>
-              </ul>
-              <p className="text-lg text-white/90">Skutek jest zawsze ten sam: wezwanie, zwrot albo przeciągnięcie wpisu w czasie.</p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-5">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">FAQ – zmiana adresu i siedziby spółki z o.o. w KRS</h2>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Czym różni się zmiana adresu od zmiany siedziby spółki z o.o.?</h3>
-                <p className="text-lg text-white/90">Siedziba to miejscowość (art. 41 k.c.). Zmiana ulicy/numeru/lokalu w tej samej miejscowości to zmiana adresu, a zmiana miejscowości to zmiana siedziby.</p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Jaki jest termin na zgłoszenie zmiany adresu lub siedziby do KRS?</h3>
-                <p className="text-lg text-white/90">Wniosek o wpis do rejestru składa się nie później niż w terminie 7 dni od zdarzenia uzasadniającego wpis (art. 22 ust. 1 ustawy o KRS).</p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Czy zmiana siedziby zawsze oznacza zmianę umowy spółki?</h3>
-                <p className="text-lg text-white/90">Tak, zmiana siedziby (miejscowości) to zmiana umowy spółki i wymaga uchwały wspólników oraz wpisu do KRS (art. 255 § 1 KSH).</p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Ile kosztuje zgłoszenie zmiany adresu lub siedziby do KRS?</h3>
-                <p className="text-lg text-white/90">Opłata sądowa wynosi 250 zł przy wniosku przez PRS albo 200 zł w ustawowych przypadkach przy S24 (art. 55 ust. 1–2 u.k.s.c.).</p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Jakie ryzyko wiąże się z brakiem aktualizacji danych adresowych?</h3>
-                <p className="text-lg text-white/90">Brak aktualizacji może powodować ryzyka doręczeń i skutki procesowe (art. 133 § 2² k.p.c.) oraz ryzyka obrotowe wynikające z zasady zaufania do rejestru (art. 17 ust. 1–2 ustawy o KRS).</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-2 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zobacz także</h2>
-              <p className="text-lg text-white/90">Sprawdź również inne najczęściej wybierane usługi związane ze zmianami w KRS.</p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>
-                  <Link href="/uslugi/zmiana-zarzadu-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana zarządu spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi/zmiana-umowy-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana umowy spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi/zmiana-wspolnika-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana wspólnika spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
-                    wszystkie usługi zmian w KRS
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zleć zmianę adresu / siedziby spółki z o.o.</h2>
-              <p className="text-lg text-white/90">
-                Jeżeli chcesz zrobić zmianę adresu albo siedziby z ograniczeniem ryzyka braków formalnych, zleć to nam. Ustalimy prawidłową
-                kwalifikację (adres vs siedziba), przygotujemy dokumenty, złożymy wniosek elektronicznie i przeprowadzimy procedurę
-                zgłoszenia zmiany wpisu w KRS.
-              </p>
-              <p className="text-lg text-white/90">
-                Zobacz też inne{" "}
-                <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
-                  usługi dotyczące zmian wpisów w KRS
-                </Link>{" "}
-                oraz{" "}
-                <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                  Poznaj koszt innych zmian
-                </Link>
-                .
-              </p>
-              <p className="text-xl">
-                <a href="tel:+48572234779" className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300">
-                  <Phone className="h-5 w-5 text-amber-400" />
-                  572 234 779
+              <p>
+                <a href="/artykul/zmiana-adresu-i-siedziby-spolki-w-krs">
+                  Jak złożyć wniosek o zmianę adresu lub siedziby w PRS i S24
                 </a>
               </p>
-              <InlineContactForm className="max-w-md" />
+            </article>
+          </div>
+        </section>
+        <section id="kontakt" className={styles.contact}>
+          <div className={`${styles.container} ${styles.contactGrid}`}>
+            <div>
+              <h2>Zleć zmianę adresu lub siedziby spółki</h2>
+              <p>
+                Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub
+                inne dokumenty. Ustalimy, jakie formalności są potrzebne, i
+                podamy zakres obsługi.
+              </p>
+              <p>
+                <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>
+              </p>
+              <p>
+                <a href="tel:+48572234779">572 234 779</a>
+              </p>
+            </div>
+            <div className={styles.contactForm}>
+              <InlineContactForm className="max-w-none" />
             </div>
           </div>
         </section>
       </main>
-
-      <Footer />
+      <Footer className={styles.footer} />
     </div>
-  )
+  );
 }

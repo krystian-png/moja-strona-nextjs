@@ -1,0 +1,504 @@
+.page {
+  --navy: #111e41;
+  --sapphire: #20376f;
+  --blue: #3459a2;
+  --amber: #e7a944;
+  --warm: #faf7f2;
+  --mist: #eef2f9;
+  --white: #ffffff;
+  --line: #dce6f6;
+  color: var(--navy);
+  background: var(--white);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.container {
+  width: calc(100% - 48px);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.page main h1,
+.page main h2,
+.page main h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.page main h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+.page main h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+.page main h3 {
+  font-size: 1.375rem;
+  color: var(--sapphire);
+  margin-bottom: 16px;
+}
+.page main p {
+  margin-bottom: 20px;
+}
+.page main a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.page main a:hover {
+  text-decoration-thickness: 2px;
+}
+.page :is(a, button, summary, input, textarea):focus-visible {
+  outline: 3px solid var(--sapphire);
+  outline-offset: 4px;
+}
+.page main [id] {
+  scroll-margin-top: calc(var(--site-header-height) + 24px);
+}
+.hero {
+  background: var(--warm);
+  padding-block: 64px;
+}
+.heroGrid {
+  display: grid;
+  gap: 48px;
+  align-items: start;
+}
+.priceCard {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 8px solid var(--amber);
+  border-radius: 16px;
+  padding: 32px;
+}
+.page .heroPrice {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+.heroPrice strong {
+  display: block;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  letter-spacing: -0.035em;
+  margin-top: 6px;
+}
+.page main .primary {
+  background: var(--amber);
+  color: var(--navy);
+  border: 2px solid var(--amber);
+}
+
+.section,
+.tinted,
+.cooperation,
+.contact {
+  padding-block: 64px;
+}
+.container > h2 + p {
+  max-width: 68ch;
+}
+.tinted {
+  background: var(--mist);
+}
+.cooperation {
+  background: var(--warm);
+}
+.feeCard {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 0;
+}
+.readyOffer {
+  min-width: 0;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.readyOffer {
+  background: transparent;
+  border-color: var(--sapphire);
+}
+.page main .readyOffer h3 {
+  color: var(--white);
+}
+.readyOffer p {
+  color: var(--line);
+}
+.steps {
+  display: grid;
+  gap: 32px;
+  margin-top: 36px;
+  list-style: none;
+  padding: 0;
+}
+.steps li {
+  min-width: 0;
+  position: relative;
+  padding-left: 80px;
+}
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: var(--line);
+  left: 27px;
+  top: 28px;
+  height: calc(100% + 32px);
+}
+.stepNumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--amber);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+}
+.page main .steps h3 {
+  color: var(--navy);
+}
+.page .steps p {
+  margin-bottom: 0;
+}
+.feeCard {
+  font-size: 16px;
+}
+.feeCard {
+  display: grid;
+  gap: 32px;
+  margin-top: 24px;
+  align-items: start;
+}
+.fees {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+}
+.fees caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 12px;
+  color: var(--sapphire);
+}
+.fees :is(th, td) {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+.fees thead {
+  background: var(--mist);
+}
+.fees th:first-child {
+  width: 64%;
+}
+.fees tbody th {
+  font-weight: 400;
+}
+.fees td,
+.fees thead th:last-child {
+  text-align: right;
+  font-weight: 700;
+}
+.faq {
+  border-top: 1px solid var(--line);
+}
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--sapphire);
+  padding-right: 12px;
+}
+.page main .faq summary h3 {
+  display: inline;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin: 0;
+  letter-spacing: normal;
+}
+.page .faq p {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.contact {
+  background: var(--navy);
+  color: var(--white);
+}
+.contactGrid {
+  display: grid;
+  gap: 48px;
+  align-items: start;
+}
+.page main .contact a {
+  color: var(--amber);
+}
+.contact :is(a, button, input, textarea):focus-visible {
+  outline-color: var(--white);
+}
+.contactForm {
+  min-width: 0;
+}
+.contactForm > div {
+  max-width: none;
+  background: var(--navy);
+  border-color: var(--line);
+  backdrop-filter: none;
+}
+.contactForm input,
+.contactForm textarea {
+  color: var(--navy);
+  background: var(--white);
+  border-color: var(--line);
+  --tw-ring-color: var(--line);
+}
+.contactForm :is(input, textarea)::placeholder {
+  color: var(--sapphire);
+}
+.contactForm form > p {
+  color: var(--line);
+}
+.page .contactForm button[type="submit"],
+.page .contactForm button[type="submit"]:is(:hover, :focus, :disabled) {
+  color: var(--navy);
+  background: var(--amber);
+  opacity: 1;
+}
+.page .contactForm button[type="submit"]:is(:hover, :focus) {
+  box-shadow: inset 0 0 0 2px var(--white);
+}
+.page .contactForm button[type="submit"]:disabled {
+  cursor: wait;
+  border: 2px dashed var(--navy);
+  text-decoration: underline;
+}
+.page .contactForm a[href="/polityka-prywatnosci"] {
+  color: var(--amber);
+}
+.footer {
+  margin-top: 0;
+  background: var(--navy);
+  color: var(--white);
+  border-top: 1px solid var(--line);
+}
+.footer > div {
+  max-width: 1328px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.footer p,
+.footer ul,
+.footer a,
+.footer button {
+  color: var(--line);
+}
+.footer a:hover,
+.footer button:hover {
+  color: var(--white);
+}
+.footer :global(.bg-blue-600) {
+  background: var(--sapphire);
+}
+.footer :global(.border-gray-600),
+.footer :global(.border-gray-700) {
+  border-color: var(--sapphire);
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .steps li {
+    padding: 0;
+  }
+  .stepNumber {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .steps li:not(:last-child)::after {
+    left: 28px;
+    top: 27px;
+    height: 2px;
+    width: calc(100% + 32px);
+  }
+}
+@media (min-width: 1024px) {
+  .hero,
+  .section,
+  .tinted,
+  .cooperation,
+  .contact {
+    padding-block: 96px;
+  }
+  .heroGrid {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+  .feeCard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+  }
+  .contactGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+  }
+}
+@media (max-width: 639px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .hero,
+  .section,
+  .tinted,
+  .cooperation,
+  .contact {
+    padding-block: 48px;
+  }
+  .heroGrid,
+  .contactGrid {
+    gap: 28px;
+  }
+  .priceCard,
+  .readyOffer,
+  .feeCard {
+    padding: 24px;
+  }
+  .fees :is(th, td) {
+    padding: 12px 8px;
+    font-size: 15px;
+  }
+  .fees th:first-child {
+    width: 60%;
+  }
+}
+
+/* Address and registered-office scenarios. */
+.narrow {
+  width: calc(100% - 48px);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.scenarios,
+.offers {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+}
+.page main .scenario {
+  display: block;
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--navy);
+}
+.page main .scenario:hover {
+  border-color: var(--blue);
+}
+.page main .scenario h3 {
+  color: var(--navy);
+}
+.scenarioLink {
+  color: var(--blue);
+  text-decoration: underline;
+  font-weight: 700;
+}
+.addressOffer,
+.seatOffer {
+  min-width: 0;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+}
+.addressOffer {
+  border-top: 6px solid var(--amber);
+}
+.page main .addressOffer > p:first-of-type {
+  font-size: 1.125rem;
+}
+.readyOffer {
+  background: var(--white);
+  border-color: var(--line);
+  margin-top: 24px;
+}
+.page main .readyOffer h3 {
+  color: var(--navy);
+}
+.readyOffer p {
+  color: var(--navy);
+}
+.feeCard {
+  display: block;
+  font-size: 1.0625rem;
+}
+.fees {
+  margin-bottom: 28px;
+}
+.stepNumber {
+  background: var(--amber);
+  color: var(--navy);
+}
+.page blockquote {
+  margin: 28px 0;
+  padding: 28px;
+  background: var(--mist);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+}
+.page blockquote strong {
+  display: block;
+  margin-bottom: 16px;
+}
+.page blockquote p {
+  margin-bottom: 0;
+}
+.faq article {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 768px) {
+  .scenarios,
+  .offers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 639px) {
+  .narrow {
+    width: calc(100% - 32px);
+  }
+  .addressOffer,
+  .seatOffer,
+  .page main .scenario {
+    padding: 24px;
+  }
+}
+.page main .primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  min-height: 50px;
+  border-radius: 8px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  text-align: center;
+}
+.page main .primary:hover { box-shadow: inset 0 0 0 2px var(--sapphire); text-decoration: underline; }
+
+.narrow > article, .narrow > .faq { max-width: 900px; }
