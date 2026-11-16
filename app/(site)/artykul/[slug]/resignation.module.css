@@ -91,3 +91,43 @@
   .meta { gap: 10px; flex-direction: column; }
   .body th, .body td { padding: 12px; }
 }
+
+/* Board-filing guide: shared layout, with scoped editorial components. */
+.boardGuide .body, .boardGuide .hero p { font-size: 18px; line-height: 1.8; }
+.boardGuide .body h2 { font-size: clamp(1.75rem, 3vw, 2.125rem); }
+.boardGuide .body h3 { font-size: 1.25rem; }
+.boardGuide .helpCard p { font-size: 16px; }
+.boardGuide .body :is(h2, h3, [id]) { scroll-margin-top: calc(var(--site-header-height) + 24px); }
+.boardGuide .body a { color: var(--page-blue); text-decoration: underline; text-underline-offset: 4px; }
+.boardGuide .body :is(a, summary, button):focus-visible { outline: 3px solid var(--page-blue); outline-offset: 4px; }
+.boardGuide .body :global(.systemComparison) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 32px 0; }
+.boardGuide .body :global(.systemComparison) section { background: var(--page-white); border: 1px solid var(--page-highlight); border-top: 6px solid var(--page-gold); border-radius: 12px; padding: 24px; font-size: 16px; }
+.boardGuide .body :global(.systemComparison) h3 { font-size: 24px; margin: 0 0 24px; }
+.boardGuide .body dt { font-weight: 700; margin-top: 20px; }
+.boardGuide .body dd, .boardGuide .body dd p { margin: 0; }
+.boardGuide .body :global(.guideSteps) { counter-reset: step; list-style: none; padding: 0; }
+.boardGuide .body :global(.guideSteps) li { counter-increment: step; position: relative; padding: 0 0 28px 60px; margin: 0; min-height: 40px; }
+.boardGuide .body :global(.guideSteps) li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--page-gold); color: var(--page-navy); font-weight: 700; display: grid; place-items: center; z-index: 1; }
+.boardGuide .body :global(.guideSteps) li:not(:last-child)::after { content: ""; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--page-highlight); }
+.boardGuide .body :global(.prsReminder) { padding: 24px; margin: 32px 0; background: var(--page-section); border-left: 4px solid var(--page-gold); border-radius: 12px; }
+.boardGuide .body :global(.guideErrors) { list-style: none; padding: 0; }
+.boardGuide .body :global(.guideErrors) li { position: relative; padding-left: 30px; }
+.boardGuide .body :global(.guideErrors) svg { position: absolute; left: 0; top: 7px; color: var(--page-gold); }
+.boardGuide .body :global(.guideFaq) { border: 1px solid var(--page-highlight); border-radius: 12px; background: var(--page-white); padding: 20px; margin-bottom: 16px; }
+.boardGuide .body :global(.guideFaq)[open] { border-color: var(--page-blue); }
+.boardGuide .body :global(.guideFaq) summary { cursor: pointer; color: var(--page-sapphire); }
+.boardGuide .body :global(.guideFaq) h3 { display: inline; margin: 0; }
+.boardGuide .body :global(.guideFaq) p { margin: 20px 0 0; }
+.boardGuide .body p a[href="#formularz-kontaktowy"] { display: inline-flex; padding: 10px 20px; border-radius: 8px; background: var(--page-gold); color: var(--page-navy); font-weight: 700; text-decoration: none; margin: 12px 0; }
+@container (max-width: 599px) {
+  .boardGuide .body :global(.systemComparison) { grid-template-columns: 1fr; }
+  .boardGuide .body table, .boardGuide .body tbody, .boardGuide .body tr, .boardGuide .body td { display: block; width: 100%; }
+  .boardGuide .body thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .boardGuide .body tr { margin-bottom: 16px; border: 1px solid var(--page-highlight); border-radius: 12px; overflow: hidden; }
+  .boardGuide .body td { border: 0; }
+  .boardGuide .body td + td { border-top: 1px solid var(--page-highlight); }
+  .boardGuide .body td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--page-sapphire); }
+  .boardGuide .body td:first-child { background: var(--page-section); }
+}
+
+.boardGuide .body :global(.guideServiceLink) { display: inline-block; font-size: 16px; margin-bottom: 24px; }

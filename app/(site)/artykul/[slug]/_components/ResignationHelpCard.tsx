@@ -3,11 +3,18 @@
 import { useEffect, useState } from "react"
 import styles from "../resignation.module.css"
 
-export default function ResignationHelpCard() {
+export default function ResignationHelpCard({
+  contentId = "resignation-content",
+  panelSelector = ".contactPanel",
+  heading = "Potrzebujesz pomocy przy rezygnacji?",
+  text = "Sprawdzimy, jaki tryb ma zastosowanie w Twojej sytuacji, i pomożemy przygotować dokumenty.",
+  buttonLabel = "Napisz do nas",
+  ariaLabel = "Pomoc przy rezygnacji",
+}: { contentId?: string; panelSelector?: string; heading?: string; text?: string; buttonLabel?: string; ariaLabel?: string }) {
   const [panelVisible, setPanelVisible] = useState(false)
 
   useEffect(() => {
-    const panels = document.querySelectorAll("#resignation-content .contactPanel")
+    const panels = document.getElementById(contentId)?.querySelectorAll(panelSelector) ?? []
     const visible = new Set<Element>()
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -18,7 +25,7 @@ export default function ResignationHelpCard() {
     })
     panels.forEach((panel) => observer.observe(panel))
     return () => observer.disconnect()
-  }, [])
+  }, [contentId, panelSelector])
 
   const goToForm = () => {
     const panel = document.getElementById("formularz-kontaktowy")
@@ -36,11 +43,11 @@ export default function ResignationHelpCard() {
   }
 
   return (
-    <aside className={styles.helpSidebar} aria-label="Pomoc przy rezygnacji">
+    <aside className={styles.helpSidebar} aria-label={ariaLabel}>
       <div className={styles.helpCard} data-hidden={panelVisible} aria-hidden={panelVisible}>
-        <h2>Potrzebujesz pomocy przy rezygnacji?</h2>
-        <p>Sprawdzimy, jaki tryb ma zastosowanie w Twojej sytuacji, i pomożemy przygotować dokumenty.</p>
-        <button type="button" onClick={goToForm} disabled={panelVisible}>Napisz do nas</button>
+        <h2>{heading}</h2>
+        <p>{text}</p>
+        <button type="button" onClick={goToForm} disabled={panelVisible}>{buttonLabel}</button>
       </div>
     </aside>
   )
