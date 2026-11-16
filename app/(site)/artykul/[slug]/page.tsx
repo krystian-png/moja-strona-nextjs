@@ -186,7 +186,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
       <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         {isReport && (
-          <div className="sticky top-[76px] z-30 mx-auto mb-4 flex max-w-[900px] items-center justify-between gap-3 rounded-lg border border-[#315574] bg-[#17334e] px-3 py-2.5 shadow-lg sm:px-4 xl:hidden" aria-label="Zleć zmianę kodów PKD">
+          <div className="sticky top-[calc(var(--site-header-height)+12px)] z-30 mx-auto mb-4 flex max-w-[900px] items-center justify-between gap-3 rounded-lg border border-[#315574] bg-[#17334e] px-3 py-2.5 shadow-lg sm:px-4 xl:hidden" aria-label="Zleć zmianę kodów PKD">
             <span className="min-w-0 text-sm font-semibold leading-tight text-white sm:text-base">Potrzebujesz zmiany PKD w KRS?</span>
             <a href="/uslugi/zmiana-kodow-pkd#wycena" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-md bg-amber-500 px-3 py-2 text-center text-sm font-bold text-slate-950 transition hover:bg-amber-400 sm:px-5">Zleć zmianę PKD →</a>
           </div>

@@ -183,7 +183,7 @@ export default function ZmianaZarzaduPage() {
   return (
     <div className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas).replace(/</g, "\\u003c") }} />
-      <Navbar contactAction={{ href: "#kontakt", label: "Opisz sprawę" }} className={styles.navigation} />
+      <Navbar contactAction={{ href: "#kontakt", label: "Opisz sprawę" }} />
       <main>
         <section className={styles.hero}>
           <div className={`${styles.container} ${styles.heroGrid}`}>
