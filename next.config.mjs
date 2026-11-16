@@ -4,6 +4,12 @@ import { withContentlayer } from "next-contentlayer"
 const nextConfig = {
   reactStrictMode: true,
   experimental: { mdxRs: true },
+  async headers() {
+    // Vercel sets VERCEL_ENV at build time; production receives no such rule.
+    return process.env.VERCEL_ENV === "preview"
+      ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }]
+      : []
+  },
   async redirects() {
     return [
       {

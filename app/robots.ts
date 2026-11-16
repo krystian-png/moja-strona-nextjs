@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
 
   const BASE_URL = base.replace(/\/$/, "");
 
+  // Public previews must allow crawlers to read the noindex response header.
+  if (process.env.VERCEL_ENV === "preview") {
+    return { rules: { userAgent: "*", allow: "/" } };
+  }
+
   if (!isProduction) {
     return {
       rules: {

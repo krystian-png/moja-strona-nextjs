@@ -106,7 +106,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana adresu spółki z o.o. – obsługa od 999 zł | ZmianaKRS",
+  title: "Zmiana adresu spółki z o.o. – obsługa od 999 zł",
   description:
     "Zmiana adresu lub siedziby spółki z o.o. w KRS. Przygotujemy dokumenty i złożymy wniosek przez PRS lub S24 za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
   alternates: {
@@ -368,13 +368,12 @@ export default function ZmianaAdresuSpolkiZooPage() {
               <p className="text-lg text-white/90">
                 Chcesz pełną instrukcję techniczną PRS/S24 i przykłady wypełnienia wniosku? Zobacz poradnik:{" "}
                 <Link
-                  href="/artykul/zmiana-adresu-i-siedziby-spolki-w-krs-krok-po-kroku"
+                  href="/artykul/zmiana-adresu-i-siedziby-spolki-w-krs"
                   className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
                 >
-                  https://zmianakrs.pl/artykul/zmiana-adresu-i-siedziby-spolki-w-krs-krok-po-kroku
+                  Zmiana adresu i siedziby spółki w KRS – poradnik krok po kroku
                 </Link>
               </p>
-              {/* TODO: potwierdzić/podmienić slug artykułu, jeśli docelowa ścieżka będzie inna */}
             </div>
           </div>
 

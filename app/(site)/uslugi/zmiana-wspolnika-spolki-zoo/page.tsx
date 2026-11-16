@@ -106,7 +106,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 999 zł | ZmianaKRS",
+  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, od 999 zł",
   description:
     "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
   alternates: {

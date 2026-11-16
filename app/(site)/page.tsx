@@ -16,7 +16,7 @@ const pageUrl = siteUrl
 
 export const metadata: Metadata = {
   title:
-    "Zmiana wpisu w KRS dla spółek – od 999 zł, zdalnie | ZmianaKRS",
+    "Zmiana wpisu w KRS dla spółek – od 999 zł, zdalnie",
   description:
     "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 999 zł netto.",
   alternates: {

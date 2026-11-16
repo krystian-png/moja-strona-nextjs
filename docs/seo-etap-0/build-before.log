@@ -1,0 +1,140 @@
+
+> zmianakrs-nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build ...
+Generated 17 documents in .contentlayer
+Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/dynamic-build.js for build dependencies failed at 'import(`file://${compiledConfigPath}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/getConfig/index.js for build dependencies failed at 'import(`file://${modulePath}?x=${Date.now()}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js for build dependencies failed at 'import(filePathJoin(generatedPkgPath, 'generated', 'index.mjs'))'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/dynamic-build.js for build dependencies failed at 'import(`file://${compiledConfigPath}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/getConfig/index.js for build dependencies failed at 'import(`file://${modulePath}?x=${Date.now()}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js for build dependencies failed at 'import(filePathJoin(generatedPkgPath, 'generated', 'index.mjs'))'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/dynamic-build.js for build dependencies failed at 'import(`file://${compiledConfigPath}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/getConfig/index.js for build dependencies failed at 'import(`file://${modulePath}?x=${Date.now()}`)'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Parsing of /workspace/work/repo/node_modules/@contentlayer/core/dist/generation/generate-dotpkg.js for build dependencies failed at 'import(filePathJoin(generatedPkgPath, 'generated', 'index.mjs'))'.
+<w> Build dependencies behind this expression are ignored and might cause incorrect cache invalidation.
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+
+./app/admin/upload/page.tsx
+81:25  Warning: Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/72) ...
+   Generating static pages (18/72) 
+   Generating static pages (36/72) 
+   Generating static pages (54/72) 
+ ✓ Generating static pages (72/72) 
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                                    Size     First Load JS
+┌ ○ /                                                                          3.49 kB        99.3 kB
+├ ○ /_not-found                                                                0 B                0 B
+├ ○ /admin                                                                     2.48 kB        99.4 kB
+├ ○ /admin/analytics                                                           7.46 kB         104 kB
+├ ○ /admin/backup                                                              2.5 kB         99.5 kB
+├ ○ /admin/contacts                                                            2.9 kB         99.9 kB
+├ ○ /admin/email                                                               5.63 kB         103 kB
+├ ○ /admin/login                                                               4.33 kB        93.2 kB
+├ ○ /admin/seo                                                                 3.59 kB         101 kB
+├ ○ /admin/upload                                                              2.47 kB        99.4 kB
+├ ○ /admin/users                                                               3.8 kB          101 kB
+├ λ /api/admin/analytics                                                       0 B                0 B
+├ λ /api/admin/contacts                                                        0 B                0 B
+├ λ /api/admin/contacts/[id]                                                   0 B                0 B
+├ λ /api/admin/login                                                           0 B                0 B
+├ λ /api/admin/logout                                                          0 B                0 B
+├ λ /api/admin/stats                                                           0 B                0 B
+├ λ /api/contact                                                               0 B                0 B
+├ ℇ /api/health                                                                0 B                0 B
+├ ○ /api/services                                                              0 B                0 B
+├ λ /api/track                                                                 0 B                0 B
+├ ● /artykul/[slug]                                                            667 B           143 kB
+├   ├ /artykul/czym-jest-krajowy-rejestr-sadowy-krs
+├   ├ /artykul/jak-skutecznie-przygotowac-dokumenty-zmiana-wpisu-krs-poradnik
+├   ├ /artykul/jak-sprawdzic-kody-pkd-spolki-w-krs
+├   └ [+14 more paths]
+├ ○ /blog                                                                      1.3 kB          102 kB
+├ λ /blog/[slug]                                                               386 B            81 kB
+├ λ /blog/czym-jest-krajowy-rejestr-sadowy-krs                                 386 B            81 kB
+├ ○ /cennik                                                                    516 B           138 kB
+├ ○ /contact                                                                   227 B           138 kB
+├ ○ /en/contact                                                                5.61 kB         140 kB
+├ ○ /kontakt                                                                   227 B           138 kB
+├ ○ /ksiegowi                                                                  512 B           138 kB
+├ ○ /o-nas                                                                     1.58 kB        97.4 kB
+├ ○ /podglad/uk                                                                4.39 kB         137 kB
+├ ○ /podglad/uk/polityka-prywatnosci                                           1.94 kB        95.7 kB
+├ ○ /podglad/uk/regulamin                                                      1.94 kB        95.7 kB
+├ ○ /polityka-prywatnosci                                                      755 B          96.5 kB
+├ ○ /regulamin                                                                 755 B          96.5 kB
+├ ○ /robots.txt                                                                0 B                0 B
+├ ○ /rodo                                                                      1.52 kB        97.3 kB
+├ ○ /sitemap.xml                                                               0 B                0 B
+├ ○ /uslugi                                                                    523 B           138 kB
+├ ○ /uslugi/prokurent-krs                                                      523 B           138 kB
+├ ○ /uslugi/zmiana-adresu-spolki-zoo                                           523 B           138 kB
+├ ○ /uslugi/zmiana-kodow-pkd                                                   9.09 kB         147 kB
+├ ○ /uslugi/zmiana-umowy-spolki-zoo                                            523 B           138 kB
+├ ○ /uslugi/zmiana-wspolnika-spolki-zoo                                        523 B           138 kB
+└ ○ /uslugi/zmiana-zarzadu-spolki-zoo                                          523 B           138 kB
++ First Load JS shared by all                                                  80.7 kB
+  ├ chunks/2472-4353354c037a33d9.js                                            27.5 kB
+  ├ chunks/fd9d1056-fa7649d026c5afcb.js                                        51.1 kB
+  ├ chunks/main-app-1386e6ede469aead.js                                        233 B
+  └ chunks/webpack-e420631de1b4045b.js                                         1.83 kB
+
+Route (pages)                                                                  Size     First Load JS
+┌   /_app                                                                      0 B            93.7 kB
+├ ● /en                                                                        4.15 kB         147 kB
+├ ● /en/cookie-policy                                                          7.25 kB         112 kB
+├ ● /en/terms-of-service                                                       8.2 kB          113 kB
+├ ● /ru                                                                        5.03 kB         148 kB
+├ ● /ru/polityka-prywatnosci                                                   8.45 kB         113 kB
+├ ● /ru/regulamin                                                              9.1 kB          114 kB
+├ ● /uk                                                                        374 B           148 kB
+├ ● /uk/polityka-prywatnosci                                                   5.04 kB         115 kB
+├ ● /uk/regulamin                                                              7.21 kB         117 kB
+├ ● /vi                                                                        4.33 kB         147 kB
+├ ● /vi/polityka-prywatnosci                                                   7.19 kB         112 kB
+├ ● /vi/regulamin                                                              8.48 kB         113 kB
+├ ● /zh                                                                        4.37 kB         147 kB
+├ ● /zh/polityka-prywatnosci                                                   7.32 kB         112 kB
+└ ● /zh/regulamin                                                              8.75 kB         113 kB
++ First Load JS shared by all                                                  107 kB
+  ├ chunks/framework-982c92c6107bf5ee.js                                       45.4 kB
+  ├ chunks/main-4c20c9f6bf447122.js                                            33.1 kB
+  ├ chunks/pages/_app-c0e381aa0dcf470b.js                                      13.4 kB
+  ├ chunks/webpack-e420631de1b4045b.js                                         1.83 kB
+  └ css/5d0cdba185a3943e.css                                                   13.3 kB
+
+ƒ Middleware                                                                   27.4 kB
+
+ℇ  (Streaming)  server-side renders with streaming (uses React 18 SSR streaming or Server Components)
+λ  (Server)     server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)     automatically rendered as static HTML (uses no initial props)
+●  (SSG)        automatically generated as static HTML + JSON (uses getStaticProps)
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

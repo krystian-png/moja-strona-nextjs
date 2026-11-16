@@ -172,7 +172,7 @@ const structuredData = {
 
 export const metadata: Metadata = {
   title:
-    "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS",
+    "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS",
   description:
     "Profesjonalne usługi zmian wpisu w KRS dla spółek – przygotowanie dokumentów, obsługa wniosków KRS i zakładanie spółek z o.o. Zajmujemy się zmianą danych spółki w KRS od analizy dokumentów po wpis zmian do rejestru.",
   alternates: {
@@ -345,7 +345,7 @@ export default function ServicesPage() {
                             <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
                             <span className="text-base">
                               <Link
-                                href="/uslugi/zmiana-umowy-spolki-zoo"
+                                href="/uslugi/zmiana-kodow-pkd"
                                 className="text-amber-400 hover:text-amber-300 underline underline-offset-2"
                               >
                                 Zmiany przedmiotu działalności (PKD)

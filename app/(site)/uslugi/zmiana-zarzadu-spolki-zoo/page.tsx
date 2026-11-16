@@ -138,7 +138,7 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana zarządu sp. z o.o. – obsługa od 999 zł | ZmianaKRS",
+  title: "Zmiana zarządu sp. z o.o. – obsługa od 999 zł",
   description:
     "Powołanie, odwołanie lub rezygnacja członka zarządu sp. z o.o. Przygotujemy dokumenty i złożymy wniosek do KRS za Ciebie. Ograniczamy ryzyko błędów formalnych. Od 999 zł netto.",
   alternates: {
