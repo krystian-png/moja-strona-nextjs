@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowDown, ArrowUpRight, UserPlus, UserMinus, LogOut, Users, FilePenLine } from "lucide-react"
+import { ArrowDown, ArrowUpRight, ArrowRight, BookOpen, Check, UserPlus, UserMinus, LogOut, Users, FilePenLine } from "lucide-react"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
@@ -204,29 +204,34 @@ export default function ZmianaZarzaduPage() {
 
         <section className={styles.tinted}>
           <div className={styles.container}>
+            <p className={styles.eyebrow} aria-hidden="true">Sytuacje</p>
             <h2>Jaką zmianę zarządu chcesz zgłosić?</h2>
             <p>Wybierz sytuację dotyczącą Twojej spółki. Pokażemy, jakie formalności są potrzebne i co możemy przygotować.</p>
             <div className={styles.situationGrid}>
-              {situations.map(({ id, label, sub }, index) => {
+              {situations.map(({ id, title, sub, text }, index) => {
                 const Icon = icons[index]
-                return <a href={`#${id}`} key={id} className={styles.situationCard}>
-                  <span className={styles.icon}><Icon aria-hidden="true" size={24} /></span>
-                  <span><strong>{label}</strong><span>{sub}</span></span>
-                  <ArrowDown aria-hidden="true" size={20} />
-                </a>
+                return <article id={id} key={id} className={styles.situationCard}>
+                  <div className={styles.situationHeading}>
+                    <span className={styles.icon}><Icon aria-hidden="true" size={22} /></span>
+                    <h3>{title}</h3>
+                    <p className={styles.situationSub}>{sub}</p>
+                  </div>
+                  <div className={styles.situationBody}>
+                    <p>{text}</p>
+                    <div className={styles.cardFooter}>
+                      <a href="#kontakt">Opisz tę zmianę →</a>
+                      {id === "rezygnacja" && <Link href={resignationArticle}>Rezygnacja członka zarządu – szczególne przypadki</Link>}
+                    </div>
+                  </div>
+                </article>
               })}
-            </div>
-            <div className={styles.explanations}>
-              {situations.map(({ id, title, text }) => <article key={id}>
-                <h3 id={id}>{title}</h3><p>{text}</p>
-                {id === "rezygnacja" && <Link href={resignationArticle}>Rezygnacja członka zarządu – szczególne przypadki</Link>}
-              </article>)}
             </div>
           </div>
         </section>
 
-        <section id="zakres" className={styles.section}>
+        <section id="zakres" className={styles.scope}>
           <div className={styles.container}>
+            <p className={styles.eyebrow} aria-hidden="true">Zakres i cena</p>
             <h2>Powierz nam formalności</h2>
             <p>Możemy przygotować dokumenty i przeprowadzić zgłoszenie albo zająć się samym wnioskiem, jeżeli spółka ma już prawidłowo przygotowaną dokumentację. Zakres ustalamy przed rozpoczęciem pracy.</p>
             <div className={styles.offerGrid}>
@@ -236,9 +241,9 @@ export default function ZmianaZarzaduPage() {
                 <p>Sprawdzamy umowę spółki i dokumenty, przygotowujemy wymaganą uchwałę oraz inne potrzebne dokumenty, kompletujemy załączniki i zgłaszamy zmianę zarządu do KRS. Przy samej rezygnacji przygotowujemy dokumenty odpowiednie do sytuacji.</p>
                 <p className={styles.listTitle}>Zakres typowej sprawy w punktach:</p>
                 <ul>
-                  <li>Sprawdzenie sytuacji spółki i trybu zgłoszenia.</li>
-                  <li>Przygotowanie wymaganej uchwały lub dokumentów właściwych dla rezygnacji oraz pozostałych potrzebnych dokumentów.</li>
-                  <li>Przygotowanie wniosku PRS/S24, ustalenie podpisów i zgłoszenie zmiany do KRS.</li>
+                  <li><Check aria-hidden="true" size={20} /><span>Sprawdzenie sytuacji spółki i trybu zgłoszenia.</span></li>
+                  <li><Check aria-hidden="true" size={20} /><span>Przygotowanie wymaganej uchwały lub dokumentów właściwych dla rezygnacji oraz pozostałych potrzebnych dokumentów.</span></li>
+                  <li><Check aria-hidden="true" size={20} /><span>Przygotowanie wniosku PRS/S24, ustalenie podpisów i zgłoszenie zmiany do KRS.</span></li>
                 </ul>
                 <a href="#kontakt" className={styles.primary}>Opisz zmianę zarządu <ArrowUpRight aria-hidden="true" size={20} /></a>
                 <Link href="/cennik">Zobacz wszystkie ceny usług KRS</Link>
@@ -253,8 +258,9 @@ export default function ZmianaZarzaduPage() {
           </div>
         </section>
 
-        <section className={styles.tinted}>
+        <section className={styles.cooperation}>
           <div className={styles.container}>
+            <p className={styles.eyebrow} aria-hidden="true">Współpraca</p>
             <h2>Jak przeprowadzimy zmianę zarządu?</h2>
             <ol className={styles.steps}>{steps.map(({ title, text }, index) => <li key={title}>
               <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span><h3>{title}</h3><p>{text}</p>
@@ -262,42 +268,53 @@ export default function ZmianaZarzaduPage() {
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.tinted}>
           <div className={styles.container}>
-            {knowledge.map(({ title, paragraphs }, index) => <div key={title} className={styles.knowledge}>
-              <h2>{title}</h2>{paragraphs.map(text => <p key={text}>{text}</p>)}
-              {index === 0 && <Link href={applicationGuide}>Jak przygotować i złożyć wniosek o zmianę zarządu w KRS – PRS i S24</Link>}
-            </div>)}
-            <div className={styles.knowledge}>
-              <h2>Ile kosztuje wpis zmiany zarządu do KRS?</h2>
-              <p>Poniżej są opłaty i inne koszty, które mogą dojść do honorarium za obsługę prawną.</p>
+            <p className={styles.eyebrow} aria-hidden="true">Formalności i opłaty</p>
+            <div className={styles.knowledgeGrid}>
+              {knowledge.map(({ title, paragraphs }, index) => <div key={title} className={styles.knowledge}>
+                <h2>{title}</h2>{paragraphs.map(text => <p key={text}>{text}</p>)}
+                {index === 0 && <Link href={applicationGuide}>Jak przygotować i złożyć wniosek o zmianę zarządu w KRS – PRS i S24</Link>}
+              </div>)}
+              <div className={styles.knowledge}><h2>Co po zmianie wpisu w KRS?</h2><p>Po wpisie sprawdź, czy bank, główni kontrahenci i osoby obsługujące spółkę posługują się aktualnymi danymi zarządu. Jeżeli członek zarządu był zgłoszony do Centralnego Rejestru Beneficjentów Rzeczywistych jako beneficjent rzeczywisty zajmujący wyższe stanowisko kierownicze, spółka aktualizuje to zgłoszenie w terminie 14 dni od zmiany w KRS. Inne obowiązki wobec urzędów lub rejestrów zależą od konkretnej sytuacji.</p></div>
+            </div>
+            <div className={styles.feeCard}>
+              <div>
+                <h2>Ile kosztuje wpis zmiany zarządu do KRS?</h2>
+                <p>Poniżej są opłaty i inne koszty, które mogą dojść do honorarium za obsługę prawną.</p>
+                <p>Od 29 listopada 2025 r. nie pobiera się dodatkowej opłaty za obowiązkowe ogłoszenie wpisu KRS w Monitorze Sądowym i Gospodarczym.</p>
+                <Link href="/cennik">Zobacz pełny cennik usług</Link>
+              </div>
               <table className={styles.fees}>
                 <caption>Opłaty i koszty zewnętrzne</caption>
                 <thead><tr><th scope="col">Rodzaj</th><th scope="col">Kwota</th></tr></thead>
                 <tbody>{fees.map(([kind, amount]) => <tr key={kind}><th scope="row">{kind}</th><td>{amount}</td></tr>)}</tbody>
               </table>
-              <p>Od 29 listopada 2025 r. nie pobiera się dodatkowej opłaty za obowiązkowe ogłoszenie wpisu KRS w Monitorze Sądowym i Gospodarczym.</p>
-              <Link href="/cennik">Zobacz pełny cennik usług</Link>
             </div>
-            <div className={styles.knowledge}><h2>Co po zmianie wpisu w KRS?</h2><p>Po wpisie sprawdź, czy bank, główni kontrahenci i osoby obsługujące spółkę posługują się aktualnymi danymi zarządu. Jeżeli członek zarządu był zgłoszony do Centralnego Rejestru Beneficjentów Rzeczywistych jako beneficjent rzeczywisty zajmujący wyższe stanowisko kierownicze, spółka aktualizuje to zgłoszenie w terminie 14 dni od zmiany w KRS. Inne obowiązki wobec urzędów lub rejestrów zależą od konkretnej sytuacji.</p></div>
-          </div>
-        </section>
-
-        <section className={styles.tinted}>
-          <div className={styles.container}>
-            <h2>Gdzie znaleźć szczegółowe informacje?</h2>
-            <ul className={styles.reading}>
-              <li><Link href={resignationArticle}>Rezygnacja członka zarządu spółki z o.o. – skuteczność oświadczenia, szczególne przypadki i zgłoszenie do KRS</Link></li>
-              <li><Link href={applicationGuide}>Wniosek o zmianę zarządu w KRS – procedura PRS i S24, podpisy, załączniki i opłaty</Link></li>
-            </ul>
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.container}>
-            <h2>Najczęstsze pytania</h2>
+            <p className={styles.eyebrow} aria-hidden="true">Poradniki</p>
+            <h2>Gdzie znaleźć szczegółowe informacje?</h2>
+            <ul className={styles.reading}>
+              <li><Link href={resignationArticle} className={styles.readingCard}><span className={styles.icon}><BookOpen aria-hidden="true" size={22} /></span><span>Rezygnacja członka zarządu spółki z o.o. – skuteczność oświadczenia, szczególne przypadki i zgłoszenie do KRS</span><ArrowRight aria-hidden="true" size={22} /></Link></li>
+              <li><Link href={applicationGuide} className={styles.readingCard}><span className={styles.icon}><BookOpen aria-hidden="true" size={22} /></span><span>Wniosek o zmianę zarządu w KRS – procedura PRS i S24, podpisy, załączniki i opłaty</span><ArrowRight aria-hidden="true" size={22} /></Link></li>
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.faqSection}>
+          <div className={`${styles.container} ${styles.faqGrid}`}>
+            <div>
+              <p className={styles.eyebrow} aria-hidden="true">FAQ</p>
+              <h2>Najczęstsze pytania</h2>
+              <p>Nie ma tu Twojego pytania?</p>
+              <a href="#kontakt" className={styles.questionButton}>Zadaj pytanie</a>
+            </div>
             <div className={styles.faq}>{faq.map(({ question, answer }) => <details key={question}>
-              <summary>{question}</summary><p>{answer}</p>
+              <summary><h3>{question}</h3></summary><p>{answer}</p>
             </details>)}</div>
           </div>
         </section>
