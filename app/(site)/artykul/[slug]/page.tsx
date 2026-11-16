@@ -7,10 +7,11 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import resignationStyles from "./resignation.module.css"
 import reportStyles from "./report.module.css"
 import InlineContactForm from "@/app/(site)/uslugi/_components/InlineContactForm"
 import { Badge } from "@/components/ui/badge"
-import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
+import { brandName, organizationSchema, personSchema, siteUrl } from "@/lib/seo"
 
 const woodenStructureImage =
   "/images/drewniana-konstrukcja-dokumenty-prawne-szeregu-organizacja-porzadek-artykuly-prawnicze-krs.webp"
@@ -34,13 +35,13 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const pageUrl = `${siteUrl}/artykul/${post.slug}`
 
   return {
-    title: post.title,
+    title: post.seoTitle || post.title,
     description: post.description,
     alternates: {
       canonical: `/artykul/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
+      title: post.seoTitle || post.title,
       description: post.description,
       url: pageUrl,
       type: "article",
@@ -58,7 +59,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: post.seoTitle || post.title,
       description: post.description,
       images: post.cover
         ? [post.cover.startsWith("http") ? post.cover : `${siteUrl}${post.cover}`]
@@ -67,9 +68,9 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   }
 }
 
-function MDXContent({ code }: { code: string }) {
+function MDXContent({ code, resignation = false }: { code: string; resignation?: boolean }) {
   const Component = useMDXComponent(code)
-  return <Component />
+  return <Component components={resignation ? { InlineContactForm } : {}} />
 }
 
 function toAbsoluteCoverUrl(cover?: string) {
@@ -92,6 +93,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     notFound()
   }
 
+  const isResignation = post.slug === "rezygnacja-czlonka-zarzadu-spolka-zoo-wpis-krs"
   const isReport = post.slug === "pkd-2025-raport-wdrozenia-reformy"
 
   const structuredData = {
@@ -103,7 +105,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     url: `${siteUrl}/artykul/${post.slug}`,
     isPartOf: { "@id": `${siteUrl}/blog` },
     datePublished: post.date,
-    author: { "@id": `${siteUrl}/#organization` },
+    ...(isResignation ? { dateModified: post.updated || post.date } : {}),
+    author: { "@id": isResignation ? personSchema["@id"] : organizationSchema["@id"] },
     publisher: { "@id": `${siteUrl}/#organization` },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -118,6 +121,36 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       month: "long",
       day: "numeric",
     })
+  }
+
+  if (isResignation) {
+    return (
+      <div className={resignationStyles.page}>
+        <Script id="article-structured-data" type="application/ld+json">{JSON.stringify(structuredData)}</Script>
+        <Navbar />
+        <main className={resignationStyles.main}>
+          <article>
+            <header className={resignationStyles.hero}>
+              <div className={resignationStyles.heroInner}>
+                <span className={resignationStyles.eyebrow}>Spółki i zmiany w KRS</span>
+                <h1>{post.title}</h1>
+                <p>Członek zarządu spółki z ograniczoną odpowiedzialnością może w każdym czasie zrezygnować z pełnionej funkcji. Rezygnacja nie wymaga zgody ani zatwierdzenia przez wspólników. Jej skuteczność zależy jednak od tego, komu i w jakim trybie ją złożono.</p>
+                <div className={resignationStyles.meta}>
+                  <span>Krystian Karpiuk, radca prawny</span>
+                  <time dateTime={post.date}>Opublikowano {formatDate(post.date)}</time>
+                  {post.updated && <time dateTime={post.updated}>Zaktualizowano {formatDate(post.updated)}</time>}
+                </div>
+              </div>
+            </header>
+            <div className={resignationStyles.body}>
+              <a className={resignationStyles.serviceLink} href="/uslugi/zmiana-zarzadu-spolki-zoo">Zmiana zarządu spółki z o.o. w KRS →</a>
+              <MDXContent code={post.body.code} resignation />
+            </div>
+          </article>
+        </main>
+        <Footer />
+      </div>
+    )
   }
 
   return (

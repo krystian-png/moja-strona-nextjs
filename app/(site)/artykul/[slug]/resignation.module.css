@@ -1,0 +1,62 @@
+.page {
+  --page-navy: #111E41;
+  --page-sapphire: #20376F;
+  --page-blue: #3459A2;
+  --page-gold: #E7A944;
+  --page-ivory: #FAF7F2;
+  --page-section: #EEF2F9;
+  --page-white: #FFFFFF;
+  --page-highlight: #DCE6F6;
+  background: var(--page-ivory);
+  color: var(--page-navy);
+  min-height: 100vh;
+}
+.main { padding-top: 80px; padding-bottom: 80px; }
+.hero { background: var(--page-navy); color: var(--page-white); padding: 72px 24px 64px; border-bottom: 5px solid var(--page-gold); }
+.heroInner { max-width: 1040px; margin: auto; }
+.eyebrow { color: var(--page-gold); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.15; max-width: 1000px; font-weight: 700; margin: 24px 0; text-wrap: balance; }
+.hero p { font-size: 19px; line-height: 1.8; max-width: 840px; }
+.meta { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 32px; font-size: 14px; }
+.meta span { width: 100%; font-weight: 700; }
+.body { max-width: 860px; padding: 48px 24px 0; margin: auto; font-size: 18px; line-height: 1.85; overflow-wrap: anywhere; }
+.body > p, .body :global(.situations) p, .body :global(.procedure) p, .body :global(.caseLaw) p, .body :global(.contactPanel) > p { margin: 0 0 24px; }
+.body h2 { font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.35; margin: 64px 0 24px; font-weight: 700; color: var(--page-navy); scroll-margin-top: 100px; }
+.body h3 { color: var(--page-sapphire); font-weight: 700; font-size: 1.2rem; line-height: 1.5; margin: 32px 0 16px; scroll-margin-top: 100px; }
+.body h4 { font-weight: 700; margin-bottom: 12px; }
+.body > a, .body > p a { color: var(--page-blue); text-decoration: underline; text-underline-offset: 4px; }
+.body > a:focus-visible, .body > p a:focus-visible { outline: 3px solid var(--page-gold); outline-offset: 4px; }
+.serviceLink { display: inline-block; margin-bottom: 32px; font-size: 15px; font-weight: 700; }
+.body ul, .body ol { padding-left: 26px; margin-bottom: 24px; }
+.body ul { list-style: disc; }
+.body ol { list-style: decimal; }
+.body li { padding-left: 8px; margin-bottom: 12px; }
+.body li::marker { color: var(--page-blue); font-weight: 700; }
+.body hr { border-color: var(--page-highlight); margin: 40px 0; }
+.body :global(.situations) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 32px -90px; }
+.body :global(.situations) section { background: var(--page-white); border: 1px solid var(--page-highlight); border-top: 4px solid var(--page-blue); border-radius: 16px; padding: 24px; font-size: 16px; }
+.body :global(.situations) h3 { margin-top: 0; color: var(--page-navy); font-size: 18px; }
+.body :global(.procedure), .body :global(.caseLaw) { border: 1px solid var(--page-highlight); border-radius: 16px; padding: 32px; margin: 32px 0; background: var(--page-section); }
+.body :global(.procedure) h3 { padding-left: 20px; border-left: 4px solid var(--page-blue); }
+.body :global(.caseLaw) { border-left: 4px solid var(--page-blue); }
+.body :global(.caseLaw) h3:first-child { margin-top: 0; }
+.body :global(.legislation) { background: var(--page-highlight); border-left: 3px solid var(--page-blue); border-radius: 8px; padding: 24px; margin-bottom: 24px; font-size: 16px; }
+.body :global(.contactPanel) { color: var(--page-white); background: var(--page-navy); padding: 36px; margin: 48px 0; border-radius: 20px; }
+.body :global(.contactPanel) h3 { color: var(--page-white); margin-top: 0; font-size: 1.5rem; }
+/* The existing form retains its own appearance; only its surrounding copy is styled. */
+.body :global(.contactPanel) > p { font-size: 16px; }
+.body :global(.contactPanel) > div { margin: 24px auto; }
+.body table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--page-white); font-size: 16px; }
+.body th, .body td { text-align: left; border: 1px solid var(--page-highlight); padding: 16px; }
+.body th { background: var(--page-section); }
+@media (max-width: 1100px) { .body :global(.situations) { margin: 32px 0; } }
+@media (max-width: 767px) {
+  .hero { padding: 40px 20px; }
+  .hero p { font-size: 17px; }
+  .body { padding: 32px 20px 0; font-size: 17px; }
+  .body :global(.situations) { grid-template-columns: 1fr; }
+  .body :global(.procedure), .body :global(.caseLaw), .body :global(.contactPanel) { padding: 24px 20px; }
+  .body :global(.legislation) { padding: 18px; }
+  .meta { gap: 10px; flex-direction: column; }
+  .body th, .body td { padding: 12px; }
+}

@@ -56,7 +56,7 @@ Wiadomość została wysłana automatycznie z systemu zmianakrs.pl`
     console.log("Email sent successfully")
   } catch (error) {
     console.error("Failed to send email:", error)
-    // Nie przerywamy - formularz zapisujemy nawet jak mail nie wyjdzie
+    return NextResponse.json({ success: false, message: "Nie udało się wysłać wiadomości. Spróbuj ponownie później." }, { status: 502 })
   }
   return NextResponse.json({ success: true })
 }
