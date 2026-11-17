@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 const pageUrl = "https://zmianakrs.pl/uslugi/zmiana-adresu-spolki-zoo";
 const title = "Zmiana adresu i siedziby spółki z o.o. w KRS";
 const description =
-  "Ta sama miejscowość czy inna? Sprawdź, kiedy wystarczy uchwała zarządu, kiedy zmienić umowę spółki, ile kosztuje wpis i jak przeprowadzimy zgłoszenie.";
+  "Sprawdź, kiedy wystarczy uchwała zarządu, kiedy trzeba zmienić umowę spółki i ile kosztuje zgłoszenie nowego adresu lub siedziby do KRS.";
 export const metadata: Metadata = {
   title,
   description,
@@ -39,7 +39,7 @@ const faq = [
     question: "Ile mam czasu na zgłoszenie do KRS?",
     paragraphs: [
       "Wniosek należy złożyć w terminie 7 dni od zdarzenia uzasadniającego wpis. Przy zmianie adresu jest to co do zasady dzień zmiany wskazany w uchwale zarządu. Przy zmianie siedziby licz ten termin od podjęcia uchwały zmieniającej umowę spółki.",
-      "Przy zmianie siedziby obowiązuje też drugi, ważniejszy termin. Zmiana umowy, której nie zgłoszono do sądu rejestrowego w ciągu 6 miesięcy od jej podjęcia, nie wywołuje skutków prawnych (uchwała Sądu Najwyższego z 29 kwietnia 2022 r., III CZP 75/22). Jeżeli umowę zmieniono na wzorcu w S24, termin ten wynosi 7 dni (art. 256 § 3 w zw. z art. 169 § 2 k.s.h.).",
+      "Przy zmianie siedziby jest też osobny termin na zgłoszenie zmiany umowy. Zmiana umowy, której nie zgłoszono do sądu rejestrowego w ciągu 6 miesięcy od jej podjęcia, nie wywołuje skutków prawnych (uchwała Sądu Najwyższego z 29 kwietnia 2022 r., III CZP 75/22). Jeżeli umowę zmieniono na wzorcu w S24, termin ten wynosi 7 dni (art. 256 § 3 w zw. z art. 169 § 2 k.s.h.).",
     ],
   },
   {
@@ -129,11 +129,10 @@ export default function AddressPage() {
               <div>
                 <h1>{title}</h1>
                 <p>
-                  Zmieniasz biuro w tej samej miejscowości? Zwykle wystarczy
-                  decyzja o nowym adresie i zgłoszenie do KRS. Przy
-                  przeprowadzce do innej miejscowości trzeba również zmienić
-                  umowę spółki. Przygotujemy dokumenty i przeprowadzimy
-                  zgłoszenie.
+                  Przenosisz biuro w tej samej miejscowości? Zgłosimy nowy adres
+                  do KRS. Jeśli spółka przenosi się do innej miejscowości,
+                  trzeba też zmienić umowę spółki. Przygotujemy dokumenty
+                  i złożymy wniosek.
                 </p>
                 <p>
                   <a className={styles.primary} href="#kontakt">
@@ -183,9 +182,9 @@ export default function AddressPage() {
                 <p>
                   <strong>Od 499 zł netto</strong> za obsługę standardowej zmiany adresu.
                   Sprawdzimy umowę spółki, przygotujemy potrzebne dokumenty i
-                  zgłosimy nowy adres do KRS. Postępowanie przed sądem
-                  rejestrowym prowadzimy w uzgodnionym zakresie. Opłatę sądową i
-                  ewentualną opłatę skarbową rozliczamy osobno.
+                  zgłosimy nowy adres do KRS. Prowadzimy sprawę przed sądem
+                  rejestrowym do jej zakończenia. Opłatę sądową i ewentualną
+                  opłatę skarbową rozliczamy osobno.
                 </p>
               </article>
               <article id="zmiana-siedziby" className={styles.seatOffer}>
@@ -194,10 +193,9 @@ export default function AddressPage() {
                   Ustalimy, jak zmienić umowę spółki, przygotujemy dokumenty i
                   zgłosimy nową siedzibę oraz adres do KRS. Jeżeli zmianę umowy
                   można przeprowadzić w S24, jej obsługa kosztuje 599 zł netto.
-                  Jeżeli potrzebny jest protokół notarialny, koordynujemy
-                  czynności z notariuszem, a obsługa zmiany umowy w tym
-                  wariancie zaczyna się od 1 100 zł netto. Zakres i wycenę całej
-                  przeprowadzki podamy przed rozpoczęciem pracy. Koszt
+                  Gdy uchwałę musi zaprotokołować notariusz, ustalimy z nim szczegóły.
+                  Obsługa zmiany umowy kosztuje wtedy od 1 100 zł netto. Cenę
+                  całej przeprowadzki podamy przed przyjęciem zlecenia. Koszt
                   notariusza i opłaty urzędowe rozliczamy osobno.
                 </p>
                 <p>
@@ -210,8 +208,8 @@ export default function AddressPage() {
             <article className={styles.readyOffer}>
               <h3>Masz już uchwałę lub inne dokumenty?</h3>
               <p>
-                Napisz, jakie dokumenty są gotowe. Sprawdzimy je pod kątem
-                zgłoszenia i ustalimy zakres obsługi samego wniosku.
+                Napisz, jakie dokumenty już masz. Sprawdzimy je i podamy cenę
+                za obsługę samego wniosku.
               </p>
               <p>
                 <a href="#kontakt">Opisz gotowe dokumenty</a>
@@ -236,8 +234,7 @@ export default function AddressPage() {
                   </tr>
                   <tr>
                     <th scope="row">
-                      Zmiana dokonana na wzorcu uchwały w S24, gdy sprawę można
-                      złożyć w tym systemie
+                      Wniosek w S24 przy zmianie dokonanej uchwałą na wzorcu
                     </th>
                     <td>200 zł</td>
                   </tr>
@@ -262,9 +259,8 @@ export default function AddressPage() {
                 się 100 zł za ogłoszenie w Monitorze Sądowym i Gospodarczym.
               </p>
               <p>
-                Przykład. Przy standardowej zmianie adresu zgłaszanej przez PRS
-                koszt obejmuje honorarium od 499 zł netto i 250 zł opłaty
-                sądowej. Do honorarium doliczamy VAT. Jeżeli składamy
+                Przy standardowej zmianie adresu przez PRS płacisz od 499 zł
+                netto za obsługę (plus VAT) oraz 250 zł opłaty sądowej. Jeżeli składamy
                 pełnomocnictwo, dochodzi opłata skarbowa, o ile jest należna.
               </p>
               <p>
@@ -308,9 +304,8 @@ export default function AddressPage() {
                 </span>
                 <h3>Zgłaszamy zmianę.</h3>
                 <p>
-                  Składamy wniosek w odpowiednim systemie i informujemy o
-                  przebiegu postępowania przed sądem rejestrowym. Po wpisie
-                  przekazujemy potwierdzenie zmiany w KRS.
+                  Składamy wniosek w PRS lub S24 i informujemy, jak przebiega
+                  sprawa w sądzie. Po wpisie przesyłamy potwierdzenie.
                 </p>
               </li>
             </ol>
@@ -321,11 +316,8 @@ export default function AddressPage() {
             <article>
               <h2>Uchwała zarządu o zmianie adresu spółki</h2>
               <p>
-                Jeżeli spółka przeprowadza się w tej samej miejscowości, a
-                zmiana mieści się w kompetencjach zarządu, decyzję zwykle
-                dokumentuje uchwała zarządu. Sprawdź najpierw umowę spółki.
-                Jeżeli wskazuje konkretną ulicę i numer, może być potrzebna
-                także zmiana umowy.
+                Przy przeprowadzce w tej samej miejscowości zarząd zwykle
+                podejmuje uchwałę o nowym adresie.
               </p>
               <blockquote>
                 <strong>Przykładowa treść postanowienia uchwały</strong>
@@ -336,9 +328,11 @@ export default function AddressPage() {
                 </p>
               </blockquote>
               <p>
-                W dokumencie podaj datę podjęcia uchwały. Ustal, kto podpisuje
-                dokument zgodnie z zasadami podejmowania i dokumentowania uchwał
-                zarządu. Podpis pod wnioskiem do KRS to osobna kwestia. Wniosek
+                W dokumencie podaj datę podjęcia uchwały. Poza wzorcem S24
+                protokół podpisuje co najmniej członek zarządu prowadzący posiedzenie albo
+                zarządzający głosowanie, chyba że umowa spółki lub regulamin
+                zarządu stanowi inaczej (art. 208¹ k.s.h.). Wzorzec uchwały
+                adresowej w S24 podpisują wszyscy członkowie zarządu. Wniosek
                 podpisują osoby uprawnione do reprezentacji spółki albo jej
                 pełnomocnik procesowy.
               </p>
@@ -389,8 +383,7 @@ export default function AddressPage() {
               <h2>Zleć zmianę adresu lub siedziby spółki</h2>
               <p>
                 Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub
-                inne dokumenty. Ustalimy, jakie formalności są potrzebne, i
-                podamy zakres obsługi.
+                inne dokumenty. Odpiszemy, co przygotować i ile kosztuje obsługa.
               </p>
               <p>
                 <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>
