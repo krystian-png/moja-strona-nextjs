@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 const pageUrl = "https://zmianakrs.pl/uslugi/zmiana-adresu-spolki-zoo";
 const title = "Zmiana adresu i siedziby spółki z o.o. w KRS";
 const description =
-  "Sprawdź, kiedy wystarczy uchwała zarządu, kiedy trzeba zmienić umowę spółki i ile kosztuje zgłoszenie nowego adresu lub siedziby do KRS.";
+  "Ta sama miejscowość czy inna? Sprawdź, kiedy wystarczy uchwała zarządu, kiedy zmienić umowę spółki, ile kosztuje wpis i jak złożymy wniosek.";
 export const metadata: Metadata = {
   title,
   description,
@@ -38,8 +38,8 @@ const faq = [
   {
     question: "Ile mam czasu na zgłoszenie do KRS?",
     paragraphs: [
-      "Wniosek należy złożyć w terminie 7 dni od zdarzenia uzasadniającego wpis. Przy zmianie adresu jest to co do zasady dzień zmiany wskazany w uchwale zarządu. Przy zmianie siedziby licz ten termin od podjęcia uchwały zmieniającej umowę spółki.",
-      "Przy zmianie siedziby jest też osobny termin na zgłoszenie zmiany umowy. Zmiana umowy, której nie zgłoszono do sądu rejestrowego w ciągu 6 miesięcy od jej podjęcia, nie wywołuje skutków prawnych (uchwała Sądu Najwyższego z 29 kwietnia 2022 r., III CZP 75/22). Jeżeli umowę zmieniono na wzorcu w S24, termin ten wynosi 7 dni (art. 256 § 3 w zw. z art. 169 § 2 k.s.h.).",
+      "Spółka ma 7 dni na złożenie wniosku od zdarzenia uzasadniającego wpis. Przy zmianie adresu jest to co do zasady dzień zmiany wskazany w uchwale zarządu. Przy zmianie siedziby licz ten termin od podjęcia uchwały zmieniającej umowę spółki.",
+      "Przy zmianie siedziby obowiązuje też drugi, ważniejszy termin. Zmiana umowy, której nie zgłoszono do sądu rejestrowego w ciągu 6 miesięcy od jej podjęcia, nie wywołuje skutków prawnych (uchwała Sądu Najwyższego z 29 kwietnia 2022 r., III CZP 75/22). Jeżeli umowę zmieniono na wzorcu w S24, termin ten wynosi 7 dni (art. 256 § 3 w zw. z art. 169 § 2 k.s.h.).",
     ],
   },
   {
@@ -70,17 +70,6 @@ const schemas = [
     url: pageUrl,
     provider: organizationSchema,
     areaServed: { "@type": "Country", name: "Poland" },
-    offers: {
-      "@type": "Offer",
-      url: `${pageUrl}#zmiana-adresu`,
-      description: "Standardowa zmiana adresu w tej samej miejscowości",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: 499,
-        priceCurrency: "PLN",
-        valueAddedTaxIncluded: false,
-      },
-    },
   },
   {
     "@context": "https://schema.org",
@@ -129,10 +118,7 @@ export default function AddressPage() {
               <div>
                 <h1>{title}</h1>
                 <p>
-                  Przenosisz biuro w tej samej miejscowości? Zgłosimy nowy adres
-                  do KRS. Jeśli spółka przenosi się do innej miejscowości,
-                  trzeba też zmienić umowę spółki. Przygotujemy dokumenty
-                  i złożymy wniosek.
+                  Zmieniasz biuro w tej samej miejscowości? Zwykle wystarczy uchwała zarządu i wniosek do KRS. Przy przeprowadzce do innej miejscowości trzeba również zmienić umowę spółki. Przygotujemy dokumenty i złożymy wniosek.
                 </p>
                 <p>
                   <a className={styles.primary} href="#kontakt">
@@ -142,18 +128,16 @@ export default function AddressPage() {
               </div>
               <aside className={styles.priceCard}>
                 <p className={styles.heroPrice}>
-                  <strong>od 499 zł netto</strong>
+                  <strong>Zdalnie, przez PRS lub S24</strong>
                 </p>
-                <p>standardowa zmiana adresu w tej samej miejscowości</p>
+                <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
               </aside>
             </div>
             <div className={styles.scenarios}>
               <a href="#zmiana-adresu" className={styles.scenario}>
                 <h3>Ta sama miejscowość</h3>
                 <p>
-                  Zmienia się ulica, numer budynku lub lokalu. Zwykle decyzję
-                  podejmuje zarząd. Jeżeli w umowie spółki wpisano także pełny
-                  adres, sprawdzimy, czy trzeba zmienić jej treść.
+                  Zmienia się ulica, numer budynku lub lokalu. Zwykle decyzję podejmuje zarząd, a umowy spółki nie trzeba zmieniać.
                 </p>
                 <span className={styles.scenarioLink}>
                   Zobacz zakres zmiany adresu →
@@ -180,23 +164,13 @@ export default function AddressPage() {
               <article id="zmiana-adresu" className={styles.addressOffer}>
                 <h3>Zmiana adresu w tej samej miejscowości</h3>
                 <p>
-                  <strong>Od 499 zł netto</strong> za obsługę standardowej zmiany adresu.
-                  Sprawdzimy umowę spółki, przygotujemy potrzebne dokumenty i
-                  zgłosimy nowy adres do KRS. Prowadzimy sprawę przed sądem
-                  rejestrowym do jej zakończenia. Opłatę sądową i ewentualną
-                  opłatę skarbową rozliczamy osobno.
+                  <span data-nosnippet><strong>Od 499 zł netto</strong> za obsługę standardowej zmiany adresu.</span> Sprawdzimy umowę spółki, przygotujemy dokumenty i zgłosimy nowy adres do KRS. Sprawę przed sądem rejestrowym prowadzimy do jej zakończenia. Opłatę sądową i ewentualną opłatę skarbową rozliczamy osobno.
                 </p>
               </article>
               <article id="zmiana-siedziby" className={styles.seatOffer}>
                 <h3>Zmiana siedziby i adresu</h3>
                 <p>
-                  Ustalimy, jak zmienić umowę spółki, przygotujemy dokumenty i
-                  zgłosimy nową siedzibę oraz adres do KRS. Jeżeli zmianę umowy
-                  można przeprowadzić w S24, jej obsługa kosztuje 599 zł netto.
-                  Gdy uchwałę musi zaprotokołować notariusz, ustalimy z nim szczegóły.
-                  Obsługa zmiany umowy kosztuje wtedy od 1 100 zł netto. Cenę
-                  całej przeprowadzki podamy przed przyjęciem zlecenia. Koszt
-                  notariusza i opłaty urzędowe rozliczamy osobno.
+                  Ustalimy, jak zmienić umowę spółki, przygotujemy dokumenty i zgłosimy nową siedzibę oraz adres do KRS. <span data-nosnippet>Jeżeli zmianę umowy można przeprowadzić w S24, jej obsługa kosztuje 599 zł netto. Gdy potrzebny jest protokół notarialny, koordynujemy czynności z notariuszem, a obsługa zmiany umowy kosztuje wtedy od 1 100 zł netto.</span> Cenę całej przeprowadzki podamy przed rozpoczęciem pracy. Koszt notariusza i opłaty urzędowe rozliczamy osobno.
                 </p>
                 <p>
                   <a href="/uslugi/zmiana-umowy-spolki-zoo">
@@ -208,8 +182,7 @@ export default function AddressPage() {
             <article className={styles.readyOffer}>
               <h3>Masz już uchwałę lub inne dokumenty?</h3>
               <p>
-                Napisz, jakie dokumenty już masz. Sprawdzimy je i podamy cenę
-                za obsługę samego wniosku.
+                Napisz, co już masz. Sprawdzimy, czy dokumenty wystarczą do wniosku, i podamy cenę samego zgłoszenia.
               </p>
               <p>
                 <a href="#kontakt">Opisz gotowe dokumenty</a>
@@ -234,7 +207,7 @@ export default function AddressPage() {
                   </tr>
                   <tr>
                     <th scope="row">
-                      Wniosek w S24 przy zmianie dokonanej uchwałą na wzorcu
+                      Wniosek w S24, gdy zmianę wprowadza uchwała na wzorcu
                     </th>
                     <td>200 zł</td>
                   </tr>
@@ -259,9 +232,7 @@ export default function AddressPage() {
                 się 100 zł za ogłoszenie w Monitorze Sądowym i Gospodarczym.
               </p>
               <p>
-                Przy standardowej zmianie adresu przez PRS płacisz od 499 zł
-                netto za obsługę (plus VAT) oraz 250 zł opłaty sądowej. Jeżeli składamy
-                pełnomocnictwo, dochodzi opłata skarbowa, o ile jest należna.
+                <span data-nosnippet>Przykład: przy standardowej zmianie adresu w PRS płacisz honorarium od 499 zł netto plus VAT i 250 zł opłaty sądowej.</span> Jeżeli składamy pełnomocnictwo, dochodzi opłata skarbowa, o ile jest należna.
               </p>
               <p>
                 <a href="/cennik">Zobacz cennik obsługi zmian w KRS</a>
@@ -282,9 +253,7 @@ export default function AddressPage() {
                 </span>
                 <h3>Ustalamy zakres.</h3>
                 <p>
-                  Podajesz nazwę spółki oraz obecny i planowany adres.
-                  Sprawdzamy umowę, dotychczasowy tryb zmian w spółce i
-                  dokumenty, które już masz.
+                  Podajesz nazwę spółki oraz obecny i planowany adres. Sprawdzamy umowę, to, czy spółka zmieniała ją dotąd w S24, czy u notariusza, i dokumenty, które już masz.
                 </p>
               </li>
               <li>
@@ -304,8 +273,7 @@ export default function AddressPage() {
                 </span>
                 <h3>Zgłaszamy zmianę.</h3>
                 <p>
-                  Składamy wniosek w PRS lub S24 i informujemy, jak przebiega
-                  sprawa w sądzie. Po wpisie przesyłamy potwierdzenie.
+                  Składamy wniosek w PRS lub S24 i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia. Po wpisie przekazujemy potwierdzenie zmiany w KRS.
                 </p>
               </li>
             </ol>
@@ -316,8 +284,7 @@ export default function AddressPage() {
             <article>
               <h2>Uchwała zarządu o zmianie adresu spółki</h2>
               <p>
-                Przy przeprowadzce w tej samej miejscowości zarząd zwykle
-                podejmuje uchwałę o nowym adresie.
+                Przy przeprowadzce w tej samej miejscowości decyzję zwykle podejmuje zarząd w formie uchwały. Umowa spółki określa siedzibę, czyli miejscowość (art. 157 § 1 pkt 1 k.s.h. i art. 41 k.c.), dlatego sama zmiana adresu zwykle nie wymaga zmiany umowy.
               </p>
               <blockquote>
                 <strong>Przykładowa treść postanowienia uchwały</strong>
@@ -328,13 +295,7 @@ export default function AddressPage() {
                 </p>
               </blockquote>
               <p>
-                W dokumencie podaj datę podjęcia uchwały. Poza wzorcem S24
-                protokół podpisuje co najmniej członek zarządu prowadzący posiedzenie albo
-                zarządzający głosowanie, chyba że umowa spółki lub regulamin
-                zarządu stanowi inaczej (art. 208¹ k.s.h.). Wzorzec uchwały
-                adresowej w S24 podpisują wszyscy członkowie zarządu. Wniosek
-                podpisują osoby uprawnione do reprezentacji spółki albo jej
-                pełnomocnik procesowy.
+                W dokumencie podaj datę podjęcia uchwały. Ustal, kto podpisuje uchwałę zgodnie z zasadami obowiązującymi w zarządzie. Wniosek do KRS podpisuje się osobno: robią to osoby uprawnione do reprezentacji spółki albo jej pełnomocnik procesowy.
               </p>
               <p>
                 Przy zmianie miejscowości wspólnicy podejmują uchwałę
@@ -382,8 +343,7 @@ export default function AddressPage() {
             <div>
               <h2>Zleć zmianę adresu lub siedziby spółki</h2>
               <p>
-                Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub
-                inne dokumenty. Odpiszemy, co przygotować i ile kosztuje obsługa.
+                Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub inne dokumenty. Odpiszemy, co trzeba przygotować i ile kosztuje obsługa.
               </p>
               <p>
                 <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>

@@ -48,22 +48,22 @@ const faq = [
   {
     question: "Czy ustanowienie prokury wymaga zmiany umowy spółki?",
     answer:
-      "Zwykle wystarczy zgoda zarządu na powołanie prokurenta i dokument udzielenia prokury. Dotyczy to również prokury wykonywanej wspólnie z członkiem zarządu. Jeżeli równocześnie chcesz zmienić sposób reprezentacji zarządu zapisany w umowie, [sprawdź obsługę zmiany umowy spółki](/uslugi/zmiana-umowy-spolki-zoo).",
+      "Zwykle nie. Wystarczy zgoda zarządu na powołanie prokurenta i dokument udzielenia prokury. Dotyczy to również prokury wykonywanej wspólnie z członkiem zarządu. Jeżeli równocześnie chcesz zmienić sposób reprezentacji zarządu zapisany w umowie, [sprawdź obsługę zmiany umowy spółki](/uslugi/zmiana-umowy-spolki-zoo).",
   },
   {
     question: "Czy prokurenta trzeba zgłosić do KRS?",
     answer:
-      "Tak. Spółka ma zazwyczaj 7 dni na zgłoszenie od dnia udzielenia prokury. Prokurent może działać od skutecznego udzielenia prokury. Wpis potwierdza jego umocowanie w rejestrze. Do czasu wpisu bank lub kontrahent może poprosić o dokument prokury.",
+      "Tak. Spółka ma na to 7 dni od udzielenia prokury. Prokurent może jednak działać od chwili jej skutecznego udzielenia, a wpis tylko ujawnia jego umocowanie. Do czasu wpisu bank lub kontrahent może poprosić o dokument prokury.",
   },
   {
     question: "Kto powołuje prokurenta w spółce z o.o.?",
     answer:
-      "Zarząd. Jeśli umowa spółki nie stanowi inaczej, w zarządzie wieloosobowym potrzebna jest zgoda wszystkich członków. Co do zasady prokurę może odwołać każdy członek zarządu. [Zobacz poradnik o ustanowieniu i zgłoszeniu prokury](/artykul/prokurent-krs-ustanowienie-prokury-wpis).",
+      "Zarząd. Jeśli umowa spółki nie stanowi inaczej, w zarządzie wieloosobowym potrzebna jest zgoda wszystkich członków. Odwołać prokurę może każdy członek zarządu, jeśli umowa spółki nie stanowi inaczej. [Zobacz poradnik o ustanowieniu i zgłoszeniu prokury](/artykul/prokurent-krs-ustanowienie-prokury-wpis).",
   },
   {
     question: "Ile trwa wpis prokurenta?",
     answer:
-      "Ustawa przewiduje co do zasady 7 dni na rozpoznanie wniosku od jego wpływu do sądu. Jeżeli sąd wezwie do usunięcia przeszkody, termin na rozpoznanie biegnie od jej usunięcia. To termin na rozpoznanie wniosku, a daty wpisu nie da się zagwarantować.",
+      "Sąd rejestrowy powinien rozpoznać wniosek w ciągu 7 dni od jego wpływu. Jeżeli wezwie do usunięcia przeszkody, termin biegnie od jej usunięcia. Faktyczny czas zależy od obciążenia sądu i ewentualnych wezwań, dlatego daty wpisu nie gwarantujemy.",
   },
 ];
 const schemas = [
@@ -75,17 +75,6 @@ const schemas = [
     url: pageUrl,
     provider: organizationSchema,
     areaServed: { "@type": "Country", name: "Poland" },
-    offers: {
-      "@type": "Offer",
-      url: `${pageUrl}#zakres`,
-      description: "Standardowy wpis jednego prokurenta samoistnego",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: 499,
-        priceCurrency: "PLN",
-        valueAddedTaxIncluded: false,
-      },
-    },
   },
   {
     "@context": "https://schema.org",
@@ -150,9 +139,7 @@ export default function ProkuraPage() {
               <div>
                 <h1>{title}</h1>
                 <p>
-                  Powołujesz prokurenta, zmieniasz rodzaj prokury albo chcesz wykreślić
-                  prokurenta z KRS? Przygotujemy dokumenty i złożymy wniosek. Jeśli
-                  dokumenty są już podpisane, możesz zlecić nam samo zgłoszenie.
+                  Ustanawiasz prokurę, zmieniasz prokurenta lub rodzaj prokury albo chcesz wykreślić prokurenta z KRS? Każdą z tych zmian spółka zgłasza do KRS w ciągu 7 dni. Przygotujemy uchwałę, dokument prokury i wniosek, a potem złożymy go online. Jeśli dokumenty są już podpisane, zajmiemy się samym zgłoszeniem.
                 </p>
 
                 <p>
@@ -166,42 +153,39 @@ export default function ProkuraPage() {
               </div>
               <aside className={styles.priceCard}>
                 <p className={styles.heroPrice}>
-                  <strong>od 499 zł netto</strong>
+                  <strong>Zdalnie, przez PRS lub S24</strong>
                 </p>
-                <p>standardowy wpis jednego prokurenta samoistnego</p>
+                <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
               </aside>
             </div>
           </div>
         </section>
         <section className={styles.section}>
           <div className={styles.container}>
-            <h2>Wpis, zmiana czy wykreślenie prokurenta?</h2>
+            <h2>Jakiej zmiany dotyczącej prokury potrzebujesz?</h2>
             <div className={styles.scenarios}>
               <article className={styles.scenario}>
                 <h3>Ustanowienie prokury i wpis prokurenta do KRS</h3>
                 <p>
-                  Ustalimy, czy prokurent ma podpisywać dokumenty samodzielnie,
-                  z innym prokurentem czy z członkiem zarządu. Przygotujemy dokumenty
-                  i wniosek o wpis do KRS.
+                  Chcesz, żeby wskazana osoba podpisywała umowy w imieniu spółki? Ustalimy, czy ma działać samodzielnie, z innym prokurentem czy z członkiem zarządu, i przygotujemy zgłoszenie do KRS.
                 </p>
               </article>
 
               <article className={styles.scenario}>
                 <h3>Zmiana prokurenta lub rodzaju prokury</h3>
                 <p>
-                  Jeśli nowy prokurent zastępuje dotychczasowego, zgłosimy wpis
-                  nowej osoby i wykreślenie poprzedniej. Jeśli prokurent zostaje,
-                  możemy zgłosić zmianę jego danych, rodzaju prokury lub sposobu jej
-                  wykonywania.
+                  Jeśli jedna osoba zastępuje drugą, zgłosimy wykreślenie
+                  dotychczasowego prokurenta i wpis nowego. Jeśli osoba zostaje,
+                  a zmienia się sposób jej działania, przygotujemy dokumenty do
+                  zmiany rodzaju prokury lub sposobu jej wykonywania. Możemy też
+                  zgłosić zmianę danych prokurenta.
                 </p>
               </article>
 
               <article className={styles.scenario}>
                 <h3>Odwołanie prokury, rezygnacja i wykreślenie prokurenta</h3>
                 <p>
-                  Zgłaszamy wykreślenie po odwołaniu, rezygnacji lub wygaśnięciu
-                  prokury, np. po śmierci prokurenta. Sprawdzimy dokument, który
-                  potwierdza ustanie prokury, i złożymy wniosek o wykreślenie w PRS.
+                  Zgłaszamy wykreślenie po odwołaniu, rezygnacji lub wygaśnięciu prokury, np. po śmierci prokurenta. Sprawdzimy dokument, z którego wynika ustanie prokury, i złożymy wniosek o wykreślenie w PRS.
                 </p>
               </article>
             </div>
@@ -225,19 +209,13 @@ export default function ProkuraPage() {
               <article className={styles.addressOffer}>
                 <h3>Zgłoszenie na gotowych dokumentach</h3>
                 <p>
-                  Jeśli dokumenty są już podpisane, sprawdzimy dokumenty, podpisy
-                  i dane we wniosku. Jeśli czegoś brakuje, napiszemy, co poprawić
-                  albo dosłać. Przed zleceniem ustalimy, czy trzeba przygotować nowe
-                  dokumenty.
+                  Jeśli dokumenty są już podpisane, sprawdzamy ich kompletność, podpisy i zgodność danych z wnioskiem. Jeśli czegoś brakuje, napiszemy, co poprawić albo dosłać. Przygotowanie nowych dokumentów uzgadniamy przed zleceniem.
                 </p>
               </article>
             </div>
 
             <p>
-              W obu wariantach przygotowujemy wniosek. W PRS możemy go podpisać
-              i złożyć jako pełnomocnik spółki. W S24 ustalamy, kto podpisze
-              i wyśle wniosek.
-              Prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.
+              W obu wariantach przygotowujemy wniosek. W PRS możemy podpisać i złożyć go jako pełnomocnik spółki. Przy S24 ustalamy, kto podpisze i wyśle wniosek w systemie. Sprawę przed sądem rejestrowym prowadzimy do jej zakończenia.
             </p>
           </div>
         </section>
@@ -247,14 +225,16 @@ export default function ProkuraPage() {
               Ile kosztuje ustanowienie, zmiana lub wykreślenie prokury?
             </h2>
 
-            <p>Obsługa prokury od 499 zł netto.</p>
-
-            <p>
-              W standardowej sprawie cena od 499 zł netto obejmuje przygotowanie
-              dokumentów i złożenie wniosku o wpis jednego prokurenta samoistnego.
-              Jeśli masz już dokumenty albo zgłaszasz kilka zmian naraz, podamy
-              cenę po przejrzeniu sprawy, przed przyjęciem zlecenia.
-            </p>
+            <div data-nosnippet>
+              <p>Obsługa prokury od 499 zł netto.</p>
+              <p>
+                Ta cena dotyczy typowej sprawy: wpisujemy jednego prokurenta
+                samoistnego, przygotowujemy dokumenty i składamy wniosek, a w
+                spółce nie zmienia się nic więcej. Przy kilku zmianach naraz albo
+                zgłoszeniu na gotowych dokumentach podajemy cenę po przejrzeniu
+                sprawy, zawsze przed zleceniem.
+              </p>
+            </div>
 
             <table className={styles.fees}>
               <thead>
@@ -316,8 +296,7 @@ export default function ProkuraPage() {
                 <span className={styles.stepNumber} aria-hidden="true">
                   3
                 </span>
-                Składamy wniosek w PRS lub S24 i dajemy Ci znać, jak sąd
-                rozstrzygnął sprawę.
+                Składamy wniosek w PRS lub S24 i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.
               </li>
             </ol>
           </div>
@@ -327,8 +306,7 @@ export default function ProkuraPage() {
             <h2>Składasz wniosek samodzielnie?</h2>
 
             <p>
-              Zasadniczo spółka składa wniosek w ciągu 7 dni od udzielenia,
-              zmiany albo ustania prokury. Wniosek składasz
+              Spółka składa wniosek w ciągu 7 dni od udzielenia, zmiany albo ustania prokury. Wniosek składasz
               elektronicznie w Portalu Rejestrów Sądowych (PRS). Jeśli spółka
               spełnia warunki S24, możesz ustanowić prokurę na wzorcu w tym
               systemie i zgłosić jej wpis. Zmianę rodzaju już wpisanej prokury
@@ -337,8 +315,7 @@ export default function ProkuraPage() {
 
             <p>
               Do wpisu potrzebujesz dokumentu udzielenia prokury i oświadczenia
-              o adresie do doręczeń prokurenta. Co do zasady dołączasz też jego
-              zgodę na powołanie. Przy wykreśleniu dołącz dokument, z którego
+              o adresie do doręczeń prokurenta. Zwykle dołączasz też jego zgodę na powołanie. Przy wykreśleniu dołącz dokument, z którego
               wynika, dlaczego i kiedy prokura ustała.
             </p>
 

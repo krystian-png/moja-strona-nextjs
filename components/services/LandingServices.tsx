@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, FileText, ListChecks, MapPin, UserRoundCheck, Users } from "lucide-react"
+import { ArrowRight, FileText, ListChecks, MapPin, UserCheck, Users } from "lucide-react"
 
 type LandingServicesProps = {
   title?: string
@@ -25,14 +25,6 @@ const serviceCards = [
     iconBgClassName: "bg-emerald-500/20 text-emerald-300",
   },
   {
-    title: "Prokura w spółce z o.o.",
-    description: "Wpis, zmiana lub wykreślenie prokurenta. Przygotujemy dokumenty i złożymy wniosek do KRS.",
-    href: "/uslugi/prokurent-krs",
-    ariaLabel: "Prokura w spółce z o.o. – wpis, zmiana lub wykreślenie prokurenta",
-    icon: UserRoundCheck,
-    iconBgClassName: "bg-violet-500/20 text-violet-300",
-  },
-  {
     title: "Zmiana wspólnika spółki z o.o.",
     description: "Zbycie udziałów oraz aktualizacja listy wspólników i zgłoszenie zmiany do KRS.",
     href: "/uslugi/zmiana-wspolnika-spolki-zoo",
@@ -49,12 +41,20 @@ const serviceCards = [
     iconBgClassName: "bg-sky-500/20 text-sky-300",
   },
   {
+    title: "Prokura w spółce z o.o.",
+    description: "Ustanowienie prokury, zmiana prokurenta i wykreślenie prokurenta z KRS.",
+    href: "/uslugi/prokurent-krs",
+    ariaLabel: "Prokura w spółce z o.o. – usługa obsługi wniosku KRS",
+    icon: UserCheck,
+    iconBgClassName: "bg-rose-500/20 text-rose-300",
+  },
+  {
     title: "Zmiana kodów PKD w KRS",
-    description: "Sprawdzimy kody PKD spółki, przygotujemy dokumenty i złożymy wniosek o zmianę wpisu.",
+    description: "Sprawdzimy, jakie kody PKD 2025 wpisze system po 31 grudnia 2026 r., i zgłosimy potrzebną zmianę do KRS.",
     href: "/uslugi/zmiana-kodow-pkd",
-    ariaLabel: "Zmiana kodów PKD w KRS – obsługa wniosku",
+    ariaLabel: "Zmiana kodów PKD w KRS – usługa obsługi wniosku KRS",
     icon: ListChecks,
-    iconBgClassName: "bg-teal-500/20 text-teal-300",
+    iconBgClassName: "bg-violet-500/20 text-violet-300",
   },
 ] as const
 
