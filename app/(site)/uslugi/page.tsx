@@ -47,7 +47,7 @@ const mainServices: MainService[] = [
     title: "Zmiana wpisu w KRS",
     description:
       "Składanie wniosków o zmianę w KRS może być czasochłonne i pełne pułapek formalnych. My robimy to za Ciebie – zgodnie z obowiązującymi przepisami, ograniczając ryzyko błędów i opóźnień.",
-    price: "od 999 zł netto",
+    price: "od 499 zł netto",
     features: [
       "Zmiany zarządu (powołanie, odwołanie, rezygnacja)",
       "Zmiany adresu siedziby spółki",
@@ -70,7 +70,7 @@ const mainServices: MainService[] = [
     title: "Zakładanie spółek z o.o. przez S24",
     description:
       "Dla prostych struktur właścicielskich i standardowych umów spółki, system S24 umożliwia szybkie założenie spółki online.",
-    price: "od 699 zł netto",
+    price: "od 799 zł netto",
     features: [
       "Przygotowanie wszystkich wymaganych dokumentów",
       "Zakładanie wniosku w systemie S24",
@@ -85,7 +85,7 @@ const mainServices: MainService[] = [
     title: "Zakładanie spółek z o.o. przez notariusza",
     description:
       "Dla klientów, którzy potrzebują niestandardowej umowy spółki, rekomendujemy zakładanie spółki z o.o. w formie aktu notarialnego.",
-    price: "od 1199 zł netto",
+    price: "od 1 199 zł netto",
     features: [
       "Przygotowanie wszystkich dokumentów prawnych",
       "Wsparcie w projektowaniu umowy spółki",
@@ -99,21 +99,6 @@ const mainServices: MainService[] = [
       "Otrzymanie zaświadczeń o wpisie",
     ],
     icon: Building,
-  },
-  {
-    title: "Pomoc w przygotowaniu dokumentów Zwyczajnego Zgromadzenia Wspólników",
-    description:
-      "Kompleksowe wsparcie w przygotowaniu dokumentów wymaganych do zatwierdzenia rocznego sprawozdania finansowego i spełnienia obowiązku złożenia ich do KRS.",
-    price: "499 zł netto",
-    features: [
-      "Sporządzenie protokołu Zwyczajnego Zgromadzenia Wspólników z wszystkimi wymaganymi uchwałami",
-      "Przygotowanie wzoru sprawozdania Zarządu z działalności",
-      "Załączenie rocznego sprawozdania finansowego klienta do protokołu",
-      "Pomoc w złożeniu kompletu dokumentów do Repozytorium Dokumentów Finansowych KRS",
-    ],
-    note:
-      "Usługa przeznaczona dla spółek z o.o. chcących prawidłowo i terminowo wypełnić obowiązki rejestrowe oraz ograniczyć ryzyko kar za opóźnienie lub brak złożenia dokumentów",
-    icon: FileText,
   },
 ]
 
@@ -152,7 +137,7 @@ const structuredData = {
   name: "Profesjonalne usługi zmian wpisu w KRS",
   url: pageUrl,
   description:
-    "Kompleksowa obsługa wniosków o zmianę wpisu w KRS wraz z zakładaniem spółek i przygotowaniem dokumentów zgromadzeń wspólników.",
+    "Kompleksowa obsługa wniosków o zmianę wpisu w KRS wraz z zakładaniem spółek z o.o.",
   serviceType: "Usługi zmian wpisu w KRS i obsługa wniosków KRS dla spółek",
   areaServed: {
     "@type": "Country",
@@ -182,7 +167,7 @@ export const metadata: Metadata = {
     title:
       "Usługi zmian wpisu w KRS dla spółek – obsługa wniosków KRS | ZmianaKRS",
     description:
-      "Kompleksowa obsługa wniosków o zmianę wpisu w KRS, rejestracji spółek z o.o. oraz dokumentów zgromadzeń wspólników.",
+      "Kompleksowa obsługa wniosków o zmianę wpisu w KRS oraz rejestracji spółek z o.o.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -209,7 +194,6 @@ export default function ServicesPage() {
   const UrgentServiceIcon = urgentService.icon
   const popularService = mainServices[0]
   const PopularServiceIcon = popularService.icon
-  const closingService = mainServices[3]
 
   return (
     <div className="relative min-h-screen text-white">
@@ -524,58 +508,6 @@ export default function ServicesPage() {
                   )
                 })}
               </div>
-
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 sm:p-8">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-lg bg-amber-600 p-2">
-                      <FileText className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="mb-1 text-lg font-semibold text-amber-300">Roczne sprawozdanie finansowe</div>
-                      <h3 className="text-2xl font-semibold text-white">{closingService.title}</h3>
-                      <div className="mt-1 text-2xl font-bold text-amber-400">{closingService.price}</div>
-                    </div>
-                  </div>
-                  <p className="text-justify text-base leading-relaxed text-gray-300">{closingService.description}</p>
-                </div>
-
-                <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-                  <div>
-                    <h4 className="mb-3 text-lg font-semibold text-white">Oferujemy pomoc w zakresie:</h4>
-                    <ul className="space-y-2">
-                      {closingService.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3 text-gray-200">
-                          <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-400" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="mb-3 text-lg font-semibold text-white">
-                      Zamów i złóż dokumenty do KRS w terminie
-                    </h4>
-                    <p className="mb-4 text-sm leading-relaxed text-gray-300">{closingService.note}</p>
-                    
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Link
-                    href="#formularz"
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-amber-600 px-8 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-amber-700 sm:w-auto"
-                  >
-                    Wyślij zapytanie
-                  </Link>
-                  <Link
-                    href="/cennik"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 underline underline-offset-4 hover:text-amber-300"
-                  >
-                    Zobacz cennik →
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -628,7 +560,7 @@ export default function ServicesPage() {
                       <li>dokładną wycenę usługi w oparciu o rzeczywisty zakres czynności</li>
                     </ul>
                     <p className="mt-3 leading-relaxed text-white/90">
-                      Wszystko klarownie i bez ukrytych kosztów – nasze przejrzyste zasady rozliczeń zaczynają się już od 999 zł netto za złożenie kompletnego wniosku do KRS.
+                      Wszystko klarownie i bez ukrytych kosztów – obsługa zmiany wpisu w KRS kosztuje od 499 zł netto.
                     </p>
                   </div>
                 </div>

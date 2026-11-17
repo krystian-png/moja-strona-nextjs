@@ -188,8 +188,7 @@ Skontaktuj się z nami, aby dowiedzieć się więcej o naszych usługach KRS dla
                           usługi KRS
                         </Link>{" "}
                         są wyceniane w sposób jasny i zrozumiały, dzięki czemu od razu wiesz, jaki będzie koszt zmiany wpisu w KRS w
-                        Twojej sprawie. Standardowa obsługa zmiany wpisu w KRS zaczyna się od 999 zł netto za złożenie wniosku z dokumentami
-                        dostarczonymi przez klienta. Szczegóły znajdziesz w{" "}
+                        Twojej sprawie. Obsługa zmiany wpisu w KRS kosztuje od 499 zł netto. Szczegóły znajdziesz w{" "}
                         <Link href="/cennik" className="text-amber-400 hover:text-amber-300 underline">
                           cenniku usług KRS
                         </Link>

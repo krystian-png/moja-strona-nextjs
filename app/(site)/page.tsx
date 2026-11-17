@@ -16,9 +16,9 @@ const pageUrl = siteUrl
 
 export const metadata: Metadata = {
   title:
-    "Zmiana wpisu w KRS dla spółek – od 999 zł, zdalnie",
+    "Zmiana wpisu w KRS dla spółek – zdalnie",
   description:
-    "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 999 zł netto.",
+    "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie.",
   alternates: {
     canonical: pageUrl,
     languages: {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Zmiana wpisu w KRS dla spółek – od 999 zł, zdalnie | ZmianaKRS",
+      "Zmiana wpisu w KRS dla spółek – zdalnie | ZmianaKRS",
     description:
-      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 999 zł netto.",
+      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie.",
     url: pageUrl,
     type: "website",
     siteName: brandName,
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Zmiana wpisu w KRS dla spółek – od 999 zł, zdalnie | ZmianaKRS",
+      "Zmiana wpisu w KRS dla spółek – zdalnie | ZmianaKRS",
     description:
-      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie, od 999 zł netto.",
+      "Profesjonalna zmiana zarządu, adresu, wspólnika lub umowy spółki w KRS. Przygotujemy dokumenty i złożymy wniosek za Ciebie. Sprawnie i bezpiecznie.",
     images: [
       `${siteUrl}/images/zmiana-wpisu-w-krs-profesjonalna-obsluga-wnioskow.webp`,
     ],
