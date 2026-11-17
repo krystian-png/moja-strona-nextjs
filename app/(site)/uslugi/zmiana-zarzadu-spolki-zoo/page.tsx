@@ -24,14 +24,14 @@ const situations = [
   {
     "id": "odwolanie",
     "title": "Odwołanie członka zarządu",
-    "text": "Odwołanie, podobnie jak powołanie, następuje co do zasady uchwałą wspólników, chyba że umowa spółki stanowi inaczej. Sprawdzamy, kto podjął decyzję, od kiedy jest skuteczna, kto zostaje w zarządzie i kto podpisze wniosek.",
+    "text": "Odwołanie, podobnie jak powołanie, następuje co do zasady uchwałą wspólników, chyba że umowa spółki stanowi inaczej. Sprawdzamy, kto i jak podjął decyzję, od kiedy jest skuteczna, kto zostaje w zarządzie i kto podpisze wniosek.",
     "label": "Odwołanie",
     "sub": "Zmiana składu organu"
   },
   {
     "id": "rezygnacja",
     "title": "Rezygnacja członka zarządu",
-    "text": "Rezygnacja jest oświadczeniem członka zarządu. Sprawdzimy, komu i kiedy złożono rezygnację. Jeśli w zarządzie nie ma zostać nikt, sprawdzimy też umowę spółki i tryb z art. 202 § 6 k.s.h.",
+    "text": "Rezygnacja jest oświadczeniem członka zarządu. Liczy się to, komu i jak zostanie złożona. Gdy po rezygnacji żaden mandat w zarządzie nie byłby obsadzony, obowiązuje szczególny tryb z art. 202 § 6 k.s.h., chyba że umowa spółki stanowi inaczej. Sprawdzamy dokumenty i sposób zgłoszenia.",
     "label": "Rezygnacja",
     "sub": "Ustąpienie z funkcji"
   },
@@ -54,11 +54,11 @@ const icons = [UserPlus, UserMinus, LogOut, Users, FilePenLine]
 const faq = [
   {
     "question": "Czy powołanie nowego członka zarządu wymaga notariusza?",
-    "answer": "Zwykle nie. Najczęściej wystarczy uchwała wspólników albo innego organu wskazanego w umowie spółki. Jeżeli jednocześnie trzeba zmienić umowę spółki lub występuje szczególna forma czynności, ustalimy to na podstawie dokumentów."
+    "answer": "Zwykle nie. Najczęściej wystarczy uchwała wspólników albo innego organu wskazanego w umowie spółki. Jeżeli jednocześnie trzeba zmienić umowę spółki lub czynność wymaga szczególnej formy, ustalimy to na podstawie dokumentów."
   },
   {
     "question": "Czy rezygnacja członka zarządu wymaga uchwały wspólników?",
-    "answer": "Nie. Rezygnacja jest oświadczeniem woli i nie wymaga przyjęcia przez wspólników. Liczy się to, komu i jak złożysz rezygnację. Jeśli po rezygnacji w zarządzie nie zostanie nikt, składasz ją wspólnikom i zwołujesz ich zgromadzenie, chyba że umowa przewiduje inny sposób."
+    "answer": "Nie. Rezygnacja jest oświadczeniem woli i nie wymaga przyjęcia przez wspólników. Liczy się to, komu i jak ją złożysz. Gdy po rezygnacji żaden mandat w zarządzie nie byłby obsadzony, trzeba dodatkowo zwołać zgromadzenie wspólników, chyba że umowa spółki stanowi inaczej."
   },
   {
     "question": "Czy można zgłosić zmianę prezesa bez zmiany składu zarządu?",
@@ -70,7 +70,7 @@ const faq = [
   },
   {
     "question": "Czy mogę zlecić tylko zgłoszenie do KRS na gotowych dokumentach?",
-    "answer": "Tak. Napisz, jakie dokumenty masz. Sprawdzimy je i ustalimy zakres obsługi przed rozpoczęciem pracy."
+    "answer": "Tak. Napisz, jakie dokumenty masz. Sprawdzimy, czy wystarczą do wniosku, i podamy cenę przed rozpoczęciem pracy."
   },
   {
     "question": "Ile trwa zmiana zarządu w KRS?",
@@ -81,28 +81,28 @@ const knowledge = [
   {
     "title": "Jak zgłosić zmianę zarządu do KRS?",
     "paragraphs": [
-      "Najpierw przygotuj dokument potwierdzający zmianę, np. uchwałę o powołaniu lub odwołaniu, albo oświadczenie o rezygnacji z dowodem jej złożenia. Dołącz go do wniosku o zmianę danych zarządu. Wniosek składa się elektronicznie przez Portal Rejestrów Sądowych (PRS) albo – gdy jest to dopuszczalne – przez system S24.",
+      "Najpierw spółka potrzebuje dokumentu, który potwierdza zmianę: uchwały o powołaniu lub odwołaniu członka zarządu albo rezygnacji wraz z dowodem jej złożenia. Na tej podstawie przygotowuje się wniosek o zmianę danych zarządu i załączniki. Wniosek składa się elektronicznie przez Portal Rejestrów Sądowych (PRS) albo – jeśli spółka może z niego korzystać – przez system S24.",
       "PRS jest standardową ścieżką. S24 nie jest dostępny automatycznie przy każdej zmianie i w każdej spółce. Tryb ustalamy na podstawie stanu prawnego i dokumentów spółki."
     ]
   },
   {
     "title": "Jakie dokumenty są potrzebne do zmiany zarządu w KRS?",
     "paragraphs": [
-      "Lista zależy od tego, co zmienia się w spółce. Najczęściej potrzebna jest uchwała o powołaniu lub odwołaniu, oświadczenie nowo powołanej osoby o zgodzie na powołanie i jej adres do doręczeń, a w przypadku rezygnacji – dokument pozwalający wykazać skuteczność oświadczenia. Do wniosku dołącza się załączniki wymagane w danym trybie, a gdy działa pełnomocnik – właściwe pełnomocnictwo.",
+      "Lista zależy od tego, co zmienia się w spółce. Najczęściej potrzebna jest uchwała o powołaniu lub odwołaniu, oświadczenie nowo powołanej osoby o zgodzie na powołanie i jej adres do doręczeń, a przy rezygnacji – dokument, który pozwala wykazać, że oświadczenie zostało skutecznie złożone. Gdy wniosek składa pełnomocnik, dołącza się pełnomocnictwo.",
       "Oświadczenia o zgodzie nie trzeba dołączać, jeżeli nowy członek zarządu sam podpisuje wniosek albo udzielił pełnomocnictwa do jego złożenia, a także gdy jego zgoda wynika z protokołu z posiedzenia organu, który go powołał, lub z umowy spółki (art. 19a ust. 5 ustawy o KRS)."
     ]
   },
   {
     "title": "Kto podpisuje wniosek do KRS?",
     "paragraphs": [
-      "Wniosek podpisują osoby uprawnione do reprezentowania spółki albo ustanowiony pełnomocnik procesowy, zależnie od trybu i sposobu działania. KRS może jeszcze pokazywać poprzedni skład zarządu. Przed złożeniem wniosku sprawdzamy w dokumentach, kto może reprezentować spółkę.",
+      "Wniosek podpisują osoby uprawnione do reprezentowania spółki albo pełnomocnik procesowy. To, że w KRS widnieje stary skład zarządu, nie znaczy, że te osoby nadal mogą działać za spółkę. Przed złożeniem wniosku sprawdzamy w dokumentach, kto rzeczywiście ją reprezentuje.",
       "Dokumenty sporządzone elektronicznie opatruje się kwalifikowanym podpisem elektronicznym, podpisem zaufanym albo podpisem osobistym. Dokumenty papierowe dołącza się jako odpisy poświadczone elektronicznie przez notariusza albo pełnomocnika będącego adwokatem lub radcą prawnym. Jeżeli dołączy się zwykłe skany, oryginały trzeba przesłać do sądu w ciągu 3 dni (art. 694⁴ k.p.c.). Gdy prowadzimy sprawę jako pełnomocnik, sami poświadczamy odpisy dokumentów."
     ]
   },
   {
     "title": "W jakim terminie zgłosić zmianę zarządu?",
     "paragraphs": [
-      "Wniosek o zmianę wpisu w KRS składa się w terminie 7 dni od zdarzenia uzasadniającego wpis, chyba że przepis szczególny stanowi inaczej (art. 22 ustawy o KRS). To termin na złożenie wniosku przez spółkę. Sąd rejestrowy powinien rozpoznać wniosek w terminie 7 dni od jego wpływu (art. 20a ust. 1 ustawy o KRS), ale daty wpisu nie da się zagwarantować."
+      "Wniosek o zmianę wpisu w KRS składa się w terminie 7 dni od zdarzenia uzasadniającego wpis, chyba że przepis szczególny stanowi inaczej (art. 22 ustawy o KRS). Ten termin dotyczy spółki, nie sądu. Sąd rejestrowy powinien rozpoznać wniosek w terminie 7 dni od jego wpływu (art. 20a ust. 1 ustawy o KRS), ale daty wpisu nie da się zagwarantować."
     ]
   },
   {
@@ -115,7 +115,7 @@ const knowledge = [
 const steps = [
   {
     "title": "Ustalamy sytuację spółki.",
-    "text": "Opisujesz zmianę i piszesz, czy masz już uchwałę lub inne dokumenty. Mówimy, co przygotować i gdzie złożyć wniosek."
+    "text": "Opisujesz zmianę i piszesz, czy masz już uchwałę lub inne dokumenty. Mówimy, co trzeba przygotować i gdzie złożyć wniosek."
   },
   {
     "title": "Przygotowujemy dokumentację.",
@@ -123,7 +123,7 @@ const steps = [
   },
   {
     "title": "Zgłaszamy zmianę do KRS.",
-    "text": "Składamy wniosek w PRS lub S24 i informujemy, jak przebiega sprawa w sądzie."
+    "text": "Składamy wniosek w PRS lub S24 i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia."
   }
 ]
 const fees = [
@@ -132,7 +132,7 @@ const fees = [
     "250 zł"
   ],
   [
-    "Opłata sądowa w S24 za zmianę dokonaną uchwałą na wzorcu",
+    "Opłata sądowa w S24, gdy zmianę wprowadza uchwała na wzorcu",
     "200 zł"
   ],
   [
@@ -163,8 +163,6 @@ const schemas = [
   {
     "@context": "https://schema.org", "@type": "Service", name: "Zmiana zarządu spółki z o.o. w KRS", url: pageUrl, description,
     provider: { "@id": organizationSchema["@id"] }, areaServed: { "@type": "Country", name: "Poland" },
-    offers: { "@type": "Offer", url: `${pageUrl}#zakres`, description: "od 499 zł netto dla typowej pełnej obsługi",
-      priceSpecification: { "@type": "PriceSpecification", minPrice: 499, priceCurrency: "PLN", valueAddedTaxIncluded: false } },
   },
   {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -189,13 +187,13 @@ export default function ZmianaZarzaduPage() {
           <div className={`${styles.container} ${styles.heroGrid}`}>
             <div>
               <h1>Zmiana zarządu spółki z o.o. w KRS</h1>
-              <p>Powołujesz lub odwołujesz członka zarządu? Ktoś złożył rezygnację albo zmienia się prezes? Przygotujemy dokumenty i złożymy wniosek do KRS.</p>
-              <p>Sprawdzimy, czy spółka może skorzystać z S24, czy wniosek trzeba złożyć w PRS. Przed przyjęciem zlecenia powiemy, jakich dokumentów potrzebujemy.</p>
+              <p>Powołujesz lub odwołujesz członka zarządu, ktoś złożył rezygnację, zmieniasz prezesa albo dane osoby wpisanej w KRS? Przygotujemy uchwałę i pozostałe dokumenty, a potem złożymy wniosek do KRS.</p>
+              <p>Sprawdzimy, czy spółka może skorzystać z S24, czy wniosek trzeba złożyć w PRS. Wszystko załatwiamy zdalnie, a listę dokumentów ustalamy z Tobą przed rozpoczęciem pracy.</p>
               <p className={styles.serviceLine}>Obsługa zdalna · Zgłoszenie przez PRS lub S24</p>
             </div>
             <div className={styles.priceCard}>
-              <p className={styles.heroPrice}>Zmiana zarządu <strong>od 499 zł netto</strong></p>
-              <p>W typowej sprawie przygotowujemy potrzebne dokumenty i zgłaszamy zmianę do KRS.</p>
+              <p className={styles.heroPrice}>Zmiana zarządu <strong>zdalnie, przez PRS lub S24</strong></p>
+              <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
               <a href="#kontakt" className={styles.primary}>Zleć zmianę zarządu <ArrowUpRight aria-hidden="true" size={20} /></a>
               <a href="#zakres" className={styles.secondary}>Zakres i cena <ArrowDown aria-hidden="true" size={18} /></a>
             </div>
@@ -232,13 +230,13 @@ export default function ZmianaZarzaduPage() {
         <section id="zakres" className={styles.scope}>
           <div className={styles.container}>
             <p className={styles.eyebrow} aria-hidden="true">Zakres i cena</p>
-            <h2>Co obejmuje obsługa zmiany zarządu?</h2>
-            <p>Przygotujemy dokumenty i złożymy wniosek. Masz już podpisane dokumenty? Sprawdzimy je i powiemy, czy można złożyć wniosek na ich podstawie.</p>
+            <h2>Powierz nam formalności</h2>
+            <p>Możemy przygotować dokumenty i złożyć wniosek albo zająć się samym wnioskiem, jeśli dokumenty są już gotowe. Zakres ustalamy przed rozpoczęciem pracy.</p>
             <div className={styles.offerGrid}>
               <article className={styles.fullOffer}>
                 <h3>Pełna obsługa zmiany zarządu</h3>
-                <p className={styles.offerPrice}>Zmiana zarządu <strong>od 499 zł netto</strong></p>
-                <p>Sprawdzamy umowę spółki i dokumenty, przygotowujemy wymaganą uchwałę oraz inne potrzebne dokumenty, kompletujemy załączniki i zgłaszamy zmianę zarządu do KRS. Przy rezygnacji pomagamy ustalić, komu ją złożyć i jakie dokumenty przygotować.</p>
+                <p className={styles.offerPrice}>Zmiana zarządu <span data-nosnippet><strong>od 499 zł netto</strong></span></p>
+                <p>Sprawdzamy umowę spółki i dokumenty, przygotowujemy uchwałę i pozostałe dokumenty, kompletujemy załączniki i zgłaszamy zmianę zarządu do KRS. Przy rezygnacji przygotowujemy dokumenty potrzebne w danej sytuacji. Sprawę przed sądem rejestrowym prowadzimy do jej zakończenia.</p>
                 <p className={styles.listTitle}>Zakres typowej sprawy w punktach:</p>
                 <ul>
                   <li><Check aria-hidden="true" size={20} /><span>Sprawdzenie sytuacji spółki i trybu zgłoszenia.</span></li>
@@ -250,7 +248,7 @@ export default function ZmianaZarzaduPage() {
               </article>
               <article className={styles.readyOffer}>
                 <h3>Masz już dokumenty? Obsługa zgłoszenia do KRS</h3>
-                <p>Masz już przygotowane i podpisane dokumenty? Napisz, czym dysponujesz – sprawdzimy ich kompletność i ustalimy zakres zgłoszenia do KRS.</p>
+                <p>Masz już podpisane dokumenty? Napisz, co masz. Sprawdzimy, czy niczego nie brakuje, i złożymy wniosek do KRS.</p>
                 <a href="#kontakt" className={styles.secondary}>Opisz swoje dokumenty <ArrowUpRight aria-hidden="true" size={20} /></a>
               </article>
             </div>
@@ -281,7 +279,7 @@ export default function ZmianaZarzaduPage() {
             <div className={styles.feeCard}>
               <div>
                 <h2>Ile kosztuje wpis zmiany zarządu do KRS?</h2>
-                <p>Poniżej są opłaty i inne koszty, które mogą dojść do honorarium za obsługę prawną.</p>
+                <p>Te opłaty płacisz obok honorarium za obsługę prawną.</p>
                 <p>Od 29 listopada 2025 r. nie pobiera się dodatkowej opłaty za obowiązkowe ogłoszenie wpisu KRS w Monitorze Sądowym i Gospodarczym.</p>
                 <Link href="/cennik">Zobacz pełny cennik usług</Link>
               </div>
@@ -322,8 +320,8 @@ export default function ZmianaZarzaduPage() {
         <section id="kontakt" className={styles.contact}>
           <div className={`${styles.container} ${styles.contactGrid}`}>
             <div>
-              <h2>Zleć zgłoszenie zmiany zarządu</h2>
-              <p>Napisz, kogo chcesz wpisać lub wykreślić z KRS i czy dokumenty są już podpisane.</p>
+              <h2>Ty prowadzisz firmę, my zgłaszamy zmianę zarządu do KRS</h2>
+              <p>Opisz krótko planowaną zmianę. Odpiszemy, jakie dokumenty będą potrzebne i ile kosztuje obsługa.</p>
               <address className={styles.contactDetails}>
                 <p>Telefon: <a href="tel:+48572234779">572 234 779</a></p>
                 <p>E-mail: <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a></p>
