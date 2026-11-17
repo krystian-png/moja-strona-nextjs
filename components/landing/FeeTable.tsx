@@ -4,11 +4,12 @@ type FeeTableProps = {
   caption: string
   rows: { label: string; value: string }[]
   note?: string
+  plain?: boolean
 }
 
-export default function FeeTable({ caption, rows, note }: FeeTableProps) {
+export default function FeeTable({ caption, rows, note, plain = false }: FeeTableProps) {
   return (
-    <div className={styles.feeCard}>
+    <div className={plain ? undefined : styles.feeCard}>
       <table className={styles.fees}>
         <caption>{caption}</caption>
         <thead>
