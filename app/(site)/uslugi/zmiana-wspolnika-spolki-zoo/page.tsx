@@ -1,534 +1,206 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
-import { Phone } from "lucide-react"
-
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import ContactLinks from "@/components/landing/ContactLinks"
+import ContactSection from "@/components/landing/ContactSection"
+import Faq from "@/components/landing/Faq"
+import FeeTable from "@/components/landing/FeeTable"
+import Steps from "@/components/landing/Steps"
+import landing from "@/components/landing/landing.module.css"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
-import servicesBackground from "@/public/images/profesjonalne-biuro-obslugi-krs-eksperci-zmiany-wpisu-rejestr-sadowy-doswiadczenie.webp"
-
-import InlineContactForm from "../_components/InlineContactForm"
+import styles from "./page.module.css"
 
 const pagePath = "/uslugi/zmiana-wspolnika-spolki-zoo"
 const pageUrl = `${siteUrl}${pagePath}`
+const title = "Zmiana wspólnika spółki z o.o. w KRS – sprzedaż udziałów"
+const description = "Sprzedaż, darowizna lub dziedziczenie udziałów? Sprawdzimy, jakie dokumenty są potrzebne, przygotujemy listę wspólników i zgłosimy zmianę do KRS."
 
-const legalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, wejście inwestora, zgłoszenie do KRS",
-  url: pageUrl,
-  description:
-    "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki (ograniczenia zbywalności), dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24.",
-  areaServed: { "@type": "Country", name: "Poland" },
-  provider: organizationSchema,
-}
+const scenarios = [
+  {
+    title: "Umowa jest już podpisana",
+    text: "Sprawdzimy umowę sprzedaży lub darowizny i ustalimy, które dane trzeba zaktualizować. Przygotujemy nową listę wspólników i złożymy dokumenty do sądu rejestrowego.",
+  },
+  {
+    title: "Dopiero planujesz sprzedaż lub darowiznę",
+    text: "Sprawdzimy, czy umowa spółki wymaga zgody na zbycie albo przyznaje pozostałym wspólnikom prawo pierwszeństwa. Przygotowanie umowy zbycia i ewentualnych zgód wyceniamy osobno.",
+  },
+  {
+    title: "Udziały przeszły w drodze dziedziczenia",
+    text: "Sprawdzimy dokument potwierdzający nabycie spadku i postanowienia umowy spółki o wstąpieniu spadkobierców. Ustalimy, jak zaktualizować listę wspólników i jakie dane zgłosić do KRS.",
+  },
+]
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Czy każda zmiana wspólnika w spółce z o.o. wymaga zgłoszenia do KRS?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nie w każdym przypadku. Obowiązek złożenia wniosku o zmianę wpisu w rejestrze przedsiębiorców powstaje wtedy, gdy w wyniku transakcji zmieniają się dane podlegające ujawnieniu w KRS, w szczególności w zakresie wspólników posiadających co najmniej 10% kapitału zakładowego oraz danych dotyczących liczby i wartości nominalnej udziałów ujawnionego wspólnika.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Czy sprzedaż udziałów w spółce z o.o. zawsze wymaga notarialnego poświadczenia podpisów?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Co do zasady tak – umowa zbycia udziałów wymaga formy pisemnej z podpisami notarialnie poświadczonymi. Wyjątek dotyczy spółek obsługiwanych w S24, gdzie przy wykorzystaniu wzorca systemowego zbycie udziałów może zostać dokonane w trybie przewidzianym w systemie teleinformatycznym i podpisane elektronicznie.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Czy umowa spółki może ograniczać sprzedaż udziałów?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tak. Umowa spółki może uzależnić zbycie udziałów od zgody spółki albo w inny sposób ograniczyć możliwość ich zbycia. Przed transakcją konieczna jest analiza postanowień umowy spółki, aby uniknąć nieważności albo sporu co do skuteczności zbycia.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Ile trwa wpis zmiany wspólnika w KRS?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Czas rozpoznania wniosku zależy od obciążenia sądu rejestrowego oraz poprawności wniosku i załączników. Najczęściej największe opóźnienia wynikają z braków formalnych i wezwań do uzupełnienia, w tym z niespójności dokumentów lub braku wymaganej zgody spółki na zbycie udziałów.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Jakie dokumenty są potrzebne do zmiany wspólnika spółki z o.o.?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Dokumenty zależą od scenariusza. W typowej sprzedaży udziałów są to w szczególności umowa zbycia udziałów w wymaganej formie oraz ewentualna zgoda spółki, jeżeli wymaga tego umowa spółki. Przy wejściu inwestora i podwyższeniu kapitału występują dodatkowo uchwały i dokumenty dotyczące objęcia udziałów oraz – co do zasady – zmiana umowy spółki. Przy dziedziczeniu podstawą są dokumenty potwierdzające nabycie spadku.",
-      },
-    },
-  ],
-}
+const fees = [
+  { label: "Wniosek o zmianę wpisu w KRS przez PRS", value: "250 zł" },
+  { label: "Opłata skarbowa od złożenia pełnomocnictwa, jeśli jest należna", value: "17 zł" },
+  { label: "Notarialne poświadczenie podpisów pod umową zbycia, jeśli jest potrzebne", value: "według taksy notarialnej" },
+]
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Strona główna",
-      item: `${siteUrl}/`,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Usługi",
-      item: `${siteUrl}/uslugi`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Zmiana wspólnika spółki z o.o.",
-      item: pageUrl,
-    },
-  ],
-}
+const steps = [
+  { title: "Sprawdzamy dokumenty", text: "Czytamy umowę spółki i dokumenty dotyczące udziałów. Ustalamy, czy zmienia się wpis w KRS, czy wystarczy złożyć listę wspólników do akt." },
+  { title: "Przygotowujemy zgłoszenie", text: "Sporządzamy listę wspólników i pozostałe dokumenty oraz wskazujemy, kto je podpisuje. Jeśli transakcja jest dopiero przed Tobą, osobno uzgadniamy jej zakres." },
+  { title: "Składamy dokumenty", text: "Zgłaszamy zmianę do KRS albo składamy listę do akt rejestrowych. Prowadzimy sprawę do jej zakończenia i informujemy o wyniku." },
+]
+
+const faq = [
+  {
+    question: "Czy sprzedaż udziałów wymaga zmiany umowy spółki?",
+    answer: "Sama sprzedaż istniejących udziałów zwykle nie wymaga zmiany umowy spółki. Przed podpisaniem umowy sprzedaży sprawdź, czy umowa spółki nie wymaga zgody na zbycie, nie przyznaje prawa pierwszeństwa albo nie wprowadza innego ograniczenia. Jeśli przy okazji zmieniasz np. zasady reprezentacji, zmianę umowy spółki zgłaszasz jako odrębną czynność.",
+  },
+  {
+    question: "Czy można sprzedać udziały bez notariusza?",
+    answer: "Tylko w S24, jeśli umowę spółki zawarto przy wykorzystaniu wzorca w tym systemie – wtedy zbycie udziałów jest możliwe na wzorcu S24 (art. 180 § 2 k.s.h.). W pozostałych przypadkach umowa zbycia wymaga formy pisemnej z podpisami notarialnie poświadczonymi (art. 180 § 1 k.s.h.).",
+  },
+  {
+    question: "Od kiedy kupujący może wykonywać prawa wspólnika wobec spółki?",
+    answer: "Przejście udziałów jest skuteczne wobec spółki od chwili, gdy otrzyma ona zawiadomienie wraz z dowodem przejścia udziałów (art. 187 § 1 k.s.h.). Przy zwykłej sprzedaży istniejących udziałów nabywca nie musi w tym celu czekać na zmianę wpisu w KRS.",
+  },
+  {
+    question: "Czy po zmianie wspólnika trzeba zaktualizować CRBR?",
+    answer: "Jeśli zmieniły się dane zgłoszone do Centralnego Rejestru Beneficjentów Rzeczywistych, spółka aktualizuje je we własnym zakresie w ciągu 14 dni, nie licząc sobót i dni ustawowo wolnych od pracy. Przy zwykłej sprzedaży udziałów termin liczy się od dokonania zmiany, bez czekania na wpis w KRS. Jeśli zmiana staje się skuteczna dopiero z wpisem, termin biegnie od wpisu.",
+  },
+]
 
 export const metadata: Metadata = {
-  title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów",
-  description:
-    "Sprzedaż udziałów, darowizna lub wejście inwestora do spółki z o.o. Przygotujemy dokumenty i zgłosimy zmianę wspólnika do KRS. Ograniczamy ryzyko błędów formalnych.",
-  alternates: {
-    canonical: pageUrl,
-  },
+  title,
+  description,
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów | ZmianaKRS",
-    description:
-      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24.",
+    title,
+    description,
     url: pageUrl,
     siteName: brandName,
-    images: [
-      {
-        url: `${siteUrl}/images/krs-services.png`,
-        width: 1200,
-        height: 630,
-        alt: "Zmiana wspólnika spółki z o.o. – obsługa ZmianaKRS",
-      },
+    images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Zmiana wspólnika spółki z o.o. – ZmianaKRS" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [`${siteUrl}/images/krs-services.png`] },
+}
+
+const schemas = [
+  {
+    "@context": "https://schema.org", "@type": "Service", name: title, url: pageUrl, description,
+    provider: organizationSchema, areaServed: { "@type": "Country", name: "Poland" },
+  },
+  {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Usługi", item: `${siteUrl}/uslugi` },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Zmiana wspólnika spółki z o.o. – sprzedaż udziałów | ZmianaKRS",
-    description:
-      "Zmiana wspólnika spółki z o.o.: sprzedaż udziałów, darowizna, wejście inwestora, podwyższenie kapitału, dziedziczenie. Analiza umowy spółki, dokumenty oraz zgłoszenie zmian do KRS w PRS lub S24.",
-    images: [`${siteUrl}/images/krs-services.png`],
-  },
-}
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(({ question, answer }) => ({
+    "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer },
+  })) },
+]
 
 export default function ZmianaWspolnikaSpolkiZooPage() {
   return (
-    <div className="relative min-h-screen text-white">
-      <Script id="zmiana-wspolnika-structured-data" type="application/ld+json">
-        {JSON.stringify([legalServiceSchema, faqSchema, breadcrumbSchema])}
-      </Script>
-
-      <div
-        className="fixed inset-0 -z-20"
-        style={{
-          backgroundImage: `url(${servicesBackground.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      <div className="fixed inset-0 -z-10 bg-slate-950/60" />
-
-      <Navbar />
-
-      <main className="relative px-4 pb-14 pt-24 sm:px-6 lg:px-8">
-        <section className="mx-auto mb-12 max-w-7xl">
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8 lg:p-10">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
-              <div className="space-y-6">
-                <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                  Zmiana wspólnika spółki z o.o. – sprzedaż udziałów, wejście inwestora, zgłoszenie do KRS
-                </h1>
-
-                <p className="text-lg text-white/90">
-                  Zmiana wspólnika w spółce z ograniczoną odpowiedzialnością najczęściej następuje w wyniku sprzedaży udziałów, darowizny udziałów, objęcia nowych udziałów przy podwyższeniu kapitału zakładowego albo przejścia udziałów w drodze dziedziczenia. W zależności od konkretnego przypadku zmiana taka wymaga przygotowania dokumentów korporacyjnych oraz – jeżeli wpływa na dane ujawniane w rejestrze przedsiębiorców – zgłoszenia zmian do Krajowego Rejestru Sądowego.
-                </p>
-
-                <p className="text-lg text-white/90">
-                  Prawidłowo przygotowana zmiana wspólnika spółki z o.o. obejmuje analizę postanowień umowy spółki pod kątem ograniczeń zbywalności udziałów, przygotowanie dokumentów transakcyjnych oraz ustalenie, czy w danym stanie faktycznym powstaje obowiązek aktualizacji danych ujawnianych w KRS. W praktyce problemy rejestrowe wynikają najczęściej z pominięcia ograniczeń wynikających z umowy spółki albo z nieprawidłowej formy dokumentów.
-                </p>
-
-                <p className="text-lg text-white/90">
-                  Oferujemy kompleksową obsługę zmiany wspólnika spółki z o.o. – od analizy dokumentów i struktury udziałowej, przez przygotowanie dokumentacji, po elektroniczne złożenie wniosku w PRS lub S24 oraz monitorowanie sprawy aż do dokonania wpisu w KRS, jeżeli zgłoszenie jest wymagane.
-                </p>
-
-                <p className="text-lg text-white/90">
-                  Na naszej stronie znajdziesz również inne{" "}
-                  <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
-                    usługi związane ze zmianami w KRS
-                  </Link>
-                  .
-                </p>
-
-                <p className="text-xl">
-                  <a
-                    href="tel:+48572234779"
-                    className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"
-                  >
-                    <Phone className="h-5 w-5 text-amber-400" />
-                    572 234 779
-                  </a>
-                </p>
+    <div className={`${landing.page} ${styles.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas).replace(/</g, "\\u003c") }} />
+      <Navbar contactAction={{ href: "#kontakt", label: "Opisz sprawę" }} />
+      <main>
+        <section className={landing.hero}>
+          <div className={`${landing.container} ${styles.heroGrid}`}>
+            <div>
+              <h1>{title}</h1>
+              <p className={landing.lead}>Umowa sprzedaży lub darowizny udziałów jest już podpisana? Sprawdzimy dokumenty, przygotujemy nową listę wspólników i zajmiemy się zgłoszeniem do KRS. Jeśli dopiero przygotowujesz transakcję albo udziały przeszły w drodze dziedziczenia, ustalimy, od czego zacząć.</p>
+              <div className={styles.actions}>
+                <a href="#kontakt" className={landing.primary}>Zleć zmianę wspólnika</a>
+                <a href="#zakres" className={landing.secondary}>Zakres i cena</a>
               </div>
+              <p className={styles.serviceLine}>Obsługa zdalna · Zgłoszenie przez PRS lub S24</p>
+            </div>
+            <aside className={styles.heroCard}>
+              <p className={styles.heroCardTitle}>Zdalnie, przez PRS lub S24</p>
+              <p>Przygotowujemy dokumenty, składamy je do sądu rejestrowego i prowadzimy sprawę do jej zakończenia.</p>
+              <ContactLinks />
+            </aside>
+          </div>
+        </section>
 
-              <div className="w-full lg:pt-2">
-                <InlineContactForm className="max-w-md" />
-              </div>
+        <section className={landing.tinted} aria-labelledby="etap">
+          <div className={landing.container}>
+            <h2 id="etap">Na jakim etapie jest zmiana wspólnika?</h2>
+            <div className={styles.scenarios}>
+              {scenarios.map(({ title: heading, text }) => (
+                <article key={heading} className={styles.scenario}>
+                  <h3>{heading}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl space-y-10">
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Podstawa prawna zmiany wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">
-                Najczęstszym mechanizmem zmiany wspólnika w spółce z o.o. jest zbycie udziałów w formie sprzedaży albo darowizny. Co do zasady zbycie udziału, jego części albo ułamkowej części udziału wymaga zachowania formy pisemnej z podpisami notarialnie poświadczonymi, co wynika z art. 180 § 1 Kodeksu spółek handlowych. W praktyce wyjątkiem jest obrót udziałami realizowany w trybie przewidzianym dla spółek obsługiwanych w systemie S24, gdzie czynność może zostać dokonana w ramach wzorca systemowego i podpisana elektronicznie.
-              </p>
-
-              <p className="text-lg text-white/90">
-                Przed transakcją konieczna jest analiza umowy spółki, ponieważ może ona uzależniać zbycie udziałów od zgody spółki albo w inny sposób ograniczać obrót udziałami, zgodnie z art. 182 § 1 Kodeksu spółek handlowych. W szczególności spotykane są postanowienia o obowiązku uzyskania zgody organu spółki, prawie pierwszeństwa nabycia udziałów przez wspólników albo obowiązku zaoferowania udziałów przed sprzedażą osobie trzeciej.
-              </p>
-
-              <p className="text-lg text-white/90">
-                Jeżeli w wyniku zmiany struktury udziałowej zmieniają się dane podlegające ujawnieniu w rejestrze przedsiębiorców, powstaje obowiązek zgłoszenia zmian do KRS. Zakres ujawnienia obejmuje w szczególności wspólników posiadających co najmniej 10% kapitału zakładowego wraz z informacją o liczbie i wartości nominalnej ich udziałów, co wynika z art. 38 ustawy o Krajowym Rejestrze Sądowym.
-              </p>
-
-              <p className="text-lg text-white/90">
-                Zasadniczy termin zgłoszenia zdarzenia uzasadniającego wpis do rejestru przedsiębiorców wynosi 7 dni, zgodnie z art. 22 ustawy o Krajowym Rejestrze Sądowym. W praktyce kompletność i spójność dokumentów wpływa bezpośrednio na sprawność postępowania i ogranicza ryzyko wezwań do uzupełnienia braków formalnych.
-              </p>
+        <section className={landing.section} aria-labelledby="zakres">
+          <div className={landing.container}>
+            <h2 id="zakres">Ile kosztuje zmiana wspólnika w KRS?</h2>
+            <div className={styles.priceBox} data-nosnippet>
+              <p className={styles.priceLine}>Formalności po przeniesieniu udziałów <strong>od 599 zł netto</strong></p>
+              <p>Cena dotyczy standardowej sprawy na podstawie gotowego dokumentu przeniesienia udziałów. Sprawdzimy umowę spółki i dokumenty, przygotujemy nową listę wspólników i pozostałe dokumenty potrzebne do zgłoszenia. Złożymy je i poprowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
+              <p>Przygotowanie umowy sprzedaży lub darowizny udziałów wyceniamy osobno. Dodatkowe zgody, zawiadomienia i ograniczenia zapisane w umowie spółki mogą wpłynąć na cenę. Honorarium podamy przed przyjęciem zlecenia.</p>
             </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Koszty zmiany wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">Koszt zgłoszenia zmiany do KRS zależy od sposobu złożenia wniosku:</p>
-
-              <div className="overflow-x-auto rounded-lg border border-white/20 bg-white/5">
-                <table className="w-full min-w-[420px] border-collapse text-left text-base">
-                  <thead>
-                    <tr className="border-b border-white/20 bg-white/10">
-                      <th className="px-5 py-3.5">Tryb złożenia wniosku</th>
-                      <th className="px-5 py-3.5">Opłata sądowa</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-white/20 bg-white/5">
-                      <td className="px-5 py-3.5">Portal Rejestrów Sądowych (PRS)</td>
-                      <td className="px-5 py-3.5">250 zł</td>
-                    </tr>
-                    <tr className="bg-white/[0.03]">
-                      <td className="px-5 py-3.5">System S24</td>
-                      <td className="px-5 py-3.5">200 zł</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p className="text-lg text-white/90">
-                Opłata skarbowa za pełnomocnictwo wynosi 17 zł (jeżeli wniosek składa pełnomocnik).
-              </p>
-
-              <p className="text-lg text-white/90">
-                Jeżeli sprzedaż udziałów jest dokonywana poza wzorcem systemowym S24, wymagane jest notarialne poświadczenie podpisów, co wiąże się z dodatkowymi kosztami notarialnymi.
-              </p>
-
-              <p className="text-lg text-white/90">
-                <span data-nosnippet>Obsługa zmiany wspólnika spółki z o.o. kosztuje od 599 zł netto. Cena nie obejmuje umowy zbycia udziałów, którą wyceniamy osobno.</span> Ostateczna cena zależy od scenariusza oraz zakresu dokumentów, w szczególności od tego, czy transakcja wymaga uwzględnienia ograniczeń zbywalności w umowie spółki oraz czy powstaje obowiązek zgłoszenia zmian do rejestru przedsiębiorców.
-              </p>
-
-              <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany wspólnika w KRS?</h3>
-              <p className="text-lg text-white/90">
-                Czas rozpoznania wniosku zależy od obciążenia sądu rejestrowego oraz od tego, czy wniosek i załączniki są przygotowane bezbłędnie. Najczęstsze opóźnienia wynikają z wezwań do uzupełnienia braków formalnych, w tym z braku wymaganej zgody spółki na zbycie udziałów lub niespójności dokumentów.
-              </p>
-
-              <p className="text-lg text-white/90">
-                👉{" "}
-                <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                  Poznaj koszt innych zmian w KRS
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Dokumenty do zmiany wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">
-                Zakres dokumentów zależy od przyczyny zmiany wspólnika. W sprzedaży udziałów kluczowe znaczenie ma forma czynności oraz weryfikacja postanowień umowy spółki w zakresie ograniczeń zbywalności.
-              </p>
-
-              <p className="text-lg text-white/90">Najczęściej przygotowuje się:</p>
-
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>umowę sprzedaży udziałów albo umowę darowizny udziałów w wymaganej formie,</li>
-                <li>zgodę spółki na zbycie udziałów albo dokumenty spełniające warunki zbycia, jeżeli wymaga tego umowa spółki,</li>
-                <li>dokumenty dotyczące podwyższenia kapitału i objęcia udziałów, jeżeli wspólnik wchodzi do spółki jako inwestor,</li>
-                <li>dokumenty potwierdzające nabycie spadku, jeżeli udziały przechodzą w drodze dziedziczenia,</li>
-                <li>potwierdzenie uiszczenia opłaty sądowej,</li>
-                <li>pełnomocnictwo (jeżeli działa pełnomocnik) + opłata skarbowa 17 zł.</li>
-              </ul>
-
-              <p className="text-lg text-white/90">
-                Braki formalne w dokumentach, w szczególności nieprawidłowa forma umowy zbycia udziałów albo pominięcie wymaganej zgody spółki, są jednymi z najczęstszych przyczyn wezwań do uzupełnienia braków formalnych.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-5">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Jak przeprowadzimy zmianę wspólnika spółki z o.o.
-              </h2>
-
-              <ol className="space-y-4 text-lg text-white/90">
-                <li>
-                  <p className="font-semibold text-white">1. Analiza umowy spółki i struktury udziałowej</p>
-                  <p>Sprawdzamy ograniczenia zbywalności udziałów, wymagane zgody oraz strukturę udziałów przed i po planowanej transakcji.</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">2. Przygotowanie dokumentów transakcyjnych i korporacyjnych</p>
-                  <p>Przygotowujemy umowę zbycia udziałów albo dokumenty objęcia udziałów oraz wymagane uchwały i zgody, zgodnie z umową spółki.</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">3. Weryfikacja spójności dokumentacji</p>
-                  <p>Sprawdzamy zgodność dokumentów, danych udziałowych i podstaw wpisu pod kątem wymagań systemu PRS lub S24.</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">4. Złożenie wniosku w PRS lub S24, jeżeli jest wymagany</p>
-                  <p>Jeżeli zmiana wpływa na dane ujawniane w rejestrze przedsiębiorców, składamy wniosek o wpis zmian do KRS w odpowiednim systemie.</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">5. Monitorowanie sprawy do momentu rozstrzygnięcia</p>
-                  <p>Nadzorujemy postępowanie przed sądem rejestrowym oraz reagujemy na ewentualne wezwania do uzupełnienia braków formalnych.</p>
-                </li>
-              </ol>
-
-              <InlineContactForm className="max-w-md" />
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Typowe sytuacje klientów – zmiana wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">
-                Zmiana wspólnika spółki z o.o. pojawia się najczęściej w kilku powtarzalnych scenariuszach. W każdym przypadku kluczowe jest ustalenie, czy umowa spółki przewiduje ograniczenia zbywalności oraz czy zmiana wpływa na dane ujawniane w rejestrze przedsiębiorców.
-              </p>
-
-              <div className="mt-6 space-y-4">
-                <h3 className="text-xl font-semibold sm:text-2xl">Sprzedaż udziałów</h3>
-                <p className="text-lg text-white/90">
-                  Najczęściej zmiana wspólnika następuje w wyniku sprzedaży udziałów przez dotychczasowego wspólnika. Transakcja może dotyczyć całego pakietu albo części udziałów i może być zawierana zarówno z innym wspólnikiem, jak i z osobą trzecią. Przed sprzedażą należy zweryfikować, czy umowa spółki wymaga zgody spółki albo przewiduje prawo pierwszeństwa dla wspólników.
-                </p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <h3 className="text-xl font-semibold sm:text-2xl">Wejście inwestora i objęcie nowych udziałów</h3>
-                <p className="text-lg text-white/90">
-                  W praktyce wejście inwestora do spółki najczęściej następuje poprzez podwyższenie kapitału zakładowego i objęcie nowych udziałów. Taki scenariusz zwykle wiąże się z czynnościami korporacyjnymi oraz – co do zasady – ze zmianą postanowień umowy spółki dotyczących kapitału zakładowego i udziałów. W tym modelu szczególne znaczenie ma spójność uchwał, dokumentów objęcia udziałów oraz podstaw wpisu w KRS.
-                </p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <h3 className="text-xl font-semibold sm:text-2xl">Dziedziczenie udziałów</h3>
-                <p className="text-lg text-white/90">
-                  Zmiana wspólnika może nastąpić w wyniku śmierci wspólnika i przejścia udziałów na spadkobierców. W takim przypadku podstawą wprowadzenia zmian są dokumenty potwierdzające nabycie spadku. W praktyce istotne jest również ustalenie sposobu wykonywania praw z udziałów, zwłaszcza gdy udziały przechodzą na kilku spadkobierców.
-                </p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <p className="text-lg text-white/90">
-                  Jeżeli procedura obejmuje elementy związane z S24, zobacz również:
-                </p>
-                <p className="text-lg text-white/90">
-                  👉{" "}
-                  <Link
-                    href="/artykul/zmiana-umowy-spolki-portal-s24-instrukcja"
-                    className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
-                  >
-                    https://zmianakrs.pl/artykul/zmiana-umowy-spolki-portal-s24-instrukcja
-                  </Link>
-                </p>
-
-                <p className="text-lg text-white/90">
-                  Jeżeli zmiany właścicielskie są elementem szerszych zmian w spółce (w tym zmian rejestrowych), przeczytaj też:
-                </p>
-                <p className="text-lg text-white/90">
-                  👉{" "}
-                  <Link
-                    href="/artykul/zmiana-przedmiotu-dzialalnosci-spolka-zoo"
-                    className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
-                  >
-                    https://zmianakrs.pl/artykul/zmiana-przedmiotu-dzialalnosci-spolka-zoo
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Najczęstsze błędy przy zmianie wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">Najczęstsze problemy pojawiające się przy zmianie wspólnika spółki z o.o. to:</p>
-
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>pominięcie ograniczeń zbywalności udziałów wynikających z umowy spółki (w tym brak wymaganej zgody spółki),</li>
-                <li>nieprawidłowa forma umowy zbycia udziałów albo brak wymaganego podpisu/poświadczenia,</li>
-                <li>niespójność dokumentów transakcyjnych i korporacyjnych stanowiących podstawę wpisu,</li>
-                <li>błędne dane dotyczące liczby lub wartości nominalnej udziałów ujawnionego wspólnika,</li>
-                <li>brak opłaty lub nieprawidłowe potwierdzenie płatności za wniosek.</li>
-              </ul>
-
-              <p className="text-lg text-white/90">
-                Skutkiem takich błędów może być wezwanie do uzupełnienia braków formalnych, zwrot wniosku i wydłużenie całej procedury.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-5">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Najczęściej zadawane pytania
-              </h2>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Czy każda zmiana wspólnika w spółce z o.o. wymaga zgłoszenia do KRS?</h3>
-                <p className="text-lg text-white/90">
-                  Nie w każdym przypadku. Obowiązek złożenia wniosku o zmianę wpisu w rejestrze przedsiębiorców powstaje wtedy, gdy w wyniku transakcji zmieniają się dane podlegające ujawnieniu w KRS, w szczególności w zakresie wspólników posiadających co najmniej 10% kapitału zakładowego oraz danych dotyczących liczby i wartości nominalnej udziałów ujawnionego wspólnika.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Czy sprzedaż udziałów zawsze wymaga notarialnego poświadczenia podpisów?</h3>
-                <p className="text-lg text-white/90">
-                  Co do zasady tak – umowa zbycia udziałów wymaga formy pisemnej z podpisami notarialnie poświadczonymi. Wyjątek dotyczy spółek obsługiwanych w S24, gdzie przy wykorzystaniu wzorca systemowego zbycie udziałów może zostać dokonane w trybie przewidzianym w systemie teleinformatycznym i podpisane elektronicznie.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Czy umowa spółki może ograniczać sprzedaż udziałów?</h3>
-                <p className="text-lg text-white/90">
-                  Tak. Umowa spółki może uzależnić zbycie udziałów od zgody spółki albo w inny sposób ograniczyć możliwość ich zbycia. Przed transakcją konieczna jest analiza postanowień umowy spółki, aby uniknąć ryzyka nieważności albo sporu co do skuteczności zbycia.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Ile trwa wpis zmiany wspólnika w KRS?</h3>
-                <p className="text-lg text-white/90">
-                  Czas zależy od obciążenia sądu rejestrowego oraz poprawności wniosku i załączników. Najczęściej największe opóźnienia wynikają z braków formalnych i wezwań do uzupełnienia, w tym z braku wymaganej zgody spółki na zbycie udziałów lub niespójności dokumentów.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold">Jakie dokumenty są potrzebne do zmiany wspólnika spółki z o.o.?</h3>
-                <p className="text-lg text-white/90">
-                  Dokumenty zależą od scenariusza. W typowej sprzedaży udziałów są to w szczególności umowa zbycia udziałów w wymaganej formie oraz ewentualna zgoda spółki, jeżeli wymaga tego umowa spółki. Przy wejściu inwestora i podwyższeniu kapitału występują dodatkowo uchwały i dokumenty dotyczące objęcia udziałów oraz – co do zasady – zmiana umowy spółki. Przy dziedziczeniu podstawą są dokumenty potwierdzające nabycie spadku.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-2 text-center text-2xl font-bold text-amber-400 sm:text-3xl">Zobacz także</h2>
-              <p className="text-lg text-white/90">Sprawdź również inne najczęściej wybierane usługi związane ze zmianami w KRS.</p>
-              <ul className="list-disc space-y-2 pl-6 text-lg text-white/90">
-                <li>
-                  <Link href="/uslugi/zmiana-zarzadu-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana zarządu spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi/zmiana-adresu-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana adresu spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi/zmiana-umowy-spolki-zoo" className="text-amber-400 underline transition hover:text-amber-300">
-                    zmiana umowy spółki z o.o.
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
-                    wszystkie usługi zmian w KRS
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-            <div className="space-y-4">
-              <h2 className="mb-4 text-center text-2xl font-bold text-amber-400 sm:text-3xl">
-                Zleć zmianę wspólnika spółki z o.o.
-              </h2>
-
-              <p className="text-lg text-white/90">
-                Jeżeli chcesz przeprowadzić zmianę wspólnika spółki z o.o. w sposób sprawny i z ograniczeniem ryzyka błędów formalnych, skontaktuj się z nami. Przeanalizujemy umowę spółki i dokumenty transakcyjne, ustalimy, czy w danym stanie faktycznym powstaje obowiązek aktualizacji danych ujawnianych w rejestrze przedsiębiorców, a następnie przygotujemy i przeprowadzimy zgłoszenie w PRS lub S24, jeżeli jest wymagane.
-              </p>
-
-              <p className="text-lg text-white/90">
-                Zobacz też inne{" "}
-                <Link href="/uslugi" className="text-amber-400 underline transition hover:text-amber-300">
-                  usługi dotyczące zmian wpisów w KRS
-                </Link>{" "}
-                oraz{" "}
-                <Link href="/cennik" className="text-amber-400 underline transition hover:text-amber-300">
-                  Poznaj koszt innych zmian
-                </Link>
-                .
-              </p>
-
-              <p className="text-xl">
-                <a
-                  href="tel:+48572234779"
-                  className="inline-flex items-center gap-2 underline underline-offset-2 hover:text-amber-300"
-                >
-                  <Phone className="h-5 w-5 text-amber-400" />
-                  572 234 779
-                </a>
-              </p>
-
-              <InlineContactForm className="max-w-md" />
+            <FeeTable
+              caption="Opłaty i koszty zewnętrzne"
+              rows={fees}
+              note="Opłaty sądowe i koszty notarialne nie są częścią honorarium. Jeśli sprawa dotyczy tylko złożenia nowej listy wspólników do akt, tryb zgłoszenia ustalimy po sprawdzeniu dokumentów."
+            />
+            <div className={styles.afterFees}>
+              <a href="#kontakt" className={landing.primary}>Poproś o wycenę zmiany wspólnika</a>
+              <p><Link href="/cennik">Zobacz pełny cennik</Link></p>
             </div>
           </div>
         </section>
+
+        <section className={landing.band} aria-labelledby="wspolpraca">
+          <div className={landing.container}>
+            <h2 id="wspolpraca">Jak wygląda współpraca?</h2>
+            <Steps items={steps} />
+          </div>
+        </section>
+
+        <section className={landing.section} aria-labelledby="wpis">
+          <div className={`${landing.container} ${styles.prose}`}>
+            <h2 id="wpis">Czy każda zmiana wspólnika wymaga zmiany wpisu w KRS?</h2>
+            <p>Wniosek o zmianę wpisu składasz, gdy zmieniają się dane ujawniane w rejestrze. KRS pokazuje wspólników, którzy mają samodzielnie lub łącznie z innymi co najmniej 10% kapitału zakładowego, liczbę i łączną wartość ich udziałów, a jeśli spółka ma jednego wspólnika – wzmiankę, że jest on jedynym wspólnikiem (art. 38 pkt 8 lit. c i d ustawy o KRS). Wpis trzeba też zaktualizować, gdy zmienia się liczba udziałów wspólnika, którego dane nadal są ujawnione.</p>
+            <p>Po każdej zmianie w księdze udziałów zarząd składa w sądzie rejestrowym nową listę wspólników podpisaną przez wszystkich członków zarządu (art. 188 § 3 k.s.h.). Lista obejmuje wszystkich wspólników, również tych, których nie widać w odpisie z KRS. Jeśli dane ujawnione w rejestrze się nie zmieniają, nową listę składa się do akt rejestrowych.</p>
+          </div>
+        </section>
+
+        <section className={landing.tinted} aria-labelledby="jak-zglosic">
+          <div className={`${landing.container} ${styles.prose}`}>
+            <h2 id="jak-zglosic">Jak zgłosić zmianę wspólnika do KRS online i jakie dokumenty dołączyć?</h2>
+            <p>Zmianę udziałowców zgłasza się elektronicznie. Standardową drogą jest Portal Rejestrów Sądowych (PRS). Jeśli umowę spółki zawarto w S24, a udziały zbyto na wzorcu w tym systemie, listę wspólników sporządza się na wzorcu S24 (art. 188 § 4 k.s.h.).</p>
+            <p>Przygotuj dokument potwierdzający przejście udziałów, np. umowę sprzedaży, umowę darowizny albo dokument potwierdzający nabycie spadku. Sprawdź, czy spółka dostała zawiadomienie wraz z dowodem przejścia udziałów. Zarząd wpisuje zmianę do księgi udziałów i podpisuje nową listę wspólników. Zależnie od sprawy potrzebne mogą być też inne dokumenty, np. zgoda na zbycie udziałów albo pełnomocnictwo.</p>
+            <p>Jeśli zmienia się wpis w KRS, spółka składa wniosek w ciągu 7 dni od zdarzenia, które uzasadnia wpis (art. 22 ustawy o KRS). To termin dla spółki, nie dla sądu.</p>
+          </div>
+        </section>
+
+        <section className={landing.section} aria-labelledby="inwestor">
+          <div className={`${landing.container} ${styles.prose}`}>
+            <h2 id="inwestor">Wejście inwestora do spółki</h2>
+            <p>Inwestor może kupić istniejące udziały albo objąć nowe przy podwyższeniu kapitału zakładowego. W drugim przypadku sprawdzimy, czy umowa spółki pozwala podwyższyć kapitał w planowanej wysokości i terminie. Jeśli trzeba też zmienić umowę spółki, ustalimy zakres obu spraw i podamy łączną cenę.</p>
+            <p><Link href="/uslugi/zmiana-umowy-spolki-zoo">Sprawdź obsługę zmiany umowy spółki</Link></p>
+          </div>
+        </section>
+
+        <section className={landing.faqSection} aria-labelledby="faq">
+          <div className={`${landing.container} ${landing.faqGrid}`}>
+            <div>
+              <h2 id="faq">Najczęściej zadawane pytania</h2>
+              <p>Nie ma tu Twojego pytania? <a href="#kontakt">Napisz do nas</a>.</p>
+            </div>
+            <Faq items={faq} />
+          </div>
+        </section>
+
+        <ContactSection
+          heading="Zleć zmianę wspólnika"
+          text="Napisz, czy umowa sprzedaży lub darowizny jest już podpisana, czy potrzebujesz pomocy przed transakcją. Jeśli chodzi o dziedziczenie, napisz, jaki dokument masz. Sprawę prowadzi radca prawny."
+        />
       </main>
-
-      <Footer />
+      <Footer className={landing.footer} />
     </div>
   )
 }

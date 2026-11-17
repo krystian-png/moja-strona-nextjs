@@ -1,0 +1,25 @@
+.heroGrid { display: grid; gap: 40px; align-items: start; }
+.page .serviceLine { font-size: .9375rem; font-weight: 600; color: var(--sapphire); margin-bottom: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 24px; }
+.heroCard { background: var(--white); border: 1px solid var(--line); border-top: 8px solid var(--amber); border-radius: 16px; padding: 28px; }
+.page .heroCardTitle { font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; }
+.scenarios { display: grid; gap: 24px; margin-top: 32px; }
+.scenario { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.page .scenario p { margin-bottom: 0; font-size: 1rem; }
+.priceBox { background: var(--white); border: 1px solid var(--line); border-top: 6px solid var(--amber); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+.page .priceLine { font-size: 1.125rem; margin-bottom: 16px; }
+.priceLine strong { display: block; font-size: 2rem; letter-spacing: -.03em; margin-top: 4px; }
+.page .priceBox p:last-child { margin-bottom: 0; }
+.afterFees { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; margin-top: 24px; }
+.page .afterFees p { margin: 0; }
+.prose { max-width: 75ch; }
+
+@media (min-width: 768px) {
+  .scenarios { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .heroGrid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 64px; }
+}
+@media (max-width: 639px) {
+  .heroCard, .scenario, .priceBox { padding: 22px; }
+}
