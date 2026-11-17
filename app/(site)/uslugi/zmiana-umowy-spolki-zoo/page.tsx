@@ -19,16 +19,7 @@ const legalServiceSchema = {
   name: "Zmiana umowy sp. z o.o. – S24 lub notariusz, zgłoszenie do KRS",
   url: pageUrl,
   description:
-    "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Dobór trybu: S24 vs notariusz. Obsługa od 999 zł.",
-  offers: {
-    "@type": "Offer",
-    price: "999",
-    priceCurrency: "PLN",
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      description: "cena netto od",
-    },
-  },
+    "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Dobór trybu: S24 vs notariusz.",
   areaServed: { "@type": "Country", name: "Poland" },
   provider: organizationSchema,
 }
@@ -106,16 +97,16 @@ const breadcrumbSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Zmiana umowy spółki z o.o. – S24 lub notariusz, od 999 zł",
+  title: "Zmiana umowy spółki z o.o. – S24 lub notariusz",
   description:
-    "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian. Obsługa od 999 zł.",
+    "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: "Zmiana umowy spółki z o.o. – S24 lub notariusz, od 999 zł | ZmianaKRS",
+    title: "Zmiana umowy spółki z o.o. – S24 lub notariusz | ZmianaKRS",
     description:
-      "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian. Obsługa od 999 zł.",
+      "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian.",
     url: pageUrl,
     siteName: brandName,
     images: [
@@ -129,9 +120,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zmiana umowy spółki z o.o. – S24 lub notariusz, od 999 zł | ZmianaKRS",
+    title: "Zmiana umowy spółki z o.o. – S24 lub notariusz | ZmianaKRS",
     description:
-      "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian. Obsługa od 999 zł.",
+      "Zmiana umowy sp. z o.o. – uchwała wspólników, tekst jednolity, zgłoszenie do KRS w PRS lub S24. Pomagamy dobrać tryb (S24 vs notariusz) i przeprowadzić wpis zmian.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -283,8 +274,7 @@ export default function ZmianaUmowySpZooPage() {
               </p>
 
               <p className="text-lg text-white/90">
-                Koszt naszej obsługi zmiany umowy sp. z o.o. zaczyna się od 999 zł, w zależności od zakresu zmian oraz liczby
-                przygotowywanych dokumentów.
+                <span data-nosnippet>Obsługa zmiany umowy spółki z o.o. w S24 kosztuje 599 zł netto, a u notariusza od 1 100 zł netto.</span> W wariancie notarialnym cena zależy od zakresu zmian oraz liczby przygotowywanych dokumentów.
               </p>
 
               <h3 className="mt-6 text-xl font-semibold sm:text-2xl">Ile trwa wpis zmiany umowy sp. z o.o. do KRS?</h3>

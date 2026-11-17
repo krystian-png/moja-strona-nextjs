@@ -44,60 +44,26 @@ const structuredData = {
   provider: organizationSchema,
   areaServed: { "@type": "Country", name: "Polska" },
   serviceType: "Obsługa zmian w KRS",
-  offers: [
-    {
-      "@type": "Offer",
-      name: "Złożenie wniosku o zmianę wpisu w KRS",
-      priceSpecification: { "@type": "PriceSpecification", price: "999", priceCurrency: "PLN" },
-      description:
-        "Podstawowa usługa obejmująca przygotowanie i złożenie elektronicznego wniosku o zmianę wpisu w KRS wraz z monitoringiem sprawy.",
-      availability: "https://schema.org/InStock",
-    },
-    {
-      "@type": "Offer",
-      name: "Dokumenty Zwyczajnego Zgromadzenia Wspólników",
-      priceSpecification: { "@type": "PriceSpecification", price: "499", priceCurrency: "PLN" },
-      description:
-        "Wsparcie w przygotowaniu dokumentów do zatwierdzenia rocznego sprawozdania finansowego i złożenia ich w KRS.",
-      availability: "https://schema.org/InStock",
-    },
-    {
-      "@type": "Offer",
-      name: "Rejestracja spółki z o.o. w systemie S24",
-      priceSpecification: { "@type": "PriceSpecification", price: "699", priceCurrency: "PLN" },
-      description:
-        "Przygotowanie i złożenie kompletnego wniosku o rejestrację spółki z o.o. w systemie S24 wraz z koordynacją podpisów.",
-      availability: "https://schema.org/InStock",
-    },
-    {
-      "@type": "Offer",
-      name: "Rejestracja spółki z o.o. z indywidualną umową",
-      priceSpecification: { "@type": "PriceSpecification", price: "1199", priceCurrency: "PLN" },
-      description:
-        "Przygotowanie niestandardowej umowy spółki, obsługa wizyty w kancelarii notarialnej oraz złożenie wniosku do KRS.",
-      availability: "https://schema.org/InStock",
-    },
-  ],
 }
 
 export const metadata: Metadata = {
-  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług",
+  title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług dla spółek z o.o.",
   description:
-    "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+    "Sprawdź ceny zmiany zarządu, wspólnika, adresu, prokury, umowy spółki i kodów PKD. Poznaj opłaty sądowe oraz zakres obsługi KRS.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług dla spółek z o.o. | ZmianaKRS",
     description:
-      "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+      "Sprawdź ceny zmiany zarządu, wspólnika, adresu, prokury, umowy spółki i kodów PKD. Poznaj opłaty sądowe oraz zakres obsługi KRS.",
     url: pageUrl,
     siteName: brandName,
     images: [{ url: `${siteUrl}/images/krs-services.png`, width: 1200, height: 630, alt: "Cennik usług KRS" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług | ZmianaKRS",
+    title: "Ile kosztuje zmiana wpisu w KRS? Cennik usług dla spółek z o.o. | ZmianaKRS",
     description:
-      "Sprawdź cennik zmian w KRS: złożenie wniosku od 999 zł, założenie spółki od 699 zł. Opłata sądowa 250 zł lub 200 zł przez S24. Przejrzyste ceny, bez ukrytych kosztów.",
+      "Sprawdź ceny zmiany zarządu, wspólnika, adresu, prokury, umowy spółki i kodów PKD. Poznaj opłaty sądowe oraz zakres obsługi KRS.",
     images: [`${siteUrl}/images/krs-services.png`],
   },
 }
@@ -436,7 +402,7 @@ export default function PricingPage() {
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-white mb-2">Spółka z o.o. przez system S24</h3>
                           <p className="text-base text-slate-300 mb-2">szybka rejestracja online</p>
-                          <p className="text-2xl font-bold text-amber-400">od 699 zł <span className="text-base font-normal text-slate-300">netto*</span></p>
+                          <p className="text-2xl font-bold text-amber-400">od 799 zł <span className="text-base font-normal text-slate-300">netto*</span></p>
                           <p className="text-sm text-slate-300">
                             (ostateczna cena zależy od liczby wspólników i stopnia skomplikowania umowy)
                           </p>
@@ -474,7 +440,7 @@ export default function PricingPage() {
                         <div className="flex-1">
                           <h3 className="text-xl font-bold text-white mb-2">Spółka z o.o. z niestandardową umową</h3>
                           <p className="text-base text-slate-300 mb-2">zakładanie przez notariusza i Portal Rejestrów Sądowych</p>
-                          <p className="text-2xl font-bold text-amber-400">od 1199 zł <span className="text-base font-normal text-slate-300">netto**</span></p>
+                          <p className="text-2xl font-bold text-amber-400">od 1 199 zł <span className="text-base font-normal text-slate-300">netto**</span></p>
                         </div>
                       </div>
                       <p className="text-slate-300 mb-4 text-sm">
