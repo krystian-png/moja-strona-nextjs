@@ -13,6 +13,7 @@ import reportStyles from "./report.module.css"
 import ResignationToc from "./_components/ResignationToc"
 import ResignationHelpCard from "./_components/ResignationHelpCard"
 import InlineContactForm from "@/app/(site)/uslugi/_components/InlineContactForm"
+import ContactLinks from "@/components/landing/ContactLinks"
 import { Badge } from "@/components/ui/badge"
 import { brandName, organizationSchema, personSchema, siteUrl } from "@/lib/seo"
 
@@ -77,6 +78,7 @@ function MDXContent({ code, resignation = false, lead }: { code: string; resigna
   const Component = useMDXComponent(code)
   return <Component components={resignation ? {
     InlineContactForm,
+    ContactLinks,
     AlertTriangle,
     Check,
     ResignationToc,
