@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { brandName, organizationSchema } from "@/lib/seo";
-import InlineContactForm from "../_components/InlineContactForm";
+import ContactLinks from "@/components/landing/ContactLinks"
+import ContactSection from "@/components/landing/ContactSection"
+import FeeTable from "@/components/landing/FeeTable"
+import landing from "@/components/landing/landing.module.css"
 import styles from "./page.module.css";
 
 const pageUrl = "https://zmianakrs.pl/uslugi/prokurent-krs";
@@ -124,7 +127,7 @@ function renderAnswer(answer: string) {
 
 export default function ProkuraPage() {
   return (
-    <div className={styles.page}>
+    <div className={`${landing.page} ${styles.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -146,9 +149,6 @@ export default function ProkuraPage() {
                   <a className={styles.primary} href="#kontakt">
                     Zleć zgłoszenie prokury do KRS
                   </a>
-                  <br />
-                  <a href="tel:+48572234779">572 234 779</a> ·{" "}
-                  <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>
                 </p>
               </div>
               <aside className={styles.priceCard}>
@@ -156,6 +156,7 @@ export default function ProkuraPage() {
                   <strong>Zdalnie, przez PRS lub S24</strong>
                 </p>
                 <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
+                <ContactLinks />
               </aside>
             </div>
           </div>
@@ -236,38 +237,17 @@ export default function ProkuraPage() {
               </p>
             </div>
 
-            <table className={styles.fees}>
-              <thead>
-                <tr>
-                  <th scope="col">Opłata zewnętrzna</th>
-                  <th scope="col">Kwota</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Opłata zewnętrzna">
-                    Wniosek o zmianę wpisu w PRS
-                  </td>
-                  <td data-label="Kwota">250 zł</td>
-                </tr>
-                <tr>
-                  <td data-label="Opłata zewnętrzna">
-                    Wniosek o ustanowienie prokury przez S24 z użyciem wzorca
-                  </td>
-                  <td data-label="Kwota">200 zł</td>
-                </tr>
-                <tr>
-                  <td data-label="Opłata zewnętrzna">
-                    Złożenie odrębnego pełnomocnictwa procesowego, jeśli opłata
-                    jest należna
-                  </td>
-                  <td data-label="Kwota">17 zł</td>
-                </tr>
-              </tbody>
-            </table>
+            <FeeTable
+              caption="Opłaty i koszty zewnętrzne"
+              rows={[
+                { label: "Wniosek o zmianę wpisu w PRS", value: "250 zł" },
+                { label: "Wniosek o ustanowienie prokury przez S24 z użyciem wzorca", value: "200 zł" },
+                { label: "Złożenie odrębnego pełnomocnictwa procesowego, jeśli opłata jest należna", value: "17 zł" },
+              ]}
+              note="Opłaty urzędowe rozliczamy oddzielnie."
+            />
 
             <p>
-              Opłaty urzędowe rozliczamy oddzielnie.{" "}
               <a href="/cennik">Zobacz cennik obsługi zmian w KRS</a>.<br />
               <a href="#kontakt">Poproś o wycenę zgłoszenia prokury</a>
             </p>
@@ -339,27 +319,10 @@ export default function ProkuraPage() {
             </div>
           </div>
         </section>
-        <section id="kontakt" className={styles.contact}>
-          <div className={`${styles.container} ${styles.contactGrid}`}>
-            <div>
-              <h2>Zleć zgłoszenie prokury do KRS</h2>
-
-              <p>
-                Napisz, czy chodzi o ustanowienie, zmianę czy wykreślenie
-                prokury i czy dokumenty są już gotowe. Jeśli masz numer KRS,
-                wpisz go w wiadomości. Sprawę prowadzi radca prawny.
-              </p>
-
-              <p>
-                <a href="tel:+48572234779">572 234 779</a> ·{" "}
-                <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>
-              </p>
-            </div>
-            <div className={styles.contactForm}>
-              <InlineContactForm className="max-w-none" />
-            </div>
-          </div>
-        </section>
+        <ContactSection
+          heading="Zleć zgłoszenie prokury do KRS"
+          text="Napisz, czy chodzi o ustanowienie, zmianę czy wykreślenie prokury i czy dokumenty są już gotowe. Jeśli masz numer KRS, wpisz go w wiadomości. Sprawę prowadzi radca prawny."
+        />
       </main>
       <Footer className={styles.footer} />
     </div>

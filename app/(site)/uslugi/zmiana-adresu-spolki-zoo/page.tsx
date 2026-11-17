@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { brandName, organizationSchema } from "@/lib/seo";
-import InlineContactForm from "../_components/InlineContactForm";
+import ContactLinks from "@/components/landing/ContactLinks"
+import ContactSection from "@/components/landing/ContactSection"
+import FeeTable from "@/components/landing/FeeTable"
+import landing from "@/components/landing/landing.module.css"
 import styles from "./page.module.css";
 
 const pageUrl = "https://zmianakrs.pl/uslugi/zmiana-adresu-spolki-zoo";
@@ -103,7 +106,7 @@ const schemas = [
 
 export default function AddressPage() {
   return (
-    <div className={styles.page}>
+    <div className={`${landing.page} ${styles.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -131,6 +134,7 @@ export default function AddressPage() {
                   <strong>Zdalnie, przez PRS lub S24</strong>
                 </p>
                 <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
+                <ContactLinks />
               </aside>
             </div>
             <div className={styles.scenarios}>
@@ -190,43 +194,16 @@ export default function AddressPage() {
             </article>
             <div className={styles.feeCard}>
               <h3>Opłaty sądowe i pozostałe koszty</h3>
-              <table className={styles.fees}>
-                <caption>Opłaty sądowe i pozostałe koszty</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Rodzaj opłaty</th>
-                    <th scope="col">Kwota</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      Standardowy wniosek o zmianę wpisu przez PRS
-                    </th>
-                    <td>250 zł</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Wniosek w S24, gdy zmianę wprowadza uchwała na wzorcu
-                    </th>
-                    <td>200 zł</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Opłata skarbowa od złożenia pełnomocnictwa, jeśli jest
-                      należna
-                    </th>
-                    <td>17 zł</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Notariusz – protokół uchwały zmieniającej umowę (tylko
-                      poza S24)
-                    </th>
-                    <td>według taksy, maksymalnie 900 zł + VAT, oraz wypisy</td>
-                  </tr>
-                </tbody>
-              </table>
+              <FeeTable
+                plain
+                caption="Opłaty i koszty zewnętrzne"
+                rows={[
+                  { label: "Standardowy wniosek o zmianę wpisu przez PRS", value: "250 zł" },
+                  { label: "Wniosek w S24, gdy zmianę wprowadza uchwała na wzorcu", value: "200 zł" },
+                  { label: "Opłata skarbowa od złożenia pełnomocnictwa, jeśli jest należna", value: "17 zł" },
+                  { label: "Notariusz – protokół uchwały zmieniającej umowę (tylko poza S24)", value: "według taksy, maksymalnie 900 zł + VAT, oraz wypisy" },
+                ]}
+              />
               <p>
                 Od 29 listopada 2025 r. do wniosków o zmianę wpisu nie dolicza
                 się 100 zł za ogłoszenie w Monitorze Sądowym i Gospodarczym.
@@ -338,25 +315,10 @@ export default function AddressPage() {
             </article>
           </div>
         </section>
-        <section id="kontakt" className={styles.contact}>
-          <div className={`${styles.container} ${styles.contactGrid}`}>
-            <div>
-              <h2>Zleć zmianę adresu lub siedziby spółki</h2>
-              <p>
-                Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub inne dokumenty. Odpiszemy, co trzeba przygotować i ile kosztuje obsługa.
-              </p>
-              <p>
-                <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a>
-              </p>
-              <p>
-                <a href="tel:+48572234779">572 234 779</a>
-              </p>
-            </div>
-            <div className={styles.contactForm}>
-              <InlineContactForm className="max-w-none" />
-            </div>
-          </div>
-        </section>
+        <ContactSection
+          heading="Zleć zmianę adresu lub siedziby spółki"
+          text="Opisz krótko planowaną zmianę i napisz, czy masz już uchwałę lub inne dokumenty. Odpiszemy, co trzeba przygotować i ile kosztuje obsługa."
+        />
       </main>
       <Footer className={styles.footer} />
     </div>

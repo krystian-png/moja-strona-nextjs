@@ -4,7 +4,10 @@ import { ArrowDown, ArrowUpRight, ArrowRight, BookOpen, Check, UserPlus, UserMin
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import { brandName, organizationSchema, siteUrl } from "@/lib/seo"
-import InlineContactForm from "../_components/InlineContactForm"
+import ContactLinks from "@/components/landing/ContactLinks"
+import ContactSection from "@/components/landing/ContactSection"
+import FeeTable from "@/components/landing/FeeTable"
+import landing from "@/components/landing/landing.module.css"
 import styles from "./page.module.css"
 
 const pagePath = "/uslugi/zmiana-zarzadu-spolki-zoo"
@@ -179,7 +182,7 @@ const schemas = [
 
 export default function ZmianaZarzaduPage() {
   return (
-    <div className={styles.page}>
+    <div className={`${landing.page} ${styles.page}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas).replace(/</g, "\\u003c") }} />
       <Navbar contactAction={{ href: "#kontakt", label: "Opisz sprawę" }} />
       <main>
@@ -196,6 +199,7 @@ export default function ZmianaZarzaduPage() {
               <p>Przygotowujemy dokumenty, składamy wniosek i prowadzimy sprawę przed sądem rejestrowym do jej zakończenia.</p>
               <a href="#kontakt" className={styles.primary}>Zleć zmianę zarządu <ArrowUpRight aria-hidden="true" size={20} /></a>
               <a href="#zakres" className={styles.secondary}>Zakres i cena <ArrowDown aria-hidden="true" size={18} /></a>
+              <ContactLinks />
             </div>
           </div>
         </section>
@@ -283,11 +287,7 @@ export default function ZmianaZarzaduPage() {
                 <p>Od 29 listopada 2025 r. nie pobiera się dodatkowej opłaty za obowiązkowe ogłoszenie wpisu KRS w Monitorze Sądowym i Gospodarczym.</p>
                 <Link href="/cennik">Zobacz pełny cennik usług</Link>
               </div>
-              <table className={styles.fees}>
-                <caption>Opłaty i koszty zewnętrzne</caption>
-                <thead><tr><th scope="col">Rodzaj</th><th scope="col">Kwota</th></tr></thead>
-                <tbody>{fees.map(([kind, amount]) => <tr key={kind}><th scope="row">{kind}</th><td>{amount}</td></tr>)}</tbody>
-              </table>
+              <FeeTable plain caption="Opłaty i koszty zewnętrzne" rows={fees.map(([label, value]) => ({ label, value }))} />
             </div>
           </div>
         </section>
@@ -317,19 +317,10 @@ export default function ZmianaZarzaduPage() {
           </div>
         </section>
 
-        <section id="kontakt" className={styles.contact}>
-          <div className={`${styles.container} ${styles.contactGrid}`}>
-            <div>
-              <h2>Ty prowadzisz firmę, my zgłaszamy zmianę zarządu do KRS</h2>
-              <p>Opisz krótko planowaną zmianę. Odpiszemy, jakie dokumenty będą potrzebne i ile kosztuje obsługa.</p>
-              <address className={styles.contactDetails}>
-                <p>Telefon: <a href="tel:+48572234779">572 234 779</a></p>
-                <p>E-mail: <a href="mailto:biuro@zmianakrs.pl">biuro@zmianakrs.pl</a></p>
-              </address>
-            </div>
-            <div className={styles.contactForm}><InlineContactForm className="max-w-none" /></div>
-          </div>
-        </section>
+        <ContactSection
+          heading="Ty prowadzisz firmę, my zgłaszamy zmianę zarządu do KRS"
+          text="Opisz krótko planowaną zmianę. Odpiszemy, jakie dokumenty będą potrzebne i ile kosztuje obsługa."
+        />
       </main>
       <Footer className={styles.footer} />
     </div>
