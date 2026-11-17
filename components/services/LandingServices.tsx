@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, FileText, MapPin, Users } from "lucide-react"
+import { ArrowRight, FileText, ListChecks, MapPin, UserRoundCheck, Users } from "lucide-react"
 
 type LandingServicesProps = {
   title?: string
@@ -25,6 +25,14 @@ const serviceCards = [
     iconBgClassName: "bg-emerald-500/20 text-emerald-300",
   },
   {
+    title: "Prokura w spółce z o.o.",
+    description: "Wpis, zmiana lub wykreślenie prokurenta. Przygotujemy dokumenty i złożymy wniosek do KRS.",
+    href: "/uslugi/prokurent-krs",
+    ariaLabel: "Prokura w spółce z o.o. – wpis, zmiana lub wykreślenie prokurenta",
+    icon: UserRoundCheck,
+    iconBgClassName: "bg-violet-500/20 text-violet-300",
+  },
+  {
     title: "Zmiana wspólnika spółki z o.o.",
     description: "Zbycie udziałów oraz aktualizacja listy wspólników i zgłoszenie zmiany do KRS.",
     href: "/uslugi/zmiana-wspolnika-spolki-zoo",
@@ -40,6 +48,14 @@ const serviceCards = [
     icon: FileText,
     iconBgClassName: "bg-sky-500/20 text-sky-300",
   },
+  {
+    title: "Zmiana kodów PKD w KRS",
+    description: "Sprawdzimy kody PKD spółki, przygotujemy dokumenty i złożymy wniosek o zmianę wpisu.",
+    href: "/uslugi/zmiana-kodow-pkd",
+    ariaLabel: "Zmiana kodów PKD w KRS – obsługa wniosku",
+    icon: ListChecks,
+    iconBgClassName: "bg-teal-500/20 text-teal-300",
+  },
 ] as const
 
 export default function LandingServices({
@@ -54,7 +70,7 @@ export default function LandingServices({
           <h2 className="text-center text-3xl font-bold text-amber-400 sm:text-4xl lg:text-5xl">{title}</h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {serviceCards.map((card) => {
             const Icon = card.icon
 
