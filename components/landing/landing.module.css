@@ -45,12 +45,12 @@
 .page main :is(.primary, .secondary):hover { text-decoration: underline; text-underline-offset: 4px; box-shadow: inset 0 0 0 2px var(--sapphire); }
 
 /* Telefon i e-mail z ikonami */
-.contactLinks { display: flex; flex-wrap: wrap; gap: 16px 32px; font-style: normal; margin-top: 8px; }
-.page main .contactLink { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; text-decoration: none; color: var(--navy); }
-.page main .contactLink:hover { text-decoration: underline; }
+.contactLinks { --navy: #111E41; --amber: #E7A944; --white: #FFFFFF; display: flex; flex-wrap: wrap; gap: 16px 32px; font-style: normal; margin-top: 8px; }
+.contactLinks a.contactLink.contactLink { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; text-decoration: none; color: var(--navy); }
+.contactLinks a.contactLink.contactLink:hover { text-decoration: underline; }
 .contactIcon { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: var(--navy); color: var(--amber); }
 .dark .contactIcon { background: var(--amber); color: var(--navy); }
-.page main .dark .contactLink { color: var(--white); }
+.contactLinks.dark a.contactLink.contactLink { color: var(--white); }
 
 /* Karty z ceną */
 .priceGrid { display: grid; gap: 24px; margin-top: 32px; }
