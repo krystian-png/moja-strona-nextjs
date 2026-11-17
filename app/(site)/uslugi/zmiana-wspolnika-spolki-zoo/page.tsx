@@ -50,7 +50,7 @@ const faq = [
   },
   {
     question: "Czy można sprzedać udziały bez notariusza?",
-    answer: "Tylko w S24, jeśli umowę spółki zawarto przy wykorzystaniu wzorca w tym systemie – wtedy zbycie udziałów jest możliwe na wzorcu S24 (art. 180 § 2 k.s.h.). W pozostałych przypadkach umowa zbycia wymaga formy pisemnej z podpisami notarialnie poświadczonymi (art. 180 § 1 k.s.h.).",
+    answer: "Tylko w S24, jeśli umowę spółki zawarto przy wykorzystaniu wzorca w tym systemie i później nie zmieniano jej poza wzorcem – wtedy zbycie udziałów jest możliwe na wzorcu S24 (art. 180 § 2 w zw. z art. 4 § 1 pkt 15 k.s.h.). W pozostałych przypadkach umowa zbycia wymaga formy pisemnej z podpisami notarialnie poświadczonymi (art. 180 § 1 k.s.h.).",
   },
   {
     question: "Od kiedy kupujący może wykonywać prawa wspólnika wobec spółki?",
